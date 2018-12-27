@@ -12,6 +12,6 @@ So whether this is your first language or just your next language, and whether y
 
 In this module, you will learn:
 
-- How to create a Jupyter notebook in Azure Notebooks
+- How to create a Jupyter notebook in Azure
 - The basics of Python, including variables, functions, and conditionals 
-- How to perform practical problem solving with Python and Jupyter Notebooks
+- How to perform practical problem solving with Python and Jupyter notebooks
