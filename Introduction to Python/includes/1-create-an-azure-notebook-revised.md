@@ -133,7 +133,7 @@ TODO: Add introduction.
 	print('Airport data for the state of ' + state_abbr + ' will be prepared.')
 	```
 
-	Then run the cell and confirm that it behaves the same as it did before.
+1. Run the cell and confirm that it behaves the same as it did before.
 
 1. Use the **File** -> **Save and Checkpoint** command to save the notebook.
 
