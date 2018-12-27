@@ -105,7 +105,7 @@ The value within the square brackets is the label for the link and the value wit
 
 ### Exercise: Creating a Notebook to Import Airport Data
 
-**Step 1.** Open a web browser and browse to [https://notebooks.azure.com](https://notebooks.azure.com). Log in with your Microsoft account (or create a Microsoft Account)
+**Step 1.** Open a web browser and browse to [https://notebooks.azure.com](https://notebooks.azure.com). Log in with your Microsoft account
 
 [Screenshot of Microsoft Account Login]
 
@@ -117,39 +117,52 @@ The value within the square brackets is the label for the link and the value wit
 
 [Screenshot of Create a Notebook]
 
-**Step 4.** In the first cell, enter the following Python code.
+**Step 4.** Change the first cell to a Markdown cell.
 
-```python
-print('Hello <Your Name>!')
-```
+[Screenshot of changing the content type]
 
-Replace '\<Your Name\>' with the name of your choice.
-
-**Step 5.** Run the cell by clicking 'Run'.
-
-[Screenshot of Run Button]
-
-The output will look like this:
-
-[Screenshot of Output]
-
-**Step 6.** Ask the user for their age the following line of code:
-
-```python
-input('What is your age?')
-```
-
-**Step 7.** Run the cell.
-
-[Screenshot of the Output]
-
-**Step 8.** Add a cell to the top of the notebook. Change the content from the 'Code' to 'Markdown'. Add the following content and run the cell.
+Add the following content:
 
 ```markdown
-# Hello <Your Name>
+# Prepare US State Airport Data
+
+In this scenario, a lookup table of airline data will be downloaded and processed to extract all airports for the specified US state abbreviation. The extracted airport data will be written to a new CSV file. The new CSV file name will be prefixed with the state abbreviation. This scenario represents a common situation in data science and machine learning where data is downloaded from public sources and prepared for specific experiments.
+
+## Preparation Steps
+* Input State Abbreviation
+* Define Variables
+* Read Airport File Data
+* Define Functions for Processing the Data
+* Write State Airport File Data
+* Download Airport File for Processing
 ```
 
-Run the cell. The output will look similar to this:
+Run the cell.
+
+**Step 5.** Add a new cell.
+
+[Screenshot to add a cell]
+
+Ask the user for a state abbreviation and output the entered state abbreviation:
+
+```python
+state_abbr = input('Enter the state abbreviation of airport data to prepare:')
+
+print('Airport data for the state of ' + state_abbr + ' will be prepared.')
+```
+
+Run the cell, enter a state abbreviation and press enter.
 
 [Screenshot of the Output]
 
+**Step 6.** Add comments to the code:
+
+```python
+# Store the data entered by the user in the state_abbr variable
+state_abbr = input('Enter the state abbreviation of airport data to prepare:')
+
+# Output the state_abbr variable to the screen
+print('Airport data for the state of ' + state_abbr + ' will be prepared.')
+```
+
+Run the cell.
