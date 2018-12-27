@@ -7,3 +7,11 @@ For many people, Python is the very first language they learn. Many of those peo
 Applications coded with Python can run on almost all computer systems including Microsoft Windows, Apple's MacOS, Linux (all distributions) and on local and cloud-based systems. Furthermore, there is a rich set of development tools to help code, debug and publish Python applications. Popular tools include Microsoft's Visual Studio Code and Azure's hosted Jupyter Notebooks.
 
 So whether this is your first language or just your next language, and whether you are a software developer or a professional in another field, this tutorial will walk you through the basics of learning the Python language through a scenario-based approach. The goal is to learn not only the academic side of Python but also begin to apply it to solve real-world problems. Furthermore, while this tutorial is not teaching topics like data science or machine learning, many of the examples are coding tasks which would be commonly performed in such computing fields.
+
+## Learning objectives
+
+In this module, you will learn:
+
+- How to create a Jupyter notebook in Azure Notebooks
+- The basics of Python, including variables, functions, and conditionals 
+- How to perform practical problem solving with Python and Jupyter Notebooks
