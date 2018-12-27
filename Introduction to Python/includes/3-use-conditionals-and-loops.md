@@ -1,6 +1,8 @@
-# Use conditionals and loops to control flow
+## Use conditionals and loops to control flow
 
-To get started with control-flow structures in Python some data is needed. For this module, data from the United States Bureau of Transportation Statistics (BTS) will be used. The BTS provides flight data on domestic US flights provided by major US air carriers. In this module, flight data from flights in Virginia in October 2018 will be used. Serious analysis of the data will not be performed, but the data will be used to explore the various control flow structures in Python. Python supports several control flow structures: conditionals, loops and error handling.
+Programming languages provide syntax structures to control the flow of program execution. This control is referred to as programming logic. An executing program needs both data (variables) and logic (control flow). The two most common kinds of control flow are loops and conditional statements.
+
+### Loops
 
 To get started with the data, it first needs to read in from a file. To open a file in Python the open method is used. The open method has two parameters: the filename path and the mode for opening the file. Files can be opened in one of four modes: read, write, append or read/write. The mode is specified with one of the following string values:
 
@@ -104,7 +106,42 @@ The above code will output:
 
 In addition to repeating code, control flow structures can control which code is executed next based upon some kind of condition. The condition is simply an expression which returns a truthy or falsy value. If the condition is truthy the code is executed if the condition is falsy, the code is not executed or an alternative code block is executed.
 
-#### Exercise: Importing Airport Data
+### Conditionals
+
+When executing code its possible to choose one branch of code over another based upon the truthy/falsy result of an expression. The branching statement in Python (and most other programming languages) is the **if** statement. Here is an example of conditionally executing a piece of code:
+
+```python
+x = 2
+
+if x > 1:
+    print('greater than 1')
+```
+
+In the code above, when the variable **x** is greater than 1, the **print** statement will execute. Also, the **if** statement supports an **else** statement which will run a block of code when the conditional is falsy.
+
+```python
+x = 2
+
+if x > 1:
+    print('greater than 1')
+else:
+    print('less than or equal to 1')
+```
+
+For a series of conditionals, the **elif** statement can be used:
+
+```python
+x = 1
+
+if x > 1:
+    print('greater than 1')
+elif x < 1:
+    print('less than 1')
+else:
+    print('is 1')
+```
+
+### Exercise: Importing Airport Data
 
 **Step 1.** Start here...
 
