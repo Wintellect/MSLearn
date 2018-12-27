@@ -271,5 +271,45 @@ There are lots of operators in Python, here are some of the more common ones:
 
 ### Exercise: Initializing Variables for Importing Airport Data
 
-**Step 1.** Start here...
+**Step 1.** If not open, open the "Prepare US State Airport Data" notebook created in the previous exercise.
 
+**Step 2.** Add a new Python cell to the end of the notebook.
+
+**Step 3.** Add to the cell the following Python code:
+
+```python
+download_url = 'https://t4dmsftlabsdata.file.core.windows.net/airlinedata/airports.csv?st=2018-12-26T18%3A09%3A02Z&se=2018-12-27T18%3A09%3A02Z&sp=r&sv=2018-03-28&sr=f&sig=7WumCj0WoxOt0RZ875Xcj45%2FYgLrqhYf757gUErYj0I%3D'
+```
+
+To access the airport data needed for the exercise it must be downloaded from Azure Storage when using Azure Notebooks. The original source of the data is here: [BTS Link](https://www.transtats.bts.gov/Download_Lookup.asp?Lookup=L_AIRPORT)
+
+The **download_url** will be used in the last exercise to download the data using Python code. For now, a pre-downloaded file will be used.
+
+**Step 4.** Add the following Python code to the cell:
+
+```python
+airport_file_has_header = True
+airport_file_name = 'airports.csv'
+```
+
+The source data file has a header for the first row. Setting the variable **airport_file_has_header** to true will tell the code which will be written later that the first row of the file should be ignored.
+
+The variable **airport_file_name** will store the file name which contains the airport data. In the last exercise this variable will be used to save the downloaded airport data.
+
+**Step 5.** Add the following Python code to the cell:
+
+```python
+state_abbr = state_abbr or 'VA'
+```
+
+If no value for the variable **state_abbr** is specified, set the variable **state_abbr** to 'VA'.
+
+**Step 6.** Add the following Python code to the cell:
+
+```python
+state_airport_file_name = state_abbr.lower() + '_airports.csv'
+```
+
+Convert the variable **state_abbr** to lowercase and use it to set the variable for the extracted state file name.
+
+**Step 7.** Run the cell. There is no output for this exercise. These variables will be used in future exercises.
