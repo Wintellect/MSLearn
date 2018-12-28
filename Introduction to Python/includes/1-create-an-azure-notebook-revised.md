@@ -115,7 +115,7 @@ TODO: Add introduction.
 
 	_Executing the first cell_
 
-1. Type the following code, which prompts the user to enter the abbreviation for a U.S. state such as WA or TN and outputs the abbreviation the user entered, into the empty cell.
+1. Add the following code, which prompts the user to enter the abbreviation for a U.S. state such as WA or TN and outputs the abbreviation the user entered, to the empty cell.
 
 	```python
 	state_abbr = input('Enter the state abbreviation of airport data to prepare:')
