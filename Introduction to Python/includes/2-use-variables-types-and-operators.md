@@ -34,7 +34,7 @@ x = 1 # integer
 x = 1.0 # decimal (known as floating point)
 ```
 
-To see their types, use the **type** statement with the **print** statement as follows:
+To see their types, use the `type` statement with the `print` statement as follows:
 
 ```python
 x = 1
@@ -46,14 +46,14 @@ print(type(x)) # outputs: <class 'float'>
 
 The addition of the ".0" to the end of "1" makes a big difference in how the programming language understands the data type of the value. The data type impacts how the value is stored in memory, how the processor (CPU) handles the data when evaluating expressions, how the data relates to other data, and what kinds operations can be performed with it.
 
-Another common type is the boolean type with the values of **True** and **False**.
+Another common type is the boolean type with the values of `True` and `False`.
 
 ```python
 x = True
 print(type(x)) # outputs: <class 'bool'>
 ```
 
-From Python's perspective, boolean is a special type of integer. Technically, **True** has a value of 1 and **False** has a value of 0. Typically, booleans are not used to perform numerical mathematical expressions; nevertheless, it is interesting to understand the relationship between types. Many types are nothing more than specialized versions of more general types. Integers are a subset of floating point numbers, and booleans are a subset of integers.
+From Python's perspective, boolean is a special type of integer. Technically, `True` has a value of 1 and `False` has a value of 0. Typically, booleans are not used to perform numerical mathematical expressions; nevertheless, it is interesting to understand the relationship between types. Many types are nothing more than specialized versions of more general types. Integers are a subset of floating point numbers, and booleans are a subset of integers.
 
 #### Sequences
 
@@ -188,7 +188,7 @@ Sequences are very useful and have many more features. In the course following t
 
 Commonly, strings and lists are used together. Lists can be used to create strings and strings can be used to create lists.
 
-A common operation is to split a string into a list of items. Consider the following example a colors string split into a list of colors using the **split** function:
+A common operation is to split a string into a list of items. Consider the following example a colors string split into a list of colors using the `split` function:
 
 ```python
 colors_data = 'red,green,blue'
@@ -198,7 +198,7 @@ colors = colors_data.split(',')
 print(colors) # outputs: ['red','blue','green']
 ```
 
-Another common example is converting a list into a string using the **join** function:
+Another common example is converting a list into a string using the `join` function:
 
 ```python
 colors = ['red','blue','green']
@@ -210,19 +210,19 @@ print(colors_data) # outputs: 'red,green,blue'
 
 #### The None Value
 
-Most programming languages have some kind of value which means an absence of a value. The name of this value can go by many different names: null, nil, and undefined. In the Python the name of the value which represents the absence of a value is **None**.
+Most programming languages have some kind of value which means an absence of a value. The name of this value can go by many different names: null, nil, and undefined. In the Python the name of the value which represents the absence of a value is `None`.
 
 ```python
 some_var = None
 ```
 
-The **None** value is more than only a value it is also a type, the **NoneType**.
+The `None` value is more than only a value it is also a type, the `NoneType`.
 
 ```python
 type(None) # outputs: NoneType
 ```
 
-Functions (covered later in this module) return a value of **None** if they do not have an explicit return type.
+Functions (covered later in this module) return a value of `None` if they do not have an explicit return type.
 
 #### Truthy and Falsy
 
@@ -271,11 +271,11 @@ There are lots of operators in Python, here are some of the more common ones:
 
 ### Exercise: Initializing Variables for Importing Airport Data
 
-**Step 1.** If not open, open the "Prepare US State Airport Data" notebook created in the previous exercise.
+1. If not open, open the "Prepare US State Airport Data" notebook created in the previous exercise.
 
-**Step 2.** Add a new Python cell to the end of the notebook.
+1. Add a new Python cell to the end of the notebook.
 
-**Step 3.** Add to the cell the following Python code:
+1. Add to the cell the following Python code:
 
 ```python
 download_url = 'https://t4dmsftlabsdata.file.core.windows.net/airlinedata/airports.csv?st=2018-12-26T18%3A09%3A02Z&se=2018-12-27T18%3A09%3A02Z&sp=r&sv=2018-03-28&sr=f&sig=7WumCj0WoxOt0RZ875Xcj45%2FYgLrqhYf757gUErYj0I%3D'
@@ -283,33 +283,33 @@ download_url = 'https://t4dmsftlabsdata.file.core.windows.net/airlinedata/airpor
 
 To access the airport data needed for the exercise it must be downloaded from Azure Storage when using Azure Notebooks. The original source of the data is here: [BTS Link](https://www.transtats.bts.gov/Download_Lookup.asp?Lookup=L_AIRPORT)
 
-The **download_url** will be used in the last exercise to download the data using Python code. For now, a pre-downloaded file will be used.
+The `download_url` will be used in the last exercise to download the data using Python code. For now, a pre-downloaded file will be used.
 
-**Step 4.** Add the following Python code to the cell:
+1. Add the following Python code to the cell:
 
 ```python
 airport_file_has_header = True
 airport_file_name = 'airports.csv'
 ```
 
-The source data file has a header for the first row. Setting the variable **airport_file_has_header** to true will tell the code which will be written later that the first row of the file should be ignored.
+The source data file has a header for the first row. Setting the variable `airport_file_has_header` to true will tell the code which will be written later that the first row of the file should be ignored.
 
-The variable **airport_file_name** will store the file name which contains the airport data. In the last exercise this variable will be used to save the downloaded airport data.
+The variable `airport_file_name` will store the file name which contains the airport data. In the last exercise this variable will be used to save the downloaded airport data.
 
-**Step 5.** Add the following Python code to the cell:
+1. Add the following Python code to the cell:
 
 ```python
 state_abbr = state_abbr or 'VA'
 ```
 
-If no value for the variable **state_abbr** is specified, set the variable **state_abbr** to 'VA'.
+If no value for the variable `state_abbr` is specified, set the variable `state_abbr` to 'VA'.
 
-**Step 6.** Add the following Python code to the cell:
+1. Add the following Python code to the cell:
 
 ```python
 state_airport_file_name = state_abbr.lower() + '_airports.csv'
 ```
 
-Convert the variable **state_abbr** to lowercase and use it to set the variable for the extracted state file name.
+Convert the variable `state_abbr` to lowercase and use it to set the variable for the extracted state file name.
 
-**Step 7.** Run the cell. There is no output for this exercise. These variables will be used in future exercises.
+1. Run the cell. There is no output for this exercise. These variables will be used in future exercises.

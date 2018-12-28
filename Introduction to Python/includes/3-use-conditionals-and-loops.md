@@ -12,16 +12,16 @@ The following is a Python example of how to open the lookup table file for airpo
 airport_file = open('./L_AIRPORT.csv', 'r')
 ```
 
-Once the file is opened, data can be read from it. There are several ways to access the data, but one good is to iterate (loop) over the file contents reading one line at a time. To do this, Python's **for-in** loop can be used. The **for-in** loop will iterate over anything which is iterable (such as a sequence) and will return some data on each iteration (loop).
+Once the file is opened, data can be read from it. There are several ways to access the data, but one good is to iterate (loop) over the file contents reading one line at a time. To do this, Python's `for-in` loop can be used. The `for-in` loop will iterate over anything which is iterable (such as a sequence) and will return some data on each iteration (loop).
 
-Here is some code demonstrating how to use a for-in loop to read each line of the **airport_file** file.
+Here is some code demonstrating how to use a for-in loop to read each line of the `airport_file` file.
 
 ```python
 for line in airport_file:
   print(line)
 ```
 
-The **airport_file** is the object which is iterated over, and each line of data from the file is assigned to the **line** variable. When the end of the file is reached the **for-in** loop stops. Loop control-flow structures repeat a block of code over and over again based upon some condition such as the number of items or conditional expression.
+The `airport_file` is the object which is iterated over, and each line of data from the file is assigned to the `line` variable. When the end of the file is reached the `for-in` loop stops. Loop control-flow structures repeat a block of code over and over again based upon some condition such as the number of items or conditional expression.
 
 When a file is no longer needed, the file resource object needs to be closed to release the resource. The following code closes the file and releases the resource:
 
@@ -31,9 +31,9 @@ airport_file.close()
 
 Closing the file is extremely important to properly free up operating system resources.
 
-There are two kinds of loops in Python: **for-in** loops and **while** loop. The **for-in** loop iterates over each item in a collection of data. The **while** loop iterates while its conditional expression evaluates to true.
+There are two kinds of loops in Python: `for-in` loops and `while` loop. The `for-in` loop iterates over each item in a collection of data. The `while` loop iterates while its conditional expression evaluates to true.
 
-Using the **range** function, a list of numbers can be easily created. The **range** function allows a start and end number to be specified. If only one number is specified, the start is 0 and the end is the specified number minus 1. The following **range** will produce a list of numbers 0 to 9. Lists are mutable sequences; therefore, they can be iterated over as all sequences are iterable.
+Using the `range` function, a list of numbers can be easily created. The `range` function allows a start and end number to be specified. If only one number is specified, the start is 0 and the end is the specified number minus 1. The following `range` will produce a list of numbers 0 to 9. Lists are mutable sequences; therefore, they can be iterated over as all sequences are iterable.
 
 ```python
 nums = range(10)
@@ -108,7 +108,7 @@ In addition to repeating code, control flow structures can control which code is
 
 ### Conditionals
 
-When executing code its possible to choose one branch of code over another based upon the truthy/falsy result of an expression. The branching statement in Python (and most other programming languages) is the **if** statement. Here is an example of conditionally executing a piece of code:
+When executing code its possible to choose one branch of code over another based upon the truthy/falsy result of an expression. The branching statement in Python (and most other programming languages) is the `if` statement. Here is an example of conditionally executing a piece of code:
 
 ```python
 x = 2
@@ -117,7 +117,7 @@ if x > 1:
     print('greater than 1')
 ```
 
-In the code above, when the variable **x** is greater than 1, the **print** statement will execute. Also, the **if** statement supports an **else** statement which will run a block of code when the conditional is falsy.
+In the code above, when the variable `x` is greater than 1, the `print` statement will execute. Also, the `if` statement supports an `else` statement which will run a block of code when the conditional is falsy.
 
 ```python
 x = 2
@@ -128,7 +128,7 @@ else:
     print('less than or equal to 1')
 ```
 
-For a series of conditionals, the **elif** statement can be used:
+For a series of conditionals, the `elif` statement can be used:
 
 ```python
 x = 1
@@ -143,5 +143,5 @@ else:
 
 ### Exercise: Importing Airport Data
 
-**Step 1.** Start here...
+1. Start here...
 

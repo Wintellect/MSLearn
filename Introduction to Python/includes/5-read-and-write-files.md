@@ -45,13 +45,13 @@ for color in colors:
     color_file.write(color + '\n')
 ```
 
-The new line character '\n' is appended to the end of every line so there is one color per line in the **colors.txt** file. Once the data has been written to the file, the file must be closed:
+The new line character '\n' is appended to the end of every line so there is one color per line in the `colors.txt` file. Once the data has been written to the file, the file must be closed:
 
 ```python 
 color_file.close()
 ```
 
-Closing the file is important to free up operating system resources and to make the file available to other applications as needed. To simplify the process of opening and closing the file the **with** statement is used:
+Closing the file is important to free up operating system resources and to make the file available to other applications as needed. To simplify the process of opening and closing the file the `with` statement is used:
 
 ```python
 with open('./colors.txt', 'w') as color_file:
@@ -62,7 +62,7 @@ with open('./colors.txt', 'w') as color_file:
         color_file.write(color + '\n')
 ```
 
-Once the code exits the **with** statement block the file is closed.
+Once the code exits the `with` statement block the file is closed.
 
 ### Reading from a File
 
@@ -136,7 +136,7 @@ As mention in the introduction, Python runs on most operating systems. While the
 
 Microsoft Windows uses two characters for line endings "\r\n" and Unix-variant systems such as Apple's macOS and Linux (all distros) use a single character "\n" for line endings. When writing Python applications it can be important to make note of this difference. When writing code which writes to a file only the new line character '\n' should be written regardless of the operating system. Python will translate the new line character into the appropriate line ending depending upon the operating system being used.
 
-To determine the line ending used by the operating system, import the **os** module and observe the value returned by **linesep**:
+To determine the line ending used by the operating system, import the `os` module and observe the value returned by `linesep`:
 
 ```python
 import os
@@ -144,7 +144,7 @@ import os
 os.linesep
 ```
 
-Do not use **os.linesep** when writing files as the Python language takes care of performing line ending translation for you.
+Do not use `os.linesep` when writing files as the Python language takes care of performing line ending translation for you.
 
 ```python
 colors = ['red','green','blue']
@@ -194,7 +194,7 @@ with open('./colors.txt', 'w', encoding='utf-8') as color_file:
         color_file.write(color + '\n')
 ```
 
-The default encoding for reading files is determined by the file. The default encoding for writing files is determined by the result of the **locale.getpreferredencoding** function.
+The default encoding for reading files is determined by the file. The default encoding for writing files is determined by the result of the `locale.getpreferredencoding` function.
 
 ```python
 import locale
@@ -208,6 +208,6 @@ The UTF-8 encoding can read ASCII files so if only older ASCII files or modern U
 
 The above screenshot is the same color content produced earlier but this time the encoding is UTF-16. You will notice that characters take up twice as much space at UTF-8. If this UTF-16 content is read at UTF-8 the data will not be loaded correctly. To load this content into Python. the encoding parameter for the open function would need to be set to UTF-16.
 
-### Exercise: Saving Airport Data for a US State to a File
+## Save Airport Data for a US State to a File
 
-**Step 1.** Start here...
+1. Start here...
