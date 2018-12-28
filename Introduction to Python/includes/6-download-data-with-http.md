@@ -28,4 +28,20 @@ urllib.request.urlretrieve(download_url, download_file_name)
 
 ## Download Airport Lookup File
 
-1. Start here...
+1. If not open, open the "Prepare US State Airport Data" notebook created in the previous exercise.
+
+1. Add a new Python cell after the cell which ends with
+
+```python
+state_airport_file_name = state_abbr.lower() + '_airports.csv'
+```
+
+1. In the new Python cell, add the following code to download "airports.csv" file from a web server:
+
+# import the Python API for make HTTP (web page) requests
+import urllib.request
+
+# Download the data from from the URL and save to the specified file name
+urllib.request.urlretrieve(download_url, airport_file_name)
+
+1. Run the Azure notebook, ensure the file is downloaded and the output file of the airports filtered by state is produced.
