@@ -87,7 +87,13 @@ You can create additional projects and notebooks as you work with Azure Notebook
 
 TODO: Add introduction.
 
-1. Change the first cell to a markdown cell and add the following content:
+1. Change the first cell in the notebook to a markdown cell.
+
+	![Creating a markdown cell](../media/convert-to-markdown.png)
+
+	_Creating a markdown cell_
+
+1. Add the following content to the cell:
 
 	```markdown
 	# Prepare US State Airport Data
@@ -102,10 +108,6 @@ TODO: Add introduction.
 	* Write State Airport File Data
 	* Download Airport File for Processing
 	```
-
-	![Creating a markdown cell](../media/convert-to-markdown.png)
-
-	_Creating a markdown cell_
 
 1. Click the **Run** button to run the cell and add a new cell after it.
 
