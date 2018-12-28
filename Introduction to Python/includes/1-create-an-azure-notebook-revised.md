@@ -125,9 +125,9 @@ TODO: Add introduction.
 
 1. Run the cell. Then type a state abbreviation and press **Enter**. Confirm that the abbreviation you typed is echoed to the screen.
 
-	![tk](../media/tk.png)
+	![Executing the second cell](../media/run-second-cell.png)
 
-	_tk_
+	_Executing the second cell_
 
 1. Modify the code in the cell you just executed to include comments:
 
