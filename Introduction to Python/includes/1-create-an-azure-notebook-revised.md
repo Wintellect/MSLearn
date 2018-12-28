@@ -87,7 +87,7 @@ You can create additional projects and notebooks as you work with Azure Notebook
 
 TODO: Add introduction.
 
-1. Change the first cell to a Markdown cell and add the following content:
+1. Change the first cell to a markdown cell and add the following content:
 
 	```markdown
 	# Prepare US State Airport Data
@@ -103,11 +103,15 @@ TODO: Add introduction.
 	* Download Airport File for Processing
 	```
 
+	![Creating a markdown cell](../media/convert-to-markdown.png)
+
+	_Creating a markdown cell_
+
 1. Click the **Run** button to run the cell and add a new cell after it.
 
-	![tk](../media/tk.png)
+	![Executing the first cell](../media/run-first-cell.png)
 
-	_tk_
+	_Executing the first cell_
 
 1. Type the following code, which prompts the user to enter the abbreviation for a U.S. state such as WA or TN and outputs the abbreviation the user entered, into the empty cell.
 
