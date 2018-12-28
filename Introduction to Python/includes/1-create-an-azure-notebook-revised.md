@@ -83,7 +83,7 @@ The first order of business is to create an Azure notebook. Azure notebooks are 
 
 You can create additional projects and notebooks as you work with Azure Notebooks. You can create notebooks from scratch, or you can upload existing notebooks. And once a notebook is created or uploaded, you can take advantage of Azure compute resources to run the notebook and leverage popular Python libraries such as [Keras](https://keras.io/), [NumPy](http://www.numpy.org/), [Pandas](https://pandas.pydata.org/), [Matplotlib](https://matplotlib.org/), and [Scikit-learn](https://scikit-learn.org/stable/index.html).
 
-## Import data into the notebook
+## Add code and markdown to the notebook
 
 TODO: Add introduction.
 
@@ -93,7 +93,7 @@ TODO: Add introduction.
 
 	_Creating a markdown cell_
 
-1. Add the following content to the cell:
+1. Add the following markdown to the cell:
 
 	```markdown
 	# Prepare US State Airport Data
@@ -115,7 +115,7 @@ TODO: Add introduction.
 
 	_Executing the first cell_
 
-1. Add the following code, which prompts the user to enter the abbreviation for a U.S. state such as WA or TN and outputs the abbreviation the user entered, to the empty cell.
+1. Add the following code, which prompts the user to enter the abbreviation for a U.S. state such as WA or TN and outputs the abbreviation the user entered, to the empty cell at the end of the notebook:
 
 	```python
 	state_abbr = input('Enter the state abbreviation of airport data to prepare:')
@@ -143,4 +143,4 @@ TODO: Add introduction.
 
 1. Use the **File** -> **Save and Checkpoint** command to save the notebook.
 
-TODO: Add closing.
+Now that the notebook is saved, you can return to it later and pick up where you left off, even if you close the notebook or close the browser.
