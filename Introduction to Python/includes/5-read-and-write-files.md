@@ -210,4 +210,20 @@ The above screenshot is the same color content produced earlier but this time th
 
 ## Save Airport Data for a US State to a File
 
-1. Start here...
+1. If not open, open the "Prepare US State Airport Data" notebook created in the previous exercise.
+
+1. Add a new Python cell to the end of the notebook.
+
+1. In the new cell, open a new file for writing with the file name specified by the `state_airport_file_name` variable. Use the `with` statement syntax.
+
+```python
+with open(state_airport_file_name, 'w') as state_airport_file:
+```
+
+1. With the header '"Code","Name"', a newline and the contents of the variable `state_airports_data` to the file with the block of the `with` statement.
+
+```
+    state_airport_file.write('"Code","Name"' + '\n' + state_airports_data)
+```
+
+1. Run the entire notebook and verify the content of the file.

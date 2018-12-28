@@ -148,4 +148,77 @@ print(op(lambda a,b: a + b, 1, 2))
 
 ## Filter Airport Data by US State
 
-1. Start here...
+1. If not open, open the "Prepare US State Airport Data" notebook created in the previous exercise.
+
+1. Add a new Python cell to the end of the notebook.
+
+1. In the new cell, add a function named `parse_airport_data` which will receive raw airport data and return dictionay containing a `code` field and a `name` field. The `code ` field should be populated from the "Code" column of the "airports.csv" file. The `name` field should be populate from the "Description" column of the "airports.csv" file.
+
+```python
+def parse_airport_data(airport_data):
+    
+    # skip first character (a double quote), and start with second character (index = 1)
+    airport_data_start = 1
+    
+    # ignore last character (a double quote), minus 2 because of zero-based indexes
+    airport_data_end = len(airport_data) - 2
+    
+    # slide off first and last character
+    airport_data_temp = airport_data[airport_data_start:airport_data_end]
+    
+    # split on quoted comma to get airport code and name
+    code, name = airport_data_temp.split('","')
+    return {
+        'code': code,
+        'name': name
+    }
+```
+
+1. Add a function named `filter_airports_by_state` to the new cell. The function will receive a list of airports and return a filtered list of airports for a particular state.
+
+```python
+def filter_airports_by_state(airports, filter_by_state_abbr):
+    
+    filtered_airports = []
+    formatted_state_abbr = ' ' + filter_by_state_abbr + ':'
+    
+    # in statement can be used with for-in loops to iterate over sequences and
+    # can be used with the if statement to check a sequence to see if it contains
+    # a value
+    for airport in airports:
+        if formatted_state_abbr in airport['name']:
+            filtered_airports.append(airport)
+    
+    return filtered_airports
+```
+
+1. Add a function named `airport_to_csv` to the new cell. The function will return an airport formatted to be a row of CSV data.
+
+```python
+def airport_to_csv(airport):
+    return '"' + airport['code'] + '","' + airport['name'] + '"'
+```
+
+1. Declare a new variable named `all_airports` and initialize it to an empty list. Iterate over all of the airport data, parse each item of airport data and append it to the `all_airports` list.
+
+```python
+all_airports = []
+for airport_data in all_airports_data:
+    all_airports.append(parse_airport_data(airport_data))
+```
+
+1.  Use the `state_abbr` variable whose value was capture by the `input` statement and produce a list of airports filtered by the state abbreviation. Store the filtered list in a variable named `state_airports`.
+
+```python
+state_airports = filter_airports_by_state(all_airports, state_abbr)
+```
+
+1. Create a new variable named `state_airports_data` and initialize it to an empty string. Iterate over the list of `state_airports` and produce a string of newline separated state airport CSV formatted date. 
+
+```python
+state_airports_data = ''
+for state_airport in state_airports:
+    state_airports_data = state_airports_data + airport_to_csv(state_airport) + '\n'
+```
+
+1. Print the string of `state_airports_data` to ensure the data was extracted as expected.

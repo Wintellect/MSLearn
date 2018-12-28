@@ -143,5 +143,32 @@ else:
 
 ### Exercise: Importing Airport Data
 
-1. Start here...
+1. If not open, open the "Prepare US State Airport Data" notebook created in the previous exercise.
 
+1. Add a new Python cell to the end of the notebook.
+
+1. In the new cell, create a new variable to store the list of airports which will be imported from the "airports.csv" file.
+
+```python
+all_airports_data = []
+```
+
+1. Open a the "airports.csv" file using the `with` statement syntax:
+
+```python
+with open(airport_file_name, 'r') as airport_file:
+```
+
+1. Within the `with` statement block check the `airport_file_has_header` variable to see if there is a header to ignore. If there is, use the `readline` function to skip the header.
+
+```python
+    if airport_file_has_header:
+        airport_file.readline()
+```
+
+1. Read each line of airport data and append it to the list of airports:
+
+```python
+    for airport_data in airport_file:
+        all_airports_data.append(airport_data)
+```
