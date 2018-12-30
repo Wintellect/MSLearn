@@ -154,7 +154,7 @@ Now let's put what you have learned abut functions to work in the notebook you a
 
 1. Return to the Azure notebook that you created previously.
 
-	![Jupyter notebook in Azure](../media/2-initial-notebook.png)
+	![Jupyter notebook in Azure](media/2-initial-notebook.png)
 
 	_Jupyter notebook in Azure_
 

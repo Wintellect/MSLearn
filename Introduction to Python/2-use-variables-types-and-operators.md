@@ -270,7 +270,7 @@ TODO: Add introduction.
 
 1. Return to the Azure notebook that you created in the previous exercise.
 
-	![Jupyter notebook in Azure](../media/2-initial-notebook.png)
+	![Jupyter notebook in Azure](media/2-initial-notebook.png)
 
 	_Jupyter notebook in Azure_
 

@@ -156,19 +156,19 @@ with open('./colors.txt', 'w') as color_file:
 
 On Windows, the above Python code produces the following file content:
 
-![Windows Line Endings](../media/windows-line-endings.png)
+![Windows Line Endings](media/windows-line-endings.png)
 
 On Unix-variants (macOS and Linux), the same code outputs the following file content:
 
-![Unix-variant Line Endings](../media/unix-variant-line-endings.png)
+![Unix-variant Line Endings](media/unix-variant-line-endings.png)
 
 Observe that the Windows version contains two dots between the colors and the Unix-variant version contains one dot between the colors. The dots represent the carriage return '\r' and line feed '\n' characters. Observe in the screenshot below, the hexadecimal values for the carriage return (0D) and newline (0A) in the file saved on Windows.
 
-![Windows Line Endings Hexadecimal](../media/windows-line-endings-hex.png)
+![Windows Line Endings Hexadecimal](media/windows-line-endings-hex.png)
 
 Next, observe the new line (0A) only hexadecimal value for the file saved on a Unix-variant.
 
-![Unix-variant Line Endings Hexadecimal](../media/unix-variant-line-endings-hex.png)
+![Unix-variant Line Endings Hexadecimal](media/unix-variant-line-endings-hex.png)
 
 Same Python code and same data, yet different results because of the operating system upon which Python was executing.
 
@@ -176,7 +176,7 @@ Same Python code and same data, yet different results because of the operating s
 
 Another important consideration is file encoding (also known as character encoding). Computers represent a character as a number. For example, in the previous screenshots, the characters are stored as hexadecimal numbers. The new line is the hexadecimal number 0A which has a decimal value of 10.  The letter 'r' has a hexadecimal value of 72 which has a decimal value of 114.
 
-![Character Encoding](../media/character-encoding.png)
+![Character Encoding](media/character-encoding.png)
 
 The number specifies a character in a look-up table. Specifying the character encoding is specifying which character lookup table is being used. Different tables have different purposes. In the early days of computing, a common encoding was the ASCII encoding. As computing became more internationalized more characters were needed so a new encoding called Unicode was created. Unicode comes in several flavors depending upon the number of characters which need to be supported within an application. The more characters supported by the look-up table the more memory and drive space the characters take.
 
@@ -203,7 +203,7 @@ print(locale.getpreferredencoding())
 
 The UTF-8 encoding can read ASCII files so if only older ASCII files or modern UTF-8 encoded files are the only sources of data then the defaults will work on most systems. However, if a data source is encoded in UTF-16 then the encoding will need to be set to read it. Also, if the output needs to be UTF-16 then the encoding will need to be set as well.
 
-![Character UTF-16 Encoding](../media/character-coding-utf-16.png)
+![Character UTF-16 Encoding](media/character-coding-utf-16.png)
 
 The above screenshot is the same color content produced earlier but this time the encoding is UTF-16. You will notice that characters take up twice as much space at UTF-8. If this UTF-16 content is read at UTF-8 the data will not be loaded correctly. To load this content into Python. the encoding parameter for the open function would need to be set to UTF-16.
 
@@ -213,7 +213,7 @@ TODO: Add introduction.
 
 1. Return to the Azure notebook that you created previously.
 
-	![Jupyter notebook in Azure](../media/2-initial-notebook.png)
+	![Jupyter notebook in Azure](media/2-initial-notebook.png)
 
 	_Jupyter notebook in Azure_
 

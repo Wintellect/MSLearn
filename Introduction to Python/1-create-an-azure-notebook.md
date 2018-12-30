@@ -61,19 +61,19 @@ The first order of business is to create an Azure notebook. Azure notebooks are 
 
 1. Create a new project named "Lab Notebooks" or something similar.
 
-	![Creating a project](../media/add-project.png)
+	![Creating a project](media/add-project.png)
 
 	_Creating a project_
 
 1. Click **+ New** and select **Notebook** from the menu to add a notebook to the project.
 
-	![Adding a notebook to the project](../media/add-notebook-1.png)
+	![Adding a notebook to the project](media/add-notebook-1.png)
 
 	_Adding a notebook to the project_
 
 1. Give the notebook a name such as "Prepare US State Airport Data.ipynb," and select **Python 3.6** as the language. This will create a notebook with a Python 3.6 kernel for executing Python code. One of the strengths of Azure notebooks is that you can use different languages by choosing different kernels.
 
-	![Creating a notebook](../media/add-notebook-2.png)
+	![Creating a notebook](media/add-notebook-2.png)
 
 	_Creating a notebook_
 
@@ -89,7 +89,7 @@ TODO: Add introduction.
 
 1. Change the first cell in the notebook to a markdown cell.
 
-	![Creating a markdown cell](../media/convert-to-markdown.png)
+	![Creating a markdown cell](media/convert-to-markdown.png)
 
 	_Creating a markdown cell_
 
@@ -111,7 +111,7 @@ TODO: Add introduction.
 
 1. Click the **Run** button to run the cell and add a new cell after it.
 
-	![Executing the first cell](../media/run-first-cell.png)
+	![Executing the first cell](media/run-first-cell.png)
 
 	_Executing the first cell_
 
@@ -125,7 +125,7 @@ TODO: Add introduction.
 
 1. Run the cell. Then type a state abbreviation and press **Enter**. Confirm that the abbreviation you typed is echoed to the screen.
 
-	![Executing the second cell](../media/run-second-cell.png)
+	![Executing the second cell](media/run-second-cell.png)
 
 	_Executing the second cell_
 
