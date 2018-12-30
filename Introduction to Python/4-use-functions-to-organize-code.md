@@ -130,7 +130,7 @@ display_message('Hello!', msg_type = 'ALERT')
 
 ### Lambda functions
 
-Lambda functions are anonymous functions defined on one line as a single expression. Commonly, they are passed directly as arguments to other functions.
+Lambda functions are anonymous functions (functions that have no name) defined on one line as a single expression. Commonly, they are passed directly as arguments to other functions.
 
 ```python
 add = lambda a,b: a + b
@@ -148,9 +148,9 @@ def op(theOp, a, b):
 print(op(lambda a,b: a + b, 1, 2))
 ```
 
-## Filter airport data by U.S. state
+## Filter airport data by US state
 
-Now let's put what you have learned abut functions to work in the notebook you are assembling.
+Now let's put what you have learned about functions to work in the notebook you are assembling.
 
 1. Return to the Azure notebook that you created previously.
 
