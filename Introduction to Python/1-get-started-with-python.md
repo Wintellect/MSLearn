@@ -8,7 +8,7 @@ Another popular way to get started with Python — one that requires nothing mor
 
 In this lesson, you will learn the basics of Python. Then you will create a Jupyter notebook in Azure Notebooks and use it to execute some simple Python code that reads input from the keyboard and echoes it to the screen.
 
-## Learn the basics of Python
+## Learn the basics of input and output
 
 A great way to get started with Python is learning how to read input from the keyboard, write output the screen, and include comments in your code.
 
