@@ -147,19 +147,17 @@ TODO: Add introduction.
 
 1. Return to the Azure notebook that you created previously.
 
-	![Jupyter notebook in Azure](media/2-initial-notebook.png)
+	![Jupyter notebook in Azure](media/3-initial-notebook.png)
 
 	_Jupyter notebook in Azure_
 
-1. Add a new Python cell to the end of the notebook.
-
-1. In the new cell, create a new variable to store the list of airports which will be imported from the "airports.csv" file.
+1. In the empty cell at the end of the notebook, create a new variable to store the list of airports which will be imported from **airports.csv**:
 
 	```python
 	all_airports_data = []
 	```
 
-1. Open a the "airports.csv" file using the `with` statement syntax:
+1. Open the **airports.csv** file using the `with` statement:
 
 	```python
 	with open(airport_file_name, 'r') as airport_file:

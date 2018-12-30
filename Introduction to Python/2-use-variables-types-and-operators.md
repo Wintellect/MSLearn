@@ -97,7 +97,7 @@ If the string contains the same quotation mark as the one used to quote the stri
 x = 'Tim said, \'Hello World!\''
 print(x) # outputs: Tim said, 'Hello World!'
 ```
-String objects come with an extensive API (Application Programming Interface) for string manipulations. For example, the `upper` function can be called on any string. It changes a string's characters to all uppercase:
+String objects come with an extensive API (Application Programming Interface) for manipulating them. For example, the `upper` function can be called on any string. It changes a string's characters to all uppercase:
 
 ```python
 message = 'Hello'
@@ -125,7 +125,7 @@ print(message) #outputs: This was fun!
 
 ### Working with sequences
 
-Sequences holds collections of data: integers, strings, and so on. In Python, strings are sequences that hold collections of characters.
+Sequences hold collections of data: integers, strings, and so on. In Python, strings are sequences that hold collections of characters.
 
 One of the most useful features of sequences is *slicing*, which allows you to easily extract a part of the sequence. As an example, the following code extracts three characters from a string and prints them to the screen:
 
@@ -136,15 +136,15 @@ print(x[12:15]) # outputs: fun
 
 Square brackets are used to perform the slicing, and the numbers indicate the starting and ending indexes of the slice. The first character has an index of zero. (This is known as zero-based indexing and is common to most, but not all, programming languages.) The second character has an index of 1, the third character has an index of 2, and so on. The sequence value — for a string, the character value — of the ending index is not included in the sliced data.
 
-Python is famous for the power of its slicing abilities. The ability to slice data is heavily used in Python applications, especially when performing numerically intensive tasks such as statistical analysis and machine learning.
+Python is famous for its slicing capabilities. The ability to slice data is heavily used in Python applications, especially when performing numerically intensive tasks such as statistical analysis and machine learning.
 
 ### Working with lists
 
-Another commonly used sequence is the *list*. The list is a sequence of any type and is analogous to arrays in other programming languages. Lists are mutable (they can be changed), which means items can be added and removed from the list.
+Another commonly used sequence is the *list*. The list is a sequence of any type and is analogous to arrays in other programming languages. Lists are mutable (they can be changed), which means items can be added and removed from them.
 
 > The terms *mutable* and *immutable* are frequently used in the programming. Mutable means the memory referenced by a variable can be changed. Immutable means the memory referenced by a variable cannot be changed. For example, strings are immutable. If you modify a string in code, a new string is created in memory to hold the modified string. Lists are mutable, meaning items can freely be added and removed.
 
-To create a list, wrap a sequence of values and separate each item in the list with commas:
+To create a list, wrap a sequence of values in square brackets and separate each item in the list with commas:
 
 ```python
 nums = [1,2,3,4,5]
@@ -209,7 +209,7 @@ print(colors_data) # outputs: 'red,green,blue'
 
 ### Understanding the `None` value
 
-Most programming languages have some kind of value that represents an absence of a value. It can go by many different names: null, nil, and undefined are just a few examples. In Python, the keyword `None` represents the absence of a value:
+Most programming languages have some kind of value that represents an absence of a value. It goes by many different names, depending on the language: null, nil, and undefined are just a few examples. In Python, the keyword `None` represents the absence of a value:
 
 ```python
 some_var = None
@@ -229,14 +229,14 @@ Like many programming languages, Python supports the concept of "truthy" and "fa
 
 ## Operators
 
-Python expressions use operators to calculate new values. The behavior of operators is determined by the type of data to which the operator is being applied. For example, using the `+` operator with numbers computes the sum of the numbers. Using it with strings concatenates the strings:
+Python expressions use operators to calculate new values. The behavior of operators is determined by the type of data to which the operator is applied. For example, using the `+` operator with numbers computes the sum of the numbers. Using it with strings concatenates the strings:
 
 ```python
 print('a' + 'a') # outputs: aa
 print(1 + 1) # outputs: 2
 ```
 
-Some operators are applied to one value (the value is the result of another expression). These are known as *unary operators*. For example, the `not` operator outputs `False` for a `True` value and `True` for a `False` value:
+Some operators are applied to one value. These are known as *unary operators*. For example, the `not` operator outputs `False` for a `True` value and `True` for a `False` value:
 
 ```python
 print(not True) # outputs: False
@@ -251,7 +251,7 @@ print(1 + 1.0) # Valid because both 1 and 1.0 are numbers, the output is 2.0
 You can even add an integer to a Boolean value since Booleans are stored as numbers internally:
 
 ```python
-print(1 + 1.0) # Valid because both 1 and 1.0 are numbers, the output is 2.0
+print(1 +  True) # Valid because booleans are an integral type, the output is 2
 ```
 
 You cannot, however, add an integer to a string. The following statement produces an error:
@@ -313,4 +313,10 @@ Now that you understand the basics of variables, data types, and operators, let'
 	state_airport_file_name = state_abbr.lower() + '_airports.csv'
 	```
 	
-Finish up running the cell and using the **File** -> **Save and Checkpoint** command to save the notebook. There is no output from any of the statements you added. These variables will be used in future lessons.
+1. Run the cell. Note that there is no output from any of the statements you added. The variables that you defined will be used in future lessons.
+
+	![Running the cell](media/3-run-cell.png)
+	
+	_Running the cell_
+
+Finish up by using the **File** -> **Save and Checkpoint** command to save the notebook.
