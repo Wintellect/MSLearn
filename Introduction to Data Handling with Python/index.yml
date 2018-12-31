@@ -1,0 +1,33 @@
+### YamlMime:Module
+uid: learn.building-neural-networks-with-keras
+metadata:
+  title: Building Neural Networks with Keras - Learn
+  description: Use Keras to build a neural network that scores text for sentiment.
+  ms.date: 09/24/2018
+  author: lnyswonger
+  ms.author: luken
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  #ms.learn-contact: luken
+title: Building Neural Networks with Keras
+summary: CreUse Keras to build a neural network that scores text for sentiment.
+abstract:  | 
+  In this module, you will:
+  - Create a Jupyter notebook in Azure Notebooks
+  - Use Keras to build and train a neural network to perform sentiment analysis
+  - Use the neural network to analyze text for sentiment 
+prerequisites: None
+iconUrl: /learn/achievements/building-neural-networks-with-keras.svg
+levels:
+- beginner
+roles:
+- developer
+products:
+- azure
+units:
+- learn.building-neural-networks-with-keras.0-introduction
+- learn.building-neural-networks-with-keras.1-create-an-azure-notebook
+- learn.building-neural-networks-with-keras.2-build-and-train-a-neural-network
+- learn.building-neural-networks-with-keras.3-use-neural-network-to-analyze-text-for-sentiment
+- learn.building-neural-networks-with-keras.4-summary-and-knowledge-check
+achievement: learn.building-neural-networks-with-keras.badge 
