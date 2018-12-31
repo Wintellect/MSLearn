@@ -235,3 +235,48 @@ with open('./airports_avg_delay_sorted.csv', 'w') as airports_delay_avg_delay_so
 ```
 
 The list `airport_delays_monthly_avgs` is written to a CSV file named 'airports_avg_delay_sorted.csv'. Python's `csv` module will take care of formatting the CSV content correctly. The final outputed file will contain some basic statistics of departure delays at US airpots in the month of October 2018.
+
+1. Add a new cell to the bottom of the notebook, add the following code, then run the cell.
+
+```python
+%matplotlib inline
+
+import matplotlib.pyplot as plt
+```
+
+Let's generate some plots of the data.
+
+1. Add a new cell to the bottom of the notebook, add the following code, then run the cell.
+
+```python
+delay_means = np.array([a[3] for a in airport_delays_monthly_avgs])
+
+plt.hist(delay_means, bins=7, align='mid')
+
+plt.show()
+```
+
+The first plot is a histogram of the delay in minutes per airport. Most the delay lengths occur at the lower range (this is good for flyers).
+
+1. Add a new cell to the bottom of the notebook, add the following code, then run the cell.
+
+```python
+num_of_flights = np.array([a[5] for a in airport_delays_monthly_avgs])
+
+plt.hist(num_of_flights, bins=7, align='mid')
+
+plt.show()
+```
+
+The second plot is a histogram of the number of flights per airport. Most airports are doing less than 5000 flights per month.
+
+1. Add a new cell to the bottom of the notebook and add the following code.
+
+```python
+plt.scatter(delay_means, num_of_flights)
+
+plt.show()
+```
+
+A scatter plot does an x,y plot of two variables. Scatter plots are used for variety of purposes including trying to discover relationships between two different variables. This is a scatter plot of the delay in minutes versus the number of flights at the same airpot. Not much information can be gained from this particular scatter plot except to say that high volume airports appear to do well in terms of keeping delays to a minimum.
+
