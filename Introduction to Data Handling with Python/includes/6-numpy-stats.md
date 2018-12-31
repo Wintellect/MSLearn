@@ -1,11 +1,91 @@
 # Performing basic stats calculations with numpy
 
+One of the features of NumPy is the ability to generate statistics based upon the values in a NumPy array. Generating statistics from a NumPy array should be much faster than using standard Python data structures such as lists. 
 
 ## Performing Calculations on an Array Exercise
 
-1. Create a new Jupyter notebook named 'NumPy Stats Exercises' in Azure Notebooks.
+1. Create a new Jupyter notebook named 'NumPy Stats Exercise' in Azure Notebooks.
 
-2. In the first cell, add the following code.
+1. In the first cell, add the following code, and run the cell.
+
+```python
+import numpy as np
+```
+
+The `as` statement enable the thing being imported to be aliased to another name. Generally, the `numpy` module is imported with an alias of `np`.
+
+1. Add a new cell, add the following code, and run the cell.
+
+```python
+nums = np.array([ 1, 2, 2, 4, 5, 5, 7, 8, 9 ])
+```
+
+1. Add a new cell, add the following code, and run the cell.
+
+```python
+len(nums)
+```
+
+1. Add a new cell, add the following code, and run the cell.
+
+```python
+nums.sum()
+```
+
+1. Add a new cell, add the following code, and run the cell.
+
+```python
+nums.min()
+```
+
+1. Add a new cell, add the following code, and run the cell.
+
+```python
+nums.max()
+```
+
+1. Add a new cell, add the following code, and run the cell.
+
+```python
+nums.ptp()
+```
+
+1. Add a new cell, add the following code, and run the cell.
+
+```python
+np.median(nums)
+```
+
+1. Add a new cell, add the following code, and run the cell.
+
+```python
+nums.std()
+```
+
+1. Add a new cell, add the following code, and run the cell.
+
+```python
+nums.var()
+```
+
+1. Add a new cell, add the following code, and run the cell.
+
+```python
+from scipy import stats
+```
+
+1. Add a new cell, add the following code, and run the cell.
+
+```python
+stats.mode(nums)
+```
+
+1. Add a new cell, add the following code, and run the cell.
+
+```python
+stats.describe(nums)
+```
+
 
 
 ## Airline Data Exercise: Calculating Some Basic Stats for Ontime Flight Data
@@ -14,7 +94,7 @@ The airline data exercise results in a Jupyter notebook which will load and anal
 
 1. Open the Jupyter notebook named 'Airline Data Exercise' in Azure Notebooks. You may want to make a duplicate copy of this notebook before attempting this exercise.
 
-1. Add a new cell to the bottom of the notebook and add the following code.
+2. Add a new cell to the bottom of the notebook and add the following code.
 
 ```python
 airport_delays_monthly_avgs = []

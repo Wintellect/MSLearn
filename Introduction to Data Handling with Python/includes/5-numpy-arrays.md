@@ -1,5 +1,6 @@
 # Using numpy arrays
 
+Python data structures such as lists and dictionaries do perform well in terms of raw performance. Because of Python's approach to memory management structures such as lists and dictionaries are easy to work with but when those structures are used with CPU intensive code their slowness becomes very evident. Fortunately, many packages written in C and C++ have been written for Python which allow Python's easy to use syntax while storing and manipulating the date in much better performing, lower level data structures. On such library is NumPy. NumPy is used for processing lots of numeric data quickly.
 
 ## Creating an Array Exercise
 
