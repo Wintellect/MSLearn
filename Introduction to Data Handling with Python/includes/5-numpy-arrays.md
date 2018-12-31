@@ -62,10 +62,81 @@ print(nums)
 
 1. If not already open, open the same notebook you created for the creating an array exercise.
 
+1. Add a new cell, add the following code, and run the cell.
+
+```python
+data = [ 1, 2, 3, 4, 5 ]
+
+nums = np.array(data)
+
+print(type(nums[0]))
+
+print(nums)
+
+nums = np.array(data, dtype=float)
+
+print(type(nums[0]))
+
+print(nums)
+```
+
+1. Add a new cell, add the following code, and run the cell.
+
+```python
+results = np.array([
+  [ 2.12 ],
+  [ 5.83 ],
+  [ 9.25 ],
+  [ 3.71 ],
+  [ 7.26 ],
+])
+
+print(results)
+```
+
+1. Add a new cell, add the following code, and run the cell.
+
+```python
+results = np.array([
+  [ 'sample a', 2.12 ],
+  [ 'sample b', 5.83 ],
+  [ 'sample c', 9.25 ],
+  [ 'sample d', 3.71 ],
+  [ 'sample e', 7.26 ],
+])
+
+print(results)
+
+print(type(results[0,1]))
+```
+
+1. Add a new cell, add the following code, and run the cell.
+
+```python
+results = np.array([
+  ( 'sample a', 2.12 ),
+  ( 'sample b', 5.83 ),
+  ( 'sample c', 9.25 ),
+  ( 'sample d', 3.71 ),
+  ( 'sample e', 7.26 )
+], dtype=[ ('sample', 'S8'), ('value', 'f4') ])
+
+print(results)
+
+print(results['value'])
+```
 
 ## Extracting Unique Values Exercise
 
 1. If not already open, open the same notebook you created for the structure arrays exercise.
+
+1. Add a new cell, add the following code, and run the cell.
+
+```python
+nums = np.array([ 1, 2, 2, 5, 8, 7, 3, 0, 1, 4, 3, 5 ])
+
+print( np.unique(nums) )
+```
 
 
 ## Airline Data Exercise: Creating a Numpy Array of Ontime Flight Data
@@ -74,7 +145,7 @@ The airline data exercise results in a Jupyter notebook which will load and anal
 
 1. Open the Jupyter notebook named 'Airline Data Exercise' in Azure Notebooks. You may want to make a duplicate copy of this notebook before attempting this exercise.
 
-1. Add a new cell at the bottom of the notebook, and add the following code.
+2. Add a new cell at the bottom of the notebook, and add the following code.
 
 ```python
 ontime_rows = []
