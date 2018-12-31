@@ -351,3 +351,80 @@ with the following code:
 ```
 
 Run the entire notebook and ensure the same results are achieved as before. The output for the state and airports length should be 67 and 6510, respectively.
+
+1. Replace the contents of the 5th cell, the `create_airport` function, with the following code.
+
+```python
+class Airport:
+
+  def __init__(self, airport, states):
+
+    code = airport[0]
+    name = ''
+    city = ''
+    state_label = ''
+    state_name = ''
+    country = ''
+
+    desc_parts = split_strip(airport[1], ':')
+
+    if len(desc_parts) == 2:
+
+      location, name = desc_parts
+      location_parts = split_strip(location)
+
+      if len(location_parts) == 2:
+        city = location_parts[0]
+        state_code = location_parts[1]
+
+        if state_code in states:
+          state = states[state_code]
+          state_name = state.name
+          state_label = state.label
+          country = state.country
+        else:
+          country = state_code
+
+    else:
+      name = desc_parts[0]
+
+    self.code = code
+    self.name = name
+    self.city = city
+    self.state_name = state_name
+    self.state_label = state_label
+    self.country = country 
+```
+
+1. Find the 6th cell with the following code.
+
+```python
+  def load_airports(airport_csv_file_name, states):
+
+    airports = {}
+
+    with open(airport_csv_file_name, 'r') as airports_csv_file:
+        airports_csv_file_reader = csv.reader(airports_csv_file, delimiter=',')
+        for airport_line_number, airport_data in enumerate(airports_csv_file_reader):
+            if airport_line_number == 0: continue
+            airport = create_airport(airport_data, states)
+            airports[airport['code']] = airport
+        
+    return airports
+```
+
+Replace the code:
+
+```python
+            airport = create_airport(airport_data, states)
+            airports[airport['code']] = airport
+```
+
+with the following code:
+
+```python
+            airport = Airport(airport_data, states)
+            airports[airport.code] = airport
+```
+
+Run the entire notebook and ensure the same results are achieved as before. The output for the state and airports length should be 67 and 6510, respectively.

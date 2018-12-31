@@ -53,7 +53,9 @@ def load_states(states_csv_file_name):
       states[state.code] = state  
   return states
 
-def create_airport(airport, states):
+class Airport:
+
+  def __init__(self, airport, states):
 
     code = airport[0]
     name = ''
@@ -84,15 +86,13 @@ def create_airport(airport, states):
     else:
       name = desc_parts[0]
 
-    return {
-        'code': code,
-        'name': name,
-        'city': city,
-        'state_name': state_name,
-        'state_label': state_label,
-        'country': country 
-    }
-
+    self.code = code
+    self.name = name
+    self.city = city
+    self.state_name = state_name
+    self.state_label = state_label
+    self.country = country
+    
 def load_airports(airport_csv_file_name, states):
 
   airports = {}
@@ -100,9 +100,9 @@ def load_airports(airport_csv_file_name, states):
   with open(airport_csv_file_name, 'r') as airports_csv_file:
       airports_csv_file_reader = csv.reader(airports_csv_file, delimiter=',')
       for airport_line_number, airport_data in enumerate(airports_csv_file_reader):
-          if airport_line_number == 0: continue
-          airport = create_airport(airport_data, states)
-          airports[airport['code']] = airport
+            if airport_line_number == 0: continue
+            airport = Airport(airport_data, states)
+            airports[airport.code] = airport
       
   return airports
 ```
@@ -173,7 +173,9 @@ def load_states(states_csv_file_name):
       states[state.code] = state  
   return states
 
-def create_airport(airport, states):
+class Airport:
+
+  def __init__(self, airport, states):
 
     code = airport[0]
     name = ''
@@ -204,15 +206,13 @@ def create_airport(airport, states):
     else:
       name = desc_parts[0]
 
-    return {
-        'code': code,
-        'name': name,
-        'city': city,
-        'state_name': state_name,
-        'state_label': state_label,
-        'country': country 
-    }
-
+    self.code = code
+    self.name = name
+    self.city = city
+    self.state_name = state_name
+    self.state_label = state_label
+    self.country = country
+    
 def load_airports(airport_csv_file_name, states):
 
   airports = {}
@@ -220,9 +220,9 @@ def load_airports(airport_csv_file_name, states):
   with open(airport_csv_file_name, 'r') as airports_csv_file:
       airports_csv_file_reader = csv.reader(airports_csv_file, delimiter=',')
       for airport_line_number, airport_data in enumerate(airports_csv_file_reader):
-          if airport_line_number == 0: continue
-          airport = create_airport(airport_data, states)
-          airports[airport['code']] = airport
+            if airport_line_number == 0: continue
+            airport = Airport(airport_data, states)
+            airports[airport.code] = airport
       
   return airports
 ```
