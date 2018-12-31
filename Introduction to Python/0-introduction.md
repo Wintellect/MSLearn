@@ -1,12 +1,18 @@
 # Introduction
 
-Python is one of the most popular programming languages in the world. Created in the early 1990s by Guido van Rossum, Python is used for many kinds of computing activities such as web applications, data science, machine learning, and even system administration tasks. Contributing to Python’s popularity is it's easy to understand syntax, large number built-in functions (known as an API) and a large number of scientific and mathematics packages. In addition to the qualities of the language, there is a huge community of Python developers which can help new Python developers to learn Python and the Pythonic way of doing things. The Pythonic way refers to following coding practices which are generally accepted by the community to make development easier for everyone.
+[Python](https://en.wikipedia.org/wiki/Python_(programming_language)) is one of the most popular programming languages in the world. Created in the early 1990s, its many uses include scripting repetitive tasks, writing Web applications, building and training machine-learning models, and implementing neural networks. Researchers, mathematicians, and data scientists in particular find Python alluring due to its rich and easy-to-understand syntax and the wide range of open-source packages available for data analysis and manipulation. Just a few of those packages include:
 
-For many people, Python is the very first language they learn. Many of those people are not traditional software developers; rather, they are practitioners in other fields such as scientific research and Python is just another tool to help them do their primary more effectively. For others, Python is a great additional programming tool to add to their toolbox.
+- [NumPy](http://www.numpy.org/), which adds sophisticated scientific and numerical computing capabilities to Python with its support for large, multidimensional arrays and matrices and functions for operating on them
+- [Matplotlib](https://matplotlib.org/), a 2D plotting library that allows you to create visually rich graphs, charts, and plots from your data
+- [Pandas](https://pandas.pydata.org/), which provides a rich interface for manipulating complex datasets in memory and is widely used to shape data for use in training machine-learning models
+- [Scikit-learn](https://scikit-learn.org/stable/), which vastly simplifies the task of building machine-learning models using a variety of learning algorithms, both [supervised](https://en.wikipedia.org/wiki/Supervised_learning) and [unsupervised](https://en.wikipedia.org/wiki/Unsupervised_learning)
+- [Keras](https://keras.io/), which lets you build sophisticated neural networks — including deep [convolutional neural networks](https://en.wikipedia.org/wiki/Convolutional_neural_network), which have revolutionized the field of computer vision — with just a few lines of code
 
-Applications coded with Python can run on almost all computer systems including Microsoft Windows, Apple's MacOS, Linux (all distributions) and on local and cloud-based systems. Furthermore, there is a rich set of development tools to help code, debug and publish Python applications. Popular tools include Microsoft's Visual Studio Code and Azure's hosted Jupyter Notebooks.
+Applications coded with Python can run on almost all computer systems including those running Windows, macOS, and popular distributions of Linux. Furthermore, there is a rich set of development tools available to help write, debug, and publish Python applications, as well as an active user community that is eager to help new programmers learn the [Pythonic way](https://docs.python-guide.org/writing/style/).
 
-So whether this is your first language or just your next language, and whether you are a software developer or a professional in another field, this tutorial will walk you through the basics of learning the Python language through a scenario-based approach. The goal is to learn not only the academic side of Python but also begin to apply it to solve real-world problems. Furthermore, while this tutorial is not teaching topics like data science or machine learning, many of the examples are coding tasks which would be commonly performed in such computing fields.
+Imagine that you've been tasked with downloading a collection of data from a U.S. Government Web site and presenting it in such a way that colleagues can glean information from the data by viewing it in different ways. Perhaps you are experienced with other programming languages such as Java and C++, or perhaps you aren't a programmer at all. Nonetheless, a little time invested in learning Python can make short work of the task at hand.
+
+In a series of lessons, you will learn the basics of Python as you build a simple app that slices and dices a large dataset in response to user input. Along the way, you will learn about one of the most useful tools available to Python programmers: [Jupyter notebooks](http://jupyter.org/), which provide an interactive platform for writing and testing Python code and require no local software installs.   
 
 ## Learning objectives
 
@@ -15,3 +21,6 @@ In this module, you will learn:
 - How to create a Jupyter notebook in Azure
 - The basics of Python, including variables, functions, and conditionals 
 - How to perform practical problem solving with Python and Jupyter notebooks
+- How to tk
+- How to tk
+- How to tk
