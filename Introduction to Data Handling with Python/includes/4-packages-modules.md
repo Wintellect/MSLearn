@@ -6,7 +6,14 @@ Within packages and within projects code can be organized with modules. In Pytho
 
 ## Packages Exercises
 
+1. Create a new Jupyter notebook named 'Package and Module Exercises' in Azure Notebooks.
+
+2. In the first cell, add the following code.
+
+
 ## Module Exercies
+
+1. If not already open, open the same notebook you created for the packages exercise.
 
 
 ## Airline Data Exercise: Dividing an Notebook into Modules and using a Package

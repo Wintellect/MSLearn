@@ -60,7 +60,7 @@ Observe how the same `get_full_name` function is called on both person objects. 
 
 ## Defining a Class Exercise
 
-1. Create a new Jupyter notebook named 'Classes Exercise' in Azure Notebooks.
+1. Create a new Jupyter notebook named 'Class Exercises' in Azure Notebooks.
 
 1. To define a class the `class` statement is used. In the first cell add the following code.
 

@@ -1,6 +1,23 @@
 # Using numpy arrays
 
 
+## Creating an Array Exercise
+
+1. Create a new Jupyter notebook named 'NumPy Array Exercises' in Azure Notebooks.
+
+2. In the first cell, add the following code.
+
+
+## Structured Arrays Exercise
+
+1. If not already open, open the same notebook you created for the creating an array exercise.
+
+
+## Extracting Unique Values Exercise
+
+1. If not already open, open the same notebook you created for the structure arrays exercise.
+
+
 ## Airline Data Exercise: Creating a Numpy Array of Ontime Flight Data
 
 The airline data exercise results in a Jupyter notebook which will load and analyze airport, state and ontime flight data from the Bureau of Transportation Statistics. In this fifth exercise within the module, the ontime flight data will be combined with the airport and state data to create a numpy array.

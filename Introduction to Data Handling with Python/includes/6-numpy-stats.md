@@ -1,5 +1,13 @@
 # Performing basic stats calculations with numpy
 
+
+## Performing Calculations on an Array Exercise
+
+1. Create a new Jupyter notebook named 'NumPy Stats Exercises' in Azure Notebooks.
+
+2. In the first cell, add the following code.
+
+
 ## Airline Data Exercise: Calculating Some Basic Stats for Ontime Flight Data
 
 The airline data exercise results in a Jupyter notebook which will load and analyze airport, state and ontime flight data from the Bureau of Transportation Statistics. In this sixth exercise within the module, the ontime flight data will be used to calculate some basic stats.

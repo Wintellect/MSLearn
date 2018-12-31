@@ -8,7 +8,7 @@ In Python, indexed collections are called sequences and key/value pair collectio
 
 In this exercise, Python tuples will be explored. Tuples are used all of the time in Python. There are nothing more than a short sequence of values where the sequence is immutable once created. Tuples are commonly used to return multiple value from a function.
 
-1. Create a new Jupyter notebook named 'Sequences and Maps Exercise' in Azure Notebooks.
+1. Create a new Jupyter notebook named 'Sequence and Map Exercises' in Azure Notebooks.
 
 2. Type the following code into notebook cell and run the cell:
 

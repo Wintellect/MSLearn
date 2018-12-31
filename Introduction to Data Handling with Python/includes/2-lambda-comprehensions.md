@@ -6,7 +6,7 @@ Comprehensions are terse syntax for performing iteration operations over a colle
 
 ## Lambdas Exercise
 
-1. Create a new Jupyter notebook named 'Lambdas and Comprehensions Exercise' in Azure Notebooks.
+1. Create a new Jupyter notebook named 'Lambda and Comprehension Exercises' in Azure Notebooks.
 
 2. In the first cell, add the following code.
 
