@@ -6,8 +6,57 @@ Python data structures such as lists and dictionaries do perform well in terms o
 
 1. Create a new Jupyter notebook named 'NumPy Array Exercises' in Azure Notebooks.
 
-2. In the first cell, add the following code.
+1. In the first cell, add the following code, and run the cell.
 
+```python
+import numpy as np
+```
+
+The `as` statement enable the thing being imported to be aliased to another name. Generally, the `numpy` module is imported with an alias of `np`.
+
+1. Add a new cell, add the following code, and run the cell.
+
+```python
+data = [ 1, 2, 3, 4, 5 ]
+
+nums = np.array(data)
+
+print(nums)
+```
+
+1. Add a new cell, add the following code, and run the cell.
+
+```python
+print(nums[2:4])
+```
+
+1. Add a new cell, add the following code, and run the cell.
+
+```python
+double_nums = nums * 2
+
+print(double_nums)
+```
+
+1. Add a new cell, add the following code, and run the cell.
+
+```python
+print(np.arange(1, 10))
+```
+
+1. Add a new cell, add the following code, and run the cell.
+
+```python
+print(np.linspace(1, 10, 100))
+```
+
+1. Add a new cell, add the following code, and run the cell.
+
+```python
+nums = np.array(data, dtype=float)
+
+print(nums)
+```
 
 ## Structured Arrays Exercise
 

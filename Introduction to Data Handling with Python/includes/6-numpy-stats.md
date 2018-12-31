@@ -12,8 +12,6 @@ One of the features of NumPy is the ability to generate statistics based upon th
 import numpy as np
 ```
 
-The `as` statement enable the thing being imported to be aliased to another name. Generally, the `numpy` module is imported with an alias of `np`.
-
 1. Add a new cell, add the following code, and run the cell.
 
 ```python
