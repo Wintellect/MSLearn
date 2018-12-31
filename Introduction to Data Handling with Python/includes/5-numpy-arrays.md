@@ -195,6 +195,3 @@ print(len(airport_codes))
 The `np.unique` function returns an array of unique value from another array. The other array will be a list comprehension of the ontime data's airport codes. The `airport_code` needs to be decoded to UTF-8 because the NumPy array does not store the string as a UTF-8 encoded string inside of the array.
 
 Run the cell, and ensure length of the `ontime` NumPy array is 345.
-
-
-
