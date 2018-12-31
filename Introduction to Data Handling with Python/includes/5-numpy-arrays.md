@@ -72,6 +72,11 @@ nums = np.array(data)
 print(type(nums[0]))
 
 print(nums)
+```
+
+Observe that NumPy automatically determined the type of the array. Because all numbers are integers the array was typed as an integer array (int64 to be specific).
+
+1. Add a new cell, add the following code, and run the cell.
 
 nums = np.array(data, dtype=float)
 
@@ -79,6 +84,8 @@ print(type(nums[0]))
 
 print(nums)
 ```
+
+The `dtype` option enables the type of the array to be explicitly set. In this example, the type will be set to `float64` instead of `int64`. 
 
 1. Add a new cell, add the following code, and run the cell.
 
@@ -93,6 +100,8 @@ results = np.array([
 
 print(results)
 ```
+
+Because the numbers have a decimal point, the type of `results` will be an array of float arrays.
 
 1. Add a new cell, add the following code, and run the cell.
 
@@ -110,6 +119,8 @@ print(results)
 print(type(results[0,1]))
 ```
 
+Sometimes a string-typed label needs to be applied to data. When a string is added to the array of floats the entire array becomes an array of strings. NumPy uses whatever type will accomodate all of the data values in the array. 
+
 1. Add a new cell, add the following code, and run the cell.
 
 ```python
@@ -124,11 +135,19 @@ results = np.array([
 print(results)
 
 print(results['value'])
+
+print(results['sample'][0].decode('UTF-8'))
 ```
+
+If the array needs to support multiple types it is possible create a structured array. A structured array is an array where each element in the second dimension is specifically typed and accessed via a key instead of a numeric positional index. The list of lists for initializing the structured array needs to be a list of tuples. In this case, the first column will be a string with a length of 8 and the second column will be a float.
+
+The string stored in the sample column will not be stored as a UTF-8 string. UTF-8 encoding is the default string encoding for Python. To convert value back to UTF-8, the `decode` function is used.
+
+1. 
 
 ## Extracting Unique Values Exercise
 
-1. If not already open, open the same notebook you created for the structure arrays exercise.
+1. If not already open, open the same notebook you created for the structured arrays exercise.
 
 1. Add a new cell, add the following code, and run the cell.
 
@@ -137,6 +156,8 @@ nums = np.array([ 1, 2, 2, 5, 8, 7, 3, 0, 1, 4, 3, 5 ])
 
 print( np.unique(nums) )
 ```
+
+The `unique` function returns an array of unique values in the array. This function can be used for extracting the unique values and then using those values to extract all of the data from the array for each value.
 
 
 ## Airline Data Exercise: Creating a Numpy Array of Ontime Flight Data
