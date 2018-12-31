@@ -96,6 +96,67 @@ There is no need to run this command for this exercise. Just hold on to it for u
 
 1. If not already open, open the same notebook you created for the packages exercise.
 
+1. Create a new text file named 'my_module.py'. Add the following code to the new file.
+
+```python
+def do_it():
+  print('did it')
+```
+
+1. Add a new cell to the 'Package and Module Exercises' notebook. In the cell, add the following code.
+
+```python
+from my_module import do_it
+
+do_it()
+```
+
+Invoking the 'do_it' function should output the value 'did it'. The `from` statement allows the module to be specified and the `import` statement identifies was should be imported. Nothing everything defined within the module has to be imported.
+
+1. When working with Jupyter notebooks importing from another Jupyter notebook is common. In the packages exercise, we explored installing the `import_ipynb` module. The `import_ipynb` module allows Jupyter notebooks to be imported as modules into other Jupyter notebooks. Create new Jupyter Notebook named My Module.
+
+In the new notebook, add the following code:
+
+```python
+def do_it():
+  print('did it')
+```
+
+Save the notebook and close it.
+
+1. Add a new cell to the 'Package and Module Exercises', in the new cell add the following code.
+
+```python
+import sys
+!{sys.executable} -m pip install import_ipynb
+
+import import_ipynb
+
+from My_Module import do_it
+
+do_it()
+```
+
+Run the cell, the `do_it` function should output 'did it'. When importing a module the `from` statement must refer to the module using the same casing as the modules file name and any spaces must be changed to underscores in the `from` syntax.
+
+1. Many time the name of the Jupyter Notebook will not follow Python best practices and even include characters which Python's `from` syntax does not support. For situations such as this the `__import__` function can be used to import the module object from which the various functions and such can be referenced. Replace the code in the cell with the following code.
+
+```python
+import sys
+!{sys.executable} -m pip install import_ipynb
+
+import import_ipynb
+
+my_module = __import__('My Module')
+
+do_it = my_module.do_it
+
+do_it()
+```
+
+Run the cell, the `do_it` function should output 'did it'.
+
+Note: Sometimes when working with multiple files imported as module things will get out of sync. When things are not executing as expected do a 'Kernel Restart & Clear Output' for both the module notebook and the main notebook. Then run the module notebook, then run the main notebook and everything will be synced up.
 
 ## Airline Data Exercise: Dividing an Notebook into Modules and using a Package
 
@@ -103,7 +164,7 @@ The airline data exercise results in a Jupyter notebook which will load and anal
 
 1. Open the Jupyter notebook named 'Airline Data Exercise' in Azure Notebooks. You may want to make a duplicate copy of this notebook before attempting this exercise.
 
-1. Create a new text file in same folder as 'Airline Data Exercise' notebook. Rename the text file to 'airport_data.py'. Copy the following code from the 'Airline Data Exercise' notebook into the 'airport_data.py' file.
+2. Create a new text file in same folder as 'Airline Data Exercise' notebook. Rename the text file to 'airport_data.py'. Copy the following code from the 'Airline Data Exercise' notebook into the 'airport_data.py' file.
 
 ```python
 import csv
