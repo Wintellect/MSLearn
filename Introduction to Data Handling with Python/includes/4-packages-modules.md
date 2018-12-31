@@ -8,8 +8,89 @@ Within packages and within projects code can be organized with modules. In Pytho
 
 1. Create a new Jupyter notebook named 'Package and Module Exercises' in Azure Notebooks.
 
-2. In the first cell, add the following code.
+1. In the first cell, add the following code.
 
+```python
+import numpy
+```
+
+Run the cell, if the package is installed there will be no output. If the package is not installed, there will be an error. Most Jupyter notebook installations will have the `numpy` package installed.
+
+1. Replace the code in the first cell with the following code:
+
+```python
+import import_ipynb
+```
+
+Run the cell, most likely the package is not installed and there will be an error similar to this:
+
+```text
+---------------------------------------------------------------------------
+ModuleNotFoundError                       Traceback (most recent call last)
+<ipython-input-2-2044c9f20ccd> in <module>()
+----> 1 import import_ipynb
+
+ModuleNotFoundError: No module named 'import_ipynb'
+```
+
+1. To install the package from within a Jupyter Notebook, add the following code to the top of the cell.
+
+```python
+import sys
+!{sys.executable} -m pip install import_ipynb
+
+import import_ipynb
+```
+
+The exclamation mark instructs Jupyter notebooks to execute the line of code as a terminal command. The `sys.executable` is the path to the Python interpreter. The `-m` option tells Python to run `pip` the Python package management tool. The `install` command directs `pip` to install the `import_ipynb` package. The `import_ipynb` package will allow Jupyter notebooks to be imported into Jupyter notebooks. Because Jupyter notebooks do not follow the same format as a standard Python module this package is needed to properly handle the importing of the notebook.
+
+1. To install a package from a terminal window, open the terminal for Jupyter Notebooks. Run the following command from the terminal.
+
+```bash
+pip install import_ipynb
+```
+
+The `install` command for `pip` program will install the specified package. The output should look similar to this if the package is not installed:
+
+Collecting import_ipynb
+twisted 18.7.0 requires PyHamcrest>=1.9.0, which is not installed.
+Installing collected packages: import-ipynb
+Successfully installed import-ipynb-0.1.3
+
+1. To uninstall a package from a terminal window, open the terminal for Jupyter Notebooks. Run the following command from the terminal.
+
+```bash
+pip uninstall import_ipynb
+```
+
+The `uninstall` command for `pip` program will install the specified package. The output should look similar to this if the package is not installed:
+
+```text
+Uninstalling import-ipynb-0.1.3:
+  Would remove:
+    /home/ec2-user/anaconda3/lib/python3.7/site-packages/import_ipynb-0.1.3.dist-info/*
+    /home/ec2-user/anaconda3/lib/python3.7/site-packages/import_ipynb.py
+Proceed (y/n)? y
+  Successfully uninstalled import-ipynb-0.1.3
+```
+
+Installing and uninstalling a package from the terminal affects the packages used by the Jupyter notebooks as well.
+
+1. Commonly it is desired to save a list of all of the installed packages so that if the code is executed on different machine or a different environment the needed packages can be easily installed. To create a list of the packages a file named `requirements.txt` is created. Create a `requirements.txt` file using the following command:
+
+```bash
+pip freeze > requirements.txt
+```
+
+Observe the contents of the file. All of the installed packages and their versions will be listed.
+
+1. DO NOT RUN THIS COMMAND. To install of the packages for a `requirements.txt` file in a new environment run the following terminal command.
+
+```bash
+pip install -r requirements.txt
+```
+
+There is no need to run this command for this exercise. Just hold on to it for use in your future projects.
 
 ## Module Exercies
 
@@ -256,10 +337,9 @@ with the following code:
 import sys
 !{sys.executable} -m pip install import_ipynb
 
+import import_ipynb
 from Airport_Data_Module import load_states, load_airports
 ```
-
-The exclamation point instructs Jupyter notebooks to executing the line of code. The `sys.executable` is the path to the Python interpreter. The `-m` option tells Python to run `pip` the Python package management tool. The `install` command directs `pip` to install the `import_ipynb` package. The `import_ipynb` package will allow Jupyter notebooks to be imported into Jupyter notebooks. Because Jupyter notebooks do not follow the same format as a standard Python module this package is needed to properly handle the importing of the notebook.
 
 The name of the module will follow the casing of the notebook file name with spaces being replaced as underscores.
 
@@ -275,6 +355,7 @@ Rename the 'Aiport Data Module' notebook to 'Airline Data Exercise - Aiport Data
 import sys
 !{sys.executable} -m pip install import_ipynb
 
+import import_ipynb
 from Airport_Data_Module import load_states, load_airports
 ```
 
