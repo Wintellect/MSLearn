@@ -24,11 +24,15 @@ nums = np.array(data)
 print(nums)
 ```
 
+A common way to create a NumPy array is to initialize one with a Python list. In this code example, a Python list of numbers is passed to the `array` function and a NumPy array is returned.
+
 1. Add a new cell, add the following code, and run the cell.
 
 ```python
 print(nums[2:4])
 ```
+
+NumPy arrays support the same extended slicing syntax which Python sequences support.
 
 1. Add a new cell, add the following code, and run the cell.
 
@@ -38,11 +42,15 @@ double_nums = nums * 2
 print(double_nums)
 ```
 
+Another high performance feature of NumPy arrays are their support for vectorized operations. Instead of using a `for-in` loop, a map, or a list comprehension to multiple each element by 2, NumPy arrays use operator overloading to implement the multiple operator (and many others) to perform their operation on each item in the array. The operations are performed within the NumPy package leveraging its high performance code and data structures to transform the array.
+
 1. Add a new cell, add the following code, and run the cell.
 
 ```python
 print(np.arange(1, 10))
 ```
+
+The `arange` function will produce a new NumPy array starting from the value of the first argument and incrementing by to the value of the second argument, but not including the value of the second argument.
 
 1. Add a new cell, add the following code, and run the cell.
 
@@ -50,19 +58,13 @@ print(np.arange(1, 10))
 print(np.linspace(1, 10, 100))
 ```
 
-1. Add a new cell, add the following code, and run the cell.
-
-```python
-nums = np.array(data, dtype=float)
-
-print(nums)
-```
+The `linspace` function generates and array of numbers starting from the first argument to the last argument (inclusive). The third argument is the number of elements to be generated all equally spaced.
 
 ## Structured Arrays Exercise
 
 1. If not already open, open the same notebook you created for the creating an array exercise.
 
-1. Add a new cell, add the following code, and run the cell.
+2. Add a new cell, add the following code, and run the cell.
 
 ```python
 data = [ 1, 2, 3, 4, 5 ]
