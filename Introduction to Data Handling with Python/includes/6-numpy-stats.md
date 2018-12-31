@@ -155,6 +155,8 @@ The `randn` function generates an array of 1000 random numbers where the numbers
 
 ```python
 plt.hist(nums)
+
+plt.show()
 ```
 
 The `hist` function will plot a histogram of the random numbers. The random numbers were pulled from a normal distribution so the histogram will be in the shape of a bell.
@@ -163,6 +165,8 @@ The `hist` function will plot a histogram of the random numbers. The random numb
 
 ```python
 plt.hist(nums, bins=20)
+
+plt.show()
 ```
 
 ## Airline Data Exercise: Calculating Some Basic Stats for Ontime Flight Data
