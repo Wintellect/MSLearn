@@ -125,11 +125,45 @@ stats.describe(nums)
 
 Generating various descriptive statistics individually works, but the `scipy` module provides a `describe` function which will generate a number of values all at once. The `nobs` mean number of observations or the length. The `minmax` is a tuple of the minimum and maximum value. The `mean` is the average of the values. The `var` is the sample variance. By taking the square root of the variable the standard deviation can be easily calculated. The `skewness` and `kurtosis` are both additional measures of dispersion.
 
-
 ## Generate a Histogram with Matplotlib Exercise
 
+Matplotlib is very popular library for generating visualization of data. It is very customizable and has a very large and robust API for configuring just about everthing. In this exercise, we will take a quick look at generating simple visualization of data.
 
+1. Create a new Jupyter notebook named 'NumPy Stats Exercise' in Azure Notebooks.
 
+1. In the first cell, add the following code, and run the cell.
+
+```python
+%matplotlib inline
+
+import matplotlib.pyplot as plt
+```
+
+The first command `%matplotlib inline` is an IPython magic function instructing Jupyter notebooks to display the visualization inline within the notebook output. Because the `matplotlib` package is already installed in most Jupyter notebook installations, it simply needs to be imported.
+
+1. Add a new cell, then add a new the following code to the cell, and run the cell.
+
+```python
+nums = np.round(np.random.randn(1000) * 10)
+
+print(nums)
+```
+
+The `randn` function generates an array of 1000 random numbers where the numbers are generate using a normal distribution. There will be a higher concentration of number at the center and fewer on the ends. Using a vectorized multiplication operation each number is multiplied by 10. Then using the `round` function from NumPy each number is rounded to a integer.
+
+1. Add a new cell, add the following code to it, and run the cell.
+
+```python
+plt.hist(nums)
+```
+
+The `hist` function will plot a histogram of the random numbers. The random numbers were pulled from a normal distribution so the histogram will be in the shape of a bell.
+
+1. it is possible to specify the number of bins the value are placed in to generate the histogram. Using the `bins` argument set the number of bins to 20. Run the cell and observe the histogram.
+
+```python
+plt.hist(nums, bins=20)
+```
 
 ## Airline Data Exercise: Calculating Some Basic Stats for Ontime Flight Data
 
