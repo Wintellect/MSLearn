@@ -4,6 +4,8 @@ One of the features of NumPy is the ability to generate statistics based upon th
 
 ## Performing Calculations on an Array Exercise
 
+In this exercise, various calculation functions provided by `numpy` and `scipy` will be explored. The selected functions are mostly those which are used to generate descriptive statistics on a set of data. Descriptive statistics focus on measures of center (center of the data) and measures of dispersion (how spread out is the data). Such measures are commonly employed to get a better understand of the data before moving on to more advanced techniques.
+
 1. Create a new Jupyter notebook named 'NumPy Stats Exercise' in Azure Notebooks.
 
 1. In the first cell, add the following code, and run the cell.
@@ -15,56 +17,82 @@ import numpy as np
 1. Add a new cell, add the following code, and run the cell.
 
 ```python
-nums = np.array([ 1, 2, 2, 4, 5, 5, 7, 8, 9 ])
+nums = np.array([ 1, 2, 2, 2, 4, 5, 5, 7, 8, 8, 9 ])
 ```
+
+Create a new NumPy array of integer values.
 
 1. Add a new cell, add the following code, and run the cell.
 
 ```python
-len(nums)
+len(nums) # outputs: 11
 ```
+
+The `len` function returns the number items in the array.
 
 1. Add a new cell, add the following code, and run the cell.
 
 ```python
-nums.sum()
+nums.sum() # outputs: 53
 ```
+
+The `sum` function returns the sum of the items in the array.
 
 1. Add a new cell, add the following code, and run the cell.
 
 ```python
-nums.min()
+nums.min() # outputs: 1
 ```
+
+The `min` function is a measure of dispersion and returns the smallest value in the data set.
 
 1. Add a new cell, add the following code, and run the cell.
 
 ```python
-nums.max()
+nums.max() # outputs: 9
 ```
+
+The `max` function is a measure of dispersion and returns the largest value in the data set.
 
 1. Add a new cell, add the following code, and run the cell.
 
 ```python
-nums.ptp()
+nums.ptp() # outputs: 8
 ```
+
+The `ptp` or peak-to-peak function returns the range of the data, the difference between maximum and minimum value. The range is a measure of dispersion.
 
 1. Add a new cell, add the following code, and run the cell.
 
 ```python
-np.median(nums)
+np.mean(nums) # outputs: 4.818181818181818
 ```
+
+The `mean` is a measure of center and returns the average value. The mean is heavily influenced by outliers.
 
 1. Add a new cell, add the following code, and run the cell.
 
 ```python
-nums.std()
+np.median(nums) # outputs: 5.0
 ```
+
+1. The `median` is another measure of center and returns the middle item in the array. The median is not heavily influenced by outliers.
 
 1. Add a new cell, add the following code, and run the cell.
 
 ```python
-nums.var()
+nums.var() # outputs: 7.421487603305784
 ```
+
+The `var` function returns the variance of the data which is a measure of dispersion. The variables looks at the difference between each element and the mean of all of the elements. Each difference is squared, summed and the either divided the total number of items (population variance) or one less than the total number of items (sample variance). The NumPy `var` function returns the population variance. One downside to the variance is that all of the units are squared making it hard to reason about the variance relative to the mean.
+
+1. Add a new cell, add the following code, and run the cell.
+
+```python
+nums.std() # outputs: 2.724240738867581
+```
+
+The standard deviation is the square root of the variance. The `std` function return the population standard deviation which is a measure of dispersion. Because the units of the standard deviation match the units of the mean it is very helpful in understanding the dispersion of the data relative to the mean.
 
 1. Add a new cell, add the following code, and run the cell.
 
@@ -75,14 +103,31 @@ from scipy import stats
 1. Add a new cell, add the following code, and run the cell.
 
 ```python
-stats.mode(nums)
+stats.mode(nums) # outputs: ModeResult(mode=array([2]), count=array([3]))
 ```
+
+The `mode` is the element of the array which occurs most often. In this case, the element 2 occurs three times. Another way to think of mode as if an element was randomly selected from the array which element would be the most likely element to be selected? This most likely element is the mode.
 
 1. Add a new cell, add the following code, and run the cell.
 
 ```python
 stats.describe(nums)
+
+# outputs: DescribeResult(
+#   nobs=11,
+#   minmax=(1, 9),
+#   mean=4.818181818181818,
+#   variance=8.163636363636362,
+#   skewness=0.110590652858330,
+#   kurtosis=-1.4556202598201393
+# )
 ```
+
+Generating various descriptive statistics individually works, but the `scipy` module provides a `describe` function which will generate a number of values all at once. The `nobs` mean number of observations or the length. The `minmax` is a tuple of the minimum and maximum value. The `mean` is the average of the values. The `var` is the sample variance. By taking the square root of the variable the standard deviation can be easily calculated. The `skewness` and `kurtosis` are both additional measures of dispersion.
+
+
+## Generate a Histogram with Matplotlib Exercise
+
 
 
 
