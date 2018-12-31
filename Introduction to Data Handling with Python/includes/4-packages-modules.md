@@ -1,5 +1,13 @@
 # Using packages and modules
 
+Building Python applications and build Python Jupyter Notebooks often requires using third-party code libaries or diving the application/notebook into multiple files. Packages and package managers provide the ability to easily employ third-party libaries within your projects. Python has two popular package managers PIP and Conda. PIP is distributed with Python and Conda is distributed with the Anaconda distribution of Python. In this module, PIP will be used. PIP downloads packages from the Python Package Index [https://pypi.org/](https://pypi.org/). PIP can be used from the command line or executed within a Jupyter Notebook. Most Jupyter Notebooks installations some with a number of packages pre-installed such as NumPy, Pands and Matplotlib. For other packages which are not standard, they will need to be installed.
+
+Within packages and within projects code can be organized with modules. In Python, each file is a module and each module is a file. When working with a larger Python program or Jupyter Notebook it can be helpful to divide the application source code into multiple files. Each of those files would be a module.
+
+## Packages Exercises
+
+## Module Exercies
+
 
 ## Airline Data Exercise: Dividing an Notebook into Modules and using a Package
 
