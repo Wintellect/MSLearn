@@ -12,6 +12,7 @@ The airline data exercise results in a Jupyter notebook which will load and anal
 airport_delays_monthly_avgs = []
 
 for airport_code in airport_codes:
+  airport = airports[airport_code]
   airport_indexes = [ ontime_row[0].decode('UTF-8') == airport_code for ontime_row in ontime ]
   airports_for_code = ontime[airport_indexes]
   airport_dep_delays = airports_for_code['dep_delay']
@@ -21,6 +22,8 @@ for airport_code in airport_codes:
 
   airport_delays_monthly_avgs.append((
     airport_code,
+    airport.city,
+    airport.state_name,
     airport_dep_delays.mean(),
     airport_dep_delays.std(),
     len(airports_for_code)
@@ -47,7 +50,11 @@ with open('./airports_avg_delay_sorted.csv', 'w') as airports_delay_avg_delay_so
         quoting=csv.QUOTE_MINIMAL
     )
     
-    airports_avg_delay_sorted_writer.writerow(['ORIGIN','DEP_DELAY_MEAN','DEP_DELAY_STDEV','NUM_OF_FLIGHTS'])
+    airports_avg_delay_sorted_writer.writerow([
+        'ORIGIN', 'ORIGIN_CITY', 'ORIGIN_STATE',
+        'DEP_DELAY_MEAN','DEP_DELAY_STDEV','NUM_OF_FLIGHTS'
+    ])
+    
     for airport_delays_monthly_avg in airport_delays_monthly_avgs:
         airports_avg_delay_sorted_writer.writerow(airport_delays_monthly_avg)
 ```
