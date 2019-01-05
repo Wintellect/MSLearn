@@ -1,6 +1,6 @@
 # Introduction
 
-[Python](https://en.wikipedia.org/wiki/Python_(programming_language)) is one of the most popular programming languages in the world. Created in the early 1990s, its many uses include scripting repetitive tasks, writing Web applications, building and training machine-learning models, and implementing neural networks. Researchers, mathematicians, and data scientists in particular find Python alluring due to its rich and easy-to-understand syntax and the wide range of open-source packages available for data analysis and manipulation. Just a few of those packages include:
+[Python](https://en.wikipedia.org/wiki/Python_(programming_language)) is one of the most popular programming languages in the world. Created in the early 1990s, its many uses include scripting repetitive tasks, writing Web applications, building and training machine-learning models, and implementing neural networks. Researchers, mathematicians, and data scientists in particular find Python alluring due to its rich and easy-to-understand syntax and the wide range of open-source packages available. Just a few of those packages include:
 
 - [NumPy](http://www.numpy.org/), which adds sophisticated scientific and numerical computing capabilities to Python with its support for large, multidimensional arrays and matrices and functions for operating on them
 - [Matplotlib](https://matplotlib.org/), a 2D plotting library that allows you to create visually rich graphs, charts, and plots from your data
@@ -12,7 +12,7 @@ Applications coded with Python can run on almost all computer systems including 
 
 Imagine that you've been tasked with downloading a collection of data from a U.S. Government Web site and presenting it in such a way that colleagues can glean information from the data by viewing it in different ways. Perhaps you are experienced with other programming languages such as Java and C++, or perhaps you aren't a programmer at all. Nonetheless, a little time invested in learning Python can make short work of the task at hand.
 
-In a series of lessons, you will learn the basics of Python as you build a simple app that slices and dices a large dataset in response to user input. Along the way, you will learn about one of the most useful tools available to Python programmers: [Jupyter notebooks](http://jupyter.org/), which provide an interactive platform for writing and testing Python code and require no local software installs.   
+In a series of lessons, you will learn the basics of Python as you build a simple app that divides a large dataset into bite-sized chunks in response to user input. Along the way, you will learn about one of the most useful tools available to Python programmers: [Jupyter notebooks](http://jupyter.org/), which provide an interactive platform for writing and testing Python code and require no local software installs.   
 
 ## Learning objectives
 

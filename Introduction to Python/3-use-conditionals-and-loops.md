@@ -1,6 +1,8 @@
-# Use conditionals and loops to control flow
+# Use conditionals and loops to control the flow of execution
 
-Programming languages provide syntax structures to control the flow of program execution. This control is referred to as programming logic. An executing program needs both data (variables) and logic (control flow). The two most common kinds of control flow are loops and conditional statements.
+Programs don't merely crunch numbers. They make *decisions* based on those numbers and modify their behavior accordingly. For example, a program might take one action if the sum of a column of numbers is greater than 100, and another action if it does not. Statements that test a condition and branch accordingly are as old as programming itself. Most programming languages use `if` statements to support such branching, and Python is no exception.
+
+In this lesson, you will learn how to use `if` to enact conditional logic in Python programs. You will also learn how to use `for` and `while` to write loops that execute a block of code repeatedly until a specified condition is met. Statements that use `if`, `for`, and `while` are known as *control-of-flow* statements because they control the flow of execution in a program.
 
 ## Loops
 
