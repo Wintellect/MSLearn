@@ -254,7 +254,7 @@ Now let's use what you learned to open **airports.csv** and read its contents in
 	    print(airport, end='')
 	```
 
-	The second parameter tells `print` to end the line with an empty string rather than a newline character. It leverges the fact that in Python, you can use parameter names to specify parameter values in function calls without providing values for *all* parameters.
+	The second parameter tells `print` to end the line with an empty string rather than a newline character. It leverges the fact that in Python, you can use parameter names to specify parameter values in function calls without providing values for *all* parameters. This is called a **named parameter** and this Python feature is covered in more detail in the lesson on "Filter airport data".
 
 1. Run the cell again. How does the output differ from before?
 
