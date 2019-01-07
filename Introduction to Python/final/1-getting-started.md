@@ -101,6 +101,7 @@ Along with numbers, strings are among the most commonly used data types. A strin
 x = 'This is a string'
 print(x) # outputs: This is a string
 print(type(x)) # outputs: <class 'str'>
+y = "This is also a string"
 ```
 
 Strings can be added to other strings (an operation known as "concatenation") with the `+` operator:
@@ -110,7 +111,7 @@ x = 'Hello' + ' ' + 'World!'
 print(x) # outputs: Hello World!
 ```
 
-You will learn much more about strings in a subsequent lesson, including how to parse them and how to manipulate them in various ways. You will also learn about other important data types such as lists.
+You will learn much more about strings in a subsequent lesson, including how to parse them and how to manipulate them in various ways. You will also learn about other important data types such as lists, which store collections of data and are frequently used to hold collections of strings.
 
 ## Create an Azure notebook
 
