@@ -12,7 +12,7 @@ Developers tend to rely heavily on open-source packages to save time and build m
 
 Applications coded with Python can run on almost all computer systems including those running Windows, macOS, and popular distributions of Linux. Furthermore, the ecosystem contains a rich set of development tools for writing, debugging, and publishing Python applications, as well as an active user community that is eager to help new programmers learn the [Pythonic way](https://docs.python-guide.org/writing/style/).
 
-## Your job, should you choose to accept it
+## Your mission, should you choose to accept it
 
 Imagine that you've been tasked with collecting information about U.S. airports and performing some basic analysis on the data. For example, you need to know how many airports are present in each state and which city or state has the most airports. Perhaps you are experienced with programming languages such as Java and C++, but have no experience with Python. Or perhaps you aren't a programmer at all. Nonetheless, a little time invested in learning Python can make short work of the task at hand.
 
