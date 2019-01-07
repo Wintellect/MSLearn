@@ -125,7 +125,7 @@ If you wanted to reverse the order of the output, how would you modify the `whil
 
 ### Indenting your code
 
-The indented lines in the code samples  in the previous sections are no accident. In most programming languages, indentations are used to make the code more readable, but have no bearing on the meaning or validity of the code. Python is different. It is one of the few programming languages in which indentations are significant. Consecutive lines that are indented the same signify blocks of code and are treated as a unit. The following statement reports an indentation error if executed:
+The indented lines in the code samples are no accident. In most programming languages, indentations are used to make the code more readable, but have no bearing on the meaning or validity of the code. Python is different. It is one of the few programming languages in which indentations are significant. Consecutive lines that are indented the same signify blocks of code and are treated as a unit. The following statement reports an indentation error if executed:
 
 ```python
 for color in color_file:
