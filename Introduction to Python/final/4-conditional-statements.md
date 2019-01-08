@@ -65,7 +65,7 @@ Now let's use what you learned about `if` statements, plus the `endswith` functi
 	        us_airports.append(airport)
 	```
 
-	TODO: Explain this code, especially the tuple.
+	Notice the call to Python's `tuple` function in the second-to-last line. A tuple is similar to a list, but unlike a list, it is immutable. `endswith` won't accept a list, but it will accept a tuple. The solution, therefore, is to use the `tuple` function to wrap a tuple around the `us_states` list. Now `endswith` will return `True` if the string it is called on is present in the list, or `False` if it is not.
 
 1. Run the cell and verify that it executes without error. Then add the following code to the empty cell at the end of the notebook to list all U.S. airports:
 

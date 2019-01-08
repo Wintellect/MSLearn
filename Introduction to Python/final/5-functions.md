@@ -38,7 +38,7 @@ def print_list(items):
         print(str(item_index + 1) + '. ' + item)
 ```
 
-The function shown in the previous example calls a built-in function named `enumerate`. `enumerate` iterates over a sequence and returns a sequence known as a `tuple`. The `tuple` is an immutable sequence that is used to return multiple values from a function. The `tuple` returned by `enumerate` contains the item's index as well as the item itself. The following code is valid, but less intuitive and harder to read:
+The function shown in the previous example calls a built-in function named `enumerate`. `enumerate` iterates over a sequence and returns a tuple. A tuple is an immutable sequence that is used to return multiple values from a function. The tuple returned by `enumerate` contains the item's index as well as the item itself. The following code is valid, but less intuitive and harder to read:
 
 ```python
 def print_list(items):
@@ -46,7 +46,7 @@ def print_list(items):
         print(str(item[0] + 1) + '. ' + item[1])
 ```
 
-Separating the `tuple` into discrete items named `item_index` and `item` is known as *destructuring*. It's a feature of Python that programmers use to write code that is more easily maintained.
+Separating the tuple into discrete items named `item_index` and `item` is known as *destructuring*. It's a feature of Python that programmers use to write code that is more easily maintained.
 
 ### Returning data from a function
 
