@@ -118,7 +118,7 @@ In this exercise, you will use string slicing and string splitting to parse the 
 	    airport_code = items[0][1:]
 	    subitems = items[1].split(': ')
 	    airport_location = subitems[0]
-	    airport_name = subitems[1][:len(subitems[1]) - 2]
+	    airport_name = subitems[1][:-2]
 	    print('{0:8}{1:32}{2:1}'.format(airport_code, airport_location, airport_name))
 	```
 
@@ -130,7 +130,7 @@ In this exercise, you will use string slicing and string splitting to parse the 
 
 	_Printing airport data_
 
-	The diagram below shows how we got from a string such as '"7AK","Akun, AK: Akun Airport"' to '7AK', 'Akun, AK', and 'Akun Airport'. First the string is split at "," to produce `items[0]` and `items[1]`. Then the quotation mark is removed from the beginning of `items[0]`, producing an airport code. Next, `items[1]` is split to produce `subitems[0]` and `subitems[1]`. The former is the airport location, and the quotation mark and embedded newline character are removed from the end of `subitems[1]` to get the airport name.
+	The diagram below shows how we got from a string such as '"7AK","Akun, AK: Akun Airport"' to '7AK', 'Akun, AK', and 'Akun Airport'. First the string is split at "," to produce `items[0]` and `items[1]`. Then the quotation mark is removed from the beginning of `items[0]`, producing an airport code. Next, `items[1]` is split to produce `subitems[0]` and `subitems[1]`. The former is the airport location, and the quotation mark and embedded newline character are removed from the end of `subitems[1]` to get the airport name. in Python, [:-2] is a clever way to remove the last two characters from a string.
 
 	![Splitting and trimming strings](media/string-splitting.png)
 
@@ -146,7 +146,7 @@ In this exercise, you will use string slicing and string splitting to parse the 
 	    airport_code = items[0][1:]
 	    subitems = items[1].split(': ')
 	    airport_location = subitems[0]
-	    airport_name = subitems[1][:len(subitems[1]) - 2]
+	    airport_name = subitems[1][:-2]
 	    airports.append([airport_code, airport_location, airport_name])
 	    
 	for airport in airports:
