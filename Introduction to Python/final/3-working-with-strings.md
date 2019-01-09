@@ -136,7 +136,7 @@ In this exercise, you will use string slicing and string splitting to parse the 
 
 	_Splitting and trimming strings_
 
-1. You have proven that you can parse the strings read from the input file into airport codes, locations, and names. The next step is to add the airport codes, locations, and names to a list rather than simply print them out. To that end, add the following code to the empty cell at the bottom of the notebook:
+1. The next step is to add the airport codes, locations, and names to a list rather than simply print them out. To that end, add the following code to the empty cell at the bottom of the notebook:
 
 	```python
 	airports = []
