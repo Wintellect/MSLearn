@@ -35,7 +35,9 @@ print(message[0]) # outputs T
 print(message[0:4]) # outputs This
 print(message[:4]) # outputs This
 print(message[8:]) # outputs fun!
+print(message[:-1] # outputs fun
 ```
+In Python, [:-1] is a clever way to remove the final character from a string. Not surprisingly, [:-2] removes the final two characters, [:-3] removes the final three, and so on.
 
 String slicing will play a large role in parsing the airport data that you loaded in the previous lesson. So will string functions, which can be called to manipulate strings in various ways.
 
@@ -130,7 +132,7 @@ In this exercise, you will use string slicing and string splitting to parse the 
 
 	_Printing airport data_
 
-	The diagram below shows how we got from a string such as '"7AK","Akun, AK: Akun Airport"' to '7AK', 'Akun, AK', and 'Akun Airport'. First the string is split at "," to produce `items[0]` and `items[1]`. Then the quotation mark is removed from the beginning of `items[0]`, producing an airport code. Next, `items[1]` is split to produce `subitems[0]` and `subitems[1]`. The former is the airport location, and the quotation mark and embedded newline character are removed from the end of `subitems[1]` to get the airport name. in Python, [:-2] is a clever way to remove the last two characters from a string.
+	The diagram below shows how we got from a string such as '"7AK","Akun, AK: Akun Airport"' to '7AK', 'Akun, AK', and 'Akun Airport'. First the string is split at "," to produce `items[0]` and `items[1]`. Then the quotation mark is removed from the beginning of `items[0]`, producing an airport code. Next, `items[1]` is split to produce `subitems[0]` and `subitems[1]`. The former is the airport location, and the quotation mark and embedded newline character are removed from the end of `subitems[1]` to get the airport name.
 
 	![Splitting and trimming strings](media/string-splitting.png)
 
