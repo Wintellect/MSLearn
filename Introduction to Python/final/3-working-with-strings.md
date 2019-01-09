@@ -35,9 +35,11 @@ print(message[0]) # outputs T
 print(message[0:4]) # outputs This
 print(message[:4]) # outputs This
 print(message[8:]) # outputs fun!
-print(message[8:-1] # outputs fun
+print(message[8:-1]) # outputs fun
+print(message[-4:-1]) # outputs fun
 ```
-In Python, [:-1] is a clever way to remove the final character from a string. Not surprisingly, [:-2] removes the final two characters, [:-3] removes the final three, and so on.
+
+Specifying a negative number for a starting or ending index represents an offset from the end of the string. In Python, [:-1] is a clever way to remove the final character from a string. Not surprisingly, [:-2] removes the final two characters, [:-3] removes the final three, and so on.
 
 String slicing will play a large role in parsing the airport data that you loaded in the previous lesson. So will string functions, which can be called to manipulate strings in various ways.
 
