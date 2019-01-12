@@ -1,4 +1,4 @@
-# Reading and looping in Python
+# Reading, looping, and lists in Python
 
 The U.S. [Bureau of Transportation Statistics](https://www.transtats.bts.gov) (BTS) maintains a wealth of information regarding transportation in the United States and makes much of that data available to the public. One of the datasets you can download from the BTS Web site lists all the airports in the world and includes their three-letter airport codes, the cities they're located in, and their names.
 
@@ -9,6 +9,8 @@ In this lesson, you will download that dataset from the BTS Web site, upload it 
 The first step is to download the dataset and have a look at its content and structure. The dataset is a text file containing [CSV](https://en.wikipedia.org/wiki/Comma-separated_values) data. CSV is an extremely common data format — so common that there are Python libraries whose only purpose is to simplify reading and writing CSV files.
 
 1. [Click here](https://www.transtats.bts.gov/Download_Lookup.asp?Lookup=L_AIRPORT) to open your browser and download a CSV file containing a collection of airport codes, airport locations, and airport names from the BTS Web site. Save the file to the location of your choice and name it **airports.csv**.
+
+	> The file that you're downloading has a .csv\_ file-name extension. Even if you tell the browser to name it **airports.csv**, the file may be saved with a .csv\_ extension. If that happens, rename the file so that it ends in .csv. 
 
 1. Once the download is complete, open **airports.csv** in your favorite text editor. Take a moment to browse the contents of the file:
 
@@ -33,11 +35,9 @@ The first step is to download the dataset and have a look at its content and str
 
 How many airports are represented in the file? How would you determine how many of those airports are located in the U.S.? How easy would it be to determine how many airports are located in a specific state such as Tennessee (TN) or Virginia (VA)?
 
-## Reading files
+## Reading files in Python
 
-In order to load this data into a notebook, you need to know how to read files in Python. Here is a short synopsis.
-
-Suppose you have a text file named **colors.txt** that contains the following lines:
+In order to load this data into a notebook, you need to know how to read files in Python. Suppose you have a text file named **colors.txt** that contains the following lines:
 
 ```
 red
@@ -85,7 +85,7 @@ with open('colors.txt', 'r') as color_file:
 
 Now you can't forget to close the file, and it gets closed even if an error occurs as the `with` block executes.
 
-## Looping
+### Looping
 
 The previous example used a `for-in` loop to read lines from a text file. There are two kinds of loops in Python: `for-in` loops and `while` loops. The `for-in` loop iterates over each item in a collection of data. The `while` loop iterates while a conditional expression evaluates to true.
 
@@ -145,7 +145,59 @@ x = x + 1
 
 Consecutive lines that are indented the same signify blocks of code and are treated as a unit. If you want to include 10 lines of code in a `while` loop or `for-in` loop, make sure all 10 lines are indented by the same amount.
 
-## Using lists
+### Load the CSV file into your notebook
+
+Now let's use what you learned about files and loops to open **airports.csv** and display its contents in your notebook.
+
+1. Return to the Azure notebook that you created in the previous lesson.
+
+	![Jupyter notebook in Azure](media/third-run.png)
+
+	_Jupyter notebook in Azure_
+
+1. Use the **File -> Upload...** command to upload **airports.csv** from your local hard disk. Set "Destination folder" to **~/project** so the file will be stored durably rather than just for the length of the session.
+
+	![Uploading airports.csv](media/upload-status.png)
+
+	_Uploading airports.csv_
+
+1. Add the following Python statements to the empty cell at the end of the notebook:
+
+	```python
+	with open('airports.csv', 'r') as airport_file:
+	    airport_file.readline() # Skip header line
+	    for airport in airport_file:
+	        print(airport)
+	```
+
+	This code opens **airports.csv** for reading and reads it a line at a time, printing each line that it is read.
+
+1. Run the cell and confirm that the output looks like this:
+
+	![Printing the contents of the data file](media/print-airports-1.png)
+
+	_Printing the contents of the data file_
+
+1. Why is there a blank line between every line of output? Because each line that was read from the text file ends with a newline character, and `print` adds a newline of its own. In Python 3, there is an easy solution to this. Modify the code in the previous cell to pass a second parameter to `print`:
+
+	```python
+	for airport in all_airports:
+	    print(airport, end='')
+	```
+
+	The second parameter tells `print` to end the line with an empty string rather than a newline character. It leverges the fact that in Python, you can use parameter names to specify parameter values in function calls without providing values for *all* parameters. `end` is an example of a *named parameter*, a subject that you will learn more about in a subsequent lesson.
+
+1. Run the cell again. How does the output differ from before?
+
+1. Scroll to the bottom of the output and confirm that the final line is formatted differently than all the others:
+
+	```
+	"ZZZ","Unknown Point in Alaska"
+	```
+
+The extraneous line isn't harmful, but later on, you will want to ignore it when parsing individual lines in the data file.
+
+## Using lists in Python
 
 One of the fundamental data types in Python is the *list*. A list is a collection of items of any data type — integers, strings, even other lists, and so on — and is analogous to arrays in other programming languages. Lists are mutable (they can be changed), which means items can be added and removed from them.
 
@@ -227,61 +279,38 @@ for color in colors:
 
 And a simple `len` statement would tell you precisely how many lines the file contains.
 
-## Load the CSV file into the notebook
+## Store the contents of the CSV file in a list
 
-Now let's use what you learned about files, loops, and lists to open **airports.csv** and read its contents into a list in your Azure notebook.
+Earlier, you modified your Azure notebook to read **airports.csv** and print it to the screen. Now let's modify that logic to store the lines read from the file in a list.
 
-1. Return to the Azure notebook that you created in the previous lesson.
-
-	![Jupyter notebook in Azure](media/third-run.png)
-
-	_Jupyter notebook in Azure_
-
-1. Use the **File -> Upload...** command to upload **airports.csv** from your local hard disk. Set "Destination folder" to **~/project** so the file will be stored durably rather than just for the length of the session.
-
-	![Uploading airports.csv](media/upload-status.png)
-
-	_Uploading airports.csv_
-
-1. Use the **Edit -> Delete Cells** command to delete the first two cells from the notebook, leaving one empty cell. Then add the following Python code to the empty cell:
+1. Add the following Python to the empty cell at the end of the notebook:
 
 	```python
 	all_airports = []
 
 	with open('airports.csv', 'r') as airport_file:
 	    airport_file.readline() # Skip header line
-	    for airport_data in airport_file:
-	        all_airports.append(airport_data)
+	    for airport in airport_file:
+	        all_airports.append(airport)
 
 	all_airports = all_airports[:len(all_airports) - 1]
 	```
 
-	This code opens **airports.csv** for reading and reads it a line at a time, skipping the header line containing column names. It appends each line that it reads to a list named `all_airports`. It also removes the final line from the list because that line is an extraneous one.
+	Rather than print lines to the screen, this code declares an empty list named `all_airports` and appends each line read from the file to the list. It also removes the final line from the list since that line is something of an outlier.
 
-1. Run the cell and verify that it executes without error. Then add the following statements to the empty cell at the end of the notebook:
-
-	```python
-	for airport in all_airports:
-	    print(airport)
-	```
-
-1. Run the cell and confirm that the output looks like this:
-
-	![Printing the contents of the data file](media/print-airports.png)
-
-	_Printing the contents of the data file_
-
-1. Why is there a blank line between every line of output? Because each line that was read from the text file ends with a newline character, and `print` adds a newline of its own. In Python 3, there is an easy solution to this. Modify the code in the previous cell to pass a second parameter to `print`:
+1. Run the cell and verify that it executes without error. Then add the following statements to the empty cell at the end of the notebook to print the contents of the list:
 
 	```python
 	for airport in all_airports:
 	    print(airport, end='')
 	```
 
-	The second parameter tells `print` to end the line with an empty string rather than a newline character. It leverges the fact that in Python, you can use parameter names to specify parameter values in function calls without providing values for *all* parameters. `end` is an example of a *named parameter*, a subject that you will learn more about in a subsequent lesson.
+1. Run the cell and confirm that the output looks like this:
 
-1. Run the cell again. How does the output differ from before?
+	![Printing the contents of the data file](media/print-airports-2.png)
+
+	_Printing the contents of the data file_
 
 1. Finish up by using the **File** -> **Save and Checkpoint** command to save the notebook.
 
-The data file has been uploaded to Azure Notebooks and loaded into your notebook, but right now it's nothing more than a list of strings containing airport codes, locations, and names. The strings need to be parsed to extract information regarding individual airports. How would you go about that? That's the subject of the next lesson.
+The data file has been uploaded to Azure Notebooks and loaded into a list, but right now it's nothing more than a list of strings containing airport codes, locations, and names. The strings need to be parsed to extract information regarding individual airports. Parsing requires that you learn a little more about strings in Python. That's the subject of the next lesson.
