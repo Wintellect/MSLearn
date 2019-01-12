@@ -45,7 +45,7 @@ String slicing will play a large role in parsing the airport data that you loade
 
 ### Using string functions
 
-String objects come with an extensive API (Application Programming Interface) for manipulating them. For example, the `upper` function can be called on any string. It changes a string's characters to all uppercase:
+Strings come with an extensive API (Application Programming Interface) for manipulating them. For example, the `upper` function can be called on any string. It changes a string's characters to all uppercase:
 
 ```python
 message = 'Hello'
@@ -87,17 +87,11 @@ print(colors_data) # outputs: 'red,green,blue'
 
 `upper`, `lower`, `replace`, `split`, and `join` are but a few of the more than 40 functions that you can call on a string in Python. For a complete list, see https://www.w3schools.com/python/python_ref_string.asp.
 
-## Parse the airport data
+## Parse airport data
 
 In this exercise, you will use string slicing and string splitting to parse the strings read from the data file in the previous lesson into a list of lists, with the inner lists containing data regarding individual airports. Lists of lists are very common in Python and are useful for storing tabular data — that is, data that is organized into rows and columns.
 
-1. Return to the Azure notebook that you created in the first lesson.
-
-	![Jupyter notebook in Azure](media/initial-notebook-3.png)
-
-	_Jupyter notebook in Azure_
-
-1. Add the following Python code to the empty cell at the end of the notebook:
+1. Return to the Azure notebook that you created in the first lesson. Add the following statements to the empty cell at the end of the notebook:
 
 	```python
 	for airport in all_airports:
@@ -126,7 +120,7 @@ In this exercise, you will use string slicing and string splitting to parse the 
 	    print('{0:8}{1:32}{2:1}'.format(airport_code, airport_location, airport_name))
 	```
 
-	The last line uses Python's `format` function to format a string. It left-aligns `airport_code` in a field that is 8 spaces wide, `airport_location` in a field that is 32 spaces wide, and `airport_name` in a field that occupies the remainder of the line. It's one way in Python to align printed output into columns.
+	The last line uses the `format` function that can be called on any string in Python to format a string. It left-aligns `airport_code` in a field that is 8 spaces wide, `airport_location` in a field that is 32 spaces wide, and `airport_name` in a field that occupies the remainder of the line. It's one way in Python to align printed output into columns.
 
 1. Confirm that the output resembles the output below.
 
