@@ -178,11 +178,10 @@ Now let's use what you learned about files and loops to open **airports.csv** an
 
 	_Printing the contents of the data file_
 
-1. Why is there a blank line between every line of output? Because each line that was read from the text file ends with a newline character, and `print` adds a newline of its own. In Python 3, there is an easy solution to this. Modify the code in the previous cell to pass a second parameter to `print`:
+1. Why is there a blank line between every line of output? Because each line that was read from the text file ends with a newline character, and `print` adds a newline of its own. In Python 3, there is an easy solution to this. Modify the `print` statement in the previous cell to pass a second parameter to the `print` function:
 
 	```python
-	for airport in all_airports:
-	    print(airport, end='')
+	print(airport, end='')
 	```
 
 	The second parameter tells `print` to end the line with an empty string rather than a newline character. It leverges the fact that in Python, you can use parameter names to specify parameter values in function calls without providing values for *all* parameters. `end` is an example of a *named parameter*, a subject that you will learn more about in a subsequent lesson.
