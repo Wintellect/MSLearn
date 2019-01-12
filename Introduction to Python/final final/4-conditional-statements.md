@@ -47,9 +47,7 @@ Blocks of code underneath an `if`, `elif`, or `else` aren't limited to one line 
 
 Now let's use what you learned about `if` statements, plus the `endswith` function that can be called on strings in Python, to generate a new list of lists that contains only U.S. airports.
 
-1. Return to the Azure notebook that you created in the first lesson.
-
-1. Add the following code to the end of the notebook to create a list named `us_airports` that includes only airports located in the U.S.:
+1. Return to the Azure notebook that you created in the first lesson. Add the following code to the end of the notebook to create a list named `us_airports` that includes only airports located in the U.S.:
 
 	```python
 	us_airports = []
