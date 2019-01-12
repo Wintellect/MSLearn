@@ -279,7 +279,7 @@ for color in colors:
 
 And a simple `len` statement would tell you precisely how many lines the file contains.
 
-## Store the contents of the CSV file in a list
+### Store the contents of the CSV file in a list
 
 Earlier, you modified your Azure notebook to read **airports.csv** and print it to the screen. Now let's modify that logic to store the lines read from the file in a list.
 
