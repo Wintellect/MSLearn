@@ -282,7 +282,7 @@ And a simple `len` statement would tell you precisely how many lines the file co
 
 Earlier, you modified your Azure notebook to read **airports.csv** and print it to the screen. Now let's modify that logic to store the lines read from the file in a list.
 
-1. Add the following Python to the empty cell at the end of the notebook:
+1. Add the following Python code to the empty cell at the end of the notebook:
 
 	```python
 	all_airports = []
