@@ -1,0 +1,98 @@
+### YamlMime:ModuleUnit
+  title: Using the Microsoft Custom Vision Service to Perform Image Classification
+  quiz:
+    title: Using the Microsoft Custom Vision Service to Perform Image Classification
+    description: Confirm that you understood the steps required to classify images with the Microsoft Custom Vision Service.
+    questions:
+    - content: "When creating a new custom vision project, what does a domain used for?"
+      choices:
+      - content: "Helps you decide what to name your project"
+        isCorrect: false
+        incorrectExplanation: "You can name the project anything you need. The domain doesn't interfere with that."
+      - content: "Helps you decide how to structure your project"
+        isCorrect: false
+        incorrectExplanation: "Projects have the same structure in terms of training images and predictions. The domain doesn't interfere with that."
+      - content: "Optimizes a model for specific types of images"
+        isCorrect: true
+        correctExplanation: "Great! Proceed to the next part of the lab."
+      - content: "Optimizes your training images for organization"
+        isCorrect: false
+        incorrectExplanation: "Training images are organized by tag. The domain doesn't interfere with that."
+    - content: "Why should you add a tag after uploading images?"
+      choices:
+      - content: "To help you organize your images in the project for later use"
+        isCorrect: false
+        incorrectExplanation: "While tags do help organize images, that's not the full purpose of tags."
+      - content: "To put the images in a category for training"
+        isCorrect: true
+        correctExplanation: "Great! Proceed to the next part of the lab."
+      - content: "To generate a word cloud after training"
+        isCorrect: false
+        incorrectExplanation: "The Custom Vision service doesn't do anything with word clouds."
+      - content: "You don't need to add a tag"
+        isCorrect: false
+        incorrectExplanation: "In order for the image classification to work, you do need to add at least one tag."
+    - content: "Are precision and recall related when measuring the model's performance?"
+      choices:
+      - content: "No"
+        isCorrect: false
+        incorrectExplanation: "Precision and recall are related. You won't have a good performing model if you have high precision and low recall."
+      - content: "Yes"
+        isCorrect: true
+        correctExplanation: "Great! Proceed to the next part of the lab."
+    - content: "Which ways can you perform a quick test on your model after training?"
+      choices:
+      - content: "Image file"
+        isCorrect: false
+        incorrectExplanation: "While the service can do a quick test on image files, it can do others, too."
+      - content: "Image URL"
+        isCorrect: false
+        incorrectExplanation: "While the service can do a quick test on image URLs, it can do others, too."
+      - content: "Web page of images"
+        isCorrect: true
+        incorrectExplanation: "The service is unable to perform a quick test on just a web page with images on it."
+      - content: "Image file and image URL"
+        isCorrect: true
+        correctExplanation: "Great! Proceed to the next part of the lab."
+    - content: "What does marking "Make default" from the Performance tab do?"
+      choices:
+      - content: "Marks the latest iteration of the model as the default iteration"
+        isCorrect: true
+        correctExplanation: "Great! Proceed to the next part of the lab."
+      - content: "Marks the image URL endpoint as the default endpoint"
+        isCorrect: false
+        incorrectExplanation: "The endpoints are constant regardless of the number of iterations on the model."
+      - content: "Marks the image file endpoint as the default endpoint"
+        isCorrect: false
+        incorrectExplanation: "The endpoints are constant regardless of the number of iterations on the model."
+      - content: "Marks the current project as the default project to use"
+        isCorrect: false
+        incorrectExplanation: "The project must be specified so the endpoint knows which one to use. The project ID is included in the URL on the Prediction URL tab."
+    - content: "What is the name of the header for the prediction key to send with the prediction endpoint?"
+      choices:
+      - content: "Subscription Key"
+        isCorrect: false
+        incorrectExplanation: "There is no Subscription Key used for the custom vision service."
+      - content: "Prediction Key"
+        isCorrect: true
+        correctExplanation: "Great! Proceed to the next part of the lab."
+      - content: "Training Key"
+        isCorrect: false
+        incorrectExplanation: "The Training Key is used to train new iterations on your model, but not to make predictions."
+      - content: "API Key"
+        isCorrect: false
+        incorrectExplanation: "There is no API Key used for the custom vision service."
+    - content: "When using the prediction API what else happens back in the Custom Vision portal?"
+      choices:
+        - content: "Images are tagged if they come back as unknown"
+          isCorrect: false
+          incorrectExplanation: "Images are only manually tagged in the portal, not automatically."
+        - content: "Images are loaded as untagged in the training set"
+          isCorrect: false
+          incorrectExplanation: "Images have to be explicity uploaded to be a part of the training set."
+        - content: "Images are shown in the Predictions tab"
+          isCorrect: true
+          correctExplanation: "Great! Proceed to the next part of the lab."
+        - content: "Nothing happens"
+          isCorrect: false
+          incorrectExplanation: "The images are put in a certain part of the portal."
