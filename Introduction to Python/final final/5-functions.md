@@ -4,7 +4,7 @@ Functions are blocks of code that are called by name. They can accept parameters
 
 Functions are important because they promote code reuse. Rather than copy-and-paste a block of code 10 times, you can place the same code in a function and call the function 10 times. If you later discover that the code needs to be modified (perhaps because you found a bug), you only have to change it one place. 
 
-Python contains more than 60 built-in functions that you can call at any time. You have already used some of these functions: `print`, `input`, `len`, and others. A complete list of built-in functions can be found [here](https://docs.python.org/2/library/functions.html). Significantly, you can also define functions of your own to help organize your code and make it more readable and more maintainable.
+Python contains more than 60 built-in functions that you can call at any time. You have already used some of these functions: `print`, `input`, `len`, and others. A complete list of built-in functions can be found [here](https://docs.python.org/2/library/functions.html). In addition, strings and other data types have functions such as `split` and `endswith` that you can call on them, Significantly, you can define functions of your own to help organize your code and make it more readable and more maintainable.
 
 In the previous lesson, you used a simple `if` statement to determine whether an airport is located in the United States. Then you used it to filter a list of all the airports in the world into a list of U.S. airports. In this lesson, you will add logic that permits users to enter the abbreviation for a U.S. state and produce a list (as well as a count) of all the airports in that state. And to make the code clean and compact, you will define your own function. 
 
@@ -38,7 +38,7 @@ def print_list(items):
         print(str(item_index + 1) + '. ' + item)
 ```
 
-The function shown in the previous example calls a built-in function named `enumerate`. `enumerate` iterates over a sequence and returns a tuple. A tuple is an immutable sequence that is used to return multiple values from a function. The tuple returned by `enumerate` contains the item's index as well as the item itself. The following code is valid, but less intuitive and harder to read:
+The function shown in the previous example calls a built-in function named `enumerate`. `enumerate` iterates over a sequence and returns a tuple. A tuple is an immutable sequence and is a handy way to return multiple values from a function. (From the previous lesson, recall that a tuple is like a list, but unlike a list, its contents can't be changed.) The tuple returned by `enumerate` contains the item's index as well as the item itself. The following code is valid, but less intuitive and harder to read:
 
 ```python
 def print_list(items):
@@ -97,7 +97,7 @@ print(airport, end='')
 
 ## Filter airport data by state
 
-The next step is to enhance the notebook to allow users to interactively query the data for airports in a specified state. Let's use a custom function to make the code compact and tidy, and Python's built-in `input` function to solicit user input.
+Now let's enhance your notebook to allow users to interactively query the data for airports in a specified state. You will use a custom function to make the code compact and tidy, and Python's `input` function to solicit user input.
 
 1. Return to the Azure notebook in which you generated a list of U.S. airports. In the empty cell at the end of the notebook, add the following function definition:
 
