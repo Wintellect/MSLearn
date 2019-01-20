@@ -13,3 +13,49 @@ metadata:
 durationInMinutes: 5
 content: |
   [!include[](includes/5-functions.md)]
+quiz:
+  title: Working with functions in Python
+  description: Confirm that you understand the basics of working with functions in Python.
+  questions:
+  - content: "?"
+    choices:
+    - content: "."
+      isCorrect: true
+      correctExplanation: "."
+    - content: "."
+      isCorrect: false
+      incorrectExplanation: "."
+    - content: "."
+      isCorrect: false
+      incorrectExplanation: ""
+    - content: "."
+      isCorrect: false
+      incorrectExplanation: "."
+  - content: "?"
+    choices:
+    - content: "."
+      isCorrect: true
+      correctExplanation: "."
+    - content: "."
+      isCorrect: false
+      incorrectExplanation: "."
+    - content: "."
+      isCorrect: false
+      incorrectExplanation: ""
+    - content: "."
+      isCorrect: false
+      incorrectExplanation: "."
+  - content: "?"
+    choices:
+    - content: "."
+      isCorrect: true
+      correctExplanation: "."
+    - content: "."
+      isCorrect: false
+      incorrectExplanation: "."
+    - content: "."
+      isCorrect: false
+      incorrectExplanation: ""
+    - content: "."
+      isCorrect: false
+      incorrectExplanation: "."
