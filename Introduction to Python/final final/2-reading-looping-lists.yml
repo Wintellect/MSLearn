@@ -13,3 +13,21 @@ metadata:
 durationInMinutes: 5
 content: |
   [!include[](includes/2-reading-looping-lists.md)]
+quiz:
+title: Reading, looping, and lists in Python
+description: Confirm that you understand the basic of reading files, for loops, and lists in Python.
+questions:
+- content: "What is the purpose of using `with` statements when opening files?"
+  choices:
+  - content: "It prevents you from having to specify the full path to a file"
+    isCorrect: false
+    incorrectExplanation: "You still have to provide a file path to `open`, regardless of whether `with` is used."
+  - content: "It prevents you from having to explicitly close the files that you open"
+    isCorrect: true
+    correctExplanation: "When the end of the `with` block is reached, the file is closed, even if you don't explicitly call the `close` function."
+  - content: "`for` loops that read file contents do not work without `with` statements"
+    isCorrect: false
+    incorrectExplanation: "`for` loops work with or without `with` statements."
+  - content: "`with` statements automatically parse JSON strings into Python objects"
+    isCorrect: false
+    incorrectExplanation: "`with` has nothing to do with parsing."
