@@ -223,10 +223,6 @@ type(None) # outputs: NoneType
 
 Functions, which will be covered in a subsequent lesson, return a value of `None` if they do not have an explicit return value.
 
-### Understanding truthy and falsy
-
-Like many programming languages, Python supports the concept of "truthy" and "falsy." The essence of truthy and falsy is to associate a true or false value with a non-Boolean data type. For example, the value of 1 is truthy but the value of 0 is falsy. The value of the string 'Some Content' is truthy, but the value of '' (an empty string) is falsy. The value of `None` is falsy. 
-
 ## Operators
 
 Python expressions use operators to calculate new values. The behavior of operators is determined by the type of data to which the operator is applied. For example, using the `+` operator with numbers computes the sum of the numbers. Using it with strings concatenates the strings:

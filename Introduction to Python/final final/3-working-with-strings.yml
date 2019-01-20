@@ -1,0 +1,15 @@
+### YamlMime:ModuleUnit
+uid: learn.introduction-to-python.3-working-with-strings
+title: Strings in Python
+metadata:
+  title: Strings in Python
+  description: Parse lines read from a CSV file into airport names, codes, and locations
+  ms.date: 01/25/2019
+  author: v-jeffpr
+  ms.author: shana.matthews
+  ms.topic: interactive-tutorial
+  ms.prod: learning-python
+  ROBOTS: NOINDEX
+durationInMinutes: 5
+content: |
+  [!include[](includes/3-working-with-strings.md)]
