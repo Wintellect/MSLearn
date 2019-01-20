@@ -108,7 +108,7 @@ In this exercise, you will use string slicing and string splitting to parse the 
 
 	_Printing airport codes_
 
-1. The previous code parsed an airport code from each line read from the data file. The next challenge is to get each airport's name and location as well. Modify the code above as shown below and rerun the cell.
+1. The previous code parsed an airport code from each line read from the data file. The next challenge is to get each airport's name and location as well. Modify the code above as follows:
 
 	```python
 	for airport in all_airports:
@@ -135,7 +135,7 @@ In this exercise, you will use string slicing and string splitting to parse the 
 
 	The final line in the `for` loop uses the `format` function that can be called on any string in Python to format a string. It left-aligns `airport_code` in a field that is 8 spaces wide, `airport_location` in a field that is 32 spaces wide, and `airport_name` in a field that occupies the remainder of the line. It's one way in Python to align printed output into columns. Based on this, can you predict what the output will be?
 
-1. Confirm that the output resembles the output below.
+1. Now run the modified cell. Confirm that the output resembles the output below.
 
 	![Printing airport data](media/print-parsed-airports.png)
 
