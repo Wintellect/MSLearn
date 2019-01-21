@@ -17,45 +17,45 @@ quiz:
   title: Working with strings in Python
   description: Confirm that you understand the basics of manipulating strings in Python.
   questions:
-  - content: "?"
+  - content: "What is the output from the statement `print(('Hello, World!')[:])`?"
     choices:
-    - content: "."
+    - content: "There is no output (it prints an empty string)."
+      isCorrect: false
+      incorrectExplanation: "Hint: For this example, [:] is equivalent to [0:13]."
+    - content: "Hello, World"
+      isCorrect: false
+      incorrectExplanation: "Hint: For this example, [:] is equivalent to [0:13]."
+    - content: "Hello"
+      isCorrect: false
+      incorrectExplanation: "Hint: For this example, [:] is equivalent to [0:13]."
+    - content: "Hello, World!"
       isCorrect: true
-      correctExplanation: "."
-    - content: "."
-      isCorrect: false
-      incorrectExplanation: "."
-    - content: "."
-      isCorrect: false
-      incorrectExplanation: ""
-    - content: "."
-      isCorrect: false
-      incorrectExplanation: "."
-  - content: "?"
+      correctExplanation: "[:] creates a slice containing all the characters in the string."
+  - content: "What is the output from the statement `print(('Python is awesome')[:-7] + 'fun')`?"
     choices:
-    - content: "."
+    - content: "Awesome fun"
+      isCorrect: false
+      incorrectExplanation: "Hint: [:-7] removes 'awesome' from the string."
+    - content: "Python is fun"
       isCorrect: true
-      correctExplanation: "."
-    - content: "."
+      correctExplanation: "[:-7] removes 'awesome' from the string, and the + operator appends 'fun'."
+    - content: "Python fun"
       isCorrect: false
-      incorrectExplanation: "."
-    - content: "."
+      incorrectExplanation: "Hint: This would be correct if you replaced [:-7] with [:-10]."
+    - content: "Python is funsome"
       isCorrect: false
-      incorrectExplanation: ""
-    - content: "."
-      isCorrect: false
-      incorrectExplanation: "."
-  - content: "?"
+      incorrectExplanation: "Hint: [:-7] removes 'awesome' from the string."
+  - content: "What is the output from the statement `print(('Hello, World!').split(', ')[1][:-1])`?"
     choices:
-    - content: "."
+    - content: "World"
       isCorrect: true
-      correctExplanation: "."
-    - content: "."
+      correctExplanation: "`split` splits Hello and World!, [1] selects World!, and [:-1] removes the exclamation point."
+    - content: "Hello"
       isCorrect: false
-      incorrectExplanation: "."
-    - content: "."
+      incorrectExplanation: "Look at the first number in square brackets. After `split` splits Hello and World!, what does [1] do?"
+    - content: "World!"
       isCorrect: false
-      incorrectExplanation: ""
-    - content: "."
+      incorrectExplanation: "Close, but did you forget about the [:-1]?"
+    - content: "ello"
       isCorrect: false
-      incorrectExplanation: "."
+      incorrectExplanation: "Hint: `split` splits Hello and World!, and [1] selects World!. What does [:-1] do?"
