@@ -17,45 +17,45 @@ quiz:
   title: Working with functions in Python
   description: Confirm that you understand the basics of working with functions in Python.
   questions:
-  - content: "?"
+  - content: "Which of the following keywords is used to define a function in Python?"
     choices:
-    - content: "."
+    - content: "def"
       isCorrect: true
-      correctExplanation: "."
-    - content: "."
+      correctExplanation: "The `def` keyword is used to define a function in Python."
+    - content: "define"
       isCorrect: false
-      incorrectExplanation: "."
-    - content: "."
+      incorrectExplanation: "`define` is note a keyword in Python."
+    - content: "func"
       isCorrect: false
-      incorrectExplanation: ""
-    - content: "."
+      incorrectExplanation: "'func' is not a keyword in Python."
+    - content: "function"
       isCorrect: false
-      incorrectExplanation: "."
-  - content: "?"
+      incorrectExplanation: "`function` is not a keyword in Python."
+  - content: "Which of the following is NOT a built-in function in Python?"
     choices:
-    - content: "."
+    - content: "print"
+      isCorrect: false
+      incorrectExplanation: "`print` writes output to the screen in Python."
+    - content: "input"
+      isCorrect: false
+      incorrectExplanation: "`input` reads input from the keyboard in Python."
+    - content: "output"
       isCorrect: true
-      correctExplanation: "."
-    - content: "."
+      correctExplanation: "There is no `output` function in Python."
+    - content: "len"
       isCorrect: false
-      incorrectExplanation: "."
-    - content: "."
-      isCorrect: false
-      incorrectExplanation: ""
-    - content: "."
-      isCorrect: false
-      incorrectExplanation: "."
-  - content: "?"
+      incorrectExplanation: "`len` returns the number of items in an object — for example, the number of characters in a string or the number of items in a list."
+  - content: "Which of the following data types is commonly used to return multiple values from a function?"
     choices:
-    - content: "."
+    - content: "Integer"
+      isCorrect: false
+      incorrectExplanation: "An integer is a singular value."
+    - content: "Float"
+      isCorrect: false
+      incorrectExplanation: "A floating-point number is a singular value."
+    - content: "Boolean"
+      isCorrect: false
+      incorrectExplanation: "A Boolean is a singular value."
+    - content: "Tuple"
       isCorrect: true
-      correctExplanation: "."
-    - content: "."
-      isCorrect: false
-      incorrectExplanation: "."
-    - content: "."
-      isCorrect: false
-      incorrectExplanation: ""
-    - content: "."
-      isCorrect: false
-      incorrectExplanation: "."
+      correctExplanation: "A tuple is an immutable list and, like a list, can contain multiple values."
