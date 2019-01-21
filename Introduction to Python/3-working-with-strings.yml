@@ -10,7 +10,7 @@ metadata:
   ms.topic: interactive-tutorial
   ms.prod: learning-python
   ROBOTS: NOINDEX
-durationInMinutes: 5
+durationInMinutes: 10
 content: |
   [!include[](includes/3-working-with-strings.md)]
 quiz:

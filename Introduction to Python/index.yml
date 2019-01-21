@@ -1,23 +1,23 @@
 ### YamlMime:Module
-uid: learn.building-neural-networks-with-keras
+uid: learn.introduction-to-python
 metadata:
-  title: Building Neural Networks with Keras - Learn
-  description: Use Keras to build a neural network that scores text for sentiment.
-  ms.date: 09/24/2018
-  author: lnyswonger
-  ms.author: luken
+  title: Introduction to Python - Learn
+  description: Use Python to extract information from a dataset in an Azure notebook.
+  ms.date: 01/25/2019
+  author: v-jeffpr
+  ms.author: shana.matthews
   ms.topic: interactive-tutorial
-  ms.prod: learning-azure
-  #ms.learn-contact: luken
-title: Building Neural Networks with Keras
-summary: CreUse Keras to build a neural network that scores text for sentiment.
+  ms.prod: learning-python
+title: Introduction to Python
+summary: Use Python to extract information from a dataset in an Azure notebook.
 abstract:  | 
   In this module, you will:
   - Create a Jupyter notebook in Azure Notebooks
-  - Use Keras to build and train a neural network to perform sentiment analysis
-  - Use the neural network to analyze text for sentiment 
+  - Download a data file from a U.S. Government Web site
+  - Load the data file into the notebook and read its contents
+  - Parse the data file and extract information from it 
 prerequisites: None
-iconUrl: /learn/achievements/building-neural-networks-with-keras.svg
+#iconUrl:
 levels:
 - beginner
 roles:
@@ -25,9 +25,10 @@ roles:
 products:
 - azure
 units:
-- learn.building-neural-networks-with-keras.0-introduction
-- learn.building-neural-networks-with-keras.1-create-an-azure-notebook
-- learn.building-neural-networks-with-keras.2-build-and-train-a-neural-network
-- learn.building-neural-networks-with-keras.3-use-neural-network-to-analyze-text-for-sentiment
-- learn.building-neural-networks-with-keras.4-summary-and-knowledge-check
-achievement: learn.building-neural-networks-with-keras.badge 
+- learn.introduction-to-python.0-introduction
+- learn.introduction-to-python.1-getting-started
+- learn.introduction-to-python.2-reading-looping-lists
+- learn.introduction-to-python.3-working-with-strings
+- learn.introduction-to-python.4-conditional-statements
+- learn.introduction-to-python.5-functions
+achievement: learn.placeholder.badge

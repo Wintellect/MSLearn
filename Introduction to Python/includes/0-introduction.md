@@ -1,17 +1,30 @@
 # Introduction
 
-Python is one of the most popular programming languages in the world. Created in the early 1990s by Guido van Rossum, Python is used for many kinds of computing activities such as web applications, data science, machine learning, and even system administration tasks. Contributing to Python’s popularity is it's easy to understand syntax, large number built-in functions (known as an API) and a large number of scientific and mathematics packages. In addition to the qualities of the language, there is a huge community of Python developers which can help new Python developers to learn Python and the Pythonic way of doing things. The Pythonic way refers to following coding practices which are generally accepted by the community to make development easier for everyone.
+[Python](https://en.wikipedia.org/wiki/Python_(programming_language)) is one of the most popular programming languages in the world. Created in the early 1990s, it enjoys a wide range of uses from automating repetitive tasks and writing Web applications to building machine-learning models and implementing neural networks. Researchers, mathematicians, and data scientists in particular find Python alluring due to its rich and easy-to-understand syntax and the wide range of open-source packages available. Packages are commonly used, shared code libraries which are freely available for anyone to use.
 
-For many people, Python is the very first language they learn. Many of those people are not traditional software developers; rather, they are practitioners in other fields such as scientific research and Python is just another tool to help them do their primary more effectively. For others, Python is a great additional programming tool to add to their toolbox.
+Applications coded with Python can run on almost all computer systems including those running Windows, macOS, and popular distributions of Linux. Furthermore, the ecosystem contains a rich set of development tools for writing, debugging, and publishing Python applications. And Python is supported by an active user community that is eager to help new programmers learn the [Pythonic way](https://docs.python-guide.org/writing/style/).
 
-Applications coded with Python can run on almost all computer systems including Microsoft Windows, Apple's MacOS, Linux (all distributions) and on local and cloud-based systems. Furthermore, there is a rich set of development tools to help code, debug and publish Python applications. Popular tools include Microsoft's Visual Studio Code and Azure's hosted Jupyter Notebooks.
+## Your mission, should you choose to accept it
 
-So whether this is your first language or just your next language, and whether you are a software developer or a professional in another field, this tutorial will walk you through the basics of learning the Python language through a scenario-based approach. The goal is to learn not only the academic side of Python but also begin to apply it to solve real-world problems. Furthermore, while this tutorial is not teaching topics like data science or machine learning, many of the examples are coding tasks which would be commonly performed in such computing fields.
+Imagine that you've been tasked with collecting information about U.S. airports and answering some basic questions using the data. For example, you need to know how many airports are present in each state and which city or state has the most airports. Perhaps you are experienced with programming languages such as Java and C++, but have no experience with Python. Or perhaps you aren't a programmer at all. Nonetheless, a little time invested in learning Python can make short work of the task at hand.
+
+In a series of hands-on lessons, you will learn the basics of Python by building a [Jupyter notebook](http://jupyter.org/) that loads airport data downloaded from a U.S. Government Web site and manipulates the data. Jupyter notebooks provide an interactive platform for writing and testing Python code, and they're easily built in [Azure Notebooks](https://notebooks.azure.com/), which offer Jupyter as a service for free.
+
+![](media/initial-notebook-3.png)
 
 ## Learning objectives
 
 In this module, you will learn:
 
 - How to create a Jupyter notebook in Azure
-- The basics of Python, including variables, functions, and conditionals 
+- How to build Python applications in Jupyter notebooks
+- How to deal with variables and data types in Python
+- How to perform input and output in Python
+- How to read text files in Python
+- How to perform looping in Python
+- How to work with strings in Python, and how to parse text
+- How to use conditional statements to perform branching in Python
+- How to use functions in Python and how (and when) to write your own functions
 - How to perform practical problem solving with Python and Jupyter notebooks
+
+There is much to do, so let's get started.
