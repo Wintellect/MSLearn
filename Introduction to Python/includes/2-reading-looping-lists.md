@@ -6,7 +6,7 @@ In this lesson, you will download that dataset from the BTS Web site, upload it 
 
 ## Download a CSV file containing airport data
 
-The first step is to download the dataset and have a look at its content and structure. The dataset is a text file containing [CSV](https://en.wikipedia.org/wiki/Comma-separated_values) data. CSV is an extremely common data format — so common that there are Python libraries whose only purpose is to simplify reading and writing CSV files.
+The first step is to download the dataset and have a look at its content and structure. The dataset is a text file containing [CSV](https://en.wikipedia.org/wiki/Comma-separated_values) (Comma-Separated Values) data. CSV is an extremely common data format — so common that there are Python libraries whose only purpose is to simplify reading and writing CSV files.
 
 1. [Click here](https://www.transtats.bts.gov/Download_Lookup.asp?Lookup=L_AIRPORT) to open your browser and download a CSV file containing a collection of airport codes, airport locations, and airport names from the BTS Web site. Save the file to the location of your choice and name it **airports.csv**.
 
