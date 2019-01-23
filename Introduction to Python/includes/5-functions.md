@@ -97,7 +97,7 @@ print(airport, end='')
 
 ## Filter airport data by state
 
-Now let's enhance your notebook to allow users to interactively query the data for airports in a specified state. You will use a custom function to make the code compact and tidy, and Python's `input` function to solicit user input.
+Now let's enhance your notebook to allow users to interactively query for airports in a specified state. You will use a custom function to make the code compact and tidy, and Python's `input` function to solicit user input.
 
 1. Return to the Azure notebook in which you generated a list of U.S. airports. In the empty cell at the end of the notebook, add the following function definition:
 
@@ -153,7 +153,7 @@ You have come a long way in a few short lessons. But there is still more that yo
 	    print_airport(airport)
 	```
 
-	What advantages are there to factoring this single line of code out into a function?
+	What advantages are there to factoring this single line of code out into a function? Is it possible to define the function in such a way that it accepts parameters specifying the widths of the columns? Would default parameters be useful in this regard so callers use the default column widths without specifying those widths in each call?
 
 - Write a function that determines which U.S. state has the most airports
 - Write a function that determines which U.S. city has the most airports 
