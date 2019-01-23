@@ -127,13 +127,13 @@ In this exercise, you will use string slicing and string splitting to parse the 
 	    print('{0:8}{1:32}{2:1}'.format(airport_code, airport_location, airport_name))
 	```
 
-	The purpose of the code in the `for` loop is to divide a string containing an airport code, an airport location, and an airport name into three strings, as diagrammed below. First the string is split at "," to produce `items[0]` and `items[1]`. Then the quotation mark is removed from the beginning of `items[0]`, producing an airport code. Next, `items[1]` is split to produce `subitems[0]` and `subitems[1]`. The former is the airport location, and the quotation mark and embedded newline character are removed from the end of `subitems[1]` to get the airport name.
+	The purpose of the code in the `for-in` loop is to divide a string containing an airport code, an airport location, and an airport name into three strings, as diagrammed below. First the string is split at "," to produce `items[0]` and `items[1]`. Then the quotation mark is removed from the beginning of `items[0]`, producing an airport code. Next, `items[1]` is split to produce `subitems[0]` and `subitems[1]`. The former is the airport location, and the quotation mark and embedded newline character are removed from the end of `subitems[1]` to get the airport name.
 
 	![Splitting and trimming strings](media/string-splitting.png)
 
 	_Splitting and trimming strings_
 
-	The final line in the `for` loop uses the `format` function that can be called on any string in Python to format a string. It left-aligns `airport_code` in a field that is 8 spaces wide, `airport_location` in a field that is 32 spaces wide, and `airport_name` in a field that occupies the remainder of the line. It's one way in Python to align printed output into columns. Based on this, can you predict what the output will be?
+	The final line in the `for-in` loop uses the `format` function that can be called on any string in Python to format a string. It left-aligns `airport_code` in a field that is 8 spaces wide, `airport_location` in a field that is 32 spaces wide, and `airport_name` in a field that occupies the remainder of the line. It's one way in Python to align printed output into columns. Based on this, can you predict what the output will be?
 
 1. Now run the modified cell. Confirm that the output resembles the output below.
 
