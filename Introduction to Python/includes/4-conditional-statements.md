@@ -6,7 +6,7 @@ Now that the airport data in **airports.csv** has been parsed into a list of lis
 
 ## Branching with `if` statements
 
-`if` statements enact conditional logic in Python programs. You have already learned how to use `for` and `while` to write loops that execute a block of code repeatedly. Statements that use `if`, `for`, and `while` are known as *control-of-flow* statements because they control the flow of execution in a program.
+`if` statements enact conditional logic in Python programs. You have already learned how to use `for-in` and `while` to write loops that execute a block of code repeatedly. Statements that use `if`, `for-in`, and `while` are known as *control-of-flow* statements because they control the flow of execution in a program.
 
 Here is an `if` statement that performs an action only if a specified condition is met:
 
