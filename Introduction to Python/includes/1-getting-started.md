@@ -177,7 +177,7 @@ If you wanted to add an exclamation mark after the name so the greeting reads "H
 
 ## Commenting your code
 
-Virtually all programming languages support including comments in source code. Comments are not executable statements. Instead, they serve to explain how the code works or why it was written that way. Comments are a great way to document complicated code and to include TODOs reminding you to come back and do something later — for example, "make sure this code works with empty strings."
+Just about all programming languages support including comments in source code. Comments are not executable statements. Instead, they serve to explain how the code works or why it was written that way. Comments are a great way to document complicated code and to include TODOs reminding you to come back and do something later — for example, "make sure this code works with empty strings."
 
 Python supports comments using the pound sign (or hashtag) followed by the text of the comment:
 
