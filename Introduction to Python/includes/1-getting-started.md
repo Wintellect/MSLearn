@@ -88,13 +88,13 @@ name = input('Enter your name:')
 print(name)
 ```
 
-The string passed as an argument to the `input` function is the prompt that the user will see. In this example, you are asking the user to type his or her name. The user types his or her name and presses **Enter**, causing the `input` function to return. The function's return value is the name that the user typed, and that name is assigned to the variable named `name`. The `name` variable is then used as an argument to the `print` function to output the name that the user entered.
+The string passed as an argument to the `input` function is the prompt that the user will see. In this example, you are asking the user to type his or her name. The user types a name and presses **Enter**, causing the `input` function to return. The function's return value is the name that the user typed, and that name is assigned to the variable named `name`. The `name` variable is then used as an argument to the `print` function to output the name that the user entered.
 
 ## Understanding variables and data types
 
 Variables are one of the fundamental building blocks of programs written in Python. Variables hold data in memory. They have names, and they can be referenced by name. Variables also have *types* such as string and integer, and they can be used in expressions that use *operators* such as `+` and `-` to manipulate their values.
 
-In Python, a variable is declared and assigned a value using the assignment operator `=`. The variable being assigned to is on the left-hand side of the operator, and the expression being evaluated is on the right-hand side of the operator:
+In Python, a variable is declared and assigned a value using the assignment operator `=`. The variable being assigned to is on the left-hand side of the operator, and the value being assigned (which can be an expression such as `2 + 2`) is on the right-hand side:
 
 ```python
 x = 1 # assign x the value 1
@@ -112,7 +112,7 @@ Virtually all programs manipulate numbers. Computers treat integer numbers and d
 
 ```python
 x = 1 # integer
-x = 1.0 # decimal (known as floating point)
+x = 1.0 # decimal (floating point)
 ```
 
 Python creates integers from a built-in data typed called `int`, and decimals (floating-point numbers) as instances of `float`. Python's built-in `type` function returns a variable's data type. The following code outputs types to the screen: 
@@ -177,7 +177,7 @@ If you wanted to add an exclamation mark after the name so the greeting reads "H
 
 ## Commenting your code
 
-All programming languages support including comments in source code. Comments are not executable statements. Instead, they serve to explain how the code works or why it was written that way. Comments are a great way to document complicated code and to include TODOs reminding you to come back and do something later — for example, "make sure this code works with empty strings."
+Virtually all programming languages support including comments in source code. Comments are not executable statements. Instead, they serve to explain how the code works or why it was written that way. Comments are a great way to document complicated code and to include TODOs reminding you to come back and do something later — for example, "make sure this code works with empty strings."
 
 Python supports comments using the pound sign (or hashtag) followed by the text of the comment:
 
