@@ -2,7 +2,7 @@
 
 [Python](https://en.wikipedia.org/wiki/Python_(programming_language)) is one of the most popular programming languages in the world. Created in the early 1990s, it enjoys a wide range of uses from automating repetitive tasks and writing Web applications to building machine-learning models and implementing neural networks. Researchers, mathematicians, and data scientists in particular find Python alluring due to its rich and easy-to-understand syntax and the wide range of open-source packages available. Packages are commonly used, shared code libraries which are freely available for anyone to use.
 
-Applications coded with Python can run on almost all computer systems including those running Windows, macOS, and popular distributions of Linux. Furthermore, the ecosystem contains a rich set of development tools for writing, debugging, and publishing Python applications. And Python is supported by an active user community that is eager to help new programmers learn the [Pythonic way](https://docs.python-guide.org/writing/style/).
+Applications coded with Python can run on almost all computer systems, including those running Windows, macOS, and popular distributions of Linux. Furthermore, the ecosystem contains a rich set of development tools for writing, debugging, and publishing Python applications. And Python is supported by an active user community that is eager to help new programmers learn the [Pythonic way](https://docs.python-guide.org/writing/style/).
 
 ## Your mission, should you choose to accept it
 
