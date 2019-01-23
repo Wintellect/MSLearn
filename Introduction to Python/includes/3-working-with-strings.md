@@ -1,12 +1,12 @@
 # Strings in Python
 
-Strings are among the most commonly used data types in Python and in other programming languages. Strings contain text — text output to the screen, retrieved from user input, or read from a CSV file. Knowing how to parse and manipulate strings is an essential skill for any programmer, because virtually every program uses strings in some way. Many of today's most commonly used data formats, including CSV, [JSON](https://www.json.org/), and [XML](https://www.w3.org/XML/), use strings to store data.
+Strings are among the most commonly used data types in Python and in other programming languages. Strings contain text — text output to the screen, retrieved from user input, or read from a CSV file. Knowing how to parse and manipulate strings is an essential skill for any programmer, because virtually every program uses strings in some way. Many of today's most commonly used data formats, including [CSV](https://en.wikipedia.org/wiki/Comma-separated_values), [JSON](https://www.json.org/), and [XML](https://www.w3.org/XML/), use strings to store data.
 
 In the previous lesson, you uploaded a CSV file containing a list of airports all over the world to Azure Notebooks and wrote some Python code to read the file and create a list of strings from the file's content. In this lesson, you will parse the content that you read and convert the data into a more useful format.
 
 ## Working with strings
 
-A string is a collection of zero or more characters. A string with no characters is called an *empty string*. Any textual data defined within single or double quotation marks is a string value:
+A string is a collection of zero or more characters. A string with no characters is called an *empty string*. Any text contained within single or double quotation marks is a string value:
 
 ```python
 message = 'This is a string'
@@ -20,7 +20,7 @@ message = 'Hello' + ' ' + 'World!'
 print(message) # outputs: Hello World!
 ```
 
-You may use single or double quotation marks to quote strings. There is no difference in the results, or in how the strings are stored internally. You can embed a double quotation mark in a string by enclosing the string itself in single quotes, and you can embed a single quotation mark in a string by enclosing the string in double quotes. If the string contains the same quotation mark as the one used to quote the string, you may escape the embedded quotation mark with a backslash:
+You may use single or double quotation marks to quote strings. There is no difference in the results, or in how the strings are stored internally. You can embed a double quotation mark in a string by enclosing the string itself in single quotes, and you can embed a single quotation mark in a string by enclosing the string in double quotes. If the string contains the same quotation mark as the one used to quote the string, you can escape the embedded quotation mark with a backslash:
 
 ```python
 message = 'Tim said, \'Hello World!\''
@@ -108,7 +108,7 @@ In this exercise, you will use string slicing and string splitting to parse the 
 
 	_Printing airport codes_
 
-1. The previous code parsed an airport code from each line read from the data file. The next challenge is to get each airport's name and location as well. Modify the code above as follows:
+1. The previous code parsed an airport code from each line read from the data file. The next challenge is to get each airport's name and location. Modify the code above as follows:
 
 	```python
 	for airport in all_airports:
