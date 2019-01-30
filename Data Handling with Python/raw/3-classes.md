@@ -266,7 +266,7 @@ The airline data exercise results in a Jupyter notebook which will load and anal
 	            state = create_state(state_data)
 	            states[state['code']] = state
 	  
-	        return states
+	    return states
 	```
 
 	Replace these two lines:
@@ -394,18 +394,18 @@ The airline data exercise results in a Jupyter notebook which will load and anal
 1. Find the 6th cell with the following code.
 
 	```python
-	  def load_airports(airport_csv_file_name, states):
+	def load_airports(airport_csv_file_name, states):
 	
-	      airports = {}
+	    airports = {}
 	
-	      with open(airport_csv_file_name, 'r') as airports_csv_file:
-	          airports_csv_file_reader = csv.reader(airports_csv_file, delimiter=',')
-	          for airport_line_number, airport_data in enumerate(airports_csv_file_reader):
-	              if airport_line_number == 0: continue
-	              airport = create_airport(airport_data, states)
-	              airports[airport['code']] = airport
+	    with open(airport_csv_file_name, 'r') as airports_csv_file:
+	        airports_csv_file_reader = csv.reader(airports_csv_file, delimiter=',')
+	        for airport_line_number, airport_data in enumerate(airports_csv_file_reader):
+	            if airport_line_number == 0: continue
+	            airport = create_airport(airport_data, states)
+	            airports[airport['code']] = airport
 	        
-	      return airports
+	    return airports
 	```
 
 	Replace the code:
