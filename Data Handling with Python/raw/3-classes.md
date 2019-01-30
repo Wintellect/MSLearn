@@ -308,13 +308,13 @@ The airline data exercise results in a Jupyter notebook which will load and anal
 	            city = location_parts[0]
 	            state_code = location_parts[1]
 	
-	        if state_code in states:
-	            state = states[state_code]
-	            state_name = state['name']
-	            state_label = state['label']
-	            country = state['country']
-	        else:
-	            country = state_code
+	            if state_code in states:
+	                state = states[state_code]
+	                state_name = state['name']
+	                state_label = state['label']
+	                country = state['country']
+	            else:
+	                country = state_code
 	
 	    else:
 	        name = desc_parts[0]
