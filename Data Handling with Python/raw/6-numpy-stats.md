@@ -253,6 +253,10 @@ The airline data exercise results in a Jupyter notebook which will load and anal
 
 	The first plot is a histogram of the delay in minutes per airport. Most the delay lengths occur at the lower range (this is good for flyers).
 
+	![Charting airport delays](Images/plot-1.png)
+
+	_Charting airport delays_
+
 1. Add a new cell to the bottom of the notebook, add the following code, then run the cell.
 
 	```python
@@ -263,6 +267,10 @@ The airline data exercise results in a Jupyter notebook which will load and anal
 
 	The second plot is a histogram of the number of flights per airport. Most airports are doing less than 5000 flights per month.
 
+	![Charting numbers of flights](Images/plot-2.png)
+
+	_Charting numbers of flights_
+
 1. Add a new cell to the bottom of the notebook and add the following code.
 	
 	```python
@@ -271,3 +279,7 @@ The airline data exercise results in a Jupyter notebook which will load and anal
 	```
 
 	A scatter plot does an x,y plot of two variables. Scatter plots are used for variety of purposes including trying to discover relationships between two different variables. This is a scatter plot of the delay in minutes versus the number of flights at the same airpot. Not much information can be gained from this particular scatter plot except to say that high volume airports appear to do well in terms of keeping delays to a minimum.
+
+	![Charting tk](Images/plot-3.png)
+
+	_Charting tk_
