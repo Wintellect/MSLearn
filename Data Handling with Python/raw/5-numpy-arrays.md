@@ -90,11 +90,11 @@ TODO: Add introduction.
 
 	```python
 	results = np.array([
-	  [ 2.12 ],
-	  [ 5.83 ],
-	  [ 9.25 ],
-	  [ 3.71 ],
-	  [ 7.26 ],
+	    [ 2.12 ],
+	    [ 5.83 ],
+	    [ 9.25 ],
+	    [ 3.71 ],
+	    [ 7.26 ],
 	])
 	
 	print(results)
@@ -106,11 +106,11 @@ TODO: Add introduction.
 
 	```python
 	results = np.array([
-	  [ 'sample a', 2.12 ],
-	  [ 'sample b', 5.83 ],
-	  [ 'sample c', 9.25 ],
-	  [ 'sample d', 3.71 ],
-	  [ 'sample e', 7.26 ],
+	    [ 'sample a', 2.12 ],
+	    [ 'sample b', 5.83 ],
+	    [ 'sample c', 9.25 ],
+	    [ 'sample d', 3.71 ],
+	    [ 'sample e', 7.26 ],
 	])
 	
 	print(results)
@@ -124,11 +124,11 @@ TODO: Add introduction.
 
 	```python
 	results = np.array([
-	  ( 'sample a', 2.12 ),
-	  ( 'sample b', 5.83 ),
-	  ( 'sample c', 9.25 ),
-	  ( 'sample d', 3.71 ),
-	  ( 'sample e', 7.26 )
+	    ( 'sample a', 2.12 ),
+	    ( 'sample b', 5.83 ),
+	    ( 'sample c', 9.25 ),
+	    ( 'sample d', 3.71 ),
+	    ( 'sample e', 7.26 )
 	], dtype=[ ('sample', 'S8'), ('value', 'f4') ])
 	
 	print(results)
