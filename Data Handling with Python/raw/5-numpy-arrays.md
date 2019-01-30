@@ -192,6 +192,8 @@ The airline data exercise results in a Jupyter notebook which will load and anal
 1. With the data loaded, a NumPy array needs to be created to allow for efficient analysis of the data. Add a new cell and add the following code to the cell.
 
 	```python
+	import numpy as np
+
 	ontime = np.array(ontime_rows, dtype=[('airport_code', 'S3'),('dep_delay', 'f4')])
 	print(len(ontime))
 	```
