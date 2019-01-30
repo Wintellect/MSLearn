@@ -125,7 +125,7 @@ In this exercise, various calculation functions provided by `numpy` and `scipy` 
 
 	Generating various descriptive statistics individually works, but the `scipy` module provides a `describe` function which will generate a number of values all at once. The `nobs` mean number of observations or the length. The `minmax` is a tuple of the minimum and maximum value. The `mean` is the average of the values. The `var` is the sample variance. By taking the square root of the variable the standard deviation can be easily calculated. The `skewness` and `kurtosis` are both additional measures of dispersion.
 
-## Generate a Histogram with Matplotlib Exercise
+## Generate a Histogram with Matplotlib
 
 Matplotlib is very popular library for generating visualization of data. It is very customizable and has a very large and robust API for configuring just about everthing. In this exercise, we will take a quick look at generating simple visualization of data.
 
