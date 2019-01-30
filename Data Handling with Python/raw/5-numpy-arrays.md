@@ -59,7 +59,7 @@ TODO: Add introduction.
 
 	The `linspace` function generates and array of numbers starting from the first argument to the last argument (inclusive). The third argument is the number of elements to be generated all equally spaced.
 
-## Structured Arrays Exercise
+## Structured arrays
 
 TODO: Add introduction.
 
@@ -139,7 +139,7 @@ TODO: Add introduction.
 
 	The string stored in the sample column will not be stored as a UTF-8 string. UTF-8 encoding is the default string encoding for Python. To convert value back to UTF-8, the `decode` function is used.
 
-## Extracting Unique Values Exercise
+## Extracting unique values
 
 TODO: Add introduction.
 
