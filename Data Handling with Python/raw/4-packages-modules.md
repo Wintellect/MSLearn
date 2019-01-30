@@ -324,16 +324,16 @@ The airline data exercise results in a Jupyter notebook which will load and anal
 	    
 	def load_states(states_csv_file_name):
 	
-	  states = {}
+	    states = {}
 	
-	  with open(states_csv_file_name, 'r') as states_csv_file:
-	      states_csv_file_reader = csv.reader(states_csv_file, delimiter=',')
-	      for state_line_number, state_data in enumerate(states_csv_file_reader):
-	          if state_line_number == 0: continue
-	          state = State(state_data)
-	          states[state.code] = state
+	    with open(states_csv_file_name, 'r') as states_csv_file:
+	        states_csv_file_reader = csv.reader(states_csv_file, delimiter=',')
+	        for state_line_number, state_data in enumerate(states_csv_file_reader):
+	            if state_line_number == 0: continue
+	            state = State(state_data)
+	            states[state.code] = state
   
-	  return states
+	    return states
 	
 	class Airport:
 	
