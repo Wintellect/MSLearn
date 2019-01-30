@@ -163,6 +163,8 @@ The airline data exercise results in a Jupyter notebook which will load and anal
 1. Add a new cell at the bottom of the notebook, and add the following code.
 
 	```python
+	import csv
+
 	ontime_rows = []
 	
 	with open('./ontime_oct2018.csv') as ontime_csv_data:
