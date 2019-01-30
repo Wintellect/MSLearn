@@ -151,14 +151,12 @@ class Something:
     items = []
 
     def __init__(self):
-
         # instance data attribute - not inherited
         self.some_attr = 'test'
 
-      # inherited bound method (function) - inherited
-      def do_something(self):
-
-          print('did it!')
+    # inherited bound method (function) - inherited
+    def do_something(self):
+        print('did it!')
 ```
 
 > There are non-instance data attributes which are shared by all instances of a class (as shown above). They are outside scope of this module.
