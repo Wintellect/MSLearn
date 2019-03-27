@@ -1,0 +1,15 @@
+### YamlMime:ModuleUnit
+uid: learn.introduction-to-git.07-collaborate-using-a-shared-repo
+title: Collaborate using a shared repo
+metadata:
+  title: Collaborate using a shared repo
+  description: TODO
+  ms-date: 03/27/2019
+  author: ssavitzky
+  ms-author: TODO
+  ms.topic: interactive-tutorial
+  ms.prod: learning-git
+  ROBOTS: NOINDEX
+durationInMinutes: 1
+content: |
+  [!include[](includes/07-collaborate-using-a-shared-repo.md)]

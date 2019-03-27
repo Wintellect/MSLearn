@@ -1,0 +1,15 @@
+### YamlMime:ModuleUnit
+uid: learn.introduction-to-git.08-branching-and-merging
+title: Branching and merging
+metadata:
+  title: Branching and merging
+  description: TODO
+  ms-date: 03/27/2019
+  author: ssavitzky
+  ms-author: TODO
+  ms.topic: interactive-tutorial
+  ms.prod: learning-git
+  ROBOTS: NOINDEX
+durationInMinutes: 0
+content: |
+  [!include[](includes/08-branching-and-merging.md)]

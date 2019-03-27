@@ -1,0 +1,15 @@
+### YamlMime:ModuleUnit
+uid: learn.introduction-to-git.01-introduction
+title: Introduction to Version Control and Git
+metadata:
+  title: Introduction to Version Control and Git
+  description: TODO
+  ms-date: 03/27/2019
+  author: ssavitzky
+  ms-author: TODO
+  ms.topic: interactive-tutorial
+  ms.prod: learning-git
+  ROBOTS: NOINDEX
+durationInMinutes: 10
+content: |
+  [!include[](includes/01-introduction.md)]

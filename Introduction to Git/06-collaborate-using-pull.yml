@@ -1,0 +1,15 @@
+### YamlMime:ModuleUnit
+uid: learn.introduction-to-git.06-collaborate-using-pull
+title: Collaborate using pull
+metadata:
+  title: Collaborate using pull
+  description: TODO
+  ms-date: 03/27/2019
+  author: ssavitzky
+  ms-author: TODO
+  ms.topic: interactive-tutorial
+  ms.prod: learning-git
+  ROBOTS: NOINDEX
+durationInMinutes: 2
+content: |
+  [!include[](includes/06-collaborate-using-pull.md)]

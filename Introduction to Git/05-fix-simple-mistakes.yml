@@ -1,0 +1,15 @@
+### YamlMime:ModuleUnit
+uid: learn.introduction-to-git.05-fix-simple-mistakes
+title: Fix simple mistakes
+metadata:
+  title: Fix simple mistakes
+  description: TODO
+  ms-date: 03/27/2019
+  author: ssavitzky
+  ms-author: TODO
+  ms.topic: interactive-tutorial
+  ms.prod: learning-git
+  ROBOTS: NOINDEX
+durationInMinutes: 8
+content: |
+  [!include[](includes/05-fix-simple-mistakes.md)]
