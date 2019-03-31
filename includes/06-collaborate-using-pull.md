@@ -1,6 +1,7 @@
 # Collaborate using Pull
 
-As work on the website progresses one of your coworkers, Alice, offers to help
+As work on the website progresses one of your coworkers, <a
+href="https://en.wikipedia.org/wiki/Alice_and_Bob" >Alice</a>, offers to help
 you write the CSS stylesheet.  She will need to make a copy of your project,
 and send her changes to you as she makes them.  This is where `git`'s
 _distributed_ nature comes in.
