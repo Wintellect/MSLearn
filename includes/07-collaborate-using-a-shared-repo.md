@@ -38,17 +38,18 @@ To ../Website.git
  * [new branch]      master -> master
 ```
 
-Since you want `origin` to behave exactly the same as if you'd cloned from
-it, you need to tell Git which branch is the default.
+Since you want push and pull to use `origin`'s master branch by default, the
+way they do in a cloned repository, you need to tell Git which branch to
+track:
 
 ```
 $ git branch --set-upstream-to origin/master
 Branch 'master' set up to track remote branch 'master' from 'origin'.
 ```
 
-You had to specify the branch the first time you pushed, because there weren't
-any branches in the new repository yet and Git won't let you track a branch
-that doesn't exist.
+Git would have complained if you had tried to do this before the initial push,
+because there weren't any branches in the new repository yet and Git won't let
+you track a branch that doesn't exist.
 
 ## Setup for collaborators
 
@@ -145,8 +146,11 @@ index a02a169..7692b01 100644
 ```
 
 She can see that, although she and Bob have both changed the same file, their
-changes don't overlap.  She decides to stash her changes; `git stash` makes a
-temporary commit of changes.
+changes don't overlap.  She decides to stash her changes; `git stash` saves
+the state of the working tree and index by making a couple of temporary
+commits.  (She should have stashed or committed her changes _before_ trying to
+pull.  Pulling to a "dirty" working tree is risky, because it can do things
+you can't recover from.)
 
 ```
 $ git stash
@@ -200,10 +204,12 @@ To ../../Website.git
 ```
 
 If Alice had committed her changes rather than stashing them, the situation
-would have been somewhat different -- she would have had to make a branch
-and either merge or rebase her changes.  We'll see how to do that in the next
-unit; for now it's worth pointing out that branching and merging is _exactly_
-what the stash commands accomplish behind the scenes.
+would have been somewhat different -- she would have had to make a branch and
+either merge or rebase her changes.  If she'd been working on a branch in the
+first place she would have saved herself quite a lot of trouble.  We'll see
+how to do that in the next unit; for now it's worth pointing out that
+branching and rebasing is _exactly_ what the stash commands accomplish behind
+the scenes.
 
 ## Commands in this unit
 
