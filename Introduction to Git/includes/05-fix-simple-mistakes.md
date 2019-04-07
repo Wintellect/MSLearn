@@ -67,8 +67,13 @@ On branch master
 nothing to commit, working tree clean
 ```
 
-You can also check out a file from an earlier commit, or even from another
-branch, but the default is to get the file out of the index.
+You can also check out a file from another commit (typically the head of
+another branch), but the default is to get the file out of the index.  The
+`--` in the argument list is there to separate the commit from the list of
+file paths.  It's not strictly needed in this case, but if there had been a
+branch called `index.html` (perhaps because that's the name of the file being
+worked on on that branch) or a file called `master`, it would be needed to
+resolve the ambiguity.
 
 Things are a little more complicated if you used `git rm`:
 
@@ -117,9 +122,11 @@ back, make the change correctly, and `git commit --amend`.  Or you could use
 change and the commit.
 
 But suppose you didn't notice the problem until you'd already made another
-commit after the bad one, or published the commit on a shared repo. 
-<!-- FIXME: make sure unit ref is correct -->
-Another way is to _revert_ the change:
+commit after the bad one, shared your repo with a coworker (see the next unit)
+or made the commit public (see Unit 7).  Changing history can be dangerous
+(see almost any science fiction story about time travel).  It this situation,
+the best thing to do is to _revert_ the change, by making another commit that
+cancels out the first one:
 
 ```
 $ git revert --no-edit HEAD 
