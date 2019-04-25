@@ -35,8 +35,8 @@ any commits that have been published.
 
 ### Exercises:
 
-* Run `git log -n1 --pretty=fuller`.  What do you notice about the AuthorDate and
-  CommitDate fields?
+* Run `git log -n1 --pretty=fuller`.  What do you notice about the AuthorDate
+  and CommitDate fields?
 * Compare that to the output of `git log -n1`.  Which date is reported by
   default?
 * Can you think of cases where the author and committer would be different?
@@ -103,14 +103,14 @@ The `git reset` was needed because `git rm` did two things:  it removed the file
 and it recorded the deletion in the index.  The `reset` unstaged the change,
 but the file was still deleted, so you had to use `checkout` to get it back.
 
-## Reverting a commit
+## Revert a commit
 
 You decide to make the background a little darker:
 
 ```
-echo body '{ background-color:  #F0F0F0; }' > assets/site.css
-$ git commit -a -m "make the page background a little darker"
-[master 4a846bb] make the page background a little darker
+echo body '{ background-color:  #E0E0E0; }' > assets/site.css
+$ git commit -a -m "Make the page background a little darker"
+[master 4a846bb] Make the page background a little darker
  1 file changed, 1 insertion(+), 1 deletion(-)
 ```
 
@@ -122,9 +122,9 @@ back, make the change correctly, and `git commit --amend`.  Or you could use
 change and the commit.
 
 But suppose you didn't notice the problem until you'd already made another
-commit after the bad one, shared your repo with a coworker (see the next unit)
+commit after the bad one, shared your repo with somebody (see the next unit)
 or made the commit public (see Unit 7).  Changing history can be dangerous
-(see almost any science fiction story about time travel).  It this situation,
+(see almost any science fiction story about time travel).  It this situation
 the best thing to do is to _revert_ the change, by making another commit that
 cancels out the first one:
 
@@ -138,7 +138,7 @@ commit 3681d4ac99448818fba7714487206cc5426b1e79 (HEAD -> master)
 Author: Steve Savitzky <steve@savitzky.net>
 Date:   Sun Mar 24 07:52:27 2019 -0700
 
-    Revert "make the page background a little darker"
+    Revert "Make the page background a little darker"
     
     This reverts commit 4a846bb58b8810bac9830780c9da2a33dc63c0c2.
 ```
@@ -146,21 +146,41 @@ Date:   Sun Mar 24 07:52:27 2019 -0700
 Now you can make the change correctly.
 
 ```
-$ echo body '{ background-color:  #F0F0F0; }' >> assets/site.css 
+$ echo body '{ background-color:  #E0E0E0; }' >> assets/site.css 
 $ cat !$
 cat assets/site.css
 h1, h2, h3, h4, h5, h6 { font-family: sans-serif; }
-body { background-color:  #F0F0F0; }
-$ git commit -a -m "make the page background a little darker" -m "correctly"
+body { background-color:  #E0E0E0; }
+$ git commit -a -m "Make the page background a little darker" -m "correctly"
 [master 9c139ee] make the page background a little darker
  1 file changed, 1 insertion(+)
 ```
 
-<!-- reflog here? -->
+In addition to copying text from the terminal to a file, the `cat` command is
+possibly even more useful going the other way, for getting a quick look at a
+short file.  For longer files, use `less`.
 
 ### Exercises
 
-* `gitk` is a program that shows you a GUI view of your history.  Use it to
-  verify that the last few commits made the changes you expect.
+* Use `git reflog` to see all the changes you've made to `master` and `HEAD`,
+  including the original version of the commit you amended.
+* Use `gitk --all`, which shows you a GUI view of your history, to verify that
+  the last few commits made the changes you expect.
 
+## Summary
 
+In this unit you've learned about
+
+* `git checkout`, which retrieves previous versions,
+* `git reset`, which sets the working tree and index back to an earlier state,
+* `git revert`, which undoes the effect of a commit without affecting history,
+* `git reflog`, which shows you previous values of `HEAD` and `master`,  and 
+* `git commit --amend`, which lets you change the most recent commit.
+
+You've also seen 
+
+* `rm`, which removes a file, and
+* `gitk`, which gives you a GUI for exploring your history.
+
+In the next unit you'll start collaborating with another developer.  Since Git
+is distributed, you won't have to set up a server; you can share directly.
