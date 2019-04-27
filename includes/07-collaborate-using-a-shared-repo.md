@@ -218,8 +218,8 @@ the scenes.
 
 ## Summary
 
-In this unit, you learned how to share your Git project directly with another
-developer, and about the Git commands
+In this unit, you learned how to set up a bare repository that can be shared
+among a group of developers, and about the Git commands
 
 * `git commit --bare`, which sets up a repo that can be shared,
 * `git push`, which merges changes with a remote repo, and
