@@ -1,39 +1,41 @@
 # Collaborate using Pull
 
-As work on the website progresses one of your coworkers, <a
-href="https://en.wikipedia.org/wiki/Alice_and_Bob" >Alice</a>, offers to help
-you write the CSS stylesheet.  She will need to make a copy of your project,
-and send her changes to you as she makes them.  This is where `git`'s
-_distributed_ nature comes in.
+After a pizza party at your house your friend and fellow cat-lover
+[Alice](https://en.wikipedia.org/wiki/Alice_and_Bob) offers to help with the
+website.  She needs to make a copy of your project, and will want to send her
+changes to you as she makes them.  This is where `git`'s _distributed_ nature
+comes in.
 
-## Cloning a repository
+## Clone a repository
 
 Instead of making an empty directory and running `git init` to initialize it,
-Alice uses `git clone` to copy your repo.  In this section, we'll use a
-directory to hold Alice's copy of the `Website` project.  You're probably in
-the Website project directory, so you'll want to change to the parent
-directory first.
+Alice uses `git clone` to copy your repo.  Since she's already on your
+household WiFi network she can mount it as a network share; for now we'll make
+an ordinary directory called `Alice` to take the place of her home directory.
+You're probably in your working tree project directory, so you'll want to
+change to the parent directory first.
 
 ```bash
 $ cd ..
 $ mkdir Alice
 $ cd Alice
-$ git clone ../Website
-Cloning into 'Website'...
+$ git clone ../Cats
+Cloning into 'Cats'...
 done.
-$ cd Website
+$ cd Cats
 ```
 
-Usually `git clone` takes a URL (the various types are described in the
-[documentation](https://git-scm.com/docs/git-clone)) that points to the
-repository being cloned, but it can also use a file system path if the
-repository is local; that's what Alice has done here.  On Unix and Linux, the
+You can give `git clone` either a filesystem path as we did here, an SSH path
+(e.g. `git@example.com:alice/Cats` -- you'll be familiar with this form if
+you've :used Rsync or Scp), or a URL (typically starting with `file:`, `git:`,
+or `ssh`).  The various types are described in the [documentation for
+git clone](https://git-scm.com/docs/git-clone).  On Unix and Linux the
 cloning operation uses hard links, which is fast and takes up very little
 space because only the directory entries need to be copied, not the files.
 
-Because Alice is working using your account (which is very bad from a security
-point of view, but she can get away with it because she doesn't really exist)
-she has to use local configuration variables:
+Because Alice doesn't have her copy of Git properly configured yet (not
+surprising since she' a fictional character), she sets local configuration
+variables for her name and email:
 
 ```bash
 $ git config user.name Alice
@@ -43,7 +45,7 @@ $ git config user.email alice@example.com
 ## Remote repositories
 
 When Git clones a repository, it creates a reference to it called a "remote",
-with the name "origin", and sets it up so that it will push and pull from the
+with the name `origin`, and sets it up so that it will push and pull from the
 remote repository.
 
 
@@ -56,16 +58,16 @@ $ git branch -a
   remotes/origin/master
 ```
 
-Origin is the default location for git to pull changes from and push changes
-to.  In this case, you haven't done anything new, so there's nothing for Alice
-to pull.
+Origin is the default location for Git to pull changes from and push changes
+to.  So far you haven't done anything new, so there's nothing for Alice to
+pull.
 
-```
+```bash
 $ git pull
 Already up to date.
 ```
 
-## Make a change and request a pull
+## Alice makes a change and a pull request
 
 Alice decides to start by changing the site's background color to her favorite
 shade of light blue, and committing the change:
@@ -83,8 +85,9 @@ Your branch is ahead of 'origin/master' by 1 commit.
 nothing to commit, working tree clean
 ```
 
-Now she has to get the changes over to _your_ copy of the project.  Since Git
-suggests using `git push`, she tries that first:
+As usual, Git gives her a hint about the next step, which is to get the
+changes over to _your_ copy of the project.  Since Git suggests using `git
+push`, she tries that first:
 
 ```bash
 $  git push
@@ -107,28 +110,27 @@ remote: other way.
 remote: 
 remote: To squelch this message and still keep the default behaviour, set
 remote: 'receive.denyCurrentBranch' configuration variable to 'refuse'.
-To /home/steve/vv/prj/ms-learn/sandbox/Alice/../Website
+To /home/steve/vv/prj/ms-learn/sandbox/Alice/../Cats
  ! [remote rejected] master -> master (branch is currently checked out)
-error: failed to push some refs to '/home/steve/vv/prj/ms-learn/sandbox/Alice/../Website'
+error: failed to push some refs to '/home/steve/vv/prj/ms-learn/sandbox/Alice/../Cats'
 ```
 
-Well, _that_ didn't work.  (It's worth noting that if Alice didn't have write
-permission for your repository, the error message would have included "fatal:
-Could not read from remote repository" -- see the next section for an
-example.)  We'll see in the next unit how to set up a _shared_ repository that
-both of you can push to, but for now Alice is going to have to ask you to
-_pull_ her changes.  She can do that by running `git request-pull` and
-emailing you the output:
+Well, _that_ didn't work, although it would have if Alice had pushed to a
+different branch *and* had permission to write to your repo.  (It's worth
+noting that if Alice *didn't* have write permission for your repository, she
+would have gotten a "fatal" error message instead.)  For now, Alice is going
+to have to ask you to _pull_ her changes.  She can do that by running `git
+request-pull` and emailing you the output:
 
 ```
-$ git request-pull -p origin/master ../../Alice/Website
+$ git request-pull -p origin/master ../../Alice/Cats
 The following changes since commit a898ec56cf7f591cfa11a82d50b433e655572e75:
 
   make the page background a little darker (2019-03-24 08:07:47 -0700)
 
 are available in the Git repository at:
 
-  ../../Alice/Website
+  ../../Alice/Cats
 
 for you to fetch changes up to 565748d7955e6c9cf7e5829ac933dcc60627dbca:
 
@@ -153,24 +155,26 @@ index cd827ec..aa55481 100644
 ```
 
 A few things to notice:  `origin/master` is Alice's way of referring to the
-`master` branch on the `origin` remote.  The path `../../Alice/Website` would
-normally be relative to Alice's home directory or, better, the URL of a public
+`master` branch on the `origin` remote.  The path `../../Alice/Cats` would
+normally be relative to Alice's network share or, better, the URL of a public
 repository that Alice can push to (we'll see how to set that up in the next
-unit) and you can pull from.
+unit) and you can pull from.  Normally Alice would redirect the pull request
+into a file, or pipe it directly into a mail client.
 
 This pull request is essentially the same thing as a pull request on
 [GitHub](https://github.com).  In addition to asking you to pull Alice's
-changes, it is also asking you to _review_ those changes first.  Code reviews
-are an important part of collaborative programming.
+changes, it also gives you a chance to _review_ those changes first.  Code
+reviews are an important part -- some would say the *most* important part --
+of collaborative programming.
 
 ## An unsuccessful pull
 
 Now, you can try to pull from Alice's repository:
 
 ```
-$ cd ../../Website
-$ git pull ../../Alice/Website
-fatal: '../../Alice/Website' does not appear to be a git repository
+$ cd ../../Cats
+$ git pull ../../Alice/Cats
+fatal: '../../Alice/Cats' does not appear to be a git repository
 fatal: Could not read from remote repository.
 
 Please make sure you have the correct access rights
@@ -187,9 +191,14 @@ more often it makes more sense to create a remote.
 You create a remote using 
 
 ```
-$ git remote add alice ../Alice/Website
+$ git remote add alice ../Alice/Cats
+```
+
+and pull from it with
+
+```
 $ git pull alice master
-From ../Alice/Website
+From ../Alice/Cats
  * branch            HEAD       -> FETCH_HEAD
 Updating a898ec5..565748d
 Fast-forward
@@ -197,8 +206,8 @@ Fast-forward
  1 file changed, 1 insertion(+), 1 deletion(-)
 ```
 
-Notice that you had to specify a branch.  We'll see in the next unit how to
-fix that.
+Notice that you had to specify a branch, `master`, in the pull command.  We'll
+see in the next unit how to fix that.
 
 Behind the scenes, `git pull` is a combination of two simpler operations:
 `git fetch`, which gets the changes, and `git merge`, which merges those
@@ -206,13 +215,22 @@ changes into your repository.  In this case, the merge was "fast-forward",
 meaning that Alice had your latest commit in her repository, so her commit
 could be added to the front of your history without any modification.
 
-There's only one catch: this only works if Alice can access your computer, and
-vice versa.  That's almost never true.
+## Summary
 
-## Commands in this unit
+In this unit you learned how to collaborate with another developer using
+nothing more than a thumb drive or a network share, and used
 
-* `git clone`
-* `git pull`
-* `git push`
-* `git branch`
-* `git remote`
+* `git clone`, which clones (copies) a repo,
+* `git pull`, which fetches commits from another repo and merges them into
+  yours,
+* `git request-pull`, which creates a pull request,
+* `git branch`, which lists,  creates, modifies, or deletes branches, 
+* `git remote`, which lists, creates, modifies, or deletes remotes.
+
+There have been brief mentions of `git push`, `git fetch`, and `git merge`;
+you'll learn more about those in the next unit.  There have been even briefer
+mentions of the `scp` and `rsync` commands for copying files over a network
+using `ssh`, the "secure shell", which lets you log in on another computer.
+
+In the next unit, you will learn how to set up and use a shared repository,
+which makes collaborating much simpler and more convenient.

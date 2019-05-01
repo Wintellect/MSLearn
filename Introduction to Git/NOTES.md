@@ -7,6 +7,13 @@
   subtree add`.  That preserves its history (for what that's worth) and makes
   it easy to keep up to date in both directions as changes are made.
   
+```
+  git subtree split -P Learn_to_Use_Git -b intro-to-git --rejoin
+  cd ../MSLearn
+  git subtree pull -P Introduction\ to\ Git ssavitzky intro-to-git
+  push origin intro-to-git
+```
+
 * It's not clear to me what the right name for the intro to Git should be; if
   we follow the naming convention given in 'Writing MS Learn Modules.pdf' it
   should probably be something like "Use Git for Version Control".
@@ -35,3 +42,29 @@
 * The sample code is for Git Bash; Bash is common to all platforms and the
   available Unix tools make it easy to cut-and-paste commands rather than
   using a text editor for most things.
+
+* includes/assets directory for images and starter files (index.html,
+  site.css, cat pictures, etc.)
+
+## Things to fix
+
+~ singular they/them
+* text after headings and before lists or transcripts
+* after transcripts explain what they're looking at
+* commands in this unit: make it a paragraph.  Descriptions start with ",
+  which" and end with semicolon
+* list all commands, including Unix commands, not just the new ones
+* more vocabulary: origin, branch, merge, checkout, commit
+o bridge text, e.g., "You also performed your first Git commit. The next step
+  is to learn how to track changes made to files in a local repository, as
+  well as how to quantify those changes." 
+* present tense
+* describe commit first line as present imperative
+  see [The Art of the Commit · An A List Apart
+  Article](https://alistapart.com/article/the-art-of-the-commit) and [How to
+  Write a Git Commit Message](https://chris.beams.io/posts/git-commit/) 
+  First line also used as subject line in email.
+* cat website (Alice's cat is Dinah, of course)
+* Don't use "like"; use, e.g., "for example"
+* forward refs for stuff that can be skipped
+
