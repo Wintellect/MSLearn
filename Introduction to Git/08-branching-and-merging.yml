@@ -1,15 +1,15 @@
 ### YamlMime:ModuleUnit
 uid: learn.introduction-to-git.08-branching-and-merging
-title: Branching and merging
+title: Branch, merge, and rebase
 metadata:
-  title: Branching and merging
+  title: Branch, merge, and rebase
   description: TODO
-  ms-date: 03/27/2019
+  ms-date: 05/01/2019
   author: ssavitzky
-  ms-author: TODO
+  ms-author: TBD
   ms.topic: interactive-tutorial
   ms.prod: learning-git
   ROBOTS: NOINDEX
-durationInMinutes: 0
+durationInMinutes: 11
 content: |
   [!include[](includes/08-branching-and-merging.md)]

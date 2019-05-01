@@ -4,12 +4,12 @@ title: Start a project
 metadata:
   title: Start a project
   description: TODO
-  ms-date: 03/27/2019
+  ms-date: 05/01/2019
   author: ssavitzky
-  ms-author: TODO
+  ms-author: TBD
   ms.topic: interactive-tutorial
   ms.prod: learning-git
   ROBOTS: NOINDEX
-durationInMinutes: 7
+durationInMinutes: 11
 content: |
   [!include[](includes/03-start-a-project.md)]
