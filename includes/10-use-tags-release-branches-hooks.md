@@ -1,4 +1,6 @@
-# Use a hook to deploy to a website
+# Use tags, release branches, and hooks
+
+FIXME: incomplete at this point.
 
 You're finally ready to make your website available inside the company, and
 you want to update it automatically whenever anyone pushes a change.  You need
