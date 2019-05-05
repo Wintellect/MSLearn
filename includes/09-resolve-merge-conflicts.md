@@ -158,17 +158,63 @@ decided that he shouldn't have made the merge after all, was `git merge
 Bob could also use `git reset --hard` in both of the merged branches to get back
 to what he had before a merge.
 
-<!-- FIXME discuss merge tools -->
+## Merge tools
+
+Some people prefer to have the versions being merged shown side-by-side so
+that they can see what their choices are and select them interactively.  Some
+version control systems already have a tool of this sort (e.g. `p4merge` from
+Perforce), as do several text editors (e.g. `emerge` from Emacs and `vimdiff`
+from Vim).  Git doesn't have a tool of its own; you can specify your favorite
+on the `git mergetool` command line or with the `merge.tool` configuration
+variable.  The `--tool-help` option shows the list of known tools:
+
+```
+$ git mergetool --tool-help
+'git mergetool --tool=<tool>' may be set to one of the following:
+		araxis
+		emerge
+		vimdiff
+		vimdiff2
+		vimdiff3
+
+The following tools are valid, but not currently available:
+		bc
+		bc3
+		codecompare
+		deltawalker
+		diffmerge
+		diffuse
+		ecmerge
+		examdiff
+		gvimdiff
+		gvimdiff2
+		gvimdiff3
+		kdiff3
+		meld
+		opendiff
+		p4merge
+		tkdiff
+		tortoisemerge
+		winmerge
+		xxdiff
+
+Some of the tools listed above only work in a windowed
+environment. If run in a terminal-only session, they will fail.
+```
+
+Naturally, if you run this command on your own computer you are likely to get
+a different list.
 
 ## Summary
 
 In this unit you learned how to deal with merge conflicts, using the
-`--continue` and `--abort` options with `git merge`.  You can also use those
-options with `git rebase`, and because `git pull` is a combination of `fetch`
-and `merge`, you can resolve conflicts the same way.  You can use `git pull
---rebase` to rebase instead of merging after the fetch; it's particularly
-useful for keeping a branch up to date if you want to continue working on it
-after your colleagues have pushed changes to `master`.
+`--continue` and `--abort` options with `git merge`, and either a text editor
+or a merge tool.  You can also use those options with `git rebase`, and
+because `git pull` is a combination of `fetch` and `merge`, you can resolve
+conflicts the same way.  You can use `git pull --rebase` to rebase instead of
+merging after the fetch; it's particularly useful for keeping a branch up to
+date if you want to continue working on it after your colleagues have pushed
+changes to `master`.
 
-In the next unit, you will learn how to use a hook script to deploy a website,
-and how to use branches and tags to manage releases.
+In the next unit, you will learn how to use git to deploy a website using a
+hook script, and how to use branches and tags to manage software releases.
