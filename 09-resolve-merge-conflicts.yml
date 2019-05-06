@@ -4,12 +4,12 @@ title: Simplify histories and resolve merge conflicts
 metadata:
   title: Simplify histories and resolve merge conflicts
   description: TODO
-  ms-date: 05/01/2019
+  ms-date: 05/06/2019
   author: ssavitzky
   ms-author: TBD
   ms.topic: interactive-tutorial
   ms.prod: learning-git
   ROBOTS: NOINDEX
-durationInMinutes: 10
+durationInMinutes: 12
 content: |
   [!include[](includes/09-resolve-merge-conflicts.md)]

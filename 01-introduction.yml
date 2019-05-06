@@ -4,12 +4,12 @@ title: Introduction to Version Control and Git
 metadata:
   title: Introduction to Version Control and Git
   description: TODO
-  ms-date: 05/01/2019
+  ms-date: 05/06/2019
   author: ssavitzky
   ms-author: TBD
   ms.topic: interactive-tutorial
   ms.prod: learning-git
   ROBOTS: NOINDEX
-durationInMinutes: 12
+durationInMinutes: 13
 content: |
   [!include[](includes/01-introduction.md)]
