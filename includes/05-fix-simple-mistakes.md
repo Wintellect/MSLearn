@@ -3,7 +3,8 @@
 Sometimes things go wrong.  You might forget to add a new file, or add one by
 mistake.  Perhaps there was a spelling error in your latest commit, or you
 committed something you didn't intend to.  Perhaps you accidentally _deleted_
-a file.  Git lets you make changes fearlessly.
+a file.  You can even change Git's history, as long as you only change commits
++that haven't been shared.  Git lets you make changes fearlessly.
 
 ## Amend a commit
 
