@@ -3,7 +3,7 @@ uid: learn.introduction-to-git.08-branching-and-merging
 title: Branch, merge, and rebase
 metadata:
   title: Branch, merge, and rebase
-  description: TODO
+  description: Create, merge, and rebase branches
   ms-date: 05/06/2019
   author: ssavitzky
   ms-author: TBD

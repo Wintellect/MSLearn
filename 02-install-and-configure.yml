@@ -3,7 +3,7 @@ uid: learn.introduction-to-git.02-install-and-configure
 title: Install and Configure Git
 metadata:
   title: Install and Configure Git
-  description: TODO
+  description: Install Git and configure it with your name and email
   ms-date: 05/06/2019
   author: ssavitzky
   ms-author: TBD

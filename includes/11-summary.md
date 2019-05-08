@@ -11,6 +11,8 @@ At this point you know enough about Git to perform everyday tasks, get
 yourself out of trouble if things get confusing, and understand any
 documentation you run across.
 
+Have fun!
+
 ## Other tutorials
 
 There are many other good tutorials about Git, these include:

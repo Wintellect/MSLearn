@@ -3,7 +3,7 @@ uid: learn.introduction-to-git.03-start-a-project
 title: Start a project
 metadata:
   title: Start a project
-  description: TODO
+  description: Create a new Git working tree and make your first commit
   ms-date: 05/06/2019
   author: ssavitzky
   ms-author: TBD

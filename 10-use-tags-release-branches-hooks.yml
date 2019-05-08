@@ -3,7 +3,7 @@ uid: learn.introduction-to-git.10-use-tags-release-branches-hooks
 title: Deploy and release software
 metadata:
   title: Deploy and release software
-  description: TODO
+  description: Use workflows involving hooks and tags
   ms-date: 05/06/2019
   author: ssavitzky
   ms-author: TBD
