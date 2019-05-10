@@ -2,7 +2,7 @@
 
 Now it's time to get your website project off the ground.  You'll need to make
 a directory to hold your project, with a file in it (because git ignores empty
-directories).  "Cats" is a little unimaginativ, but it's easy to type.  (Feel
+directories).  "Cats" is a little unimaginative, but it's easy to type.  (Feel
 free to use something else -- nothing inside the working tree depends on the
 directory it's in.) Since this will be a website, the first file will be
 `index.html`.
@@ -166,19 +166,24 @@ last commit.  It won't add _new_ files -- for that you still need `git add`.
 In this unit you learned how to create a project that is under Git's control
 from the start.  You learned about the following Git subcommands:
 
-* `git init`, which initializes a Git repository in the current directory,
-* `git add `, which adds files or directories to the index,
-* `git commit`, which records all of the files in the index in a commit,
-* `git status`, which tells you the current state of the index and the working
+* [`git init`](https://git-scm.com/docs/git-init), which initializes a Git
+  repository in the current directory,
+* [`git add `](https://git-scm.com/docs/git-add), which adds files or
+ directories to the index,
+* [`git commit`](https://git-scm.com/docs/git-commit),
+ which records all of the files in the index in a commit,
+* [`git status`](https://git-scm.com/docs/git-status),
+ which tells you the current state of the index and the working
   tree, and
-* `git log`, which lists commits, newest first.
+* [`git log`](https://git-scm.com/docs/git-log),
+ which lists commits, newest first.
 
 You also used the following Unix commands:
 
-* `mkdir`, which makes a directory,
-* `touch`, which updates the "last-modified" time of a file, and creates itm
-  if it doesn't exist, and
-* `echo`, which copies its command-line arguments to its output.
+* [`mkdir`](https://linux.die.net/man/1/mkdir)](https://linux.die.net/man/1/mkdir), which makes a directory,
+* [`touch`](https://linux.die.net/man/1/touch), which updates the
+  "last-modified" time of a file, (and creates it if it doesn't exist) and
+* [`echo`](https://linux.die.net/man/1/echo), which copies its command-line arguments to its output.
 
 In the next unit, you'll start making and tracking changes.
 

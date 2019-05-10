@@ -3,8 +3,8 @@ uid: learn.introduction-to-git.04-make-and-track-changes
 title: Make and track changes
 metadata:
   title: Make and track changes
-  description: TODO
-  ms-date: 05/01/2019
+  description: Make changes in your working tree and track them with Git
+  ms-date: 05/06/2019
   author: ssavitzky
   ms-author: TBD
   ms.topic: interactive-tutorial

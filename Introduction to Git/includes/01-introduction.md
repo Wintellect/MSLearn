@@ -94,6 +94,9 @@ independent development, a distributed VCS also gives you backups for free.
 	the name of the operation.  That name is properly called a "subcommand",
 	but "command" is often used for either the subcommand or the Git command
 	that contains it.
+  * **Workflow:** a task or (more often) sequence of tasks, typically
+	involving both human interactions and software automation.  One goal in
+	designing workflows is to automate as much as possible.
 
 ## About the Examples
 

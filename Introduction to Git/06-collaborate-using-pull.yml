@@ -3,8 +3,8 @@ uid: learn.introduction-to-git.06-collaborate-using-pull
 title: Collaborate using Pull
 metadata:
   title: Collaborate using Pull
-  description: TODO
-  ms-date: 05/01/2019
+  description: Collaborate with another developer by pulling changes from one another's trees
+  ms-date: 05/06/2019
   author: ssavitzky
   ms-author: TBD
   ms.topic: interactive-tutorial

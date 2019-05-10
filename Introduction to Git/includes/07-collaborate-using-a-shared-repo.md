@@ -221,8 +221,11 @@ the scenes.
 In this unit, you learned how to set up a bare repository that can be shared
 among a group of developers, and about the Git commands
 
-* `git commit --bare`, which sets up a repo that can be shared,
-* `git push`, which merges changes with a remote repo, and
-* `git stash`, which saves un-committed changes so that you can merge safely.
+* [`git commit --bare`](https://git-scm.com/docs/git-commit),
+ which sets up a repo that can be shared,
+* [`git push`](https://git-scm.com/docs/git-push),
+ which merges changes with a remote repo, and
+* [`git stash`](https://git-scm.com/docs/git-stash),
+ which saves un-committed changes so that you can merge safely.
 
 In the next unit you'll learn how create and merge branches.

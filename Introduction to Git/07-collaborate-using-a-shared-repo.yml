@@ -3,8 +3,8 @@ uid: learn.introduction-to-git.07-collaborate-using-a-shared-repo
 title: Collaborate using a shared repo
 metadata:
   title: Collaborate using a shared repo
-  description: TODO
-  ms-date: 05/01/2019
+  description: Set up a bare repo that changes can be pushed to as well as pulled from
+  ms-date: 05/06/2019
   author: ssavitzky
   ms-author: TBD
   ms.topic: interactive-tutorial

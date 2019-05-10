@@ -13,6 +13,9 @@ command:
 $ git config --get user.name
 ```
 
+If it doesn't print your name, skip to the next section:  Git is installed but
+not configured.  If it prints `Command git not found`, read on!
+
 ## Install Git 
 
 Unless you're curious -- or use more than one operating system -- you can just
@@ -142,16 +145,18 @@ have some system variables defined.
 
 In this unit you installed and configured Git, and learned about
 
- * `git config`, which gets, sets, replaces, or deletes configuration
-   variables.
+ * `[`git config`](https://git-scm.com/docs/git-config)`, which gets, sets,
+   replaces, or deletes configuration variables.
 
 You've also seen brief mentions of
 
- * `vim`, an advanced text editor favored by many Unix and Linux developers,
-   with a well-deserved reputation for user-unfriendliness,
- * `nano`, a basic but very easy-to-use text editor, and
- * `sudo`, a Unix command that lets you run a single command as the system
-   administrator (`root`) without having to log in as root.
+ * [`vim`](https://linux.die.net/man/1/vim), an advanced text editor favored
+   by many Unix and Linux developers, with a well-deserved reputation for
+   user-unfriendliness,
+ * [`nano`](https://linux.die.net/man/1/nano), a basic but very easy-to-use text editor, and
+ * [`sudo`](https://linux.die.net/man/1/sudo), a Unix command that lets you
+   run a single command as the system administrator (`root`) without having to
+   log in as root.
 
 > (It may look a little odd not to start each bullet point with a capital
 > letter, but Git and the Bash shell have built-in commands that are

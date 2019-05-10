@@ -313,16 +313,19 @@ $ git log -n2 --no-abbrev-commit
 
 In this unit you learned about the following Git commands:
 
-* `git diff`, which shows the differences between versions,
-* `git mv`, which moves (renames) a file, and
-* `git rm`, which removes (deletes) a file,
+* [`git diff`](https://git-scm.com/docs/git-diff),
+ which shows the differences between versions,
+* [`git mv`](https://git-scm.com/docs/git-mv),
+ which moves (renames) a file, and
+* [`git rm`](https://git-scm.com/docs/git-rm),
+ which removes (deletes) a file,
 
 as well as a little more about `git log`.
 
 You also used the Unix commands
 
-* `cat`, which concatenates files (including input from the terminal), and
-* `sed`, which applies text-editing commands non-interactively.
+* [`cat`](https://linux.die.net/man/1/cat), which concatenates files (including input from the terminal), and
+* [`sed`](https://linux.die.net/man/1/sed), which applies text-editing commands non-interactively.
 
 In the next unit you'll learn how to use Git to recover from several common
 mistakes, including some of the mistakes that people often make using Git.
