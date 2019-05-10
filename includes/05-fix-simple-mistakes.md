@@ -172,16 +172,22 @@ short file.  For longer files, use `less`.
 
 In this unit you've learned about
 
-* `git checkout`, which retrieves previous versions,
-* `git reset`, which sets the working tree and index back to an earlier state,
-* `git revert`, which undoes the effect of a commit without affecting history,
-* `git reflog`, which shows you previous values of `HEAD` and `master`,  and 
-* `git commit --amend`, which lets you change the most recent commit.
+* [`git checkout`](https://git-scm.com/docs/git-checkout),
+ which retrieves previous versions,
+* [`git reset`](https://git-scm.com/docs/git-reset),
+ which sets the working tree and index back to an earlier state,
+* [`git revert`](https://git-scm.com/docs/git-revert),
+ which undoes the effect of a commit without affecting history,
+* [`git reflog`](https://git-scm.com/docs/git-reflog),
+ which shows you previous values of `HEAD` and `master`,  and 
+* [`git commit --amend`](https://git-scm.com/docs/git-commit),
+ which lets you change the most recent commit.
 
 You've also seen 
 
-* `rm`, which removes a file, and
-* `gitk`, which gives you a GUI for exploring your history.
+* [`rm`](https://linux.die.net/man/1/rm), which removes a file, and
+* [`gitk`](https://linux.die.net/man/1/gitk),
+ which gives you a GUI for exploring your history.
 
 In the next unit you'll start collaborating with another developer.  Since Git
 is distributed, you won't have to set up a server; you can share directly.

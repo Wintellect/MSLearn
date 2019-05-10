@@ -155,6 +155,5 @@ tags.
 In this unit, you have learned about Git hooks, which perform actions when
 specific events occur, and the Git command
 
-* `git tag`, which creates, deletes, or modifies tags.
-
-
+* [`git tag`](https://git-scm.com/docs/git-tag),
+ which creates, deletes, or modifies tags.

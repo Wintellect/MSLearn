@@ -220,17 +220,28 @@ could be added to the front of your history without any modification.
 In this unit you learned how to collaborate with another developer using
 nothing more than a thumb drive or a network share, and used
 
-* `git clone`, which clones (copies) a repo,
-* `git pull`, which fetches commits from another repo and merges them into
+* [`git clone`](https://git-scm.com/docs/git-clone),
+ which clones (copies) a repo,
+* [`git pull`](https://git-scm.com/docs/git-pull),
+ which fetches commits from another repo and merges them into
   yours,
-* `git request-pull`, which creates a pull request,
-* `git branch`, which lists,  creates, modifies, or deletes branches, 
-* `git remote`, which lists, creates, modifies, or deletes remotes.
+* [`git request-pull`](https://git-scm.com/docs/git-request-pull),
+ which creates a pull request,
+* [`git branch`](https://git-scm.com/docs/git-branch),
+ which lists,  creates, modifies, or deletes branches, 
+* [`git remote`](https://git-scm.com/docs/git-remote),
+ which lists, creates, modifies, or deletes remotes.
 
 There have been brief mentions of `git push`, `git fetch`, and `git merge`;
 you'll learn more about those in the next unit.  There have been even briefer
-mentions of the `scp` and `rsync` commands for copying files over a network
-using `ssh`, the "secure shell", which lets you log in on another computer.
+mentions of 
+
+* [`ssh`](https://linux.die.net/man/1/ssh), the Secure SHell command, which
+  lets you log in on another computer through the network,
+* [`scp`](https://linux.die.net/man/1/scp) (secure copy), which copies files
+  using `ssh`, and
+* [`rsync`](https://linux.die.net/man/1/rsync) (remote sync), which is similar
+  to `scp` but faster and more versatile.
 
 In the next unit, you will learn how to set up and use a shared repository,
 which makes collaborating much simpler and more convenient.
