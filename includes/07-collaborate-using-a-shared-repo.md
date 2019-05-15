@@ -5,18 +5,18 @@ the same network, but it's clumsy.  It's much better to set up a central
 repository that you can both push to as well as pull from.  When you tell Bob
 about your project, that's exactly what you do.
 
-## Set up a bare repository
+## Create a bare repository
 
 What you need is a repository that doesn't have a working tree, to avoid the
 problem Alice had trying to push.  That's called a "bare repository", and you
 can set it up using:
 
 ```
-$ cd ..
+$ cd ~/sandbox
 $ mkdir Cats.git
 $ cd Cats.git
 $ git init --bare
-Initialized empty Git repository in .../sandbox/Cats.git/
+Initialized empty Git repository in /home/steve/sandbox/Cats.git/
 ```
 
 (The convention for bare repositories is to give them a name ending with
@@ -26,13 +26,13 @@ Now you have to get the contents of _your_ repo into the new one.  You set up
 an `origin` remote and push to it.
 
 ```
-$ cd ../Cats
+$ cd ~/sandbox/Cats
 $ git remote add origin ../Cats.git
 $ git push origin master
 Counting objects: 40, done.
 Delta compression using up to 2 threads.
 Compressing objects: 100% (28/28), done.
-Writing objects: 100% (40/40), 3.80 KiB | 432.00 KiB/s, done.
+Writing objects: 100% (40/40), 3.82 KiB | 559.00 KiB/s, done.
 Total 40 (delta 6), reused 0 (delta 0)
 To ../Cats.git
  * [new branch]      master -> master
@@ -56,9 +56,10 @@ you track a branch that doesn't exist.
 Now all Bob has to do is clone the bare repository:
 
 ```
+$ cd ~/sandbox
 $ mkdir Bob
 $ cd Bob
-$ git clone ../Cats.git/ BobCats
+$ git clone ~/sandbox/Cats.git/ BobCats
 Cloning into 'BobCats'...
 done.
 $ cd BobCats
@@ -66,35 +67,39 @@ $ git config user.name Bob
 $ git config user.email bob@example.com
 ```
 
-Notice that Bob specified a different directory to clone into.
+Notice that Bob specified a different directory to clone into.  Git doesn't
+care what you call a working tree because it never looks outside of it.
 
 Alice already has a remote called `origin`, so all she has to do is change
 which repo it's pointing to:
 
 ```
-$ cd ../../Alice/Cats
-$ git remote set-url origin ../../Cats.git
+$ cd ~/sandbox/Alice/Cats
+$ git remote set-url origin ~/sandbox/Cats.git
 $ git push
 Everything up-to-date
 ```
 
+The push wasn't necessary, but it's a simple way of making sure the remote is
+set up with the correct defaults.
+
 ## The basics of collaboration
 
-Bob decides to change the page's title, currently "Sample Page", to match the
-`h1` tag:
+Bob decides to wrap the horizontal rule at the bottom of the page with a footer.
 
 ```
-$ cd ../../Bob/BobCats
-$ sed -i.bak -e 's/Sample page/Hello, everybody!/' index.html
-$ git commit -a -m "make page title match heading"
+$ cd ~/sandbox/Bob/BobCats
+$ sed -i.bak -e 's/<hr>/<footer><hr><\/footer>/' index.html
+$ git commit -a -m "Put a footer at the bottom of the page"
+1 file changed, 1 insertion(+), 1 deletion(-)
 $ git push
 Counting objects: 3, done.
 Delta compression using up to 2 threads.
 Compressing objects: 100% (3/3), done.
-Writing objects: 100% (3/3), 284 bytes | 284.00 KiB/s, done.
+Writing objects: 100% (3/3), 315 bytes | 315.00 KiB/s, done.
 Total 3 (delta 2), reused 0 (delta 0)
-To /home/steve/vv/prj/ms-learn/sandbox/Bob/../BobCats.git/
-   565748d..8af5fea  master -> master
+To /home/steve/sandbox/Cats.git
+   37903fd..99fbbca  master -> master
 ```
 
 He sends email to you and Alice to let you know that he's made a change.
@@ -103,7 +108,7 @@ Meanwhile, Alice decides to add a nav bar to the page, and adds a line to the
 style sheet for it as well.
 
 ```
-$ cd ../../Alice/Cats
+$ cd ~/sandbox/Alice/Cats
 $ sed -i.bak -e '/<body>/a<nav> <a href="./">home<\/a> <\/nav>' index.html
 $ echo 'nav { background-color: #C0D8DF; }' >> assets/site.css
 ```
@@ -114,7 +119,13 @@ problem, which we'll discuss in the next unit.)
 
 ```
 $ git pull
-Updating 565748d..8af5fea
+remote: Counting objects: 3, done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 3 (delta 2), reused 0 (delta 0)
+Unpacking objects: 100% (3/3), done.
+From /home/steve/sandbox/Cats
+   37903fd..99fbbca  master     -> origin/master
+Updating 37903fd..99fbbca
 error: Your local changes to the following files would be overwritten by merge:
 	index.html
 Please commit your changes or stash them before you merge.
@@ -132,22 +143,20 @@ compare.
 ```
 $  git diff origin -- index.html
 diff --git a/index.html b/index.html
-index a02a169..7692b01 100644
+index 8ff78df..b8732b6 100644
 --- a/index.html
 +++ b/index.html
-@@ -2,10 +2,11 @@
- <html>
- <head>
- <meta charset='UTF-8'>
--<title>Hello, everybody!</title>
-+<title>Sample page</title>
+@@ -6,8 +6,9 @@
  <link rel="stylesheet" href="assets/site.css">
  </head>
  <body>
 +<nav> <a href="./">home</a> </nav>
- <h1>Hello, everybody!</h1>
- <p> If this were a real website there would be content here.
- <hr>
+ <h1>Our Furry Friends</h1>
+ <p> Eventually we will put cat pictures here.
+-<footer><hr></footer>
++<hr>
+ </body>
+ </html>
 ```
 
 She can see that, although she and Bob have both changed the same file, their
@@ -159,8 +168,7 @@ things you can't recover from.)
 
 ```
 $ git stash
-Saved working directory and index state WIP on master: 565748d change
-background color to light blue
+Saved working directory and index state WIP on master: 37903fd change background color to light blue
 ```
 
 Now it's safe for Alice to pull, after which she can "pop" the stash, which is
@@ -169,7 +177,7 @@ push`.)
 
 ```
 $ git pull
-Updating 565748d..8af5fea
+Updating 37903fd..99fbbca
 Fast-forward
  index.html | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
@@ -186,26 +194,28 @@ Changes not staged for commit:
 	modified:   index.html
 
 no changes added to commit (use "git add" and/or "git commit -a")
-Dropped refs/stash@{0} (440daeff1849a5f6216fbb6960bfe63d8505a67d)
+Dropped refs/stash@{0} (cad3c4cd27de5ca9b0a6e88b379fa8fda43246f5)
 ```
 
 Popping the stash merges the changes; if changes overlap there may be a
 conflict, which we will look at later.
 
-At this point Alice can continue working, or commit and push her changes.
+At this point Alice can continue working, or simply commit and push her
+changes.  She gives footers the same style as nav bars.
 
 ```
+$ sed -i.bak -e 's/nav/nav, footer/' assets/site.css
 $ git commit -a -m 'add nav bar to page'
-[master 33b6bc7] add nav bar to page
+[master 88bed5a] add nav bar to page
  2 files changed, 2 insertions(+)
 $ git push
 Counting objects: 5, done.
 Delta compression using up to 2 threads.
 Compressing objects: 100% (4/4), done.
-Writing objects: 100% (5/5), 486 bytes | 486.00 KiB/s, done.
+Writing objects: 100% (5/5), 495 bytes | 247.00 KiB/s, done.
 Total 5 (delta 2), reused 0 (delta 0)
-To ../../Cats.git
-   8af5fea..33b6bc7  master -> master
+To /home/steve/sandbox/Cats.git
+   99fbbca..88bed5a  master -> master
 ```
 
 If Alice had committed her changes rather than stashing them, the situation
@@ -228,4 +238,4 @@ among a group of developers, and about the Git commands
 * [`git stash`](https://git-scm.com/docs/git-stash),
  which saves un-committed changes so that you can merge safely.
 
-In the next unit you'll learn how create and merge branches.
+In the next unit you'll learn how to create and merge branches.
