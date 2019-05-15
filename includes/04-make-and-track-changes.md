@@ -85,9 +85,9 @@ index.html  index.html.bak
 Now you may notice that you have a problem: if you used `sed` there's a text
 editor backup file here that you shouldn't commit.  (There may not be one if
 your editor is clever enough not to make backups of version-controled files.
-What te backups like will also depend on which text editor you're using; Vim
-or Emacs will create one called `index.html~` by default; you may have Emacs
-configured to keep numbered backups, in which case you would have
+What the backups will look like will also depend on which text editor you're
+using; Vim or Emacs will create one called `index.html~` by default; you may
+have Emacs configured to keep numbered backups, in which case you would have
 `index.html.~1~`.)  You can tell Git to ignore these:
 
 ```
@@ -108,7 +108,6 @@ Untracked files:
 no changes added to commit (use "git add" and/or "git commit -a")
 $ git add -A
 $ git commit -m "make small wording change; ignore editor backups"
-
 ```
 
 This example uses `HEAD^` to name the <em>previous</em> commit. 
@@ -128,7 +127,6 @@ $ git diff --name-only HEAD^
 $ git diff HEAD^ -- index.html
 $ git diff -- foo
 $ git diff foo
-
 ```
 
 Some things to notice:

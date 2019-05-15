@@ -19,15 +19,15 @@ First, make the directory, `cd` into it, and initialize the repository.
 $ mkdir Cats
 $ cd Cats
 $ git init
-Initialized empty Git repository in /home/you/Cats/.git/
+Initialized empty Git repository in /home/.../sandbox/Cats/.git/
 $ git status
 On branch master
 
 No commits yet
 
 nothing to commit (create/copy files and use "git add" to track)
-$ ls -a
-.  ..  .git
+$ ls -aF
+./  ../  .git/
 ```
 
 ## Create and add (stage) a file
@@ -68,7 +68,6 @@ Changes to be committed:
   (use "git rm --cached <file>..." to unstage)
 
 	new file:   index.html
-
 ```
 
 Alternatively, you could have added just `index.html` with `git add
@@ -89,17 +88,20 @@ Now that `index.html` has been added to the index, you can commit it.
 
 ```
 $ git commit index.html -m "Create an empty index.html file"
+[master (root-commit) 93dda01] Create an empty index.html file
  1 file changed, 0 insertions(+), 0 deletions(-)
  create mode 100644 index.html
 $ git status
 On branch master
 nothing to commit, working tree clean
 $ git log
-[master (root-commit) 2f52bb5] create an empty index.html file
- 1 file changed, 0 insertions(+), 0 deletions(-)
- create mode 100644 index.html
+commit 93dda01e79f9f791c0fcba727ff18d1c7ccf76c8
+Author: Steve Savitzky <steve@savitzky.net>
+Date:   Tue May 14 14:23:39 2019 -0700
+
+    Create an empty index.html file
 $ git log --oneline
-2f52bb5 (HEAD -> master) create an empty index.html file
+93dda01 Create an empty index.html file
 ```
 
 When you try this on your own computer the commit IDs will be different,
@@ -143,6 +145,7 @@ on the command line redirects the command's output to a file.
 
 ```
 $ echo '<h1>Our Feline Friends</h1>' > index.html
+
 $ git status
 On branch master
 Changes not staged for commit:
@@ -152,38 +155,144 @@ Changes not staged for commit:
 	modified:   index.html
 
 no changes added to commit (use "git add" and/or "git commit -a")
-
 $ git commit -a -m "add a heading to index.html"
-[master 0a3d184] add a heading to index.html
+[master 4c3b05d] add a heading to index.html
  1 file changed, 1 insertion(+)
 ```
 
 The `-a` option to `git commit` adds all of the files you modified since the
 last commit.  It won't add _new_ files -- for that you still need `git add`.
 
+## Explore the Git repository
+
+This is a good time to take a look inside the Git repository, while things are
+still uncomplicated.  We'll use `ls -RFC` to make a recursive directory
+listing with flag characters (e.g., `/` flags directories, and `*` flags
+executable files).
+
+```
+$ ls -FC .git
+COMMIT_EDITMSG	HEAD  branches	config	description hooks  index  info  logs
+objects	        refs
+```
+
+You can use `cat` to view the contents of `COMMIT_EDITMSG`, which contains the
+most recent commit message, HEAD, which contains the filename of the branch
+(`master`) that is currently checked out, and `config`, which contains the
+local configuration for this working tree.
+
+Using `ls -RF` you can drill down into `refs` and `objects`.  (The following
+listing has been edited; missing parts are indicated by Bash comments, which
+start with `#`.
+
+```
+$ ls -RFC .git/refs .git/objects
+.git/objects:
+0a/  41/  4c/  93/  e6/  info/	pack/
+# 
+.git/objects/0a:
+5568b3eb72786b7d025f317905c26d9b2a59ce	a3ab0a00c949dd8acef42d64c720ad0677b345
+# (other subdirectories of objects omitted)
+
+# objects/info and objects/pack are currently empty
+
+.git/refs:
+heads/	tags/
+.git/refs/heads:
+master
+.git/refs/tags:
+$ cat .git/HEAD
+ref: refs/heads/master
+$ cat .git/refs/heads/master 
+4c3b05d4c547a39118ff3381f003d259f016aabf
+```
+
+Every branch (`master` is the only one at the moment) has a corresponding file
+in `refs/heads` that contains the hash of its head commit.
+
+The way Git stores objects is worth noting -- `objects` has a subdirectory
+corresponding to the first byte (two hex digits) of the object's hash; the
+remaining 19 bytes are the name of the file in that directory that contains
+the object itself.
+
+Objects are binary files (they're compressed with `gzip`), but you can examine
+their contents with `git show`.  Try
+
+```
+$ git show `cat .git/refs/heads/master`
+commit 4c3b05d4c547a39118ff3381f003d259f016aabf
+Author: Steve Savitzky <steve@savitzky.net>
+Date:   Tue May 14 14:26:46 2019 -0700
+
+    add a heading to index.html
+
+diff --git a/index.html b/index.html
+index e69de29..0aa3ab0 100644
+--- a/index.html
++++ b/index.html
+@@ -0,0 +1 @@
++<h1>Our Feline Friends</h1>
+```
+
+(Bash replaces a command enclosed in back-quotes with its output.)  The diff
+shown is computed from the changed files; you can see the actual contents of
+the commit object using `git cat-file`:
+
+```
+$ git cat-file commit 4c3b05d4c547a39118ff3381f003d259f016aabf
+tree 419d0dd7f1068e70e6b9e60b00f0235e0f5aa795
+parent 93dda01e79f9f791c0fcba727ff18d1c7ccf76c8
+author Steve Savitzky <steve@savitzky.net> 1557869206 -0700
+committer Steve Savitzky <steve@savitzky.net> 1557869206 -0700
+
+add a heading to index.html
+```
+
+You can use the `-t` option to get the object's type.  The `cat-file` command
+is one of the low-level commands that Git documentation refers to as
+"plumbing".  The higher-level commands like `show` are called "porcelain".
+Plumbing commands are designed to be used in scripts, and in fact many of the
+less-commonly-used Git subcommands *are* scripts, as you can see from:
+
+```
+for f in /usr/bin/git-*; do file $f; done
+```
+
+One of the reasons why Git has so many sub-commands is that they're so easy to
+create:  any executable file with a name starting with `git-` can be used as a
+subcommand. 
+
 ## Summary
 
 In this unit you learned how to create a project that is under Git's control
 from the start.  You learned about the following Git subcommands:
 
-* [`git init`](https://git-scm.com/docs/git-init), which initializes a Git
-  repository in the current directory,
+* [`git init`](https://git-scm.com/docs/git-init), which creates and
+  initializes a Git repository in the current directory,
 * [`git add `](https://git-scm.com/docs/git-add), which adds files or
  directories to the index,
 * [`git commit`](https://git-scm.com/docs/git-commit),
  which records all of the files in the index in a commit,
 * [`git status`](https://git-scm.com/docs/git-status),
  which tells you the current state of the index and the working
-  tree, and
+  tree, 
 * [`git log`](https://git-scm.com/docs/git-log),
- which lists commits, newest first.
+ which lists commits, newest first, 
+* [`git show`](https://git-scm.com/docs/git-show), which prints the contents
+  of an object in human-readable form, and
+* [`git cat-file`](https://git-scm.com/docs/git-cat-file), which outputs the
+  *actual* contents of an object.
 
 You also used the following Unix commands:
 
 * [`mkdir`](https://linux.die.net/man/1/mkdir)](https://linux.die.net/man/1/mkdir), which makes a directory,
 * [`touch`](https://linux.die.net/man/1/touch), which updates the
-  "last-modified" time of a file, (and creates it if it doesn't exist) and
-* [`echo`](https://linux.die.net/man/1/echo), which copies its command-line arguments to its output.
+  "last-modified" time of a file, (and creates it if it doesn't exist),
+* [`echo`](https://linux.die.net/man/1/echo), which copies its command-line
+  arguments to its output,
+* [`ls`](https://linux.die.net/man/1/ls), which lists the files in a directory,
+* [`cat`](https://linux.die.net/man/1/cat), which concatenates files and outputs the result, and
+* [`for`](https://linux.die.net/man/1/for), which is one of several control-structure commands in Bash.
 
 In the next unit, you'll start making and tracking changes.
 

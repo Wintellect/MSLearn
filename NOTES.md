@@ -7,8 +7,9 @@ To do:
 * Make links to the man pages (online) -- the list in the summary would be a
   good place.  Other links as needed.
   
-* Run through entire command sequence.  `sed -e "s/^/$ /;p;s/$ //;e"` -- I had
-  a better one, I think.  Grump.
+* Run through entire command sequence.
+  `grep '^[$]' | sed -e "/$ /p;s/$ //;e"`
+
 
 ## Notes on structure
 
@@ -16,7 +17,7 @@ To do:
   `git subtree split`, and put in a branch of MSLearn using `git subtree add`.
   That preserves its history (for what that's worth) and makes it easy to keep
   up to date in both directions as changes are made.
-  
+
 ```
   git subtree split -P Learn_to_Use_Git -b intro-to-git --rejoin
   cd ../MSLearn
