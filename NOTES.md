@@ -22,6 +22,7 @@ To do:
   git subtree split -P Learn_to_Use_Git -b intro-to-git --rejoin
   cd ../MSLearn
   git pull
+  git checkout intro-to-git
   git subtree pull -P Introduction\ to\ Git ssavitzky intro-to-git
   git push origin intro-to-git
 ```
