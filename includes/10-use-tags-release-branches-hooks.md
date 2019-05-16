@@ -35,6 +35,7 @@ activated by simply renaming it to remove the `.sample` extension.
 Get started by making a clone of your shared repo for the web server to serve:
 
 ```
+$ cd ~/sandbox
 $ git clone Cats.git Cats-on-the-web
 ```
 
@@ -74,6 +75,68 @@ Now, whenever anybody pushes a change, the hook switches to the website
 directory and pulls it.  This setup assumes that the shared bare repo and the
 actual website are on the same server, which is almost always the case.  You
 can use the same idea to automatically update backups on an external drive.
+
+For example, you finally get back from a well-deserved vacation and try to
+catch up with what Bob and Alice have done:
+
+```
+$ git fetch
+remote: Counting objects: 22, done.
+remote: Compressing objects: 100% (20/20), done.
+remote: Total 22 (delta 6), reused 0 (delta 0)
+Unpacking objects: 100% (22/22), done.
+From ../Cats
+   37903fd..39473bb  master     -> origin/master
+$ git status
+On branch master
+Your branch is behind 'origin/master' by 5 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+
+nothing to commit, working tree clean
+$ git pull
+Updating 37903fd..39473bb
+Fast-forward
+ assets/bobcat2-317x240.jpg    | Bin 0 -> 38514 bytes
+ assets/bombay-cat-180x240.jpg | Bin 0 -> 39760 bytes
+ assets/site.css               |   2 ++
+ index.html                    |   6 ++++--
+ 4 files changed, 6 insertions(+), 2 deletions(-)
+ create mode 100644 assets/bobcat2-317x240.jpg
+ create mode 100644 assets/bombay-cat-180x240.jpg
+```
+
+Doing a fetch first rather than a pull can be useful; it shows you how far
+behind you are, and gives you a chance to look at the changes (with `git
+diff`) before you pull them.
+
+Now you can fix that annoying footer, which is almost invisible because its
+only content is a horizontal rule.
+
+```
+$ sed -i.bak -e 's|<hr>|<a href="index.html">home</a>|' index.html
+$ git commit -a -m 'Add a link to the footer'
+[master d0346f6] Add a link to the footer
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+$ git push
+Delta compression using up to 2 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 341 bytes | 341.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0)
+remote: From /home/steve/sandbox/Cats
+remote:  * branch            master     -> FETCH_HEAD
+remote:    39473bb..d0346f6  master     -> origin/master
+remote: Updating 39473bb..d0346f6
+remote: Fast-forward
+remote:  index.html | 2 +-
+remote:  1 file changed, 1 insertion(+), 1 deletion(-)
+To ../Cats.git
+   39473bb..d0346f6  master -> master
+```
+
+The lines prefixed with `remote:` came from the hook.  Typically both the
+shared repo and the website would be on the same remote web server and
+`origin` would have a URL like `git@server.example.org:Cats.git` -- that's the
+same format that you would use with `ssh`.
 
 ### Other uses for hooks
 
