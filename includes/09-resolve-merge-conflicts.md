@@ -4,21 +4,50 @@ After Alice adds a picture of her cat and Bob pulls her change, Bob's history
 will become somewhat complicated.  What Alice does is:
 
 ```
-$ cd ../../Alice/Cats
+$ cd ~/sandbox/Alice/Cats
 $ git checkout -b add-cat
-$ sed FIXME
+Switched to a new branch 'add-cat'
+$ sed -i.bak -e '/Eventually/ c <img src="assets/bombay-cat-180x240.jpg">' index.html
+$ sed -i.bak -e 's/<img /<img class=".cat" /' index.html
+$ cp ../../bombay-cat-180x240.jpg assets
+$ git add assets/
 $ git commit -a -m "Add picture of Dinah"
+[add-cat b83d930] Add picture of Dinah
+ 2 files changed, 1 insertion(+), 1 deletion(-)
+ create mode 100644 assets/bombay-cat-180x240.jpg
 $ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
 $ git merge --ff-only add-cat
+Updating cddf95c..b83d930
+Fast-forward
+ assets/bombay-cat-180x240.jpg | Bin 0 -> 39760 bytes
+ index.html                    |   2 +-
+ 2 files changed, 1 insertion(+), 1 deletion(-)
+ create mode 100644 assets/bombay-cat-180x240.jpg
 $ git push
 ```
 
 Now Bob pulls:
 
 ```
-$ cd ../../Bob/BobCats
+$ cd  ~/sandbox/Bob/BobCats
 $ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
 $ git pull
+remote: Counting objects: 5, done.
+remote: Compressing objects: 100% (5/5), done.
+remote: Total 5 (delta 1), reused 0 (delta 0)
+Unpacking objects: 100% (5/5), done.
+From /home/steve/sandbox/Cats
+ + b59ba72...b83d930 master     -> origin/master
+Updating cddf95c..72c34d8
+Fast-forward
+ assets/bombay-cat-180x240.jpg | Bin 0 -> 39760 bytes
+ index.html                    |   2 +-
+ 2 files changed, 1 insertion(+), 1 deletion(-)
+ create mode 100644 assets/bombay-cat-180x240.jpg
 ```
 
 After this, Bob's history looks like:
@@ -109,6 +138,8 @@ ready to commit.  In a simpler world, Bob could just do:
 # git commit -m "Add Bob's cat"
 ```
 
+(We're using `#` instead of `$` to indicate that you shouldn't actually type
+those commands -- Bash ignores everything from `#` to the end of the line.)
 It isn't *quite* that simple, because Bob and Alice each changed the same line
 in `index.html`, which created a merge conflict.
 
@@ -121,9 +152,16 @@ process so that you can figure out what the final result should be.
 
 ```
 $ git merge --squash addCat
-# TODO conflict output
+Auto-merging index.html
+CONFLICT (content): Merge conflict in index.html
+Squash commit -- not updating HEAD
+Automatic merge failed; fix conflicts and then commit the result.
 $ git commit -m "Add  Bob's cat"
-# TODO commit attempt output
+U	index.html
+error: Committing is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
 ```
 
 Notice that Bob tried to ignore the conflict and commit anyway; naturally, he
@@ -133,10 +171,16 @@ When Git detects a conflict, it inserts *both* conflicting versions into the
 file, between lines starting with `<<<<<<<`, `=======`, and `>>>>>>>`.  The
 part before the `=======` line is "your" side of the merge -- the branch
 you were alreadt on -- and the part after is "their" side -- the branch you
-specified in the `merge` command.
+specified in the `merge` command.  In this case it looks like this:
 
 ```
-TODO: partial file listing of index.html
+<h1>Our Furry Friends</h1>
+<<<<<<< HEAD
+<img class=".cat" src="assets/bombay-317x240.jpg">
+=======
+<img class=".cat" src="assets/bobcat2-317x240.jpg">
+>>>>>>> addCat
+<footer><hr></footer>
 ```
 
 In this case, Bob wants to keep Alice's cat and add his own, so he simply
@@ -145,9 +189,18 @@ deletes the markers.
 ```
 $ sed -i.bak -e '/<<<</d' -e '/====/d' -e '/>>>>/d' index.html
 $ git add index.html
-$ git merge --continue
 $ git commit -m "Add Bob's cat"
+[master 39473bb] Add Bob's cat
+ 2 files changed, 1 insertion(+)
+ create mode 100644 assets/bobcat2-317x240.jpg
 $ git push
+Counting objects: 5, done.
+Delta compression using up to 2 threads.
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (5/5), 37.49 KiB | 7.50 MiB/s, done.
+Total 5 (delta 1), reused 0 (delta 0)
+To /home/steve/sandbox/Cats.git
+   2868bbf..39473bb  master -> master
 ```
 
 The `git add` tells Git that the conflict in `index.html` has been resolved,
