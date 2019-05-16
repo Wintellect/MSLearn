@@ -15,8 +15,8 @@ an ordinary directory called `Alice` to take the place of her home directory.
 You're probably in your working tree project directory, so you'll want to
 change to the parent directory first.
 
-```bash
-$ cd ..
+```
+$ cd ~/sandbox
 $ mkdir Alice
 $ cd Alice
 $ git clone ../Cats
@@ -37,7 +37,7 @@ Because Alice doesn't have her copy of Git properly configured yet (not
 surprising since she' a fictional character), she sets local configuration
 variables for her name and email:
 
-```bash
+```
 $ git config user.name Alice
 $ git config user.email alice@example.com
 ```
@@ -49,7 +49,7 @@ with the name `origin`, and sets it up so that it will push and pull from the
 remote repository.
 
 
-```bash
+```
 $ git remote 
 origin
 $ git branch -a
@@ -62,7 +62,7 @@ Origin is the default location for Git to pull changes from and push changes
 to.  So far you haven't done anything new, so there's nothing for Alice to
 pull.
 
-```bash
+```
 $ git pull
 Already up to date.
 ```
@@ -72,10 +72,10 @@ Already up to date.
 Alice decides to start by changing the site's background color to her favorite
 shade of light blue, and committing the change:
 
-```bash
+```
 $ sed -i.bak -E '/background-color/s/#.+;/#F0F8FF;/' assets/site.css
 $ git commit -a -m "change background color to light blue"
-[master 565748d] change background color to light blue
+[master 37903fd] change background color to light blue
  1 file changed, 1 insertion(+), 1 deletion(-)
 $  git status
 On branch master
@@ -89,12 +89,12 @@ As usual, Git gives her a hint about the next step, which is to get the
 changes over to _your_ copy of the project.  Since Git suggests using `git
 push`, she tries that first:
 
-```bash
-$  git push
+```
+$ git push
 Counting objects: 4, done.
 Delta compression using up to 2 threads.
 Compressing objects: 100% (3/3), done.
-Writing objects: 100% (4/4), 403 bytes | 403.00 KiB/s, done.
+Writing objects: 100% (4/4), 402 bytes | 201.00 KiB/s, done.
 Total 4 (delta 1), reused 0 (delta 0)
 remote: error: refusing to update checked out branch: refs/heads/master
 remote: error: By default, updating the current branch in a non-bare repository
@@ -110,31 +110,31 @@ remote: other way.
 remote: 
 remote: To squelch this message and still keep the default behaviour, set
 remote: 'receive.denyCurrentBranch' configuration variable to 'refuse'.
-To /home/steve/vv/prj/ms-learn/sandbox/Alice/../Cats
+To /home/steve/sandbox/Alice/../Cats
  ! [remote rejected] master -> master (branch is currently checked out)
-error: failed to push some refs to '/home/steve/vv/prj/ms-learn/sandbox/Alice/../Cats'
+error: failed to push some refs to '/home/steve/sandbox/Alice/../Cats'
 ```
 
 Well, _that_ didn't work, although it would have if Alice had pushed to a
 different branch *and* had permission to write to your repo.  (It's worth
 noting that if Alice *didn't* have write permission for your repository, she
 would have gotten a "fatal" error message instead.)  For now, Alice is going
-to have to ask you to _pull_ her changes.  She can do that by running `git
+to have to ask _you_ to _pull_ her changes.  She can do that by running `git
 request-pull` and emailing you the output:
 
 ```
 $ git request-pull -p origin/master ../../Alice/Cats
-The following changes since commit a898ec56cf7f591cfa11a82d50b433e655572e75:
+The following changes since commit 2c01c0503149e7c3bbcfdb90b54d576e7e4e177b:
 
-  make the page background a little darker (2019-03-24 08:07:47 -0700)
+  Make the page background a little darker (2019-05-15 12:25:20 -0700)
 
 are available in the Git repository at:
 
-  ../../Alice/Cats
+  ../../Alice/Cats 
 
-for you to fetch changes up to 565748d7955e6c9cf7e5829ac933dcc60627dbca:
+for you to fetch changes up to 37903fd0338e070bacb2a7baeb9ed83875252f37:
 
-  change background color to light blue (2019-03-29 08:42:23 -0700)
+  change background color to light blue (2019-05-15 13:23:40 -0700)
 
 ----------------------------------------------------------------
 Alice (1):
@@ -142,16 +142,16 @@ Alice (1):
 
  assets/site.css | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
- 
+
 diff --git a/assets/site.css b/assets/site.css
-index cd827ec..aa55481 100644
+index 3866268..ceaebf9 100644
 --- a/assets/site.css
 +++ b/assets/site.css
-@@ -1,2 +1,2 @@
+@@ -1,3 +1,3 @@
  h1, h2, h3, h4, h5, h6 { font-family: sans-serif; }
--body { background-color:  #F0F0F0; }
+ body { font-family: serif; }
+-body { background-color:  #C0C0C0; }
 +body { background-color:  #F0F8FF; }
-
 ```
 
 A few things to notice:  `origin/master` is Alice's way of referring to the
@@ -200,14 +200,14 @@ and pull from it with
 $ git pull alice master
 From ../Alice/Cats
  * branch            HEAD       -> FETCH_HEAD
-Updating a898ec5..565748d
+Updating 2c01c05..37903fd
 Fast-forward
  assets/site.css | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 ```
 
 Notice that you had to specify a branch, `master`, in the pull command.  We'll
-see in the next unit how to fix that.
+see in the next unit how to fix that by setting an upstream URL.
 
 Behind the scenes, `git pull` is a combination of two simpler operations:
 `git fetch`, which gets the changes, and `git merge`, which merges those

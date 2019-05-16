@@ -34,6 +34,7 @@ Alice wants to add some CSS to style cat pictures, so she creates a
 `add-style`: 
 
 ```
+$ cd ~/sandbox/Alice/Cats
 $ git branch add-style
 $ git checkout add-style
 Switched to branch 'add-style'
@@ -55,8 +56,9 @@ branch, then switches to it.  That's by far the most common way of creating a
 branch:
 
 ```
-$ cd ../../Bob/BobCats
+$ cd ~/sandbox/Bob/BobCats
 $ git checkout -b addCat
+Switched to a new branch 'addCat'
 ```
 
 ## Work on a branch
@@ -66,17 +68,23 @@ changes without interfering with one another.  Bob starts by adding a picture
 of his cat:
 
 ```
-$ sed 
+$ sed -i.bak -e '/Eventually/ c <img src="assets/bobcat2-317x240.jpg">' index.html
+$ cp ../../bobcat2-317x240.jpg assets
+$ git add assets
 $ git commit -a -m "Add picture of Bob's cat"
+[addCat 61ad3ec] Add picture of Bob's cat
+ 2 files changed, 1 insertion(+), 1 deletion(-)
+ create mode 100644 assets/bobcat2-317x240.jpg
 ```
 
 While Alice adds her style:
 
 ```
-$ cd ../../Alice/Cats
-$ echo 'img {width: 100%;}' >> assets/site.css TODO
-$ echo 'div .catbox {width: 40%; }' >> assets/site.css
+$ cd ~/sandbox/Alice/Cats
+$ echo '.cat {max-width: 40%; padding: 5}' >> assets/site.css
 $ git commit -a -m "Add style for cat pictures"
+[add-style e9528be] Add style for cat pictures
+ 1 file changed, 1 insertion(+)
 ```
 
 At this point, their two working trees look like this:
@@ -100,11 +108,21 @@ merges her branch and pushes it.  Because no work has been done on `master`,
 she can do this as a "fast-forward" merge.
 
 ```
-$ cd ../../Alice/Cats
 $ git checkout master
 $ git pull
-$ git merge --ff-only add-style-for-cats
+$ git merge --ff-only add-style
+Updating 88bed5a..e9528be
+Fast-forward
+ assets/site.css | 1 +
+ 1 file changed, 1 insertion(+)
 $ git push
+Counting objects: 4, done.
+Delta compression using up to 2 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (4/4), 411 bytes | 205.00 KiB/s, done.
+Total 4 (delta 1), reused 0 (delta 0)
+To /home/steve/sandbox/Cats.git
+   88bed5a..cddf95c  master -> master
 ```
 
 Now Alice's working tree and the shared repo both look like:
@@ -142,15 +160,22 @@ Sometimes a non-fast-forward merge can't be avoided.  Let's look at Bob's
 situation.
 
 ```
-$ cd ../../Bob/BobCats
+$ cd ~/sandbox/Bob/BobCats
 $ git checkout master
+Switched to branch 'master'
+Your branch is behind 'origin/master' by 1 commit, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
 $ git pull
+Updating 88bed5a..cddf95c
+Fast-forward
+ assets/site.css | 1 +
+ 1 file changed, 1 insertion(+)
 ```
 
 Now Bob's history looks like:
 
 ```
-Bob:    ...o---m---A
+Bob:    ...o---m---A      A: Add style for cat pictures
                 \
                  B        B: Add picture of Bob's cat
 ```
@@ -163,9 +188,11 @@ Bob:    ...o---m---A---M
                  B---/
 ```
 
-Some teams prefer this kind of history, but most prefer something simpler.
-Fortunately Git lets Bob change his history so that he can use a fast-forward
-merge. 
+Some projects prefer this kind of history.  It keeps Bob's commits exactly the
+way he made them, so if any of them were signed the signatures would still be
+valid after the merge.  Solo developers and many teams usually prefer something
+simpler.  Fortunately Git lets Bob change his history so that he can use a
+fast-forward merge.
 
 ## Rebase instead of merge
 
@@ -173,7 +200,10 @@ In order to simplify his history, Bob uses
 
 ```
 $ git checkout addCat
+Switched to branch 'addCat'
 $ git rebase master
+First, rewinding head to replay your work on top of it...
+Applying: Add picture of Bob's cat
 ```
 
 Now his history looks like:
@@ -191,10 +221,12 @@ Bob decides that there's no reason to merge at this point, so he simply
 continues to work on his branch:
 
 ```
-$ sed FIXME
+$ sed -i.bak -e 's/<img /<img class=".cat" /' index.html
 $ git commit -a -m "Add style class to cat picture"
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 ```
-Now his history looks like:
+
+Now Bob's history looks like:
 
 ```
 Bob:    ...o---m---A

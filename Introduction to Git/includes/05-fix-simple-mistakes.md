@@ -15,6 +15,7 @@ referring to the stylesheet's old location in `CSS`.
 ```
 $ sed -i.bak s/CSS/assets/ index.html
 $ git add index.html
+
 ```
 
 At this point you could simply commit the changed version of `index.html`, but
@@ -23,8 +24,8 @@ option to `git commit` lets you change history.
 
 ```
 $ git commit --amend --no-edit
-[master e2e5bcd] rename CSS -> assets for generality
- Date: Sun Mar 24 06:24:01 2019 -0700
+[master 9e857ef] Rename CSS -> assets for generality
+ Date: Wed May 15 12:10:00 2019 -0700
  2 files changed, 1 insertion(+), 1 deletion(-)
  rename {CSS => assets}/site.css (100%)
 ```
@@ -62,7 +63,9 @@ problem soon enough, it's particularly easy to fix:
 ```
 $ git checkout -- index.html
 $ ls
-assets	index.html  index.html.bak
+assets
+index.html
+index.html.bak
 $ git status
 On branch master
 nothing to commit, working tree clean
@@ -79,10 +82,10 @@ resolve the ambiguity.
 Things are a little more complicated if you used `git rm`:
 
 ```
+error: pathspec 'index.html' did not match any file(s) known to git.
 $ git rm index.html
 rm 'index.html'
 $ git checkout index.html
-error: pathspec 'index.html' did not match any file(s) known to git.
 $ git status
 On branch master
 Changes to be committed:
@@ -94,10 +97,13 @@ $ git reset HEAD index.html
 Unstaged changes after reset:
 D	index.html
 $ ls
-assets	index.html.bak
+assets
+index.html.bak
 $ git checkout index.html
 $ ls
-assets	index.html  index.html.bak
+assets
+index.html
+index.html.bak
 ```
 
 The `git reset` was needed because `git rm` did two things:  it removed the file,
@@ -109,10 +115,10 @@ but the file was still deleted, so you had to use `checkout` to get it back.
 You decide to make the background a little darker:
 
 ```
-echo body '{ background-color:  #E0E0E0; }' > assets/site.css
+$ echo body '{ background-color:  #C0C0C0; }' > assets/site.css
 $ git commit -a -m "Make the page background a little darker"
-[master 4a846bb] Make the page background a little darker
- 1 file changed, 1 insertion(+), 1 deletion(-)
+[master 6909e17] Make the page background a little darker
+ 1 file changed, 1 insertion(+), 2 deletions(-)
 ```
 
 Oops!  You meant to append to `site.css`, but used `>` instead of `>>`, which
@@ -125,41 +131,44 @@ change and the commit.
 But suppose you didn't notice the problem until you'd already made another
 commit after the bad one, shared your repo with somebody (see the next unit)
 or made the commit public (see Unit 7).  Changing history can be dangerous
-(see almost any science fiction story about time travel).  It this situation
-the best thing to do is to _revert_ the change, by making another commit that
-cancels out the first one:
+(see almost any science fiction story about time travel) -- anyone you're
+collaborating with will have to do extra work to recover from your change.  In
+this situation the best thing to do is to _revert_ the change, by making
+another commit that cancels out the first one:
 
 ```
 $ git revert --no-edit HEAD 
-[master 3681d4a] Revert "make the page background a little darker"
- Date: Sun Mar 24 07:52:27 2019 -0700
- 1 file changed, 1 insertion(+), 1 deletion(-)
+[master d31233f] Revert "Make the page background a little darker"
+ Date: Wed May 15 12:23:32 2019 -0700
+ 1 file changed, 2 insertions(+), 1 deletion(-)
 $ git log -n1
-commit 3681d4ac99448818fba7714487206cc5426b1e79 (HEAD -> master)
+commit d31233fbe10ffe01eced101eb53214a7eccc96f4
 Author: Steve Savitzky <steve@savitzky.net>
-Date:   Sun Mar 24 07:52:27 2019 -0700
+Date:   Wed May 15 12:23:32 2019 -0700
 
     Revert "Make the page background a little darker"
     
-    This reverts commit 4a846bb58b8810bac9830780c9da2a33dc63c0c2.
+    This reverts commit 6909e17a67f6063d616f3863b3c04854fa4f5a9e.
 ```
 
 Now you can make the change correctly.
 
 ```
-$ echo body '{ background-color:  #E0E0E0; }' >> assets/site.css 
-$ cat !$
-cat assets/site.css
+$ echo body '{ background-color:  #C0C0C0; }' >> assets/site.css 
+$ cat assets/site.css
 h1, h2, h3, h4, h5, h6 { font-family: sans-serif; }
-body { background-color:  #E0E0E0; }
+body { font-family: serif; }
+body { background-color:  #C0C0C0; }
 $ git commit -a -m "Make the page background a little darker" -m "correctly"
-[master 9c139ee] make the page background a little darker
+[master 2c01c05] Make the page background a little darker
  1 file changed, 1 insertion(+)
 ```
 
-In addition to copying text from the terminal to a file, the `cat` command is
-possibly even more useful going the other way, for getting a quick look at a
-short file.  For longer files, use `less`.
+In addition to copying text from the terminal to a file, the `cat` command can
+be used going the other way for getting a quick look at a short file.  For
+longer files, use `less`, which lets you go through a file a page at a time.
+As you might expect, it's an improved version of an older command called
+`more`.
 
 ### Exercises
 
@@ -190,4 +199,5 @@ You've also seen
  which gives you a GUI for exploring your history.
 
 In the next unit you'll start collaborating with another developer.  Since Git
-is distributed, you won't have to set up a server; you can share directly.
+is distributed, you won't have to set up a server; you can share changes
+directly.

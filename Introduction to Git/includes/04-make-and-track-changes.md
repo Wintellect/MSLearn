@@ -5,27 +5,14 @@ It also lets you undo any changes you make by mistake.
 
 ## Make some changes
 
-Start by adding some HTML boilerplate to index.html.  You can do it with a
-text editor; here we're using the `cat` (concatenate) command.  The `^D` at
-the end is CTRL-D (EOT, the code for "End Of Transmission" back in the days of
-teletypes and paper tape).  The leading circumflex is often used in Unix
-documentation as shorthand for "control-", and should not be typed literally.
+Start by adding some HTML boilerplate to `index.html`.  You can do it by
+downloading [this file](media/unit-04-index.html), but it should already be in
+your sandbox, so you can just copy it.  (If it isn't, you forgot to download
+and unzip [sandbox.zip](media/sandbox.zip).)
 
 ```
-$ cat > index.html
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset='UTF-8'>
-<title>Our Feline Friends</title>
-</head>
-<body>
-<h1>Our Feline Friends</h1>
-<p> If this were a real website there would be content here.
-<hr>
-</body>
-</html>
-^D
+$ cd ~/sandbox/Cats
+$ cp ../unit-04-index.html index.html
 ```
 
 You can see what you changed by using `git diff`:
@@ -33,7 +20,7 @@ You can see what you changed by using `git diff`:
 ``` 
 $ git diff
 diff --git a/index.html b/index.html
-index 9f735a6..3970c55 100644
+index 0aa3ab0..6f16b61 100644
 --- a/index.html
 +++ b/index.html
 @@ -1 +1,12 @@
@@ -45,16 +32,16 @@ index 9f735a6..3970c55 100644
 +</head>
 +<body>
  <h1>Our Feline Friends</h1>
-+<p> If this were a real website there would be content here.
++<p> Eventually we will put cat pictures here.
 +<hr>
 +</body>
 +</html>
-
 ``` 
 
 The output format is the same as the Unix `diff` command, and it takes many of
 the same options.  Here you can see a `+` in front of lines that have been
 added; if any lines had been deleted you would see a `-` in front of them.
+Notice that the `h1` line hasn't changed.
 
 The default is for `git diff` to compare the working tree to the index; that
 means that, it shows you all of the changes that haven't been staged yet.  To
@@ -62,7 +49,7 @@ compare the working tree to the last commit, use `git diff HEAD`.
 
 ```
 $ git commit -m "Add HTML boilerplate to index.html" index.html
-[master 4b360ff] Add HTML boilerplate to index.html
+[master bc18ca7] Add HTML boilerplate to index.html
  1 file changed, 11 insertions(+)
 $ git diff
 ```
@@ -78,16 +65,16 @@ essentially the same as Unix's original text-editor, `ed`.)
 ```
 $ sed -i.bak s/Feline/Furry/ index.html
 $ ls
-index.html  index.html.bak
-
+index.html
+index.html.bak
 ```
 
 Now you may notice that you have a problem: if you used `sed` there's a text
 editor backup file here that you shouldn't commit.  (There may not be one if
 your editor is clever enough not to make backups of version-controled files.
-What te backups like will also depend on which text editor you're using; Vim
-or Emacs will create one called `index.html~` by default; you may have Emacs
-configured to keep numbered backups, in which case you would have
+What the backups will look like will also depend on which text editor you're
+using; Vim or Emacs will create one called `index.html~` by default; you may
+have Emacs configured to keep numbered backups, in which case you would have
 `index.html.~1~`.)  You can tell Git to ignore these:
 
 ```
@@ -108,10 +95,14 @@ Untracked files:
 no changes added to commit (use "git add" and/or "git commit -a")
 $ git add -A
 $ git commit -m "make small wording change; ignore editor backups"
-
+[master 569647a] make small wording change; ignore editor backups
+ 2 files changed, 4 insertions(+), 2 deletions(-)
+ create mode 100644 .gitignore
 ```
 
-This example uses `HEAD^` to name the <em>previous</em> commit. 
+This example uses `HEAD^` to name the *previous* commit.  It also uses
+the `-A` option with `git add`, which adds the untracked (and not ignored)
+files as well as changed ones that are already under Git control.
 
 ## Exercise: try the following commands
 
@@ -128,7 +119,6 @@ $ git diff --name-only HEAD^
 $ git diff HEAD^ -- index.html
 $ git diff -- foo
 $ git diff foo
-
 ```
 
 Some things to notice:
@@ -154,9 +144,9 @@ nothing to commit, working tree clean
 
 People used to most other version-control systems may be surprised by the
 fact that Git doesn't consider adding an empty directory to be a change.
-That's because Git only tracks changes to <em>files</em>, not directories.
+That's because Git only tracks changes to *files*, not directories.
 
-Sometimes, especially in the initial stages of development, you <em>want</em>
+Sometimes, especially in the initial stages of development, you *want*
 to have empty directories.  A common convention is to create an empty file in
 them -- it's often called `.git-keep`.
 
@@ -189,14 +179,14 @@ diff --git a/CSS/.git-keep b/CSS/.git-keep
 new file mode 100644
 index 0000000..e69de29
 $ git commit -m "Add a (mostly) empty directory for CSS"
-[master c5a3013] Add a (mostly) empty directory for CSS
+[master 9f9f355] Add a (mostly) empty directory for CSS
  1 file changed, 0 insertions(+), 0 deletions(-)
- create mode 100644 CSS/.git-keep 
+ create mode 100644 CSS/.git-keep
 ```
 
 ## Remove a file
 
-Now you add a simple two-line stylesheet to your website (the `<<` on the
+Now you add a simple two-line stylesheet to your website (the `>>` on the
 second `echo` command appends to the target file), and insert a link tag into
 `index.html` that points to it.
 
@@ -206,15 +196,18 @@ $ echo 'body { font-family: serif; }'                       >> CSS/site.css
 $ sed -i.bak -e '/title/a <link rel="stylesheet" href="CSS/site.css">' index.html
 $ git add .
 $ git commit -m "Add a simple stylesheet"
+[master 9555ac8] Add a simple stylesheet
+ 2 files changed, 3 insertions(+)
+ create mode 100644 CSS/site.css
 ```
 
 Now that you have a file in `CSS`, you can remove the `.git-keep` file.
 
 ```
 $ git rm CSS/.git-keep
-rm CSS/.git-keep'
+rm 'CSS/.git-keep'
 $ git commit -m "Remove redundant .git-keep file"
-[master 9ebf814] Remove redundant .git-keep file
+[master b38d55f] Remove redundant .git-keep file
  1 file changed, 0 insertions(+), 0 deletions(-)
  delete mode 100644 CSS/.git-keep
 ```
@@ -236,12 +229,11 @@ back using `git checkout`.)
 
 ### Exercise
 
-* Open `index.html` in your browser.  Verify that the stylesheet has been
-  applied. 
-
+* Open `index.html` in your browser.  (The easy way is to open `file:///` and
+  click your way down.  That works no matter what OS you're using.) Observe
+  that the stylesheet has been applied.
 
 ## Rename files and directories
-
 
 After creating CSS/site.css it occured to you that you might want to put other
 assets on the site besides the stylesheet, so it would make sense to rename
@@ -258,7 +250,7 @@ Changes to be committed:
 	renamed:    CSS/site.css -> assets/site.css
 
 $ git commit -m "Rename CSS -> assets for generality"
-[master d0cd883] Rename CSS -> assets for generality
+[master 7f77894] Rename CSS -> assets for generality
  1 file changed, 0 insertions(+), 0 deletions(-)
  rename {CSS => assets}/site.css (100%)
 ```
@@ -280,6 +272,10 @@ makes committing, branching, and switching between branches so fast in Git:
 other VCSs have to apply a list of changes to get between one version of a
 file and another.  Git just unzips the other version.
 
+By the way, if you reload the page in your browser you will notice that the
+stylesheet has *not* been applied, because you moved it without changing the
+reference in `index.html`.  We'll fix that in the next unit.
+
 ## List commits with Git log
 
 Now that you have a reasonable number of changes recorded, you can use `git
@@ -288,14 +284,14 @@ to choose from; one of the most useful is `--oneline`.
 
 ```
 $ git log --oneline
-d0cd883 (HEAD -> master) rename CSS -> assets for generality
-9ebf814 remove redundant .git-keep file
-0fb33d0 add a simple stylesheet
-c5a3013 add a (mostly) empty directory for CSS
-c5c35ac make small wording change; ignore editor backups
-4b360ff add HTML boilerplate to index.html
-5d4f63b add a heading to index.html
-2f52bb5 create an empty index.html file
+7f77894 Rename CSS -> assets for generality
+b38d55f Remove redundant .git-keep file
+9555ac8 Add a simple stylesheet
+9f9f355 Add a (mostly) empty directory for CSS
+569647a make small wording change; ignore editor backups
+bc18ca7 Add HTML boilerplate to index.html
+4c3b05d add a heading to index.html
+93dda01 Create an empty index.html file
 ```
 
 ### Exercise
@@ -306,7 +302,6 @@ Try the following log commands:
 $ git log
 $ git log -n2
 $ git log -n2 --no-abbrev-commit
-
 ```
 
 ## Summary
