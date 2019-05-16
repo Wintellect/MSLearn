@@ -22,7 +22,7 @@ To do:
   git subtree split -P Learn_to_Use_Git -b intro-to-git --rejoin
   cd ../MSLearn
   git pull
-  git checkout intro-to-git
+  #git checkout intro-to-git
   git subtree pull -P Introduction\ to\ Git ssavitzky intro-to-git
   git push origin intro-to-git
 ```
@@ -87,16 +87,26 @@ To do:
 
 ## Images:
 
+* [File:Close up of a black domestic cat.jpg - Wikimedia
+  Commons](https://commons.wikimedia.org/wiki/File:Close_up_of_a_black_domestic_cat.jpg)
+  * `https://en.wikipedia.org/wiki/File:Close_up_of_a_black_domestic_cat.jpg`
+  * `https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Close_up_of_a_black_domestic_cat.jpg/180px-Close_up_of_a_black_domestic_cat.jpg`
+  * Dogbert420 [CC-BY-SA-4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)
+  * `<a title="Dogbert420 [CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0)], via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Close_up_of_a_black_domestic_cat.jpg"><img alt="Close up of a black domestic cat" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Close_up_of_a_black_domestic_cat.jpg/180px-Close_up_of_a_black_domestic_cat.jpg"></a>`
 
-[File:Close up of a black domestic cat.jpg -
-Wikipedia](https://en.wikipedia.org/wiki/File:Close_up_of_a_black_domestic_cat.jpg)
-`https://en.wikipedia.org/wiki/File:Close_up_of_a_black_domestic_cat.jpg`
-https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Close_up_of_a_black_domestic_cat.jpg/180px-Close_up_of_a_black_domestic_cat.jpg
-[CC-BY-SA-4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)
+* [File:Bobcat2.jpg - Wikipedia](https://en.wikipedia.org/wiki/File:Bobcat2.jpg)
+  * `https://en.wikipedia.org/wiki/File:Bobcat2.jpg`
+  * `https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Bobcat2.jpg/317px-Bobcat2.jpg`
+  * Calibas [public domain](https://en.wikipedia.org/wiki/en:public_domain)
+  * `<a title="No machine-readable author provided. Calibas assumed (based on copyright claims). [Public domain], via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Bobcat2.jpg"><img alt="Bobcat2" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Bobcat2.jpg/317px-Bobcat2.jpg"></a>`
 
-[File:Bobcat2.jpg - Wikipedia](https://en.wikipedia.org/wiki/File:Bobcat2.jpg)
-`https://en.wikipedia.org/wiki/File:Bobcat2.jpg`
-https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Bobcat2.jpg/317px-Bobcat2.jpg
-[public domain](https://en.wikipedia.org/wiki/en:public_domain)
+* [File:Short-haired tortoiseshell cat.jpg - Wikimedia
+Commons](https://commons.wikimedia.org/wiki/File:Short-haired_tortoiseshell_cat.jpg) 
+  * `https://commons.wikimedia.org/wiki/File:Short-haired_tortoiseshell_cat.jpg`
+  * `https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Short-haired_tortoiseshell_cat.jpg/180px-Short-haired_tortoiseshell_cat.jpg`
+  * Lucashawranke [CC-BY-SA-4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)
+  * `<a title="Lucashawranke [CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0)], via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Short-haired_tortoiseshell_cat.jpg"><img alt="Short-haired tortoiseshell cat" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Short-haired_tortoiseshell_cat.jpg/180px-Short-haired_tortoiseshell_cat.jpg"></a>`
 
-We will populate the sandbox from a zipfile.
+We will populate the sandbox from a zipfile.  Can use sed's `r` command (read
+a file) to insert the correct long link, or possibly put the credits or a link
+to them in the footer.
