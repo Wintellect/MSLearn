@@ -11,6 +11,25 @@ There are actually two ways to get a git working tree on your computer; the
 other one is to clone an existing git repository.  We'll see how that works
 starting in Unit 6.
 
+## Make yourself a sandbox
+
+You are eventually be going to make several different Git repositories, and
+some of the later examples require files, including a few images, that would
+be tedious to create or download individually.  You also need a "sandbox" in
+which to play.  Start by downloading [sandbox.zip](media/sandbox.zip) (it's
+easiest to use your browser for that,which will probably put it in your
+`Downloads` directory by default) and unzipping it.
+
+```
+cd ~
+mkdir sandbox
+cd sandbox
+unzip Downloads/sandbox.zip
+```
+
+The `cd ~` makes sure you are in your home directory, which Bash abbreviates
+as `~` (tilde).
+
 ## Create a repository and working tree
 
 First, make the directory, `cd` into it, and initialize the repository.

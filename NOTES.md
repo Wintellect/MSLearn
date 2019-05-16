@@ -84,3 +84,18 @@ To do:
 * Don't use "like"; use, e.g., "for example"
 * forward refs for stuff that can be skipped
 
+## Images:
+
+
+[File:Close up of a black domestic cat.jpg -
+Wikipedia](https://en.wikipedia.org/wiki/File:Close_up_of_a_black_domestic_cat.jpg)
+`https://en.wikipedia.org/wiki/File:Close_up_of_a_black_domestic_cat.jpg`
+https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Close_up_of_a_black_domestic_cat.jpg/180px-Close_up_of_a_black_domestic_cat.jpg
+[CC-BY-SA-4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)
+
+[File:Bobcat2.jpg - Wikipedia](https://en.wikipedia.org/wiki/File:Bobcat2.jpg)
+`https://en.wikipedia.org/wiki/File:Bobcat2.jpg`
+https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Bobcat2.jpg/317px-Bobcat2.jpg
+[public domain](https://en.wikipedia.org/wiki/en:public_domain)
+
+We will populate the sandbox from a zipfile.

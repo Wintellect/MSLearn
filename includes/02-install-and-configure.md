@@ -74,13 +74,13 @@ just the packages you'll need for this tutorial (add `git.el` if you're using
 Emacs as your text editor):
 
 ```bash
-$ sudo apt install git git-doc gitk git-gui
+$ sudo apt install git git-doc gitk git-gui curl
 ```
 
 On Fedora and other RPM-based distributions, use `dnf`:
 
 ```bash
-$ sudo dnf install git-all
+$ sudo dnf install git-all curl
 ```
 
 The Git website includes [installation instructions for other Linux

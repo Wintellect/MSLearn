@@ -5,28 +5,14 @@ It also lets you undo any changes you make by mistake.
 
 ## Make some changes
 
-Start by adding some HTML boilerplate to index.html.  You can do it with a
-text editor or by downloading [this file](media/index.html.unit.04); here
-we're using the `cat` (concatenate) command.  The `^D` at the end is CTRL-D
-(EOT, the code for "End Of Transmission" back in the days of teletypes and
-paper tape).  The leading circumflex is often used in Unix documentation as
-shorthand for "control-", and should not be typed literally.
+Start by adding some HTML boilerplate to `index.html`.  You can do it by
+downloading [this file](media/unit-04-index.html), but it should already be in
+your sandbox, so you can just copy it.  (If it isn't, you forgot to download
+and unzip [sandbox.zip](media/sandbox.zip).)
 
 ```
-$ cat > index.html
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset='UTF-8'>
-<title>Our Feline Friends</title>
-</head>
-<body>
-<h1>Our Feline Friends</h1>
-<p> Eventually we will put cat pictures here.
-<hr>
-</body>
-</html>
-^D
+$ cd ~/sandbox/Cats
+$ cp ../unit-04-index.html index.html
 ```
 
 You can see what you changed by using `git diff`:
