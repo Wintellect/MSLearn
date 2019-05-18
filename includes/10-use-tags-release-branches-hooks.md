@@ -138,6 +138,38 @@ shared repo and the website would be on the same remote web server and
 `origin` would have a URL like `git@server.example.org:Cats.git` -- that's the
 same format that you would use with `ssh`.
 
+### make changes on the server
+
+You also realize that you haven't added your own cat to the site.  She would
+be very unhappy if she found out.  Since you happen to be logged in on the
+server, you can make your changes there.
+
+```
+$ cd ~/sandbox/Cats-on-the-web/
+$ cp ../tortoiseshell-cat-180x240.jpg assets/
+$ sed -i.bak -i '/bobcat/a <img class=".cat" src="assets/tortoiseshell-cat-180x240.jpg">' index.html
+$ git add .
+$ git commit -m "Make a last-minute addition."
+[master d1b49d2] Make a last-minute addition.
+ 2 files changed, 1 insertion(+)
+ create mode 100644 assets/tortoiseshell-cat-180x240.jpg
+$  git push
+Counting objects: 5, done.
+Delta compression using up to 2 threads.
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (5/5), 20.50 KiB | 6.83 MiB/s, done.
+Total 5 (delta 2), reused 0 (delta 0)
+remote: From /home/steve/sandbox/Cats
+remote:  * branch            master     -> FETCH_HEAD
+remote:    d0346f6..d1b49d2  master     -> origin/master
+remote: Already up to date.
+To /home/steve/sandbox/Cats.git
+   d0346f6..d1b49d2  master -> master
+```
+
+Notice that the hook pulled the changes you just made, but of course it was
+already up to date. 
+
 ### Other uses for hooks
 
 Joe Maller's article suggests using a `post-commit` hook in your web directory
@@ -171,19 +203,22 @@ GitFlow uses the master branch for numbered releases, and a separate branch
 for development.
 
 Since this is a *small* project and you're already using `master` for
-continuous integration into your main website, you decide to keep `master` as
-it is and make a separate `release` branch:
+continuous integration into your main website, you could also keep `master` as
+it is and make a separate `release` branch.  But since it's a *very* small
+project, the simplest thing is just to tag releases on `master`.
 
 ```
-$ git checkout -b release
-$ git tag -a v0.1 -m "Start release branch"
-$ git log --oneline -n2
+$ cd ~/sandbox/Cats
+$ git pull
+$ git tag -a v0.1 -m "Release version 0.1"
+$ git log --oneline -n1
+d1b49d2 (HEAD -> master, tag: v0.1, origin/master) Make a last-minute addition.
 $ git show v0.1
 ```
 
-The `show` subcommand can be used to display the tag data along with the
-commit it refers to; tags are also shown by `log` next to the commits they
-refer to.
+Notice how tags are shown by `log` next to the commits they refer to.  The
+`show` subcommand can be used to display the tag data along with the commit it
+refers to.
 
 Git has two kinds of tags: "lightweight" and "annotated".  A lightweight tag
 is just a file (`refs/tags/NAME`) containing the hash of the tagged commit.
@@ -198,6 +233,14 @@ normally pushed, but you can do it with the `--follow-tags` option:
 
 ```
 $ git push --follow-tags
+Counting objects: 1, done.
+Writing objects: 100% (1/1), 167 bytes | 167.00 KiB/s, done.
+Total 1 (delta 0), reused 0 (delta 0)
+remote: From /home/steve/sandbox/Cats
+remote:  * branch            master     -> FETCH_HEAD
+remote: Already up to date.
+To ../Cats.git
+ * [new tag]         v0.1 -> v0.1
 ```
 
 This option pushes all annotated tags that can be reached from the commits
@@ -212,6 +255,50 @@ There is an older option to `push`, `--tags`, which pushes *all* tags; this is
 a bad idea because developers often pick the same names for their lightweight
 tags. 
 
+Before you can consider the website ready for public release, though, you need
+to make sure that all of the images are properly credited.  They all came from
+Wikimedia, which makes it easy; for example go to [File:Short-haired
+tortoiseshell cat.jpg - Wikimedia
+Commons](https://commons.wikimedia.org/wiki/File:Short-haired_tortoiseshell_cat.jpg)
+and click on "Use this file on the web".  Since you've downloaded the images
+you want to use, you'll want to edit the `img` tags so that they point to your
+server and not Wikimedia's -- we've already done that for you:
+
+```
+$ sed -i.bak -E 's/^<img[^>]*>//' index.html
+$ for f in bombay bobcat tort; do
+>     sed -i.bak -e "/<foot/e cat ../$f*.txt" index.html;
+> done
+$ git commit -a -m "Link images to their source pages" \
+> -m "Put attributions in the link titles (tooltips)"
+```
+
+(You don't type the `>` characters; they're the prompt Bash gives you when a
+command continues on the next line.  Bash knows that there's more coming after
+`do`, but you can continue any command by ending the line with a backslash.)
+
+At this point, this looks good enough for you to call it version 1.0.
+
+```
+$ git tag -a v1.0 -m "Release 1.0!"
+$ git push --follow-tags
+Counting objects: 3, done.
+Delta compression using up to 2 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 790 bytes | 395.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: From /home/steve/sandbox/Cats
+remote:  * branch            master     -> FETCH_HEAD
+remote:    d1b49d2..8c97793  master     -> origin/master
+remote: Updating d1b49d2..8c97793
+remote: Fast-forward
+remote:  index.html | 9 ++++++---
+remote:  1 file changed, 6 insertions(+), 3 deletions(-)
+To ../Cats.git
+   d1b49d2..8c97793  master -> master
+```
+
+Congratulations!
 
 ## Summary
 
@@ -219,4 +306,8 @@ In this unit, you have learned about Git hooks, which perform actions when
 specific events occur, and the Git command
 
 * [`git tag`](https://git-scm.com/docs/git-tag),
- which creates, deletes, or modifies tags.
+  which creates, deletes, or modifies tags.
+
+You have also encountered Bash `for` loops and learned how to break a long
+command by escaping the end of line with a backslash.
+

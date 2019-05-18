@@ -13,29 +13,3 @@ metadata:
 durationInMinutes: 12
 content: |
   [!include[](includes/09-resolve-merge-conflicts.md)]
-quiz:
-  title: Simplify histories and resolve merge conflicts
-  description: Confirm your understanding of merging and rebasing.
-  questions:
-  - content: "When can a merge conflict occur?"
-    choices:
-    - content: "When "
-      isCorrect: false
-      incorrectExplanation: ""
-    - content: ""
-      isCorrect: true
-      correctExplanation: ""
-    - content: ""
-      isCorrect: false
-      incorrectExplanation: ""
-  - content: ""
-    choices:
-    - content: ""
-      isCorrect: false
-      incorrectExplanation: ""
-    - content: ""
-      isCorrect: true
-      correctExplanation: ""
-    - content: ""
-      isCorrect: false
-      incorrectExplanation: ""
