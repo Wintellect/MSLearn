@@ -109,7 +109,7 @@ style sheet for it as well.
 
 ```
 $ cd ~/sandbox/Alice/Cats
-$ sed -i.bak -e '/<body>/a<nav> <a href="./">home<\/a> <\/nav>' index.html
+$ sed -i.bak -e '/<body>/a<nav> <a href="./index.html">home<\/a> <\/nav>' index.html
 $ echo 'nav { background-color: #C0D8DF; }' >> assets/site.css
 ```
 

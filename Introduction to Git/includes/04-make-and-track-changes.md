@@ -54,7 +54,8 @@ $ git commit -m "Add HTML boilerplate to index.html" index.html
 $ git diff
 ```
 
-Notice that you can explicitly name a file to be committed.
+Notice that you can explicitly name a file to be committed, provided Git
+already has it in the index.
 
 You decide "furry" would sound friendlier than "feline".  You can do this with
 a text editor; here we're using `sed`, the "stream editor", which lets you
@@ -71,11 +72,12 @@ index.html.bak
 
 Now you may notice that you have a problem: if you used `sed` there's a text
 editor backup file here that you shouldn't commit.  (There may not be one if
-your editor is clever enough not to make backups of version-controled files.
-What the backups will look like will also depend on which text editor you're
-using; Vim or Emacs will create one called `index.html~` by default; you may
-have Emacs configured to keep numbered backups, in which case you would have
-`index.html.~1~`.)  You can tell Git to ignore these:
+you used a text editor that's clever enough not to make backups of
+version-controled files.  What the backups will look like will also depend on
+which text editor you're using; Vim or Emacs will create one called
+`index.html~` by default; you may have Emacs configured to keep numbered
+backups, in which case you would have `index.html.~1~`.)  You can tell Git to
+ignore these:
 
 ```
 $ echo -e "*.bak\n*~" > .gitignore
@@ -212,7 +214,7 @@ $ git commit -m "Remove redundant .git-keep file"
  delete mode 100644 CSS/.git-keep
 ```
 
-Notice, by the way, that we didn't need to use `git add` -- `git rm`
+Notice, by the way, that you didn't need to use `git add` -- `git rm`
 automatically updates the index as well as the working tree.
 
 As with the Unix command `rm`, Git requires the `-r` option to recursively

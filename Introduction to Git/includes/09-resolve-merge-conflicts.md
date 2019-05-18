@@ -1,7 +1,7 @@
 # Simplify histories and resolve merge conflicts
 
 After Alice adds a picture of her cat and Bob pulls her change, Bob's history
-will become somewhat complicated.  What Alice does is:
+becomes somewhat complicated.  What Alice does is:
 
 ```
 $ cd ~/sandbox/Alice/Cats
@@ -89,23 +89,28 @@ search and navigation tools, as well as a box containing the full ID of the
 selected commit.  This is automatically selected, which makes it easy to copy
 and paste into a command.
 
-## Simplify history by squashing
-
 Bob has several different things he can do at this point, depending on what he
 wants the resulting history to look like.  You've already seen two different
 methods, `merge` and `rebase`.  They produce histories that look like:
 
 ``` 
+# git checkout master; git merge --addCat
 merge:  ...o---m---A---D---E
                     \     /
                      B---C
 
+# git checkout addCat; git rebase master
 rebase: ...o...m...A...D...B...C
 ```
 
 Merge has the advantage of preserving all of the individual changes and
 recording the merge metadata in a commit.  Rebase has the advantage of keeping
-the history simple and easy to understand.
+the history simple and easy to understand.  In both of these cases, if there's
+a conflict Git will interrupt the process to let you try to resolve it.  There
+are two ways to 
+
+
+## Simplify history by squashing
 
 The third possibility is to squash Bob's two commits into a single one, with a
 message like "add Bob's cat" that summarizes everything that he did.  Most
@@ -119,7 +124,8 @@ There are two different ways of doing this, plus a short-cut.  Many developers
 take the short-cut and simply make a single commit that they keep amending.
 It's not really a good idea, because it's much harder to find a problem in an
 amended commit with a bug in it that was introduced sometime in the last week,
-than a series of simple ones made every day or so.
+than a series of simple ones made every day or so.  (Take a look at the man
+page for `git bisect` to see to do that quickly.)
 
 The two ways are `git merge --squash` and `git rebase --interactive` (usually
 shortened to `git rebase -i`).  Interactive rebase creates a temporary file
@@ -143,8 +149,7 @@ those commands -- Bash ignores everything from `#` to the end of the line.)
 It isn't *quite* that simple, because Bob and Alice each changed the same line
 in `index.html`, which created a merge conflict.
 
-
-## Resolving merge conflicts
+## Resolve merge conflicts
 
 What *actually* happens when Bob makes his merge is that Git notices that the
 branches being merged have changes that overlap, so it interrupts the merge
@@ -208,8 +213,91 @@ and the `git merge --continue` finishes the merge.  Another option, if Bob had
 decided that he shouldn't have made the merge after all, was `git merge
 --abort`; that option only works if there are conflicts.
 
+## Exploring merge alternatives
+
 Bob could also use `git reset --hard` in both of the merged branches to get back
-to what he had before a merge.
+to what he had before a merge.  In this case, the `adCat` branch hasn't
+actually been merged, so Bob only has to reset `master`.  It's worthwhile
+playing around a little to see Bob's alternatives.
+
+First, let's look at what happens if Bob does the squash but takes the default
+merge message instead of replacing it.
+
+```
+$ git reset --hard HEAD^
+$ git merge --squash addCat
+$ sed -i.bak -e '/<<<</d' -e '/====/d' -e '/>>>>/d' index.html
+$ git add index.html
+$ git commit --no-edit
+$ git log -n1
+commit ffc8fde164f4cded11ed1f965a2602d894d059c7 (HEAD -> master)
+Author: Bob <bob@example.com>
+Date:   Fri May 17 14:28:33 2019 -0700
+
+    Squashed commit of the following:
+    
+    commit f98a6e349309086088228feb8b284e12b72ee4de
+    Author: Bob <bob@example.com>
+    Date:   Wed May 15 22:06:11 2019 -0700
+    
+        Add style class to cat picture
+    
+    commit a6ed876ebc924d16f7589c221526d07220d64f33
+    Author: Bob <bob@example.com>
+    Date:   Wed May 15 21:50:35 2019 -0700
+    
+        Add picture of Bob's cat
+    
+    # Conflicts:
+    #       index.html
+```
+
+As you can see, it's usually a good idea to edit the message down to something
+that makes sense, but if Bob hadn't used the `--no-edit` option, Git would
+have initialized the commit message with something that might be a good start.
+
+## Backing out of a conflicted merge
+
+Sometimes the best thing to do when there is a conflict is to back out of it.
+This is particularly useful if you do a simple pull instead of `pull
+--rebase`.  In that case you can use `git merge --abort` or `git rebase --abort`
+to back out.  Unlike the case with squash, once you fix the conflict you can
+go forward with `git merge --continue` or `git rebase --continue`.
+
+### Exercise:
+
+Try some of the following:
+
+```
+$ git reset --hard HEAD^
+$ git merge addCat
+$ git merge abort
+```
+
+and 
+
+```
+$ git merge addCat
+$ sed -i.bak -e '/<<<</d' -e '/====/d' -e '/>>>>/d' index.html
+$ git add index.html
+$ git merge --continue
+```
+
+That will put you into the text editor looking at the default merge message,
+which is just `Merge branch 'addCat'`.  If you delete the message, Git will
+abort the commit just as it will with any commit.  That's a good way of
+backing out of a pull that should have been a rebase.
+
+Since Bob has already pushed the squashed merge, he can get it back with
+
+```
+$ git reset --hard origin/master
+HEAD is now at 39473bb Add Bob's cat
+```
+
+It's often a good idea to keep a remote called "backup" that you can push
+changes to every evening, or whenever you want to try something tricky.  If
+you've done some rebasing, you can use `git push --force backup`.
 
 ## Merge tools
 
