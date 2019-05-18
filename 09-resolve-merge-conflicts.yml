@@ -3,7 +3,7 @@ uid: learn.introduction-to-git.09-resolve-merge-conflicts
 title: Simplify histories and resolve merge conflicts
 metadata:
   title: Simplify histories and resolve merge conflicts
-  description: Modify unmerged branches and resolve merge conflicts
+  description: Modify unmerged branches and resolve merge conflicts.
   ms-date: 05/06/2019
   author: ssavitzky
   ms-author: TBD
@@ -13,3 +13,29 @@ metadata:
 durationInMinutes: 12
 content: |
   [!include[](includes/09-resolve-merge-conflicts.md)]
+quiz:
+  title: Simplify histories and resolve merge conflicts
+  description: Confirm your understanding of merging and rebasing.
+  questions:
+  - content: "When can a merge conflict occur?"
+    choices:
+    - content: "When "
+      isCorrect: false
+      incorrectExplanation: ""
+    - content: ""
+      isCorrect: true
+      correctExplanation: ""
+    - content: ""
+      isCorrect: false
+      incorrectExplanation: ""
+  - content: ""
+    choices:
+    - content: ""
+      isCorrect: false
+      incorrectExplanation: ""
+    - content: ""
+      isCorrect: true
+      correctExplanation: ""
+    - content: ""
+      isCorrect: false
+      incorrectExplanation: ""

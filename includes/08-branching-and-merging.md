@@ -4,7 +4,10 @@ At this point it's become clear that you need a way for people to work more
 independently.  Branches make this easy -- work "on a branch" doesn't have to
 be shared, and can't interfere with work on other branches.  One of Git's
 advantages over older version control systems is that creating a branch is
-extremely fast, and merging is comparatively simple.
+extremely fast -- it amounts to writing a 40-character hash into a file under
+`.git/heads`.  Switching branches is also simple and fast because Git stores
+whole files rather than trying to reconstruct them from lists of changes.
+Merging in Git is also fast and comparatively simple.
 
 ## Introduction to branches
 
@@ -238,7 +241,6 @@ Bob could have amended commit B rather than making a new commit on top of it;
 that would lead to a simpler-looking history, with a single commit
 representing all of his changes.  Many teams prefer simple histories, but as
 we'll see later there are better ways of getting there.
-
 
 ## Summary
 

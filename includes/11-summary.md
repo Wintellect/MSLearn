@@ -4,7 +4,7 @@ In this module, you learned the basics of using Git:  installing Git;
 creating, cloning, and exploring repositories; tracking changes; recovering
 from mistakes; collaborating with other developers; creating, merging, and
 rebasing branches; resolving merge conflicts, and some of the uses of hooks
-and tag.  You also learned the basics of Git's terminology, how to read Git's
+and tags.  You also learned the basics of Git's terminology, how to read Git's
 documentation from the command line, and a few other useful commands.
 
 At this point you know enough about Git to perform everyday tasks, get
@@ -24,8 +24,7 @@ There are many other good tutorials about Git, these include:
   Dangerous](https://www.learnenough.com/git-tutorial/getting_started).
 * GitHub's [Git and GitHub learning
   resources](https://help.github.com/en/articles/git-and-github-learning-resources).
-* [A Hacker's Guide to Git | Wildly
-  Inaccurate](https://wildlyinaccurate.com/a-hackers-guide-to-git/).
+* [A Hacker's Guide to Git](https://wildlyinaccurate.com/a-hackers-guide-to-git/).
 
 ## To dig deeper
 

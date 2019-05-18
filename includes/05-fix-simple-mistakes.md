@@ -30,10 +30,16 @@ $ git commit --amend --no-edit
  rename {CSS => assets}/site.css (100%)
 ```
 
+The `--no-edit` option tells Git to make the change without starting up a text
+editor to change the commit message.  You can also use `--amend` to edit a
+commit message, to add files accidentally left out of the commit, or to remove
+files that were added by mistake.
+
 The ability to change history (we will see later that there are other ways
 besides `--amend`) is one of Git's most powerful features.  Like most power
 tools, it has to be used carefully -- in particular, it's a bad idea to change
-any commits that have been published.
+any commits that have been shared with another developer or published on a
+shared repository.
 
 ### Exercises:
 
@@ -42,6 +48,7 @@ any commits that have been published.
 * Compare that to the output of `git log -n1`.  Which date is reported by
   default?
 * Can you think of cases where the author and committer would be different?
+  (See `git help am` for a hint.)
 
 ## Retrieve an earlier version of a file
 
@@ -78,6 +85,13 @@ file paths.  It's not strictly needed in this case, but if there had been a
 branch called `index.html` (perhaps because that's the name of the file being
 worked on on that branch) or a file called `master`, it would be needed to
 resolve the ambiguity.
+
+In Unit 8 you'll learn that `checkout` is also used for switching branches.
+(Many earlier version-control systems make files read-only to ensure that only
+one person at a time can make changes; they use a completely unrelated "checkout"
+command to get a writable version.  They also use "checkin" for an operation
+similar to what Git does with a combination of `add`, `commit`, and `push`.
+This occasionally causes confusion when people start using Git.)
 
 Things are a little more complicated if you used `git rm`:
 
@@ -169,6 +183,25 @@ be used going the other way for getting a quick look at a short file.  For
 longer files, use `less`, which lets you go through a file a page at a time.
 As you might expect, it's an improved version of an older command called
 `more`.
+
+Revert isn't the only way to fix this; you could simply have edited `site.css`
+and committed the changed file.  That's harder if the changes you committed
+were extensive, and in any case the `revert` is a good way to signal your
+intent.
+
+You can also remove the most recent commit with 
+
+```
+git reset --hard HEAD^
+```
+
+There are several different resets.  The default is `--mixed`, which resets
+the index but not the working tree; it also moves HEAD if you specify a
+different commit.  The `--soft` option only moves HEAD, and leaves both the
+index and the working tree unchanged.  This leaves all your changed files
+"changes to be committed", as `git status` would put it.  A `--hard` reset
+changes both the index and the working tree to match the specified commit; any
+changes you made to tracked files are simply discarded.
 
 ### Exercises
 
