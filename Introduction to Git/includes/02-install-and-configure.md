@@ -120,11 +120,7 @@ $ git config --global core.autocrlf true
 $ git config --global core.safecrlf true
 ```
 
-There's a good discussion of this problem in "[Mind the End of Your
-Line](https://adaptivepatchwork.com/2012/03/01/mind-the-end-of-your-line/)" by
-[Tim Clem](https://adaptivepatchwork.com/about/).There are some additional
-subtleties you may need to watch out for later, but the defaults are all
-you need for this tutorial. 
+There's a good discussion of this problem in "[Mind the End of Your Line](https://adaptivepatchwork.com/2012/03/01/mind-the-end-of-your-line/)" by [Tim Clem](https://adaptivepatchwork.com/about/). There are some additional subtleties that Windows users may need to watch out for later, but the defaults are all you need for this tutorial. 
 
 ## Check your configuration
 

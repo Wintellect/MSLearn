@@ -1,15 +1,16 @@
 # Collaborate using a shared repo
 
-Directly pulling from someone else's repository works, provided you're both on
-the same network, but it's clumsy.  It's much better to set up a central
-repository that you can both push to as well as pull from.  When you tell Bob
-about your project, that's exactly what you do.
+Directly pulling from someone else's repository works, provided you're both on the same network, but it's a clumsy process -- and most collaborators are not on the same network. It's much better to set up a central repository to which you can both push as well as pull from.
+
+When you tell Bob about your project, and he asks to participate too, that's exactly what you do.
 
 ## Create a bare repository
 
-What you need is a repository that doesn't have a working tree, to avoid the
-problem Alice had trying to push.  That's called a "bare repository", and you
-can set it up using:
+What you need is a repository that doesn't have a working tree, to avoid the problem Alice had trying to push.  That's called a _bare repository_.
+
+[*IT FEELS AS THOUGH THERE'S A LITTLE MORE TO BE SAID ABOUT THE PROS AND CONS OF THESE OPTIONS. MAYBE A BULLETED LIST? OR DOES IT COME DOWN TO "IF IT'S JUST YOU AND ALICE, WORKING AT HOME TOGETHER, WHY MAKE IT MORE COMPLEX THAN NECESSARY?"...BUT THAT DOESN'T SCALE....?--ES*]
+
+You can set it up using:
 
 ```
 $ cd ~/sandbox
@@ -19,11 +20,9 @@ $ git init --bare
 Initialized empty Git repository in /home/steve/sandbox/Cats.git/
 ```
 
-(The convention for bare repositories is to give them a name ending with
-`.git` to distinguish them from working trees.)
+(The convention is to give bare repositories a name ending with `.git` to distinguish them from working trees.)
 
-Now you have to get the contents of _your_ repo into the new one.  You set up
-an `origin` remote and push to it.
+Now you have to get the contents of _your_ repo into the new one. You set up an `origin` remote and push to it.
 
 ```
 $ cd ~/sandbox/Cats
@@ -38,22 +37,22 @@ To ../Cats.git
  * [new branch]      master -> master
 ```
 
-Since you want push and pull to use `origin`'s master branch by default, just
-as if you'd made your repo by cloning in the first place, you need to tell
-Git which branch to track:
+You want push and pull to use `origin`'s master branch by default, just as if you'd made your repo by cloning in the first place. To do so, you need to tell Git which branch to track:
 
 ```
 $ git branch --set-upstream-to origin/master
 Branch 'master' set up to track remote branch 'master' from 'origin'.
 ```
 
-Git would have complained if you had tried to do this before the initial push,
-because there weren't any branches in the new repository yet and Git won't let
-you track a branch that doesn't exist.
+Git would have complained if you had tried to do this before the initial push, because there weren't any branches in the new repository yet. Git won't let you track a branch that doesn't exist.
+
+[*SHOULD WE OFFER ANY ADVICE IN REGARD TO "HERE IS WHAT CAN GO WRONG IF YOU GIVE IT THE WRONG BRANCH"? IN OLD STYLE DIRECTIONS TO SOMEONE'S HOUSE, WE USED TO SAY, "IF YOU PASS THE GAS STATION YOU WENT TOO FAR." ...I'M THINKING OF THE MOMENTS WHERE I SCREW UP AND DON'T KNOW WHAT I DID WRONG. --ES*]
 
 ## Setup for collaborators
 
 Now all Bob has to do is clone the bare repository:
+
+[*LOL at the BobCats! Though of course the Diamondbacks mascot is Baxter the Bobcat because Chase Field was once Bank One Ballpark and everyone called it the Bob. #GoDBacks --ES*]
 
 ```
 $ cd ~/sandbox
@@ -67,11 +66,9 @@ $ git config user.name Bob
 $ git config user.email bob@example.com
 ```
 
-Notice that Bob specified a different directory to clone into.  Git doesn't
-care what you call a working tree because it never looks outside of it.
+Notice that Bob specified a different directory to clone into. Git doesn't care what you call a working tree, because it never looks outside of it.
 
-Alice already has a remote called `origin`, so all she has to do is change
-which repo it's pointing to:
+Alice already has a remote called `origin`, so all she has to do is change which repo it points to:
 
 ```
 $ cd ~/sandbox/Alice/Cats
@@ -80,12 +77,11 @@ $ git push
 Everything up-to-date
 ```
 
-The push wasn't necessary, but it's a simple way of making sure the remote is
-set up with the correct defaults.
+The push wasn't necessary, but it's a simple way of making sure the remote is set up with the correct defaults.
 
 ## The basics of collaboration
 
-Bob decides to wrap the horizontal rule at the bottom of the page with a footer.
+Now that Bob is set up to work on the website, he decides to wrap the horizontal rule at the bottom of the page with a footer.
 
 ```
 $ cd ~/sandbox/Bob/BobCats
@@ -104,8 +100,7 @@ To /home/steve/sandbox/Cats.git
 
 He sends email to you and Alice to let you know that he's made a change.
 
-Meanwhile, Alice decides to add a nav bar to the page, and adds a line to the
-style sheet for it as well.
+Meanwhile, Alice decides to add a nav bar to the page, and adds a line to the style sheet for it as well.
 
 ```
 $ cd ~/sandbox/Alice/Cats
@@ -113,9 +108,7 @@ $ sed -i.bak -e '/<body>/a<nav> <a href="./index.html">home<\/a> <\/nav>' index.
 $ echo 'nav { background-color: #C0D8DF; }' >> assets/site.css
 ```
 
-Then she sees Bob's email, and decides to pull his changes before she commits
-her own.  (If she had already committed her change, she would have a different
-problem, which we'll discuss in the next unit.)
+Then Alice sees Bob's email, and decides to pull his changes before she commits her own. (If she had already committed her change, she would have a different problem, which we discuss in the next unit.) She types:
 
 ```
 $ git pull
@@ -132,13 +125,10 @@ Please commit your changes or stash them before you merge.
 Aborting
 ```
 
-It looks as though Git has prevented a problem.  Note that only `index.html`
-would have been overwritten; Bob didn't make any changes in `site.css`.  If
-Alice hadn't changed `index.html`, Git would have gone ahead and committed the
-merge, which could have caused some trouble later on.  It's always a good idea
-to run tests after a merge.)  Alice uses `git diff` to see what Bob's changes
-were, specifying both the branch (`origin`) and the file (`index.html) to
-compare.
+It looks as though Git prevented a problem. Only `index.html` would have been overwritten; Bob didn't make any changes in `site.css`. If Alice hadn't changed `index.html`, Git would have gone ahead and committed the merge. If it did so, it could have caused trouble later on. (This is one reason why it's always a good idea to run tests after a merge.)
+
+Alice uses `git diff` to see what Bob's changes were, specifying both the branch (`origin`) and the file (`index.html) to compare.
+
 
 ```
 $  git diff origin -- index.html
@@ -159,21 +149,18 @@ index 8ff78df..b8732b6 100644
  </html>
 ```
 
-She can see that, although she and Bob have both changed the same file, their
-changes don't overlap.  She decides to stash her changes; `git stash` saves
-the state of the working tree and index by making a couple of temporary
-commits.  (She really should have stashed or committed her changes _before_
-trying to pull.  Pulling to a "dirty" working tree is risky, because it can do
-things you can't recover from.)
+Alice can see that, although she and Bob both changed the same file, their changes don't overlap. She decides to _stash_ her changes. `git stash` saves the state of the working tree and index by making a couple of temporary commits. Think of the stash as a way to save your current work while you do something else, without making a "real" commit or affecting your repository history.
+
+[*I'M ENVISIONING IT AS AKIN TO YOUR EMAIL DRAFT FOLDER, WHERE YOU CAN UPDATE A MESSAGE BEFORE YOU CLICK ON SEND. ...NO? -ES*]
+
+In reality, Alice should have stashed or committed her changes before she tried to pull. Pulling to a "dirty" working tree is risky,because it can do things from which you can't recover.
 
 ```
 $ git stash
 Saved working directory and index state WIP on master: 37903fd change background color to light blue
 ```
 
-Now it's safe for Alice to pull, after which she can "pop" the stash, which is
-organized as a stack.  (In fact, `git stash` is shorthand for `git stash
-push`.) 
+Now it's safe for Alice to pull, after which she can "pop" the stash, which is organized as a stack. (In fact, `git stash` is shorthand for `git stash push`.) 
 
 ```
 $ git pull
@@ -197,11 +184,11 @@ no changes added to commit (use "git add" and/or "git commit -a")
 Dropped refs/stash@{0} (cad3c4cd27de5ca9b0a6e88b379fa8fda43246f5)
 ```
 
-Popping the stash merges the changes; if changes overlap there may be a
-conflict, which we will look at later.
+Popping the stash merges the changes. If changes overlap, there may be a conflict. We look later at how to resolve those situations.
 
-At this point Alice can continue working, or simply commit and push her
-changes.  She gives footers the same style as nav bars.
+At this point Alice can continue working, or simply commit and push her changes.
+
+She gives footers the same style as nav bars.
 
 ```
 $ sed -i.bak -e 's/nav/nav, footer/' assets/site.css
@@ -218,24 +205,17 @@ To /home/steve/sandbox/Cats.git
    99fbbca..88bed5a  master -> master
 ```
 
-If Alice had committed her changes rather than stashing them, the situation
-would have been somewhat different -- she would have had to make a branch and
-either merge or rebase her changes.  If she'd been working on a branch in the
-first place she would have saved herself quite a lot of trouble.  We'll see
-how to do that in the next unit; for now it's worth pointing out that
-branching and rebasing is _exactly_ what the stash commands accomplish behind
-the scenes.
+If Alice had committed her changes rather than stashing them, the situation would have been somewhat different. She would have had to make a branch and either merge or rebase her changes. [*REBASE? --ES*]
+
+Had Alice begun by working on a branch in the first place she would have saved herself quite a lot of trouble. We'll see
+how to do that in the next unit; for now it's worth pointing out that branching and rebasing is _exactly_ what the stash commands accomplish behind the scenes.
 
 ## Summary
 
-In this unit, you learned how to set up a bare repository that can be shared
-among a group of developers, and about the Git commands
+In this unit, you learned how to set up a bare repository that can be shared among a group of developers, and about the Git commands
 
-* [`git commit --bare`](https://git-scm.com/docs/git-commit),
- which sets up a repo that can be shared,
-* [`git push`](https://git-scm.com/docs/git-push),
- which merges changes with a remote repo, and
-* [`git stash`](https://git-scm.com/docs/git-stash),
- which saves un-committed changes so that you can merge safely.
+* [`git commit --bare`](https://git-scm.com/docs/git-commit), which sets up a repo that can be shared
+* [`git push`](https://git-scm.com/docs/git-push), which merges changes with a remote repo, and
+* [`git stash`](https://git-scm.com/docs/git-stash), which saves un-committed changes so that you can merge safely.
 
-In the next unit you'll learn how to create and merge branches.
+In the next unit, you learn how to create and merge branches.

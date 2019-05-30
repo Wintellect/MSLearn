@@ -92,16 +92,19 @@ index.html`; adding the period (`.`) adds all changed or new files in the entire
 tree. The `touch` command updates the time at which the file was last modified, and
 creates an empty file if it didn't exist before now.
 
-Git's "index" is also called the "staging area." It's a list of all the
-file versions that are going to be part of the *next* commit you make.
+Git's "index" is also called the "staging area." It's a list of all the file versions that are going to be part of the *next* commit you make.
 
-There's no real need to start with an empty file. In fact, you can start with
-an entire project that you created before you learned how to use version
-control.
+For an exmaple of a staging area, consider the way you go about cooking dinner. To get organized, you pull out all the ingredients you need and at least set them on the counter before you get underway making the meal.
+
+There's no real need to start with an empty file. In fact, you can start with an entire project that you created before you learned how to use version control.
 
 ## Make your first commit
 
-Now that `index.html` has been added to the index, you can commit it.
+Now that `index.html` has been added to the index, you can commit it. Doing so requires that you grok what "commit" really means.
+
+_Commit_ is both a verb and a noun. It has essentially the same meaning as when you commit to a plan, or commit a change to a database.
+
+As a verb, committing changes means you put a copy (of the file, directory, or other "stuff") in the repository as a new version. As a noun, a commit is the small chunk of data that gives a unique identity to the changes you committed. It includes the author's name; the author's email address; the date; comments about what you did (and why); an optional digital signature; and the unique identifier of the previous commit.
 
 ```
 $ git commit index.html -m "Create an empty index.html file"
