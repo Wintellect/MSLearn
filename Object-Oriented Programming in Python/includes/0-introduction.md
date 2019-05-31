@@ -24,9 +24,13 @@ By modeling a simulation as a series of objects performing a series of actions b
 
 - **Specify the manner used to create objects**. Each object defines attributes, methods, and events using specific techniques. You obtain repeatable results by defining each object in an application, library, or other code group using a specific standard. Understanding how one object is constructed makes it possible to create others using like techniques and to understand any object using those techniques with greater ease.
 
-- **Write code with less effort**. Creating an animal object means that you only have to specify all the things that make animals different from other objects once. To create a cat or a dog object, all you need to define is what makes a cat or a dog unique. Using the animal object as the basis for the cat and dog objects is called code reuse.
+- **Write code with less effort**. Creating an animal object means that you only have to specify all the things that make animals different from other objects once. To create a cat or a dog object, all you need to define is what makes a cat or a dog unique. Using the animal object as the basis for the cat and dog objects is called *code reuse*.
 
-Objects combine data and code into a single entity so you can work with them as a unit. The basis for an object is a *class*, which defines the object's attributes, methods, and events.
+OOP doesn't reduce programming to a trivial undertaking, but it adds structure to the way programs are laid out and reduces complex tasks to smaller and more manageable series of tasks performed on objects that know what to do and how to do it.
+
+## Classes vs. objects
+
+Objects combine data (attributes) and code (methods) into a single entity so you can work with them as a unit. The basis for an object is a *class*, which defines the object's attributes, methods, and events.
 
 A common analogy from architecture is that you start with a blueprint, which contains a parts list (the data) and instructions (the code) for building a house. Another example is a a recipe. If you want to repeat that fabulous chocolate chip cookie experience, then you need a recipe that contains a list of ingredients (the data) and baking instructions (the code) to do it. This blueprint or recipe is called a class.
 
