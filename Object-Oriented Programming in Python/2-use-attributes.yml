@@ -1,15 +1,15 @@
 ### YamlMime:ModuleUnit
-uid: learn.oop-in-python.0-introduction
+uid: learn.oop-in-python.2-use-attributes
 title: Introduction
 metadata:
-  title: Introduction
-  description: Introduction
+  title: Use attributes
+  description: Use attributes in Python
   ms.date: 5/31/2019
   author: v-jeffpr
   ms.author: shana.matthews
   ms.topic: interactive-tutorial
   ms.prod: learn-python
   ROBOTS: NOINDEX
-durationInMinutes: 5
+durationInMinutes: 10
 content: |
-  [!include[](includes/0-introduction.md)]
+  [!include[](includes/2-use-attributes.md)]

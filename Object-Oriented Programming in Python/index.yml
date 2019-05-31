@@ -1,22 +1,23 @@
 ### YamlMime:Module
-uid: learn.introduction-to-python
+uid: learn.oop-in-python
 metadata:
-  title: Introduction to Python - Learn
-  description: Use Python to extract information from a dataset in an Azure notebook.
-  ms.date: 01/25/2019
+  title: Object-Oriented Programming in Python - Learn
+  description: Use Python to write object-oriented code using reusable classes
+  ms.date: 5/31/2019
   author: v-jeffpr
   ms.author: shana.matthews
   ms.topic: interactive-tutorial
   ms.prod: learning-python
-title: Introduction to Python
-summary: Use Python to extract information from a dataset in an Azure notebook.
+title: Object-Oriented Programming in Python
+summary: Use Python to write object-oriented code using reusable classes
 abstract:  | 
   In this module, you will:
-  - Create a Jupyter notebook in Azure Notebooks
-  - Download a data file from a U.S. Government Web site
-  - Load the data file into the notebook and read its contents
-  - Parse the data file and extract information from it 
-prerequisites: None
+  - Learn how to write classes in Python
+  - Learn how to add attributes to a class
+  - Learn how to add methods to a class
+  - Learn how to inherit classes
+  - Learn how to renovate classes
+  prerequisites: None
 #iconUrl:
 levels:
 - beginner
@@ -25,10 +26,11 @@ roles:
 products:
 - azure
 units:
-- learn.introduction-to-python.0-introduction
-- learn.introduction-to-python.1-getting-started
-- learn.introduction-to-python.2-reading-looping-lists
-- learn.introduction-to-python.3-working-with-strings
-- learn.introduction-to-python.4-conditional-statements
-- learn.introduction-to-python.5-functions
+- learn.oop-in-python.0-introduction
+- learn.oop-in-python.1-create-class
+- learn.oop-in-python.2-use-attributes
+- learn.oop-in-python.3-use-methods
+- learn.oop-in-python.4-inheritance
+- learn.oop-in-python.5-renovate-code
+- learn.oop-in-python.6-summary
 achievement: learn.placeholder.badge
