@@ -38,7 +38,7 @@ Yet a blueprint isn't a house and a recipe isn't a cookie. You must obtain the m
 
 A house is an *instance* of a blueprint. You can build as many houses as you like by following the blueprint; it doesn't wear out. Likewise, you can bake as many cookies as you want from the same recipe. In OOP, to create an object, you create an instance of a class.
 
-In the next unit, you will write a simple class in Python and then instantiate it. The object created from that class won't do a lot, but in subsequent units, you will embellish it by adding methods and attributes. You will learn how to call methods and access attributes on the objects that you create. You will even learn how to create classes that inherit methods and attributes from other classes and then add methods and attributes of their iwn to extend their functionality.
+In the next unit, you will write a simple class in Python and then instantiate it. The object created from that class won't do a lot, but in subsequent units, you will embellish it by adding methods and attributes. You will learn how to call methods and access attributes on the objects that you create. You will even learn how to create classes that inherit methods and attributes from other classes and then add methods and attributes of their own to extend their functionality.
 
 ## Learning objectives
 
@@ -50,4 +50,4 @@ In this module, you will learn:
 - How to add methods to classes
 - How to create new classes that inherit from others
 
-There is much to learn, so let's get started.
+There is much to accomplish, so let's get started.
