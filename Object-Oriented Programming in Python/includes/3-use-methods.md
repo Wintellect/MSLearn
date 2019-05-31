@@ -119,8 +119,9 @@ To test the `__str__()` method, you use the following code:
 print(str(aRelative))
 print(aRelative.__str__())
 print(aRelative)
-That's right, the __str__() method works the same whether you call the str() method, call __str__(), directly or simply print the object! Here's the output you can expect to see:
 ```
+
+That's right, the `__str__()` method works the same whether you call the `str()` method, call `__str__()` directly or simply print the object! Here's the output you can expect to see:
 
 ![tk](media/tk.png)
 
