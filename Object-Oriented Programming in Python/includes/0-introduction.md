@@ -16,7 +16,7 @@ Legendary programmer named [Alan Kay](https://en.wikipedia.org/wiki/Alan_Kay) or
 - *Methods*, which instruct the object to perform tasks, such as render a photo or insert a record into a database
 - *Events*, which fire when something happens to an object — for example, when a missing person is found
 
-By modeling a simulation as a series of objects performing a series of actions based on the attributes that they hold and the context in which they execute, Kay made the concept of writing code easier to think about. Indeed, the goals of OOP are to:
+By modeling a simulation as a series of objects performing a series of actions, Kay made the concept of writing code easier to think about. Indeed, the goals of OOP are to:
 
 - **Simplify your life**. Make it possible for you to communicate what you want the computer to do in a manner that you use naturally, but the computer can understand.
 
