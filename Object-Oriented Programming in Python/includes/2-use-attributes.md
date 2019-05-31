@@ -8,7 +8,7 @@ Think about a blueprint for a house that contains only one piece of wood or a re
 
 In this unit, you start defining a class to hold the information needed by the missing relatives database. To make things simple, you create a `mRelative` class to hold a single relative. You can then use the functionality in Python to turn each of the individual relatives into a list of missing relatives.
 
-## Comparing Class to Instance Attributes
+## Class attributes vs. instance attributes
 
 Real-world objects have two kinds of attributes: class and instance. For example, when you look at a recipe, you know that a cookie recipe is of a different class than a stew recipe. They're both recipes, but they're different types. This kind of attribute affects all recipes. It affects the recipe class as a whole. Just as a recipe can have a class attribute — one that affects all of the recipes of a certain type — Python classes can have a class attribute as well. In dealing with the missing relative database, you could create a class attribute containing the total number of pictures in the database. The number wouldn't change between object instances because the number of pictures in the database affects all of the instances. A class attribute always affects the class as a whole and doesn't change when you create an instance of that class.
 
