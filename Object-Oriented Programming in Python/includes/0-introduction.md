@@ -4,7 +4,7 @@ Imagine that you work for a company that helps locate missing persons. You have 
 
 You could write classic [procedural code](https://en.wikipedia.org/wiki/Procedural_programming) containing functions such as `add_missing_person_to_database()` and `get_information_about_missing_person()`. But such code, while common, can also be difficult to maintain — especially as, over time, the code base grows in size and complexity.
 
-Object-oriented programming (OOP) is a proven way of structuring your code so that it is easier to write, understand, and maintain. Writing object-oriented code in Python is a little different than writing procedural code, but if you know the basics of Python, it isn't difficult. In this module, you will learn how to write object-oriented code in Python and also see first-hand some of the benefits of doing so.
+Object-oriented programming (OOP) is a proven way of structuring your code so that it is easier to write, understand, test, and maintain. Writing object-oriented code in Python is a little different than writing procedural code, but if you know the basics of Python, it isn't difficult. In this module, you will learn how to write object-oriented code in Python and also see first-hand some of the benefits of doing so.
 
 ## What is OOP?
 
