@@ -1,19 +1,17 @@
 # Introduction
 
-We all work with objects every day. In fact, everything in the real world is an object. If you pick up a pencil, you interact with the pencil as an object. The pencil has certain attributes, such as a color and a particular kind of lead. You can perform actions with it, such as leave a note for a loved one. Events can happen to your pencil, such as when you drop it.
+Imagine that you work for a company that helps locate missing persons. You have been asked to write some code to be used in an application that catalogs missing persons and information about them in a database. The application is written in Python, so you will be using Python as well.
 
-Objects also come in groups, such as a box of pencils. You can then select a single pencil from the box. The pencils might be different colors—that is, they have different attributes—but they're all pencils, so they all belong to the group.
+You could write classic [procedural code](https://en.wikipedia.org/wiki/Procedural_programming) containing functions such as `add_missing_person_to_database` and `get_information_about_missing_person`. But such code, while common, can also be difficult to maintain — especially as, over time, the code base grows in size and complexity.
 
-It turns out that objects also provide a convenient way for programmers to envision how things should work in an application. This unit is all about helping you start to visualize the incredibly abstract notion of code as an object to make coding easier to do.
-
-The goal is to see the world of coding in a new way. Like pencils, these code objects have attributes, allow you to perform tasks, and experience events. You can also create groups of objects so that a single object, `myObject`, becomes a group of objects, `myObjects`.
+Object-oriented programming (OOP) is a proven way of structuring your code so that it is easier to write, understand, and maintain. Writing object-oriented code in Python is a little different than writing procedural code, but if you know the basics of Python, it isn't difficult. In this module, you will learn how to write object-oriented code in Python and also see first-hand some of the benefits of doing so.
 
 ## What is OOP?
 
-Legendary programmer named Alan Kay originally conceived of object-oriented programming (OOP) as a way to define:
+Legendary programmer named [Alan Kay](https://en.wikipedia.org/wiki/Alan_Kay) originally conceived of object-oriented programming as a way to define:
 
 - Attributes: the object's characteristics
-- Methods: a way to perform tasks
+- Methods: a way to instruct an object to perform tasks
 - Events: things that happen to the object
 
 Kay [created this concept in the 1970s](http://web.eecs.utk.edu/~huangj/CS302S04/notes/oo-intro.html) for modeling simulations. By modeling a complex coding scenario such as writing a simulation as a series of objects based on what the simulation would do in the real world, Kay made the concept of writing the code much easier to think about.
@@ -56,4 +54,4 @@ In this module, you will learn:
 - How to add methods to classes
 - How to create new classes that inherit from others
 
-There's a lot to do, so let's get started.
+There is much to learn, so let's get started.
