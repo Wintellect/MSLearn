@@ -50,7 +50,7 @@ class mRelative:
     num_faces = int(faces.data.shape[0] / 10)
 ```
 
-The class begins with the class keyword, followed by the class name, as usual. You already know that faces.data.shape contains the size of the dataset. The number of pictures appears as the first element in the list, which is element 0 because Python uses a zero starting point. So, faces.data.shape[0] returns the number of pictures. You then divide this value by 10 because you know that there are ten pictures of each face. Enclosing this math in int() turns the floating point number that the division normally returns into an int value because you can't have part of a face — the dataset only contains whole faces.
+The class begins with the `class` keyword, followed by the class name, as usual. You already know that `faces.data.shape` contains the size of the dataset. The number of pictures appears as the first element in the list, which is element 0 because Python uses zero-based indexes. So, `faces.data.shape[0]` returns the number of pictures. You then divide this value by 10 because you know that there are ten pictures of each face. Enclosing this math in `int()` turns the floating point number that the division normally returns into an integer because you can't have part of a face — the dataset only contains whole faces.
 
 You don't know that the code has worked though, which means you need to test it. Class attributes are always available. You don't have to create an instance of the class to access the class attributes. Consequently, you can perform the following test to see the number of faces in the Olivetti Faces dataset.
 
@@ -66,7 +66,7 @@ _tk_
 
 ## Defining instance attributes
 
-Instance attributes differ by object. You can't access them from the class, as you can with class attributes. Instead, you must create an instance of the object and assign values to the attributes. Python provides multiple ways to create instance variables, but the most common is to define an `__init__()` function that contains the attributes you want the object to have once created. Add the instance attributes to the `mRelative` class using the code shown in bold:
+Instance attributes differ from one class instance (object) to another. You can't access them from the class, as you can with class attributes. Instead, you must create an instance of the object and assign values to the attributes. Python provides multiple ways to create instance variables, but the most common is to define an `__init__()` function that contains the attributes you want the object to have once created. Add the instance attributes to the `mRelative` class as shown here:
 
 ```python
 class mRelative:
@@ -123,7 +123,7 @@ plt.imshow(aRelative.pic_cont)
 plt.show()
 ```
 
-The code begins with something quite odd — a command that starts with a percent sign. This is a "magic function" that relates specifically to Jupyter Notebook. It tells Jupyter to display graphics inline with the rest of the material in the notebook, which is actually quite handy when you need to create a report.
+The code begins with something quite odd — a command that starts with a percent sign. This is a "magic function" that relates specifically to Jupyter notebooks. It tells Jupyter to display graphics inline with the rest of the material in the notebook, which is actually quite handy when you need to create a report.
 
 The code the follows imports the specific module you need from `matplotlib.pyplot` and gives it the name `plt` to make it easier to use. You then use the special `imshow()` function to read the `aRelative.pic_cont` attribute. However, nothing shows on screen until you call `plt.show()`. Here's what you can expect to see:
 
