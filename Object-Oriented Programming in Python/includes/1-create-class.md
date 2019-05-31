@@ -42,17 +42,13 @@ Azure notebooks are created through the portal at https://notebooks.azure.com an
 
 You can create additional projects and notebooks as you work with Azure Notebooks. You can create notebooks from scratch, or you can upload existing notebooks. And once a notebook is created or uploaded, you can take advantage of Azure compute resources to run the notebook and leverage popular Python libraries such as [Keras](https://keras.io/), [NumPy](http://www.numpy.org/), [Pandas](https://pandas.pydata.org/), [Matplotlib](https://matplotlib.org/), and [Scikit-learn](https://scikit-learn.org/stable/index.html).
 
-
-
-
-
 ## OOP in Python
 
 Everything is an object in Python. It would be easy to confuse the Python programming paradigm, the method used to create code, with the underlying language concepts. A programming paradigm would allow you to use the [functional, imperative, object-oriented, or procedural coding styles](https://blog.newrelic.com/engineering/python-programming-styles/). However, no matter which programming paradigm you use, Python itself uses objects for everything.
 
-This section is about Python as a language. Later, you learn about the OOP programming paradigm that Python supports.
+This section is about Python as a language. Later, you will learn about the OOP programming paradigm that Python supports.
 
-To see how objects work in Python, open a [new Azure Notebook session](https://notebooks.azure.com/). (You must sign in using your Microsoft account before you can access any of the Azure Notebook features.) Once you sign in, create a new notebook. You don't really need to assign the notebook a name because you won't hold onto it, but the example uses the name Test. Once you have a new notebook to use, type the following code into it:
+To see how objects work in Python, return to the notebook you created a moment ago and type or paste the type the following code into the notebook's first cell:
 
 ```python
 print(type(1))
