@@ -13,7 +13,7 @@ Writing object-oriented code in Python is a little different than writing proced
 Legendary programmer named [Alan Kay](https://en.wikipedia.org/wiki/Alan_Kay) originally conceived of object-oriented programming as a way to help [create computer simulations](http://web.eecs.utk.edu/~huangj/CS302S04/notes/oo-intro.html). He envisioned an "object" as having:
 
 - *Attributes*, which define characteristics such as a person's name or the color of their hair
-- *Methods*, which instruct the object to perform tasks, such as render a photo or insert a record into a database
+- *Methods*, which instruct the object to perform tasks, such as render a photo or record information in a database
 - *Events*, which fire when something happens to an object — for example, when a missing person is found
 
 By modeling a simulation as a series of objects performing a series of actions, Kay made the concept of writing code easier to think about. Indeed, the goals of OOP are to:
