@@ -26,7 +26,7 @@ The third instance method requires a little more explanation, so you see it cove
 
 Static methods work with your class, not with the object instantiated from the class. You can use a static method to create a nicely printed version of the number of faces in the Olivetti Faces dataset. You could do the same thing using special code every time, but the purpose of creating a class of this sort is so that you don't have to keep typing the same code repeatedly.
 
-To create a static method, you add it to your class definition as shown in bold here:
+To create a static method, you add it to your class definition as shown here:
 
 ```python
 class mRelative:
@@ -43,11 +43,11 @@ class mRelative:
         return str(before) + str(mRelative.num_faces) + str(after)
 ```
 
-The other code in this class defines the attributes. The code in bold is your first method. Notice the first line, @staticmethod. This line is called a decoration, but what it really does is tell Python that this is a static method, not an instance method. There are other ways to determine the difference too, as you see later in the unit. For now, know that this decoration says that this is a static method that belongs to the class as a whole.
+The other code in this class defines the attributes. The code in bold is your first method. Notice the first line, `@staticmethod`. This is called a *decoration*, but what it really does is tell Python that this is a static method, not an instance method. There are other ways to determine the difference too, as you will see momentarily. For now, know that this decoration says that this is a static method that belongs to the class as a whole.
 
 Below the decoration, you see the method, which accepts two arguments, before and after. The before argument contains content that appears before the number of faces, while the after argument contains content that appears after the number of faces. The entire return value is a string.
 
-Pay particular attention to how you access the num_faces attribute. It's essential to tell Python where to find the attribute, so you precede it with the name of the class, mRelative.num_faces. If you fail to do this, Python gives you an error message telling you the attribute is nowhere to be found.
+Pay particular attention to how you access the `num_faces` attribute. It's essential to tell Python where to find the attribute, so you precede it with the name of the class, `mRelative.num_faces`. If you fail to do this, Python gives you an error message telling you the attribute is nowhere to be found.
 
 You can test this addition using the following code:
 
