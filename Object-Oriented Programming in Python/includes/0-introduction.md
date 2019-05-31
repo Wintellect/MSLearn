@@ -30,7 +30,7 @@ OOP doesn't reduce programming to a trivial undertaking, but it adds structure t
 
 ## Classes vs. objects
 
-Objects combine data (attributes) and code (methods) into a single entity so you can work with them as a unit. The basis for an object is a *class*, which defines the object's attributes, methods, and events.
+Objects combine data and code into a single entity so you can work with them as a unit. The basis for an object is a *class*, which defines the object's attributes, methods, and events.
 
 A common analogy from architecture is that you start with a blueprint, which contains a parts list (the data) and instructions (the code) for building a house. Another example is a a recipe. If you want to repeat that fabulous chocolate chip cookie experience, then you need a recipe that contains a list of ingredients (the data) and baking instructions (the code) to do it. This blueprint or recipe is called a class.
 
