@@ -1,26 +1,20 @@
 # Perform actions with methods
 
-Methods tell the software how an action is performed. Just as a recipe has a series of steps to put together the ingredients and a blueprint's instructions tell a worker how to connect the various pieces of wood, Python objects need methods to describe how they are to interact with the attributes that describe it. Without steps, instructions, or methods an object is inert—it just sits there looking pretty, but without any purpose whatsoever.
+Methods tell an object what to do and how to do it. For example, a `person` class might contain a `show_face()` method for displaying the person's face, and a `get_age()` method that returns the person's age. Methods frequently operate on data stored in attributes. As an example, `get_age()` might subtract a birth date stored in an attribute from the current date to compute a person's age in years. 
 
-Python objects always have methods. However, the methods may not be useful in context of the object. For example, the `__str__()` method that you discover later in this unit displays the string representation of the object. Python comes with a default `__str__()` method that works fine for something simple like an `int`, but does not work at all acceptably for a complex object such as `aRelative` (the object created from the `mRelative` class). When you use the `__str__()` method on `aRelative`, what you get is something like `<__main__.mRelative object at 0x7ff9e91ab978>`. It's sort of the same thing that happens when someone leaves out a step in a recipe or omits an instruction out of a blueprint: the result often doesn't make much sense.
+Python objects always have methods, even if you don't define any yourself. For example, every object has a `__str__()` method added by Python itself that returns a string representation of the object. The default `__str__()` method works fine for something simple like an `int`, but it does nothing meaningful a `person` object. When you call `__str__()` on a `person` object, you get something like this:
 
-This unit tells you about Python methods. In it, you add to the `mRelative` class so that you can now perform actions with it. The actions provided in this unit are basic, but they give you a good idea of what you can do with methods. Of course, the only true limit on methods is your own imagination.
+`<__main__.person object at 0x7ff9e91ab978>`
+
+For this reason, Python programmers frequently replace the built-in `__str()__` method with one of their own when they write custom classes to serve an application.
+
+In this unit, you will add methods to the `mPerson` class you wrote in the previous unit to make it a first-class citizen in the Python environment. In addition to adding methods of your own, you will override the `__str()__` method so that it produces output that is meaningful for an `mPerson`. Finally, you will discover that when you pass an object to Python's built-in `str()` function, Python calls the object's `__str()__` method internally.
 
 ## Static methods vs. instance methods
 
-Real-world objects have two kinds of methods: static and instance. Static methods apply to all objects of a certain type. For example, when you bake cookies, you normally set the oven temperature to 350 degrees Farenheit. Likewise, when building a house, you prepare the ground before you pour a foundation.
+Python objects support two types of methods: static methods and instance methods. Static methods apply to all objects of a certain type and can be called without instantiating the class to which the methods belong. Instance methods, on the other hand, apply to a specific object or class instance. A `get_age()` method should be an instance method because one person's age doesn't necessarily equal another person's age.
 
-When working with the `mRelative` class, you might want a nicely formatted output showing the number of unique faces in the dataset. You could access the `num_faces` attribute directly, which would mean creating a sentence every time, but this method would make creating formatted output simpler, so it's useful to have it. There isn't a good reason to perform more work than you need to.
-
-Instance methods apply to a particular object. For example, in baking cookies, you might need to add the chocolate chips to the batter – but that only makes sense when the recipe contains chocolate chips. The step of adding the chips works with the attribute of having chocolate chips in the first place. Likewise, a blueprint's instructions to dig a basement, which only makes sense when the house needs a basement. Otherwise, the first story of the house appears in a hole, making it impossible to access because the front door is now underground.
-
-Likewise, instance methods in Python normally relate to the attributes in some way. They're unique to that particular object. The `mRelative` class can benefit from a few special instance methods:
-
-- Displaying the current face number
-- Displaying the missing person's information
-- Overriding the default `__str__()` method to display something better
-
-The third instance method requires a little more explanation, so you see it covered in its own section in this unit.
+Only instance methods can access instance attributes. If you stored a person's birth date in an instance attribute, you couldn't read that birth date from a static method because there is no class instance associated with a static method — and therefore no birth date to read.  
 
 ## Defining static methods
 
@@ -98,37 +92,27 @@ The first call displays the face number, while the second displays the person's 
 
 _tk_
 
-## Getting object content with __str__()
+## Overriding the __str__() method
 
-Python supplies a `__str__()` method, which works fine in a limited number of cases. Generally you may find it rarely  provides the results you want. The default method tells you about the object: the object's name and where the object is located in memory. It would be a lot more useful if the object could tell you something specific, such as the object content. 
+Python supplies a default `__str__()` method, which works well with the simple built-in object types. But for custom types, it rarely provides the results you want. The default method tells you about the object: the object's name and where the object is located in memory. It would be a lot more useful if it could tell you something specific about the object's content. 
 
-When you create a new method to replace an existing method, what you're doing is called overriding the method. Yes, a method already exists, but now you need a new one. It's like baking cookies. Most cookies bake just fine at 350. But perhaps you've created the ultimate in really thin cookies and they burn at 350, so now you need to override the usual method and bake your cookies at 325 instead. Likewise, when building a house, you might find that the house was supposed to have a basement, but an underground stream is in the way. So, this particular house needs to override the usual method and not have a basement.
+You can replace the built-in `___str()__` method (or any other method, for that matter) by *overriding* it. You don't have to do anything  special to override a method in Python. You just provide a new version of the method in the class.
 
-You don't have to do anything particularly special to override a method in Python. You just provide a new version of the method in the class. Here is the `__str__()` method for the `mRelative` class:
+1. Return to the `mPerson` class in your notebook and add the following method to it:
 
-```python
-def __str__(self):
-        return f'{self.pic_num}, {self.name}, {self.cab_file}'
-```
+	```python
+	def __str__(self):
+	    return f'{self.pic_num}, {self.name}, {self.cab_file}'
+	```
 
-All that this method does is print out the three attributes supplied when you instantiate the `aRelative` object. Notice that it uses a different form of the format string so that you don't have to convert any of the attributes to different types. (Placing the "f" outside the string and then including the attribute names within curly brackets works well when you don't want to do a lot of formatting.) The output of the `__str__()` method must always be a string, so you couldn't output an int or something like a tuple.
+	This method prints the three attributes supplied when you instantiate the `aRelative` object. Notice that it uses a different form of the format string so that you don't have to convert any of the attributes to different types. (Placing the "f" outside the string and then including the attribute names within curly brackets works well when you don't want to do a lot of formatting.) The output of the `__str__()` method must always be a string, so you couldn't output an int or something like a tuple.
 
-To test the `__str__()` method, you use the following code:
+1. To test the new `__str__()` method, enter the following code into a new cell and run it:
 
-```python
-print(str(aRelative))
-print(aRelative.__str__())
-print(aRelative)
-```
+	```python
+	print(str(aPerson))
+	print(aPerson.__str__())
+	print(aPerson)
+	```
 
-That's right, the `__str__()` method works the same whether you call the `str()` method, call `__str__()` directly or simply print the object! Here's the output you can expect to see:
-
-![tk](media/tk.png)
-
-_tk_
-
-
-
-
-
-
+How do the outputs from the three `print()` statements differ? Or do they differ at all? What does this tell you about how Python's `str()` function is implemented inside the Python runtime?
