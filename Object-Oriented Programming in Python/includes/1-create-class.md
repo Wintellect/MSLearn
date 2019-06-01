@@ -1,8 +1,6 @@
 # Create a class
 
-In OOP terms, a class defines how to create a Python object. You can use a class to create as many objects as you need, but the class must describe how to create an object before it can create any objects at all.
-
-In this lesson, you will create a class in Python and then use the class to instantiate an object. The term "instantiate" is just a fancy way of saying that Python uses the class to create an object. Just as you use a blueprint to create a house or a recipe to create a cookie, Python uses classes to create objects.
+The first step in writing object-oriented code is writing the classes from which objects will be created. In this unit, you will create a class in Python and then use the class to instantiate an object. The term "instantiate" is just a fancy way of saying that Python uses the class to create an object by allocating memory for the object and copying the object's code and data into memory. Just as you use a blueprint to create a house or a recipe to create a cookie, Python uses classes to create objects.
 
 To run your Python code, you will use [Jupyter notebooks](https://jupyter.org/). Jupyter is an environment based on [IPython](https://ipython.org/) that facilitates interactive programming and data analysis using a variety of programming languages, including Python. Jupyter notebooks enjoy widespread use in research and academia for mathematical modeling, machine learning, statistical analysis, and for teaching and learning how to code.
 
@@ -10,19 +8,17 @@ To run your Python code, you will use [Jupyter notebooks](https://jupyter.org/).
 
 [Azure Notebooks](https://blogs.msdn.microsoft.com/uk_faculty_connection/2017/06/10/guide-to-the-microsoft-azure-notebooks-for-students/) is a cloud-based platform for building and running [Jupyter notebooks](http://jupyter.org/). Azure Notebooks provide Jupyter as a service for free. It's a convenient way to build notebooks and to share them with others without having to install and manage a Jupyter server. And it's completely Web-based, making it an ideal solution for online collaboration.
 
-Azure notebooks are created through the portal at https://notebooks.azure.com and require nothing more than a browser and a [Microsoft account](https://account.microsoft.com/account). Notebooks are contained in projects, whose purpose is to group related notebooks. In this exercise, you will create a new project and then create a notebook inside it.
-
-1. If you don't have a Microsoft account, go to https://account.microsoft.com/account and create one. Having a Microsoft account gives you access to a wealth of resources, many of which are free. Microsoft accounts are free as well.
+Azure notebooks are created through the portal at https://notebooks.azure.com and require nothing more than a browser and a [Microsoft account](https://account.microsoft.com/account). Notebooks are contained in projects, whose purpose is to group related notebooks. Let's begin by creating a project and then creating a notebook inside it.
 
 1. Navigate to https://notebooks.azure.com in your browser and sign in using your Microsoft account. Click **My Projects** in the menu at the top of the page. Then click the **+ New Project** button at the top of the "My Projects" page.
 
-1. Create a new project named "Lab Notebooks" or something similar.
+1. Create a new project named "Python Labs" or something similar.
 
 	![Creating a project](media/add-project.png)
 
 	_Creating a project_
 
-	Leaving the "Public" box checked makes it easy to share notebooks later on. You can also go into project settings once a project is created and change its visibility to public or private.  
+	Checking the "Public" box makes it easy to share notebooks later on. If you would prefer to keep the notebooks in this project private, make sure the box is unchecked. You can also go into project settings once a project is created and change its visibility to public or private.  
 
 1. Click **+ New** and select **Notebook** from the menu to add a notebook to the project.
 
@@ -40,67 +36,61 @@ Azure notebooks are created through the portal at https://notebooks.azure.com an
 
 1. Click the notebook to open it for editing.
 
-You can create additional projects and notebooks as you work with Azure Notebooks. You can create notebooks from scratch, or you can upload existing notebooks. And once a notebook is created or uploaded, you can take advantage of Azure compute resources to run the notebook and leverage popular Python libraries such as [Keras](https://keras.io/), [NumPy](http://www.numpy.org/), [Pandas](https://pandas.pydata.org/), [Matplotlib](https://matplotlib.org/), and [Scikit-learn](https://scikit-learn.org/stable/index.html).
+You can create additional projects and notebooks as you work with Azure Notebooks. You can create notebooks from scratch, or you can upload existing notebooks. And once a notebook is created or uploaded, you can take advantage of Azure compute resources to run the notebook and leverage popular Python libraries such as [Pandas](https://pandas.pydata.org/) and [Scikit-learn](https://scikit-learn.org/stable/index.html).
 
 ## OOP in Python
 
 Everything is an object in Python. It would be easy to confuse the Python programming paradigm, the method used to create code, with the underlying language concepts. A programming paradigm would allow you to use the [functional, imperative, object-oriented, or procedural coding styles](https://blog.newrelic.com/engineering/python-programming-styles/). However, no matter which programming paradigm you use, Python itself uses objects for everything.
 
-This section is about Python as a language. Later, you will learn about the OOP programming paradigm that Python supports.
+1. To see how objects work in Python, return to the notebook you created a moment ago and type or paste the type the following code into the notebook's first cell:
 
-To see how objects work in Python, return to the notebook you created a moment ago and type or paste the type the following code into the notebook's first cell:
+	```python
+	print(type(1))
+	print(type("Hello There!"))
+	print(type(1.1))
+	print(type(True))
+	```
 
-```python
-print(type(1))
-print(type("Hello There!"))
-print(type(1.1))
-print(type(True))
-```
+	The `print()` function writes output to the screen. The `type()` function shows an object's underlying class.
 
-You use the `print()` function to display output on screen. The `type` function shows an object's underlying class. In this case, 1, "Hello There!," 1.1, and True are all objects, which means that they have a class associated with them. Click Run, and you see the output shown here:
+1. Make sure **Code** is selected in the drop-down list so the cell is a code cell, and then click the **Run** button to execute the code.
 
-![Displaying the classes associated with objects](media/tk.png)
+	![Displaying the classes associated with objects](media/run-cell-1.png)
+	
+	_Displaying the classes associated with objects_
 
-_Displaying the classes associated with objects_
+	The output shows that 1 is an instance of Python's built-in `int` class, while "Hello There!" has a class of `str`. Notice that Python uses different classes for 1 and 1.1; the class of 1.1 is `float`. If something has a truth value, True or False, then it relies on the `bool` class.
 
-The output shows that the object 1 has a class of `int`, while "Hello There!" has a class of `str`. Notice that Python uses different classes for 1 and 1.1; the class of 1.1 is `float`. If something has a truth value, True or False, then it relies on the `bool` class.
+	You could easily test other kinds of data (feel free to experiment!), but be assured that any sort of data you try has a associated class, whether one that is built into Python or one you have written yourself.
 
-You could easily test other kinds of data (go ahead if you want to experiment!), but be assured that any sort of data you try has a associated class, which means that the data is an object: an instance of that class.
+1. Most classes have methods associated with them. Type the following code into the next cell and click **Run** to execute it:
 
-Most classes have methods associated with them. Type the following code into the next cell:
+	```python
+	print(dir(1))
+	```
 
-```python
-print(dir(1))
-```
+	The `dir()` function provides a list of an object's methods. You sometimes hear methods referred to as *functions* when working with Python. The two terms are synonymous, but you avoid confusion when talking with other people if you simply call them methods. 
 
-The `dir()` function provides a directory of things you can do with an object: its methods. You also see methods referred to as *functions* when working with Python. The two terms are viewed as synonymous, but you avoid confusion when talking with other people if you simply call them methods. 
+	![Listing an object's methods](media/run-cell-2.png)
+	
+	_Listing an object's methods_
 
-Click **Run**, and you see the output shown here:
+	All the entries you see, such as `to_bytes`, are methods. A method represents an action that you can perform on an object. For example, `to_bytes()` outputs the object value in byte format, which is just a special way of looking at the data. Don't worry about this particular method for now. Even though these methods exist for any value, let's try them out with a variable.
 
-![Displaying the methods associated with objects](media/tk.png)
+1. Notice the `__str__` method in the list. This method turns a value into a `str` (string) type. An object's type is simply the class it was created from. So the type of 1 is `int`.
 
-_Displaying the methods associated with objects_
+	Run the following code in the notebook's next cell:
 
-All the entries you see, such as `to_bytes()`, are methods. Remember that a method always represents an action—something you can do. For example, `to_bytes(`) outputs the object value in byte format, which is just a special way of looking at the data. Don't worry about this particular method for now. Even though the methods exist for any value, let's try them out with a variable.
+	```python
+	myVar = 1
+	print(type(myVar.__str__()))
+	```
 
-Notice the `__str__()` method in the list. This method turns the value into a `str` (string) type. Saying type means that an object relies on a certain class. So, the type of 1 is `int`.
+	The first line is an assignment. You're assigning the value 1 to an object named `myVar`. The `myVar` object now has an attribute: the value 1. The second line of code calls the `__str__()` method that is part of the `int` class and therefore present in the `myVar` object.
 
-Type the following code into the next cell:
+	What does the output from the code tell you?
 
-```python
-myVar = 1
-print(type(myVar.__str__()))
-```
-
-The first line is an assignment. You're assigning the value 1 to an object named `myVar`. The `myVar` object now has an attribute, that of the value 1. The second line of code calls the `__str__()` method that is part of the `int` class and therefore present in the `myVar` object.
-
-Click **Run** and you see the output shown here:
-
-![Using methods changes objects](media/tk.png)
-
-_Using methods changes objects_
-
-The `__str__()` method has created as new object from `myVar` of type `str`. The `myVar` object is still the same, completely untouched; it's still of type `int`. The new object – which doesn't have a name because you haven't assigned it one – is of type `str`.
+	The `__str__()` method has created as new object from `myVar` of type `str`. The `myVar` object is still the same, completely untouched; it's still of type `int`. The new object – which doesn't have a name because you haven't assigned it one – is of type `str`.
 
 You often use methods to create new objects that have attributes you need from existing objects. At this point, you have enough information about Python classes and objects to start creating a class of your own.
 
