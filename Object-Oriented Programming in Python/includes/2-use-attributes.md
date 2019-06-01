@@ -13,7 +13,7 @@ An instance attribute is one that is "instanced" for each and every object you c
 - A photo of the person's face
 - A unique ID for the person such as a Social Security number
 
-It's obvious that these should be instance attributes because everyone has a different Social Security number and face.
+It's obvious that these should be instance attributes because no two Social Security numbers and faces are identical.
 
 ## Load a database of faces
 
