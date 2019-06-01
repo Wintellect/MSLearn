@@ -69,7 +69,7 @@ Let's begin building a missing-persons example by loading a database of facial i
 
 Now that we have some faces to work with, let's shift our thinking to objects, classes, and attributes.
 
-## Define a class with a class attribute
+## Define a class containing a class attribute
 
 It might be handy to know how many people the dataset contains faces for. Because the Olivetti Faces dataset provides 10 facial images for each person, you divide the total number of images by 10 to get a count of people. In the steps that follow, you will write a class named `mPerson` that represents a missing person. Then you will add  a class attribute that tells you how many people the dataset contains.
 
@@ -133,12 +133,12 @@ Instance attributes differ from one class instance (object) to another. You can'
 
 Note the tick marks on the image's horizontal and vertical axes indicating that the image measures 64 x 64 pixels. That's 4,096 pixels per image, which corresponds to the output from `faces.data.shape` above. 
 
-## Implementing data hiding
+## Data hiding
 
-Python doesn't actually allow you to truly hide data — at least not in the same sense that other languages do anyway. Guido van Rossum, the creator of Python, felt that data hiding in the conventional sense actually made languages harder to use. Consequently, you can't hide anything in Python. As an adult, it's expected that you'll follow the rules in working with data. Of course, you still need some means of telling others that it's not a good idea to play with particular variables.
+Many programming languages that support OOP also support *data hiding* by allowing methods and attributes — "class members" — to be declared private or protected. Private class members can be accessed from inside an object, but not from the outside. Protected class members can be accessed inside an object and objects subclassed from it (more on this in a subsequent unit), but not from the outside.
 
-When working with Python, you rely on a convention for data hiding. A public variable, one that anyone can work with, has just a name. If you add an underscore, such as `_myProtectedVar`, then the variable is marked as protected, even though it actually isn't. You could still access it, but everyone is hoping you won't. A protected variable is meant to be accessible only within the host class and any subclasses you create.
+Python doesn't support data hiding — at least not in the same sense that other languages do. Guido van Rossum, the creator of Python, felt that data hiding makes languages harder to use. Consequently, you can't hide class members in Python.
 
-You can also create private variables using two underscores, such as `__myPrivateVar`. In this case, you should only access the variable within the class that created it. Accessing it even in a subclass could cause problems.
+You can, however, use well-established conventions to let others know that certain class members are for internal use only and should *not* be accessed from the outside. Prefacing a class-member name with an underscore, as in `_myProtectedVar`, indicates that the class member is protected. Using two underscores (for example, `__init()`) indicates that the class member is private.
 
-All this said, if you make an attribute protected or private when working in environments such as Jupyter, the environment will enforce the level of data hiding you request and the code won't be able to access it. So, in this respect, Python does implement data hiding, but it's only by convention and you need to be aware of that when you send your code to parts unknown.
+Although you can still write code to access private and protected methods and attributes from the outside, many Python programming environments, including Jupyter notebooks, honor these conventions and hide private and protected members from view. So Python does support a limited form of data hiding, but it's only by convention and you need to be aware of that when you send your code to parts unknown.
