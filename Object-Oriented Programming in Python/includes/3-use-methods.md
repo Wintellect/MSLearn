@@ -1,6 +1,6 @@
 # Perform actions with methods
 
-Methods tell an object what to do and how to do it. For example, a `person` class might contain a `show_face()` method for displaying the person's face, and a `get_age()` method that returns the person's age. Methods frequently operate on data stored in attributes. As an example, `get_age()` might subtract a birth date stored in an attribute from the current date to compute a person's age in years. 
+Methods tell an object what to do and how to do it. A `person` class might contain a `show_face()` method for displaying the person's face, and a `get_age()` method that returns the person's age. Methods frequently operate on data stored in attributes. For example, `get_age()` might subtract a birth date stored in an attribute from today's date to compute a person's age in years. 
 
 Python objects always have methods, even if you don't define any yourself. For example, every object has a `__str__()` method added by Python itself that returns a string representation of the object. The default `__str__()` method works fine for something simple like an `int`, but it does nothing meaningful a `person` object. When you call `__str__()` on a `person` object, you get something like this:
 
