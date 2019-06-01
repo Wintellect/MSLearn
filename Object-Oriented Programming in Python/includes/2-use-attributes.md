@@ -134,6 +134,6 @@ Many programming languages that support OOP also support *data hiding* by allowi
 
 Python doesn't support data hiding — at least not in the same sense that other languages do. Guido van Rossum, the creator of Python, felt that data hiding makes languages harder to use. Consequently, you can't hide class members in Python.
 
-You can, however, use well-established conventions to let others know that certain class members are for internal use only and should *not* be accessed from the outside. Prefacing a class-member name with an underscore, as in `_myProtectedVar`, indicates that the class member is protected. Using two underscores (for example, `__init()`) indicates that the class member is private.
+You can, however, use well-established conventions to let others know that certain class members are for internal use only and should *not* be accessed from the outside. Prefacing a class-member name with an underscore, as in `_myProtectedVar`, indicates that the class member is protected. Using two underscores (for example, `__cleanup()`) indicates that the class member is private.
 
 Although you can still write code to access private and protected methods and attributes from the outside, many Python programming environments, including Jupyter notebooks, honor these conventions and hide private and protected members from view. So Python does support a limited form of data hiding, but only by convention and you need to be aware of that when you send your code to parts unknown.
