@@ -39,7 +39,7 @@ Let's begin building a missing-persons example by loading a database of facial i
 
 1. Run the code and examine the output. The dataset contains 400 faces, each of which consists of an image with 4,096 pixels. The dataset contains 10 photos each of 40 different people. The first ten images in `faces.images` represent the first person, the next 10 images represent the second person, and so on.
 
-1. Want to see what the faces look like? Paste the following statements into the next cell and run them:
+1. Want to see what the faces look like? Paste the following statements into the next cell:
 
 	```python
 	%matplotlib inline
@@ -56,7 +56,7 @@ Let's begin building a missing-persons example by loading a database of facial i
 
 	The next statement imports a module from the versatile [Matplotlib](https://matplotlib.org/) library and gives it the name `plt`. The remaining statements use Matplotlib's `imshow()` function to display the images.
 
-1. Confirm that the output resembles the following:
+1. Now run the cell and confirm that the output resembles the following:
 
 	![The first five people in the Olivetti dataset](media/show-faces.png)
 
