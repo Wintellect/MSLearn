@@ -1,6 +1,6 @@
 # Define characteristics with attributes
 
-Attributes hold the data that defines an object. For a pink flower, "pink" is an attribute of the flower. If you wrote a `flower` class, you might include a string attribute named `color` that describes the flower's color. You might also include an attribute indicating the flower's type — for example, iris, tulip, or rose. Objects are not required to have attributes, but in practice, it is exceedingly rare to find an object that doesn't.
+Attributes hold the data that defines an object. For a pink flower, "pink" is an attribute of the flower. If you wrote a `flower` class, you might include a string attribute named `color` that describes the flower's color. You might also include an attribute indicating the flower's type — for example, iris, tulip, or rose. Objects are not required to have attributes, but in practice, it is exceedingly rare to find one that doesn't.
 
 In this unit, you will write a class named `mPerson` class to hold information about a person. You will add attributes to it and learn about class attributes and instance attributes. You will also learn about an important convention that enables selected members of a class to be marked "for internal use only" so other programmers will steer clear of them.
 
