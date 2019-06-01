@@ -1,7 +1,10 @@
 # Simplify histories and resolve merge conflicts
 
-After Alice adds a picture of her cat and Bob pulls her change, Bob's history
-becomes somewhat complicated.  What Alice does is:
+After Alice adds a picture of her cat and Bob pulls her change, Bob's Git history becomes somewhat complicated.
+
+[*STATE THE NATURE OF THE COMPLICATION HERE, BEFORE YOU SHOW HOW TO RESOLVE IT. OTHERWISE THE READER DOESN'T KNOW WHAT PROBLEM YOU ARE SOLVING. ...AFTER READING THIS THROUGH A SECOND TIME, I THINK WE NEED TO EXPLICITLY SET UP WHAT WE ARE DOING IN THIS UNIT. I FOUND MYSELF SPENDING TIME TRYING TO UNDERSTAND WHERE YOU WERE TAKING ME, INSTEAD OF JUST FOLLOWING ALONG. WE NEED SOME KIND OF In this unit you learn...--ES*]
+
+What Alice does is:
 
 ```
 $ cd ~/sandbox/Alice/Cats
@@ -58,40 +61,39 @@ Bob:    ...o---m---A---D
                      B---C
 ```
 
-When he eventually merges this, there will be a conflict because he and Alice
-have overlapping changes in `index.html`.  We will get to that later.
+Because Bob and Alice have overlapping changes in `index.html`, when he eventually merges this, a conflict will be created. We will get to that later. [*SHOULD WE MOVE THIS SECTION? BECAUSE OTHERWISE WE ARE SAYING, HERE IS A PROBLEM BUT I AM NOT TELLING YOU THE RESOLUTION.--ES*]
 
 ## Explore a complicated history
 
-This is a good time to try some of the tools that let you visualize the
-structure of Git's history graph.  The first one to try is
+This is a good time to try some of the Git tools that let you visualize the structure of Git's history graph. The first one to try is:
 
 ```
 git log --graph
 ```
 
-It produces a graph similar to the ones used in this unit, only rotated
-counter-clockwise so that it goes up the left-hand side of the log output.
+The command produces a graph similar to the ones displayed in this unit, only rotated counter-clockwise so that it goes up the left-hand side of the log output.
 
-The second is 
+[*INSERT AN EXAMPLE. A JPG IMAGE WOULD BE FINE. 
+
+ALSO I THINK THIS SECTION NEEDS TO EXPLAIN WHY THE GRAPH IS USEFUL. MAYBE IT'S OBVIOUS, BUT THERE'S A POINT TO BE MADE ABOUT TRYING TO VISUALIZE RELATIONSHIPS WHEN THE PROJECT GETS MORE COMPLEX.--ES*]
+
+The second useful tool to explore is:
 
 ```
 gitk --all &
 ```
 
-Gitk is a GUI program for exploring Git histories; the `--all` option tells it
-to show all of the branches.  The `&` at the end of the line tells Bash to run
-the command in another process, so that you can continue working in the shell.
+Gitk is a GUI program for exploring Git histories; the `--all` option tells it to show all of the branches. The `&` at the end of the line tells Bash to run the command in another process, so that you can continue working in the shell.
 
-Gitk gives you a window with a view similar to `git log --graph` in the top
-pane, and the details of each commit in the bottom pane.  Between them are
-search and navigation tools, as well as a box containing the full ID of the
-selected commit.  This is automatically selected, which makes it easy to copy
-and paste into a command.
+Gitk gives you a window with a view similar to `git log --graph` in the top pane, and the details of each commit in the bottom pane. Between them are search and navigation tools, as well as a box containing the full ID of the selected commit. This is automatically selected, which makes it easy to copy and paste into a command.
 
-Bob has several different things he can do at this point, depending on what he
-wants the resulting history to look like.  You've already seen two different
-methods, `merge` and `rebase`.  They produce histories that look like:
+[*INSERT A SCREEN SHOT. --ES*]
+
+Bob has several things he can do at this point, depending on what he wants the resulting history to look like.
+
+[*"WHAT HE WANTS THE HISTORY TO LOOK LIKE" IS ODD PHRASING. (IS THIS 1984?) MAYBE REWORD FOR CLARITY?--ES*]
+
+You've already seen two methods, `merge` and `rebase`. They produce histories that look like:
 
 ``` 
 # git checkout master; git merge --addCat
@@ -103,57 +105,36 @@ merge:  ...o---m---A---D---E
 rebase: ...o...m...A...D...B...C
 ```
 
-Merge has the advantage of preserving all of the individual changes and
-recording the merge metadata in a commit.  Rebase has the advantage of keeping
-the history simple and easy to understand.  In both of these cases, if there's
-a conflict Git will interrupt the process to let you try to resolve it.  There
-are two ways to 
+Merge has the advantage of preserving all of the individual changes and recording the merge metadata in a commit. Rebase has the advantage of keeping the history simple and easy to understand. In both cases, if there's a conflict, Git interruptS the process to let you try to resolve it.
 
 
 ## Simplify history by squashing
 
-The third possibility is to squash Bob's two commits into a single one, with a
-message like "add Bob's cat" that summarizes everything that he did.  Most
-developers prefer this -- it lets them make commits with messages like "Fix
-off-by-one bug", "make backup", "Revert bad merge", or something even less
-helpful (see [this xkcd cartoon](https://xkcd.com/1296/) for example).  Then
-they can compose a good message, describing *what they did* rather than the
-details of how they did it, and put that into the project's official history.
+The third possibility [*TO SOLVE WHAT PROBLEM? RESTATE FOR CLARITY --ES*] is to squash Bob's two commits into a single one, with a
+message like "add Bob's cat" that summarizes everything that he did.
 
-There are two different ways of doing this, plus a short-cut.  Many developers
-take the short-cut and simply make a single commit that they keep amending.
-It's not really a good idea, because it's much harder to find a problem in an
-amended commit with a bug in it that was introduced sometime in the last week,
-than a series of simple ones made every day or so.  (Take a look at the man
-page for `git bisect` to see to do that quickly.)
+Most developers prefer to use this method, as it lets them make commits with messages like "Fix off-by-one bug", "make backup", "Revert bad merge", or something even less helpful (see [this xkcd cartoon](https://xkcd.com/1296/) for an example). Doing so lets developers and other project team members compose good messages, describing *what they did* rather than the details of how they did it, and store that information in the project's official history.
 
-The two ways are `git merge --squash` and `git rebase --interactive` (usually
-shortened to `git rebase -i`).  Interactive rebase creates a temporary file
-containing all of the commits and their one-line descriptions, preceeded by a
-command.  Initially the command is `pick`; you can edit that to `drop`,
-`squash`, `edit`, or `reword`.  (Edit lets you edit files, reword just lets
-you edit the commit message.)  You can also change the order of the commits.
+There are two different ways of doing this [*WRITE OUT WHAT "THIS" REFERS TO... REALLY, IT'S IMPOSSIBLE TO BE TOO EXPLICIT!--ES*], plus a short-cut. (Take a look at the man page for `git bisect` to see to do that quickly.) Many developers take the short-cut and simply make a single commit that they keep amending. It's not really a good idea, because it's much harder to find a problem in an amended commit with a bug in it that was introduced sometime in the last week, than a series of simple ones made every day or so. 
 
-Squashing is simpler:  it simply performs all of the changes that would have
-been made by a real merge, but stops just short of making the merge commit or
-moving HEAD.  All of the changed files are left in the working tree and index,
-ready to commit.  In a simpler world, Bob could just do:
+The two (better) ways to package-up several changes into a single commit are `git merge --squash` and `git rebase --interactive` (usually shortened to `git rebase -i`). Interactive rebase creates a temporary file containing all of the commits and their one-line descriptions, preceeded by a command. Initially the command is `pick`; you can edit that to `drop`, `squash`, `edit`, or `reword`. (Edit lets you edit files; reword just lets you edit the commit message.) You can also change the order of the commits.
+
+Squashing is simpler: It simply performs all of the changes that would have been made by a real merge, but it stops just short of making the merge commit or moving HEAD. All of the changed files are left in the working tree and index, ready to commit.
+
+In a simpler world, Bob could just do:
 
 ```
 # git merge --squash addCat
 # git commit -m "Add Bob's cat"
 ```
 
-(We're using `#` instead of `$` to indicate that you shouldn't actually type
-those commands -- Bash ignores everything from `#` to the end of the line.)
-It isn't *quite* that simple, because Bob and Alice each changed the same line
-in `index.html`, which created a merge conflict.
+(We use `#` instead of `$` to indicate that you shouldn't actually type those commands -- Bash ignores everything from `#` to the end of the line.)
+
+It isn't *quite* that simple, because Bob and Alice each changed the same line in `index.html`, which created a merge conflict.
 
 ## Resolve merge conflicts
 
-What *actually* happens when Bob makes his merge is that Git notices that the
-branches being merged have changes that overlap, so it interrupts the merge
-process so that you can figure out what the final result should be.
+What *actually* happens when Bob makes his merge is that Git notices that the branches being merged have changes that overlap, so it interrupts the merge process so that you can figure out what the final result should be.
 
 ```
 $ git merge --squash addCat
@@ -169,14 +150,11 @@ hint: as appropriate to mark resolution and make a commit.
 fatal: Exiting because of an unresolved conflict.
 ```
 
-Notice that Bob tried to ignore the conflict and commit anyway; naturally, he
-got an error message.
+Notice that Bob tried to ignore the conflict and commit anyway; naturally, he got an error message.
 
-When Git detects a conflict, it inserts *both* conflicting versions into the
-file, between lines starting with `<<<<<<<`, `=======`, and `>>>>>>>`.  The
-part before the `=======` line is "your" side of the merge -- the branch
-you were alreadt on -- and the part after is "their" side -- the branch you
-specified in the `merge` command.  In this case it looks like this:
+When Git detects a conflict, it inserts *both* conflicting versions into the file, between lines starting with `<<<<<<<`, `=======`, and `>>>>>>>`.  The part before the `=======` line is "your" side of the merge -- the branch you were already on -- and the part after is "their" side -- the branch you specified in the `merge` command.
+
+In this case it looks like this:
 
 ```
 <h1>Our Furry Friends</h1>
@@ -188,8 +166,7 @@ specified in the `merge` command.  In this case it looks like this:
 <footer><hr></footer>
 ```
 
-In this case, Bob wants to keep Alice's cat and add his own, so he simply
-deletes the markers.
+In this case, Bob wants to keep Alice's cat photo and add his own, so he simply deletes the markers.
 
 ```
 $ sed -i.bak -e '/<<<</d' -e '/====/d' -e '/>>>>/d' index.html
@@ -208,20 +185,17 @@ To /home/steve/sandbox/Cats.git
    2868bbf..39473bb  master -> master
 ```
 
-The `git add` tells Git that the conflict in `index.html` has been resolved,
-and the `git merge --continue` finishes the merge.  Another option, if Bob had
-decided that he shouldn't have made the merge after all, was `git merge
---abort`; that option only works if there are conflicts.
+The `git add` tells Git that the conflict in `index.html` was resolved, and the `git merge --continue` finishes the merge.
+
+Another option, if Bob had decided that he shouldn't have made the merge after all, was `git merge --abort`; that option only works if there are conflicts.
 
 ## Exploring merge alternatives
 
-Bob could also use `git reset --hard` in both of the merged branches to get back
-to what he had before a merge.  In this case, the `adCat` branch hasn't
-actually been merged, so Bob only has to reset `master`.  It's worthwhile
-playing around a little to see Bob's alternatives.
+Bob could also use `git reset --hard` in both of the merged branches to get back to what he had before a merge. In this case, the `adCat` branch hasn't actually been merged, so Bob only has to reset `master`.
 
-First, let's look at what happens if Bob does the squash but takes the default
-merge message instead of replacing it.
+It's worthwhile playing around a little to see Bob's alternatives.
+
+First, let's look at what happens if Bob does the squash but takes the default merge message instead of replacing it.
 
 ```
 $ git reset --hard HEAD^
@@ -252,21 +226,15 @@ Date:   Fri May 17 14:28:33 2019 -0700
     #       index.html
 ```
 
-As you can see, it's usually a good idea to edit the message down to something
-that makes sense, but if Bob hadn't used the `--no-edit` option, Git would
-have initialized the commit message with something that might be a good start.
+As you can see, it's usually a good idea to edit the message to something that makes sense, but if Bob hadn't used the `--no-edit` option, Git would have initialized the commit message with something that might be a good start.
 
 ## Backing out of a conflicted merge
 
-Sometimes the best thing to do when there is a conflict is to back out of it.
-This is particularly useful if you do a simple pull instead of `pull
---rebase`.  In that case you can use `git merge --abort` or `git rebase --abort`
-to back out.  Unlike the case with squash, once you fix the conflict you can
-go forward with `git merge --continue` or `git rebase --continue`.
+Sometimes the best thing to do when there is a conflict is to back out of it. This is particularly useful if you do a simple pull instead of `pull --rebase`. In that case, you can use `git merge --abort` or `git rebase --abort` to back out. Unlike the case with squash, once you fix the conflict you can go forward with `git merge --continue` or `git rebase --continue`.
 
 ### Exercise:
 
-Try some of the following:
+Try the following:
 
 ```
 $ git reset --hard HEAD^
@@ -283,31 +251,24 @@ $ git add index.html
 $ git merge --continue
 ```
 
-That will put you into the text editor looking at the default merge message,
-which is just `Merge branch 'addCat'`.  If you delete the message, Git will
-abort the commit just as it will with any commit.  That's a good way of
-backing out of a pull that should have been a rebase.
+That last exercise puts you into the text editor looking at the default merge message, which is just `Merge branch 'addCat'`. If you delete the message, Git aborts the commit just as it does with any commit. That's a good way of backing out of a pull that should have been a rebase.
 
-Since Bob has already pushed the squashed merge, he can get it back with
+Since Bob has already pushed the squashed merge, he can get it back with:
 
 ```
 $ git reset --hard origin/master
 HEAD is now at 39473bb Add Bob's cat
 ```
 
-It's often a good idea to keep a remote called "backup" that you can push
-changes to every evening, or whenever you want to try something tricky.  If
-you've done some rebasing, you can use `git push --force backup`.
+It's often a good idea to keep a remote called "backup" to which you push changes to every evening, or whenever you want to try something tricky. If you've done some rebasing, you can use `git push --force backup`.
 
 ## Merge tools
 
-Some people prefer to have the versions being merged shown side-by-side so
-that they can see what their choices are and select them interactively.  Some
-version control systems already have a tool of this sort (e.g. `p4merge` from
-Perforce), as do several text editors (e.g. `emerge` from Emacs and `vimdiff`
-from Vim).  Git doesn't have a tool of its own; you can specify your favorite
-on the `git mergetool` command line or with the `merge.tool` configuration
-variable.  The `--tool-help` option shows the list of known tools:
+Some people prefer to see the versions being merged side-by-side so that they can see what their choices are and select them interactively. Some version control systems have a tool of this sort (e.g. `p4merge` from Perforce), as do several text editors (e.g. `emerge` in Emacs and `vimdiff` in Vim).
+
+Git doesn't have a tool of its own for this purpose. You can specify your favorite on the `git mergetool` command line or with the `merge.tool` configuration variable.
+
+The `--tool-help` option shows the list of known tools:
 
 ```
 $ git mergetool --tool-help
@@ -339,23 +300,12 @@ The following tools are valid, but not currently available:
 		winmerge
 		xxdiff
 
-Some of the tools listed above only work in a windowed
-environment. If run in a terminal-only session, they will fail.
+Some of the tools listed above only work in a windowed environment. If run in a terminal-only session, they fail.
 ```
-
-Naturally, if you run this command on your own computer you are likely to get
-a different list.
+Naturally, if you run this command on your own computer you are likely to get a different list.
 
 ## Summary
 
-In this unit you learned how to deal with merge conflicts, using the
-`--continue` and `--abort` options with `git merge`, and either a text editor
-or a merge tool.  You can also use those options with `git rebase`, and
-because `git pull` is a combination of `fetch` and `merge`, you can resolve
-conflicts the same way.  You can use `git pull --rebase` to rebase instead of
-merging after the fetch; it's particularly useful for keeping a branch up to
-date if you want to continue working on it after your colleagues have pushed
-changes to `master`.
+In this unit you learned how to deal with merge conflicts, using the `--continue` and `--abort` options with `git merge`, and either a text editor or a merge tool. You can also use those options with `git rebase`, and because `git pull` is a combination of `fetch` and `merge`, you can resolve conflicts the same way. You can use `git pull --rebase` to rebase instead of merging after the fetch; it's particularly useful for keeping a branch up to date if you want to continue working on it after your colleagues have pushed changes to `master`.
 
-In the next unit, you will learn how to use git to deploy a website using a
-hook script, and how to use branches and tags to manage software releases.
+In the next unit, you will learn how to use git to deploy a website using a hook script, and how to use branches and tags to manage software releases.
