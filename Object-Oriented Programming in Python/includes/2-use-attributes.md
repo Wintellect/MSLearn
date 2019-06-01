@@ -1,12 +1,8 @@
 # Define characteristics with attributes
 
-Attributes tell you about an object. Saying that a flower is pink tells you about the color of the flower. The color pink is an attribute of the flower. It's possible to create Python classes without attributes, but then you know nothing about the object. In other words, the object may as well not exist because there is nothing to say about it. Therefore, you never see useful Python classes that lack attributes.
+Attributes hold the data that defines an object. For a pink flower, "pink" is an attribute of the flower. If you wrote a `flower` class, you might include a string attribute named `color` that describes the flower's color. You might also include an attribute indicating the flower's type — for example, iris, tulip, or rose. Objects are not required to have attributes, but in practice, it is exceedingly rare to find an object that doesn't.
 
-When dealing with a built-in Python class (a class that comes with Python), such as an `int`, the class defines the attributes for you. An instance of the `int` class has a single attribute, a number, such as the value 1. The `int` class is relatively simple in that it only has one attribute — the numeric value — but you can create classes that have more attributes. In fact, to be truly useful, most classes need more than one attribute.
-
-Think about a blueprint for a house that contains only one piece of wood or a recipe that contains only one ingredient. They wouldn't be particularly useful. The real world is full of examples where the description of an object, its class, requires the use of more than one attribute. Consequently, you can view the various pieces of wood, screws, nails, and other elements of a house blueprint to be the attributes of that house. The various ingredients (attributes) of a recipe could include chocolate, flour, eggs, butter, and so on.
-
-In this unit, you start defining a class to hold the information needed by the missing relatives database. To make things simple, you will create a `mPerson` class to hold information about a single person. You can then use the functionality in Python to turn each of the individual persons into a list of missing persons.
+In this unit, you will write a class named `mPerson` class to hold information about a person. You will add attributes to it and learn about class attributes and instance attributes. You will also learn about an important convention that enables selected members of a class to be marked "for internal use only" so other programmers will steer clear of them.
 
 ## Class attributes vs. instance attributes
 
@@ -140,4 +136,4 @@ Python doesn't support data hiding — at least not in the same sense that other
 
 You can, however, use well-established conventions to let others know that certain class members are for internal use only and should *not* be accessed from the outside. Prefacing a class-member name with an underscore, as in `_myProtectedVar`, indicates that the class member is protected. Using two underscores (for example, `__init()`) indicates that the class member is private.
 
-Although you can still write code to access private and protected methods and attributes from the outside, many Python programming environments, including Jupyter notebooks, honor these conventions and hide private and protected members from view. So Python does support a limited form of data hiding, but it's only by convention and you need to be aware of that when you send your code to parts unknown.
+Although you can still write code to access private and protected methods and attributes from the outside, many Python programming environments, including Jupyter notebooks, honor these conventions and hide private and protected members from view. So Python does support a limited form of data hiding, but only by convention and you need to be aware of that when you send your code to parts unknown.
