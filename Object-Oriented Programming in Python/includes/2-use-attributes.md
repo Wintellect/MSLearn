@@ -103,7 +103,7 @@ Instance attributes differ from one class instance (object) to another. You can'
 
 	The `__init()__` method uses Python's `self` keyword to refer to the object instance. It also defines three instance attributes that can accessed on `mPerson` objects:
 
-	- `pic_num`, which identifies (using a 0-based index) the facial image in the Olivetti dataset that corresponds to this person
+	- `pic_num`, which identifies, using a 0-based index, the person in the Olivetti dataset whose face should be assigned to this `mPerson` instance
 	- `pic_cont`, which references the facial image itself
 	- `name`, which holds the person's name
 
