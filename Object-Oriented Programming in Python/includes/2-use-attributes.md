@@ -6,7 +6,7 @@ When dealing with a built-in Python class (a class that comes with Python), such
 
 Think about a blueprint for a house that contains only one piece of wood or a recipe that contains only one ingredient. They wouldn't be particularly useful. The real world is full of examples where the description of an object, its class, requires the use of more than one attribute. Consequently, you can view the various pieces of wood, screws, nails, and other elements of a house blueprint to be the attributes of that house. The various ingredients (attributes) of a recipe could include chocolate, flour, eggs, butter, and so on.
 
-In this unit, you start defining a class to hold the information needed by the missing relatives database. To make things simple, you create a `mRelative` class to hold a single relative. You can then use the functionality in Python to turn each of the individual relatives into a list of missing relatives.
+In this unit, you start defining a class to hold the information needed by the missing relatives database. To make things simple, you will create a `mPerson` class to hold information about a single person. You can then use the functionality in Python to turn each of the individual persons into a list of missing persons.
 
 ## Class attributes vs. instance attributes
 
@@ -14,15 +14,14 @@ Attributes come in two varieties: class attributes and instance attributes. A cl
 
 An instance attribute is one that is "instanced" for each and every object you create. A `person` class might have a `name` attribute that holds a person's name. `name` would need to be an instance attribute so every `person` could be assigned a different name. That class could also have attributes defining additional information about a missing person, such as:
 
-- Photos of the person's face
-- A photo number identifying a particular facial photo
+- A photo of the person's face
 - A unique ID for the person such as a Social Security number
 
-You can certainly define other attributes, but these instance attributes will do fine for the example. Knowing these pieces of information will tell you enough to locate additional information about the missing person. The picture number and picture content come from the downloadable database, you provide a name based on what you know about the person, and the cabinet file number is based on the system you use for filing additional details in your filing cabinet.
+It's obvious that these should be instance attributes because everyone has a different Social Security number and face.
 
 ## Load a database of faces
 
-Let's begin building a missing-persons example by loading a database of facial images. The dataset you will load is a publicly available one called the [Olivetti Faces dataset](https://scikit-learn.org/0.19/datasets/olivetti_faces.html) and was originally created by AT&T.
+Let's begin building a missing-persons example by loading a database of facial images. The dataset you will load is a publicly available one called the [Olivetti Faces dataset](https://scikit-learn.org/0.19/datasets/olivetti_faces.html). It was originally created by AT&T.
 
 1. Return to the Azure Notebooks project you created in the previous unit and create a new Python 3.6 notebook named **Missing Persons.ipynb** or something similar. Then open the notebook.
 
@@ -57,9 +56,9 @@ Let's begin building a missing-persons example by loading a database of facial i
 	    ax.imshow(faces.images[i], cmap=plt.cm.gray)
 	```
 
-	The code begins with something quite odd — a statement that starts with a percent sign. This is a "magic function" that relates specifically to Jupyter notebooks. It tells Jupyter to display graphics inline with the rest of the material in the notebook, which is quite handy when you need to visualize data.
+	The code begins with something odd: a statement that starts with a percent sign. This is a "magic function" that relates specifically to Jupyter notebooks. It tells Jupyter to display graphics inline with the rest of the material in the notebook, which is quite handy when you need to visualize data.
 
-	The next statement imports a module from the versatile [Matplotlib](https://matplotlib.org/) library and gives it the name `plt` to make it easier to use. The remaining statements use Matplotlib's `imshow()` function to display the images.
+	The next statement imports a module from the versatile [Matplotlib](https://matplotlib.org/) library and gives it the name `plt`. The remaining statements use Matplotlib's `imshow()` function to display the images.
 
 1. Confirm that the output resembles the following:
 
@@ -92,7 +91,7 @@ How many people are represented in the dataset? Is the answer what you expected?
 
 ## Add an instance attribute
 
-Instance attributes differ from one class instance (object) to another. You can't access them without a class instance as you can class attributes. Instead, you must create an instance of the class. Python provides multiple ways to create instance attributes, but the most common is to define an `__init__()` method containing the attributes you want the object to have.
+Instance attributes differ from one class instance (object) to another. You can't access them without a class instance as you can class attributes. Instead, you must create an instance of the class. Python provides multiple ways to create instance attributes, but the most common is to define an `__init__()` method containing the attributes you want objects to have.
 
 1. Run the following code in a new notebook cell to modify how `mPerson` is defined and add instance attributes:
 
@@ -106,7 +105,7 @@ Instance attributes differ from one class instance (object) to another. You can'
 	        self.name = name
 	```
 
-	The `__init()` method uses Python's `self` keyword to refer to the object instance. It also defines three instance attributes that can accessed on `mPerson` objects:
+	The `__init()__` method uses Python's `self` keyword to refer to the object instance. It also defines three instance attributes that can accessed on `mPerson` objects:
 
 	- `pic_num`, which identifies (using a 0-based index) the facial image in the Olivetti dataset that corresponds to this person
 	- `pic_cont`, which references the facial image itself
