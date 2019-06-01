@@ -111,7 +111,7 @@ Every Python class you create begins with the word `class` (which makes sense). 
 
 	- The keyword `class`
 	- The class name ("myClass")
-	- A colon to indicate that the end of the `class` statement
+	- A colon marking the end of the `class` statement
 
 	Notice that the next line is indented. This is important! Python uses indentation to indicate structure. In this case, the call to the `print()` function is part of `myClass`.
 
