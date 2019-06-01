@@ -69,65 +69,69 @@ Let's begin building a missing-persons example by loading a database of facial i
 
 Now that we have some faces to work with, let's shift our thinking to objects, classes, and attributes.
 
-## Defining class attributes
+## Define a class with a class attribute
 
-It would be handy to know how many faces the dataset contains. However, the number might change each time you load the dataset from the source location. In addition, the Olivetti Faces dataset provides ten different views of each face, so just downloading the dataset and checking the shape still doesn't tell you the number of faces in the dataset. In order to know how many faces the dataset contains, you need a class attribute — one that won't vary when you create a class instance. Use this code to create the initial class and the class attribute:
+It might be handy to know how many people the dataset contains faces for. Because the Olivetti Faces dataset provides 10 facial images for each person, you divide the total number of images by 10 to get a count of people. In the steps that follow, you will write a class named `mPerson` that represents a missing person. Then you will add  a class attribute that tells you how many people the dataset contains.
 
-```python
-class mRelative:
-    num_faces = int(faces.data.shape[0] / 10)
-```
+1. Run the following code in a new notebook cell to define a class named `mPerson` containing a class attribute named `num_people`:
 
-The class begins with the `class` keyword, followed by the class name, as usual. You already know that `faces.data.shape` contains the size of the dataset. The number of pictures appears as the first element in the list, which is element 0 because Python uses zero-based indexes. So, `faces.data.shape[0]` returns the number of pictures. You then divide this value by 10 because you know that there are ten pictures of each face. Enclosing this math in `int()` turns the floating point number that the division normally returns into an integer because you can't have part of a face — the dataset only contains whole faces.
+	```python
+	class mPerson:
+	    num_people = int(faces.data.shape[0] / 10)
+	```
 
-You don't know that the code has worked though, which means you need to test it. Class attributes are always available. You don't have to create an instance of the class to access the class attributes. Consequently, you can perform the following test to see the number of faces in the Olivetti Faces dataset.
+	Note the call to Python's built-in `int()` function. The expression in parentheses returns a `float`, but a count of people should always be a whole number. `int()` converts the floating-point number into an integer.
 
-```python
-print(mRelative.num_faces)
-```
+1. What's interesting about class attributes is that you don't have to instantiate a class to access them. They are always available. To demonstrate, use the following code to count the number of people in the dataset:
 
-When you run this code, you see the output shown here—the expected 40 faces:
+	```python
+	print(mPerson.num_people)
+	```
 
-![tk](media/tk.png)
+How many people are represented in the dataset? Is the answer what you expected?
 
-_tk_
+## Add an instance attribute
 
-## Defining instance attributes
+Instance attributes differ from one class instance (object) to another. You can't access them without a class instance as you can class attributes. Instead, you must create an instance of the class. Python provides multiple ways to create instance attributes, but the most common is to define an `__init__()` method containing the attributes you want the object to have.
 
-Instance attributes differ from one class instance (object) to another. You can't access them from the class, as you can with class attributes. Instead, you must create an instance of the object and assign values to the attributes. Python provides multiple ways to create instance variables, but the most common is to define an `__init__()` function that contains the attributes you want the object to have once created. Add the instance attributes to the `mRelative` class as shown here:
+1. Run the following code in a new notebook cell to modify how `mPerson` is defined and add instance attributes:
 
-```python
-class mRelative:
-    num_faces = int(faces.data.shape[0] / 10)
-    
-    def __init__(self, pic_num, name, cab_file):
-        self.pic_num = pic_num
-        self.pic_cont = faces.images[pic_num * 10]
-        self.name = name
-        self.cab_file = cab_file
-```
+	```python
+	class mPerson:
+	    num_people = int(faces.data.shape[0] / 10)
+	    
+	    def __init__(self, pic_num, name):
+	        self.pic_num = pic_num
+	        self.pic_cont = faces.images[pic_num * 10]
+	        self.name = name
+	```
 
-This new code starts by defining function using def, just as you normally do with Python. The `self` variable refers to the object. When you talk about yourself, you say "myself", not someone else's name. Likewise, when a Python object wishes to refer to its specific instance, it uses `self`.
+	The `__init()` method uses Python's `self` keyword to refer to the object instance. It also defines three instance attributes that can accessed on `mPerson` objects:
 
-The input arguments: `pic_num`, `name`, and `cab_file` are variables containing attributes that you learned about earlier in the unit. However, you might wonder where the picture content attribute is. This is an attribute that you obtain programmatically from the dataset. So, you see that the code that follows assigns the `pic_num` variable (the picture number attribute) to `self.pic_num` — the instance variable associated with this object. Assigning the other attributes follows the same pattern.
+	- `pic_num`, which identifies (using a 0-based index) the facial image in the Olivetti dataset that corresponds to this person
+	- `pic_cont`, which references the facial image itself
+	- `name`, which holds the person's name
 
-Assigning a value to `self.pic_cont` is different because the image content appears in a different part of the dataset. In order to display the image later, you must obtain it from `faces.images`, rather than `faces.data`. Remember that there are 10 images for each face, so if you want the image for face 0, then you use image 0, but if you want the image for face 1, then you actually need image 10.
+	The input arguments `pic_num` and `name` are provided when the object is created. The first is copied into the instance attribute named `pic_num` and used to pick an image from the faces dataset for the `pic_cont` attribute. The second is copied to the object's `name` attribute.
 
-It's time to test these new attributes. The following code creates an instance of `mRelative` as `aRelative`. It uses face 0, gives the entry the name "Stan," and assigns Stan's data to file cabinet entry 123.
+1. It's time to test these new attributes. Run the following code to create an instance of `mPerson` named `aPerson` that has the name "Stan" and is assigned the first face in the Olivetti dataset:
 
-```python
-aRelative = mRelative(0, "Stan", 123)
-print(aRelative.num_faces)
-print(aRelative.name, " is number ", 
-      aRelative.pic_num, " in cabinet ", 
-      aRelative.cab_file)
-```
+	```python
+	aPerson = mPerson(0, "Stan")
+	```
 
-After you create the object, you can use `print()` to test it. Notice that an object has access to both class and instance attributes. If you were to try to print instance attributes from `mRelative`, Python would tell you that these attributes don't exist. Here is the output from this part of the example:
+1. Now use these statements to display Stan's name and face:
 
-![tk](media/tk.png)
+	```python
+	print(aPerson.name)
+	plt.imshow(aPerson.pic_cont, cmap=plt.cm.gray)
+	```
 
-_tk_
+	![Hello, Stan!](media/stans-face.png)
+
+	_Hello, Stan!_
+
+Note the tick marks on the image's horizontal and vertical axes indicating that the image measures 64 x 64 pixels. That's 4,096 pixels per image, which corresponds to the output from `faces.data.shape` above. 
 
 ## Implementing data hiding
 
@@ -138,23 +142,3 @@ When working with Python, you rely on a convention for data hiding. A public var
 You can also create private variables using two underscores, such as `__myPrivateVar`. In this case, you should only access the variable within the class that created it. Accessing it even in a subclass could cause problems.
 
 All this said, if you make an attribute protected or private when working in environments such as Jupyter, the environment will enforce the level of data hiding you request and the code won't be able to access it. So, in this respect, Python does implement data hiding, but it's only by convention and you need to be aware of that when you send your code to parts unknown.
-
-## Displaying faces
-
-You still haven't seen a picture. The picture is there, but you need to do something special to see it. The easiest way to display a picture with Python is to use the [matplotlib](https://matplotlib.org/) package. For now, you just need it to display the picture hiding in the `aRelative.pic_cont` attribute. The following code shows the quickest method for accomplishing this task:
-
-```python
-%matplotlib inline
-import matplotlib.pyplot as plt
-
-plt.imshow(aRelative.pic_cont)
-plt.show()
-```
-
-The code begins with something quite odd — a command that starts with a percent sign. This is a "magic function" that relates specifically to Jupyter notebooks. It tells Jupyter to display graphics inline with the rest of the material in the notebook, which is actually quite handy when you need to create a report.
-
-The code the follows imports the specific module you need from `matplotlib.pyplot` and gives it the name `plt` to make it easier to use. You then use the special `imshow()` function to read the `aRelative.pic_cont` attribute. However, nothing shows on screen until you call `plt.show()`. Here's what you can expect to see:
-
-![tk](media/tk.png)
-
-_tk_
