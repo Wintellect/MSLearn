@@ -125,26 +125,23 @@ The output shows that you actually created the class. The `print()` function exe
 
 ## Instantiating a class
 
-At this point, you have a very simple (and nearly useless) class, but it serves to show how objects work with classes. To make a class useful, you need to instantiate an object from it.
+At this point, you have a very simple (and nearly useless) class, but it serves to show how classes are defined. Now let's created an object from the class.
 
-Type the following code to see how this process works:
+1. Add the following statement to the notebook and run it:
 
-```python
-myVar = myClass()
-print(type(myVar))
-print(dir(myVar))
-```
+	```python
+	myVar = myClass()
+	```
 
-The first line creates the object, `myVar`, from the class `myClass`. Notice the parentheses after `myClass`. The parentheses tells Python to create an object: an instance of the class.
+	This line creates an object named `myVar` from the class named `myClass`. Notice the parentheses after `myClass`. The parentheses tell Python to create an instance of the class without passing any parameters to it.
 
-To determine whether the process worked, you can use the `type()` and `dir()` functions, just as you did earlier in the unit.
+1. Run the following statements to prove that the object was created:
 
-Click Run and you see the following output:
+	```python
+	print(type(myVar))
+	print(dir(myVar))
+	```
 
-![Creating an instance of myClass](media/tk.png)
+	Notice the output shows that the type of `myVar` is `__main__.myClass`. The `__main__` part of the output is the scope in which this code is executing. A scope is a kind of container that holds pieces of code together. You don't see a scope for the `int` type because `int` is defined outside the scope of the current application. You see `__main__` for `myClass` because you defined `myClass` within the current application. It's the default scope, but you don't need to worry about it for now. The important takeaway, for the moment, is that `myVar` is an instance of the `myClass` class.
 
-_Creating an instance of myClass_
-
-Notice the output shows that the type of `myVar` is `__main__.myClass`. The `__main__` part of the output is the scope in which this code is executing. A scope is a kind of container that holds pieces of code together. You don't see a scope for the `int` type because `int` is defined outside the scope of the current application. You see `__main__` for `myClass` because you define `myClass` within the current application. It's the default scope; but you don't need to worry about it for now. The important takeaway, for the moment, is that `myVar` actually is an instance of the `myClass` class.
-
-In addition, notice that you get default methods with your new class. Python provides a class with these default methods to perform essential tasks. However, the methods aren't really functional now. It's simply a good idea to know that they exist. As you continue with these lessons, this information becomes more relevant.
+Also notice that you get default methods with your new class. Python provides a class with these default methods to perform essential tasks. However, the methods aren't really functional now. It's simply a good idea to know that they exist. As you continue with this module, the information will become more relevant.
