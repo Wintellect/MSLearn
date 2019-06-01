@@ -1,45 +1,73 @@
 # Define characteristics with attributes
 
-Attributes tell you about an object. Saying that a flower is pink tells you about the color of the flower. The word pink is an attribute of the flower. It's possible to create Python classes without attributes, but then you know nothing about the object. In other words, the object may as well not exist because there is nothing to say about it. Therefore, you never see useful Python classes that lack attributes.
+Attributes tell you about an object. Saying that a flower is pink tells you about the color of the flower. The color pink is an attribute of the flower. It's possible to create Python classes without attributes, but then you know nothing about the object. In other words, the object may as well not exist because there is nothing to say about it. Therefore, you never see useful Python classes that lack attributes.
 
 When dealing with a built-in Python class (a class that comes with Python), such as an `int`, the class defines the attributes for you. An instance of the `int` class has a single attribute, a number, such as the value 1. The `int` class is relatively simple in that it only has one attribute — the numeric value — but you can create classes that have more attributes. In fact, to be truly useful, most classes need more than one attribute.
 
-Think about a blueprint for a house that contains only one piece of wood or a recipe that contains only one ingredient—they wouldn't be particularly useful. The real world is full of examples where the description of an object, its class, requires the use of more than one attribute. Consequently, you can view the various pieces of wood, screws, nails, and other elements of a house blueprint to be the attributes of that house. The various ingredients (attributes) of a recipe could include chocolate, flour, eggs, butter, and so on.
+Think about a blueprint for a house that contains only one piece of wood or a recipe that contains only one ingredient. They wouldn't be particularly useful. The real world is full of examples where the description of an object, its class, requires the use of more than one attribute. Consequently, you can view the various pieces of wood, screws, nails, and other elements of a house blueprint to be the attributes of that house. The various ingredients (attributes) of a recipe could include chocolate, flour, eggs, butter, and so on.
 
 In this unit, you start defining a class to hold the information needed by the missing relatives database. To make things simple, you create a `mRelative` class to hold a single relative. You can then use the functionality in Python to turn each of the individual relatives into a list of missing relatives.
 
 ## Class attributes vs. instance attributes
 
-Real-world objects have two kinds of attributes: class and instance. For example, when you look at a recipe, you know that a cookie recipe is of a different class than a stew recipe. They're both recipes, but they're different types. This kind of attribute affects all recipes. It affects the recipe class as a whole. Just as a recipe can have a class attribute — one that affects all of the recipes of a certain type — Python classes can have a class attribute as well. In dealing with the missing relative database, you could create a class attribute containing the total number of pictures in the database. The number wouldn't change between object instances because the number of pictures in the database affects all of the instances. A class attribute always affects the class as a whole and doesn't change when you create an instance of that class.
+Attributes come in two varieties: class attributes and instance attributes. A class attribute is one that applies to *all* instances of a class rather than to individual instances (objects created from the class). For example, if you wrote a `person` class for the missing-persons app, you could include a class attribute indicating the total number of people in the database. The value of that attribute wouldn't be tied to individual `person` instances.
 
-An instance attribute is one that changes every time you create a new object from the class. For example, when you create a new recipe, you might start out by knowing that it's a cookie recipe (the class attribute), but you don't know the ingredients used to create that recipe (the instance attributes). That's because the ingredients are individual to a particular recipe instance. Likewise, a Python class can include instance attributes. In the case of the missing relative database, you need instance attributes that define these elements:
+An instance attribute is one that is "instanced" for each and every object you create. A `person` class might have a `name` attribute that holds a person's name. `name` would need to be an instance attribute so every `person` could be assigned a different name. That class could also have attributes defining additional information about a missing person, such as:
 
-- Picture number
-- Picture content (actual face picture)
-- Name
-- Cabinet file number
+- Photos of the person's face
+- A photo number identifying a particular facial photo
+- A unique ID for the person such as a Social Security number
 
 You can certainly define other attributes, but these instance attributes will do fine for the example. Knowing these pieces of information will tell you enough to locate additional information about the missing person. The picture number and picture content come from the downloadable database, you provide a name based on what you know about the person, and the cabinet file number is based on the system you use for filing additional details in your filing cabinet.
 
-## Downloading the Database
+## Load a database of faces
 
-Begin by creating a new project in Azure Notebooks. Give your new project the name "Missing_Relatives." Add a new Notebook to your project, name it **Missing_Relatives_Example.ipynb**, and select Python 3.6 as the language. The Scikit-learn Python package contains a number of real-world datasets you can use to discover all the marvels of Python. This example relies on the [Olivetti Faces dataset](https://scikit-learn.org/0.19/datasets/olivetti_faces.html) originally created by AT&T. Type the following code to load the dataset into your example:
+Let's begin building a missing-persons example by loading a database of facial images. The dataset you will load is a publicly available one called the [Olivetti Faces dataset](https://scikit-learn.org/0.19/datasets/olivetti_faces.html) and was originally created by AT&T.
 
-```python
-from sklearn.datasets import fetch_olivetti_faces
+1. Return to the Azure Notebooks project you created in the previous unit and create a new Python 3.6 notebook named **Missing Persons.ipynb** or something similar. Then open the notebook.
 
-# Create a variable to hold the dataset
-faces = fetch_olivetti_faces()
+1. One of the many popular packages available in Azure Notebooks is [Scikit-learn](https://scikit-learn.org/stable/index.html), which is an open-source library used build [machine-learning](https://en.wikipedia.org/wiki/Machine_learning) models. Scikit includes several built-in datasets, one of which is the Olivetti faces dataset.
 
-# Prove the dataset is loaded
-print(faces.data.shape)
-```
+	Paste the following statements into the empty cell at the top of the notebook to load the faces dataset:
 
-The first line imports the required dataset function. When you run this code, you see the output shown here that demonstrates you have loaded 400 faces, each consisting of 4,096 pixels.
+	```python
+	from sklearn.datasets import fetch_olivetti_faces
+	
+	# Load the dataset
+	faces = fetch_olivetti_faces()
 
-![tk](media/tk.png)
+	# Prove that the dataset was loaded
+	print(faces.data.shape)
+	```
 
-_tk_
+	The first line imports the Scikit function that loads the datset. The second loads the dataset, and the third shows the shape of the dataset.
+
+1. Run the code and examine the output. The dataset contains 400 faces, each of which consists of an image with 4,096 pixels. The dataset contains 10 photos each of 40 different people. The first ten images in `faces.images` represent the first person, the next 10 images represent the second person, and so on.
+
+1. Want to see what the faces look like? Paste the following statements into the next cell and run them:
+
+	```python
+	%matplotlib inline
+	import matplotlib.pyplot as plt
+	
+	# Plot the first 50 faces
+	fig, axes = plt.subplots(5, 10, figsize=(12, 7), subplot_kw={'xticks': [], 'yticks': []})
+	
+	for i, ax in enumerate(axes.flat):
+	    ax.imshow(faces.images[i], cmap=plt.cm.gray)
+	```
+
+	The code begins with something quite odd — a statement that starts with a percent sign. This is a "magic function" that relates specifically to Jupyter notebooks. It tells Jupyter to display graphics inline with the rest of the material in the notebook, which is quite handy when you need to visualize data.
+
+	The next statement imports a module from the versatile [Matplotlib](https://matplotlib.org/) library and gives it the name `plt` to make it easier to use. The remaining statements use Matplotlib's `imshow()` function to display the images.
+
+1. Confirm that the output resembles the following:
+
+	![The first five people in the Olivetti dataset](media/show-faces.png)
+
+	_The first five people in the Olivetti dataset_
+
+Now that we have some faces to work with, let's shift our thinking to objects, classes, and attributes.
 
 ## Defining class attributes
 
