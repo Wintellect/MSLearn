@@ -6,9 +6,9 @@ Python objects always have methods, even if you don't define any yourself. For e
 
 `<__main__.person object at 0x7ff9e91ab978>`
 
-For this reason, Python programmers frequently replace the built-in `__str()__` method with one of their own when they write custom classes to serve an application.
+For this reason, Python programmers frequently replace the built-in `__str__()` method with one of their own when they write custom classes to serve an application.
 
-In this unit, you will add methods to the `mPerson` class you wrote in the previous unit to make it a first-class citizen in the Python environment. In addition to adding methods of your own, you will override the `__str()__` method so that it produces output that is meaningful for an `mPerson`. Finally, you will discover that when you pass an object to Python's built-in `str()` function, Python calls the object's `__str()__` method internally.
+In this unit, you will add methods to the `mPerson` class you wrote in the previous unit to make it a first-class citizen in the Python environment. In addition to adding methods of your own, you will override the `__str__()` method so that it produces output that is meaningful for an `mPerson`. Finally, you will discover that when you pass an object to Python's built-in `str()` function, Python calls the object's `__str__()` method internally.
 
 ## Static methods vs. instance methods
 
@@ -96,16 +96,16 @@ _tk_
 
 Python supplies a default `__str__()` method, which works well with the simple built-in object types. But for custom types, it rarely provides the results you want. The default method tells you about the object: the object's name and where the object is located in memory. It would be a lot more useful if it could tell you something specific about the object's content. 
 
-You can replace the built-in `___str()__` method (or any other method, for that matter) by *overriding* it. You don't have to do anything  special to override a method in Python. You just provide a new version of the method in the class.
+You can replace the built-in `___str__()` method (or any other method, for that matter) by *overriding* it. You don't have to do anything  special to override a method in Python. You just provide a new version of the method in the class.
 
 1. Return to the `mPerson` class in your notebook and add the following method to it:
 
 	```python
 	def __str__(self):
-	    return f'{self.pic_num}, {self.name}, {self.cab_file}'
+	    return self.name + ', age ' + str(self.get_age())
 	```
 
-	This method prints the three attributes supplied when you instantiate the `aRelative` object. Notice that it uses a different form of the format string so that you don't have to convert any of the attributes to different types. (Placing the "f" outside the string and then including the attribute names within curly brackets works well when you don't want to do a lot of formatting.) The output of the `__str__()` method must always be a string, so you couldn't output an int or something like a tuple.
+	This method returns a string denoting the person's name and age. The information returned in the string is obtained by reading the object's `name` attribute and calling the object's `get_age()` method.
 
 1. To test the new `__str__()` method, enter the following code into a new cell and run it:
 
