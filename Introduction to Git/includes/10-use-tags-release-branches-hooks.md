@@ -1,22 +1,14 @@
 # Deploy and release software
 
-Although Git is fundamentally a version-control system, it can also help with
-other tasks (or sequences of tasks, usually called "workflows") related to
-software configuration management.  In this unit you'll learn how to set up a
-"web-focused" workflow for managing websites, and how to use branches and tags
-to organize and track releases.
+Although Git is fundamentally a version-control system, it can also help with other tasks (or sequences of tasks, usually called "workflows") related to software configuration management. In this unit you learn how to set up a "web-focused" workflow for managing websites, and how to use branches and tags to organize and track releases.
 
 ## Deploy your website using a hook
 
-Now that your Cats project is almost ready to show off, the next things you
-need are a web server to host it, and a way of getting the site deployed to
-it.  This section is based on <a
-href="http://joemaller.com/990/a-web-focused-git-workflow/" >"A web-focused
-Git workflow" by Joe Maller</a>, a simple and popular way of automating
-website deployment using hook scripts.
+Now that your Cats project is almost ready to show off, you need are a web server to host it, and a way to get the site deployed to
+it. This section is based on <a href="http://joemaller.com/990/a-web-focused-git-workflow/">"A web-focused
+Git workflow"</a> by Joe Maller, a simple and popular way of automating website deployment using hook scripts.
 
-Hook scripts are small programs that Git runs when certain events occur, such
-as commits or pushes.  Start by taking a look at `.git/hooks`:
+Hook scripts are small programs that Git runs when certain events occur, such as commits or pushes. Start by looking at `.git/hooks`:
 
 ```
 $ ls .git/hooks
@@ -26,9 +18,7 @@ fsmonitor-watchman.sample  pre-push.sample	      update.sample
 post-update.sample	       pre-rebase.sample
 ```
 
-It's also worthwhile to look at the documentation, in `git help githooks`; not
-all of the possible hooks have samples.  Any of the sample scripts can be
-activated by simply renaming it to remove the `.sample` extension.
+It's also worthwhile to look at the documentation, in `git help githooks`; not all of the possible hooks have samples. Any of the sample scripts can be activated by simply renaming it to remove the `.sample` extension.
 
 ### Create a hook script
 
@@ -39,11 +29,7 @@ $ cd ~/sandbox
 $ git clone Cats.git Cats-on-the-web
 ```
 
-And then set up the post-update hook in `Cats.git`.  The `<<EOF` construct
-takes everything up to the next line starting with `EOF` and redirects it into
-`cat`'s standard input.  The `chmod +x` command marks the hook as executable,
-and the hook's name, `post-update`, tells Git that the hook should be run
-whenever changes are pushed.
+Then set up the post-update hook in `Cats.git`. The `<<EOF` construct takes everything up to the next line starting with `EOF` and redirects it into `cat`'s standard input. The `chmod +x` command marks the hook as executable, and the hook's name, `post-update`, tells Git that the hook should be run whenever changes are pushed.
 
 ```sh
 $ cat > Cats.git/hooks/post-update <<EOF
@@ -56,12 +42,9 @@ EOF
 $ chmod +x Cats.git/hooks/post-update
 ```
 
-The line starting with `#!` is called the "shebang" line, and on a Unix system
-it tells the operating system which program -- Shell, Bash, Python, etc. -- to
-use to interpret the script.  In Git for Windows, the shell has additional
-logic to make this happen, but depending on your installation you might have
-to use a Windows file path rather than the expected Unix one.  It would look
-like:
+The line starting with `#!` is called the "shebang" line. On a Unix system it tells the operating system which program to use to interpret the script: Shell, Bash, Python, etc.
+
+In Git for Windows, the shell has additional logic to make this happen, but depending on your installation you might have to use a Windows file path rather than the expected Unix one. It would look like:
 
 ```
 #!C:/Program\ Files/Git/usr/bin/sh.exe
@@ -71,13 +54,11 @@ like:
 Windows)](https://www.tygertec.com/git-hooks-practical-uses-windows/) by Ty
 Walls for details, and more hook ideas.)
 
-Now, whenever anybody pushes a change, the hook switches to the website
-directory and pulls it.  This setup assumes that the shared bare repo and the
-actual website are on the same server, which is almost always the case.  You
-can use the same idea to automatically update backups on an external drive.
+Now, whenever anybody pushes a change, the hook switches to the website directory and pulls it. This setup assumes that the shared bare repo and the actual website are on the same server, which is almost always the case.
 
-For example, you finally get back from a well-deserved vacation and try to
-catch up with what Bob and Alice have done:
+You can use the same idea to automatically update backups on an external drive. 
+
+For example, you return from a well-deserved vacation and want to catch up with what Bob and Alice have done:
 
 ```
 $ git fetch
@@ -105,12 +86,9 @@ Fast-forward
  create mode 100644 assets/bombay-cat-180x240.jpg
 ```
 
-Doing a fetch first rather than a pull can be useful; it shows you how far
-behind you are, and gives you a chance to look at the changes (with `git
-diff`) before you pull them.
+Doing a fetch first rather than a pull can be useful. It shows you how far behind you are, and gives you a chance to look at the changes (with `git diff`) before you pull them.
 
-Now you can fix that annoying footer, which is almost invisible because its
-only content is a horizontal rule.
+Now you can fix that annoying footer, which is almost invisible because its only content is a horizontal rule.
 
 ```
 $ sed -i.bak -e 's|<hr>|<a href="index.html">home</a>|' index.html
@@ -133,16 +111,13 @@ To ../Cats.git
    39473bb..d0346f6  master -> master
 ```
 
-The lines prefixed with `remote:` came from the hook.  Typically both the
-shared repo and the website would be on the same remote web server and
-`origin` would have a URL like `git@server.example.org:Cats.git` -- that's the
-same format that you would use with `ssh`.
+The lines prefixed with `remote:` came from the hook. Typically, both the shared repo and the website would be on the same remote web server and `origin` would have a URL like `git@server.example.org:Cats.git` -- that's the same format that you would use with `ssh`.
 
-### make changes on the server
+### Make changes on the server
 
-You also realize that you haven't added your own cat to the site.  She would
-be very unhappy if she found out.  Since you happen to be logged in on the
-server, you can make your changes there.
+You also realize that you haven't added your own cat to the site. She would be very unhappy if she found out.
+
+Since you happen to be logged in on the server, you can make your changes there.
 
 ```
 $ cd ~/sandbox/Cats-on-the-web/
@@ -167,45 +142,25 @@ To /home/steve/sandbox/Cats.git
    d0346f6..d1b49d2  master -> master
 ```
 
-Notice that the hook pulled the changes you just made, but of course it was
-already up to date. 
+Notice that the hook pulled the changes you just made, but of course it was already up to date. 
 
 ### Other uses for hooks
 
-Joe Maller's article suggests using a `post-commit` hook in your web directory
-to automatically update the shared repo when emergency changes are made on the
-web server.  You can use a `post-update` hook there to do a production build
-if the server has the necessary software, or to run tests on a staging server
-and push to production if they pass.  Hooks are almost always an important
+Joe Maller's article suggests using a `post-commit` hook in your web directory to automatically update the shared repo when emergency changes are made on the web server. You can use a `post-update` hook there to do a production build if the server has the necessary software, or to run tests on a staging server and push to production if they pass. Hooks are almost always an important
 part of any Continuous Integration of Continuous Deployment workflow.
 
-Many teams use a `pre-push` or `pre-commit` hook to run tests, to prevent bad
-code from being pushed; other uses include checking for signatures.
+Many teams use a `pre-push` or `pre-commit` hook to run tests, to prevent bad code from being pushed; other uses include checking for signatures.
 
 
 ## Manage software releases with tags and branches
 
-Let's suppose that your cats on the web have become wildly popular, and you've
-been getting requests for a more generic version of the site that can be used
-as a base for a site focusing on other kinds of pets.  You'll want to make
-occasional updates, so you need to keep track of which versions you've
-released.  (Of course, this would make more sense if you'd switched to a site
-generator like [Jekyll](https://jekyllrb.com/) or [Hugo](https://gohugo.io/),
-which would let you release your templates as a theme.  Maybe in Version 2.0?)
+Let's suppose that your cats on the web have become wildly popular. As a result, you get requests for a more generic version of the site that can be used as a base for a site focusing on other kinds of pets. You'll want to make occasional updates, so you need to keep track of which versions you released. (Of course, this would make more sense if you'd switched to a site generator like [Jekyll](https://jekyllrb.com/) or [Hugo](https://gohugo.io/), which would let you release your templates as a theme. Maybe in Version 2.0?)
 
-There are many ways to organize a project at this stage.  GitFlow, originally
-described in [A successful Git branching
-model](https://nvie.com/posts/a-successful-git-branching-model/) by Vincent
-Driessen, is a popular workflow for large projects.  It's especially useful
-for software products that have many versions in the field at the same time.
-There's even a Git subcommand, `flow`, for doing GitFlow-specific operations.
-GitFlow uses the master branch for numbered releases, and a separate branch
+There are many ways to organize a project at this stage. GitFlow, originally described in [A successful Git branching
+model](https://nvie.com/posts/a-successful-git-branching-model/) by Vincent Driessen, is a popular workflow for large projects.  It's especially useful for software products that have many versions in the field at the same time. There's even a Git subcommand, `flow`, for doing GitFlow-specific operations. GitFlow uses the master branch for numbered releases, and a separate branch
 for development.
 
-Since this is a *small* project and you're already using `master` for
-continuous integration into your main website, you could also keep `master` as
-it is and make a separate `release` branch.  But since it's a *very* small
-project, the simplest thing is just to tag releases on `master`.
+Since this is a *small* project and you're already using `master` for continuous integration into your main website, you could also keep `master` as it is and make a separate `release` branch. But since it's a *very* small project, the simplest thing is just to tag releases on `master`.
 
 ```
 $ cd ~/sandbox/Cats
@@ -216,20 +171,11 @@ d1b49d2 (HEAD -> master, tag: v0.1, origin/master) Make a last-minute addition.
 $ git show v0.1
 ```
 
-Notice how tags are shown by `log` next to the commits they refer to.  The
-`show` subcommand can be used to display the tag data along with the commit it
-refers to.
+Notice how tags are shown by `log` next to the commits they refer to. The `show` subcommand can be used to display the tag data along with the commit to which it refers.
 
-Git has two kinds of tags: "lightweight" and "annotated".  A lightweight tag
-is just a file (`refs/tags/NAME`) containing the hash of the tagged commit.
-Lightweight tags are primarily used as temporary labels; a typical use is to
-tag the head of a branch before you rebase it, to make it easier to go back if
-you ran into trouble.  Lightweight tags are almost always local to a
-developer's copy of a repo.
+Git has two kinds of tags: "lightweight" and "annotated". A lightweight tag is just a file (`refs/tags/NAME`) containing the hash of the tagged commit. Lightweight tags are primarily used as temporary labels; a typical use is to tag the head of a branch before you rebase it, to make it easier to go back if you ran into trouble. Lightweight tags are almost always local to a developer's copy of a repo.
 
-Annotated tags, on the other hand, are objects that are very similar to
-commits: they have a message, author, and optional signature.  Tags are not
-normally pushed, but you can do it with the `--follow-tags` option:
+Annotated tags, on the other hand, are objects that are very similar to commits. They have a message, author, and optional signature. Tags are not normally pushed, but you can do it with the `--follow-tags` option:
 
 ```
 $ git push --follow-tags
@@ -243,26 +189,17 @@ To ../Cats.git
  * [new tag]         v0.1 -> v0.1
 ```
 
-This option pushes all annotated tags that can be reached from the commits
-being pushed.  If you always want this behavior, you can set the
-`push.followTags` configuration option with
+This option pushes all annotated tags that can be reached from the commits being pushed. If you always want this behavior, you can set the `push.followTags` configuration option with:
 
 ```
 git config --global push.followTags true
 ```
 
-There is an older option to `push`, `--tags`, which pushes *all* tags; this is
-a bad idea because developers often pick the same names for their lightweight
-tags. 
+There is an older option to `push`, `--tags`, which pushes *all* tags. Using it is a bad idea, because developers often pick the same names for their lightweight tags. 
 
-Before you can consider the website ready for public release, though, you need
-to make sure that all of the images are properly credited.  They all came from
-Wikimedia, which makes it easy; for example go to [File:Short-haired
-tortoiseshell cat.jpg - Wikimedia
-Commons](https://commons.wikimedia.org/wiki/File:Short-haired_tortoiseshell_cat.jpg)
-and click on "Use this file on the web".  Since you've downloaded the images
-you want to use, you'll want to edit the `img` tags so that they point to your
-server and not Wikimedia's -- we've already done that for you:
+Before you can consider the website ready for public release, though, you need to make sure that all of the images are properly credited. They all came from Wikimedia, which makes it easy; for example go to [File:Short-haired tortoiseshell cat.jpg - Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Short-haired_tortoiseshell_cat.jpg) and click on "Use this file on the web."
+
+Since you downloaded the images you want to use, you want to edit the `img` tags so that they point to your server and not Wikimedia's. We've already done that for you:
 
 ```
 $ sed -i.bak -E 's/^<img[^>]*>//' index.html
@@ -273,9 +210,7 @@ $ git commit -a -m "Link images to their source pages" \
 > -m "Put attributions in the link titles (tooltips)"
 ```
 
-(You don't type the `>` characters; they're the prompt Bash gives you when a
-command continues on the next line.  Bash knows that there's more coming after
-`do`, but you can continue any command by ending the line with a backslash.)
+(You don't type the `>` characters; they're the prompt Bash gives you when a command continues on the next line. Bash knows that there's more coming after `do`, but you can continue any command by ending the line with a backslash.)
 
 At this point, this looks good enough for you to call it version 1.0.
 
@@ -298,16 +233,13 @@ To ../Cats.git
    d1b49d2..8c97793  master -> master
 ```
 
-Congratulations!
+Congratulations! You, Bob, and Alice create a simple cat photo website, and you collaborated on the project using Git.
 
 ## Summary
 
-In this unit, you have learned about Git hooks, which perform actions when
-specific events occur, and the Git command
+In this unit, you learned about Git hooks, which perform actions when specific events occur. You also learned how to use the Git command
 
-* [`git tag`](https://git-scm.com/docs/git-tag),
-  which creates, deletes, or modifies tags.
+* [`git tag`](https://git-scm.com/docs/git-tag), which creates, deletes, or modifies tags.
 
-You have also encountered Bash `for` loops and learned how to break a long
-command by escaping the end of line with a backslash.
+In addition, you also encountered Bash `for` loops and learned how to break a long command by escaping the end of line with a backslash.
 
