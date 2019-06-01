@@ -38,11 +38,11 @@ Azure notebooks are created through the portal at https://notebooks.azure.com an
 
 You can create additional projects and notebooks as you work with Azure Notebooks. You can create notebooks from scratch, or you can upload existing notebooks. And once a notebook is created or uploaded, you can take advantage of Azure compute resources to run the notebook and leverage popular Python libraries such as [Pandas](https://pandas.pydata.org/) and [Scikit-learn](https://scikit-learn.org/stable/index.html).
 
-## OOP in Python
+## Objects in Python
 
 Everything is an object in Python. It would be easy to confuse the Python programming paradigm, the method used to create code, with the underlying language concepts. A programming paradigm would allow you to use the [functional, imperative, object-oriented, or procedural coding styles](https://blog.newrelic.com/engineering/python-programming-styles/). However, no matter which programming paradigm you use, Python itself uses objects for everything.
 
-1. To see how objects work in Python, return to the notebook you created a moment ago and type or paste the type the following code into the notebook's first cell:
+1. To see how objects work in Python, return to the notebook you created a moment ago and type or paste the following code into the empty cell at the top of the notebook:
 
 	```python
 	print(type(1))
@@ -55,11 +55,11 @@ Everything is an object in Python. It would be easy to confuse the Python progra
 
 1. Make sure **Code** is selected in the drop-down list so the cell is a code cell, and then click the **Run** button to execute the code.
 
-	![Displaying the classes associated with objects](media/run-cell-1.png)
+	![Identifying an object's class](media/run-cell-1.png)
 	
-	_Displaying the classes associated with objects_
+	_Identifying an object's class_
 
-	The output shows that 1 is an instance of Python's built-in `int` class, while "Hello There!" has a class of `str`. Notice that Python uses different classes for 1 and 1.1; the class of 1.1 is `float`. If something has a truth value, True or False, then it relies on the `bool` class.
+	The output shows that 1 is an instance of Python's built-in `int` class, while "Hello There!" is a `str` (string). Notice that Python uses different classes for 1 and 1.1; 1.1 is `float`, not an `int`. If something has a truth value, True or False, then it relies on the `bool` class.
 
 	You could easily test other kinds of data (feel free to experiment!), but be assured that any sort of data you try has a associated class, whether one that is built into Python or one you have written yourself.
 
@@ -94,36 +94,36 @@ Everything is an object in Python. It would be easy to confuse the Python progra
 
 You often use methods to create new objects that have attributes you need from existing objects. At this point, you have enough information about Python classes and objects to start creating a class of your own.
 
-## Defining classes
+## Defining a class
 
-Every Python class you create begins with the word `class` (which makes sense). Of course, a class needs a name. Also you must define where the class identification ends; Python uses a colon.
+Python has several built-in classes including `int`, `float`, `bool`, and `str`, but it also allows you to define classes of your own. This is the crux of object-oriented programming.
 
-A class also needs to do something. Let's begin with something simple: telling the user that the class has been created. In the real world, you wouldn't actually create a class like this, but it's helpful in learning a little at a time.
+Every Python class you create begins with the word `class` (which makes sense). Of course, a class needs a name. A class also needs to do something. Let's begin with something simple: telling the user that the class has been created. In the real world, you wouldn't actually create a class like this, but it's helpful for learning in an incremental fashion.
 
-Type the following code into your test project:
+1. Type the following code into an empty cell in the notebook:
 
-```python
-class myClass:
-    print('myClass created!')
-```
+	```python
+	class myClass:
+	    print('myClass created!')
+	```
 
-This is the simplest class you can create. It contains the bare essentials needed to create a class:
+	This is the simplest class you can create. It contains the bare essentials needed to create a class:
 
-- The keyword `class`
-- The class name ("myClass")
-- A colon to indicate that the class identification is over
+	- The keyword `class`
+	- The class name ("myClass")
+	- A colon to indicate that the end of the `class` statement
 
-Notice that the next line is indented. This is important! Python uses indentation to show structure. In this case, the `print()` function is part of `myClass`.
+	Notice that the next line is indented. This is important! Python uses indentation to indicate structure. In this case, the call to the `print()` function is part of `myClass`.
 
-Click Run and you see the following output:
+1. Run the code and confirm that you see the following output:
 
-![Create classes using the class keyword](media/tk.png)
-
-_Create classes using the class keyword_
+	![Defining a class](media/run-cell-3.png)
+	
+	_Defining a class_
 
 The output shows that you actually created the class. The `print()` function executes during the creation process. Normally, you wouldn't have a `print(`) statement like this, but here it helps to see how the class creation works.
 
-## Instantiating classes to create objects
+## Instantiating a class
 
 At this point, you have a very simple (and nearly useless) class, but it serves to show how objects work with classes. To make a class useful, you need to instantiate an object from it.
 
