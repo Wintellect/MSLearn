@@ -119,8 +119,6 @@ Every Python class you create begins with the word `class` (which makes sense). 
 
 	![Defining a class](media/run-cell-3.png)
 	
-	_Defining a class_
-
 The output shows that you actually created the class. The `print()` function executes during the creation process. Normally, you wouldn't have a `print(`) statement like this, but here it helps to see how the class creation works.
 
 ## Instantiating a class
