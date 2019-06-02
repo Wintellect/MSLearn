@@ -6,7 +6,7 @@ You could write classic [procedural code](https://en.wikipedia.org/wiki/Procedur
 
 [Object-oriented programming](https://en.wikipedia.org/wiki/Object-oriented_programming) (OOP) is a proven way of structuring your code so that it is easier to write, understand, test, and maintain. Rather than leave it to other programmers to figure out how to take the photos you store and display them on the screen, for example, you could define an object that represents a missing person and build the capability to display that person's photo into the object. Subsequently, anyone could render a photo of a missing person on the screen with a simple function call.
 
-Writing object-oriented code in Python is a little different than writing procedural code, but if you know the basics of Python, it isn't difficult. In this module, you will learn how to write object-oriented code in Python and also see first-hand some of the benefits of doing so.
+Writing object-oriented code in Python is a little different than writing procedural code, but if you know the basics of Python, it isn't difficult. In this module, you learn how to write object-oriented code in Python and also see first-hand some of the benefits of doing so.
 
 ## What is OOP?
 
@@ -30,7 +30,7 @@ OOP doesn't reduce programming to a trivial undertaking, but it adds structure t
 
 ## Classes vs. objects
 
-Objects combine code and data into a single entity so you can work with them as a unit. The basis for an object is a *class*, which defines the object's attributes, methods, and events. Python classes don't include native support for events, so the remainder of this module will focus on attributes and methods.
+Objects combine code and data into a single entity so you can work with them as a unit. The basis for an object is a *class*, which defines the object's attributes, methods, and events. Python classes don't include native support for events, so the remainder of this module focuses on attributes and methods.
 
 A common analogy from architecture is that you start with a blueprint, which contains a parts list (the data) and instructions (the code) for building a house. Another example is a a recipe. If you want to repeat that fabulous chocolate chip cookie experience, then you need a recipe that contains a list of ingredients (the data) and baking instructions (the code) to do it. This blueprint or recipe is called a class.
 
