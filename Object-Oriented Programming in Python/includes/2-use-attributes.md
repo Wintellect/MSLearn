@@ -1,23 +1,44 @@
 # Define characteristics with attributes
 
-Attributes hold the data that defines an object. For a pink flower, "pink" is an attribute of the flower. If you wrote a `flower` class, you might include an attribute named `color` that describes the flower's color. You might also include an attribute indicating the flower's type — for example, iris, tulip, or rose. Objects are not required to have attributes, but in practice, it is exceedingly rare to find one that doesn't.
+Attributes hold the data that defines an object. For a pink flower, "pink" is an attribute of the flower. If you wrote a `flower` class, you might include an attribute named `color` that describes the flower's color. You might also include an attribute indicating the flower's type — for example, iris, tulip, or rose. Objects are not required to have attributes, but in practice, most do.
 
-In this unit, you will write a class named `mPerson` to hold information about a person. You will add attributes to it and learn about class attributes and instance attributes. You will also learn about an important convention that enables selected members of a class to be marked "for internal use only" so other programmers will steer clear of them.
+In this unit, you will write a class named `mPerson` to hold information about a person. You will add attributes to it and learn how to access those attributes. You will also learn about an important convention that enables selected members of a class to be marked "for internal use only" so other programmers will steer clear of them.
 
 ## Class attributes vs. instance attributes
 
-Attributes come in two varieties: class attributes and instance attributes. A class attribute is one that applies to *all* instances of a class rather than to individual instances (objects created from the class). For example, if you wrote a `person` class for the missing-persons app, you could include a class attribute indicating the total number of people in the database. The value of that attribute wouldn't be tied to individual `person` instances.
+Attributes come in two varieties: class attributes and instance attributes. A class attribute is one that applies to *all* instances of a class rather than to individual instances (objects created from the class). What's interesting about class attributes is that you don't have to instantiate a class to access them. They are always available. 
 
-An instance attribute is one that is "instanced" for each and every object you create. A `person` class might have a `name` attribute that holds a person's name. `name` would need to be an instance attribute so every `person` could be assigned a different name. That class could also have attributes defining additional information about a missing person, such as:
+A great example can be found in Python's built-in `math` class, which has class attributes named `pi` and `e` containing the values of common mathematical constants. Because you don't have to create a class instance to access a class attribute, you can compute the area of a circle this way in Python:
+
+```python
+area = math.pi * radius * radius
+```
+
+You could easily write a class of your own that exposes these same values as class attributes:
+
+```python
+class constants:
+    pi = 3.14159265358979323846264338327950288
+    e =  2.71828182845904523536028747135266249
+```
+
+Using the constants would then be a simple matter of referencing class attributes on your own class:
+
+```python
+area = constants.pi * radius * radius
+```
+
+By contrast, an instance attribute is one that is "instanced" for each and every object you create. A `person` class might have a `name` attribute that holds a person's name. `name` would need to be an instance attribute so every `person` could be assigned a different name. That class could also have attributes defining additional information about a missing person, such as:
 
 - A photo of the person's face
-- A unique ID for the person such as a Social Security number
+- A unique ID such as a Social Security number
+- The person's date of birth
 
-It's obvious that these should be instance attributes because no two Social Security numbers and faces are identical.
+These should be instance attributes because they vary from person to person.
 
 ## Load a database of faces
 
-Let's begin building a missing-persons example by loading a database of facial images. The dataset you will load is a publicly available one called the [Olivetti Faces dataset](https://scikit-learn.org/0.19/datasets/olivetti_faces.html). It was originally created by AT&T.
+So that we have some data to work with, let's load a database of facial images. The dataset you will load is a publicly available one called the [Olivetti Faces dataset](https://scikit-learn.org/0.19/datasets/olivetti_faces.html). It was originally created by AT&T.
 
 1. Return to the Azure Notebooks project you created in the previous unit and create a new Python 3.6 notebook named **Missing Persons.ipynb** or something similar. Then open the notebook.
 
@@ -64,69 +85,47 @@ Let's begin building a missing-persons example by loading a database of facial i
 
 Now that we have some faces to work with, let's shift our thinking to objects, classes, and attributes.
 
-## Define a class containing a class attribute
-
-It might be handy to know how many people the dataset contains faces for. Because the Olivetti Faces dataset provides 10 facial images for each person, you divide the total number of images by 10 to get a count of people. In the steps that follow, you will write a class named `mPerson` that represents a missing person. Then you will add  a class attribute that tells you how many people the dataset contains.
-
-1. Run the following code in a new notebook cell to define a class named `mPerson` containing a class attribute named `num_people`:
-
-	```python
-	class mPerson:
-	    num_people = int(faces.data.shape[0] / 10)
-	```
-
-	Note the call to Python's built-in `int()` function. The expression in parentheses returns a `float`, but a count of people should always be a whole number. `int()` converts the floating-point number into an integer.
-
-1. What's interesting about class attributes is that you don't have to instantiate a class to access them. They are always available. To demonstrate, use the following code to count the number of people in the dataset:
-
-	```python
-	print(mPerson.num_people)
-	```
-
-How many people are represented in the dataset? Is the answer what you expected?
-
-## Add an instance attribute
+## Define a class containing instance attributes
 
 Instance attributes differ from one class instance (object) to another. You can't access them without a class instance as you can class attributes. Instead, you must create an instance of the class. Python provides multiple ways to create instance attributes, but the most common is to define an `__init__()` method containing the attributes you want objects to have.
 
-1. Run the following code in a new notebook cell to modify how `mPerson` is defined and add instance attributes:
+1. Run the following code in a new notebook cell to define an `mPerson` class containing three instance attributes:
 
 	```python
 	class mPerson:
-	    num_people = int(faces.data.shape[0] / 10)
-	    
-	    def __init__(self, pic_num, name):
-	        self.pic_num = pic_num
-	        self.pic_cont = faces.images[pic_num * 10]
+	    def __init__(self, name, photo, date_of_birth):
 	        self.name = name
+	        self.photo = photo
+	        self.dob = date_of_birth
 	```
 
-	The `__init()__` method uses Python's `self` keyword to refer to the object instance. It also defines three instance attributes that can accessed on `mPerson` objects:
+	The `self` keyword refers to the object instance and is provided in the first argument to `__init__()`. Inside `__init__()` are three instance attributes that can accessed on `mPerson` objects:
 
-	- `pic_num`, which identifies, using a 0-based index, the person in the Olivetti dataset whose face should be assigned to this `mPerson` instance
-	- `pic_cont`, which references the facial image itself
 	- `name`, which holds the person's name
+	- `photo`, which holds an image of the person's face
+	- `dob`, which holds the person's date of birth
 
-	The input arguments `pic_num` and `name` are provided when the object is created. The first is copied into the instance attribute named `pic_num` and used to pick an image from the faces dataset for the `pic_cont` attribute. The second is copied to the object's `name` attribute.
+	Three arguments — `name`, `photo`, and `date_of_birth` — must be provided when the object is created. (The `self` argument is provided by Python itself.) Each is copied into the corresponding instance attribute.
 
-1. It's time to test these new attributes. Run the following code to create an instance of `mPerson` named `aPerson` that has the name "Stan" and is assigned the first face in the Olivetti dataset:
+1. Let's test these attributes. Use the following code to create an instance of `mPerson` named `aPerson` that has the name "Adam" and is assigned the first face in the Olivetti dataset:
 
 	```python
-	aPerson = mPerson(0, "Stan")
+	aPerson = mPerson("Stan", faces.images[0], datetime.datetime(1990, 9, 16))
 	```
 
-1. Now use these statements to display Stan's name and face:
+1. Now use these statements to display Adam's name and face:
 
 	```python
 	print(aPerson.name)
-	plt.imshow(aPerson.pic_cont, cmap=plt.cm.gray)
+	plt.axis('off')
+	plt.imshow(aPerson.photo, cmap=plt.cm.gray)
 	```
 
-	![Hello, Stan!](media/stans-face.png)
+	![Hello, Adam!](media/adams-face.png)
 
-	_Hello, Stan!_
+	_Hello, Adam!_
 
-Note the tick marks on the image's horizontal and vertical axes indicating that the image measures 64 x 64 pixels. That's 4,096 pixels per image, which corresponds to the output from `faces.data.shape` above. 
+Because `name`, `photo`, and `dob` are instance attributes, you could create hundreds of `mPerson` objects, and each could hold a different name, photo, and date of birth. If these were class attributes instead, `name`, `photo`, and `dob` would have to be the same for every person — clearly not a model of what happens in the real world.
 
 ## Data hiding
 
