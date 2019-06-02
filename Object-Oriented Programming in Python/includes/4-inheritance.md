@@ -1,82 +1,78 @@
-# Inherit a class
+# Inheritance
 
-Inheritance is one of those terms that can mystify people because we use it term in so many ways. For example, someone can inherit resources from another person: or someone reads the "last will and testament" and suddenly you're rich beyond your wildest dreams.  Many people try to describe OOP in the context of genetic inheritance, but that analogy falls a bit short for a lot of reasons. For example, your grandmother might have green eyes, but your mother doesn't, yet you do. Genetic inheritance skips generations -- and that's not how computers work.
+Inheritance, also know as *subclassing*, is one of the fundamental principles of object-oriented programming. It lets you define new classes that inherit the attributes and methods of other classes. OOP programmers often speak of "is-a" relationships. You might have an `animal` class that defines the basic characteristics and behavior of an animal. But cats and dogs are different, so you could use inheritance to define new classes named `cat` and `dog`. A cat is an animal, and a dog is an animal. In the `cat` and `dog` classes, you are free to add attributes and methods that differentiate a cat from a dog. The `cat` class could have a `meow()` method, for example, while the `dog` class could have a `bark()` method. Meanwhile, both `cat` and `dog` would share attributes and methods inherited from `animal`.
 
-So to better understand the concept of inheritance, we use examples like recipes or architectural drawings. When you think of inheritance in OOP, think of the word "except." I like that chocolate chip cookie recipe, except there aren't enough chocolate chips (a change to the original recipe) and the recipe doesn't include any nuts (an addition to the original recipe). I like that house design, except that the kitchen and dining room are too small, and the living room is way too large (both changes). The hall closet also isn't needed, so we can use the space for some other need (a deletion).
+Inheritance promotes *code reuse*. If you want to write a class to represent missing persons, you don't have to copy-and-paste the code for a class representing persons. You simply inherit from the `person` class and add attributes and methods that are unique to missing persons. Now if you make a change to the `person` class, also known as the *base class*, those changes automatically propagate down to the missing-person class.
 
-In OOP terms, that means all of the original elements are in the new class as were in the existing class, except those that you didn't want for whatever reason.
+In this unit, you will see inheritance at work by writing a new class named `mMissingPerson` that inherits from `mPerson` but adds attributes and methods of its own. You will also learn how to override attributes and methods inherited from another class, as well as how to remove inherited attributes that don't make sense in the inherited class.
 
-When thinking about except, consider these issues:
+## Create a class to represent missing persons
 
-- Something needs to be added
-- Something needs to be removed
-- Something needs to be changed
+One characteristic that differentiates a missing person from a normal person is the date that the person went missing. Let's write a missing-person class that includes a `missing_since` attribute and a `get_years_missing()` method that computes the number of years the person has been missing.
 
-This unit looks at a new class, `mAcquaintance`. It works just like `mRelative`, except that you must now consider your relationship with the missing person (an addition); you need more than just a first name (a change); and you no longer have a cabinet (a deletion); but you do have access to an information resource (an addition). The purpose of `mAcquaintance` is to handle missing person cases where there isn't a direct family connection; it could be a person from work or a person who does volunteer activity with a particular group. Even though the connection is more tenuous, the concern is just as real. However, the information is necessarily less personal. It's different, so you must handle it differently.
+1. Return to the missing-persons notebook and enter the following class definition into a new cell. Then run the cell:
 
-## Differentiating between parent and child
+	```python
+	class mMissingPerson(mPerson):
+	    def __init__(self, name, photo, date_of_birth, date_missing):
+	        # Construct the base object
+	        mPerson.__init__(self, name, photo, date_of_birth)
+	        
+	        # Add a missing_since attribute
+	        self.missing_since = date_missing
+	        
+	    # Add a get_years_missing() method
+	    def get_years_missing(self):
+	        return int((datetime.datetime.now() - self.missing_since).days / 365.25)
+	```
 
-You may have favorite cookbooks containing the best recipes you've ever found, except they're not quite what you want. Most cooks mark up their cookbooks with little changes that improve the recipes. The original recipe is the parent and acts as a starting point for the child. Even though the original recipe produces a final product, you want a slightly different final product, so you mark it up. The marks you put on the recipe transform it from the original that you almost like, to the unique version that you really like.
+	You just defined a new class (subclass) named `mMissingPerson` that inherits from `mPerson`. When created, an `mMissingPerson` object creates an `mPerson` object by calling the latter's `__init__()` method. Then it defines an instance attribute of its own (`missing_since`) and a method that subtracts the date the person went missing from today's date to compute how long that person has been missing. 
 
-Buildings work a bit differently, but the concept is the same. A blueprint may contain a template for a basic building. This parent is never actually used for a building because it lacks features, such as kitchen details, that a completed building needs. However, you could still build this building and modify it later.
+1. Use the following code to create an `mMissingPerson` object and show how long the person has been missing:
 
-If you are a real estate developer, to make a row of houses that all look the same from the outside more appealing, you offer options. The options add, remove, or change elements of the template. These are the children. The children still have the same dimensions as the parent and the essential elements are in the same place, but the children are inherently different from the parent because they provide a buildable design.
+	```python
+	aPerson = mMissingPerson("Adam", faces.images[0], datetime.datetime(1990, 9, 16), datetime.datetime(2016, 1, 1))
+	print(aPerson.name + ' has been missing for ' + str(aPerson.get_years_missing()) + ' years')
+	```
 
-Inheritance in Python is a combination of these two ideas. You can start out with either a fully functional class that is useful immediately or a template class that you could still instantiate, but isn't useful immediately. In both cases, you can use the except principle to say that you like the way the class is constructed, except for specific features.
+	Observe that the `mMissingPerson` object contains the `name` attribute inherited from `mPerson` as well as the `get_years_missing()` method it added itself. When creating an `mMissingPerson` object, you must provide the date that the person went missing as well as a name, a photo, and a date of birth. That comes from `mMissingPerson`'s `__init__()` method, which serves the same purpose in an inherited class as it does in a base class.
 
-If you have experience with other languages such as C# or Java, you may wonder if Python supports static classes. Static classes are [classes you can't instantiate](https://www.c-sharpcorner.com/UploadFile/74ce7b/static-class-in-C-Sharp/); you can only inherit them. The short answer is no: You can instantiate an object from any class in Python; there is no such thing as a static class.
+If you want further proof that `mMissingPerson` objects contain `missing_since` attributes, execute a `print(aPerson.__dict__.keys())` statement in the notebook. This lists the attributes present in the object.
 
-Generally, you don't need to create static classes in Python because of the manner in which the language works. However, you can create modules containing [only static methods](https://stackoverflow.com/questions/30556857/creating-a-static-class-with-no-instances) that could simulate a static class. This unit doesn't discuss this approach because creating pseudo-static classes really isn't the Pythonic way to do things.
+## Override an inherited attribute
 
-## Extending a class
+Occasionally it is useful to override a method or attribute inherited from the base class. You have already seen how to override methods: simply implement a method of the same name in the subclass. But what about attributes? Can they be overridden, too?
 
-The process of adding to a class extends the original definition. You subclass, create a child version of the parent class, to obtain useful new features. In the case of `mAcquaintance`, you need to add attributes to represent a relationship with the other person and a attribute to define the information resource. With this in mind, type the following code into your **Missing_Relatives_Example.ipynb** file. You can use the same file for both parent and child classes (unlike some languages where you must use separate files).
+It turns out that they can.
+
+
+
+
+
+
+
+## Remove an inherited attribute
+
+Suppose you defined a new class named `mAnonymousPerson` that inherits from `mPerson`. In that case, you might want to remove the `name` attribute so that an anonymous person remains — well — anonymous.
+
+You can include calls to Python's `delattr()` function in a class definition to remove attributes inherited from the base class. Here's how an `mAnonymousPerson` class might look:
 
 ```python
-class mAcquaintance(mRelative):
-    
-    def __init__(self, pic_num, name, relation, info):
-        
-        # Start by creating the parent object
-        mRelative.__init__(self, pic_num, "", -1)
-        
-        # Add the required attributes.
-        self.relation = relation
-        self.info = info
+class mAnonymousPerson(mPerson):
+    def __init__(self, photo, date_of_birth):
+        mPerson.__init__(self, '', photo, date_of_birth)
+        delattr(self, 'name')
 ```
 
-To create a subclass, you begin by adding the name of the parent to the class definition in parenthesis. The line, `class mAcquaintance(mRelative):`, says that `mAcquaintance` is a subclass, a child, of `mRelative`.
-
-In order to extend `mRelative`, you must create an `__init__(`) method in `mAcquaintance` that overrides the __info__() method in `mRelative`. You learn more about overriding things later in this unit, but just put the concept of overriding aside for the moment.
-
-The next line looks odd indeed, but believe it or not, you actually create an instance of `mRelative` and assign the values you want to it. In this case, you pass along the `pic_num` because you eventually need it for `mAcquaintance`. However, notice that the name and `cab_file` arguments contain empty values because you don't need them.
-
-The next two lines add new attributes, just as you did for `mRelative`. However, these attributes are exclusive to `mAcquaintance`.
-
-To try out the new class, you must first run all of the code for `mRelative`, including importing the database (you don't have to perform the tests). After you run the `mRelative` code, you can run the `mAcquaintance` code to create the class.
-
-Testing the class requires that you instantiate an object using this code:
+And here's how an instance would be created:
 
 ```python
-anAcquaintance = mAcquaintance(1, "Albert", "Friend", "Mother")
-
-print(anAcquaintance.__dict__)
-print(anAcquaintance.__dict__.keys())
+aPerson = mAnonymousPerson(faces.images[0], datetime.datetime(1990, 9, 16))
 ```
 
-It's important to note that when you create the `mAcquaintance` object, `anAcquaintance`, you use the syntax for creating an `mAcquaintance`, not an `mRelative` object. This is why you see four arguments instead of three: `pic_num`, name, relation, and info.
+The `name` attribute doesn't exist in the subclass. An attempt to access it on an `mAnonymousPerson` object would generate a run-time error.
 
-Just creating an object doesn't  tell you if you were successful, though; you need to see the attributes. This is where the __dict__ attribute comes into play. You didn't create this attribute; you get it from Python. The __dict__ attribute is a dictionary containing key and value pairs. Of course, sometimes you don't want to know the content of the keys, you just want to see the keys, so you can call __dict__.keys() instead.
-
-Here is the output of this code.
-
-![tk](media/tk.png)
-
-_tk_
-
-What you see is a key, such as `pic_num`, followed by a colon, followed by its value. The entries are separated with commas.The rather lengthy array is the value of the `pic_cont` argument. Otherwise, the other arguments should look pretty straightforward. Notice that name (near the bottom) contains an empty string and `cab_file` really does contain a value of -1.
-
-The last line contains just the names of the attributes. All of the entries you expect are there, but they came from two different places: the parent and the child.
+In case you wondered, you can't delete methods inherited from a base class. You can, however, override them and change the way they work (or simply have them do nothing).
 
 ## Modifying an attribute
 
@@ -131,21 +127,3 @@ When you run this code, you see the output shown here:
 _tk_
 
 As you can see, name now appears as a dictionary with the appropriate values associated with the correct keys.
-
-## Removing an attribute
-
-The new `mAcquaintance` class is nearly complete. However, you have the `cab_file` attribute hanging around unused. Odd things can happen when you're not tidy—people might choose to assign a value to that attribute and you don't really know what that will do to the code unless you perform all sorts of testing on it – and even then you'll miss bugs.
-
-It's sort of like forgetting to cross out the baking soda you no longer need in a recipe. Someone might not realize that you added baking powder to use in place of the baking soda, so the baking soda is no longer needed.
-
-As with making modifications, some purists will go the raised eyebrow route when you perform this next task of removing the `cab_file` attribute, but really, you'll be glad that you kept your classes tidy in the long run. Python actually provides a method, `delattr()`, to perform this task. You can add this following code to your `mAcquaintance` class:
-
-```python
-# Remove the cab_file attribute
-delattr(self, 'cab_file')
-```
-You don't have to make any changes to the test code in this case. All you need to do is run it to see the following output, which shows that the `cab_file` attribute is now gone.
-
-![tk](media/tk.png)
-
-_tk_
