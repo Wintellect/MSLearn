@@ -1,6 +1,6 @@
 # Introduction
 
-Imagine you work for a company that locates missing persons. You have been assigned to a team that is writing an app to catalog missing persons and information about them in a database. Your code will define the information stored about a person, including a name and a photo, and provide logic for acting upon that information. The application is written in Python, so you will be using Python as well.
+Imagine you work for a company that locates missing persons. You have been assigned to a team that is writing an application to catalog missing persons and information about them in a database. Your code will define the information stored about a person, including a name and a photo, and provide logic for acting upon that information. The application is written in Python, so you will be using Python as well.
 
 You could write classic [procedural code](https://en.wikipedia.org/wiki/Procedural_programming) containing functions such as `add_missing_person_to_database()` and `get_information_about_missing_person()`. But such code, while common, can also be difficult to maintain — especially as, over time, the code base grows in size and complexity.
 
