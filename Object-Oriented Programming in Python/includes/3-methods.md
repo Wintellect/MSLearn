@@ -107,4 +107,4 @@ You can replace the built-in `___str__()` method (or any other method, for that 
 	print(aPerson)
 	```
 
-How do the outputs from the three `print()` statements differ? Or do they differ at all? What does this tell you about how Python's `str()` function is implemented inside the Python run-time?
+How do the outputs from the three `print()` statements differ, or do they differ at all? What does this tell you about how Python's `str()` function is implemented inside the Python run-time?
