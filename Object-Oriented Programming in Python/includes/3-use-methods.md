@@ -43,7 +43,7 @@ Only instance methods can access instance attributes. If you stored a person's b
 
 ## Add instance methods to `mPerson`
 
-Instance methods are associated with a particular object, rather than with the class. They are defined by adding functions to the class that receive `self` as the first parameter. Internally, instance methods are free to access the object's attributes and even other methods.
+Instance methods are associated with a particular object rather than with the class. They are defined by adding functions to the class that receive `self` as the first parameter. Internally, instance methods are free to access the object's attributes and even other methods.
 
 1. Return to your notebook and enter a new definition for the `mPerson` class:
 
