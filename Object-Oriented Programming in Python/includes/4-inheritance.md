@@ -37,7 +37,7 @@ One characteristic that differentiates a missing person from a normal person is 
 
 	Observe that the `mMissingPerson` object contains the `name` attribute inherited from `mPerson` as well as the `get_years_missing()` method it added itself. When creating an `mMissingPerson` object, you must provide the date that the person went missing as well as a name, a photo, and a date of birth. That comes from `mMissingPerson`'s `__init__()` method, which serves the same purpose in an inherited class as it does in a base class.
 
-If you want further proof that `mMissingPerson` objects contain `missing_since` attributes, execute a `print(aPerson.__dict__.keys())` statement in the notebook. This lists the attributes present in the object.
+If you'd like, use a `print(dir(aPerson))` statement to list the object's methods and attributes and confirm that the list includes members defined in `mPerson` as well as members defined in `mMissingPerson`. 
 
 ## Override an inherited method
 
