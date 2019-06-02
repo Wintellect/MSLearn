@@ -69,13 +69,13 @@ Everything is an object in Python. When you create a variable and assign it a nu
 	print(dir(1))
 	```
 
-	The `dir()` function provides a list of an object's methods. You sometimes hear methods referred to as *functions* when working with Python. The two terms are synonymous, but you can avoid confusion when talking with other people if you simply call them methods. 
+	The `dir()` function provides a list of an object's attributes and methods. You sometimes hear methods referred to as *functions* when working with Python. The two terms are synonymous, but you can avoid confusion when talking with other people if you simply call them methods. 
 
 	![Listing an object's methods](media/run-cell-2.png)
 	
 	_Listing an object's methods_
 
-	All the entries you see, such as `to_bytes`, are methods. A method represents an action that you can perform on an object. For example, `to_bytes()` outputs the object value in byte format, which is just a special way of looking at the data.
+	All the entries you see in the list are methods. A method represents an action that you can perform on an object. For example, `to_bytes()` outputs the object value in byte format, which is just a special way of looking at the data.
 
 1. Notice the `__str__` method in the list. This method turns a value into a `str` (string) type. An object's type is simply the class it was created from. So the type of 1 is `int`.
 
