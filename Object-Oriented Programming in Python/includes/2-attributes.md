@@ -99,7 +99,7 @@ Instance attributes differ from one class instance (object) to another. You can'
 	        self.dob = date_of_birth
 	```
 
-	The `self` keyword refers to the object instance and is provided in the first argument to `__init__()`. Inside `__init__()` are three instance attributes that can accessed on `mPerson` objects:
+	The `self` keyword refers to the object instance and is provided in the first argument to `__init__()`. Inside `__init__()` are three instance attributes that can be accessed on `mPerson` objects:
 
 	- `name`, which holds the person's name
 	- `photo`, which holds an image of the person's face
