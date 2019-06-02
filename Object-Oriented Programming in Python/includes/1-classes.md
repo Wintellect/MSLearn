@@ -40,7 +40,7 @@ You can create additional projects and notebooks as you work with Azure Notebook
 
 ## Objects in Python
 
-Everything is an object in Python. When you create a variable and assign it a number, Python creates an instance of a built-in class. When you create a variable and assign it a string, Python once more creates an instance of a built-in class, albeit a different one. Before you begin writing classes of your own, it is helpful to peek under the hood and understand what Python does with its own object types.
+Everything is an object in Python. When you create a variable and assign it a number, Python creates an instance of a built-in class. When you create a variable and assign it a string, Python once more creates an instance of a built-in class, albeit a different one. Before you begin writing classes of your own, it is helpful to peek under the hood and understand how Python itself uses objects.
 
 1. To see how objects work in Python, return to the notebook you created a moment ago and type or paste the following code into the empty cell at the top of the notebook:
 
