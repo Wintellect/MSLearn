@@ -57,44 +57,50 @@ _tk_
 
 ## Defining instance methods
 
-Instance methods are associated with a particular object, rather than with the class. You use instance methods to do something with the object, such as baking your favorite cookie or building a house. The verbs baking and building are equivalent to instance methods. You don't bake just any old cookie, you bake a specific cookie. Likewise, even if you're building an entire block of the same house, for the moment, you're building a specific house.
+Instance methods are associated with a particular object, rather than with the class. They are defined by adding functions to the class that receive `self` as the first parameter. Internally, instance methods are free to access the object's attributes and even other methods.
 
-Consequently, as when working with attributes, you refer to self when working with instance methods. Doing so tells Python that this method refers to this particular object and to no other object.
+1. Return to your notebook and enter a new definition for the `mPerson` class:
 
-To see how this works, add the following code to your class:
+	```python
+	import datetime
+	
+	class mPerson:
+	    def __init__(self, photo, name, date_of_birth):
+	        self.photo = photo
+	        self.name = name
+	        self.birth_date = date_of_birth
+	        
+	    def get_age(self):
+	        return int((datetime.datetime.now() - self.birth_date).days / 365.25)
+	    
+	    def show_face(self):
+	        plt.axis('off')
+	        plt.imshow(self.photo, cmap=plt.cm.gray)
+	```
 
-```python
-def face_number(self):
-    return "Currently processing face: " + str(self.pic_num)
-    
-def person_info(self):
-    return 'Getting information for {0} in cabinet {1}.'.format(
-        self.name, self.cab_file)
-```
+	`mPerson` now contains two instance methods: one named `get_age()` that returns the person's age in years, and another named `show_face` that displays the person's face.
 
-As stated earlier, you create two instance methods that work with the object attributes. The `face_number()` method outputs the number of the face that you're currently processing in the dataset. Notice that this method uses concatenation (the addition of two string elements – that is, "abc" concatenated with "def" is "abcdef") to provide output. Before you add it to the text, you must convert the int value, self.pic_num, to a string; otherwise Python displays an error message.
+	> The age computation isn't exact because it provides only rudimentary handling of leap years. The solution to that is a topic for another day.
 
-The `person_info()` method uses a different approach. In this case, you create a string containing placeholders within curly braces. This is called a format string because it uses the `format()` method to create a string from attributes that may be of different types. A format string can perform amazing transformations, but for now, just note that this format string contains two placeholders, one for each of the attributes.
+1. Now it's time to test these instance methods. Run the following statements in a new cell:
 
-Now it's time to test your new class. Of course, you need to run the class code again so Python recognizes the changes. Then recreate the aRelative object using code like this:
+	```python
+	aPerson = mPerson(faces.images[0], "Stan", datetime.datetime(1990, 9, 16))
+	print(str(aPerson.get_age()))
+	aPerson.show_face()
+	```
 
-```python
-aRelative = mRelative(0, "Stan", 123)
-At this point, you can test the aRelative object using this code:
+1. Confirm that you see the following output:
 
-print(aRelative.face_number())
-print(aRelative.person_info())
-```
+	![Output from instance methods](media/instance-method-output.png)
+	
+	_Output from instance methods_
 
-The first call displays the face number, while the second displays the person's information. Here's what you can expect as output:
-
-![tk](media/tk.png)
-
-_tk_
+Neither of the instance methods you added take arguments (other than `self`, which is required of an instance method), but instance methods *can* take arguments just like other functions in Python.
 
 ## Overriding the __str__() method
 
-Python supplies a default `__str__()` method, which works well with the simple built-in object types. But for custom types, it rarely provides the results you want. The default method tells you about the object: the object's name and where the object is located in memory. It would be a lot more useful if it could tell you something specific about the object's content. 
+Python supplies a default `__str__()` method, which works well with the primitive built-in object types. But for custom types, it rarely provides the results you want. The default method tells you about the object: the object's name and where the object is located in memory. It would be a lot more useful if it could tell you something specific about the object's content. 
 
 You can replace the built-in `___str__()` method (or any other method, for that matter) by *overriding* it. You don't have to do anything  special to override a method in Python. You just provide a new version of the method in the class.
 
@@ -105,9 +111,9 @@ You can replace the built-in `___str__()` method (or any other method, for that 
 	    return self.name + ', age ' + str(self.get_age())
 	```
 
-	This method returns a string denoting the person's name and age. The information returned in the string is obtained by reading the object's `name` attribute and calling the object's `get_age()` method.
+	This method returns a string denoting the person's name and age. The information contained in the string is obtained by reading the object's `name` attribute and calling the object's `get_age()` method.
 
-1. To test the new `__str__()` method, enter the following code into a new cell and run it:
+1. To test the new `__str__()` method, enter the following code and run it:
 
 	```python
 	print(str(aPerson))
@@ -115,4 +121,4 @@ You can replace the built-in `___str__()` method (or any other method, for that 
 	print(aPerson)
 	```
 
-How do the outputs from the three `print()` statements differ? Or do they differ at all? What does this tell you about how Python's `str()` function is implemented inside the Python runtime?
+How do the outputs from the three `print()` statements differ? Or do they differ at all? What does this tell you about how Python's `str()` function is implemented inside the Python run-time?
