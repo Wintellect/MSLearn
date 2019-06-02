@@ -28,9 +28,9 @@ In this module, you learned the essential concepts underlying object-oriented pr
 	- `inheritedFrom()`
 	- `delattr()`
 
-1. tk.
+1. Which of the following statements is false?
 
-	- tk
-	- tk
-	- tk
-	- tk 
+	- Python supports data hiding using conventions, not strict lexical rules
+	- Python provides native support for methods, attributes, and events
+	- The first parameter to every instance method is `self`
+	- You can't delete methods inherited by a subclass
