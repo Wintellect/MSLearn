@@ -38,7 +38,7 @@ These should be instance attributes because they vary from person to person.
 
 ## Load a database of faces
 
-So that we have some data to work with, let's load a database of facial images. The dataset you will load is a publicly available one called the [Olivetti Faces dataset](https://scikit-learn.org/0.19/datasets/olivetti_faces.html). It was originally created by AT&T.
+So that we have some data to work with, let's load a database of facial images. The dataset is a publicly available one called the [Olivetti Faces dataset](https://scikit-learn.org/0.19/datasets/olivetti_faces.html). It was originally created by AT&T.
 
 1. Return to the Azure Notebooks project you created in the previous unit and create a new Python 3.6 notebook named **Missing Persons.ipynb** or something similar. Then open the notebook.
 
