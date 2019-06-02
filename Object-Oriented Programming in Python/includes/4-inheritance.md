@@ -65,14 +65,15 @@ In South Korea, babies are considered to be 1 year old when they are born. Conse
 	date_birth = datetime.datetime(1990, 9, 16)
 	date_missing = datetime.datetime(2016, 1, 1)
 	face = faces.images[0]
+	name = "Adam"
 	
-	aPerson = mPerson("Adam", face, date_birth)
+	aPerson = mPerson(name, face, date_birth)
 	print(str(aPerson.get_age()))
 	
-	aPerson = mMissingPerson("Adam", face, date_birth, date_missing)
+	aPerson = mMissingPerson(name, face, date_birth, date_missing)
 	print(str(aPerson.get_age()))
 	
-	aPerson = mMissingSKPerson("Adam", face, date_birth, date_missing)
+	aPerson = mMissingSKPerson(name, face, date_birth, date_missing)
 	print(str(aPerson.get_age()))
 	```
 
