@@ -40,7 +40,7 @@ You can create additional projects and notebooks as you work with Azure Notebook
 
 ## Objects in Python
 
-Everything is an object in Python. It would be easy to confuse the Python programming paradigm, the method used to create code, with the underlying language concepts. A programming paradigm would allow you to use the [functional, imperative, object-oriented, or procedural coding styles](https://blog.newrelic.com/engineering/python-programming-styles/). However, no matter which programming paradigm you use, Python itself uses objects for everything.
+Everything is an object in Python. When you create a variable and assign it a number, Python creates an instance of a built-in class. When you create a variable and assign it a string, Python once more creates an instance of a built-in class, albeit a different one. Before you begin writing classes of your own, it is helpful to peek under the hood and understand what Python does with its own object types.
 
 1. To see how objects work in Python, return to the notebook you created a moment ago and type or paste the following code into the empty cell at the top of the notebook:
 
@@ -63,19 +63,19 @@ Everything is an object in Python. It would be easy to confuse the Python progra
 
 	You could easily test other kinds of data (feel free to experiment!), but be assured that any sort of data you try has a associated class, whether one that is built into Python or one you have written yourself.
 
-1. Most classes have methods associated with them. Type the following code into the next cell and click **Run** to execute it:
+1. All classes have methods associated with them. Type the following code into the next cell and click **Run** to execute it:
 
 	```python
 	print(dir(1))
 	```
 
-	The `dir()` function provides a list of an object's methods. You sometimes hear methods referred to as *functions* when working with Python. The two terms are synonymous, but you avoid confusion when talking with other people if you simply call them methods. 
+	The `dir()` function provides a list of an object's methods. You sometimes hear methods referred to as *functions* when working with Python. The two terms are synonymous, but you can avoid confusion when talking with other people if you simply call them methods. 
 
 	![Listing an object's methods](media/run-cell-2.png)
 	
 	_Listing an object's methods_
 
-	All the entries you see, such as `to_bytes`, are methods. A method represents an action that you can perform on an object. For example, `to_bytes()` outputs the object value in byte format, which is just a special way of looking at the data. Don't worry about this particular method for now. Even though these methods exist for any value, let's try them out with a variable.
+	All the entries you see, such as `to_bytes`, are methods. A method represents an action that you can perform on an object. For example, `to_bytes()` outputs the object value in byte format, which is just a special way of looking at the data.
 
 1. Notice the `__str__` method in the list. This method turns a value into a `str` (string) type. An object's type is simply the class it was created from. So the type of 1 is `int`.
 
@@ -86,15 +86,11 @@ Everything is an object in Python. It would be easy to confuse the Python progra
 	print(type(myVar.__str__()))
 	```
 
-	The first line is an assignment. You're assigning the value 1 to an object named `myVar`. The `myVar` object now has an attribute: the value 1. The second line of code calls the `__str__()` method that is part of the `int` class and therefore present in the `myVar` object.
+	The first line is an assignment. You're assigning the value 1 to an object named `myVar`. The `myVar` object now has an attribute: the value 1. The second line of code calls the `__str__()` method that is part of the `int` class and therefore present in the `myVar` object. What does the output from the code tell you?
 
-	What does the output from the code tell you?
+The `__str__()` method created a new object from `myVar` of type `str`. The `myVar` object is still the same, completely untouched; it's still of type `int`. The new object – which doesn't have a name because you haven't assigned it one – is of type `str`.
 
-	The `__str__()` method has created as new object from `myVar` of type `str`. The `myVar` object is still the same, completely untouched; it's still of type `int`. The new object – which doesn't have a name because you haven't assigned it one – is of type `str`.
-
-You often use methods to create new objects that have attributes you need from existing objects. At this point, you have enough information about Python classes and objects to start creating a class of your own.
-
-## Defining a class
+## Define a class
 
 Python has several built-in classes including `int`, `float`, `bool`, and `str`, but it also allows you to define classes of your own. This is the crux of object-oriented programming.
 
@@ -113,15 +109,15 @@ Every Python class you create begins with the word `class` (which makes sense). 
 	- The class name ("myClass")
 	- A colon marking the end of the `class` statement
 
-	Notice that the next line is indented. This is important! Python uses indentation to indicate structure. In this case, the call to the `print()` function is part of `myClass`.
+	Notice that the next line is indented. This is important! Python uses indentation to indicate structure. In this case, the `print()` statement is part of `myClass`.
 
 1. Run the code and confirm that you see the following output:
 
 	![Defining a class](media/run-cell-3.png)
 	
-The output shows that you actually created the class. The `print()` function executes during the creation process. Normally, you wouldn't have a `print(`) statement like this, but here it helps to see how the class creation works.
+The output shows that you actually created the class. The `print()` function executes during the creation process. Normally, you wouldn't use a `print(`) statement this way, but here it helps to see how the class creation works.
 
-## Instantiating a class
+## Instantiate a class
 
 At this point, you have a very simple (and nearly useless) class, but it serves to show how classes are defined. Now let's created an object from the class.
 
@@ -140,6 +136,6 @@ At this point, you have a very simple (and nearly useless) class, but it serves 
 	print(dir(myVar))
 	```
 
-	Notice the output shows that the type of `myVar` is `__main__.myClass`. `__main__` is the scope in which this code is executing. A scope is a kind of container that holds pieces of code together. You don't see a scope for the `int` type because `int` is defined outside the scope of the current application. You see `__main__` for `myClass` because you defined `myClass` within the current application. It's the default scope, but you don't need to worry about it for now. The important takeaway, for the moment, is that `myVar` is an instance of the `myClass` class.
+	The output shows that the type of `myVar` is `__main__.myClass`. `__main__` is the scope in which this code is executing. A scope is a kind of container that holds pieces of code together. You don't see a scope for the `int` type because `int` is defined outside the scope of the current application. You see `__main__` for `myClass` because you defined `myClass` within the current application. It's the default scope, but you don't need to worry about it for now. The important takeaway, for the moment, is that `myVar` is an instance of the `myClass` class.
 
-Also notice that you get default methods with your new class. Python provides a class with these default methods to perform essential tasks. However, the methods aren't really functional now. It's simply a good idea to know that they exist. As you continue with this module, the information will become more relevant.
+Also notice that you get default methods with your new class. Python provides a class with these default methods to perform essential tasks. However, the methods aren't really functional now. It's simply a good idea to know that they exist. As you continue with this module, this information will become more relevant.
