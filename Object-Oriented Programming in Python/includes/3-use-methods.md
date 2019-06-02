@@ -99,7 +99,7 @@ You can replace the built-in `___str__()` method (or any other method, for that 
 
 	This method returns a string denoting the person's name and age. The information contained in the string is obtained by reading the object's `name` attribute and calling the object's `get_age()` method.
 
-1. To test the new `__str__()` method, enter the following code and run it:
+1. Use the following code to test the new `__str__()` method:
 
 	```python
 	print(str(aPerson))
