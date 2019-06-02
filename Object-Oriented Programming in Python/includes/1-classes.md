@@ -1,6 +1,8 @@
 # Classes and objects in Python
 
-The first step in writing object-oriented code is writing the classes from which objects will be created. In this unit, you will create a class in Python and then use the class to instantiate an object. The term "instantiate" is just a fancy way of saying that Python uses the class to create an object by allocating memory for the object and copying the object's code and data into memory. Just as you use a blueprint to create a house or a recipe to create a cookie, Python uses classes to create objects.
+The first step in writing object-oriented code is writing the classes from which objects will be created. In this unit, you create a class in Python and then use the class to instantiate an object.
+
+The term "instantiate" is just a fancy way of saying that Python uses the class to create an object by allocating memory for the object and copying the object's code and data into memory. Just as you use a blueprint to create a house or a recipe to create a cookie, Python uses classes to create objects.
 
 To run your Python code, you will use [Jupyter notebooks](https://jupyter.org/). Jupyter is an environment based on [IPython](https://ipython.org/) that facilitates interactive programming and data analysis using a variety of programming languages, including Python. Jupyter notebooks enjoy widespread use in research and academia for mathematical modeling, machine learning, statistical analysis, and for teaching and learning how to code.
 
@@ -8,7 +10,9 @@ To run your Python code, you will use [Jupyter notebooks](https://jupyter.org/).
 
 [Azure Notebooks](https://blogs.msdn.microsoft.com/uk_faculty_connection/2017/06/10/guide-to-the-microsoft-azure-notebooks-for-students/) is a cloud-based platform for building and running [Jupyter notebooks](http://jupyter.org/). Azure Notebooks provide Jupyter as a service for free. It's a convenient way to build notebooks and to share them with others without having to install and manage a Jupyter server. And it's completely Web-based, making it an ideal solution for online collaboration.
 
-Azure notebooks are created through the portal at https://notebooks.azure.com and require nothing more than a browser and a [Microsoft account](https://account.microsoft.com/account). Notebooks are contained in projects, whose purpose is to group related notebooks. Let's begin by creating a project and then creating a notebook inside it.
+Azure notebooks are created through the portal at https://notebooks.azure.com and require nothing more than a browser and a [Microsoft account](https://account.microsoft.com/account). Notebooks are contained in projects, whose purpose is to group related notebooks.
+
+Let's begin by creating a project and then creating a notebook inside it.
 
 1. Navigate to https://notebooks.azure.com in your browser and sign in using your Microsoft account. Click **My Projects** in the menu at the top of the page. Then click the **+ New Project** button at the top of the "My Projects" page.
 
@@ -18,7 +22,7 @@ Azure notebooks are created through the portal at https://notebooks.azure.com an
 
 	_Creating a project_
 
-	Checking the "Public" box makes it easy to share notebooks later on. If you would prefer to keep the notebooks in this project private, make sure the box is unchecked. You can also go into project settings once a project is created and change its visibility to public or private.  
+	Checking the "Public" box makes it easy to share notebooks later on. If you prefer to keep the notebooks in this project private, make sure the box is unchecked. You can also go into the project settings after a project is created and change its visibility to public or private.  
 
 1. Click **+ New** and select **Notebook** from the menu to add a notebook to the project.
 
@@ -26,7 +30,7 @@ Azure notebooks are created through the portal at https://notebooks.azure.com an
 
 	_Adding a notebook to the project_
 
-1. Give the notebook a name such as "Learn Python.ipynb," and select **Python 3.6** as the language. This will create a notebook with a Python 3.6 kernel for executing Python code. One of the strengths of Azure notebooks is that you can use different languages by choosing different kernels.
+1. Give the notebook a name such as "Learn Python.ipynb," and select **Python 3.6** as the language. This creates a notebook with a Python 3.6 kernel for executing Python code. One of the strengths of Azure notebooks is that you can use different languages by choosing different kernels.
 
 	![Creating a notebook](media/add-notebook-2.png)
 
@@ -40,7 +44,9 @@ You can create additional projects and notebooks as you work with Azure Notebook
 
 ## Objects in Python
 
-Everything is an object in Python. When you create a variable and assign it a number, Python creates an instance of a built-in class. When you create a variable and assign it a string, Python once more creates an instance of a built-in class, albeit a different one. Before you begin writing classes of your own, it is helpful to peek under the hood and understand how Python itself uses objects.
+Everything is an object in Python. When you create a variable and assign it a number, Python creates an instance of a built-in class. When you create a variable and assign it a string, Python once more creates an instance of a built-in class, albeit a different one.
+
+Before you begin writing classes of your own, it is helpful to peek under the hood and understand how Python itself uses objects.
 
 1. To see how objects work in Python, return to the notebook you created a moment ago and type or paste the following code into the empty cell at the top of the notebook:
 
@@ -94,7 +100,9 @@ The `__str__()` method created a new object from `myVar` of type `str`. The `myV
 
 Python has several built-in classes including `int`, `float`, `bool`, and `str`, but it also allows you to define classes of your own. This is the crux of object-oriented programming.
 
-Every Python class you create begins with the word `class` (which makes sense). Of course, a class needs a name. A class also needs to do something. Let's begin with something simple: telling the user that the class has been created. In the real world, you wouldn't actually create a class like this, but it's helpful for learning in an incremental fashion.
+Every Python class you create begins with the word `class` (which makes sense). Of course, a class needs a name. A class also needs to do something.
+
+Let's begin with something simple: telling the user that the class has been created. In the real world, you wouldn't actually create a class like this, but it's helpful for learning in an incremental fashion.
 
 1. Type the following code into an empty cell in the notebook:
 

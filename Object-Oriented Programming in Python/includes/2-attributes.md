@@ -2,7 +2,7 @@
 
 Attributes hold the data that defines an object. For a pink flower, "pink" is an attribute of the flower. If you wrote a `flower` class, you might include an attribute named `color` that describes the flower's color. You might also include an attribute indicating the flower's type — for example, iris, tulip, or rose. Objects are not required to have attributes, but in practice, most do.
 
-In this unit, you will write a class named `mPerson` to hold information about a person. You will add attributes to it and learn how to access those attributes. You will also learn about an important convention that enables selected members of a class to be marked "for internal use only" so other programmers will steer clear of them.
+In this unit, you write a class named `mPerson` to hold information about a person. You  add attributes to it and learn how to access those attributes. You  also learn about an important convention that enables selected members of a class to be marked "for internal use only" so other programmers will steer clear of them.
 
 ## Class attributes vs. instance attributes
 
@@ -87,7 +87,9 @@ Now that we have some faces to work with, let's shift our thinking to objects, c
 
 ## Define a class containing instance attributes
 
-Instance attributes differ from one class instance (object) to another. You can't access them without a class instance as you can class attributes. Instead, you must create an instance of the class. Python provides multiple ways to create instance attributes, but the most common is to define an `__init__()` method containing the attributes you want objects to have.
+Instance attributes differ from one class instance (object) to another. You can't access them without a class instance, as you can with class attributes. Instead, you must create an instance of the class.
+
+Python provides multiple ways to create instance attributes, but the most common is to define an `__init__()` method containing the attributes you want objects to have.
 
 1. Run the following code in a new notebook cell to define an `mPerson` class containing three instance attributes:
 
