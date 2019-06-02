@@ -43,7 +43,7 @@ If you want further proof that `mMissingPerson` objects contain `missing_since` 
 
 Occasionally it is useful to override a method inherited from the base class to modify the way it works in the subclass. You have already seen how to override methods: simply implement a method of the same name in the subclass. But what if you need to call the base class's version of the method from the inherited class? That's what Python's `super()` method is for.
 
-In South Korea, babies are considered to be 1 year old when they are born. Consequently, they turn 2 on their first birthday, 3 on their second birthday, and so on. Suppose you wanted to create a special version of the `mMissingPerson` class named `mMissingSKPerson' that adds 1 to the integer returned by the `get_age()` method.
+In South Korea, babies are considered to be 1 year old when they are born. Consequently, they turn 2 on their first birthday, 3 on their second birthday, and so on. Suppose you wanted to create a special version of the `mMissingPerson` class named `mMissingSKPerson` that adds 1 to the integer returned by the `get_age()` method.
 
 1. Add the following class definition to the notebook and run it:
 
