@@ -110,6 +110,8 @@ Instance attributes differ from one class instance (object) to another. You can'
 1. Let's test these attributes. Use the following code to create an instance of `mPerson` named `aPerson` that has the name "Adam" and is assigned the first face in the Olivetti dataset:
 
 	```python
+	import datetime
+
 	aPerson = mPerson("Adam", faces.images[0], datetime.datetime(1990, 9, 16))
 	```
 
