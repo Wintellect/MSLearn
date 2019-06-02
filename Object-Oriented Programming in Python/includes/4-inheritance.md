@@ -4,7 +4,7 @@ Inheritance, also known as *subclassing*, is one of the fundamental principles o
 
 Inheritance promotes *code reuse*. If you want to write a class to represent missing persons, you don't have to copy-and-paste the code for a class representing persons. You simply inherit from the `person` class and add attributes and methods that are unique to missing persons. Now if you make a change to the `person` class, also known as the *base class*, those changes automatically propagate down to the missing-person class.
 
-In this unit, you will see inheritance at work by writing a new class named `mMissingPerson` that inherits from `mPerson` but adds attributes and methods of its own. You will also learn how to override attributes and methods inherited from another class, as well as how to remove inherited attributes that don't make sense in the inherited class.
+In this unit, you will see inheritance at work by writing a new class named `mMissingPerson` that inherits from `mPerson` but adds attributes and methods of its own. You will also learn how to override attributes and methods inherited from another class, as well as how to remove inherited attributes that don't make sense in the subclass.
 
 ## Create a class to represent missing persons
 
