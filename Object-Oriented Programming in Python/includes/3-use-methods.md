@@ -37,7 +37,7 @@ Then you could square a number by calling the static `square` method:
 square = mathops.square(2)
 ```
 
-The keyword `@staticmethod` decorating the `square` method tells Python that `square` is a static method, not an instance method.
+The keyword `@staticmethod` decorating the method tells Python that `square` is a static method, not an instance method.
 
 Only instance methods can access instance attributes. If you stored a person's birth date in an instance attribute, you couldn't read that date from a static method because there is no class instance associated with a static method — and therefore no birth date to read.  
 
