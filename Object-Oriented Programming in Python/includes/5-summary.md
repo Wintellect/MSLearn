@@ -11,7 +11,7 @@ In this module, you learned the essential concepts underlying object-oriented pr
 	- All of the above
 
 1. Which of the following statements about Python is correct?
-	- In Python, all variables are objects
+	- In Python, a string is an instance of the built-in `str` class
 	- Objects are only created when custom classes are instantiated
 	- Numbers are not objects, but simple values that are optimized for performance
 	- Python supports subclassing but limits each class to one subclass
