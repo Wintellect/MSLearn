@@ -62,13 +62,17 @@ In South Korea, babies are considered to be 1 year old when they are born. Conse
 1. Now perform a test by executing the following statements:
 
 	```python
-	aPerson = mPerson("Adam", faces.images[0], datetime.datetime(1990, 9, 16))
+	date_birth = datetime.datetime(1990, 9, 16)
+	date_missing = datetime.datetime(2016, 1, 1)
+	face = faces.images[0]
+	
+	aPerson = mPerson("Adam", face, date_birth)
 	print(str(aPerson.get_age()))
 	
-	aPerson = mMissingPerson("Adam", faces.images[0], datetime.datetime(1990, 9, 16), datetime.datetime(2016, 1, 1))
+	aPerson = mMissingPerson("Adam", face, date_birth, date_missing)
 	print(str(aPerson.get_age()))
 	
-	aPerson = mMissingSKPerson("Adam", faces.images[0], datetime.datetime(1990, 9, 16), datetime.datetime(2016, 1, 1))
+	aPerson = mMissingSKPerson("Adam", face, date_birth, date_missing)
 	print(str(aPerson.get_age()))
 	```
 
