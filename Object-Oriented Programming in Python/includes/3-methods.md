@@ -86,7 +86,7 @@ Neither of the instance methods you added take arguments (other than `self`, whi
 
 ## Override the __str__() method
 
-Python supplies a default `__str__()` method that works well with the rather primitive built-in object types. But for custom types, it rarely provides the results you want. The default method tells you about the object: the object's name and where the object is located in memory. It would be a lot more useful if it could tell you something specific about the object's content. 
+Python supplies a default `__str__()` method that works well with the rather primitive built-in object types. But for custom types, it rarely provides the results you want. The default method tells you the object's name and where the object is located in memory. It would be a lot more useful if it could tell you something specific about the object's content. 
 
 You can replace the built-in `___str__()` method (or any other method, for that matter) by *overriding* it. You don't have to do anything  special to override a method in Python. You just provide a new version of the method in the class.
 
