@@ -1,4 +1,4 @@
-# Create a class in Python
+# Classes and objects in Python
 
 The first step in writing object-oriented code is writing the classes from which objects will be created. In this unit, you will create a class in Python and then use the class to instantiate an object. The term "instantiate" is just a fancy way of saying that Python uses the class to create an object by allocating memory for the object and copying the object's code and data into memory. Just as you use a blueprint to create a house or a recipe to create a cookie, Python uses classes to create objects.
 

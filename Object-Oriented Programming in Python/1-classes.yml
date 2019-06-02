@@ -1,9 +1,9 @@
 ### YamlMime:ModuleUnit
-uid: learn.oop-in-python.6-summary
-title: Introduction
+uid: learn.oop-in-python.1-classes
+title: Classes and objects in Python
 metadata:
-  title: Summary
-  description: Summary
+  title: Classes and objects in Python
+  description: Using classes and objects in Python
   ms.date: 5/31/2019
   author: v-jeffpr
   ms.author: shana.matthews
@@ -12,4 +12,4 @@ metadata:
   ROBOTS: NOINDEX
 durationInMinutes: 10
 content: |
-  [!include[](includes/6-summary.md)]
+  [!include[](includes/1-classes.md)]

@@ -1,15 +1,15 @@
 ### YamlMime:ModuleUnit
-uid: learn.oop-in-python.1-create-class
-title: Introduction
+uid: learn.oop-in-python.5-summary
+title: Summary
 metadata:
-  title: Create a class
-  description: Create a class in Python
+  title: Summary
+  description: Summary
   ms.date: 5/31/2019
   author: v-jeffpr
   ms.author: shana.matthews
   ms.topic: interactive-tutorial
   ms.prod: learn-python
   ROBOTS: NOINDEX
-durationInMinutes: 10
+durationInMinutes: 5
 content: |
-  [!include[](includes/1-create-class.md)]
+  [!include[](includes/5-summary.md)]

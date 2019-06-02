@@ -2,35 +2,35 @@
 uid: learn.oop-in-python
 metadata:
   title: Object-Oriented Programming in Python - Learn
-  description: Use Python to write object-oriented code using reusable classes
+  description: Use Python to write object-oriented code
   ms.date: 5/31/2019
   author: v-jeffpr
   ms.author: shana.matthews
   ms.topic: interactive-tutorial
   ms.prod: learning-python
 title: Object-Oriented Programming in Python
-summary: Use Python to write object-oriented code using reusable classes
+summary: Use Python to write object-oriented code
 abstract:  | 
   In this module, you will:
   - Learn how to write classes in Python
   - Learn how to add attributes to a class
   - Learn how to add methods to a class
   - Learn how to inherit classes
-  - Learn how to renovate classes
+  - Learn how to add methods and attributes to inherited classes
+  - Learn how to override methods inherited from a base class
   prerequisites: None
 #iconUrl:
 levels:
-- beginner
+- intermediate
 roles:
 - developer
 products:
 - azure
 units:
 - learn.oop-in-python.0-introduction
-- learn.oop-in-python.1-create-class
-- learn.oop-in-python.2-use-attributes
-- learn.oop-in-python.3-use-methods
+- learn.oop-in-python.1-classes
+- learn.oop-in-python.2-attributes
+- learn.oop-in-python.3-methods
 - learn.oop-in-python.4-inheritance
-- learn.oop-in-python.5-renovate-code
-- learn.oop-in-python.6-summary
+- learn.oop-in-python.5-summary
 achievement: learn.placeholder.badge

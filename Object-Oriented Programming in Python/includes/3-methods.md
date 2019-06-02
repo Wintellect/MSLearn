@@ -1,4 +1,4 @@
-# Perform actions with methods
+# Methods
 
 Methods tell an object what to do and how to do it. For example, a `person` class might contain a `show_face()` method for displaying the person's face, and a `get_age()` method that returns the person's age. Methods frequently operate on data stored in attributes. `get_age()`, for example, might subtract a birth date stored in an attribute from today's date to compute a person's age in years. 
 
