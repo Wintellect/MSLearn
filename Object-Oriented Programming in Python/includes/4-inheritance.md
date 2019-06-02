@@ -39,17 +39,40 @@ One characteristic that differentiates a missing person from a normal person is 
 
 If you want further proof that `mMissingPerson` objects contain `missing_since` attributes, execute a `print(aPerson.__dict__.keys())` statement in the notebook. This lists the attributes present in the object.
 
-## Override an inherited attribute
+## Override an inherited method
 
-Occasionally it is useful to override a method or attribute inherited from the base class. You have already seen how to override methods: simply implement a method of the same name in the subclass. But what about attributes? Can they be overridden, too?
+Occasionally it is useful to override a method inherited from the base class to modify the way it works in the subclass. You have already seen how to override methods: simply implement a method of the same name in the subclass. But what if you need to call the base class's version of the method from the inherited class? That's what Python's `super()` method is for.
 
-It turns out that they can.
+In South Korea, babies are considered to be 1 year old when they are born. Consequently, they turn 2 on their first birthday, 3 on their second birthday, and so on. Suppose you wanted to create a special version of the `mMissingPerson` class named `mMissingSKPerson' that adds 1 to the integer returned by the `get_age()` method.
 
+1. Add the following class definition to the notebook and run it:
 
+	```python
+	class mMissingSKPerson(mMissingPerson):
+	    def __init__(self, name, photo, date_of_birth, date_missing):
+	        mMissingPerson.__init__(self, name, photo, date_of_birth, date_missing)
+	
+	    # Override the get_age() method
+	    def get_age(self):
+	        return super().get_age() + 1
+	```
 
+	Notice that `get_age()` is overridden in the inherited class, but rather than duplicate the code for the base class's `get_age()` method and add 1 to the result, it invokes the base class's `get_age()` method and adds 1.
 
+1. Now perform a test by executing the following statements:
 
+	```python
+	aPerson = mPerson("Adam", faces.images[0], datetime.datetime(1990, 9, 16))
+	print(str(aPerson.get_age()))
+	
+	aPerson = mMissingPerson("Adam", faces.images[0], datetime.datetime(1990, 9, 16), datetime.datetime(2016, 1, 1))
+	print(str(aPerson.get_age()))
+	
+	aPerson = mMissingSKPerson("Adam", faces.images[0], datetime.datetime(1990, 9, 16), datetime.datetime(2016, 1, 1))
+	print(str(aPerson.get_age()))
+	```
 
+Can you predict what the output from the three `print()` statements will be before you run the code?
 
 ## Remove an inherited attribute
 
@@ -72,7 +95,13 @@ aPerson = mAnonymousPerson(faces.images[0], datetime.datetime(1990, 9, 16))
 
 The `name` attribute doesn't exist in the subclass. An attempt to access it on an `mAnonymousPerson` object would generate a run-time error.
 
-In case you wondered, you can't delete methods inherited from a base class. You can, however, override them and change the way they work (or simply have them do nothing).
+In case you wondered, you can't delete methods inherited from a base class. You can, however, override them and change the way they work (or simply have them raise an error or do nothing).
+
+
+
+
+
+
 
 ## Modifying an attribute
 
