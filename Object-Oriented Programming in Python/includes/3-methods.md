@@ -8,7 +8,7 @@ Python objects always have methods, even if you don't define any yourself. For e
 
 For this reason, Python programmers frequently replace the built-in `__str__()` method with one of their own when they write custom classes to serve an application.
 
-In this unit, you will add methods to the `mPerson` class you wrote in the previous unit to make it a first-class citizen in Python. In addition to adding methods of your own, you will override the `__str__()` method so it produces output that is meaningful for an `mPerson`. Finally, you will discover that when you pass an object to Python's built-in `str()` function, Python calls the object's `__str__()` method internally.
+In this unit, you will add methods to the `mPerson` class you wrote in the previous unit to make it a first-class citizen in Python. In addition to adding methods of your own, you will override the `__str__()` method to tailor its output for `mPerson`. Finally, you will discover that when you pass an object to Python's built-in `str()` function, Python calls the object's `__str__()` method internally.
 
 ## Static methods vs. instance methods
 
