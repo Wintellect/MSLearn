@@ -38,7 +38,7 @@ The very first time you launch VS Code from here, it won't know what kind of app
 
 In VS Code, start a new file, and give it one of the most common instructions found at the start of a Python application:
 
-```
+```bash
 import os
 ```
 
@@ -87,7 +87,7 @@ Now for the actual Python code. Flask makes interesting additions to Python whic
 
 Open the **app.py** window and replace its existing text with the following code:
 
-```
+```python
 # -*- coding: utf-8 -*-
 
 import os, json
@@ -119,7 +119,7 @@ To make certain this code is operational, first save all unsaved documents. Then
 
 If you were expecting fireworks, you'll have to wait a bit. What's happened here is that Flask has been issued its marching orders, though it has yet to pick them up. To make the Flask server run, open the Terminal pane in VS Code and issue this command:
 
-```
+```bash
 flask run
 ```
 
@@ -166,7 +166,7 @@ For the purposes of this application, you'll build your git repository on your d
 
 Start by opening a VS Code terminal pointing to the project's home directory. You should see the (env) marker in front of the prompt. Then enter the following command:
 
-```
+```bash
 pip freeze > requirements.txt
 ```
 
