@@ -89,7 +89,7 @@ As with any programming endeavor, there's unique nomenclature for the tool's ele
   * **Remote:** a named pointer to another git repository. When you clone a
 	repo, git creates a remote called `origin` that is the default remote for
 	push and pull operations.
-  * **Command or Subcommand:** All of Git's operations are performed by a
+  * **Command** or **Subcommand:** All of Git's operations are performed by a
 	command line starting with `git` -- the name of the program -- followed by
 	the name of the operation. That name is properly called a _subcommand_,
 	but "command" is often used for either the subcommand or the Git command
