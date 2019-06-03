@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.ai-flask-python.2-deploy-to-azure
+metadata:
+  title: Deploy a Flask Web site to Azure
+  description: Deploy a Flask Web site to Azure containing a framework for your application
+  ms.date: 06/06/2019
+  author: v-jeffpr
+  ms.author: christopher.harrison
+  ms.topic: interactive-tutorial
+  ms.prod: learning-python
+  ROBOTS: NOINDEX
+durationInMinutes: 15
+content: |
+  [!include[](includes/2-deploy-to-azure.md)]
