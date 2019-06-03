@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.ai-flask-python.4-extract-text-from-photos
+metadata:
+  title: Use Cognitive Services to extract text from photos
+  description: Use Cognitive Services to extract text from photos uploaded to the Web site
+  ms.date: 06/06/2019
+  author: v-jeffpr
+  ms.author: christopher.harrison
+  ms.topic: interactive-tutorial
+  ms.prod: learning-python
+  ROBOTS: NOINDEX
+durationInMinutes: 10
+content: |
+  [!include[](includes/4-extract-text-from-photos.md)]
