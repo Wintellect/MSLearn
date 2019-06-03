@@ -3,7 +3,7 @@ uid: learn.ai-flask-python
 metadata:
   title: Building an AI Web App with Flask and Python - Learn
   description: Use Flask, Python, and Azure Cognitive Services to build a Web app that incorporates AI
-  ms.date: 6/6/2019
+  ms.date: 06/06/2019
   author: v-jeffpr
   ms.author: christopher.harrison
   ms.topic: interactive-tutorial
@@ -12,8 +12,8 @@ title: Building an AI Web App with Flask and Python
 summary: Use Flask, Python, and Azure Cognitive Services to build a Web app that incorporates AI
 abstract:  | 
   In this module, you will:
-  - Learn how to tk
-  - Learn how to tk
+  - Learn how to set up a development environment for Flask and Python
+  - Learn how to register for Azure Cognitive Services
   - Learn how to tk
   - Learn how to tk
   - Learn how to tk
@@ -27,7 +27,7 @@ products:
 - azure
 units:
 - learn.ai-flask-python.0-introduction
-- learn.ai-flask-python.1-tk
+- learn.ai-flask-python.1-set-up-environment
 - learn.ai-flask-python.2-tk
 - learn.ai-flask-python.3-tk
 - learn.ai-flask-python.4-tk
