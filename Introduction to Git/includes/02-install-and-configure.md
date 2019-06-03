@@ -93,7 +93,9 @@ Great. Git is installed. Now let's set it up so you can get to work with it.
 You query, set, replace, or delete configuration variables with the 
 `git config` command. The default is to query or modify the "local"
 configuration file, located in the current git repository (`.git/config`). In
-addition, there is a "global" configuration in your home directory. Depending on operating system, a "system" configuration file that applies to all users may also be found in that home directory. Use
+addition, there is a "global" configuration in your home directory. Depending
+on operating system, a "system" configuration file that applies to all users
+may also be found, in an OS-dependent location. Use
 `git help config` to see where the system and global files are on your system,
 as well as the complete lists of options and configuration variables.
 

@@ -40,7 +40,8 @@ index 0aa3ab0..6f16b61 100644
 
 The output format is the same as the Unix `diff` command, and it takes many of the same options. Here you can see a `+` in front of lines that were added; if any lines had been deleted you would see a `-` in front of them. Notice that the `h1` line hasn't changed.
 
-The default is for `git diff` to compare the working tree to the index. In other words, it shows you all of the changes that haven't been staged yet. [*WE NEED TO DEFINE WHAT "STAGING" IS.--E*]
+The default is for `git diff` to compare the working tree to the index. In
+other words, it shows you all of the changes that haven't been staged (added to the index) yet. 
 
 To compare the working tree to the last commit, use `git diff HEAD`.
 
@@ -51,7 +52,8 @@ $ git commit -m "Add HTML boilerplate to index.html" index.html
 $ git diff
 ```
 
-Notice that you can explicitly name a file to be committed, provided Git already has the file in the index.
+Notice that you can explicitly name a file to be committed, provided Git
+already has the file in the index (which is all that `commit` looks at).
 
 Let's say you decide "furry" would sound friendlier than "feline," so you want to edit the text. You can do make the change using a text editor; here we use `sed`, the "stream editor," which lets you specify editing commands on the command line. (See `man sed` for the details; Sed's command set -- here we use `s` to make a substitution -- is essentially the same as Unix's original text-editor, `ed`.)
 
@@ -124,7 +126,8 @@ nothing to commit, working tree clean
 
 People used to most other version-control systems may be surprised to learn that Git doesn't consider adding an empty directory to be a change. That's because Git only tracks changes to *files*, not directories.
 
-Sometimes, especially in the initial stages of development, you *want* to have empty directories. A common convention is to create an empty file in them -- it's often called `.git-keep`.
+Sometimes, especially in the initial stages of development, you *want* to have
+empty directories as placeholders. A common convention is to create an empty file in them -- it's often called `.git-keep`.
 
 ```
 $ touch CSS/.git-keep

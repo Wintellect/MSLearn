@@ -8,8 +8,23 @@ When you tell Bob about your project, and he asks to participate too, that's exa
 
 What you need is a repository that doesn't have a working tree, to avoid the problem Alice had trying to push.  That's called a _bare repository_.
 
-[*IT FEELS AS THOUGH THERE'S A LITTLE MORE TO BE SAID ABOUT THE PROS AND CONS OF THESE OPTIONS. MAYBE A BULLETED LIST? OR DOES IT COME DOWN TO "IF IT'S JUST YOU AND ALICE, WORKING AT HOME TOGETHER, WHY MAKE IT MORE COMPLEX THAN NECESSARY?"...BUT THAT DOESN'T SCALE....?--ES*]
+A bare repo has several advantages:
 
+* Without a working tree, everybody can push changes without having to worry
+  about which branch is checked out.
+* It's easy for Git to detect when somebody else has pushed changes that might
+  conflict with yours (because your push wouldn't be fast-forward, and Git's
+  default is to reject it so that you can merge the new files with your own).
+* A shared repo scales to any number of developers -- you only have to know
+  about the shared repo rather than about all the other people you might need
+  to pull from.
+* By putting the shared repo on a server that you can all access, you don't
+  have to worry about firewalls and permissions.
+* You don't need separate accounts on the server, because Git keeps track of
+  who made each commit. GitHub has millions of users all sharing the `git`
+  account. (Everyone uses `ssh`, and users are distinguished by their public
+  keys.) 
+  
 You can set it up using:
 
 ```
@@ -44,15 +59,17 @@ $ git branch --set-upstream-to origin/master
 Branch 'master' set up to track remote branch 'master' from 'origin'.
 ```
 
-Git would have complained if you had tried to do this before the initial push, because there weren't any branches in the new repository yet. Git won't let you track a branch that doesn't exist.
-
-[*SHOULD WE OFFER ANY ADVICE IN REGARD TO "HERE IS WHAT CAN GO WRONG IF YOU GIVE IT THE WRONG BRANCH"? IN OLD STYLE DIRECTIONS TO SOMEONE'S HOUSE, WE USED TO SAY, "IF YOU PASS THE GAS STATION YOU WENT TOO FAR." ...I'M THINKING OF THE MOMENTS WHERE I SCREW UP AND DON'T KNOW WHAT I DID WRONG. --ES*]
+Git would have complained if you had tried to do this before the initial push,
+because there weren't any branches in the new repository yet. Git won't let
+you track a branch that doesn't exist.  (You get exactly the same error
+message, "the requested upstream branch [...] does not exist," if you get the
+name of either the branch (maybe you used "trunk" because you're used to
+Subversion) or the remote wrong.  That's not surprising because all Git is
+doing is looking in `.git/refs/remotes` for a file called `origin/trunk`.
 
 ## Setup for collaborators
 
 Now all Bob has to do is clone the bare repository:
-
-[*LOL at the BobCats! Though of course the Diamondbacks mascot is Baxter the Bobcat because Chase Field was once Bank One Ballpark and everyone called it the Bob. #GoDBacks --ES*]
 
 ```
 $ cd ~/sandbox
@@ -151,16 +168,18 @@ index 8ff78df..b8732b6 100644
 
 Alice can see that, although she and Bob both changed the same file, their changes don't overlap. She decides to _stash_ her changes. `git stash` saves the state of the working tree and index by making a couple of temporary commits. Think of the stash as a way to save your current work while you do something else, without making a "real" commit or affecting your repository history.
 
-[*I'M ENVISIONING IT AS AKIN TO YOUR EMAIL DRAFT FOLDER, WHERE YOU CAN UPDATE A MESSAGE BEFORE YOU CLICK ON SEND. ...NO? -ES*]
-
-In reality, Alice should have stashed or committed her changes before she tried to pull. Pulling to a "dirty" working tree is risky,because it can do things from which you can't recover.
+In reality, Alice should have stashed or committed her changes before she
+tried to pull. Pulling to a "dirty" working tree is risky, because it can do things from which you can't recover.
 
 ```
 $ git stash
 Saved working directory and index state WIP on master: 37903fd change background color to light blue
 ```
 
-Now it's safe for Alice to pull, after which she can "pop" the stash, which is organized as a stack. (In fact, `git stash` is shorthand for `git stash push`.) 
+Now it's safe for Alice to pull, after which she can "pop" the stash, which is
+organized as a stack. (In fact, `git stash` is shorthand for `git stash
+push`.  It's a lot like the stack where you put bills that you haven't gotten
+around to paying yet.) 
 
 ```
 $ git pull
@@ -205,7 +224,10 @@ To /home/steve/sandbox/Cats.git
    99fbbca..88bed5a  master -> master
 ```
 
-If Alice had committed her changes rather than stashing them, the situation would have been somewhat different. She would have had to make a branch and either merge or rebase her changes. [*REBASE? --ES*]
+If Alice had committed her changes rather than stashing them, the situation
+would have been somewhat different. She would have had to make a branch and
+either merge or rebase her changes.  (Branches, merging, and rebasing are
+covered in the next unit.)
 
 Had Alice begun by working on a branch in the first place she would have saved herself quite a lot of trouble. We'll see
 how to do that in the next unit; for now it's worth pointing out that branching and rebasing is _exactly_ what the stash commands accomplish behind the scenes.

@@ -1,10 +1,13 @@
 # Simplify histories and resolve merge conflicts
 
-After Alice adds a picture of her cat and Bob pulls her change, Bob's Git history becomes somewhat complicated.
+This unit describes some of the more complicated aspects of merging, namely
+combining multiple commits before merging them, and resolving the conflicts
+that happen when the two branches being merged have overlapping changes.
+We're going to set up a situation that involves both of these complications,
+and look at several different ways to deal with them.
 
-[*STATE THE NATURE OF THE COMPLICATION HERE, BEFORE YOU SHOW HOW TO RESOLVE IT. OTHERWISE THE READER DOESN'T KNOW WHAT PROBLEM YOU ARE SOLVING. ...AFTER READING THIS THROUGH A SECOND TIME, I THINK WE NEED TO EXPLICITLY SET UP WHAT WE ARE DOING IN THIS UNIT. I FOUND MYSELF SPENDING TIME TRYING TO UNDERSTAND WHERE YOU WERE TAKING ME, INSTEAD OF JUST FOLLOWING ALONG. WE NEED SOME KIND OF In this unit you learn...--ES*]
-
-What Alice does is:
+We start with Alice, who adds a picture of her cat, commits it, and pushes her
+change:
 
 ```
 $ cd ~/sandbox/Alice/Cats
@@ -31,7 +34,10 @@ Fast-forward
 $ git push
 ```
 
-Now Bob pulls:
+Bob made his changes in the previous unit, and he's ready to merge them, but
+before he does he checks out the master branch and pulls the changes that
+Alice made in the mean time. (If he doesn't, his merged changes will get
+rejected when he tries to push them.)
 
 ```
 $ cd  ~/sandbox/Bob/BobCats
@@ -61,23 +67,39 @@ Bob:    ...o---m---A---D
                      B---C
 ```
 
-Because Bob and Alice have overlapping changes in `index.html`, when he eventually merges this, a conflict will be created. We will get to that later. [*SHOULD WE MOVE THIS SECTION? BECAUSE OTHERWISE WE ARE SAYING, HERE IS A PROBLEM BUT I AM NOT TELLING YOU THE RESOLUTION.--ES*]
-
 ## Explore a complicated history
 
 This is a good time to try some of the Git tools that let you visualize the structure of Git's history graph. The first one to try is:
 
 ```
-git log --graph
+git log --graph --all
+* commit 2868bbfa4f1b6283d162f06b96f305a224d57bc2 (master)
+| Author: Alice <alice@example.com>
+| Date:   Wed May 15 23:00:20 2019 -0700
+| 
+|     Add picture of Dinah
+|   
+| * commit f98a6e349309086088228feb8b284e12b72ee4de (HEAD -> addCat)
+| | Author: Bob <bob@example.com>
+| | Date:   Wed May 15 22:06:11 2019 -0700
+| | 
+| |     Add style class to cat picture
+| | 
+| * commit a6ed876ebc924d16f7589c221526d07220d64f33
+|/  Author: Bob <bob@example.com>
+|   Date:   Wed May 15 21:50:35 2019 -0700
+|   
+|       Add picture of Bob's cat
+|
 ```
 
 The command produces a graph similar to the ones displayed in this unit, only rotated counter-clockwise so that it goes up the left-hand side of the log output.
+Because it's using vertical bars and slashes, it works perfectly in a terminal
+window; that's especially useful when you're running it on a remote server.
 
-[*INSERT AN EXAMPLE. A JPG IMAGE WOULD BE FINE. 
+Of course, when you can run GUI programs, there are better options. The one
+that is shipped as part of Git is `gitk`:
 
-ALSO I THINK THIS SECTION NEEDS TO EXPLAIN WHY THE GRAPH IS USEFUL. MAYBE IT'S OBVIOUS, BUT THERE'S A POINT TO BE MADE ABOUT TRYING TO VISUALIZE RELATIONSHIPS WHEN THE PROJECT GETS MORE COMPLEX.--ES*]
-
-The second useful tool to explore is:
 
 ```
 gitk --all &
@@ -85,13 +107,17 @@ gitk --all &
 
 Gitk is a GUI program for exploring Git histories; the `--all` option tells it to show all of the branches. The `&` at the end of the line tells Bash to run the command in another process, so that you can continue working in the shell.
 
-Gitk gives you a window with a view similar to `git log --graph` in the top pane, and the details of each commit in the bottom pane. Between them are search and navigation tools, as well as a box containing the full ID of the selected commit. This is automatically selected, which makes it easy to copy and paste into a command.
+![Screenshot of gitk --all.](media/gitk-screenshot.png)
+As you can see in the screenshot, Gitk gives you a window with a view similar to `git log --graph` in the top pane, and the details of each commit in the bottom pane. Between them are search and navigation tools, as well as a box containing the full ID of the selected commit. This is automatically selected, which makes it easy to copy and paste into a command.
 
-[*INSERT A SCREEN SHOT. --ES*]
+Getting a picture of your history with one of these tools is especially useful
+after a pull to get an overview of the changes, or when you're about to do
+something you're not certain will work the way you expect. You can refresh
+Gitk with the `F5` key to see what actually happened.
 
-Bob has several things he can do at this point, depending on what he wants the resulting history to look like.
+## Bob's options
 
-[*"WHAT HE WANTS THE HISTORY TO LOOK LIKE" IS ODD PHRASING. (IS THIS 1984?) MAYBE REWORD FOR CLARITY?--ES*]
+Bob has several things he can do at this point.
 
 You've already seen two methods, `merge` and `rebase`. They produce histories that look like:
 
@@ -105,17 +131,27 @@ merge:  ...o---m---A---D---E
 rebase: ...o...m...A...D...B...C
 ```
 
-Merge has the advantage of preserving all of the individual changes and recording the merge metadata in a commit. Rebase has the advantage of keeping the history simple and easy to understand. In both cases, if there's a conflict, Git interruptS the process to let you try to resolve it.
-
+Merge has the advantage of preserving all of the individual changes and recording the merge metadata in a commit. Rebase has the advantage of keeping the history simple and easy to understand. In both cases, if there's a conflict, Git interrupts the process to let you try to resolve it.
 
 ## Simplify history by squashing
 
-The third possibility [*TO SOLVE WHAT PROBLEM? RESTATE FOR CLARITY --ES*] is to squash Bob's two commits into a single one, with a
-message like "add Bob's cat" that summarizes everything that he did.
+If there are more than one commit on a branch, both merging and rebasing make
+it hard to see the big picture. That's especially true if the commits have
+messages like "Fix off-by-one bug", "make backup", "Revert bad merge", or
+something even less helpful (see [this xkcd cartoon](https://xkcd.com/1296/)
+for an example). It's better to combine all of the commits on a branch into a
+single one.  That lets you compose a new commit message that describes *what
+you did* rather than the details of how you did it, and store that information
+in the project's official history. The process of combining commits is called
+_squashing_.
 
-Most developers prefer to use this method, as it lets them make commits with messages like "Fix off-by-one bug", "make backup", "Revert bad merge", or something even less helpful (see [this xkcd cartoon](https://xkcd.com/1296/) for an example). Doing so lets developers and other project team members compose good messages, describing *what they did* rather than the details of how they did it, and store that information in the project's official history.
-
-There are two different ways of doing this [*WRITE OUT WHAT "THIS" REFERS TO... REALLY, IT'S IMPOSSIBLE TO BE TOO EXPLICIT!--ES*], plus a short-cut. (Take a look at the man page for `git bisect` to see to do that quickly.) Many developers take the short-cut and simply make a single commit that they keep amending. It's not really a good idea, because it's much harder to find a problem in an amended commit with a bug in it that was introduced sometime in the last week, than a series of simple ones made every day or so. 
+There are two different ways to squash commits, plus a short-cut. Many
+developers take the short-cut mentioned in the last unit and simply make a
+single commit that they keep amending. It's not really a good idea, because
+it's much harder to find a problem in an amended commit with a bug in it that
+was introduced sometime in the last week, than a series of simple ones made
+every day or so.  (Take a look at the man page for `git bisect` to see how to
+find bugs quickly in a long sequence of commits.)
 
 The two (better) ways to package-up several changes into a single commit are `git merge --squash` and `git rebase --interactive` (usually shortened to `git rebase -i`). Interactive rebase creates a temporary file containing all of the commits and their one-line descriptions, preceeded by a command. Initially the command is `pick`; you can edit that to `drop`, `squash`, `edit`, or `reword`. (Edit lets you edit files; reword just lets you edit the commit message.) You can also change the order of the commits.
 
@@ -134,7 +170,9 @@ It isn't *quite* that simple, because Bob and Alice each changed the same line i
 
 ## Resolve merge conflicts
 
-What *actually* happens when Bob makes his merge is that Git notices that the branches being merged have changes that overlap, so it interrupts the merge process so that you can figure out what the final result should be.
+What *actually* happens when Bob makes his merge is that Git notices that the
+branches being merged have changes that overlap, so it interrupts the merge
+process to let him figure out what the final result should be.
 
 ```
 $ git merge --squash addCat
@@ -302,6 +340,7 @@ The following tools are valid, but not currently available:
 
 Some of the tools listed above only work in a windowed environment. If run in a terminal-only session, they fail.
 ```
+
 Naturally, if you run this command on your own computer you are likely to get a different list.
 
 ## Summary

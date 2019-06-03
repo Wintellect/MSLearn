@@ -63,7 +63,12 @@ nothing to commit, working tree clean
 
 (It is more difficult to fix the cat.)
 
-You can also check out a file from another commit (typically the head of another branch), but the default is to get the file out of the index. The `--` in the argument list serves to separate the commit from the list of file paths. It's not strictly needed in this case, but if there had been a branch called `index.html` (perhaps because that's the name of the file being worked on on that branch) or a file called `master`, it would be needed to resolve the ambiguity. [*I'M A LITTLE LOST ON THE "IT WOULD BE NEEDED...." CHOOSE EXPLICIT NOUNS FOR CLARITY. --ES*]
+You can also check out a file from another commit (typically the head of
+another branch), but the default is to get the file out of the index. The `--`
+in the argument list serves to separate the commit from the list of file
+paths. It's not strictly needed in this case, but if you had a branch
+called `index.html` (perhaps because that's the name of the file being worked
+on on that branch), the `--` would keep Git from getting confused.
 
 In Unit 8 you'll learn that `checkout` is also used for switching branches.
 
