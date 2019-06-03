@@ -30,7 +30,10 @@ $ git config user.email alice@example.com
 
 ## Remote repositories
 
-When Git clones a repository, it creates a reference to the repo called a _remote_, with the name `origin`, and sets it up so that it will push and pull from the remote repository.
+When Git clones a repository, it creates a reference to the original repo
+called a _remote_, with the name `origin`, and sets it up so that it will pull
+from the remote repository.  (Git can also "push"; we'll get to that in the
+next unit.)
 
 
 ```
@@ -42,8 +45,27 @@ $ git branch -a
   remotes/origin/master
 ```
 
-Origin is the default location for Git to pull changes from and push changes to.
-[*CAN WE GIVE AN ANALOGY HERE? I AM ENVISIONING THIS SOMETHING LIKE A DROPBOX DIRECTORY, OR PERHAPS THE PHOTOS STORED ON MY PHONE. I WORK LOCALLY, BUT -- AT THE TOUCH OF A BUTTON -- CAN SAY, "YO, UPDATE GIT, WHICH IS WHERE WE KEEP THE REAL COPY." BUT I AM UNSURE THAT IS AN ACCURATE VISUALIZATION. --ES*]
+Origin is the default location for Git to pull changes from and push changes
+to. Pull, specifically, copies changes from the remote repository to the
+local one; it's very efficient because it only copies _new_ commits and
+objects, and then checks them out into your working tree. 
+
+It's useful to compare `git pull` with some other methods of copying
+files. The `scp` command (which is like the Unix `cp` command except that the
+files being copied don't have to be on the same computer) simply copies
+everything. If there are ten thousand files in the remote directory, `scp`
+copies all of them. There's a more efficient program called `rsync` that looks
+at every file in the local and remote directories, and only copies the ones
+that are different. It's often used for making backups, but it still has to
+hash every file unless they have different sizes or creation dates.
+
+Git only has to look at commits.  It already knows (because it saved the list)
+the last commit that it got from the remote repository. It then tells the
+computer it's copying from to send everything that changed -- the new commits
+and the new objects they point to. Those get bundled up in a file called a
+_pack_, and sent over in one batch. Finally, Git updates the working tree by
+unpacking all the objects that changed, and merging them (if necessary) with
+the ones in the working tree.  (We'll see how that works in Unit 8.)
 
 So far you haven't done anything new, so there's nothing for Alice to pull.
 
@@ -51,6 +73,15 @@ So far you haven't done anything new, so there's nothing for Alice to pull.
 $ git pull
 Already up to date.
 ```
+
+Git only pulls or pushes (which is copying in the other direction) when you
+tell it to. That's different from, say, Dropbox, which has to ask the
+operating system to notify it of any changes you make in its folder, and
+occasionally ask the server whether anyone else has made changes. (There's a
+sync program called <a href="https://www.sparkleshare.org/" >SparkleShare</a>
+that does the same thing, only using Git.  It still has to keep track of
+changes on both ends, but it keeps all of your history, and if you own the
+server it's using you don't have to pay exorbitant rates for space.)
 
 ## Alice makes a change and a pull request
 
@@ -97,9 +128,16 @@ To /home/steve/sandbox/Alice/../Cats
 error: failed to push some refs to '/home/steve/sandbox/Alice/../Cats'
 ```
 
-Well, _that_ didn't work. It would have worked if Alice had pushed to a different branch *and* had permission to write to your repo. (It's worth noting that if Alice *didn't* have write permission for your repository, she would have gotten a "fatal" error message instead.)
+Well, _that_ didn't work. It would have worked if Alice had pushed to a
+different branch *and* had permission to write to your repo. (It's worth
+noting that if Alice *didn't* have write permission for your repository, she
+would have gotten a "fatal" error message instead.) Both of these are safety
+measures.  You don't want Alice to be able to change the files in your working
+tree out from under you.
 
-[*AGAIN, ESTHER THE BEGINNER! I THINK I WANT A LITTLE EXPLANATION ABOUT WHY THIS DOESN'T WORK. MY INITIAL EXPECTATION IS THAT ONCE I SHARE INFO WITH SOMEONE, I CAN UPLOAD AS WELL AS DOWNLOAD. I SUPPOSE THE ANALOGY IS THAT INITIALLY I HAVE READ-ONLY PERMISSIONS, AND UNTIL YOU GIVE ME WRITE-ONLY I MUST BEG YOU TO UPDATE THE FILES WITH MY CHANGES. BUT CAN YOU HELP ME GRASP THIS CONCEPT WITH A LITTLE MORE ASSURANCE THAT I'VE GOT IT RIGHT? PROBABLY ONLY A FEW SENTENCES OR AN ANALOGY. --ES*]
+(In the next unit we'll see how you and Alice can use both push and pull to
+share a repo that doesn't have a working tree, and how Git keeps you from
+stepping on one another's toes in the process.)
 
 For now, Alice has to ask _you_ to _pull_ her changes. She can do that by running `git request-pull` and emailing you the output:
 
@@ -185,7 +223,8 @@ Notice that you have to specify a branch, `master`, in the pull command. We'll s
 
 Behind the scenes, `git pull` is a combination of two simpler operations: `git fetch`, which gets the changes, and `git merge`, which merges those changes into your repository. In this case, the merge was _fast-forward_, meaning that Alice had your latest commit in her repository, so her commit could be added to the front of your history without any modification.
 
-[*WOULD IT MAKE SENSE TO SHOW WHAT IT'D LOOK LIKE IF IT WASN'T FAST FORWARD? SO I HAVE AN IDEA WHAT TO EXPECT? UP TO YOU ON THIS ONE.--ES*]
+(We'll see non-fast-forward merges in unit 8.  Merging can cause enough
+complications to make it worth its own unit.)
 
 ## Summary
 
