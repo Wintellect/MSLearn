@@ -127,7 +127,7 @@ The output proves that the class was created (not that it was instantiated). The
 
 ## Instantiate a class
 
-At this point, you have a very simple (and nearly useless) class, but it serves to show how classes are defined. Now let's created an object from the class.
+At this point, you have a very simple (and nearly useless) class, but it serves to show how classes are defined. Now let's create an object from the class.
 
 1. Add the following statement to the notebook and run it:
 

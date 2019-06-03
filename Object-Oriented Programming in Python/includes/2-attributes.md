@@ -42,7 +42,7 @@ So that we have some data to work with, let's load a database of facial images. 
 
 1. Return to the Azure Notebooks project you created in the previous unit and create a new Python 3.6 notebook named **Missing Persons.ipynb** or something similar. Then open the notebook.
 
-1. One of the many popular packages available in Azure Notebooks is [Scikit-learn](https://scikit-learn.org/stable/index.html), which is an open-source library used to build [machine-learning](https://en.wikipedia.org/wiki/Machine_learning) models. Scikit includes several built-in datasets, one of which is the Olivetti faces dataset.
+1. One of the many popular packages available in Azure Notebooks is [Scikit-learn](https://scikit-learn.org/stable/index.html), which is an open-source library used to build [machine-learning](https://en.wikipedia.org/wiki/Machine_learning) models. Scikit-learn includes several built-in datasets, one of which is the Olivetti faces dataset.
 
 	Paste the following statements into the empty cell at the top of the notebook to load the faces dataset:
 
@@ -56,7 +56,7 @@ So that we have some data to work with, let's load a database of facial images. 
 	print(faces.data.shape)
 	```
 
-	The first line imports the Scikit function that loads the datset. The second loads the dataset, and the third shows the shape of the dataset.
+	The first line imports the Scikit-learn function that loads the datset. The second loads the dataset, and the third shows the shape of the dataset.
 
 1. Run the code and examine the output. The dataset contains 400 faces, each of which consists of an image with 4,096 pixels. The dataset contains 10 photos each of 40 different people. The first ten images in `faces.images` represent the first person, the next 10 images represent the second person, and so on.
 
