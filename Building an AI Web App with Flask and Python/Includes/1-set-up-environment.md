@@ -128,7 +128,11 @@ export TEXTTRANS_KEY=<copied key value>
 export TEXTTRANS_ENDPOINT= https://api.cognitive.microsoft.com/sts/v1.0/issuetoken
 export CVISION_KEY=<copied key value>
 export CVISION_ENDPOINT=https://eastus.api.cognitive.microsoft.com/
-cmd, PowerShell, bash for Windows
+```
+
+TODO:
+
+```bash
 setx TEXTTRANS_KEY <copied key value>
 setx TEXTTRANS_ENDPOINT https://api.cognitive.microsoft.com/sts/v1.0/issuetoken
 setx CVISION_KEY <copied key value>
