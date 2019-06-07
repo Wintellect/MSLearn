@@ -18,7 +18,7 @@ A Web site begins with basic assets such as HTML, CSS, and images. Let's start b
 
 	- **app.py**, which holds the Python code that drives the site
 	- **templates/index.html**, which contains the site's home page
-	- **static/main.css**, which contains the CSS that dresses up the home page
+	- **static/main.css**, which contains CSS to dress up the home page
 	- **static/banner.jpg**, which contains the Web-site banner
 	- **static/placeholder.jpg**, which contains a placeholder image for photos that have yet to be uploaded
 
