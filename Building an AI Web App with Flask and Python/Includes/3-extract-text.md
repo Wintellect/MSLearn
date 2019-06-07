@@ -109,7 +109,6 @@ TODO: Add intro.
 	        <script type="text/javascript">
 	            // If flash messages are queued up, show them in a modal dialog
 	            var messages = {{ messages | safe }};
-	            
 	            body = $(".modal-body");
 	            body.empty();
 	
