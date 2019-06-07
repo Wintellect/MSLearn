@@ -18,21 +18,33 @@ TODO: Add intro.
 
 TODO: Add closing.
 
-## Initialize application settings
+## Add application settings
 
-TODO: Add intro.
+When you ran the Web site locally, it used calls to `os.environ()` to load API keys for the Computer Vision API and the Translator Text API as well as the URL of the Computer Vision API from local environment variables. In order for the site to run in Azure, these same settings needed to be added to the Azure App Service's [application settings](). In the steps that follow, you will use the Azure CLI to create these application settings in Azure and initialize them with the same values that you used when you loaded them into local envrironment variables.
 
-1. tk.
+1. Open the Azure CLI and execute the following command to create an application setting named "VISION_API_KEY," replacing RESOURCE_GROUP with the name of the resource group created by the `az webapp up` command, APP_NAME with the name assigned to your App Service, and `computer_vision_api_key` with the Computer Vision API key that you obtained in an earlier unit:
 
-1. tk.
+	```bash
+	az webapp config appsettings set -g RESOURCE_GROUP -n APP_NAME --settings VISION_API_KEY=computer_vision_api_key
+	```
 
-1. tk.
+1. Now use this command to create an application setting named "VISION_ENDPOINT," replacing `computer_vision_endpoint` with the Computer Vision API endpoint you obtained earlier:
 
-1. tk.
+	```bash
+	az webapp config appsettings set -g RESOURCE_GROUP -n APP_NAME --settings VISION_ENDPOINT=computer_vision_endpoint
+	```
 
-1. tk.
+1. Finish up by using the following command to load your Translator Text API key into application settings:
 
-TODO: Add closing.
+	```bash
+	az webapp config appsettings set -g RESOURCE_GROUP -n APP_NAME --settings TRANSLATE_API_KEY=translate_api_key
+	```
+
+If you would like, you can log into the [Azure Portal](https://portal.azure.com), open the Azure App Service created by the `az webapp up` command, and view the application settings that these commands created. The screen shot below illustrates what you will see if you do.
+
+![Viewing application settings in the Azure Portal](media/app-settings.png)
+
+_Viewing application settings in the Azure Portal_
 
 ## Run the production site
 
