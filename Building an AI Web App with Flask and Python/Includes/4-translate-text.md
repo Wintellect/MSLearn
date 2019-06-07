@@ -190,13 +190,13 @@ TODO: Add intro.
 	export TRANSLATE_KEY=translator_text_api_key
 	```
 
-1. Navigate to http://localhost:5000 in your browser. Confirm that the page now contains a drop-down list for selecting a language just below the banner at the top of the page, as pictured below.
+1. Navigate to http://localhost:5000 in your browser. Confirm that the page now contains a drop-down list for selecting a language, as pictured below.
 
 	![Selecting a language](media/select-language.png)
 
 	_Selecting a language_
 
-1. Select the language that you want to translate text into from the drop-down lost. Then click the **Upload Photo** and button and upload a picture that contains text.
+1. Select the language that you want to translate text into from the drop-down list. Then click the **Upload Photo** and button and upload a picture that contains text.
 
 1. Confirm that after a brief pause, the text extracted from the photo and translated into the language you specified appears in a modal dialog. Then dismiss the dialog.
 
