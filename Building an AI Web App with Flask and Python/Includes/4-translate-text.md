@@ -200,8 +200,8 @@ TODO: Add intro.
 
 1. Confirm that after a brief pause, the text extracted from the photo and translated into the language you specified appears in a modal dialog. Then dismiss the dialog.
 
-	![Extracing text from a photo](media/translated-text.png)
+	![Extracting text from a photo](media/translated-text.png)
 
-	_Extracing text from a photo_
+	_Extracting text from a photo_
 
 Repeat this process with other photos to gauge the Translator Text API's ability to translate text you submit to it.
