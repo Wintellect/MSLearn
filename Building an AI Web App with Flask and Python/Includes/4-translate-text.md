@@ -18,7 +18,7 @@ TODO: Add closing.
 
 TODO: Add intro.
 
-1. Open **index.html** and tk:
+1. Open **index.html** and insert the following statements at line 42, just before the `<img>` element:
 
 	```html
 	<select id="language" class="form-control" name="language">
@@ -33,6 +33,37 @@ TODO: Add intro.
 	    <option value="pt">Portugese</option>
 	    <option value="es">Spanish</option>
 	</select>
+	```
+
+	Here's the modified markup showing the correct positioning of the new block:
+
+	```html
+	<div class="container">
+	    <div class="row">
+	        <div class="col-sm-12 text-center">
+	            <form method="POST" enctype="multipart/form-data">
+	                <div style="display: none">
+	                    <input type="file" id="upload-file" name="file" accept=".jpg,.jpeg,.png,.gif">
+	                    <input type="submit" id="submit-button" value="Upload">
+	                </div>
+	                <select id="language" class="form-control" name="language">
+	                    <option value="en">English</option>
+	                    <option value="zh-Hant">Chinese (simplified)</option>
+	                    <option value="zh-Hans">Chinese (traditional)</option> 
+	                    <option value="fr">French</option>
+	                    <option value="de">German</option>
+	                    <option value="it">Italian</option>
+	                    <option value="ja">Japanese</option>
+	                    <option value="ko">Korean</option>
+	                    <option value="pt">Portugese</option>
+	                    <option value="es">Spanish</option>
+	                </select>
+	                <img id="uploaded-image" src="{{ image_uri }}">
+	                <input type="button" id="upload-button" class="btn" value="Upload Photo">
+	            </form>
+	        </div>
+	    </div>
+	</div>
 	```
 
 	TODO: Explain this code.
