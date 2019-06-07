@@ -1,19 +1,17 @@
 # Introduction
 
-Imagine you're a professional Web developer and your client is a travel agency. It wants its customers to have good reason to stay in touch and share their travel experiences. So the agency wants its website to include a number of useful services, some of which require artificiala dose of intelligence (AI).
+Imagine you're a professional Web developer and your client is a travel agency. It wants its customers to stay in touch and share their travel experiences. So the agency wants its Web site to include a service that lets customers translate road signs and billboards in real time. The customer, exploring a foreign land, snaps a picture of a sign she can't read, in a language she can't translate. She uploads the picture to the service, and it responds with a translation in her native language. No typing, no forms to fill out — just "Here's a picture, tell me what it says."
 
-One service in particular helps the travel agency's customers translate road signs and billboards in real time. The customer, exploring a foreign land, snaps a picture of a sign she can't read, in a language she can't translate. She sends the picture to the service, and it responds with a translation in her native language. No typing, no forms to fill out — just “Here's a picture, tell me what it says.”
-
-To meet the client's requests, your Web site will need to accommodate the following features:
+To meet the client's requests, your Web site will need to support the following features:
 - Uploading of photos
 - Extraction of text from these photos
 - Translation of the extracted text into the user's native language
-- Optional translation into any other language the user may choose
 
-Just a few years ago, such a feature list would never have been considered by a small business for its own Web site. Where would it get the artificial intelligence functions it needs? Today, those functions are readily available in [Azure Cognitive Services](https://azure.microsoft.com/services/cognitive-services/). It's Microsoft's portfolio of more than 20 services, each with its own API, designed to make AI and machine learning available to businesses of all kinds.
+Just a few years ago, such a feature list would never have been considered by a small business for its own Web site. Where would it get the artificial intelligence it needs? Today, these functions and more are readily available in [Azure Cognitive Services](https://azure.microsoft.com/services/cognitive-services/). It's Microsoft's portfolio of more than 20 services and APIs designed to make AI and machine learning available to anyone who can lay down a few lines of code.
 
-One of these services is the [Computer Vision API](https://azure.microsoft.com/services/cognitive-services/computer-vision/), which can not only extract text but also make a pretty solid guess as to the identity of an object in a photo, or the relative age of a person in a photo judging from his face alone. The [Translator Text API](https://azure.microsoft.com/services/cognitive-services/translator-text-api/) recognizes dozens of the world's written languages.
-Using these services, you'll be able to produce a Web site with [Python](https://devblogs.microsoft.com/python/) — already among the world's most popular languages — and the [Flask framework](http://flask.pocoo.org/) for Python Web applications. This site will be capable of translating signage in photos, which is a feature your client can build upon to attract new customers and retain existing ones.
+One of these services is the [Computer Vision API](https://azure.microsoft.com/services/cognitive-services/computer-vision/), which can not only extract text from photos, but also identify objects in photos, find faces in photos and predict their age and gender, and more. Another is the [Translator Text API](https://azure.microsoft.com/services/cognitive-services/translator-text-api/), which can trnslate text between dozens of the world's written languages.
+
+Using these services, you will produce a Web site written in [Python](https://devblogs.microsoft.com/python/) — already among the world's most popular languages — and the [Flask](http://flask.pocoo.org/) framework for Python Web applications. This site will translate signage in photos, which is a feature your client can build upon to attract new customers and retain existing ones.
 
 ## The tools you will use
 
@@ -39,7 +37,7 @@ Azure Cognitive Services includes a function that isolates and spells out the te
 
 ## Learning objectives
 
-In this module, you'll see how to build such an application, step-by-step. First, you'll learn about the process of setting up your development system for all three of these components. Here, you'll use Microsoft's [Visual Studio Code](https://code.visualstudio.com/), which is available for Windows, macOS, and Linux. Then you'll build the functions that produce the pages that do what your client is looking for.
+In this module, you build such an application step by step. First, you'll learn about the process of setting up your development system for all three of these components. Here, you'll use Microsoft's [Visual Studio Code](https://code.visualstudio.com/), which is available for Windows, macOS, and Linux. Then you'll build the functions that produce the pages that do what your client is looking for.
 
 In this module, you will learn:
 - How to set up your development environment

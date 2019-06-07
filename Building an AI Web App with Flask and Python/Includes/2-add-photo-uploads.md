@@ -1,10 +1,85 @@
-# Add a page for uploading photos
+# Create a site that supports photo uploads
 
 In this unit, you will be producing very rudimentary HTML pages. They will not be styled or architected or use any sophisticated CSS. This is so you can focus on just the working mechanism of this application. (You're probably good enough with Web design that you can add the pretty things yourself.)
 
 You'll see some structural elements of this Python + Flask app that may be novel to you, even if you've programmed in Python since its beginning. These elements deal with how Flask attributes Python functions to specific Web pages.
 
 You will not need to use Azure Storage, or any other cloud-based file storage, for this unit. Azure Cognitive Services does include functions that look to the URL of a stored file. Setting up a Python application to be an authorized user of that file requires a significant number of steps, many of which involve cryptography, authentication, and secret keys. All this can be bypassed by sending the photo file directly to the application as a byte stream, using the session that Azure has already authenticated. So if you were preparing in your mind for several hours of wading through Active Directory credentials, relax — it's unnecessary.
+
+## Download assets for the Web site
+
+A Web site begins with basic assets such as HTML, CSS, and images. Let's start by downloading a set of assets and getting a basic Web site up and running in Flask.
+
+1. Create a directory on your hard disk in the location of your choice. This will be the *project directory* and will hold all of the files that comprise the Web site.
+
+1. [Download a zip file](https://topcs.blob.core.windows.net/public/contoso-travel.zip) containing the assets for Contoso Travel and copy the contents of the zip file into the project directory you created in the previous step.
+
+1. Take a moment to browse the files that you copied into the project directory. Verify that they include:
+
+	- **app.py**, which holds the Python code that drives the site
+	- **templates/index.html**, which contains the site's home page
+	- **static/main.css**, which contains the CSS that dresses up the home page
+	- **static/banner.jpg**, which contains the Web-site banner
+	- **static/placeholder.jpg**, which contains a placeholder image for photos that have yet to be uploaded
+
+	TODO: Describe app.py.
+
+1. Open a Command Prompt or terminal and `cd` to the project directory.
+
+1. If you are running Windows, execute the following command to create an environment variable named FLASK_ENV that tells Flask to run in development mode: 
+
+	```
+	set FLASK_ENV=development
+	```
+
+	If you are running Linux or macOS, use this command instead:
+
+	```
+	export FLASK_ENV=development
+	```
+
+	Running Flask in development mode is helpful when you're developing a Web site because Flask will automatically reload any files that change while the site is running. If you let Flask default to production mode and change the contents of an HTML file or other asset, you have to restart Flask to see the change in your browser.
+
+1. Now use the following command to start Flask:
+
+	```
+	flask run
+	```
+
+1. Open a browser and navigate to http://localhost:5000. Confirm that the Web site appears in the browser as shown below.
+
+	![Contoso Travel](media/initial-run.png)
+
+	_Contoso Travel_
+
+The page isn't functional yet. It doesn't support photo uploads, even though the user interface for doing so is in place. The next step, therefore, is to write some Python code that allows users to upload photos.
+
+## Add code for uploading photos
+
+
+
+
+
+```python
+
+```
+
+
+
+## Test the result
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## What you're about to do
 
