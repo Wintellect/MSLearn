@@ -6,7 +6,7 @@ You'll see some structural elements of this Python + Flask app that may be novel
 
 You will not need to use Azure Storage, or any other cloud-based file storage, for this unit. Azure Cognitive Services does include functions that look to the URL of a stored file. Setting up a Python application to be an authorized user of that file requires a significant number of steps, many of which involve cryptography, authentication, and secret keys. All this can be bypassed by sending the photo file directly to the application as a byte stream, using the session that Azure has already authenticated. So if you were preparing in your mind for several hours of wading through Active Directory credentials, relax — it's unnecessary.
 
-## Download starter code for the Web site
+## Create a basic Web site
 
 A Web site begins with basic assets such as HTML, CSS, and images. Let's start by downloading a set of assets and getting a basic Web site up and running in Flask.
 
@@ -54,7 +54,7 @@ A Web site begins with basic assets such as HTML, CSS, and images. Let's start b
 
 The page isn't functional yet. It doesn't support photo uploads, even though the user interface for doing so is in place. The next step, therefore, is to modify the site to allow users to upload photos.
 
-## Add code for uploading photos
+## Add support for uploading photos
 
 In this exercise, you will modify **index.html** and **app.py** so users can upload photos to the Web site.
 
@@ -120,9 +120,9 @@ In this exercise, you will modify **index.html** and **app.py** so users can upl
 
 Finish up by saving your changes to **index.html** and **app.py**. It's time to see the results.
 
-## Test the result
+## Upload a photo
 
-TODO: Add intro.
+Let's make sure your changes have the desired effect by uploading a photo to the site.
 
 1. Assuming Flask is still running in the project directory (if it's not, you can start it again with a `flask run` command), either refresh the page in your browser or open a new browser instance and navigate to http://localhost:5000.
 
@@ -134,7 +134,7 @@ TODO: Add intro.
 
 	_Contoso Travel showing an uploaded photo_
 
-You now have a basic Flask Web site running that accepts photo uploads. The next step is to add logic to extract text from the photos.
+You now have a basic Flask Web site running that accepts photo uploads. The next step is to modify the site to extract text from those photos.
 
 
 
