@@ -21,7 +21,7 @@ TODO: Add intro.
 1. Execute the following command to deploy the Web site to Azure, replacing tk.
 
 	```bash
-	az webapp up -n APP_NAME --resource_group RESOURCE_GROUP_NAME --location LOCATION
+	az webapp up -n APP_NAME --resource-group RESOURCE_GROUP_NAME --location LOCATION
 	```
 
 	The [az webapp up]() command creates an Azure App Service to host your Web site, configures the App Service with the packages specified in **requirements.txt**, and uploads the site to the App Service — all with one simple command.
@@ -41,7 +41,7 @@ When you ran the Web site locally, it used calls to `os.environ()` to load API k
 1. Open the Azure CLI and execute the following command to create an application setting named "VISION_API_KEY," replacing RESOURCE_GROUP with the name of the resource group created by the `az webapp up` command, APP_NAME with the name assigned to your App Service, and `computer_vision_api_key` with the Computer Vision API key that you obtained in an earlier unit:
 
 	```bash
-	az webapp config appsettings set -g RESOURCE_GROUP -n APP_NAME --settings VISION_API_KEY=computer_vision_api_key
+	az webapp config appsettings set -g RESOURCE_GROUP -n APP_NAME --settings VISION_KEY=computer_vision_api_key
 	```
 
 1. Now use this command to create an application setting named "VISION_ENDPOINT," replacing `computer_vision_endpoint` with the Computer Vision API endpoint you obtained earlier:
