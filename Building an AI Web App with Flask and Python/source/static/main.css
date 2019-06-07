@@ -26,7 +26,7 @@
     background-repeat: no-repeat;
     background-color: #96dfee;
     background-size: cover;
-    margin-bottom: 32px;
+    /*margin-bottom: 32px;*/
 }
 
 h1 {
@@ -46,7 +46,6 @@ h3 {
 
 #uploaded-image {
     height: 384px;
-    margin: 32px;
 }
 
 #upload-button {
@@ -57,5 +56,10 @@ h3 {
 
 #language {
     width: 256px;
-    margin: 0 auto;
+    margin: 32px auto;
+}
+
+#uploaded-image {
+    display: block;
+    margin: 32px auto;
 }

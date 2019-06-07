@@ -1,12 +1,9 @@
-from flask import Flask, render_template, url_for, request, flash
 import os, base64, json, requests
+from flask import Flask, render_template, request, flash
 
 from azure.cognitiveservices.vision.computervision import ComputerVisionClient
 from azure.cognitiveservices.vision.computervision.models import ComputerVisionErrorException
 from msrest.authentication import CognitiveServicesCredentials
-
-app = Flask(__name__)
-app.secret_key = os.urandom(24)
 
 # Create a ComputerVisionClient for calling the Computer Vision API
 vision_key = os.environ["VISION_KEY"]
@@ -17,11 +14,13 @@ vision_client = ComputerVisionClient(vision_endpoint, vision_credentials)
 # Retrieve the Translator Text API key 
 translate_key = os.environ["TRANSLATE_KEY"]
 
-# Define route for the app's one and only page
+app = Flask(__name__)
+app.secret_key = os.urandom(24)
+
 @app.route("/", methods=["GET", "POST"])
 def index():
     language="en"
-    
+
     if request.method == "POST":
         # Display the image that was uploaded
         image = request.files["file"]
@@ -35,15 +34,17 @@ def index():
         language = request.form["language"]
         translated_lines = translate_text(lines, language, translate_key)
 
+        # Flash the translated text
         for translated_line in translated_lines:
             flash(translated_line)
 
     else:
         # Display a placeholder image
-        uri = url_for("static", filename="placeholder.png")
+        uri = "/static/placeholder.png"
 
     return render_template("index.html", image_uri=uri, language=language)
 
+# Function that extracts text from images
 def extract_text_from_image(image, client):
     try:
         result = client.recognize_printed_text_in_stream(image=image)
@@ -65,6 +66,7 @@ def extract_text_from_image(image, client):
     except:
         return ["Error calling the Computer Vision API"]
 
+# Function the translates text into the specified language
 def translate_text(lines, language, key):
     uri = "https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&to=" + language
 
