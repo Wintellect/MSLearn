@@ -52,7 +52,7 @@ A Web site begins with basic assets such as HTML, CSS, and images. Let's start b
 
 	_Contoso Travel_
 
-The page isn't functional yet. It doesn't support photo uploads, even though the user interface for doing so is in place. The next step, therefore, is to write some Python code that allows users to upload photos.
+The page isn't functional yet. It doesn't support photo uploads, even though the user interface for doing so is in place. The next step, therefore, is to modify the site to allow users to upload photos.
 
 ## Add code for uploading photos
 
