@@ -20,7 +20,7 @@ TODO: Add closing.
 
 ## Add application settings
 
-When you ran the Web site locally, it used calls to `os.environ()` to load API keys for the Computer Vision API and the Translator Text API as well as the URL of the Computer Vision API from local environment variables. In order for the site to run in Azure, these same settings needed to be added to the Azure App Service's [application settings](). In the steps that follow, you will use the Azure CLI to create these application settings in Azure and initialize them with the same values that you used when you loaded them into local envrironment variables.
+When you ran the Web site locally, it used calls to `os.environ()` to load API keys for the Computer Vision API and the Translator Text API as well as the URL of the Computer Vision API from local environment variables. In order for the site to run in Azure, these same settings needed to be added to the Azure App Service's [application settings](). In the steps that follow, you will use the Azure CLI to create these application settings in Azure and initialize them with the same values that you used when you loaded them into local environment variables.
 
 1. Open the Azure CLI and execute the following command to create an application setting named "VISION_API_KEY," replacing RESOURCE_GROUP with the name of the resource group created by the `az webapp up` command, APP_NAME with the name assigned to your App Service, and `computer_vision_api_key` with the Computer Vision API key that you obtained in an earlier unit:
 
