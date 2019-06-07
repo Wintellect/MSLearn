@@ -1,6 +1,96 @@
 # Use Azure Cognitive Services to extract text from photos
 
-At the end of this unit, you’ll have a fully working application. Along the way, you’ll set up the VS Code debugger so that you can run the code locally, set breakpoints, and inspect it thoroughly. Flask has provisions for debuggers, and there are a handful of interesting choices... if you didn’t already have VS Code, which leverages Microsoft’s decades of experience with producing code development environments. So you’ll actually leave Flask’s debugging mode set to Off, and leave the driving to VS Code.
+At the end of this unit, you will have a fully working application. Along the way, you’ll set up the VS Code debugger so that you can run the code locally, set breakpoints, and inspect it thoroughly. Flask has provisions for debuggers, and there are a handful of interesting choices. if you didn’t already have VS Code, which leverages Microsoft’s decades of experience with producing code development environments. So you’ll actually leave Flask’s debugging mode set to Off, and leave the driving to VS Code.
+
+TODO: Add section on configuring Visual Studio Code?
+
+## Get a Computer Vision API key
+
+TODO: Add intro.
+
+1. tk.
+
+1. tk.
+
+1. tk.
+
+TODO: Add closing.
+
+## Modify the site to use the Computer Vision API
+
+TODO: Add intro.
+
+1. tk.
+
+1. tk.
+
+1. tk.
+
+
+
+	```python
+
+	```
+
+
+1. tk.
+
+
+	```html
+
+	```
+
+1. tk.
+
+1. tk.
+
+TODO: Add closing.
+
+## Extract text from photos
+
+Now let's run the modified site, upload a few photos, and see if the Computer Vision API lives up to its billing.
+
+1. If you are running Windows, execute the following commands to create environment variables containing the API key and endpoint you retrieved for the Computer Vision API, replacing `computer_vision_api_key` with the API key and `computer_vision_endpoint` with the endpoint URL:
+
+	```
+	set VISION_KEY=computer_vision_api_key
+	set VISION_ENDPOINT=computer_vision_endpoint
+	```
+
+	If you are running Linux or macOS, use these commands instead:
+
+	```
+	export VISION_KEY=computer_vision_api_key
+	export VISION_ENDPOINT=computer_vision_endpoint
+	```
+
+	When the site is running locally, calls to `os.environ` in your Python code load these variables from the environment. Later, when you deploy the site to Azure, the same variables will come from application settings in Azure — no code changes required.
+
+1. Navigate to http://localhost:5000 in your browser to open the Web site. Click the **Upload Photo** and button and upload a picture that contains text.
+
+1. Confirm that after a brief pause, the text extracted from the photo appears in a modal dialog.
+
+	![Extracing text from a photo](media/tk.png)
+
+	_Extracing text from a photo_
+
+1. Dismiss the dialog.
+
+Repeat this process with other photos to gauge the Computer Vision API's ability to extract text from the photos you upload. It isn't perfect, but it should get it right — or almost right — most of the time.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## What you’re about to do
 
