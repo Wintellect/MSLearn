@@ -6,7 +6,7 @@ You'll see some structural elements of this Python + Flask app that may be novel
 
 You will not need to use Azure Storage, or any other cloud-based file storage, for this unit. Azure Cognitive Services does include functions that look to the URL of a stored file. Setting up a Python application to be an authorized user of that file requires a significant number of steps, many of which involve cryptography, authentication, and secret keys. All this can be bypassed by sending the photo file directly to the application as a byte stream, using the session that Azure has already authenticated. So if you were preparing in your mind for several hours of wading through Active Directory credentials, relax — it's unnecessary.
 
-## Download assets for the Web site
+## Download starter code for the Web site
 
 A Web site begins with basic assets such as HTML, CSS, and images. Let's start by downloading a set of assets and getting a basic Web site up and running in Flask.
 
@@ -56,25 +56,87 @@ The page isn't functional yet. It doesn't support photo uploads, even though the
 
 ## Add code for uploading photos
 
+In this exercise, you will modify **index.html** and **app.py** so users can upload photos to the Web site.
 
+1. If Visual Studio Code isn't installed on your PC, go to https://code.visualstudio.com/ and install it now. Visual Studio Code is a free, lightweight source-code editor for Windows, macOS, and Linux. It features IntelliSense, integrated Git support, and much more.
 
+1. Start Visual Studio Code and use the **File** > **Open Folder...** command to open the project directory containing the Web site.
 
+1. Use Visual Studio Code's Explorer to open **index.html** in the "templates" folder. This is the Web site's home page, and the one that will be used to upload photos.
 
-```python
+	![Opening index.html](media/open-index.png)
 
-```
+	_Opening index.html_
 
+1. Paste the following code into **index.html** immediately before the closing `</body>` tag near the bottom of the file:
 
+	```html
+	<script type="text/javascript">
+	    $(function() {
+	        $("#upload-button").click(function() {
+	            $("#upload-file").click();
+	        });
+	
+	        $("#upload-file").change(function() {
+	            $("#submit-button").click();
+	        });
+	    });
+	</script>
+	```
+
+	TODO: Describe this code.
+
+1. Open **app.py** in Visual Studio Code and replace its contents with the following statements:
+
+	```python
+	import base64
+	from flask import Flask, render_template, request
+	
+	app = Flask(__name__)
+	
+	@app.route("/", methods=["GET", "POST"])
+	def index():
+	    if request.method == "POST":
+	        # Display the image that was uploaded
+	        image = request.files["file"]
+	        uri = "data:image/jpg;base64," + base64.b64encode(image.read()).decode("utf-8")
+	
+	    else:
+	        # Display a placeholder image
+	        uri = "/static/placeholder.png"
+	
+	    return render_template("index.html", image_uri=uri)
+	```
+
+	TODO: Describe this code.
+
+1. Return to **index.html** and find the `<img>` element on line 42. Replace `/static/placeholder.png` on that line with `{{ image_uri }}`. Here is the modified line:  
+
+	```html
+	<img id="uploaded-image" src="{{ image_uri }}">
+	```
+
+	TODO: Describe this code.
+
+1. Save your changes.
+
+TODO: Add closing.
 
 ## Test the result
 
+TODO: Add intro.
 
+1. Assuming Flask is still running in the project directory (if it's not, you can start it again with a `flask run` command), either refresh the page in your browser or open a new browser instance and navigate to http://localhost:5000.
 
+1. Click the **Upload Photo** button and select a photo from your local file system.
 
+1. Confirm that the photo you selected appears on the page:
 
+	![Contoso Travel showing an uploaded photo](media/uploaded-photo.png)
 
+	_Contoso Travel showing an uploaded photo_
 
-
+You now have a basic Flask Web site running that accepts photo uploads. The next step is to add logic to extract text from the photos.
 
 
 
