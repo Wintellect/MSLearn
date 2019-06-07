@@ -1,6 +1,66 @@
-# Deploy a Flask Web site to Azure
+# Deploy the Web site to Azure
 
 This unit requires you to have installed the Azure App Service extension in VS Code, which is available from the Extensions menu of VS Code. This extension enables you to deploy your application to Azure as you build it, using git as your package manager. VS Code contains the git components it needs to do its job, so you don't need to install git separately.
+
+## Deploy the site to an Azure App Service
+
+TODO: Add intro.
+
+1. tk.
+
+1. tk.
+
+1. tk.
+
+1. tk.
+
+1. tk.
+
+TODO: Add closing.
+
+## Initialize application settings
+
+TODO: Add intro.
+
+1. tk.
+
+1. tk.
+
+1. tk.
+
+1. tk.
+
+1. tk.
+
+TODO: Add closing.
+
+## Run the production site
+
+TODO: Add intro.
+
+1. tk.
+
+1. tk.
+
+1. tk.
+
+1. tk.
+
+1. tk.
+
+TODO: Add closing.
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## What you're about to do
 
