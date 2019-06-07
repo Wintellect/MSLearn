@@ -118,9 +118,7 @@ In this exercise, you will modify **index.html** and **app.py** so users can upl
 
 	TODO: Describe this code.
 
-1. Save your changes.
-
-TODO: Add closing.
+Finish up by saving your changes to **index.html** and **app.py**. It's time to see the results.
 
 ## Test the result
 
