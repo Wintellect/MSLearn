@@ -1,26 +1,42 @@
 # Deploy the Web site to Azure
 
-This unit requires you to have installed the Azure App Service extension in VS Code, which is available from the Extensions menu of VS Code. This extension enables you to deploy your application to Azure as you build it, using git as your package manager. VS Code contains the git components it needs to do its job, so you don't need to install git separately.
+TODO: Add introduction.
 
 ## Deploy the site to an Azure App Service
 
 TODO: Add intro.
 
-1. tk.
+1. TODO: Add instructions for installing the Azure CLI, logging in for the first time, and setting the default subscription.
 
-1. tk.
+1. Use a `cd` command to change to the project directory containing the Web site.
 
-1. tk.
+1. Execute the following command in the Command Prompt or terminal to generate a file named **requirements.txt** containing a list of packages installed with your site:
 
-1. tk.
+	```bash
+	pip freeze > requirements.txt
+	```
 
-1. tk.
+	TODO: Explain requirements.txt.
+
+1. Execute the following command to deploy the Web site to Azure, replacing tk.
+
+	```bash
+	az webapp up -n APP_NAME --resource_group RESOURCE_GROUP_NAME --location LOCATION
+	```
+
+	The [az webapp up]() command creates an Azure App Service to host your Web site, configures the App Service with the packages specified in **requirements.txt**, and uploads the site to the App Service — all with one simple command.
+
+1. Wait for the command to complete (it could take a few minutes). Then confirm that the Web site was successfully deployed. The output following a successful deployment will look something like this:
+
+	```
+
+	```
 
 TODO: Add closing.
 
 ## Add application settings
 
-When you ran the Web site locally, it used calls to `os.environ()` to load API keys for the Computer Vision API and the Translator Text API as well as the URL of the Computer Vision API from local environment variables. In order for the site to run in Azure, these same settings needed to be added to the Azure App Service's [application settings](). In the steps that follow, you will use the Azure CLI to create these application settings in Azure and initialize them with the same values that you used when you loaded them into local environment variables.
+When you ran the Web site locally, it used calls to `os.environ()` to load API keys for the Computer Vision API and the Translator Text API as well as the URL of the Computer Vision API from local environment variables. In order for the site to run in Azure, these same settings needed to be added to the Azure App Service's [application settings](https://docs.microsoft.com/azure/app-service/configure-common). In the steps that follow, you will use the Azure CLI to create these application settings in Azure and initialize them with the same values that you used when you loaded them into local environment variables.
 
 1. Open the Azure CLI and execute the following command to create an application setting named "VISION_API_KEY," replacing RESOURCE_GROUP with the name of the resource group created by the `az webapp up` command, APP_NAME with the name assigned to your App Service, and `computer_vision_api_key` with the Computer Vision API key that you obtained in an earlier unit:
 
@@ -50,15 +66,13 @@ _Viewing application settings in the Azure Portal_
 
 TODO: Add intro.
 
-1. tk.
+1. Point your browser to http://APP_NAME.azurewebsites.net, replacing APP_NAME with the name of your App Service. Confirm that the site appears in your browser and that it looks exactly as it did when running locally.
 
-1. tk.
+	![Contoso Travel running in Azure](media/azure-site.png)
+	
+	_Contoso Travel running in Azure_
 
-1. tk.
-
-1. tk.
-
-1. tk.
+1. Choose a language and upload a few photos containing signs with text that you want to translate. Does the site behave the same in Azure as it does when running locally?
 
 TODO: Add closing.
 
