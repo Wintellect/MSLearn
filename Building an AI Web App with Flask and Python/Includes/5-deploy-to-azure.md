@@ -68,7 +68,7 @@ When you ran the Web site locally, it used `os.environ` to load API keys for the
 	az webapp config appsettings set -g RESOURCE_GROUP -n APP_NAME --settings VISION_ENDPOINT=computer_vision_endpoint
 	```
 
-1. Finish up by using the following command to load your Translator Text API key into application settings:
+1. Finish up by using the following command to load your Translator Text API key into application settings, replacing `translate_api_key` with your key:
 
 	```bash
 	az webapp config appsettings set -g RESOURCE_GROUP -n APP_NAME --settings TRANSLATE_API_KEY=translate_api_key
