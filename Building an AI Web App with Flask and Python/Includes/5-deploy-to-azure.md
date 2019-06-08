@@ -36,7 +36,7 @@ Wait for the command to complete; it will take a few minutes. Then confirm from 
 
 When you ran the Web site locally, it used calls to `os.environ()` to load API keys for the Computer Vision API and the Translator Text API as well as the URL of the Computer Vision API from local environment variables. In order for the site to run in Azure, these same settings needed to be added to the Azure App Service's [application settings](https://docs.microsoft.com/azure/app-service/configure-common). In the steps that follow, you will use the Azure CLI to create these application settings in Azure and initialize them with the same values that you used when you loaded them into local environment variables.
 
-1. Open the Azure CLI and execute the following command to create an application setting named "VISION_API_KEY," replacing RESOURCE_GROUP with the name of the resource group created by the `az webapp up` command, APP_NAME with the name assigned to your App Service, and `computer_vision_api_key` with the Computer Vision API key that you obtained in an earlier unit:
+1. Execute the following CLI command to create an application setting named "VISION_API_KEY," replacing RESOURCE_GROUP with the name of the resource group created by the `az webapp up` command, APP_NAME with the name assigned to your App Service, and `computer_vision_api_key` with the Computer Vision API key that you obtained earlier:
 
 	```bash
 	az webapp config appsettings set -g RESOURCE_GROUP -n APP_NAME --settings VISION_KEY=computer_vision_api_key
@@ -62,7 +62,7 @@ _Viewing application settings in the Azure Portal_
 
 ## Run the production site
 
-TODO: Add intro.
+Now it's time to see the fruits of your labor.
 
 1. Point your browser to http://APP_NAME.azurewebsites.net, replacing APP_NAME with the name of your App Service. Confirm that the site appears in your browser and that it looks exactly as it did when running locally.
 
@@ -72,8 +72,8 @@ TODO: Add intro.
 
 1. Choose a language and upload a few photos containing signs with text that you want to translate. Does the site behave the same in Azure as it does when running locally?
 
-TODO: Add closing.
 
+If you later make changes to your site and want to update the App Service in Azure, simply run the `az webapp up` command again. Rather than create a new App Service, it will zip-deploy the files in the current directory to the existing App Service. If you would prefer to put the source-code files under source control and deploy them directly from Visual Studio Code, just follow the instructions in [Deploy to Azure App Service on Linux](https://code.visualstudio.com/docs/python/tutorial-deploy-app-service-on-linux).
 
 
 
