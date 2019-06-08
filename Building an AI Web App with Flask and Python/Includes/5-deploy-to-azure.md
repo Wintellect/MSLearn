@@ -10,7 +10,7 @@ In this exercise, you will use the [Azure CLI](https://docs.microsoft.com/cli/az
 
 1. In a Command Prompt or terminal window, log in to Azure with the following command:
 
-	```bash
+	```
 	az login
 	```
 
@@ -18,13 +18,13 @@ In this exercise, you will use the [Azure CLI](https://docs.microsoft.com/cli/az
 
 1. Type the following command to list the Azure subscriptions associated with your Microsoft account:
 
-	```bash
+	```
 	az account list
 	``` 
 
 1. The default subscription — the one used to create resources created with the CLI — will be marked `isDefault=true`. If that's the subscription you wish to use, proceed to the next step. Otherwise, use the following command to designate one of the other subscriptions as the default, replacing SUBSCRIPTION_ID with the ID of that subscription: 
 
-	```bash
+	```
 	az account set -s SUBSCRIPTION_ID
 	```
 
@@ -44,7 +44,7 @@ In this exercise, you will use the [Azure CLI](https://docs.microsoft.com/cli/az
 
 	While not required, it is advisable to specify the same location (region) that you specified when you obtained keys for the Computer Vision API and Translator Text API. This makes calls to these APIs faster by colocating the Web site and the services that it uses in the same region.
 
-	```bash
+	```
 	az webapp up -n APP_NAME --resource-group RESOURCE_GROUP_NAME --location LOCATION
 	```
 
@@ -58,19 +58,19 @@ When you ran the Web site locally, it used `os.environ` to load API keys for the
 
 1. Execute the following CLI command to create an application setting named "VISION_API_KEY," replacing RESOURCE_GROUP with the name of the resource group created by the `az webapp up` command, APP_NAME with the name assigned to your App Service, and `computer_vision_api_key` with the Computer Vision API key that you obtained earlier:
 
-	```bash
+	```
 	az webapp config appsettings set -g RESOURCE_GROUP -n APP_NAME --settings VISION_KEY=computer_vision_api_key
 	```
 
 1. Now use this command to create an application setting named "VISION_ENDPOINT," replacing `computer_vision_endpoint` with the Computer Vision API endpoint you obtained earlier:
 
-	```bash
+	```
 	az webapp config appsettings set -g RESOURCE_GROUP -n APP_NAME --settings VISION_ENDPOINT=computer_vision_endpoint
 	```
 
 1. Finish up by using the following command to load your Translator Text API key into application settings, replacing `translate_api_key` with your key:
 
-	```bash
+	```
 	az webapp config appsettings set -g RESOURCE_GROUP -n APP_NAME --settings TRANSLATE_API_KEY=translate_api_key
 	```
 
