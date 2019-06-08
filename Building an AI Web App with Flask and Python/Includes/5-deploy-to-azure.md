@@ -10,15 +10,19 @@ TODO: Add intro.
 
 1. Use a `cd` command to change to the project directory containing the Web site.
 
-1. Execute the following command in the Command Prompt or terminal to generate a file named **requirements.txt** containing a list of packages installed with your site:
+1. Create a text file named **requirements.txt** in the project directory containing the following statements:
 
-	```bash
-	pip freeze > requirements.txt
 	```
+	requests
+	Flask
+	azure-cognitiveservices-vision-computervision
+	``` 
 
 	TODO: Explain requirements.txt.
 
-1. Execute the following command to deploy the Web site to Azure, replacing tk.
+1. Execute the following command to deploy the Web site to Azure, replacing APP_NAME with the name you want to assign to the site, RESOURCE_GROUP_NAME with the name of the resource group you want created to hold the Azure resources that are created (for example, "contoso-travel-rg"), and LOCATION with the region where you want the App Service to be hosted (for example, "eastus"). The app name must be **unique with Azure**, so you probably won't be able to use a common name such as "contosotravel" unless you append some random characters to the end.
+
+	While not required, it is advisable to specify the same location (region) that you specified when you obtained keys for the Computer Vision API and Translator Text API. This makes calls to these APIs faster by colocating the Web site and the services that it uses in the same region.
 
 	```bash
 	az webapp up -n APP_NAME --resource-group RESOURCE_GROUP_NAME --location LOCATION
@@ -26,13 +30,7 @@ TODO: Add intro.
 
 	The [az webapp up]() command creates an Azure App Service to host your Web site, configures the App Service with the packages specified in **requirements.txt**, and uploads the site to the App Service — all with one simple command.
 
-1. Wait for the command to complete (it could take a few minutes). Then confirm that the Web site was successfully deployed. The output following a successful deployment will look something like this:
-
-	```
-
-	```
-
-TODO: Add closing.
+Wait for the command to complete; it will take a few minutes. Then confirm from the output that the Web site was successfully deployed.
 
 ## Add application settings
 
