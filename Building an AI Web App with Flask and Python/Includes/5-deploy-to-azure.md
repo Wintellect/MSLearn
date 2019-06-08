@@ -20,7 +20,7 @@ TODO: Add intro.
 
 	TODO: Explain requirements.txt.
 
-1. Execute the following command to deploy the Web site to Azure, replacing APP_NAME with the name you want to assign to the site, RESOURCE_GROUP_NAME with the name of the resource group you want created to hold the Azure resources that are created (for example, "contoso-travel-rg"), and LOCATION with the region where you want the App Service to be hosted (for example, "eastus"). The app name must be **unique with Azure**, so you probably won't be able to use a common name such as "contosotravel" unless you append some random characters to the end.
+1. Execute the following command to deploy the Web site to Azure, replacing APP_NAME with the name you want to assign to the site, RESOURCE_GROUP_NAME with the name of the resource group you want created to hold the Azure resources that are created (for example, "contoso-travel-rg"), and LOCATION with the region where you want the App Service to be hosted (for example, "eastus"). The app name must be **unique with Azure**, so you probably won't be able to use a common name such as "contoso" or "contosotravel" unless you append some random characters to the end.
 
 	While not required, it is advisable to specify the same location (region) that you specified when you obtained keys for the Computer Vision API and Translator Text API. This makes calls to these APIs faster by colocating the Web site and the services that it uses in the same region.
 
