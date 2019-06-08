@@ -4,7 +4,10 @@ TODO: Add introduction.
 
 ## Deploy the site to an Azure App Service
 
-TODO: Add intro.
+In this exercise, you will use the [Azure CLI](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli?view=azure-cli-latest) to deploy your Web site to Azure so it can be accessed by anyone, from anywhere, using a browser. The Azure CLI is a command-line environment for executing Azure commands for creating and managing Azure resources. Versions are available for Windows, macOS, and Linux.
+
+
+
 
 1. TODO: Add instructions for installing the Azure CLI, logging in for the first time, and setting the default subscription.
 
@@ -28,7 +31,7 @@ TODO: Add intro.
 	az webapp up -n APP_NAME --resource-group RESOURCE_GROUP_NAME --location LOCATION
 	```
 
-	The [az webapp up]() command creates an Azure App Service to host your Web site, configures the App Service with the packages specified in **requirements.txt**, and uploads the site to the App Service — all with one simple command.
+	The [az webapp up]() command creates an Azure App Service to host your Web site, configures the App Service with the packages specified in **requirements.txt**, and uploads the site to the App Service — all with one simple command. Sites that run on Node.js and Python are deployed to Linux App Services, while sites built on ASP.NET and ASP.NET Core run in Windows App Services.
 
 Wait for the command to complete; it will take a few minutes. Then confirm from the output that the Web site was successfully deployed.
 
