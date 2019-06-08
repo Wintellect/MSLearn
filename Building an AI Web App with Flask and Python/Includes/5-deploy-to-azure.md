@@ -6,10 +6,27 @@ TODO: Add introduction.
 
 In this exercise, you will use the [Azure CLI](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli?view=azure-cli-latest) to deploy your Web site to Azure so it can be accessed by anyone, from anywhere, using a browser. The Azure CLI is a command-line environment for executing Azure commands for creating and managing Azure resources. Versions are available for Windows, macOS, and Linux.
 
+1. If the Azure CLI isn't installed on your computer, go to https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest and install it now. You can determine whether it's installed by executing an `az -v` command in a Command Prompt or terminal window. If the CLI is installed, a version number will appear in the output.
 
+1. In a Command Prompt or terminal window, log in to Azure with the following command:
 
+	```bash
+	az login
+	```
 
-1. TODO: Add instructions for installing the Azure CLI, logging in for the first time, and setting the default subscription.
+	In the ensuing browser window, log in using your Microsoft account. Then close the browser and return to the CLI.
+
+1. Type the following command to list the Azure subscriptions associated with your Microsoft account:
+
+	```bash
+	az account list
+	``` 
+
+1. The default subscription — the one used to create resources created with the CLI — will be marked `isDefault=true`. If that's the subscription you wish to use, proceed to the next step. Otherwise, use the following command to designate one of the other subscriptions as the default, replacing SUBSCRIPTION_ID with the ID of that subscription: 
+
+	```bash
+	az account set -s SUBSCRIPTION_ID
+	```
 
 1. Use a `cd` command to change to the project directory containing the Web site.
 
@@ -63,7 +80,7 @@ If you would like, you can log into the [Azure Portal](https://portal.azure.com)
 
 _Viewing application settings in the Azure Portal_
 
-## Run the production site
+## Run the site in Azure
 
 Now it's time to see the fruits of your labor.
 
