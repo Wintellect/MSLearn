@@ -38,7 +38,7 @@ In this exercise, you will use the [Azure CLI](https://docs.microsoft.com/cli/az
 	azure-cognitiveservices-vision-computervision
 	``` 
 
-	TODO: Explain requirements.txt.
+	**requirements.txt** contains a list of Python packages that must be installed along with the app when the app is deployed to Azure.
 
 1. Execute the command below to deploy the Web site to Azure, replacing APP_NAME with the name you want to assign to the site, RESOURCE_GROUP_NAME with the name of the resource group that's created to hold the Azure resources that are created (for example, "contoso-travel-rg"), and LOCATION with the region where you want the App Service to be hosted (for example, "eastus"). The app name must be **unique with Azure**, so you probably won't be able to use a common name such as "contoso" or "contosotravel" unless you append some random characters to the end.
 
