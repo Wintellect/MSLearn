@@ -44,14 +44,14 @@ Flask is a Web framework for applications written in Python. In order to run Fla
 
 	This is important because older versions of `pip` may miss some of the dependencies needed for execution in Azure.
 
-1. Now execute the following commands to install Flask and the Python SDK for Azure's Computer Vision API in the virtual environment:
+1. Now execute the following commands to install Flask and the Python SDK for Azure's Computer Vision API:
 
 	```bash
 	pip install Flask
 	pip install azure-cognitiveservices-vision-computervision
 	```
 
-Because these packages are installed in a virtual environment, the installs are localized and should not affect other Python apps installed in your system.
+Check the output and make sure that both packages install without errors.
 
 ## Install the Azure CLI
 
