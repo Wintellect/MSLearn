@@ -162,7 +162,21 @@ This example assumes that just one error message was flashed, but you can call `
 
 Most Web sites contain images, style sheets, and other static files that don't change as the application executes. Flask looks for these files in a special subdirectory named "static."
 
-TODO: Finish this section.
+Let's say your site includes a style sheet named **main.css** and a banner named **banner.jpg**. You can drop these files into the "static" subdirectory and reference them in HTML this way:
+
+```html
+<link rel="stylesheet" href="/static/main.css">
+<img src="/static/banner.jpg">
+```
+
+You can also use Flask's `url_for()` function to resolve these URLs:
+
+```html
+<link rel="stylesheet" href="url_for('static', filename='main.css')">
+<img src="url_for('static', filename='banner.jpg')">
+```
+
+The benefit of using `url_for()` is that tk.
 
 ## Create the Contoso Travel Web site
 
