@@ -2,21 +2,31 @@
 
 TODO: Add introduction.
 
-## Get a Translator Text API key
+## Subscribe to the Translator Text API
 
-TODO: Add intro.
+In order to call the Translator Text API, you must obtain an API key. As with the Computer Vision API, this key travels in each request you place to the Translator Text API in an `Ocp-Apim-Subscription-Key` header and maps calls to Azure subscriptions.
 
-1. tk.
+1. In a Command Prompt or terminal window, use the following command to subscribe to the Translator Text API and place the resulting resource named "translator-text" in the resource group you created earlier:
 
-1. tk.
+	```
+	az cognitiveservices account create --resource-group contoso-travel-rg --name translator-text --location global --kind TextTranslation --sku F0 --yes
+	```
 
-1. tk.
+	Unlike the Computer Vision API, which requires you to specify an Azure region, the Translator Text API is a "global" API that doesn't live in a specific region. That's the reason for the `--location global` parameter. Among other things, this means that you don't have to retrieve an endpoint URL for the Translator Text API as you do for the Computer Vision API. One endpoint — https://api.cognitive.microsofttranslator.com/translate?api-version=3.0 — serves all regions. 
 
-TODO: Add closing.
+1. Use the following command to obtain an API key for the Translator Text API:
+
+	```
+	az cognitiveservices account keys list --resource-group contoso-travel-rg --name translator-text --query key1 --output tsv
+	```
+
+	The output from the command is a string containing numbers and letters. **This is your Translator Text API key**. Copy the key into a text file and save it so you can easily retrieve it later. You will need it later in this unit and in a subsequent unit.
+
+This API key uses the Text Translator API's free tier (`--sku F0`), which supports translating up to 2,000,000 characters of text per month. In a production environment, you would want to subscribe to one of the paid tiers documented [here](https://azure.microsoft.com/pricing/details/cognitive-services/translator-text-api/).
 
 ## Modify the site to use the Translator Text API
 
-TODO: Add intro.
+You have now subscribed to the Translator Text API and obtained an API key for calling it. The next step is to modify the Contoso Travel site to use the Translator Text API to translate text extracted from photos with the Computer Vision API.
 
 1. Open **index.html** and insert the following statements at line 42, just before the `<img>` element:
 
@@ -201,15 +211,13 @@ TODO: Add intro.
 
 	TODO: Explain this code.
 
-1. tk.
-
 TODO: Add closing.
 
 ## Translate text extracted from photos
 
-TODO: Add intro.
+The final step is to test the changes that you made by uploading photos to the site and allowing the Translator Text API to translate the text in them.
 
-1. If you are running Windows, use the following command to create an environment variable containing the API key you retrieved for the Translator Text API, replacing `translator_text_api_key` with the API key:
+1. If you are running Windows, use the following command to create an environment variable containing the API key you retrieved for the Translator Text API, replacing `translator_text_api_key` with your key:
 
 	```
 	set TRANSLATE_KEY=translator_text_api_key
@@ -235,4 +243,4 @@ TODO: Add intro.
 
 	_Extracting text from a photo_
 
-Repeat this process with other photos to gauge the Translator Text API's ability to translate text you submit to it.
+Repeat this process with other photos to gauge the Translator Text API's ability to translate text submitted to it.
