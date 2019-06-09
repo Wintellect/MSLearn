@@ -44,15 +44,15 @@ In this exercise, you will use the [Azure CLI](https://docs.microsoft.com/cli/az
 
 	**requirements.txt** contains a list of Python packages that must be installed along with the app when the app is deployed to Azure.
 
-1. Execute the command below to deploy the Web site to Azure, replacing APP_NAME with the name you want to assign to the site, RESOURCE_GROUP_NAME with the name of the resource group created to hold the Azure resources that are created (for example, "contoso-travel-rg"), and LOCATION with the region where you want the App Service to be hosted (for example, "eastus"). The app name must be **unique with Azure**, so you probably won't be able to use a common name such as "contoso" or "contosotravel" unless you append some random characters to the end.
-
-	While not required, it is advisable to specify the same location (region) that you specified when you obtained keys for the Computer Vision API and Translator Text API. This makes calls to these APIs faster by colocating the Web site and the services that it uses in the same region.
+1. Execute the command below to deploy the Web site to Azure, replacing APP_NAME with the name you want to assign to the site. The name must be **unique with Azure**, so you probably won't be able to use a common name such as "contoso" or "contosotravel" unless you append some random characters to the end.
 
 	```
-	az webapp up -n APP_NAME --resource-group RESOURCE_GROUP_NAME --location LOCATION
+	az webapp up -n APP_NAME --resource-group contoso-travel-rg --location northcentralus
 	```
 
 	The [az webapp up]() command creates an Azure App Service to host your Web site, configures the App Service with the packages specified in **requirements.txt**, zips the files in the current directory and its subdirectories, and uploads the site to the App Service — all with one simple command. Sites that run on Node.js and Python are deployed to Linux App Services, while sites built on ASP.NET and ASP.NET Core run in Windows App Services.
+
+	> Observe that you deployed the App Service in the same region (North Central US) as the Computer Vision API. This makes calls to the API faster by colocating the Web site and the API that it uses in the same Azure region.
 
 Wait for the command to complete; it will take a few minutes. Then confirm from the output that the Web site was successfully deployed.
 
@@ -60,22 +60,22 @@ Wait for the command to complete; it will take a few minutes. Then confirm from 
 
 When you ran the Web site locally, it used `os.environ` to load API keys for the Computer Vision API and the Translator Text API and the URL of the Computer Vision API from local environment variables. In order for the site to run in Azure, these same settings needed to be added to the Azure App Service's [application settings](https://docs.microsoft.com/azure/app-service/configure-common). In the steps that follow, you will use the Azure CLI to create these application settings in Azure and initialize them with the same values that you used when you loaded them into local environment variables.
 
-1. Execute the following CLI command to create an application setting named "VISION_API_KEY," replacing RESOURCE_GROUP with the name of the resource group created by the `az webapp up` command, APP_NAME with the name assigned to your App Service, and `computer_vision_api_key` with the Computer Vision API key that you obtained earlier:
+1. Execute the following CLI command to create an application setting named "VISION_API_KEY," replacing APP_NAME with the name assigned to your App Service and `computer_vision_api_key` with the Computer Vision API key that you obtained earlier:
 
 	```
-	az webapp config appsettings set -g RESOURCE_GROUP -n APP_NAME --settings VISION_KEY=computer_vision_api_key
+	az webapp config appsettings set -g contoso-travel-rg -n APP_NAME --settings VISION_KEY=computer_vision_api_key
 	```
 
 1. Now use this command to create an application setting named "VISION_ENDPOINT," replacing `computer_vision_endpoint` with the Computer Vision API endpoint you obtained earlier:
 
 	```
-	az webapp config appsettings set -g RESOURCE_GROUP -n APP_NAME --settings VISION_ENDPOINT=computer_vision_endpoint
+	az webapp config appsettings set -g contoso-travel-rg -n APP_NAME --settings VISION_ENDPOINT=computer_vision_endpoint
 	```
 
 1. Finish up by using the following command to load your Translator Text API key into application settings, replacing `translate_api_key` with your key:
 
 	```
-	az webapp config appsettings set -g RESOURCE_GROUP -n APP_NAME --settings TRANSLATE_API_KEY=translate_api_key
+	az webapp config appsettings set -g contoso-travel-rg -n APP_NAME --settings TRANSLATE_API_KEY=translate_api_key
 	```
 
 If you would like, you can log into the [Azure Portal](https://portal.azure.com), open the Azure App Service created by the `az webapp up` command, and view the application settings that these commands created. The screen shot below illustrates what you will see if you do.
