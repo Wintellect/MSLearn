@@ -178,9 +178,11 @@ You can also use Flask's `url_for()` function to resolve these URLs:
 
 One benefit of using `url_for()` is that the file names themselves can be variables, which is useful when building dynamic Web sites.
 
+TODO: Explain this further.
+
 ## Create the Contoso Travel Web site
 
-A Web site begins with basic assets such as HTML, CSS, and images. Let's put the concepts that you've learned to work by downloading a set of assets and getting a basic Web site up and running in Flask.
+A Web site begins with basic assets such as HTML, CSS, and images. Let's put the concepts that you've learned thus far to work by downloading a set of assets and getting a basic Web site up and running in Flask.
 
 1. Create a directory on your hard disk in the location of your choice. This will be the *project directory* and will hold all of the files that comprise the Web site.
 
@@ -194,7 +196,7 @@ A Web site begins with basic assets such as HTML, CSS, and images. Let's put the
 	- **static/banner.jpg**, which contains the Web-site banner
 	- **static/placeholder.jpg**, which contains a placeholder image for photos that have yet to be uploaded
 
-	Of these files, **app.py** is of particular significance. Here is what's in the file right now:
+	Of these files, **app.py** is of particular significance. Here's what's in it right now:
 
 	```python
 	from flask import Flask, render_template
@@ -207,11 +209,9 @@ A Web site begins with basic assets such as HTML, CSS, and images. Let's put the
 	    return render_template("index.html")
 	```
 
-	The first statement imports a pair of functions from the Flask module you installed in the previous unit. The second statements invokes one of those functions to create an object named `app` representing the application.
+	Currently, the app consists of a single page named **index.html** located in the "templates" subdirectory. **index.html** doesn't contain any special expressions at the moment — it is simply a static file — but that will change as you further develop the site.
 
-	TODO: Complete this description.
-
-1. Open a Command Prompt or terminal window and `cd` to the project directory.
+1. Open a Command Prompt window or terminal and `cd` to the project directory.
 
 1. If you are running Windows, execute the following command to create an environment variable named FLASK_ENV that tells Flask to run in development mode: 
 
@@ -239,7 +239,7 @@ A Web site begins with basic assets such as HTML, CSS, and images. Let's put the
 
 	_Contoso Travel_
 
-The page isn't functional yet. It doesn't support photo uploads, even though the user interface for doing so is in place. The next step, therefore, is to modify the site to allow users to upload photos.
+The page isn't functional yet. It doesn't support photo uploads, even though the user interface for doing so is in place. The next step is to modify the site to allow users to upload photos.
 
 ## Add support for uploading photos
 
