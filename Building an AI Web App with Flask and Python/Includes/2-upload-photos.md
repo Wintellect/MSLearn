@@ -58,7 +58,7 @@ You can continue adding routes and functions until the pages that your site supp
 
 You typically don't want to include inline HTML in the functions that render your site's pages. Instead, you want to define those pages in HTML files.
 
-Flask contains a function named `render_template()` that looks for HTML files in a subdirectory named "templates" and renders them out to the page. The following example produces the exact same output as the previous example, and it assumes that the directory in which **app.py** is located has a subdirectory named "templates" that contains HTML files named **index.html**, **about.html**, and **contact.html**:
+Flask contains a function named `render_template()` that looks for HTML files in a subdirectory named "templates" and renders them out to the page. The following example produces the exact same output as the previous example. It assumes that the directory in which **app.py** is located has a subdirectory named "templates" that contains HTML files named **index.html**, **about.html**, and **contact.html**:
 
 ```python
 from flask import Flask, render_template()
