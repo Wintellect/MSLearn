@@ -51,7 +51,7 @@ Flask is a Web framework for applications written in Python. In order to run Fla
 	pip install azure-cognitiveservices-vision-computervision
 	```
 
-Check the output and make sure that both packages install without errors.
+Check the output and make sure that both packages installed without errors.
 
 ## Install the Azure CLI
 
