@@ -13,7 +13,7 @@ It is the OCR feature that will enable the Contoso Travel site to extract text f
 
 ## Subscribe to the Computer Vision API
 
-In order to call the Computer Vision API, you must first obtain an API key. This key travels in each request you place to the Computer Vision API in an HTTP header named `Ocp-Apim-Subscription-Key`. It is Azure's way of authenticating the caller and determining which Azure subscription to bill calls to if billing is required. Most Azure Cognitive Service APIs have free tiers for which no billing is performed, but if you plan to place thousands of calls a day to a Cognitive Services API, you will be billed for it through your Azure subscription.
+In order to call the Computer Vision API, you must first obtain an API key. This key travels in each request you place to the Computer Vision API in an HTTP header named `Ocp-Apim-Subscription-Key`. It is Azure's way of authenticating the caller and determining which Azure subscription to bill calls to. Most Azure Cognitive Service APIs have free tiers for which no billing is performed, but if you plan to place thousands of calls a day to a Cognitive Services API, you will be billed for it through your Azure subscription.
 
 You can obtain a Computer Vision API key using the [Azure CLI](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli?view=azure-cli-latest) or the [Azure Portal](https://portal.azure.com). In this exercise, you will obtain an API key and a corresponding URL for placing calls to the Computer Vision API with that key using the Azure CLI.
 
