@@ -112,18 +112,19 @@ def contact():
 
 In effect, **master.html** becomes a template for output, and you customize the output for each page by passing a variable named `message` into the template and referencing that variable in the template using `{{ ... }}` expressions.
 
+### Control-of-flow expressions
+
+
+
 ### Static files
 
 Most Web sites contain images, style sheets, and other static files that don't change as the application executes. Flask looks for these files in a special subdirectory named "static."
 
-
-
-
-
+TODO: Finish this section.
 
 ## Create the Contoso Travel Web site
 
-A Web site begins with basic assets such as HTML, CSS, and images. Let's start by downloading a set of assets and getting a basic Web site up and running in Flask.
+A Web site begins with basic assets such as HTML, CSS, and images. Let's put the concepts that you've learned to work by downloading a set of assets and getting a basic Web site up and running in Flask.
 
 1. Create a directory on your hard disk in the location of your choice. This will be the *project directory* and will hold all of the files that comprise the Web site.
 
