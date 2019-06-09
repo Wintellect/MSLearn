@@ -46,7 +46,7 @@ def contact():
     return "<h1>This the Contact Us page</h1>"
 ``` 
 
-If the app is hosted at the www.contoso.com, it now supports the following URLs:
+If the app is hosted at www.contoso.com, it now supports the following URLs:
 
 - www.contoso.com/
 - www.contoso.com/about
@@ -110,11 +110,53 @@ def contact():
     return render_template("master.html", message="This is the Contact Us page")
 ``` 
 
-In effect, **master.html** becomes a template for output, and you customize the output for each page by passing a variable named `message` into the template and referencing that variable in the template using `{{ ... }}` expressions.
+In effect, **master.html** becomes a template for output, and you customize the output for each page by passing a variable named `message` into the template and referencing that variable in the template using `{{ ... }}` expressions. For more information on using templates in Flask, see [Templates](http://flask.pocoo.org/docs/1.0/tutorial/templates/).
 
 ### Control-of-flow expressions
 
+Expresions delimited by `{{` and `}}` aren't the only special ones that Flask supports. It also supports control-of-flow statements enclosed in `{%` and `%}` delimiters. For example, the following HTML template displays a default message in a page if the `message` variable isn't defined:
 
+```html
+{% if message %}
+    <h1>This is a default message</h1>
+{% else %}
+	<h1>{{ message }}</h1>
+{% endif %}
+```
+
+Expressions such as these can even be used to conditionally execute JavaScript code:
+
+```html
+{% if message %}
+    <script type="language/javascript">
+        window.alert("Error: No message specified");
+    </script>
+{% else %}
+	<h1>{{ message }}</h1>
+{% endif %}
+```
+
+Control-of-flow statements such as these are frequently used to display error messages passed to Flask's `flash()` function. For example, let's say you encounter an error condition in **app.py** and want to display a message to the user in a JavaScript alert box. Here's the code in **app.py**:
+
+```python
+from flask import flash
+
+flash("This is an error message") 
+``` 
+
+You could then include the following statements in the corresponding HTML file to display the error message:
+
+```html
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        <script type="language/javascript">
+            window.alert("{{ messages[0] }}");
+        </script>
+    {% endif %}
+{% endwith %}
+```
+
+This example assumes that just one error message was flashed, but you can call `flash()` multiple times to queue up several messages and enumerate them with a `{% for message in messages %}` statement. For more information on message flashing in Flask, see [Message Flashing](http://flask.pocoo.org/docs/1.0/patterns/flashing/).
 
 ### Static files
 
