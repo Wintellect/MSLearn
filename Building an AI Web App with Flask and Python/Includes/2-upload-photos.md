@@ -120,7 +120,7 @@ Expresions delimited by `{{` and `}}` aren't the only special ones that Flask su
 {% if message %}
     <h1>This is a default message</h1>
 {% else %}
-	<h1>{{ message }}</h1>
+    <h1>{{ message }}</h1>
 {% endif %}
 ```
 
