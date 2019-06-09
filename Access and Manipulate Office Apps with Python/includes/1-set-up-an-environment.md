@@ -2,7 +2,7 @@
  
 This module assumes you have basic familiarity with such office productivity tools as [Microsoft Word](https://www.office.com/?auth=2), Microsoft Excel, and a PDF viewer.  An abundance of on-line help is available to start you with these, or to help you "brush up" on your existing knowledge.
 
-This module also assume you are acquainted with the Python programming language, and know the basics of how to prepare and launch Python progr ams.  [TODO:  refs]
+This module also assume you are acquainted with the Python programming language, and know the basics of how to prepare and launch Python programs.  [TODO:  refs]
 
 
 ## Arrange for Python 3.6
