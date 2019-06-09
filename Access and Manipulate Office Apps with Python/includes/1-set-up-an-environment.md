@@ -39,7 +39,7 @@ or even something more different.  A great deal of documentation is available on
 in the source of your programs.
 
 
-** Summary**
+## Summary
 
 That's it.  If you:
 
