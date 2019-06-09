@@ -4,9 +4,68 @@ Now that you have an environment for Python and Flask prepared, it's time to beg
 
 ## Flask fundamentals
 
-TODO: Add a few paragraphs introducing the basics of Flask, including routing and rendering.
+Every Flask application begins with a file named **app.py**, which Flask automatically looks for when an application starts up. The following **app.py** file implements the simplest possible Web site — one with a single page that displays "Hello, world" to the user:
 
-## Create a basic Web site
+```python
+from flask import Flask
+
+app = Flask(__name__)
+
+# Define a route for the app's home page
+@app.route("/")
+def index():
+    return "<h1>Hello, world</h1>"
+```
+
+The first statement imports a function named `Flask()` from the `flask` package installed with `pip`. The second statement calls that function to create a Flask app and assign it to the variable named `app`.
+
+The fourth and fifth statements define a function that's called when the user requests the site's home page — for example, "http://www.contoso.com/." The preceding statement — `@app.route("/")` — maps the route ("/") to the function. The function name is unimportant, but `index` is commonly used as the name for the function that renders the site's home page.
+
+### Routing in Flask
+
+Suppose your Web site contains several pages rather than just one. You can use `@app.route()` to map all the routes that the site supports to functions that render the corresponding pages:
+
+```python
+from flask import Flask
+
+app = Flask(__name__)
+
+# Define a route for the app's home page
+@app.route("/")
+def index():
+    return "<h1>This the home page</h1>"
+
+# Define a route for the app's About page
+@app.route("/about")
+def about():
+    return "<h1>This the About page</h1>"
+
+# Define a route for the app's Contact Us page
+@app.route("/contact")
+def contact():
+    return "<h1>This the Contact Us page</h1>"
+``` 
+
+If the app is hosted at the www.contoso.com, it now supports the following URLs:
+
+- www.contoso.com/
+- www.contoso.com/about
+- www.contoso.com/contact
+
+You can continue adding routes and functions until the pages that your site supports are accessible by URL.
+
+### Using HTML templates
+
+
+
+
+
+### Serving up static files
+
+
+
+
+## Create the Contoso Travel Web site
 
 A Web site begins with basic assets such as HTML, CSS, and images. Let's start by downloading a set of assets and getting a basic Web site up and running in Flask.
 
