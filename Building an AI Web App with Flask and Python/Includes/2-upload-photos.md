@@ -81,7 +81,7 @@ def contact():
     return render_template("contact.html")
 ``` 
 
-Why is the function named `render_template()`? Because it can do more than simply load static HTML files. It also allows allows you to pass it user-defined variables and inject their values into the page at run-time. You could for example, place a file named **master.html** in the "templates" subdirectory and include the following markup in it:
+Why is the function named `render_template()`? Because it can do more than simply load static HTML files. It also allows allows you to pass it user-defined variables and inject their values into the page at run-time. You could, for example, place a file named **master.html** in the "templates" subdirectory and include the following markup in it:
 
 ```html
 <h1>{{ message }}</h1>
