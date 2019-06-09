@@ -58,9 +58,59 @@ You can continue adding routes and functions until the pages that your site supp
 
 You typically don't want to include inline HTML in the functions that render your site's pages. Instead, you want to define those pages in HTML files.
 
+Flask contains a function named `render_template()` that looks for HTML files in a subdirectory named "templates" and renders them out to the page. The following example produces the exact same output as the previous example, and it assumes that the directory in which **app.py** is located has a subdirectory named "templates" that contains HTML files named **index.html**, **about.html**, and **contact.html**:
 
+```python
+from flask import Flask, render_template()
 
+app = Flask(__name__)
 
+# Define a route for the app's home page
+@app.route("/")
+def index():
+    return render_template("index.html")
+
+# Define a route for the app's About page
+@app.route("/about")
+def about():
+    return render_template("about.html")
+
+# Define a route for the app's Contact Us page
+@app.route("/contact")
+def contact():
+    return render_template("contact.html")
+``` 
+
+Why is the function named `render_template()`? Because it can do more than simply load static HTML files and render their contents. It also allows allows you to pass user-defined variables and inject their values into the page at run-time. You could for example, place a file named **master.html** in the "templates" subdirectory and include the following markup in it:
+
+```html
+<h1>{{ message }}</h1>
+```
+
+You could then write **app.py** this way:
+
+```python
+from flask import Flask, render_template()
+
+app = Flask(__name__)
+
+# Define a route for the app's home page
+@app.route("/")
+def index():
+    return render_template("master.html", message="This is the home page")
+
+# Define a route for the app's About page
+@app.route("/about")
+def about():
+    return render_template("master.html", message="This is the About page")
+
+# Define a route for the app's Contact Us page
+@app.route("/contact")
+def contact():
+    return render_template("master.html", message="This is the Contact Us page")
+``` 
+
+In effect, **master.html** becomes a template for output, and you customize the output for each page by passing a variable named `message` into the template and reference that variable in the template itself.
 
 ### Static files
 
