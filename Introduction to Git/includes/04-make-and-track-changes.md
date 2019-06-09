@@ -273,5 +273,4 @@ You also used the Unix commands
 * [`cat`](https://linux.die.net/man/1/cat), which concatenates files (including input from the terminal) and
 * [`sed`](https://linux.die.net/man/1/sed), which applies text-editing commands non-interactively.
 
-In the next unit you learn how to use Git to recover from several common
-mistakes, including some of the mistakes that people often make using Git. [*-DO WE NEED THE SECOND CLAUSE?-ES*]
+In the next unit you learn how to use Git to recover from several common mistakes.

@@ -1,12 +1,12 @@
 # Collaborate using a shared repo
 
-Directly pulling from someone else's repository works, provided you're both on the same network, but it's a clumsy process -- and most collaborators are not on the same network. It's much better to set up a central repository to which you can both push as well as pull from.
+Directly pulling from someone else's repository works, provided you're both on the same network, but it's a clumsy process -- and most collaborators are not on the same network. It's much better to set up a central repository to which everyone involved can push as well as pull from.
 
 When you tell Bob about your project, and he asks to participate too, that's exactly what you do.
 
 ## Create a bare repository
 
-What you need is a repository that doesn't have a working tree, to avoid the problem Alice had trying to push.  That's called a _bare repository_.
+What you need is a repository that doesn't have a working tree, to avoid the problem Alice had trying to push. That's called a _bare repository_.
 
 A bare repo has several advantages:
 
@@ -15,9 +15,8 @@ A bare repo has several advantages:
 * It's easy for Git to detect when somebody else has pushed changes that might
   conflict with yours (because your push wouldn't be fast-forward, and Git's
   default is to reject it so that you can merge the new files with your own).
-* A shared repo scales to any number of developers -- you only have to know
-  about the shared repo rather than about all the other people you might need
-  to pull from.
+* A shared repo scales to any number of developers. You only have to know
+  about the shared repo rather than about all the other people from whom you might need to pull.
 * By putting the shared repo on a server that you can all access, you don't
   have to worry about firewalls and permissions.
 * You don't need separate accounts on the server, because Git keeps track of

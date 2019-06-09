@@ -1,10 +1,10 @@
 # Install and Configure Git
 
 If you haven't already done so, it's time to install Git on the computer on which you
-intend to work. Git is available for Windows, MacOs, and Linux.
+intend to work. Git is available for Windows, MacOS, and Linux.
 
 If Git is already installed, skip ahead to the next section, which is about
-configuring the VCS, or, if git is already configured with your user name and email ID,
+configuring the VCS. Or, if git is already configured with your user name and email ID,
 jump to the next unit.
 
 You can tell whether Git is installed and properly configured with the

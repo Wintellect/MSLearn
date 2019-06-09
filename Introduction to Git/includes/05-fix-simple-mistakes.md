@@ -116,7 +116,9 @@ $ git commit -a -m "Make the page background a little darker"
 
 Oops! You meant to append to `site.css`, but used `>` instead of `>>`, which replaced the entire file. You already know how to fix this by amending the commit: Use `git checkout` to get the previous version of `site.css` back, make the change correctly, and `git commit --amend`. Or you could use `git reset --hard` to put everything back the way it was, and re-do both the change and the commit.
 
-But suppose you didn't notice the problem until you'd already made another commit after the bad one, shared your repo with somebody (see the next unit) or made the commit public (see Unit 7). Changing history can be dangerous (see almost any science fiction story about time travel). Anyone with whom you collaborate has to do extra work to recover from your change. In this situation the best thing to do is to _revert_ the change, by making another commit that cancels out the first one:
+But suppose you didn't notice the problem until you'd already made another commit after the bad one, shared your repo with somebody (see the next unit), or made the commit public (see Unit 7). Changing history can be dangerous (see almost any dystopian science fiction story about time travel). Anyone with whom you collaborate has to do extra work to recover from your change.
+
+In this situation the best thing to do is to _revert_ the change, by making another commit that cancels out the first one:
 
 ```
 $ git revert --no-edit HEAD 
@@ -146,7 +148,7 @@ $ git commit -a -m "Make the page background a little darker" -m "correctly"
  1 file changed, 1 insertion(+)
 ```
 
-In addition to copying text from the terminal to a file, the `cat` command can be used going the other way for getting a quick look at a short file. For longer files, use `less`, which lets you go through a file a page at a time. As you might expect, it's an improved version of an older Unix command called `more`. (And it has nothing to do with the cat on your keyboard.)
+In addition to copying text from the terminal to a file, the `cat` command can be used going the other way for getting a quick look at a short file. For longer files, use `less`, which lets you go through a file a page at a time. As you might expect, it's an improved version of an older Unix command called `more`. (And it has nothing to do with the cat putting his paws on your keyboard.)
 
 Revert isn't the only way to fix this; you could simply have edited `site.css` and committed the changed file. That's harder if the changes you committed were extensive, and in any case the `revert` is a good way to signal your intent.
 

@@ -75,11 +75,11 @@ As with any programming endeavor, there's unique nomenclature for the tool's ele
 		_lightweight_ tag is a named reference to a commit; an _annotated_
 		tag has essentially the same information in it as a commit.
   * **Hash:** A hash is a large number that results from a process, called a
-	"[hash function](https://en.wikipedia.org/wiki/Hash_function)", that
+	_[hash function](https://en.wikipedia.org/wiki/Hash_function)_, that
 	reduces a file or other object to a fixed number of bits. Git
 	identifies files and other objects by computing their SHA-1 hash, which is
-	160 bits long and has the additional property that the hashes of two files
-	that differ in a single bit will be almost completely different.
+	160 bits long. It has the additional property that the hashes of two files
+	that differ in a single bit are almost completely different.
   * **Commit (verb):** When used as a verb, "commit" means to make a commit object; this
 	takes its name from the corresponding database operation.
   * **Branch:** a named series of linked commits. The most recent commit on a
@@ -92,7 +92,7 @@ As with any programming endeavor, there's unique nomenclature for the tool's ele
   * **Command** or **Subcommand:** All of Git's operations are performed by a
 	command line starting with `git` -- the name of the program -- followed by
 	the name of the operation. That name is properly called a _subcommand_,
-	but "command" is often used for either the subcommand or the Git command
+	but _command_ is often used for either the subcommand or the Git command
 	that contains it.
   * **Workflow:** a task or (more often) sequence of tasks, typically
 	involving both human interactions and software automation. One goal in
@@ -136,7 +136,7 @@ $: command not found
 Bash treats almost any combination of characters at the start of a line as the
 name of a program to run; Unix is very permissive about file names.
 
-In real life we create and edit text files with a text editor; in our examples
+In real life, we create and edit text files with a text editor; in our examples
 we try to accomplish the same changes with Unix commands such as `echo`,
 `mkdir`, and `sed`. Unix commands and Git subcommands are listed at the end
 of each unit that uses them.

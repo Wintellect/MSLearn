@@ -32,7 +32,7 @@ $ git config user.email alice@example.com
 
 When Git clones a repository, it creates a reference to the original repo
 called a _remote_, with the name `origin`, and sets it up so that it will pull
-from the remote repository.  (Git can also "push"; we'll get to that in the
+from the remote repository. (Git can also "push"; we get to that in the
 next unit.)
 
 
@@ -54,18 +54,18 @@ It's useful to compare `git pull` with some other methods of copying
 files. The `scp` command (which is like the Unix `cp` command except that the
 files being copied don't have to be on the same computer) simply copies
 everything. If there are ten thousand files in the remote directory, `scp`
-copies all of them. There's a more efficient program called `rsync` that looks
+copies all of them. A more efficient program called `rsync` looks
 at every file in the local and remote directories, and only copies the ones
-that are different. It's often used for making backups, but it still has to
+that are different. It's often used for making backups, but `rsync` still has to
 hash every file unless they have different sizes or creation dates.
 
-Git only has to look at commits.  It already knows (because it saved the list)
+Git only has to look at commits. It already knows (because it saved the list)
 the last commit that it got from the remote repository. It then tells the
-computer it's copying from to send everything that changed -- the new commits
+computer from which it's copying to send everything that changed: the new commits
 and the new objects they point to. Those get bundled up in a file called a
 _pack_, and sent over in one batch. Finally, Git updates the working tree by
 unpacking all the objects that changed, and merging them (if necessary) with
-the ones in the working tree.  (We'll see how that works in Unit 8.)
+the ones in the working tree. (We see how that works in Unit 8.)
 
 So far you haven't done anything new, so there's nothing for Alice to pull.
 
@@ -74,18 +74,11 @@ $ git pull
 Already up to date.
 ```
 
-Git only pulls or pushes (which is copying in the other direction) when you
-tell it to. That's different from, say, Dropbox, which has to ask the
-operating system to notify it of any changes you make in its folder, and
-occasionally ask the server whether anyone else has made changes. (There's a
-sync program called <a href="https://www.sparkleshare.org/" >SparkleShare</a>
-that does the same thing, only using Git.  It still has to keep track of
-changes on both ends, but it keeps all of your history, and if you own the
-server it's using you don't have to pay exorbitant rates for space.)
+Git only pulls or pushes (which is copying in the other direction) when you tell it to. That's different from, say, Dropbox, which has to ask the operating system to notify it of any changes you make in its folder, and occasionally ask the server whether anyone else has made changes. (A sync program called <a href="https://www.sparkleshare.org/">SparkleShare</a> does the same thing, only using Git. SparkleShare still has to keep track of changes on both ends, but it keeps all of your history, and if you own the server it uses you don't have to pay for space.)
 
 ## Alice makes a change and a pull request
 
-Alice decides to start working on the cat website by changing the site's background color. She experiments locally on the right shade, and ultimately chooses her favorite shade of light blue. When she is ready, she commits the change:
+Alice decides to start working on the cat website. Her first decision is to change the site's background color. She experiments locally, and ultimately chooses her favorite shade of light blue. When she is ready, she commits the change:
 
 ```
 $ sed -i.bak -E '/background-color/s/#.+;/#F0F8FF;/' assets/site.css
@@ -135,9 +128,7 @@ would have gotten a "fatal" error message instead.) Both of these are safety
 measures.  You don't want Alice to be able to change the files in your working
 tree out from under you.
 
-(In the next unit we'll see how you and Alice can use both push and pull to
-share a repo that doesn't have a working tree, and how Git keeps you from
-stepping on one another's toes in the process.)
+(In the next unit we see how you and Alice can use both push and pull to share a repo that doesn't have a working tree, and how Git keeps you from stepping on one another's toes in the process.)
 
 For now, Alice has to ask _you_ to _pull_ her changes. She can do that by running `git request-pull` and emailing you the output:
 

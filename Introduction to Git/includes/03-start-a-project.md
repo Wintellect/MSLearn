@@ -5,15 +5,14 @@ Now it's time to get your website project off the ground!
 The first step is to make a directory to hold your project, with a file in it (because git ignores empty
 directories). "Cats" is a little unimaginative, but it's easy to type. (Feel
 free to use something else -- nothing inside the working tree depends on the
-directory it's in.) Since this will be a website, the first file is `index.html`.
+directory it's in.) Since this will be a website, the first file you need to create is `index.html`.
 
 There are actually two ways to get a git working tree on your computer; the
-other one is to clone an existing git repository. We see how that works
-starting in Unit 6.
+other one is to clone an existing git repository. In unit 6, we see how that works. At the moment, we take the simplest approach.
 
 ## Make yourself a sandbox
 
-Eventually, you will make several different Git repositories. Some of the later examples require files, including a few images, that would
+Eventually, you will make several different Git repositories. Some later examples require files, including a few images, that would
 be tedious to create or download individually. You also need a "sandbox" in
 which to play. Start by downloading [sandbox.zip](media/sandbox.zip). It's
 easiest to use your browser for that download; it probably will be stored in your
@@ -53,8 +52,6 @@ $ ls -aF
 Create a file in the repository with `touch`, which updates the
 "last-modified" time of a file, and creates itm if it doesn't exist.
 
-FIXME:  do we need to use `.htm` on Windows?
-
 ```
 $ touch index.html
 $ git status
@@ -92,11 +89,11 @@ index.html`; adding the period (`.`) adds all changed or new files in the entire
 tree. The `touch` command updates the time at which the file was last modified, and
 creates an empty file if it didn't exist before now.
 
-Git's "index" is also called the "staging area", so _staged_ is a shorter way of
+Git's "index" is also called the _staging area_, so _staged_ is a shorter way of
 saying "in the index." The index is a list of all the file
 versions that are going to be part of the *next* commit you make.
 
-For an exmaple of a staging area, consider the way you go about cooking
+For an examaple of a staging area, consider the way you go about cooking
 dinner. To get organized, you pull out all the ingredients you need and at
 least set them on the counter before you get underway making the meal. Once
 you start cooking, you don't have to look in the fridge for an ingredient.
@@ -107,7 +104,7 @@ There's no real need to start with an empty file. In fact, you can start with an
 
 ## Make your first commit
 
-Now that `index.html` has been added to the index, you can commit it. Doing so requires that you grok what "commit" really means.
+Now that `index.html` has been added to the index, you can commit it. Doing so requires that you understand what "commit" really means.
 
 _Commit_ is both a verb and a noun. It has essentially the same meaning as when you commit to a plan, or commit a change to a database.
 
@@ -270,7 +267,7 @@ for f in /usr/bin/git-*; do file $f; done
 ```
 
 One of the reasons why Git has so many sub-commands is that they're so easy to
-create:  any executable file with a name starting with `git-` can be used as a
+create: Any executable file with a name starting with `git-` can be used as a
 subcommand. 
 
 ## Summary
