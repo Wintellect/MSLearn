@@ -2,21 +2,51 @@
 
 TODO: Add introduction.
 
-## Get a Computer Vision API key
+## Subscribe to the Computer Vision API
 
-TODO: Add intro.
+In order to call the Computer Vision API, you must first obtain an API key. This key travels in each request you place to the Computer Vision API in an HTTP header named `Ocp-Apim-Subscription-Key`. It is Azure's way of authenticating the caller and determining which Azure subscription to bill calls to if billing is required. Most Azure Cognitive Service APIs have free tiers for which no billing is performed, but if you plan to place thousands of calls a day to a Cognitive Services API, you will be billed for it through your Azure subscription.
 
-1. tk.
+You can obtain a Computer Vision API key using the [Azure CLI](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli?view=azure-cli-latest) or the [Azure Portal](https://portal.azure.com). In this exercise, you will obtain an API key and a corresponding URL for placing calls to the Computer Vision API with that key using the Azure CLI.
 
-1. tk.
+1. If you haven't already installed the Azure CLI and logged into it for the first time, follow the instructions in the previous unit for doing so.
 
-1. tk.
+1. Open a Command Prompt or terminal window and use the following command to create a resource group named "contoso-travel-rg" in Azure's North Central US region to hold all the Azure resources you create in this module:
 
-TODO: Add closing.
+	```
+	az group create  --name contoso-travel-rg --location northcentralus
+	```
+
+	Resource groups are an incredibly important feature of Azure. They act as containers for other Azure resources and serve to group those resources together so you can view billing information for them as a group, apply security rules as a group, and even delete them as a group. *Every* Azure resource that you create must be part of a resource group.
+
+1. Now use the following command to subscribe to the Computer Vision API and place the resulting resource named "computer-vision" in the resource group you created in the previous step:
+
+	```
+	az cognitiveservices account create --resource-group contoso-travel-rg --name computer-vision --location northcentralus --kind ComputerVision --sku F0 --yes
+	```
+
+	The `--sku F0` parameter subscribes to the free tier of the Computer Vision API that allows up to 20 calls per minute and a maximum of 5,000 calls per month. This is fine for development, but in production, you would want to subscribe to one of the paid tiers that supports more traffic. For a summation of pricing tiers for the Computer Vision API, see [Cognitive Services Pricing — Computer Vision API](https://azure.microsoft.com/pricing/details/cognitive-services/computer-vision/).
+
+1. Use the following command to obtain an API key for the Computer Vision API:
+
+	```
+	az cognitiveservices account keys list --resource-group contoso-travel-rg --name computer-vision --query key1 --output tsv
+	```
+
+	The output from the command is a string containing numbers and letters. **This is your Computer Vision API key**. Copy the key into a text file and save it so you can easily retrieve it later. You will need it later in this unit and in a subsequent unit.
+
+1. Use the following command to obtain an endpoint URL for calling the Computer Vision API:
+
+	```
+	az cognitiveservices account keys list --resource-group contoso-travel-rg --name computer-vision --query endpoint --output tsv
+	```
+
+	Once more, save the URL output from the command in a text file so you can easily retrieve it later. This URL is the one that you will use to call the Computer Vision API. 
+
+The choice of North Central US as the region for your Computer Vision API resource and the resource group that holds it isn't arbitrary. You can locate a resource group and its resources in any of the more than 50 regions that Azure supports. However, it is desirable to locate all the resources that comprise a resource group in the same region in order to minimize cost and maximize performance. The Computer Vision API isn't supported in all regions, but it is supported in North Central US. For a list of regions in which various Cognitive Services are available, refer to [Products available by region](https://azure.microsoft.com/global-infrastructure/services/?products=cognitive-services).
 
 ## Modify the site to use the Computer Vision API
 
-TODO: Add intro.
+You have now subscribed to the Computer Vision API and obtained an endpoint and an API key for calling it. The next step is to modify the Contoso Travel site to use these values to call the Computer Vision API and extract text from photos.
 
 1. Open **app.py** and replace its contents with the following:
 
