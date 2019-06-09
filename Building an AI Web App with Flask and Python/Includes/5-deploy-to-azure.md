@@ -8,33 +8,9 @@ In this unit, you will deploy Contoso Travel to Azure as an Azure Web App so it 
 
 ## Create an Azure App Service
 
-In this exercise, you will use the [Azure CLI](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli?view=azure-cli-latest) to deploy your Web site to Azure. The Azure CLI is a command-line environment for creating and managing Azure resources. Versions are available for Windows, macOS, and Linux.
+In this exercise, you will use the [Azure CLI](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli?view=azure-cli-latest) to deploy your Web site to Azure.
 
-1. If the Azure CLI isn't installed on your computer, go to https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest and install it now. You can determine whether it's installed by executing an `az -v` command in a Command Prompt or terminal window. If the CLI is installed, a version number will appear in the output.
-
-1. In a Command Prompt or terminal window, log in to Azure with the following command:
-
-	```
-	az login
-	```
-
-	In the ensuing browser window, log in using your Microsoft account. Then close the browser and return to the CLI.
-
-1. Type the following command to list the Azure subscriptions associated with your Microsoft account:
-
-	```
-	az account list
-	``` 
-
-	The default subscription — the one used to create resources created with the CLI — will be marked `isDefault=true`. If that's the subscription you wish to use, proceed to the next step. Otherwise, use the following command to designate one of the other subscriptions as the default, replacing SUBSCRIPTION_ID with the ID of that subscription: 
-
-	```
-	az account set -s SUBSCRIPTION_ID
-	```
-
-1. Use a `cd` command to change to the project directory containing the Contoso Travel site.
-
-1. Create a text file named **requirements.txt** in the project directory containing the following statements:
+1. Create a text file named **requirements.txt** containing the following statements in the project directory — the directory containing the Contoso Travel site:
 
 	```
 	requests
@@ -43,6 +19,8 @@ In this exercise, you will use the [Azure CLI](https://docs.microsoft.com/cli/az
 	``` 
 
 	**requirements.txt** contains a list of Python packages that must be installed along with the app when the app is deployed to Azure.
+
+1. Open a Command Prompt or terminal window and `cd` to change to the project directory.
 
 1. Execute the command below to deploy the Web site to Azure, replacing APP_NAME with the name you want to assign to the site. The name must be **unique with Azure**, so you probably won't be able to use a common name such as "contoso" or "contosotravel" unless you append some random characters to the end.
 
