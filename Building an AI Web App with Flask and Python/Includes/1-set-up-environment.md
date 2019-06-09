@@ -42,7 +42,7 @@ Flask is a Web framework for applications written in Python. In order to run Fla
 	python3 -m pip install --user --upgrade pip
 	```
 
-	This command is important because older versions of `pip` may miss some of the dependencies needed for execution in Azure.
+	This is important because older versions of `pip` may miss some of the dependencies needed for execution in Azure.
 
 1. Now execute the following commands to install Flask and the Python SDK for Azure's Computer Vision API in the virtual environment:
 
