@@ -132,7 +132,7 @@ Expressions such as these can even be used to conditionally execute JavaScript c
         window.alert("Error: No message specified");
     </script>
 {% else %}
-	<h1>{{ message }}</h1>
+    <h1>{{ message }}</h1>
 {% endif %}
 ```
 
