@@ -52,15 +52,21 @@ If the app is hosted at the www.contoso.com, it now supports the following URLs:
 - www.contoso.com/about
 - www.contoso.com/contact
 
-You can continue adding routes and functions until the pages that your site supports are accessible by URL.
+You can continue adding routes and functions until the pages that your site supports are accessible by URL. Once more, the function names are unimportant. It's the routes that count.
 
-### Using HTML templates
+### HTML templates
+
+You typically don't want to include inline HTML in the functions that render your site's pages. Instead, you want to define those pages in HTML files.
 
 
 
 
 
-### Serving up static files
+### Static files
+
+Most Web sites contain images, style sheets, and other static files that don't change as the application executes. Flask looks for these files in a special subdirectory named "static."
+
+
 
 
 
