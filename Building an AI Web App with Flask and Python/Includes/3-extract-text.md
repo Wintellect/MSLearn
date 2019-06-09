@@ -9,7 +9,7 @@
 - Generate "smart thumbnails" centered around the subjects of the images 
 - Recognize famous people and landmarks in the images
 
-It is the OCR feature that will enable the Contoso Travel site to extract text from images. In this unit, you will modify Contoso Travel to use the Computer Vision API.
+It is the OCR feature that will enable the Contoso Travel site to extract text from images. In this unit, you will modify Contoso Travel to use the Computer Vision API to extract text from photos uploaded to the site.
 
 ## Subscribe to the Computer Vision API
 
