@@ -2,7 +2,7 @@
 
 You probably use office automation tools such as [Microsoft Word](https://products.office.com/en-us/word), [Excel](https://products.office.com/en-us/excel), and PowerPoint frequently to compose, experiment with, and collaborate on your ideas.  Fluency in use of these products is a powerful skill.  Think how that power multiples, though, when we combine those familiar techniques of entry and composition with computer programs which prepare or update documents _automatically_.  That's the promise and achievement of this module.
 
-What does it mean to manage or update a document automatically?  Think of it this way:  every time you find yourself stuck on a tedious chore--having to copy-and-paste the same kind of content you did last week, for instance--you have the opportunity to automate that operation so it happens quicker, more reliably, and without your supervision.  You liberate your time and attention.
+What does it mean to manage or update a document automatically?  Think of it this way:  every time you find yourself stuck on a tedious chore--having to copy-and-paste the same kind of content you did last week, for instance--you have the opportunity to automate that operation so it happens quicker, more reliably, and without your supervision.  You liberate your time and attention, and the computer takes over more of the work at which computers are tops.
 
 This module gives specific examples of work you might want to automate, and how to do so.
 
