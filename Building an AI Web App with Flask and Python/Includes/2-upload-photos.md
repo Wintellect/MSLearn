@@ -209,7 +209,7 @@ A Web site begins with basic assets such as HTML, CSS, and images. Let's put the
 	    return render_template("index.html")
 	```
 
-	Currently, the app consists of a single page named **index.html** located in the "templates" subdirectory. **index.html** doesn't contain any special expressions at the moment — it is simply a static file — but that will change as you further develop the site.
+	Currently, the app consists of a single page named **index.html** located in the "templates" subdirectory. **index.html** doesn't contain any special expressions at the moment — it is simply a static file — but that will change as you further develop the site. **index.html** loads the popular [Bootstrap](https://getbootstrap.com/) framework and uses it to make the page responsive. It also loads **main.css** from the "static" subdirectory and uses the CSS styles defined there to lend the page a professional appearance.
 
 1. Open a Command Prompt window or terminal and `cd` to the project directory.
 
