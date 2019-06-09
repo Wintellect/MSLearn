@@ -1,6 +1,15 @@
 # Use Azure Cognitive Services to extract text from photos
 
-TODO: Add introduction.
+[Azure Cognitive Services](https://azure.microsoft.com/services/cognitive-services/) is a set of more than 20 services and APIs for infusing intelligence backed by machine learning and neural networks into the applications that you write. One member of the Cognitive Services is the [Computer Vision API](https://azure.microsoft.com/services/cognitive-services/computer-vision/), which can analyze images uploaded to it and:
+
+- Identify objects in the images
+- Generate captions for the images (for example, "A woman riding a bicycle")
+- Use Optical Character Recognition (OCR) to extract text from the images
+- Find faces in the images and identify attributes of those faces such as age and gender
+- Generate "smart thumbnails" that retain the subjects of the images 
+- Recognize famous people and landmarks in the images
+
+It is the OCR feature that will enable Contoso Travel to extract text from images. In this unit, you will modify the Contoso Travel to site to use the Computer Vision API.
 
 ## Subscribe to the Computer Vision API
 
