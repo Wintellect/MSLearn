@@ -1,6 +1,6 @@
 # Create a site that supports photo uploads
 
-Now that you have an environment for Python and Flask prepared, it's time to begin building a Web site. In this unit, you will create a Web site named "Contoso Travel." You will start with a page that's provided for you, and then add some code to allow users to upload photos to the page. Along the way, you'll learn the basics of how Flask Web apps are structured and how routes such as "http://contosotravel/upload" map to functions in your Python code.
+Now that you have an environment for Python and Flask prepared, it's time to begin building a Web site. In this unit, you will create a Web site named "Contoso Travel." You will start with a page that's provided for you, and then add some code to allow users to upload photos to the page. Along the way, you'll learn the basics of how Flask Web apps are structured and how routes such as "http://www.contoso.com/upload" map to functions in your Python code.
 
 ## Flask fundamentals
 
