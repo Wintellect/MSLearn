@@ -26,10 +26,6 @@ Flask is a Web framework for applications written in Python. In order to run Fla
 
 	_Adding Python to the PATH_
 
-1. Create a directory on your hard disk in the location of your choice. This will be the *project directory* and will hold all of the files that comprise the Web site.
-
-1. Open a Command Prompt window (Windows) or a terminal (macOS and Linux) and `cd` to the project directory created in the previous step.
-
 1. If you are running Windows, execute the following command to install the latest version of `pip`, the Python package manager:
 
 	```bash
