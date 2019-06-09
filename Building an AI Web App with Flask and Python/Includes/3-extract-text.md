@@ -1,8 +1,6 @@
 # Use Azure Cognitive Services to extract text from photos
 
-At the end of this unit, you will have a fully working application. Along the way, you’ll set up the VS Code debugger so that you can run the code locally, set breakpoints, and inspect it thoroughly. Flask has provisions for debuggers, and there are a handful of interesting choices. if you didn’t already have VS Code, which leverages Microsoft’s decades of experience with producing code development environments. So you’ll actually leave Flask’s debugging mode set to Off, and leave the driving to VS Code.
-
-TODO: Add section on configuring Visual Studio Code?
+TODO: Add introduction.
 
 ## Get a Computer Vision API key
 
