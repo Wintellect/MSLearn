@@ -12,6 +12,39 @@ If you use a recent edition of PowerShell, it may already be equipped with Azure
 
 If you have Git for Windows, note that Azure CLI does not work with its built-in git bash shell.
 
+## Install Python and Flask
+
+
+
+
+## Install the Azure CLI
+
+The [Azure CLI](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli?view=azure-cli-latest) is a command-line environment for creating and managing Azure resources. Versions are available for Windows, macOS, and Linux. In subsequent units, you will use the Azure CLI to create various Azure resources, including an [Azure App Service](https://azure.microsoft.com/services/app-service/) to host a Web site. In this exercise, you will install the Azure CLI and log into it for the first time.
+
+1. If the Azure CLI isn't installed on your computer, go to https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest and install it now. You can determine whether it's installed by executing an `az -v` command in a Command Prompt or terminal window. If the CLI is installed, a version number will appear in the output.
+
+1. In a Command Prompt or terminal window, log in to Azure with the following command:
+
+	```
+	az login
+	```
+
+	In the ensuing browser window, log in using your Microsoft account. Then close the browser and return to the CLI.
+
+1. Type the following command to list the Azure subscriptions associated with your Microsoft account:
+
+	```
+	az account list
+	``` 
+
+	The default subscription — the one used to create resources created with the CLI — will be marked `isDefault=true`. If that's the subscription you wish to use, proceed to the next step. Otherwise, use the following command to designate one of the other subscriptions as the default, replacing SUBSCRIPTION_ID with the ID of that subscription: 
+
+	```
+	az account set -s SUBSCRIPTION_ID
+	```
+
+TODO: Add closing.
+
 ## What you're about to do
 
 While you probably know Python, you may never have used it to build an application that can be deployed into the cloud as a website. Configuring your development environment to accomplish this can be a tricky process.
