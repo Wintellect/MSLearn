@@ -110,7 +110,7 @@ def contact():
     return render_template("master.html", message="This is the Contact Us page")
 ``` 
 
-In effect, **master.html** becomes a template for output, and you customize the output for each page by passing a variable named `message` into the template and referencing that variable in the template itself using Flask's special ``{{ }}` delimiters.
+In effect, **master.html** becomes a template for output, and you customize the output for each page by passing a variable named `message` into the template and referencing that variable in the template itself using Flask's `{{ }}` delimiters.
 
 ### Static files
 
