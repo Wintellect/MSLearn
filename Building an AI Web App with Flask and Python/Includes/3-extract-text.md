@@ -185,8 +185,8 @@ Now let's run the modified site, upload a few photos, and see if the Computer Vi
 
 1. Navigate to http://localhost:5000 in your browser. Click the **Upload Photo** and button and upload a picture that contains text. Confirm that after a brief pause, the text extracted from the photo appears in a modal dialog. Then dismiss the dialog.
 
-	![Translating text from a photo](media/extracted-text.png)
+	![Extracting text from a photo](media/extracted-text.png)
 
-	_Translating text from a photo_
+	_Extracting text from a photo_
 
 Repeat this process with other photos to gauge the Computer Vision API's ability to extract text from the photos you upload. It isn't perfect, but it should get it right — or almost right — most of the time.
