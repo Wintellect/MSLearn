@@ -1,10 +1,10 @@
 # Create a site that supports photo uploads
 
-In this unit, you will be producing very rudimentary HTML pages. They will not be styled or architected or use any sophisticated CSS. This is so you can focus on just the working mechanism of this application. (You're probably good enough with Web design that you can add the pretty things yourself.)
+Now that you have an environment for Python and Flask prepared, it's time to begin building a Web site. In this unit, you will create a Web site named "Contoso Travel." You will start with a page that's provided for you, and then add some JavaScript and Python code to allow users to upload photos to the page. Along the way, you'll learn the basics of how Flask Web apps are structured and how routes such as "http://contosotravel/upload" map to functions in your Python code.
 
-You'll see some structural elements of this Python + Flask app that may be novel to you, even if you've programmed in Python since its beginning. These elements deal with how Flask attributes Python functions to specific Web pages.
+## Flask fundamentals
 
-You will not need to use Azure Storage, or any other cloud-based file storage, for this unit. Azure Cognitive Services does include functions that look to the URL of a stored file. Setting up a Python application to be an authorized user of that file requires a significant number of steps, many of which involve cryptography, authentication, and secret keys. All this can be bypassed by sending the photo file directly to the application as a byte stream, using the session that Azure has already authenticated. So if you were preparing in your mind for several hours of wading through Active Directory credentials, relax — it's unnecessary.
+TODO: Add a few paragraphs introducing the basics of Flask, including routing and rendering.
 
 ## Create a basic Web site
 
@@ -22,9 +22,24 @@ A Web site begins with basic assets such as HTML, CSS, and images. Let's start b
 	- **static/banner.jpg**, which contains the Web-site banner
 	- **static/placeholder.jpg**, which contains a placeholder image for photos that have yet to be uploaded
 
-	TODO: Describe app.py.
+	Of these files, **app.py** is of particular significance. Here is what's in the file right now:
 
-1. Open a Command Prompt or terminal and `cd` to the project directory.
+	```python
+	from flask import Flask, render_template
+	
+	app = Flask(__name__)
+	
+	# Define route for the app's one and only page
+	@app.route("/")
+	def index():
+	    return render_template("index.html")
+	```
+
+	The first statement imports a pair of functions from the Flask module you installed in the previous unit. The second statements invokes one of those functions to create an object named `app` representing the application.
+
+	TODO: Complete this description.
+
+1. Open a Command Prompt or terminal window and `cd` to the project directory.
 
 1. If you are running Windows, execute the following command to create an environment variable named FLASK_ENV that tells Flask to run in development mode: 
 
@@ -38,7 +53,7 @@ A Web site begins with basic assets such as HTML, CSS, and images. Let's start b
 	export FLASK_ENV=development
 	```
 
-	Running Flask in development mode is helpful when you're developing a Web site because Flask will automatically reload any files that change while the site is running. If you let Flask default to production mode and change the contents of an HTML file or other asset, you have to restart Flask to see the change in your browser.
+	Running Flask in development mode is helpful when you're developing a Web site because Flask automatically reloads any files that change while the site is running. If you let Flask default to production mode and change the contents of an HTML file or other asset, you have to restart Flask to see the change in your browser.
 
 1. Now use the following command to start Flask:
 
@@ -141,83 +156,7 @@ You now have a basic Flask Web site running that accepts photo uploads. The next
 
 
 
-## What you're about to do
-
-An API can be a convenient tool for interacting with a public cloud service, especially if everything you exchange with that service — on both the give and take side — is text. For the application you're building now, you're giving Azure an image that happens to depict text that an ordinary computer would not be able to read. You need Azure's AI to detect where that text is located, and what it might be saying in the user's native language.
-
-An image file is an unusual order of beast. Python has many variable types, and is dynamic enough to know how to apportion a variable with the right type when you assign a value to it. But an image is not one of those types. The way an API or an SDK would have you pass an image to it, is by giving it an address on the Web where it can find that image. Now, you could make things easy on yourself by assuming your image is always uploaded to one location in, say, the company blog. But that's not easy on the user, who just wants to be able to point to an image and say, "Tell me what this says."
-
-Azure has two ways of representing the "this" part of that instruction: as a file with a URL to which it may be granted access, or a stream fed directly to it by the application. Microsoft trains its image recognition algorithms using public files it finds out on the Web, and actually invites users to take part in the training process. But if your user is standing with her hands full of baggage at a foreign airport, or in a car parked on the shoulder while she tries to make sense of a street sign, she won't have the opportunity to check Wikipedia to see if it happens to already have a picture of what she's having trouble reading.
-
-The most convenient way this application can work is if the image comes from the application itself. This way, the image can be stored locally — which, if you think about it, is where someone who just snapped this image would store it, not the cloud. Moreover, as it's using Azure functions during development and as it runs for customers in the public cloud, the application needs to use the same image handling functions in exactly the same way.
-
-Here are the steps you'll take in this unit:
-- Produce an HTML page that gathers input
-- Declare the code's dependent libraries
-- Add the code for authenticating to Cognitive Services
-
-## Produce an HTML page that gathers input
-
-If it's not started already, launch VS Code from the project directory using the code . method. Make sure you're logged onto Azure from the command prompt. If you're not logged on at the moment, enter this command:
-
-```bash
-az login
-```
-
-As before, your browser marshals the login process.
-
-A straight HTML file can be very straightforward. For this application, you only need a few controls, which will be embedded in the index file for the Web site. You don't need any Flask templating yet, because we haven't collected the output yet for posting to the user. Here is **index.html**, the default page for the Web site, in its entirety:
-
-```html
-<!DOCTYPE html>
-
-<html>
-    <head>
-        <title>Foreign road sign translator</title>
-    </head>
-    <body>
-            <form name="transform" action="/process" method="POST" enctype=multipart/form-data>
-                <p>Sign appears to be written in this language:
-                    <select name="origlang" size="4">
-                        <option value="unk" selected="selected">Unknown</option>
-                        <option value="zh-Hant">Chinese (simplified)</option>
-                        <option value="zh-Hans">Chinese (traditional)</option>     #*
-                        <option value="en">English</option>     #* Originally supported language
-                        <option value="fr">French</option>      #*
-                        <option value="de">German</option>      #*
-                        <option value="it">Italian</option>     #*
-                        <option value="ja">Japanese</option>    #*
-                        <option value="ko">Korean</option>      #*
-                        <option value="pt">Portugese</option>   #*
-                        <option value="es">Spanish</option>     #*     
-                    </select></p>
-
-                <p>Translate into this language:
-                <select name="translang" size="12">
-                    <option value="en" selected="selected">English</option>
-                    <option value="zh-Hant">Chinese (simplified)</option>
-                    <option value="zh-Hans">Chinese (traditional)</option> 
-                    <option value="fr">French</option>
-                    <option value="de">German</option>
-                    <option value="it">Italian</option>
-                    <option value="ja">Japanese</option>
-                    <option value="ko">Korean</option>
-                    <option value="pt">Portugese</option>
-                    <option value="es">Spanish</option>
-                </select></p>
- 
-                <p>Select the image that needs translating:</p>
-            
-                <input name="file" type="file" accept=".jpg, .jpeg, .png, .gif" placeholder="File input dialog">
-                <input type="submit" value="Upload">
-            </form>
-    </body>
-</html>
-```
-
-Here there are two list boxes: one called origlang representing the language that ComputerVision will be translating from (which may be left "Unknown"), the other called translang representing the language to translate to. For both of these list boxes, the value property of each option corresponds to a BCP-47 (Best Current Practice) language code that will be used by both the call to the API and the call to the SDK. There's a no-frills input file selector control which lets the user find the billboard image locally. By limiting the file types the selector will accept to JPEG, PNG, and GIF here in the HTML, a lot of work is spared in the Python logic making sure the image is an acceptable format.
-
-(The languages shown here are among the earliest languages that Azure Cognitive Services supported. Other BCP-47 language codes are supported today, although for newer languages in Azure's repertoire than those listed here, results may be spotty.)
+## Extras
 
 ### Flask's interesting rendering rules
 
