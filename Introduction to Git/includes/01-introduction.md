@@ -100,9 +100,27 @@ As with any programming endeavor, there's unique nomenclature for the tool's ele
 
 ## About the Examples
 
+There are several different GUIs for Git, for example GitKraken (which is
+cross-platform), TortoiseGit (on Windows), and `git gui` (on Linux). Most text
+editors and IDEs also have an interface to Git. Unfortunately, they all work
+differently and have different limitations. None of them implement _all_ of
+Git's functionality.
+
 This tutorial assumes that you are using the Bash command-line shell. Bash is
 the default on MacOS and Linux, and installed automatically by Git for
-Windows.
+Windows. We use Bash for several reasons:
+
+* Bash, and Git's command-line interface, work exactly the same no matter what
+  operating system you're using. That's not true of the various graphical
+  interfaces.
+* You can simply copy the commands out of the examples and paste them into a
+  terminal window. Mistyped commands are a common source of frustration.
+* We can put command output under the commands, exactly as it will appear in
+  your terminal window.  We don't need screenshots.
+* We can use standard Unix commands, which you can also cut and paste, to create
+  and modify files.
+* You may occasionally need to use Git on a server (for example, a web host)
+  where a GUI isn't available.
 
 If you are used to Windows, there are a couple of peculiarities due
 to Git's origin on Linux:
@@ -124,13 +142,16 @@ to Git's origin on Linux:
 	sometimes used to separate different kinds of command-line arguments, such as branch names and filenames in `git checkout`.
 
 Commands in the examples are preceeded by a dollar sign and a space (`$ `),
-which is the default prompt in Bash, and _not_ part of the command. The `$ ` should
+which is the default prompt in Bash, and _not_ part of the command. The
+commands' output, if any, is indented. 
+
+The `$ ` should
 not be typed. Commands are followed by their output, if any. For example, if
 you accidentally copy and paste the prompt character, you get:
 
 ```
 $ $ git
-$: command not found
+  $: command not found
 ```
 
 Bash treats almost any combination of characters at the start of a line as the

@@ -45,6 +45,10 @@ other words, it shows you all of the changes that haven't been staged (added to 
 
 To compare the working tree to the last commit, use `git diff HEAD`.
 
+Next, commit the change. Notice that you can explicitly name a file to be
+committed, provided Git already has the file in the index (which is all that
+`commit` looks at).
+
 ```
 $ git commit -m "Add HTML boilerplate to index.html" index.html
 [master bc18ca7] Add HTML boilerplate to index.html
@@ -52,10 +56,10 @@ $ git commit -m "Add HTML boilerplate to index.html" index.html
 $ git diff
 ```
 
-Notice that you can explicitly name a file to be committed, provided Git
-already has the file in the index (which is all that `commit` looks at).
+After the commit, `git diff` produces no output because the working tree,
+index, and HEAD are all in agreement.
 
-Let's say you decide "furry" would sound friendlier than "feline," so you want to edit the text. You can do make the change using a text editor; here we use `sed`, the "stream editor," which lets you specify editing commands on the command line. (See `man sed` for the details; Sed's command set -- here we use `s` to make a substitution -- is essentially the same as Unix's original text-editor, `ed`.)
+Let's say you decide "furry" would sound friendlier than "feline," so you want to edit the text. You can make the change using a text editor; here we use `sed`, the "stream editor," which lets you specify editing commands on the command line. (See `man sed` for the details; Sed's command set -- here we use `s` to make a substitution -- is essentially the same as Unix's original text-editor, `ed`.)
 
 ```
 $ sed -i.bak s/Feline/Furry/ index.html
