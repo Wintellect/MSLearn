@@ -6,7 +6,7 @@ In this unit, you will install Python on your computer if it isn't already insta
 
 ## Create a Flask environment
 
-Flask is a Web framework for applications written in Python. In order to run Flask Web sites on your computer, Python must be installed.
+Flask is a Web framework for applications written in Python. In order to run Flask Web sites on your computer, both Flask and Python must be installed.
 
 1. If Python 3.6 or higher isn't installed on your computer, go to https://www.python.org/ and install it now. You can determine whether it's installed on Windows by executing the following command in a Command Prompt window:
 
