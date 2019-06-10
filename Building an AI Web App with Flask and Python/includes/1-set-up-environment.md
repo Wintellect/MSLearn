@@ -55,7 +55,7 @@ The [Azure CLI](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli?
 
 1. If the Azure CLI isn't installed on your computer, go to https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest and install it now. You can determine whether it's installed by executing an `az -v` command in a Command Prompt window or terminal. If the CLI is installed, a version number will appear in the output.
 
-1. In a Command Prompt or terminal window, log in to Azure with the following command:
+1. In a Command Prompt window or terminal, log in to Azure with the following command:
 
 	```
 	az login
