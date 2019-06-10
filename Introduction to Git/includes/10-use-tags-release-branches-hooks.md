@@ -115,7 +115,7 @@ The lines prefixed with `remote:` came from the hook. Typically, both the shared
 
 ### Make changes on the server
 
-You also realize that you haven't added your own cat to the site. She would be very unhappy if she found out.
+You realize that you haven't added your own cat to the site. She would be very unhappy if she found out.
 
 Since you happen to be logged in on the server, you can make your changes there.
 
@@ -173,7 +173,7 @@ $ git show v0.1
 
 Notice how tags are shown by `log` next to the commits they refer to. The `show` subcommand can be used to display the tag data along with the commit to which it refers.
 
-Git has two kinds of tags: "lightweight" and "annotated". A lightweight tag is just a file (`refs/tags/NAME`) containing the hash of the tagged commit. Lightweight tags are primarily used as temporary labels; a typical use is to tag the head of a branch before you rebase it, to make it easier to go back if you ran into trouble. Lightweight tags are almost always local to a developer's copy of a repo.
+Git has two kinds of tags: _lightweight_ and _annotated_. A lightweight tag is just a file (`refs/tags/NAME`) containing the hash of the tagged commit. Lightweight tags are primarily used as temporary labels; a typical use is to tag the head of a branch before you rebase it, to make it easier to go back if you ran into trouble. Lightweight tags are almost always local to a developer's copy of a repo.
 
 Annotated tags, on the other hand, are objects that are very similar to commits. They have a message, author, and optional signature. Tags are not normally pushed, but you can do it with the `--follow-tags` option:
 
