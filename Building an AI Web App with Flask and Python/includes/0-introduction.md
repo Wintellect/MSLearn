@@ -1,6 +1,6 @@
 # Introduction
 
-Imagine you're a professional Web developer and your client is a travel agency. In order to motivate its customers to stay in touch and share their travel experiences, the agency wants its Web site to include a service that translates road signs and billboards in real time. The customer, exploring a foreign land, snaps a picture of a sign she can't read, in a language she doesn't understand. She uploads the picture to the service, and it responds with a translation in her native language. No typing, no forms to fill out — just "Here's a picture, tell me what it says."
+Imagine you're a professional Web developer and your client is a travel agency. In order to motivate its customers to stay in touch, the agency wants its Web site to include a service that translates road signs and billboards in real time. The customer, exploring a foreign land, snaps a picture of a sign she can't read, in a language she doesn't understand. She uploads the picture to the service, and it responds with a translation in her native language. No typing, no forms to fill out — just "Here's a picture, tell me what it says."
 
 To meet the client's requests, the Web site must support the following features:
 - Uploading of photos
