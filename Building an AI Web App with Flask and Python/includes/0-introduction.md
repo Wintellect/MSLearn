@@ -15,10 +15,12 @@ Using these services, you will produce a Web site written in [Python](https://de
 
 ## Learning objectives
 
-In this module, you build such an application step by step. First, you'll learn about the process of setting up your development system for all three of these components. Here, you'll use Microsoft's [Visual Studio Code](https://code.visualstudio.com/), which is available for Windows, macOS, and Linux. Then you'll build the functions that produce the pages that do what your client is looking for.
+In this module, you build a Web site named "Contoso Travel" step by step. First, you will prepare a development environment that supports applications written in Python and Flask. Then you will learn the basics of Flask. Next, you will build the Web site and employ Azure Cognitive Services to do the heavy lifting of extracting and translating text. Finally, after testing the Web site locally, you will deploy it to Azure for the whole world to enjoy. Along the way, you will learn:
 
-In this module, you will learn:
-- How to set up your development environment
-- How to deploy your application to Azure for customers to use
-- How to produce a page that uploads photos to Azure
-- How to produce a page that outputs the translation
+- How to set up a Flask development environment
+- How to use Flask to build a page that accepts photo uploads
+- How to use the Computer Vision API to extract text from photos
+- How to use the Translator Text API to translate text extracted from photos
+- How to deploy the application to Azure
+
+Sound like fun? Then let's get started.
