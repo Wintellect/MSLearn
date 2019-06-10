@@ -19,7 +19,7 @@ In order to call the Computer Vision API, you must first obtain an API key. This
 
 You can obtain a Computer Vision API key using the [Azure CLI](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli?view=azure-cli-latest) or the [Azure Portal](https://portal.azure.com). In this exercise, you will obtain an API key and a corresponding URL for placing calls to the Computer Vision API with that key using the Azure CLI.
 
-1. If you haven't already installed the Azure CLI and logged into it for the first time, follow the instructions in the previous unit for doing so.
+1. If you haven't already installed the Azure CLI and logged into it for the first time, follow the instructions in an earlier unit for doing so.
 
 1. Open a Command Prompt or terminal window and use the following command to create a resource group named "contoso-travel-rg" in Azure's North Central US region to hold all the Azure resources you create in this module:
 
