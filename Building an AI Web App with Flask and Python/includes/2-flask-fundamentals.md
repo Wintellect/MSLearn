@@ -85,7 +85,7 @@ Why is the function named `render_template()`? Because it can do more than simpl
 You could then write **app.py** this way:
 
 ```python
-from flask import Flask, render_template()
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
