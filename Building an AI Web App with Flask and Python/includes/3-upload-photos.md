@@ -98,7 +98,7 @@ In this exercise, you will modify **index.html** and **app.py** so users can upl
 	</div>
 	```
 
-	This is a common trick used in Web pages to hide the default file-upload control and replace it with something more functional.
+	This is a common trick used in Web pages to hide the default file-upload control and replace it with something that offers a better user experience and is more easily styled.
 
 1. Open **app.py** in Visual Studio Code and replace its contents with the following statements:
 
@@ -113,7 +113,7 @@ In this exercise, you will modify **index.html** and **app.py** so users can upl
 	    if request.method == "POST":
 	        # Display the image that was uploaded
 	        image = request.files["file"]
-	        uri = "data:base64," + base64.b64encode(image.read()).decode("utf-8")
+	        uri = "data:;base64," + base64.b64encode(image.read()).decode("utf-8")
 	
 	    else:
 	        # Display a placeholder image

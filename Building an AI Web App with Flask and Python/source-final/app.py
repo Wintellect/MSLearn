@@ -24,7 +24,7 @@ def index():
     if request.method == "POST":
         # Display the image that was uploaded
         image = request.files["file"]
-        uri = "data:image/jpg;base64," + base64.b64encode(image.read()).decode("utf-8")
+        uri = "data:;base64," + base64.b64encode(image.read()).decode("utf-8")
         image.seek(0)
 
         # Use the Computer Vision API to extract text from the image
