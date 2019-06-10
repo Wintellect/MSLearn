@@ -10,7 +10,7 @@ It's not as hard as it sounds, as you will prove when you modify the Contoso Tra
 
 In order to call the Translator Text API, you must obtain an API key. As with the Computer Vision API, this key travels in each request you place to the Translator Text API in an `Ocp-Apim-Subscription-Key` header and maps calls to Azure subscriptions.
 
-1. In a Command Prompt or terminal window, use the following command to subscribe to the Translator Text API and place the resulting resource named "translator-text" in the resource group you created earlier:
+1. In a Command Prompt window or terminal, use the following command to subscribe to the Translator Text API and place the resulting resource named "translator-text" in the resource group you created earlier:
 
 	```
 	az cognitiveservices account create --resource-group contoso-travel-rg --name translator-text --location global --kind TextTranslation --sku F0 --yes
