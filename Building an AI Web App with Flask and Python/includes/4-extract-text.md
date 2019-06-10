@@ -29,7 +29,7 @@ You can obtain a Computer Vision API key using the [Azure CLI](https://docs.micr
 
 	Resource groups are an incredibly important feature of Azure. They act as containers for other Azure resources and serve to group those resources together so you can view billing information for them as a group, apply security rules as a group, and even delete them as a group. *Every* Azure resource that you create must be part of a resource group.
 
-1. Now use the following command to subscribe to the Computer Vision API and place the resulting resource named "computer-vision" in the resource group you created in the previous step:
+1. Now use the following command to subscribe to the Computer Vision API and place the resulting resource named "computer-vision" in the resource group created in the previous step:
 
 	```
 	az cognitiveservices account create --resource-group contoso-travel-rg --name computer-vision --location northcentralus --kind ComputerVision --sku F0 --yes
