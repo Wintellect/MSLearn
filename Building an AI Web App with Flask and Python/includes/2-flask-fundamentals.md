@@ -179,6 +179,4 @@ You can also use Flask's `url_for()` function to resolve these URLs:
 <img src="url_for('static', filename='banner.jpg')">
 ```
 
-One benefit of using `url_for()` is that the file names themselves can be variables, which is useful when building dynamic Web sites.
-
-TODO: Explain this further.
+One benefit of using `url_for()` is that the resultant URLs are absolute, which sidesteps issues that sometimes arise if browsers handle relative URLs in inconsistent ways.
