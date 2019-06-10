@@ -126,7 +126,7 @@ Expressions such as these can even be used to conditionally execute JavaScript c
     <h1>{{ message }}</h1>
 {% else %}
     <script type="text/javascript">
-        window.alert("Error: No message specified");
+        window.alert("No message specified");
     </script>
 {% endif %}
 ```
