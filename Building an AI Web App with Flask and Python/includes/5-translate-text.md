@@ -80,7 +80,7 @@ You have now subscribed to the Translator Text API and obtained an API key for c
 	</div>
 	```
 
-	The added markup defines a drop-down list (an HTML `<select>` element) with a selection of languages that can text can translated into.
+	The added markup defines a drop-down list (an HTML `<select>` element) with a selection of languages that can text can be translated into.
 
 1. Also in **index.html**, add the following statement to the `<script>` block at the bottom of the page:
 
