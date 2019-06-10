@@ -144,7 +144,7 @@ You could then include the following statements in the corresponding HTML file t
 ```html
 {% with messages = get_flashed_messages() %}
     {% if messages %}
-        <script type="language/javascript">
+        <script type="text/javascript">
             window.alert("{{ messages[0] }}");
         </script>
     {% endif %}
