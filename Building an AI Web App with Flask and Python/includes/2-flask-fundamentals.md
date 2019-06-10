@@ -131,7 +131,7 @@ Expressions such as these can even be used to conditionally execute JavaScript c
 {% endif %}
 ```
 
-Control-of-flow statements are frequently used in conjunction with Flask's `flash()` function to display error messages. Let's say you encounter an error condition in **app.py** and want to display a message to the user in a JavaScript alert box. Here's **app.py**:
+Control-of-flow statements are frequently used in conjunction with Flask's `flash()` function to display error messages. Let's say you encounter an error condition in **app.py** and want to display a message to the user in a JavaScript alert box. Here's **app.py**, complete with a statement to initialize the app's `secret_key` property with a random number, which is required for flashing messages:
 
 ```python
 import os
