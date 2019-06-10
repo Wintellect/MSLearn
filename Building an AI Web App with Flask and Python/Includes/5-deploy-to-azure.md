@@ -20,7 +20,7 @@ In this exercise, you will use the [Azure CLI](https://docs.microsoft.com/cli/az
 
 	**requirements.txt** contains a list of Python packages that must be installed along with the app when the app is deployed to Azure.
 
-1. Open a Command Prompt or terminal window and `cd` to change to the project directory.
+1. Open a Command Prompt or terminal window and `cd` to the project directory.
 
 1. Execute the command below to deploy the Web site to Azure, replacing APP_NAME with the name you want to assign to the site. The name must be **unique with Azure**, so you probably won't be able to use a common name such as "contoso" or "contosotravel" unless you append some random characters to the end.
 
