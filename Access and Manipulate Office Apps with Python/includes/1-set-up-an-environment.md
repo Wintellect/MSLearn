@@ -18,7 +18,9 @@ The lessons which fellow can largely be read in any order you choose:  if you ha
     
 within your programs, and from then on use the package just as you use the statements and definitions _you_ write.
 
-Almost.  That is, while the _idea_ is that `import` helps you use what someone else wrote just the way you program with your own source, the practice falls slightly short of that idea.  In fact, a few minor differences arise when you use packages others have written.  The most important difference is that, before you can begin to use an outside package, you must **install** it in your Python environment.  The most standard way to do that is to execute
+Almost.  
+
+That is, while the _idea_ is that `import` helps you use what someone else wrote just the way you program with your own source, the practice falls slightly short of that idea.  In fact, a few minor differences arise when you use packages others have written.  The most important difference is that, before you can begin to use an outside package, you must **install** it in your Python environment.  The most standard way to do that is to execute
 
     python -m pip install python-docx
     
