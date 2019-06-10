@@ -21,7 +21,7 @@ You can obtain a Computer Vision API key using the [Azure CLI](https://docs.micr
 
 1. If you haven't already installed the Azure CLI and logged into it for the first time, follow the instructions in an earlier unit for doing so.
 
-1. Open a Command Prompt or terminal window and use the following command to create a resource group named "contoso-travel-rg" in Azure's North Central US region to hold all the Azure resources you create in this module:
+1. Open a Command Prompt window or terminal and use the following command to create a resource group named "contoso-travel-rg" in Azure's North Central US region to hold all the Azure resources you create in this module:
 
 	```
 	az group create  --name contoso-travel-rg --location northcentralus
