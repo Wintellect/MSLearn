@@ -1,6 +1,6 @@
 # Create a site that supports photo uploads
 
-Now that you have an environment for Python and Flask prepared and have the basics of Flask under your belt, it's time to build a Web site. A Web site begins with an **app.py** file and basic assets such as HTML, CSS, and images. You will start by downloading a set of starter files for the Contoso Travel site.  Then you will enhance the site to support photo uploads.
+Now that you have an environment for Python and Flask prepared and have the basics of Flask under your belt, it's time to build a Web site. A Flask Web site begins with an **app.py** file and basic assets such as HTML, CSS, and images. You will start by downloading a set of starter files for the Contoso Travel site.  Then you will enhance the site to support photo uploads.
 
 1. Create a directory on your hard disk in the location of your choice. This will be the *project directory* and will hold all of the files that comprise the Web site.
 
