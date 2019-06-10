@@ -181,4 +181,4 @@ You can also use Flask's `url_for()` function to resolve these URLs:
 <img src="url_for('static', filename='banner.jpg')">
 ```
 
-One benefit of using `url_for()` is that the resultant URLs are absolute, which sidesteps issues that sometimes arise if browsers handle relative URLs in inconsistent ways.
+One benefit of using `url_for()` is that the resultant URLs are absolute, which sidesteps issues that sometimes arise when browsers handle relative URLs in inconsistent ways.
