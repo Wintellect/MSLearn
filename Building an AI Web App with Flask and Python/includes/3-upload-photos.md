@@ -67,7 +67,7 @@ In this exercise, you will modify **index.html** and **app.py** so users can upl
 
 1. Start Visual Studio Code and use the **File** > **Open Folder...** command to open the project directory containing the Web site.
 
-1. Use Visual Studio Code's Explorer to open **index.html** in the "templates" folder. This is the Web site's home page, and the one that will be used to upload photos.
+1. Use Visual Studio Code's Explorer to open **index.html** in the "templates" folder. This is the Web site's home page, and the one that's used to upload photos.
 
 	![Opening index.html](media/open-index.png)
 
