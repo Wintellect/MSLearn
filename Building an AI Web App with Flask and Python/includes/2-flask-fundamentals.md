@@ -123,11 +123,11 @@ Expressions such as these can even be used to conditionally execute JavaScript c
 
 ```html
 {% if message %}
+    <h1>{{ message }}</h1>
+{% else %}
     <script type="text/javascript">
         window.alert("Error: No message specified");
     </script>
-{% else %}
-    <h1>{{ message }}</h1>
 {% endif %}
 ```
 
