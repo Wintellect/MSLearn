@@ -1,26 +1,26 @@
 # Set up a working development environment with Python
  
-This module assumes you have basic familiarity with such office productivity tools as [Microsoft Word](https://www.office.com/?auth=2), Microsoft Excel, and a PDF viewer.  An abundance of on-line help is available to start you with these, or to help you "brush up" on your existing knowledge.
+The recurring theme of this module is to combine the powers of the Python programming language and different "office productivity" tools such as [Microsoft Word](https://www.office.com/?auth=2), Microsoft Excel, and a PDF viewer. Each lesson practices a particular aspect of this theme.
 
-This module also assume you are acquainted with the Python programming language, and know the basics of how to prepare and launch Python programs.  [TODO:  refs]
+The lessons which fellow can largely be read in any order you choose:  if you have a special focus on Excel, it's fine to start with those lessons.  Before beginning any of the lessons, though, make sure you have a simple foundation in place to ensure your success:
 
+1.  Familiarize yourself with the basic office tools:  Word, Excel, PowerPoint, and so on.  An abundance of on-line help is available to start you with these, or to help you "brush up" on your existing knowledge.
 
-## Arrange for Python 3.6
+1.  This module also assume you are acquainted with the Python programming language, and know the basics of how to prepare and launch Python programs.  [TODO:  refs]
 
-Another assumption of this module is that you use Python 3.6 or later.  Why 3.6?  On one hand, all the programs which follow can actually be run under [Python 2.7](https://pythonclock.org/), Python 3.4, and so on, either unchanged, or with very minor adjustments.  I certainly use older versions of Python on a daily basis.  However, your study will make considerably more sense if you focus on the essentials, rather than version-specific details.  In 2019, Python 3.6 is an appropriate standard starting point.  Do yourself a favor, especially if the computer you use builds in an older version:  take a few minutes to [install Python 3.6](https://realpython.com/installing-python/), and save yourselves many-times-over that investment.  Older versions bring difficulties you do well to avoid.
+1.  Arrange for Python 3.6:  Another assumption of this module is that you use Python 3.6 or later.  Why 3.6?  On one hand, all the programs which follow can actually be run under [Python 2.7](https://pythonclock.org/), Python 3.4, and so on, either unchanged, or with very minor adjustments.  I certainly use older versions of Python on a daily basis.  However, your study will make considerably more sense if you focus on the essentials, rather than version-specific details.  In 2019, Python 3.6 is an appropriate standard starting point.  Do yourself a favor, especially if the computer you use builds in an older version:  take a few minutes to [install Python 3.6](https://realpython.com/installing-python/), and save yourselves many-times-over that investment.  Older versions bring difficulties you do well to avoid.
 
-One alternative to installation of Python3.6 (or later) is to use a cloud-based Python.  Think of this as a Python someone else installed, that you access through your Web browser.  [Azure Notebooks](https://blogs.msdn.microsoft.com/uk_faculty_connection/2017/06/10/guide-to-the-microsoft-azure-notebooks-for-students/) and [Python Anywhere](https://www.pythonanywhere.com/) are a couple of at least a half-dozen good cloud-based services you might consider.
+[TODO:  is there a better way to make a second paragraph in this numbered item?]  One alternative to installation of Python3.6 (or later) is to use a cloud-based Python.  Think of this as a Python someone else installed, that you access through your Web browser.  [Azure Notebooks](https://blogs.msdn.microsoft.com/uk_faculty_connection/2017/06/10/guide-to-the-microsoft-azure-notebooks-for-students/) and [Python Anywhere](https://www.pythonanywhere.com/) are a couple of at least a half-dozen good cloud-based services you might consider.
 
-
-## Standard package management
-
-One specific but distinct aspect of Python work is "[package management](https://packaging.python.org/overview/)".  You might be quite good with the basic Python programming language:  perhaps you're expert at Python's syntax and coding up good solutions to programming problems.  To make the most of Python, you'll also want to be able to use what others have written.  That's the accomplishment of [the Python Package Index](https://pypi.org/) (PyPI).  Consider this example:  the next lesson focuses on **python-docx**, a **package** Industry Analyst Relations Manager [Steve Canny](https://github.com/scanny) wrote "in his spare time" and shares freely.  To use this package in your own programs, you don't have to write all of **python-docx** yourself, or even copy it into your programs.  Instead, Python allows you to
+4.  Practice Python's standard package management.  One specific but distinct aspect of Python work is "[package management](https://packaging.python.org/overview/)".  You might be quite good with the basic Python programming language:  perhaps you're expert at Python's syntax and coding up good solutions to programming problems.  To make the most of Python, you'll also want to be able to use what others have written.  That's the accomplishment of [the Python Package Index](https://pypi.org/) (PyPI).  Consider this example:  the next lesson focuses on **python-docx**, a **package** Industry Analyst Relations Manager [Steve Canny](https://github.com/scanny) wrote "in his spare time" and shares freely.  To use this package in your own programs, you don't have to write all of **python-docx** yourself, or even copy it into your programs.  Instead, Python allows you to
 
     import python-docx
     
 within your programs, and from then on use the package just as you use the statements and definitions _you_ write.
 
-Almost.  In fact, a few minor differences arise when you use packages others have written.  The most important difference is that, before you can begin to use an outside package, you must install it in your Python environment.  The most standard way to do that is to execute
+Almost.  
+
+That is, while the _idea_ is that `import` helps you use what someone else wrote just the way you program with your own source, the practice falls slightly short of that idea.  In fact, a few minor differences arise when you use packages others have written.  The most important difference is that, before you can begin to use an outside package, you must **install** it in your Python environment.  The most standard way to do that is to execute
 
     python -m pip install python-docx
     

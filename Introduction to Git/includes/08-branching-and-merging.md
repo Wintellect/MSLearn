@@ -1,13 +1,13 @@
 # Branch, merge, and rebase
 
-As your project becomes more complicated, developers start wanting to work on
+As your project becomes more complicated, its developers start wanting to work on
 more than one thing at a time, fixing bugs as they turn up while working on
-implementing several different features. They need a way to keep their work on
+implementing several different features. The contributors need a way to keep their work on
 each of these topics separate, and to switch between them quickly.
 
 _Branches_ make this easy. The work done "on a branch" doesn't have to be
 shared, and it can't interfere with work on other branches. Branches let you
-keep the commits related to each topic together, making the changes easy to
+keep the commits related to each topic together, making changes easy to
 review and track.
 
 One of Git's advantages over older version control systems is that creating a
@@ -49,12 +49,11 @@ Throw-away branch names are  [*MISSING SOMETHING HERE? --ES*]
 The `git branch` command creates the branch, starting with the current HEAD.
 The `git checkout` command switches to the new branch.
 
-We already encountered `checkout` as a way of replacing files in the working tree by
-getting it from the index. You can also specify a commit to take the files from, in which case both the index and the working tree are updated. With no paths at the end of the argument list, `checkout` updates *everything* in the working tree and the index to match the specified commit, in this case the head of the branch.
+We already encountered `checkout` as a way of replacing files in the working tree by getting it from the index. You can also specify a commit to take the files from [MISSING TEXT HERE], in which case both the index and the working tree are updated. With no paths at the end of the argument list, `checkout` updates *everything* in the working tree and the index to match the specified commit, in this case the head of the branch.
 
-While Alice is working on the CSS, Bob is busy creating a branch for adding a picture of his cat. He uses a popular shortcut. Passing the `-b` option to `checkout` creates a branch, then switches to it.
+While Alice is working on the CSS, Bob is busy creating a branch for adding a picture of his cat.
 
-That's by far the most common way of creating a branch:
+He uses a popular shortcut. Passing the `-b` option to `checkout` creates a branch, then switches to it. That's by far the most common way of creating a branch:
 
 ```
 $ cd ~/sandbox/Bob/BobCats
@@ -64,7 +63,7 @@ Switched to a new branch 'addCat'
 
 ## Work on a branch
 
-Now that Alice and Bob are working on private branches, they are free to make changes without interfering with one another. Bob starts by adding a picture of his cat:
+Now that Alice and Bob are working on private branches, each is free to make changes without interfering with one another. Bob starts by adding a picture of his cat:
 
 ```
 $ sed -i.bak -e '/Eventually/ c <img src="assets/bobcat2-317x240.jpg">' index.html
@@ -86,7 +85,7 @@ $ git commit -a -m "Add style for cat pictures"
  1 file changed, 1 insertion(+)
 ```
 
-Right now, the two contributors are working on parallel. At this point, their two working trees look like this:
+Right now, the two contributors are working in parallel. At this point, their two working trees look like this:
 
 ```
 Alice:  ...o---m
@@ -146,7 +145,7 @@ Merge commits are used for additional metadata in some projects. In addition
 to recording the date and time of the merge, and the developer's name and
 email, you can use the `--signoff` option to include a "signed off by:"  line.
 The `-S` option adds a digital signature. Merge commits like this are often
-used in large distributed projects -- the sign-off identifies the person who
+used in large distributed projects; the sign-off identifies the person who
 approved the change, and the signature backs that up by ensuring that _only_
 that person could have made the commit.
 
@@ -185,11 +184,9 @@ Some projects prefer this kind of history. It keeps Bob's commits exactly the wa
 
 ## Rebase instead of merge
 
-_Rebasing_ a branch rewrites all of its commits so that it attaches to a
-different parent (base) commit. 
+_Rebasing_ a branch rewrites all of its commits so that it attaches to a different parent (base) commit. 
 
-In order to simplify his history, Bob wants to rebase the `addCat` branch so
-that it is based on "A" rather than "m".  He uses:
+In order to simplify his history, Bob wants to rebase the `addCat` branch so that it is based on "A" rather than "m".  He uses:
 
 ```
 $ git checkout addCat
@@ -208,13 +205,9 @@ Bob:    ...o---m---A
 ```
 
 What Git did was to compute the difference between the commits `m` and `B`, and apply that difference as a patch to `A`.
-Git has lost track of the fact that Bob's change was originally made to commit
-`m`, but that's usually less important than making sure that Bob has taken all
-of his teammates' changes into account.
+Git lost track of the fact that Bob's change was originally made to commit `m`, but that's usually less important than making sure that Bob has taken all of his teammates' changes into account.
 
-If Bob were to merge the `addCat` branch now, he could do it as a fast-forward
-merge. Instead, he decides that there's no reason to merge at this point, so
-he simply continues to work on his branch:
+If Bob were to merge the `addCat` branch now, he could do it as a fast-forward merge. Instead, he decides that there's no reason to merge at this point, so he simply continues to work on his branch:
 
 ```
 $ sed -i.bak -e 's/<img /<img class=".cat" /' index.html
@@ -242,6 +235,7 @@ other ways of combining commits that work better.
 
 [*THIS UNIT OOES A GOOD JOB OF SAYING HOW-TO, BUT AT THE END OF IT I'M NOT SURE IF I GROK WHEN-TO. I'M NOT SURE IF THAT MEANS I NEED A BETTER SCENARIO SET-UP (OH NO WHAT HAPPENED TO THE KITTY PICTURE?) OR A WRAP UP THAT GIVES ME EXCPLICIT ADVICE ABOUT WHEN EACH OPTION IS THE BEST CHOICE. YOUR THOUGHTS? --ES*]
 [*I'M NOT SURE THIS, COMBINED WITH THE PARAGRAPH I ADDED TO THE SUMMARY, IS ENOUGH, BUT IT SEEMS LIKE A GOOD START --SS.*]
+[*I GUESS THAT"S OKAY. I'LL LET JEFF MAKE THE FINAL CALL.*]
 
 ## Summary
 
@@ -253,9 +247,6 @@ merging them. You learned about
 * [`git rebase`](https://git-scm.com/docs/git-rebase), which revises commits to re-arrange branches,  and
 * [`git merge`](https://git-scm.com/docs/git-merge), which combines branches.
 
-It's up to each project to decide whether it's more important to use rebase
-and fast-forward merges to keep a simple linear history, or to use merge
-commits to preserve signoffs, signatures, metadata, and the exact sequence of
-changes. Small teams generally go for simplicity.
+It's up to each project to decide whether it's more important to use rebase and fast-forward merges to keep a simple linear history, or to use merge commits to preserve signoffs, signatures, metadata, and the exact sequence of changes. Small teams generally go for simplicity.
 
 In the next unit you learn how to simplify history using `merge --squash` or `rebase --interactive`, and how to resolve merge conflicts.

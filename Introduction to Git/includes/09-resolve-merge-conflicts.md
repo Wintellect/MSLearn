@@ -36,7 +36,7 @@ $ git push
 
 Bob made his changes in the previous unit, and he's ready to merge them, but
 before he does he checks out the master branch and pulls the changes that
-Alice made in the mean time. (If he doesn't, his merged changes will get
+Alice made in the mean time. (If he doesn't, his merged changes will be
 rejected when he tries to push them.)
 
 ```
@@ -93,12 +93,10 @@ git log --graph --all
 |
 ```
 
-The command produces a graph similar to the ones displayed in this unit, only rotated counter-clockwise so that it goes up the left-hand side of the log output.
-Because it's using vertical bars and slashes, it works perfectly in a terminal
+The command produces a graph similar to the ones displayed in this unit, only rotated counter-clockwise so that it goes up the left-hand side of the log output. Because it uses vertical bars and slashes, it works perfectly in a terminal
 window; that's especially useful when you're running it on a remote server.
 
-Of course, when you can run GUI programs, there are better options. The one
-that is shipped as part of Git is `gitk`:
+Of course, when you can run GUI programs, there are better options -- and quite a few are available! The one that is shipped as part of Git is `gitk`:
 
 
 ```
@@ -108,12 +106,9 @@ gitk --all &
 Gitk is a GUI program for exploring Git histories; the `--all` option tells it to show all of the branches. The `&` at the end of the line tells Bash to run the command in another process, so that you can continue working in the shell.
 
 ![Screenshot of gitk --all.](media/gitk-screenshot.png)
-As you can see in the screenshot, Gitk gives you a window with a view similar to `git log --graph` in the top pane, and the details of each commit in the bottom pane. Between them are search and navigation tools, as well as a box containing the full ID of the selected commit. This is automatically selected, which makes it easy to copy and paste into a command.
+Gitk gives you a window with a view similar to `git log --graph` in the top pane, and the details of each commit in the bottom pane. Between them are search and navigation tools, as well as a box containing the full ID of the selected commit. This is automatically selected, which makes it easy to copy and paste into a command.
 
-Getting a picture of your history with one of these tools is especially useful
-after a pull to get an overview of the changes, or when you're about to do
-something you're not certain will work the way you expect. You can refresh
-Gitk with the `F5` key to see what actually happened.
+Getting a picture of your history with one of these tools is especially useful after a pull to get an overview of the changes, or when you're about to do something you're not certain will work the way you expect. You can refresh Gitk with the `F5` key to see what actually happened.
 
 ## Bob's options
 
@@ -137,7 +132,7 @@ Merge has the advantage of preserving all of the individual changes and recordin
 
 If there are more than one commit on a branch, both merging and rebasing make
 it hard to see the big picture. That's especially true if the commits have
-messages like "Fix off-by-one bug", "make backup", "Revert bad merge", or
+messages like "Fix off-by-one bug," "make backup," "Revert bad merge," or
 something even less helpful (see [this xkcd cartoon](https://xkcd.com/1296/)
 for an example). It's better to combine all of the commits on a branch into a
 single one.  That lets you compose a new commit message that describes *what
