@@ -1,6 +1,6 @@
 # Create a site that supports photo uploads
 
-Now that you have an environment for Python and Flask prepared and have the basics of Flask under your belt, it's time to build a Web site. A Web site begins with an **app.py** file and basic assets such as HTML, CSS, and images. You will first download a set of starter files for a Web site named "Contoso Travel." Then you will enhance it to support photo uploads.
+Now that you have an environment for Python and Flask prepared and have the basics of Flask under your belt, it's time to build a Web site. A Web site begins with an **app.py** file and basic assets such as HTML, CSS, and images. You will start by downloading a set of starter files for a Web site named "Contoso Travel." Then you will enhance the site to support photo uploads.
 
 1. Create a directory on your hard disk in the location of your choice. This will be the *project directory* and will hold all of the files that comprise the Web site.
 
@@ -122,7 +122,7 @@ In this exercise, you will modify **index.html** and **app.py** so users can upl
 	    return render_template("index.html", image_uri=uri)
 	```
 
-	The revised **app.py** still serves up the content in **index.html** when the home page is requested. But when the user uploads a photo and the page is requested again with a POST command, the new code retrieves the uploaded image bits from the request (`image = request.files["file"]`), base-64 encodes them to create a [data URI](https://en.wikipedia.org/wiki/Data_URI_scheme), and assigns the data URI to the image declared in the page. This is a common technique for displaying an uploaded image in a Web page without writing the image to a temporary file on disk.
+	The revised **app.py** still serves up the content in **index.html** when the home page is requested. But when the user uploads a photo and the page is requested again with a POST command, the new code retrieves the uploaded image from the request (`image = request.files["file"]`), base-64 encodes it to create a [data URI](https://en.wikipedia.org/wiki/Data_URI_scheme), and assigns the data URI to the `<img>` element declared in the page. This is a common technique for displaying an uploaded image in a Web page without writing the image to a temporary file on disk.
 
 1. Return to **index.html** and find the `<img>` element on line 42. Replace `/static/placeholder.png` on that line with `{{ image_uri }}`. Here is the modified line:  
 
