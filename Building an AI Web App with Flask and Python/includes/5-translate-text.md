@@ -213,7 +213,7 @@ You have now subscribed to the Translator Text API and obtained an API key for c
 	        return ["Error calling the Translator Text API"]
 	```
 
-	This version of **app.py** adds a function named `translate_text()` that's called after text is extracted from an image by the Computer Vision API. `translate_text()` translates the text passed to it into the specified language by placing a REST call to the Translator Text API. It returns the translated text, or an error message if something went wrong.
+	This version of **app.py** adds a function named `translate_text()` that's called after text is extracted from an image by the Computer Vision API. `translate_text()` translates the text passed to it into the specified language by calling the Translator Text API. It returns the translated text, or an error message if something went wrong.
 
 An interesting aspect of this code is that if the call to the Computer Vision API returns an error message or a message indicating that no text was detected in the photo, the message itself is translated into the language that the user selected. 
 
