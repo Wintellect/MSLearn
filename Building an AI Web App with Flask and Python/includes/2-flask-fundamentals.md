@@ -16,7 +16,7 @@ The first statement imports a class named `Flask` from the `flask` package insta
 
 The fourth and fifth statements define a function that's called when the user requests the site's home page — for example, "http://www.contoso.com/." The preceding statement — `@app.route("/")` — is a *decorator* that maps the route ("/") to the function. The function name is unimportant, but `index` is commonly used as the name for the function that renders the site's home page.
 
-> If you want to use a name other **app.py** for the Python file, Flask supports that. Simply identify the file with a FLASK_APP environment variable and Flask will happily execute it rather than **app.py**.
+> If you want to use a name other **app.py** for the Python file, simply identify the file with a FLASK_APP environment variable and Flask will happily execute it rather than **app.py**.
 
 ### Routing in Flask
 
