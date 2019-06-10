@@ -69,7 +69,7 @@ The [Azure CLI](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli?
 	az account list
 	``` 
 
-	The default subscription — the one used to create resources created with the CLI — will be marked `isDefault=true`. If that's the subscription you wish to use, or if it's the only subscription in the list, proceed to the next step. Otherwise, use the following command to designate one of the other subscriptions as the default, replacing SUBSCRIPTION_ID with the ID of that subscription: 
+	The default subscription — the one used to create resources created with the CLI — will be marked `isDefault=true`. If that's the subscription you wish to use, or if it's the only subscription in the list, you're done. Otherwise, use the following command to designate one of the other subscriptions as the default, replacing SUBSCRIPTION_ID with the ID of that subscription: 
 
 	```
 	az account set -s SUBSCRIPTION_ID
