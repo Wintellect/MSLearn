@@ -1,10 +1,10 @@
 # Use Azure Cognitive Services to translate text
 
-The [Translator Text API](https://azure.microsoft.com/services/cognitive-services/translator-text-api/) is the member of Azure Cognitive Services that translates text from one language to another. It relies on [Neural Machine Translation](https://www.microsoft.com/translator/business/machine-translation/#nmt) (NMT) to work its magic and supports [more than 60 languages](https://docs.microsoft.com/en-us/azure/cognitive-services/translator/language-support).
+The [Translator Text API](https://azure.microsoft.com/services/cognitive-services/translator-text-api/) is the member of Azure Cognitive Services that translates text from one language to another. It relies on state-of-the-art [Neural Machine Translation](https://www.microsoft.com/translator/business/machine-translation/#nmt) (NMT) to work its magic and supports [more than 60 languages](https://docs.microsoft.com/en-us/azure/cognitive-services/translator/language-support).
 
-Like the Computer Vision API, the Translator Text API is invoked using REST calls over the Internet. Unlike the Computer Vision API, the Translator Text API currently has no Python SDK available. This doesn't mean that you can't use it from a Python application. It means that you must invoke the API using raw HTTP requests and write code to parse the JSON payloads that are returned.
+Like the Computer Vision API, the Translator Text API is invoked using REST calls over the Internet. Unlike the Computer Vision API, the Translator Text API currently has no Python SDK available. That doesn't mean that you can't use it from a Python application. It means that you must invoke the API using raw HTTP requests and write code to parse the JSON payloads that are returned.
 
-It's not as hard as it sounds, as you will prove when you modify the Contoso Travel site to pass text extracted from photos by the Computer Vision API to the Translator Text API for translation.
+It's not as hard as it sounds, as you will prove when you modify the Contoso Travel site to pass text extracted from photos by the Computer Vision API to the Translator Text API for translation into another language.
 
 ## Subscribe to the Translator Text API
 
@@ -80,7 +80,7 @@ You have now subscribed to the Translator Text API and obtained an API key for c
 	</div>
 	```
 
-	TODO: Explain this code.
+	The added markup defines a drop-down list (an HTML `<select>` element) with a selection of languages that can text can translated into.
 
 1. Also in **index.html**, add the following statement to the `<script>` block at the bottom of the page:
 
@@ -106,7 +106,7 @@ You have now subscribed to the Translator Text API and obtained an API key for c
 	</script>
 	```
 
-	TODO: Explain this code.
+	The purpose of the added statement is to initialize the drop-down list with the currently selected language. Without this statement, the drop-down list would revert back to the default ("English") each time a photo is uploaded.
 
 1. Open **app.py** and replace its contents with the following:
 
@@ -213,9 +213,9 @@ You have now subscribed to the Translator Text API and obtained an API key for c
 	        return ["Error calling the Translator Text API"]
 	```
 
-	TODO: Explain this code.
+	This version of **app.py** adds a function named `translate_text()` that is called by `index()` after text is extracted from an image by the Computer Vision API. `translate_text()` translates the text passed to it into the specified language by placing a REST call to the Translator Text API. It returns the translated text, or an error message if something went wrong.
 
-TODO: Add closing.
+An interesting aspect of this code is that if the call to the Computer Vision API returns an error message or a message indicating that no text was detected in the photo, the message itself is translated into the language that the user selected. 
 
 ## Translate text extracted from photos
 

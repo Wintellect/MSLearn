@@ -89,7 +89,7 @@ In this exercise, you will modify **index.html** and **app.py** so users can upl
 	</script>
 	```
 
-	The purpose of this code is simple: to display an open-file dialog when the user clicks the page's **Upload** button, and to upload the selected image when the dialog is dismissed. It works by using jQuery to simulate clicks of the buttons in a hidden file-upload control defined in **index.html**:
+	The purpose of this code is simple: to display an open-file dialog when the user clicks the page's **Upload Photo** button, and to upload the selected image when the dialog is dismissed. It works by using jQuery to simulate clicks of the buttons in a hidden file-upload control defined in **index.html**:
 
 	```html
 	<div style="display: none">
