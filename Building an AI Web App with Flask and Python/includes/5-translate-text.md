@@ -239,7 +239,7 @@ The final step is to test the changes that you made by uploading photos to the s
 
 	_Selecting a language_
 
-1. Select the language that you want to translate text into from the drop-down list. Then click the **Upload Photo** and button and upload a picture that contains text.
+1. Select the language that you want to translate text into from the drop-down list. Then click **Upload Photo** and upload a picture containing text.
 
 1. Confirm that after a brief pause, the text extracted from the photo and translated into the language you specified appears in a modal dialog. Then dismiss the dialog.
 
