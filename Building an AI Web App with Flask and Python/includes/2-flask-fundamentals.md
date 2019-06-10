@@ -12,7 +12,7 @@ def index():
     return "<h1>Hello, world</h1>"
 ```
 
-The first statement imports a class named `Flask` from the `flask` package installed with `pip`. The second statement instantiates that class to create a Flask app and assign it to the variable named `app`.
+The first statement imports a class named `Flask` from the `flask` package installed with `pip`. The second statement instantiates that class to create a Flask app and assigns it to the variable named `app`.
 
 The fourth and fifth statements define a function that's called when the user requests the site's home page — for example, "http://www.contoso.com/." The preceding statement — `@app.route("/")` — is a *decorator* that maps the route ("/") to the function. The function name is unimportant, but `index` is commonly used as the name for the function that renders the site's home page.
 
