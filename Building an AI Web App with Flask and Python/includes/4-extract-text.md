@@ -122,7 +122,11 @@ You have now subscribed to the Computer Vision API and obtained an endpoint and 
 	        return ["Error calling the Computer Vision API"]
 	```
 
-	TODO: Explain this code.
+	The modified **app.py** defines a function named `extract_text_from_image()` that accepts an image and a `ComputerVisionClient` instance. It calls `ComputerVisionClient.recognize_printed_text_in_stream()` to pass the image to the Computer Vision API and returns one or more lines of text representing the text extracted from the image, a message indicating no text was found, or an error message indicating that something went wrong.
+
+	The `index()` function calls `extract_text_from_image()` each time a photo is uploaded and uses Flask's `flash()` function to "flash" the results.
+
+	`ComputerVisionClient` comes from the Python SDK for the Computer Vision API. An instance is created and initialized with your Computer Vision API endpoint and API key when the application starts up. The endpoint and API key are read from environment variables using Python's `os.environ` mapping object.
 
 1. Now open **index.html** and insert the following code and markup before the `<script>` element at the bottom of the page:
 
@@ -161,7 +165,7 @@ You have now subscribed to the Computer Vision API and obtained an endpoint and 
 	{% endwith %} 
 	```
 
-	TODO: Explain this code.
+	The first section defines a modal dialog box using Bootstrap. The second section populates the dialog box with the lines of text returned by `extract_text_from_image()` and flashed by `index()` and displays the dialog box in the page.
 
 Finish up by saving your changes to **index.html** and **app.py**.
 
