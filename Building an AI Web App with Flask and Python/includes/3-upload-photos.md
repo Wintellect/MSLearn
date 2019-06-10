@@ -148,4 +148,4 @@ Let's make sure your changes have the desired effect by uploading a photo to the
 
 	_Contoso Travel showing an uploaded photo_
 
-You now have a basic Flask Web site running that accepts photo uploads. The next step is to modify the site to extract text from those photos.
+You now have a basic Flask Web site running that accepts photo uploads. The next step is to modify the site to extract text from those photos. That's where Azure Cognitive Services come in.
