@@ -187,7 +187,7 @@ Now let's run the modified site, upload a few photos, and see if the Computer Vi
 	export VISION_ENDPOINT=computer_vision_endpoint
 	```
 
-	When the site is running locally, calls to `os.environ` in your Python code load these variables from the environment. Later, when you deploy the site to Azure, the same variables will come from application settings in Azure — no code changes required.
+	When the site is running locally, calls to `os.environ` load these variables from the environment. Later, when you deploy the site to Azure, the same variables will come from application settings in Azure — no code changes required.
 
 1. Navigate to http://localhost:5000 in your browser. Click the **Upload Photo** and button and upload a picture that contains text. Confirm that after a brief pause, the text extracted from the photo appears in a modal dialog. Then dismiss the dialog.
 
