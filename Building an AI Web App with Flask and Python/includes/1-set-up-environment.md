@@ -1,6 +1,6 @@
 # Set up a development environment
 
-The first order of business is to set up a development environment for Web sites written in Python and Flask. This will enable you to build and test Contoso Travel locally prior to deploying it and making it available publicly.
+The first order of business is to set up a development environment for Web sites written in Python and Flask. This will enable you to build and test Contoso Travel locally prior to deploying it to Azure and making it available publicly.
 
 In this unit, you will install Python on your computer if it isn't already installed. Then you will install Flask and the [Python SDK for the Computer Vision API](https://pypi.org/project/azure-cognitiveservices-vision-computervision/). The latter makes it easy to call Azure's Computer Vision API from Python applications. Finally, you will install the [Azure CLI](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli?view=azure-cli-latest), which provides a command-line interface to Azure and also requires Python.
 
