@@ -14,7 +14,9 @@ def index():
 
 The first statement imports a class named `Flask` from the `flask` package installed with `pip`. The second statement instantiates that class to create a Flask app and assign it to the variable named `app`.
 
-The fourth and fifth statements define a function that's called when the user requests the site's home page — for example, "http://www.contoso.com/." The preceding statement — `@app.route("/")` — maps the route ("/") to the function. The function name is unimportant, but `index` is commonly used as the name for the function that renders the site's home page.
+The fourth and fifth statements define a function that's called when the user requests the site's home page — for example, "http://www.contoso.com/." The preceding statement — `@app.route("/")` — is a *decorator* that maps the route ("/") to the function. The function name is unimportant, but `index` is commonly used as the name for the function that renders the site's home page.
+
+> If you want to use a name other **app.py** for the Python file, Flask supports that. Simply identify the file with a FLASK_APP environment variable and Flask will happily execute it rather than **app.py**.
 
 ### Routing in Flask
 
