@@ -47,7 +47,7 @@ If the app is hosted at www.contoso.com, it now supports the following URLs:
 - www.contoso.com/about
 - www.contoso.com/contact
 
-You can continue adding routes and functions until the pages that your site supports are accessible by URL. Once more, the function names are unimportant. It's the routes that count.
+You can continue adding routes and functions until all the pages that your site supports are accessible by URL. Once more, the function names are unimportant. It's the routes that count.
 
 ### HTML templates
 
@@ -56,7 +56,7 @@ You typically don't want to include inline HTML in the functions that render you
 Flask contains a function named `render_template()` that looks for HTML files in a subdirectory named "templates" and renders them out to the page. The following example produces the exact same output as the previous example. It assumes that the directory in which **app.py** is located has a subdirectory named "templates" containing HTML files named **index.html**, **about.html**, and **contact.html**:
 
 ```python
-from flask import Flask, render_template()
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
