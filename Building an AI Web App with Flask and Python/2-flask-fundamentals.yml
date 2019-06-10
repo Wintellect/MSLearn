@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.ai-flask-python.2-flask-fundamentals
+metadata:
+  title: Flask Fundamentals
+  description: Learn the fundamtentals of Flask
+  ms.date: 06/06/2019
+  author: v-jeffpr
+  ms.author: christopher.harrison
+  ms.topic: interactive-tutorial
+  ms.prod: learning-python
+  ROBOTS: NOINDEX
+durationInMinutes: 10
+content: |
+  [!include[](includes/2-flask-fundamentals.md)]
