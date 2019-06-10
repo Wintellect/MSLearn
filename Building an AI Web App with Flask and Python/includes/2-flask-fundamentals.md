@@ -113,9 +113,9 @@ Expresions delimited by `{{` and `}}` aren't the only special ones that Flask su
 
 ```html
 {% if message %}
-    <h1>This is a default message</h1>
-{% else %}
     <h1>{{ message }}</h1>
+{% else %}
+    <h1>No message specified</h1>
 {% endif %}
 ```
 
@@ -123,7 +123,7 @@ Expressions such as these can even be used to conditionally execute JavaScript c
 
 ```html
 {% if message %}
-    <script type="language/javascript">
+    <script type="text/javascript">
         window.alert("Error: No message specified");
     </script>
 {% else %}
