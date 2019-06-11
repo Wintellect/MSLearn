@@ -108,28 +108,22 @@ You have now subscribed to the Translator Text API and obtained an API key for c
 
 	The purpose of the added statement is to initialize the drop-down list with the currently selected language. Without this statement, the drop-down list would revert back to the default ("English") each time a photo is uploaded.
 
-1. Open **app.py** and replace its contents with the following:
+1. Open **app.py** and replace the first line with this one:
 
 	```python
 	import os, base64, json, requests
-	from flask import Flask, render_template, request, flash
-	
-	from azure.cognitiveservices.vision.computervision import ComputerVisionClient
-	from azure.cognitiveservices.vision.computervision.models import ComputerVisionErrorException
-	from msrest.authentication import CognitiveServicesCredentials
-	
-	# Create a ComputerVisionClient for calling the Computer Vision API
-	vision_key = os.environ["VISION_KEY"]
-	vision_endpoint = os.environ["VISION_ENDPOINT"]
-	vision_credentials = CognitiveServicesCredentials(vision_key)
-	vision_client = ComputerVisionClient(vision_endpoint, vision_credentials)
-	
+	```
+
+1. Next, add the following statements right after the statements that create a `ComputerVisionClient` instance near the top of the file to fetch the Translator Text API key:
+
+	```python
 	# Retrieve the Translator Text API key 
 	translate_key = os.environ["TRANSLATE_KEY"]
-	
-	app = Flask(__name__)
-	app.secret_key = os.urandom(24)
-	
+	```
+
+1. Replace the ```index()``` function with this one:
+
+	```python
 	@app.route("/", methods=["GET", "POST"])
 	def index():
 	    language="en"
@@ -156,29 +150,11 @@ You have now subscribed to the Translator Text API and obtained an API key for c
 	        uri = "/static/placeholder.png"
 	
 	    return render_template("index.html", image_uri=uri, language=language)
-	
-	# Function that extracts text from images
-	def extract_text_from_image(image, client):
-	    try:
-	        result = client.recognize_printed_text_in_stream(image=image)
-	        lines=[]
-	
-	        if len(result.regions) == 0:
-	            lines.append("Photo contains no text to translate")
-	
-	        else:
-	            for line in result.regions[0].lines:
-	                text = " ".join([word.text for word in line.words])
-	                lines.append(text)
-	
-	        return lines
-	
-	    except ComputerVisionErrorException as e:
-	        return ["Computer Vision API error: " + e.message]
-	
-	    except:
-	        return ["Error calling the Computer Vision API"]
-	
+	```
+
+1. Finally, add the following function to the end of **app.py**:
+
+	```python
 	# Function the translates text into the specified language
 	def translate_text(lines, language, key):
 	    uri = "https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&to=" + language
@@ -213,7 +189,7 @@ You have now subscribed to the Translator Text API and obtained an API key for c
 	        return ["Error calling the Translator Text API"]
 	```
 
-	This version of **app.py** adds a function named `translate_text()` that's called after text is extracted from an image by the Computer Vision API. `translate_text()` translates the text passed to it into the specified language by calling the Translator Text API. It returns the translated text, or an error message if something went wrong.
+	The revised version of **app.py** calls this function after text is extracted from an image. `translate_text()` calls the Translator Text API  to translate the text passed to it. It returns the translated text, or an error message if something went wrong. The updated `index()` function flashes the translated text in order to present it to the user.
 
 An interesting aspect of this code is that if the call to the Computer Vision API returns an error message or a message indicating that no text was detected in the photo, the message itself is translated into the language that the user selected. 
 
