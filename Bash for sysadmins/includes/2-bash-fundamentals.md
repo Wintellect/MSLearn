@@ -1,6 +1,6 @@
 # Bash fundamentals
 
-Before we get into the details of Bash commands – we’ll do that shortly – let’s look at the way the shell interacts with the computer and the operating system.
+Before we get into the details of Bash commands – we'll do that shortly – let's look at the way the shell interacts with the computer and the operating system.
 
 To start Bash, you open a Azure Cloud terminal session and type in bash. When you do so, you see a shell prompt. Typically, the shell prompt contains your user name, the PC or server's name, then by a dollar sign. So, in the example below, the user name is sjvnbuddy, the server name is CheddarNorthwind, and the prompt is terminated by "$".
 
@@ -46,9 +46,9 @@ Since Because many Bash commands deal with the Linux's file system, you should b
 
 The full syntax for a Bash command is: command, options, argument. This syntax is very precise. Close to being right isn't good enough in Bash. If a shell argument doesn't use just the right combination of commands, options, and arguments — including spacing — it will fail. 
 
-It works like this. Usually, the Bash shell treats the first string it encounters as a command. Most of the time, that’s what you intend: do this thing. So, for example, to see what files are inside your pwd you would you invoke the Linux directory command, `ls`: 
+It works like this. Usually, the Bash shell treats the first string it encounters as a command. Most of the time, that's what you intend: do this thing. So, for example, to see what files are inside your pwd you would you invoke the Linux directory command, `ls`: 
 
-> The examples show the $ prompt to represent the command line where you type. Don’t type the $ or you will get an error message!
+> The examples show the $ prompt to represent the command line where you type. Don't type the $ or you will get an error message!
 
 ```bash
 $ ls

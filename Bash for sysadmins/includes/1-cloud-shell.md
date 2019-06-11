@@ -21,8 +21,8 @@ TODO: Mention Windows Subsystem for Linux.
 To securely work with your Azure VM, start here: 
 - In the VM blade of the Azure portal, select the VM to which you want to connect.
 - Start the VM, if it is not already running.
-- Click on the VM’s name to open its overview page.
-- Note the VM’s public IP address and DNS name. (If these values are not set, then you must create a network interface.)
+- Click on the VM's name to open its overview page.
+- Note the VM's public IP address and DNS name. (If these values are not set, then you must create a network interface.)
 - Open PuTTY.
 - In the PuTTY configuration dialog, enter your VM's IP address or DNS name.
 - Click open to start a terminal session.
