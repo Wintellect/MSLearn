@@ -29,8 +29,8 @@ While we focused on using Bash interactively, Bash scripting is the most powerfu
 
 1. Bash is short for:
 	- BAsic SHell
-	- Bourne Again Shell
-	- Before All SHells
+	- Bourne Again SHell
+	- Better than All SHells
 	- None of the above
 
 1. Which of the following commands writes a list of process IDs associated with a user named "scottgu" to a file?
