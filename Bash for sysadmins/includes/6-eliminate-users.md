@@ -1,6 +1,6 @@
 # Exercise: Find and eliminate unauthorized users
 
-Users come, users go, and sometimes you get users you don't want at all. When an employee leaves to "pursue other opportunities," the sysadmin is called upon to ensure that the worker can no longer log into the company’s computer systems. Sysadmins are also expected to know who’s logged in — and who shouldn't be.
+Users come, users go, and sometimes you get users you don't want at all. When an employee leaves to "pursue other opportunities," the sysadmin is called upon to ensure that the worker can no longer log into the company's computer systems. Sysadmins are also expected to know who's logged in — and who shouldn't be.
 
 To find out who's on your servers, Linux provides the `who` (or `w`) command. This command displays information about the users currently on the computer system and those users' processes. By itself, `w` shows how many users are on the system, their user names, their IP addresses, how long they've been in the server, data about the time their processes are taking on the system, and the commands they're currently running.
 
