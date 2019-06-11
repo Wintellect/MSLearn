@@ -152,7 +152,9 @@ You have now subscribed to the Translator Text API and obtained an API key for c
 	    return render_template("index.html", image_uri=uri, language=language)
 	```
 
-1. Finally, add the following function to the end of **app.py**:
+	The new `index()` function reads the language selected in the drop-down list from the request and passes it to `translate_text()`, which translates the text into the specified language. Then it flashes the translated text so **index.html** will present it to the user.
+
+1. Finally, add the `translate_text()` function to the end of **app.py**:
 
 	```python
 	# Function the translates text into the specified language
@@ -189,7 +191,7 @@ You have now subscribed to the Translator Text API and obtained an API key for c
 	        return ["Error calling the Translator Text API"]
 	```
 
-	The revised version of **app.py** calls this function after text is extracted from an image. `translate_text()` calls the Translator Text API  to translate the text passed to it. It returns the translated text, or an error message if something went wrong. The updated `index()` function flashes the translated text in order to present it to the user.
+	This function calls the Translator Text API  to translate the text passed to it. It returns the translated text, or an error message if something went wrong.
 
 An interesting aspect of this code is that if the call to the Computer Vision API returns an error message or a message indicating that no text was detected in the photo, the message itself is translated into the language that the user selected. 
 
