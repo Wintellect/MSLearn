@@ -10,7 +10,7 @@ So, let's patch Northwind with a single Bash command line. You do this by combin
 $ sudo apt update && sudo apt upgrade -y
 ```
 
-The first part of the command, `sudo apt update`, is run as the root user with the `update` flag. This tells the server to update the local database of available packages. Without the update, the local software database isn’t updated. The second half, `sudo apt upgrade`, also runs as the root user. It is what actually updates the server. 
+The first part of the command, `sudo apt update`, is run as the root user with the `update` flag. This tells the server to update the local database of available packages. Without the update, the local software database isn't updated. The second half, `sudo apt upgrade`, also runs as the root user. It is what actually updates the server. 
 
 The `&&` instructs Bash to run the two commands that the second one only runs only the earlier command runs successfully. The `-y` in the end automatically enters an answer of "yes" when the command apt upgrade asks for confirmation before installing the updates.
 
