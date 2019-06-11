@@ -2,9 +2,7 @@
 
 Now that you have an environment for Python and Flask prepared and have the basics of Flask under your belt, it's time to build a Web site. A Flask Web site begins with an **app.py** file and basic assets such as HTML, CSS, and images. You will start by downloading a set of starter files for the Contoso Travel site.  Then you will enhance the site to support photo uploads.
 
-1. Create a directory on your hard disk in the location of your choice. This will be the *project directory* and will hold all of the files that comprise the Web site.
-
-1. [Download a zip file](https://topcs.blob.core.windows.net/public/contoso-travel.zip) containing the assets for Contoso Travel and copy the contents of the zip file into the project directory you created in the previous step.
+1. [Download a zip file](https://topcs.blob.core.windows.net/public/contoso-travel.zip) containing the assets for Contoso Travel and copy the contents of the zip file into the project directory you created earlier.
 
 1. Take a moment to browse the files that you copied into the project directory. Verify that they include:
 
@@ -29,7 +27,9 @@ Now that you have an environment for Python and Flask prepared and have the basi
 
 	Currently, the app consists of a single page named **index.html** located in the "templates" subdirectory. **index.html** doesn't contain any special expressions at the moment — it is simply a static file — but that will change as you develop the site. **index.html** loads the popular [Bootstrap](https://getbootstrap.com/) framework and uses it to make the page responsive. It also loads **main.css** from the "static" subdirectory and uses the CSS styles defined there to lend the page a professional appearance.
 
-1. Open a Command Prompt window or terminal and `cd` to the project directory.
+1. Return to the Command Prompt window or terminal where your virtual Python environment is active and make sure that the project directory is the current directory.
+
+	> If you closed the Command Prompt or terminal after activating the virtual environment, simply open a new one, `cd` to the project directory, and use a `env\scripts\activate` command (Windows) or a `source env/bin/activate` command (macOS and Linux) to activate it again.
 
 1. If you are running Windows, execute the following command to create an environment variable named FLASK_ENV that tells Flask to run in development mode: 
 
