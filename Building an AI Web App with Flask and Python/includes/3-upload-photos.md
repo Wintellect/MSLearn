@@ -61,7 +61,7 @@ The page isn't functional yet. It doesn't support photo uploads, even though the
 
 ## Add support for uploading photos
 
-In this exercise, you will modify **index.html** and **app.py** so users can upload photos to the Web site. You can use any text editor you'd like to do the editing, but we recommend using Visual Studio Code — Microsoft's free, lightweight source-code editor for Windows, macOS, and Linux that features IntelliSense, integrated Git support, and more.
+In this exercise, you will modify **index.html** and **app.py** so users can upload photos to the Web site. You can use any text editor you'd like, but we recommend using Visual Studio Code — Microsoft's free, lightweight source-code editor for Windows, macOS, and Linux that features IntelliSense, integrated Git support, and more.
 
 1. If Visual Studio Code isn't installed on your PC, go to https://code.visualstudio.com/ and install it now.
 
