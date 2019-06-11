@@ -6,15 +6,14 @@ In this module, you learned the basics of using Bash. Among the skills you learn
 
 - How to set up an Ubuntu Linux VM with the Azure Cloud Shell
 - How to securely logging into your VM with SSH
-- Basic Bash Concepts
-- Basic Bash syntax
-- How to use Bash wildcards
+- Basic Bash concepts and syntax
+- Bash wildcards
 - Bash Command Basics
-- Bash I/O structure
+- Bash I/O operators
 - How to update an Ubuntu system
 - How to terminate bad processes
 - How to find and get rid of unwanted users
-- How to use Bash with Azure Cloud Shell
+- How to use Bash with the Azure Cloud Shell
 
 When you are ready to take the next step in learning Bash, here are three books you might find valuable:
 
@@ -34,7 +33,19 @@ While we focused on using Bash interactively, Bash scripting is the most powerfu
 	- Before All SHells
 	- None of the above
 
-1. Which of the following commands writes a list of files in the current directory to a file?
+1. Which of the following commands writes a list of process IDs associated with a user named "scottgu" to a file?
+	- `cat | grep scottgu > pids.txt`
+	- `cat > grep scottgu | pids.txt`
+	- `pid -u > grep scottgu | pids.txt`
+	- `ps -ef | grep scottgu > pids.txt`
+
+1. tk.
+	- tk
+	- tk
+	- tk
+	- tk
+
+1. tk.
 	- tk
 	- tk
 	- tk
