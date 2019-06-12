@@ -42,7 +42,7 @@ Let's start by creating a VM and connecting to it so you can execute Bash comman
 
 	This command creates a relatively inexpensive virtual machine featuring one virtual CPU, 3.5 GB of RAM, and a 7 GB solid-state drive (SSD). It also creates an admin user named "azureuser." No password is required because `--generate-ssh-keys` generates a pair of cryptographic keys used for logging in securely.
 
-	> For a complete list of options you can specify with the [az vm create](https://docs.microsoft.com/cli/azure/vm?view=azure-cli-latest#az-vm-create) command, type `az vm create --help`. One of the options available is `--size`, which lets you specify a VM size with more CPUs and more RAM. The downside to larger VMs is that they are more expensive.
+	> For a complete list of options you can specify with the [az vm create](https://docs.microsoft.com/cli/azure/vm?view=azure-cli-latest#az-vm-create) command, type `az vm create --help`. One of the options available is `--size`, which lets you specify a VM with more CPUs and more RAM. The downside to larger VMs is that they are more expensive.
 
 1. Wait for the VM to be created. (It might take a couple of minutes.) Then copy the public IP address from the output and use the command below to SSH into the VM, replacing IP_ADDRESS with the VM's public IP address. Note that you can copy selected text from the Cloud Shell to the clipboard using **Ctrl+C** on Windows or **Cmd+C** on a Mac:
 
