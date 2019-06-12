@@ -39,20 +39,20 @@ While we focused on using Bash interactively, Bash scripting is the most powerfu
 	- `pid -u > grep scottgu | pids.txt`
 	- `ps -ef | grep scottgu > pids.txt`
 
-1. tk.
-	- tk
-	- tk
-	- tk
-	- tk
+1. To update an Ubuntu Linux system, which command would you use?
+	- `apt update && apt upgrade -y`
+	- `sudo apt update && sudo apt upgrade -y`
+	- `Invoke-Command -FilePath c:\scripts\PS_WinUpdate.ps1 -ComputerName Server01`
+	- `wuauclt.exe /updatenow`
 
-1. tk.
-	- tk
-	- tk
-	- tk
-	- tk
+1.	The correct syntax for a Bash command is:
+	- command, comment, opinion   
+	- argument, command, options 
+	- command, options, argument
+	- su command, options, arguments  
 
-1. tk.
-	- tk
-	- tk
-	- tk
-	- tk
+1. Which of the below is not a Linux/Bash wildcard?
+	- #
+	- ?
+	- *
+	- [A-Z ]
