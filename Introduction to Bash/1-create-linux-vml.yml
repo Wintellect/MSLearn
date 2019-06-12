@@ -1,0 +1,15 @@
+### YamlMime:ModuleUnit
+uid: learn.bash.1-create-linux-vm
+title: Create a Linux VM in Azure
+metadata:
+  title: Create a Linux VM in Azure
+  description: Create a Linux VM in Azure in order to learn Bash
+  ms.date: 06/12/2019
+  author: v-jeffpr
+  ms.author: shana.matthews
+  ms.topic: interactive-tutorial
+  ms.prod: learning-bash
+  ROBOTS: NOINDEX
+durationInMinutes: 15
+content: |
+  [!include[](includes/1-create-linux-vm.md)]
