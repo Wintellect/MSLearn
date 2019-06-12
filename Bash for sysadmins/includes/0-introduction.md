@@ -8,7 +8,7 @@ A shell is a program that commands the operating system to perform actions. You 
 
 If you do serious sysadmin work with Linux, you must know Bash. While there are other Linux shells, including [csh](https://en.wikipedia.org/wiki/C_shell), [Korn shell](https://en.wikipedia.org/wiki/KornShell), and [zsh](https://en.wikipedia.org/wiki/Z_shell), Bash has become Linux's de facto standard. That's because Bash is compatible with Unix's first serious shell, the Bourne shell, also known as [sh](https://en.wikipedia.org/wiki/Bourne_shell). Bash incorporates the best features of its predecessors. It also incorporates features of its own such as built-in commands and the ability to invoke external programs.
 
-One reason for its success is its simplicity. Bash, like the rest of Linux, is based on the Unix design philosophy. As Peter Salus summarized in his book, [A Quarter Century of Unix](https://www.amazon.com/Quarter-Century-UNIX-Peter-Salus/dp/0201547775/ref=sr_1_1), three of the "big ideas" embodied in Unix and Linux are:
+One reason for its success is its simplicity. Bash, like the rest of Linux, is based on the Unix design philosophy. As Peter Salus summarized in his book, [A Quarter Century of Unix](https://www.amazon.com/Quarter-Century-UNIX-Peter-Salus/dp/0201547775/ref=sr_1_1), three of the "big ideas" embodied in Unix are:
 - Programs do one thing and do it well
 - Programs work together
 - Programs use text streams as the universal interface
