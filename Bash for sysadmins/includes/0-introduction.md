@@ -8,11 +8,11 @@ A shell is a program that commands the operating system to perform actions. You 
 
 If you do serious sysadmin work with Linux, you must get to know Bash. While there are other Linux shells, including [csh](https://en.wikipedia.org/wiki/C_shell), [Korn shell](https://en.wikipedia.org/wiki/KornShell), and [zsh](https://en.wikipedia.org/wiki/Z_shell), Bash has become Linux's de facto standard. That's because Bash is compatible with Unix's first serious shell, the Bourne shell, also known as [sh](https://en.wikipedia.org/wiki/Bourne_shell). Bash incorporates the best features of its predecessors. It also includes built-in commands and has the ability to invoke external programs.
 
-One reason for its success is its simplicity. Bash, like the rest of Linux, is based on the Unix design philosophy. As Peter Salus summarized in his book, [A Quarter Century of Unix](https://www.amazon.com/Quarter-Century-UNIX-Peter-Salus/dp/0201547775/ref=sr_1_1), the three "big ideas" in Bash are:
+One reason for its success is its simplicity. Bash, like the rest of Linux, is based on the Unix design philosophy. As Peter Salus summarized in his book, [A Quarter Century of Unix](https://www.amazon.com/Quarter-Century-UNIX-Peter-Salus/dp/0201547775/ref=sr_1_1), three of the "big ideas" embodied in Unix and Linux are:
 - Programs do one thing and do it well
 - Programs work together
 - Programs use text streams as the universal interface
 
 The last part is key to understanding how Bash works. In Unix and Linux, everything is a file. That means you can use the same commands without worrying about whether the I/O stream — the input and output — comes from a keyboard, a disk file, a socket, a pipe, or another I/O abstraction.
 
-Bash is the command shell of choice for Linux users. As [PowerShell](https://docs.microsoft.com/en-us/powershell/scripting/overview?view=powershell-6) is to Windows Server, so Bash is to Linux. Let's learn the basics of Bash, starting with the syntax and with commonly used commands such as `ls` and `cat`. But first, let's create a Linux VM in Azure so you something to practice on.
+Bash is the command shell of choice for Linux users. As [PowerShell](https://docs.microsoft.com/en-us/powershell/scripting/overview?view=powershell-6) is to Windows Server, so Bash is to Linux. Let's learn the basics of Bash, starting with the syntax and with commonly used commands such as `ls` and `cat`. But first, let's create a Linux VM in Azure so you have a place to practice your skills.
