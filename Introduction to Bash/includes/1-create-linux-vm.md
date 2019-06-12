@@ -62,7 +62,7 @@ To connect to the VM, you will use the [Secure Shell](https://en.wikipedia.org/w
 
 	_Connecting to the VM_
 
-	Now that you are connected to the VM, you can no longer execute `az` commands, but you are free to execute Bash commands in the virtual machine. You can log out of the VM with an `exit` command, and connect again with the same `ssh` command you used above. If you are ever confused as to whether you are executing commands in the Cloud Shell or the VM, look to the command prompt. The Cloud Shell prompt reads `USER_NAME@Azure:~$`, whereas the VM prompt reads `adminuser@VM_NAME:~$`.
+	Now that you are connected to the VM, you can no longer execute `az` commands, but you are free to execute Bash commands. You can log out of the VM with an `exit` command, and connect again with the same `ssh` command you used above. If you are ever confused as to whether you are executing commands in the Cloud Shell or the VM, look to the command prompt. The Cloud Shell prompt reads `USER_NAME@Azure:~$`, whereas the VM prompt reads `adminuser@VM_NAME:~$`.
 
 	> You are charged for VMs when they're running, even if they're not doing anything. You can stop a VM with an [az vm stop](https://docs.microsoft.com/cli/azure/vm?view=azure-cli-latest#az-vm-stop) command and reduce the cost, and you can start it again with an [az vm start](https://docs.microsoft.com/cli/azure/vm?view=azure-cli-latest#az-vm-start) command. Be aware, however, that when a VM is stopped and restarted, its public IP address changes. You can list a VM's IP addresses with the [az vm list-ip-addresses](https://docs.microsoft.com/cli/azure/vm?view=azure-cli-latest#az-vm-list-ip-addresses) command — for example, `az vm list-ip-addresses -g bash-vm-rg -n bash-vm`.
 
