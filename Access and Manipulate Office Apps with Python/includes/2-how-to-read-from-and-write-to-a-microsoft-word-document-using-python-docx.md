@@ -11,7 +11,9 @@ Does this sound like a familiar story?  Here's a tip:  any time you think, "... 
 
 You need to write your agenda in Word, for a variety of reasons.  While the schedule and KPIs are in fixed locations, you embed them in your human explanation of business priorities and motivations.  Still, if the routine parts "write themselves"--if they appear in your draft document **automatically**--they're more likely to be accurate, undamaged by any typing mishap, you'll save time, and, perhaps most crucially of all, you preserve your attention for the difficult business challenges that are _not_ routine.
 
-This lesson, therefore, sketches how you can marry Python's ability to automate or script, to Word's convenience and familiarity.  The specific result below is one you actually can achieve from within Word itself:  Word has its own scripting tools.  Once you can do this simple exercise with Python, though, you open up all Python's power as a potential available within your documents.
+This lesson, therefore, sketches how you can marry Python's ability to automate or script, to Word's convenience and familiarity.  
+
+The specific result below is one you actually can achieve from within Word itself:  Word has its own scripting tools.  Once you can do this simple exercise with Python, though, you open up all Python's power as a potential available within your documents.  Think of it this way:  when you first learned Python, you started with simple exercises like `2 + 3`, or `print(datetime.datetime.now())`.  The immediate point is not to replace your watch, or because you can't add; it's to _practice_ Python, to gain the skill and confidence to tackle bigger problems.  The hardest step in using many Python modules is to run the first successful program.  For now, we start small.  Once you complete this lesson, you should be able to adapt it to your own specific situation and requirements.
 
 
 ## A demonstration
