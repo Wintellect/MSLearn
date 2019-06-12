@@ -6,9 +6,9 @@ In this unit, you will use the [Azure Cloud Shell](https://azure.microsoft.com/f
 
 After creating the VM, you will remote into it so you can use it to practice Bash commands.
 
-## Create a VM and connect to it with SSH
+## Create a virtual machine
 
-Let's start by creating a VM and connecting to it so you can execute Bash commands on the command line in the VM. To connect to the VM, you will use the [Secure Shell](https://en.wikipedia.org/wiki/Secure_Shell) (SSH) protocol, which enables you to securely connect to remote servers over an unsecured network. SSH is supported in the Azure Cloud Shell.
+Creating a virtual machine from the Azure Cloud Shell is a simple process requiring just a few steps.
 
 1. Navigate to https://shell.azure.com in your browser to launch the Azure Cloud Shell. If you are asked to choose a directory, select the one containing the Azure subscription that you wish to use for the VM.
 
@@ -43,6 +43,10 @@ Let's start by creating a VM and connecting to it so you can execute Bash comman
 	This command creates a relatively inexpensive virtual machine featuring one virtual CPU, 3.5 GB of RAM, and a 7 GB solid-state drive (SSD). It also creates an admin user named "azureuser." No password is required because `--generate-ssh-keys` generates a pair of cryptographic keys used for logging in securely.
 
 	> For a complete list of options you can specify with the [az vm create](https://docs.microsoft.com/cli/azure/vm?view=azure-cli-latest#az-vm-create) command, type `az vm create --help`. One of the options available is `--size`, which lets you specify a VM with more CPUs and more RAM. The downside to larger VMs is that they are more expensive.
+
+## Connect to the VM
+
+To connect to the VM, you will use the [Secure Shell](https://en.wikipedia.org/wiki/Secure_Shell) (SSH) protocol, which enables you to securely connect to remote servers over unsecured networks.
 
 1. Wait for the VM to be created. (It might take a couple of minutes.) Then copy the public IP address from the output and use the command below to SSH into the VM, replacing IP_ADDRESS with the VM's public IP address. Note that you can copy selected text from the Cloud Shell to the clipboard using **Ctrl+C** on Windows or **Cmd+C** on a Mac:
 
