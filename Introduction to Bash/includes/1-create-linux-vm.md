@@ -1,56 +1,59 @@
-# Set up a Linux VM and Bash on Azure Cloud Shell
+# Create a Linux VM in Azure
 
-On your own Linux computer, you just start Bash from the command line. But nobody wants to experiment on a live production system — particularly on your first day at Northwind!
+On your own Linux computer, you can run Bash from the command line. If you have access to Linux servers, you can remote into them and execute Bash commands there. But nobody wants to experiment on a live production system — particularly on their first day at Northwind!
 
-For this module, we use an Azure-based Linux virtual machine (VM) as a sandbox. That lets you see what happens when you type in each command.
+In this unit, you will use the [Azure Cloud Shell](https://azure.microsoft.com/features/cloud-shell/) to create a Linux virtual machine (VM) running Ubuntu in Azure. The Cloud Shell is a command-line interface to Azure that you access through the [Azure Portal](https://portal.azure.com) or at https://shell.azure.com. You don't have to install anything on your PC or laptop to use it. If you have a browser and an Azure subscription, you're ready to go.
 
-## Launch Azure Cloud Shell
+After creating the VM, you will remote into it so you can use it to practice Bash commands.
 
-The Azure Cloud Shell is a free interactive shell that you can use to run the steps in this module. It has common Azure tools pre-installed and configured to use with your account. 
+## Create a VM and connect to it with SSH
 
-To set up your Linux VM, use the instructions in [Create and Manage Linux VMs with the Azure CLI](https://docs.microsoft.com/azure/virtual-machines/linux/tutorial-manage-vm). Note that from within this Bash shell you can also work with the Azure CLI commands, by prefacing them with `az`. This lets you use the power of both interfaces. As you'll see later, this empowers you to use both Bash and Azure from the interface.
+Let's start by creating a VM and connecting to it so you can execute Bash commands on the command line in the VM. To connect to the VM, you will use the [Secure Shell](https://en.wikipedia.org/wiki/Secure_Shell) (SSH) protocol, which enables you to securely connect to remote servers over an unsecured network. SSH is supported in the Azure Cloud Shell.
 
-Once you create the Ubuntu Linux VM, the next step is to arrange things so you can securely log into it with an ssh client or from within the Azure Cloud Shell.
+1. Navigate to https://shell.azure.com in your browser to launch the Azure Cloud Shell. If you are asked to choose a directory, select the one containing the Azure subscription that you wish to use to create the VM.
 
-To do this, you use `ssh`, also known as "Secure Shell" or "Secure Socket Shell." It is the default network security protocol, and it enables you to securely into a system over an unsecured network. The name `ssh` also refers to the programs you run that permit you to use SSH to make these secure connections.
+1. If PowerShell is the language selected in the upper-left corner of the Cloud Shell, select **Bash** from the drop-down list to switch to Bash.
 
-To connect safely and securely with a Linux-based VM, you need an SSH client client such as [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/), the popular free Windows-based SSH client.
+1. Execute the following command in the Cloud Shell to list the Azure subscriptions associated with your Microsoft account:
 
-TODO: Mention Windows Subsystem for Linux.
+	```
+	az account list
+	``` 
 
-To securely work with your Azure VM, start here: 
-- In the VM blade of the Azure portal, select the VM to which you want to connect.
-- Start the VM, if it is not already running.
-- Click on the VM's name to open its overview page.
-- Note the VM's public IP address and DNS name. (If these values are not set, then you must create a network interface.)
-- Open PuTTY.
-- In the PuTTY configuration dialog, enter your VM's IP address or DNS name.
-- Click open to start a terminal session.
-- When prompted, enter your VM account name and password.
+	The default subscription — the one used to create resources created with the CLI — is marked `isDefault=true`. If that's the subscription you wish to use, or if it's the only subscription in the list, proceed to the next step. Otherwise, use the following command to designate one of the other subscriptions as the default, replacing SUBSCRIPTION_ID with the ID of that subscription: 
 
-You can also login to your VM using ssh from within the Azure Cloud Shell by using its built-in ssh functionality by taking the following steps: 
-- In the Azure portal search bar, search for your VM name.
-- When you find it, click on the VM. This shows an overview of its settings.
-- Click Connect to get your VM login name and public IP address.
-- Copy the command listed under the “Login using VM local account” label to your clipboard. 
-- In the Azure Cloud Shell Bash command line, paste and enter this command. 
+	```
+	az account set -s SUBSCRIPTION_ID
+	```
 
-This securely logs you into your Ubuntu shell.
+1. Use the following command to create a resource group named "bash-vm-rg" to hold your VM. Note that you can paste commands into the Cloud Shell by pressing **Shift+Ins** if you are running Windows, or **Cmd+V** on a Mac:
 
-For this purpose, you don't need a password, because you generated an ssh key pair when you created the VM. The key pair does two things: It logs you into the system and it secures your connection to the VM. When you first use ssh, the client prompts about the host's authenticity. Answering “yes” saves the IP address as a valid host for an ssh connection and completes the connection.
+	```bash
+	az group create --name bash-vm-rg --location eastus
+	```
 
-<INSERT: Azure Command Shell ssh Login.png>
+	Resource groups are an incredibly important feature of Azure. They act as containers for other Azure resources and serve to group those resources together so you can view billing information for them as a group, apply security rules as a group, and even delete them as a group. *Every* Azure resource that you create must be part of a resource group.
 
-Once you're in the Ubuntu shell, you can no longer access the Azure Command Shell, but you are free to start working with your Linux VM. To tell the difference between the two shells, look to their prompts:
+1. Now use the following command to create a VM running the latest version of Ubuntu:
 
-- The Azure Command Shell reads `<user name>@Azure:~$` 
-- The Linux prompt shows as `<user name>@<your Ubuntu VM name>:~$`
+	```bash
+	az vm create --resource-group bash-vm-rg --name bash-vm --image UbuntuLTS --admin-username azureuser --generate-ssh-keys
+	```
 
-For example: 
+	This command creates a relatively inexpensive virtual machine featuring one virtual CPU, 3.5 GB of RAM, and a 7 GB solid-state drive (SSD). It also creates an admin user named "azureuser." No password is required because `--generate-ssh-keys` generates a pair of cryptographic keys that are used for logging in.
 
-```
-buddy@Azure:~$
-buddy@Northwind:~$
-```
+	> For a complete list of options you can specify with an `az vm create` command, type `az vm create --help`. One of the options you can specify is `--size`, which lets you specify a VM size with more CPUs and more RAM. The downside to larger VMs is that they are more expensive.
 
-Now that everything is set up, in the next unit, you learn the concepts underlying the Bash shell and how to get started using it.
+1. Wait for the VM to be created. (It might take a couple of minutes.) Then copy the public IP address from the output and use the command below to SSH into the VM, replacing IP_ADDRESS with the VM's public IP address. Note that you can copy selected text from the Cloud Shell to the clipboard using **Ctrl+C** on Windows or **Cmd+C** on a Mac:
+
+	```bash
+	ssh azureuser@IP_ADDRESS
+	```
+
+	Answer "yes" if you are warned that the authenticity of the host can't be estbalished and asked if you wish to log in anyway.
+
+Now that you are connected to the VM, you can no longer execute `az` commands, but you are free to execute Bash commands in the virtual machine. You can log out of the VM with an `exit` command, and connect again with the same `ssh` command you used above. If you are ever confused as to whether you are executing commands in the Cloud Shell or the VM, look to the command prompt. The Cloud Shell prompt reads `USER_NAME@Azure:~$`, whereas the VM prompt reads `adminuser@VM_NAME:~$`.
+
+> You are charged for VMs when they're running, even if they're not doing anything. You can stop a VM with an `az vm stop` command or through the Azure Portal and reduce the cost to almost zero, and you can start it again later with an `az vm start` command. Be aware, however, that when a VM is stopped and restarted, the public IP address changes. You can list a VM's IP addresses with the `az vm list-ip-addresses` command — for example, `az vm list-ip-addresses -g bash-vm-rg -n bash-vm`.
+
+Now that the VM has been created and you are connected to it remotely, it's time to start learning Bash.
