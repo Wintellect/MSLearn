@@ -52,7 +52,7 @@ While we focused on using Bash interactively, Bash scripting is the most powerfu
 	- su command, options, arguments  
 
 1. Which of the below is not a Linux/Bash wildcard?
-	- #
+	- \#
 	- ?
-	- *
-	- [A-Z ]
+	- \*
+	- [A-Z]
