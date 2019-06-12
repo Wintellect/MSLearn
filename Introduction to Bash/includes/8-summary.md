@@ -46,10 +46,10 @@ While we focused on using Bash interactively, Bash scripting is the most powerfu
 	- `wuauclt.exe /updatenow`
 
 1.	The correct syntax for a Bash command is:
-	- command, comment, opinion   
-	- argument, command, options 
-	- command, options, argument
-	- su command, options, arguments  
+	- command, comments, opinions  
+	- arguments, command, options 
+	- command, options, arguments
+	- `su` command, options, arguments  
 
 1. Which of the below is not a Linux/Bash wildcard?
 	- \#
