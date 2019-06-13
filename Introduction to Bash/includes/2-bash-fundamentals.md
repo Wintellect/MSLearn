@@ -158,9 +158,9 @@ Because many Bash commands deal with the Linux file system, you should be aware 
 
 - File names are case sensitive. In Linux, the file names "Fluffy" and "fluffy" are entirely different.
 
-- Linux has no concept of a file-name extension as other operating systems do. Many Linux programs, do, however, recognize file-name extensions, if only as a convention.
+- Linux has no formal concept of a file-name extension as other operating systems do. Nonetheless, many Linux programs do honor file-name extensions, if only as a convention.
 
-Armed with this information, you're ready to learn the first key Bash commands that every sysadmin should know.
+Armed with this information, you're ready to start learning the key Bash commands that every sysadmin should know.
 
 
 
