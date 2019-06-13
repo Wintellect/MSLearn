@@ -11,7 +11,7 @@ You've met `ls` before. As you know, `ls` lists the contents of the pwd or the d
 ls
 ```
 
-Remember that files and directories whose names begin with a period are hidden by default. To include these items in a directory listing, include a `-a` flag:
+Remember that files and directories whose names begin with a period are hidden by default. To include these items in a directory listing, include a `-a` flag in the `ls` command:
 
 ```bash
 ls -a
@@ -38,11 +38,11 @@ drwxrwxr-x 2 azureuser azureuser    4096 Jun 13 20:16 gifs
 Each line has an explicit structure that provides detailed information about the corresponding file or directory. The first nine characters specify:
 
 - Whether the item is a file (-) or directory (d)
-- The item's read, write, and execute permissions, in that order
+- The item's read (r), write (w), and execute (x) permissions, in that order
 - The read, write, and execute permissions of the item's owner
 - The read, write, and execute permissions of the group to which the item belongs
 
-In all cases, "r" means read, "w" write, and "x" executable. A file can't be executed unless the executable flag is set. Images aren't executable files. Consequently, none of the files in this example have an "x" in position 4.
+A file can't be executed unless the executable flag is set. Images aren't executable files. Consequently, none of the files in this example have an "x" in position 4.
 
 So, in the example above, only the owner can write to the hidden **.bash_history** file. You can also see that anyone can read the hidden **.bashrc** file, which is the shell script Bash runs whenever it is started interactively.
 
