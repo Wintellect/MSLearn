@@ -210,48 +210,60 @@ You'll use `ps` virtually every day in your life as a Linux sysadmin. One common
 
 ## Bash I/O operators
 
-The commands you learned so far all give you helpful information. But you can really get work done at your new company only when you put them together using Bash's I/O operators.
+You can do a lot in Linux by just exercising Bash commands and their many options. But you can really get work done in your new position when you combine commands using I/O operators:
 
-By default, Bash commands direct their output to the display and they take their input from the keyboard. This does not have to be the case. By using I/O operators, you can redirect the output of many commands to files, devices, and to other commands.
+- `<` for redirecting input to a source other than the keyboard
+- `>` for redirecting output to destination other than the screen
+- `>>` for doing the same, but appending rather than overwriting
+- `|` for piping output from one command to the input of another
 
-The first element in using Bash's power is the pipe `|` operator. It redirects the output of the first command to the input of the second command. So, for instance, you might use `cat` to display the contents of a large file; the content scrolls too quickly for the human eye. But you can make it much more usable by piping the results to another program. 
-
-For example, the 16K file named **Guide** contains an early version of this document. To view it with cat, it scrolls by too quickly to be read. All you see on your screen are the last lines.
-
-```bash
-$ cat Guide
-```
-
-But, if you pipe it to the command head, which displays the first lines of text in a file, you see the document's opening lines:
+Suppose you want to list everything in the pwd but capture the output in a file named **listing.txt**. The following command does just that:
 
 ```bash
-$ cat Guide | head
+ls > listing.txt
 ```
 
-Or, say you want to know in detail about what processes are running. One way to do that is by piping the results of the `ps` command through `grep`. The `grep` command is a powerful utility for searching plain text for regular expressions. 
-
-To do so, we pipe the output from `ps -ef` (for a full view of all running processes) through `grep` which searches for processes being run by the user sjvn:
+If **listing.txt** already exists, it gets overwritten. If you use the `>>` operator instead, the output from `ls` is appended to what's already in **listing.txt**:
 
 ```bash
-$ ps -ef | grep sjvn
+ls >> listing.txt
 ```
 
-To redirect data from the standard output (your display) to a file you use `>`. So, for instance, this command sends the results of this directory command to new file **file.listing.txt**. If the file already exists, it overwrites it. 
+The piping operator is extremely powerful (and often used). It redirects the output of the first command to the input of the second command. Let's say you use `cat` to display the contents of a large file; the content scrolls too quickly for you to read. But you can make it much more usable by piping the results to another command such as `more`. The following commands lists all the currently running processes. But once the screen is dull, you press **Enter** to display subsequent lines:
 
 ```bash
-$ ls -la > file.listing.txt
+ps -ef | more
 ```
 
-To append to an existing file, use `>>` to add data to it. This command adds more data to **file.listing.txt**:
+You can also pipe output to `head` to see just the first several lines:
 
 ```bash
-$ ls -la >> file.listing.txt
+ps -ef | head
 ```
 
-In the screenshot above, we pipe `cat`'s output to another program, `more`. `more` lets you display the contents of a text stream in pages.
+Or suppose you want to filter the output to include only those lines containing the word "daemon." One way to do that is by piping the output from `ps` to `grep`:
 
-You can also use files as input. By default, standard input comes from the keyboard, but it too can be redirected. To redirect standard input from a file instead of the keyboard, use the `<` character. 
-One simple sysadmin task is to sort the contents of a file. As the name suggests, `sort` sorts a text file's contents in alphabetical order. With Bash's `sort`, lines starting with a lowercase letter appear before lines starting with the same letter in uppercase.
+```bash
+ps -ef | grep daemon
+```
+
+The output might look like this:
+
+```
+azureus+  52463  50702  0 23:28 pts/0    00:00:00 grep --color=auto deamon
+azureuser@bash-vm:~$ ps -ef | grep daemon
+root        449      1  0 13:35 ?        00:00:17 /usr/lib/linux-tools/4.18.0-1018-azure/hv_kvp_daemon -n
+root        988      1  0 13:35 ?        00:00:00 /usr/lib/accountsservice/accounts-daemon
+message+   1002      1  0 13:35 ?        00:00:00 /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+daemon     1035      1  0 13:35 ?        00:00:00 /usr/sbin/atd -f
+root       1037      1  0 13:35 ?        00:00:00 /usr/bin/python3 -u /usr/sbin/waagent -daemon
+root       1039      1  0 13:35 ?        00:00:00 /usr/lib/linux-tools/4.18.0-1018-azure/hv_vss_daemon -n
+azureus+  52477  50702  0 23:28 pts/0    00:00:00 grep --color=auto daemon
+```
+
+The `grep` command is a powerful tool for searching plain text using regular expressions. 
+
+You can also use files as input. By default, standard input comes from the keyboard, but it too can be redirected. To get input from a file instead of the keyboard, use the `<` operator. One common sysadmin task is to sort the contents of a file. As the name suggests, `sort` sorts text in alphabetical order. With Bash's `sort`, lines starting with a lowercase letter appear before lines starting with the same letter in uppercase.
 
 ```bash
 $ sort < file.listing.txt
