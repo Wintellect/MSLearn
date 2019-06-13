@@ -263,24 +263,24 @@ azureus+  52477  50702  0 23:28 pts/0    00:00:00 grep --color=auto daemon
 
 The `grep` command is a powerful tool for searching plain text using regular expressions. 
 
-You can also use files as input. By default, standard input comes from the keyboard, but it too can be redirected. To get input from a file instead of the keyboard, use the `<` operator. One common sysadmin task is to sort the contents of a file. As the name suggests, `sort` sorts text in alphabetical order. With Bash's `sort`, lines starting with a lowercase letter appear before lines starting with the same letter in uppercase.
+You can also use files as input. By default, standard input comes from the keyboard, but it too can be redirected. To get input from a file instead of the keyboard, use the `<` operator. One common sysadmin task is to sort the contents of a file. As the name suggests, `sort` sorts text in alphabetical order.
 
 ```bash
-$ sort < file.listing.txt
+sort < file.txt
 ```
 
-To save the results to a new file, you can redirect both a program's input and output with one command, which is far more efficient. To both sort **file.listing.txt** and send the result to the new file **sorted_file_listing.txt**, you would type:
+Note that with Bash's `sort`, lines starting with a lowercase letter appear before lines starting with the same letter in uppercase.
+
+To save the sorted results to a new file, you can redirect input *and* output:
 
 ```bash
-$ sort < file.listing.txt > sorted_file_listing.txt
+sort < file.txt > sorted_file.txt
 ```
 
-That's just the start. You can chain Linux commands together. For instance:
+You can use I/O operators to chain Linux commands endlessly. For instance:
 
 ```bash
-$ cat bad_format_report.txt | fmt | pr | lpr
+cat file.txt | fmt | pr | lpr
 ```
 
-Here, instead of showing you the file, `cat` pipes the contents to `fmt`'s standard input of `fmt`. The `fmt` formats the results into a tidy paragraph and passes it on to pr. This command transforms the text into pages. It then outputs it to `pr`'s standard output, which is piped into `lpr`'s standard input. Then `lpr` sends the tidied-up output to the system printer. All in a single line!
-
-Let's take a look now at some practical examples of using Bash.
+Here, the output from `cat` goes as input to `fmt`, the output from `fmt` goes as input to `pr`, and s on. `fmt` formats the results into a tidy paragraph. '`'pr` paginates the results. And `lpr` sends the paginated output to the system printer. All in a single line!
