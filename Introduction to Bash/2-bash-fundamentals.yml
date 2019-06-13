@@ -1,0 +1,15 @@
+### YamlMime:ModuleUnit
+uid: learn.bash.2-bash-fundamentals
+title: Bash fundamentals
+metadata:
+  title: Bash fundamentals
+  description: Learn about the symtax of Bash commands
+  ms.date: 06/12/2019
+  author: v-jeffpr
+  ms.author: shana.matthews
+  ms.topic: interactive-tutorial
+  ms.prod: learning-bash
+  ROBOTS: NOINDEX
+durationInMinutes: 10
+content: |
+  [!include[](includes/2-bash-fundamentals.md)]
