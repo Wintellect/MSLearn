@@ -16,7 +16,7 @@ The full syntax for a Bash command is:
 command [options] [arguments]
 ```
 
-Bash treats the first string it encounters as a command. So, for example, to see what files are inside your pwd — shorthand for the current working directory — you would you invoke the list command, or `ls`: 
+Bash treats the first string it encounters as a command. So, for example, to see what's inside your pwd — shorthand for the current working directory — you would you invoke the list command, or `ls`: 
 
 ```bash
 ls
