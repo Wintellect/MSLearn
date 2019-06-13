@@ -4,7 +4,7 @@ Before we get into the details of Bash commands, let's look at the way the shell
 
 When Bash starts, it first reads and executes commands from the file **/etc/profile**. This file — if it exists — contains the system's basic configuration data and any startup programs.
 
-After reading this configuration file, Bash looks for **~/.bash_profile**, **~/.bash_login**, and **~/.profile** for the logged-on user configuration information. If none of these exist, Bash runs with the operating system defaults. The tilde (~) in the path names represents the user's home directory.
+After reading this configuration file, Bash looks for files named **~/.bash_profile**, **~/.bash_login**, or **~/.profile** containing configuration information for the logged-on user. If none of these exist, Bash runs with the operating system defaults. The tilde (~) in the path names represents the user's home directory.
 
 Once these startup chores are finished, Bash displays a prompt and awaits your command.
 
