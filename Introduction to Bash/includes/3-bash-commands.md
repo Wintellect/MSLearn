@@ -113,7 +113,7 @@ Once more, "/usr/bin" is an important directory in Linux, so be careful poking a
 The `cp` command copies — not just files, but entire directories (and their subdirectories) if you want. To make a copy of **cat.jpg** named **kitty.jpg**, use the command:
 
 ```bash
-$ cp cat.jpg kitty.jpg
+cp cat.jpg kitty.jpg
 ```
 
 If **kitty.jpg** already exists, Bash silently replaces the older one with the copy. That's great if that's what you intended, but not so wonderful if you didn't realize you were about to overwrite the old version. 
@@ -121,13 +121,13 @@ If **kitty.jpg** already exists, Bash silently replaces the older one with the c
 Fortunately, if you use the `-i` (for "interactive") flag, Bash warns you before blowing away any existing file. This is much safer:
 
 ```bash
-$ cp -i cat.jpg kitty.jpg
+cp -i cat.jpg kitty.jpg
 ```
 
 To copy a file to a different directory — for example, the home directory — include the path:
 
 ```bash
-$ cp cat.jpg ~/kitty.jpg
+cp cat.jpg ~/kitty.jpg
 ```
 
 To copy all the files in the current directory to a subdirectory named "kitties," do this:
@@ -145,7 +145,7 @@ cp cats kittens
 This will copy the files in the "cats" directory, but not any files in subdirectories of "cats." To perform a deep copy that copies subdirectories and their contents, too, you can do this:
 
 ```bash
-$ cp -r cats kittens
+cp -r cats kittens
 ```
 
 The `-r` stands for "recursive." In this context, it means the `cp` command works its way through a directory *and* its subdirectories before exiting.
@@ -155,13 +155,13 @@ The `-r` stands for "recursive." In this context, it means the `cp` command work
 The `rm` command is short for "remove." As you'd expect, `rm`, like its MS-DOS cousin `del`, deletes files. So this command puts an end to **cats.jpg**:
 
 ```bash
-$ rm cats.jpg
+rm cats.jpg
 ```
 
 And this command deletes all the files in the pwd:
 
 ```bash
-$ rm *
+rm *
 ```
 
 Be wary of `rm`. It's a dangerous command.
@@ -169,41 +169,44 @@ Be wary of `rm`. It's a dangerous command.
 Like `cp`, the `rm` command supports the `-i` flag. The following command lets you think before you delete:
 
 ```bash
-$ rm -i *
+rm -i *
 ```
 
 Make it a habit to include `-i` in every `rm` command and you might not fall prey to one of Linux's biggest blunders. The dreaded `rm -rf /` command deletes every file on an entire drive. It works by recursively deleting all the subdirectories of root and their subdirectories. The `-f` (for "force") flag adds insult to injury by suppressing prompts. **Don't do this.**
 
 ### The `ps` command
 
-The `ps` command gives you a snapshot of all the currently-running processes on this Northwind server. By itself, with no arguments, it shows you all your current shell sessions processes. Not much is going on, as you see, on the top level of your shell.
+The `ps` command gives you a snapshot of all the currently running processes. By itself, with no arguments, it shows all your shell processes (in other words, not much). But it's a different story when you a `-e` flag:
 
 ```bash
-$ ps
+ps -e
 ```
 
-But, that's only at the surface. It's a different story when you take a deeper look of all your running processes with the `-e` flag
+`-e` lists *all* running processes, and there are typically many of them.
+
+For an even more comprehensive look at what processes are running in the system, use the `-ef` flag.
 
 ```bash
-$ ps -e
+ps -ef 
 ```
 
-For a more comprehensive view, use the `-f` flag. This shows the names of the running processes, their process identification number (pid), the pid of its parent program (ppid), the time the program began (STIME), what terminal, if any, to which a process is attached (TTY), how much CPU time has been spent on a process (TIME), and the processes' full path names.
+This shows the names of all the running processes, their process identification numbers (PIDs), the PIDs of their parents (PPIDs), the times the processes began (STIME), what terminal, if any, each process is attached to (TTY), how much CPU time a process has racked up (TIME), and the processes' full path names. Here is an abbreviated example:
 
-```bash
-$ ps -ef 
+```
+UID         PID   PPID  C STIME TTY          TIME CMD
+root          1      0  0 13:35 ?        00:00:03 /sbin/init
+root          2      0  0 13:35 ?        00:00:00 [kthreadd]
+root          3      2  0 13:35 ?        00:00:00 [rcu_gp]
+root          4      2  0 13:35 ?        00:00:00 [rcu_par_gp]
+root          5      2  0 13:35 ?        00:00:00 [kworker/0:0-cgr]
+root          6      2  0 13:35 ?        00:00:00 [kworker/0:0H-kb]
+root          8      2  0 13:35 ?        00:00:00 [mm_percpu_wq]
+root          9      2  0 13:35 ?        00:00:01 [ksoftirqd/0]
+root         10      2  0 13:35 ?        00:00:02 [rcu_sched]
 ```
 
-You'll use the data from `ps` and its related commands every day of your Linux sysadmin life.
-In this unit, you've learned the some of the most used Linux Bash commands. Here's where to go to read the detailed information for each of them:
 
-- `ls`: show directory contents 
-- `cat`: concatenates files
-- `cd`: change directory
-- `cp`: copy files and directories
-- `rm`: remove files and directories
-- `ps`: display data on all currently running processes. 
-- `sudo`: run a single command as the root user.
+You'll use `ps` virtually every day in your life as a Linux sysadmin. One common use for it is to retrieve process IDs for processes that you want to kill.
 
 ## Bash I/O operators
 
