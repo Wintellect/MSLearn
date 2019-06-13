@@ -81,35 +81,38 @@ UBUNTU_CODENAME=bionic
 
 `cd` stands for "change directory," and it does exactly what the name suggests: it changes the pwd to another directory. It enables you to move from one directory to another just as its counterpart in Windows does. 
 
-For example, to move from your primary directory to the subdirectory, use this command: 
+The following command changes to a subdirectory of the current directory named "kitties:"
 
 ```bash
-$ cd kitties
+cd kitties
 ```
 
-Now, let's move back to your home directory. You can use several commands from this subdirectory, but the one below always gets you back to it; the `~` means home. 
+You can move up a directory by specifying ".." as the directory name:
 
 ```bash
-$ cd ~
+cd ..
+```
+
+This one changes to your home directory — the one that you land in when you first log in:
+
+```bash
+cd ~
 ```
 
 In this case, you could have also moved up a directory with the following command:
 
 ```bash
-$ cd ..
+cd ..
 ```
 
-You can also shift positions by using absolute directories. So the following command, no matter my location on the Northwind server, takes me back to my home directory.
+You can also use absolute path names. Let's say you want to inspect the contents of the "/usr/bin" directory where programs that come with your Linux distribution are stored. You could use an `ls /user/bin` command. Or you could change to that directory and execute an `ls` command:
 
 ```bash
-$ cd /home/buddy
+cd /usr/bin
+ls
 ```
 
-This works for any absolute address. So to jump from any directory to Linux's "/usr/bin" directory, which holds your Linux's distribution standard programs, type:
-
-```bash
-$ cd /usr/bin
-```
+Once more, "/usr/bin" is an important directory in Linux, so be careful poking around there.
 
 ### The `cp` command
 
