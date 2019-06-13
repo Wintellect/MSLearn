@@ -116,7 +116,7 @@ The `cp` command copies — not just files, but entire directories (and their su
 $ cp cat.jpg kitty.jpg
 ```
 
-If **kitty.jpg** already exists, Bash silently replaces the older one with the copy. That's great if that's what you intended, but not so wonderful if you didn't realize you just overwrote the old version. 
+If **kitty.jpg** already exists, Bash silently replaces the older one with the copy. That's great if that's what you intended, but not so wonderful if you didn't realize you were about to overwrite the old version. 
 
 Fortunately, if you use the `-i` (for "interactive") flag, Bash warns you before blowing away any existing file. This is much safer:
 
