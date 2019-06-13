@@ -142,7 +142,7 @@ Based on this, can you guess what the following command would do?
 ls [0-9]*
 ```
 
-If you need to use one of the wildcard characters as an ordinary character, you make it literal or "escape it" by prefacing it with a backslash. So, if for some reason you had an * as part of a file name — something you should never do intentionally — you could search for it with a command such as:
+If you need to use one of the wildcard characters as an ordinary character, you make it literal or "escape it" by prefacing it with a backslash. So, if for some reason you had an asterisk as part of a file name — something you should never do intentionally — you could search for it with a command such as:
 
 ```bash
 $ ls *\**
