@@ -152,23 +152,29 @@ The `-r` stands for "recursive." In this context, it means the `cp` command work
 
 ### The `rm` command
 
-The `rm` command is short for "remove." As you'd expect, `rm`, like its MS-DOS cousin `del`, deletes files. So this command puts an end to Fuzzball:
+The `rm` command is short for "remove." As you'd expect, `rm`, like its MS-DOS cousin `del`, deletes files. So this command puts an end to **cats.jpg**:
 
 ```bash
-$ rm Fuzzball
+$ rm cats.jpg
+```
+
+And this command deletes all the files in the pwd:
+
+```bash
+$ rm *
 ```
 
 Be wary of `rm`. It's a dangerous command.
 
-It's a good idea to always run `rm` with the `-i` flag. So, in another directory, where Fuzzball lives on, the following command lets you think before you delete:
+Like `cp`, the `rm` command supports the `-i` flag. The following command lets you think before you delete:
 
 ```bash
-$ rm -i Fuzzball
+$ rm -i cats.jpg
 ```
 
-Otherwise, you might fall prey to one of the most infamous of Linux blunders: The dreaded `rm -rf /` would delete every file on an entire drive. It works by forcing recursive deletion through all subdirectories. The `-f` flag adds insult to injury by deleting read-only files without confirmation. Don't do this.
+Making it a habit to include `-i` in every `rm` prevents you from falling prey to one of Linux's biggest blunders. The dreaded `rm -rf /` command deletes every file on an entire drive. It works by recursively all the subdirectories of root and their subdirectories. The `-f` flag adds insult to injury by deleting read-only files without confirmation. **Don't do this.**
 
-If also pays to be wary of `rm` when you use it with any wildcard. The possibility always exists for you to delete the last file you ever wanted to get rid of. There is no easy way to undelete files in Linux.
+If also pays to include a `-i` flag when using `rm` with any wildcard. The possibility always exists for you to delete the last file you ever wanted to get rid of. There is no easy way to undelete files in Linux.
 
 ### The `ps` command
 
