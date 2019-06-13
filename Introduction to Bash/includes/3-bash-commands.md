@@ -42,8 +42,6 @@ Each line has an explicit structure that provides detailed information about the
 - The read, write, and execute permissions of the item's owner
 - The read, write, and execute permissions of the group to which the item belongs
 
-A file can't be executed unless the executable flag is set. Images aren't executable files. Consequently, none of the files in this example have an "x" in position 4.
-
 After the permissions comes the item's owner, the owner's group, the size in bytes, the last time the item was modified, and the file or directory name. 
 
 `ls` also accepts a path name as an argument. To view the contents of the "gifs" subdirectory in long format, you could type:
