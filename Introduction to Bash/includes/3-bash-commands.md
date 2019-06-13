@@ -110,39 +110,45 @@ Once more, "/usr/bin" is an important directory in Linux, so be careful poking a
 
 ### The `cp` command
 
-Now, it's time to start working on Northwind's files and directories. Let's start with `cp`. This command copies both files and directories. In its most simple form, `cp` copies a single file. So, to make a copy of Selkirk use the command:
+The `cp` command copies — not just files, but entire directories if you want. To make a copy of **cat.jpg** named **kitty.jpg**, use the command:
 
 ```bash
-$ cp Selkirk JamesTKirk
+$ cp cat.jpg kitty.jpg
 ```
 
-If the file **JamesTKirk** already exists, Bash cheerfully and silently replaces the older **JamesTKirk** file with a new copy. Jim, he's dead.
+If **kitty.jpg** already exists, Bash cheerfully and silently replaces the older one with the new copy. That's great if that's what you intended, but not so wonderful if you didn't realize you just overwrote the old version. 
 
-That's great if that's what you intended, but not so wonderful if you didn't realize you just overwrote the old version of Northwind's customer records for **JamesTKirk**. 
-
-Fortunately, if you use the `-i` (for "interactive") flag, Bash warns you before blowing away any existing file (in this case, **JamesTKirk**). This is much safer.
+Fortunately, if you use the `-i` (for "interactive") flag, Bash warns you before blowing away any existing file. This is much safer:
 
 ```bash
-$ cp -i Selkirk JamesTKirk
+$ cp -i cat.jpg kitty.jpg
 ```
 
-If **JamesTKirk** already exists, Bash responds by asking if you really want to overwrite the file:
-
-<INSERT cp -i.png>
-
-To copy a file to a different directory, use the command:
+To copy a file to a different directory — for example, the home directory — include the path:
 
 ```bash
-$ cp Bobtail ~/kitties
+$ cp cat.jpg ~/kitty.jpg
 ```
 
-To copy a directory, use:
+To copy all the files in the current directory to a subdirectory named "kitties," do this:
 
 ```bash
-$ cp -r kitties Cats
+cp * kitties
 ```
 
-The `-r` flag stands for "recursive." In this context, it means the `cp` command works its way through a directory before exiting. So, when you change directories into Cats and look at its contents, you see a familiar set of files.
+To copy all the files in a subdirectory named "cats" into a subdirectory named "kittens," you would do this:
+
+```bash
+cp cats kittens
+```
+
+This will copy the files in the "cats" directory, but not any files in subdirectories of "cats." To perform a deep copy that copies subdirectories and their contents, too, you can do this:
+
+```bash
+$ cp -r cats kittens
+```
+
+The `-r` stands for "recursive." In this context, it means the `cp` command works its way through a directory *and* its subdirectories before exiting.
 
 ### The `rm` command
 
