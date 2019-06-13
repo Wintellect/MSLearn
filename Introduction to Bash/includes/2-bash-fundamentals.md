@@ -158,7 +158,7 @@ Because many Bash commands deal with the Linux file system, you should be aware 
 
 - File names are case sensitive. In Linux, the file names "Fluffy" and "fluffy" are entirely different.
 
-- Linux has no formal concept of a file-name extension as other operating systems do. This doesn't mean that PNG files won't have a **.png** extension. It simple means that Linux attaches no special significance to the fact that the file names end with **.png**.
+- Linux has no formal concept of a file-name extension as other operating systems do. This doesn't mean that PNG files won't have a **.png** extension. It simply means that Linux attaches no special significance to the fact that the file names end with **.png**.
 
 Armed with this information, you're ready to start learning the key Bash commands that every sysadmin should know.
 
