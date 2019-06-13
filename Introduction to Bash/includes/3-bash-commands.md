@@ -99,12 +99,6 @@ This one changes to your home directory — the one that you land in when you fi
 cd ~
 ```
 
-In this case, you could have also moved up a directory with the following command:
-
-```bash
-cd ..
-```
-
 You can also use absolute path names. Let's say you want to inspect the contents of the "/usr/bin" directory where programs that come with your Linux distribution are stored. You could use an `ls /user/bin` command. Or you could change to that directory and execute an `ls` command:
 
 ```bash
