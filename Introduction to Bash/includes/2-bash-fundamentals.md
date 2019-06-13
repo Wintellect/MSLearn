@@ -30,7 +30,7 @@ As with other shell languages, Bash commands are often used with arguments. For 
 mkdir orders
 ```
 
-Some Bash commands have options, which may or may not be required for a given task. Options, also called *flags*, give a command more specific instructions. To create a new subdirectory and a subdirectory inside it with one command under your pwd, you could run `mkdir` with a `--parents` flag:
+Some Bash commands have options, which may or may not be required for a given task. Options, also called *flags*, give a command more specific instructions. To create a new subdirectory and a subdirectory inside it with a single command, you could run `mkdir` with a `--parents` flag:
 
 ```bash
 mkdir --parents cats/pics
