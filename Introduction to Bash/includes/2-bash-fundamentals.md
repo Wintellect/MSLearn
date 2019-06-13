@@ -16,9 +16,7 @@ The full syntax for a Bash command is:
 command [options] [arguments]
 ```
 
-This syntax is very precise. Close to being right isn't good enough. If a shell argument doesn't use just the right combination of commands, options, and arguments — including spacing — it will fail. 
-
-The Bash shell treats the first string it encounters as a command. So, for example, to see what files are inside your pwd — shorthand for the current working directory — you would you invoke the list command, or `ls`: 
+Bash treats the first string it encounters as a command. So, for example, to see what files are inside your pwd — shorthand for the current working directory — you would you invoke the list command, or `ls`: 
 
 ```bash
 ls
