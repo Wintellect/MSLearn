@@ -1,10 +1,10 @@
 # Bash fundamentals
 
-Before we get into the details of Bash commands, let's look at the way the shell interacts with the computer and the operating system. Bash is used both interactively — at the command line — and in shell scripts, which are files that contain Bash commands and whose names usually end with **.sh**. Thus, Bash bridges the gap between a simple shell language and a programming language. Mastering it is essential for day-in and day-out system-administration work.
+Before we get into the details of Bash commands, let's look at the way the shell interacts with the computer and the operating system. Bash is used both interactively — at the command line — and in shell scripts, which are files that contain Bash commands and whose names usually end with **.sh**. Thus, Bash bridges the gap between a simple shell language and a programming language. Mastering it is essential for day-in, day-out system-administration work.
 
 When Bash starts, it first reads and executes commands from the file **/etc/profile**. This file — if it exists — contains the system's basic configuration data and any startup programs.
 
-After reading this configuration file, Bash looks for **~/.bash_profile**, **~/.bash_login**, and **~/.profile** for the logged-on user configuration information. If none of these exist, Bash runs with the operating system defaults.
+After reading this configuration file, Bash looks for **~/.bash_profile**, **~/.bash_login**, and **~/.profile** for the logged-on user configuration information. If none of these exist, Bash runs with the operating system defaults. The tilde (~) in the path names represents the user's home directory.
 
 Once these startup chores are finished, Bash displays a prompt and awaits your command.
 
