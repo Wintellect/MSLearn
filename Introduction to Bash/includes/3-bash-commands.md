@@ -176,7 +176,7 @@ Make it a habit to include `-i` in every `rm` command and you might not fall pre
 
 ### The `ps` command
 
-The `ps` command gives you a snapshot of all the currently running processes. By itself, with no arguments, it shows all your shell processes (in other words, not much). But it's a different story when you a `-e` flag:
+The `ps` command gives you a snapshot of all the currently running processes. By itself, with no arguments, it shows all your shell processes — in other words, not much. But it's a different story when you include a `-e` flag:
 
 ```bash
 ps -e
@@ -184,13 +184,13 @@ ps -e
 
 `-e` lists *all* running processes, and there are typically many of them.
 
-For an even more comprehensive look at what processes are running in the system, use the `-ef` flag.
+For an even more comprehensive look at what processes are running in the system, use the `-ef` flag:
 
 ```bash
 ps -ef 
 ```
 
-This shows the names of all the running processes, their process identification numbers (PIDs), the PIDs of their parents (PPIDs), the times the processes began (STIME), what terminal, if any, each process is attached to (TTY), how much CPU time a process has racked up (TIME), and the processes' full path names. Here is an abbreviated example:
+This shows the names of all the running processes, their process identification numbers (PIDs), the PIDs of their parents (PPIDs), when they began (STIME), what terminal, if any, they're attached to (TTY), how much CPU time they have racked up (TIME), and their full path names. Here is an abbreviated example:
 
 ```
 UID         PID   PPID  C STIME TTY          TIME CMD
