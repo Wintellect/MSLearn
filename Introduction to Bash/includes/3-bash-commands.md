@@ -206,7 +206,7 @@ root         10      2  0 13:35 ?        00:00:02 [rcu_sched]
 ```
 
 
-You'll use `ps` virtually every day in your life as a Linux sysadmin. One common use for it is to retrieve process IDs for processes that you want to kill.
+You'll use `ps` virtually every day in your life as a Linux sysadmin. One common use for it is to retrieve process IDs for processes that you want to kill. More on this important topic later.
 
 ## Bash I/O operators
 
