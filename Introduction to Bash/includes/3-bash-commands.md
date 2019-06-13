@@ -210,7 +210,7 @@ You'll use `ps` virtually every day in your life as a Linux sysadmin. One common
 
 ## Bash I/O operators
 
-You can do a lot in Linux by just exercising Bash commands and their many options. But you can really get work done in your new position when you combine commands using I/O operators:
+You can do a lot in Linux by just exercising Bash commands and their many options. But you can really get work done when you combine commands using I/O operators:
 
 - `<` for redirecting input to a source other than the keyboard
 - `>` for redirecting output to destination other than the screen
