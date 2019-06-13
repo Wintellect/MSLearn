@@ -1,8 +1,7 @@
 # Bash commands
 
-On your first day at Northwind, you want to learn how the previous sysadmin organized the company's servers. Let's poke around  your server and see what we can find.
- 
-Every shell language has its most-used commands, just as every guitarist has a dozen songs she must be ready to play. ("Seven Nation Army," "Sweet Child O' Mine," and "Stairway to Heaven" come to mind, among others.) Let's start building your Bash repertoire by examining the most common Linux commands. 
+
+Every shell language has its most-used commands, just as every guitarist has a dozen songs she must be ready to play. ("Seven Nation Army," "Sweet Child O' Mine," and "Stairway to Heaven" come to mind, among others.) Let's start building your Bash repertoire by examining the most common Bash commands. 
 
 ### The `ls` command
 
