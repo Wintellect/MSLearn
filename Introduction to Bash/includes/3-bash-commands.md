@@ -172,7 +172,7 @@ Like `cp`, the `rm` command supports the `-i` flag. The following command lets y
 $ rm -i cats.jpg
 ```
 
-Make it a habit to include `-i` in every `rm` command and you might not fall prey to one of Linux's biggest blunders. The dreaded `rm -rf /` command deletes every file on an entire drive. It works by recursively all the subdirectories of root and their subdirectories. The `-f` flag adds insult to injury by deleting read-only files without confirmation. **Don't do this.**
+Make it a habit to include `-i` in every `rm` command and you might not fall prey to one of Linux's biggest blunders. The dreaded `rm -rf /` command deletes every file on an entire drive. It works by recursively deleting all the subdirectories of root and their subdirectories. The `-f` (for "force") flag adds insult to injury by suppressing prompts. **Don't do this.**
 
 If also pays to include a `-i` flag when using `rm` with any wildcard. The possibility always exists for you to delete the last file you ever wanted to get rid of. There is no easy way to undelete files in Linux.
 
