@@ -110,7 +110,7 @@ Once more, "/usr/bin" is an important directory in Linux, so be careful poking a
 
 ### The `cp` command
 
-The `cp` command copies — not just files, but entire directories if you want. To make a copy of **cat.jpg** named **kitty.jpg**, use the command:
+The `cp` command copies — not just files, but entire directories (and their subdirectories) if you want. To make a copy of **cat.jpg** named **kitty.jpg**, use the command:
 
 ```bash
 $ cp cat.jpg kitty.jpg
