@@ -28,7 +28,7 @@ As with other shell languages, Bash commands are often used with arguments. For 
 mkdir orders
 ```
 
-Some Bash commands have options, which may or may not be required for a given task. Options, also called *flags*, give a command more specific instructions. To create a new subdirectory and a subdirectory inside it with one command rather than two, you could run `mkdir` with a `--parents` flag:
+Most Bash commands have options, which may or may not be required for a given task. Options, also called *flags*, give a command more specific instructions. To create a new subdirectory and a subdirectory inside it with one command rather than two, you could run `mkdir` with a `--parents` flag:
 
 ```bash
 mkdir --parents cats/pics
