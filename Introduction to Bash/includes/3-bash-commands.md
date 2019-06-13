@@ -44,47 +44,42 @@ Each line has an explicit structure that provides detailed information about the
 
 After the permissions comes the item's owner, the owner's group, the size in bytes, the last time the item was modified, and the file or directory name. 
 
-`ls` also accepts a path name as an argument. To view the contents of the "gifs" subdirectory in long format, you could type:
+`ls` also accepts a path name as an argument. To view the contents of the "/etc" subdirectory in long format, you could type:
 
 ```bash
-$ ls -l gifs
+$ ls -l /etc
 ```
 
-You'll notice that file and directory names are color-coded. That's a default Bash setting in Azure's Ubuntu 18.04 instances.
+The "/etc" directory is a special one in Linux. It contains system-configuration files. You don't want to delete any files from this directory unless you know what you are doing.
 
 ### The `cat` command
 
-Now, it's time to do more than just look at Northwind's file directories. To look inside the files you use `cat`, which reads and concatenates files — that is, strings them together. Remember that in Linux, everything is treated as files so that's far more flexible than it might first appear.
-
-There are three jobs for which `cat` is commonly used to display the contents of one or more text files, combine files by appending the contents of one file to the end of another file, and create new files. 
-
-From the top, `cat` is often used to view files. Here, we use it to view the contents of the file **os-release**. This is also useful because it tells us a bit about which Linux distribution we're running.
+Suppose you want to see what's inside a file. You can use the `cat` command for that. The output won't make much sense unless the file is a text file. The following command shows the contents of the **os-release** file stored in the "/etc" directory:
 
 ```bash
-$ cat /etc/os-release
+cat /etc/os-release
 ```
 
-To append one file to another and thus merge the contents of two files, use `cat`. Doing so lists the files to combine and then directs their contents using the the Bash I/O redirection operator `>` (more on redirection later) to a new file. The resulting file contains the contents of both files.
+This is a useful command because it tells you which Linux distribution you're running:
 
-```bash
-$ cat create new file.png
 ```
-
-You can see the contents of the new file **NewCat** [You didn't say NewCat above?] by using `cat` in its first role:
-
-```bash
-$ cat NewCat
-```
-
-Finally, you can use `cat` to create new files by simply entering the command and redirecting your keyboard input into a new file. This command creates the file **Fuzzball**. To close and save the file, press **Ctrl-D**.
-
-```bash
-$ cat > Fuzzball
+NAME="Ubuntu"
+VERSION="18.04.2 LTS (Bionic Beaver)"
+ID=ubuntu
+ID_LIKE=debian
+PRETTY_NAME="Ubuntu 18.04.2 LTS"
+VERSION_ID="18.04"
+HOME_URL="https://www.ubuntu.com/"
+SUPPORT_URL="https://help.ubuntu.com/"
+BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/"
+PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"
+VERSION_CODENAME=bionic
+UBUNTU_CODENAME=bionic
 ```
 
 ### The `cd` command
 
-Now that we know a little bit about showing the contents of directories, we should learn a bit about navigating them. Change directory, `cd`, does exactly what the name suggests. It enables you to move from one directory to another just as its Windows cousin does. 
+`cd` stands for "change directory," and it does exactly what the name suggests: it changes the pwd to another directory. It enables you to move from one directory to another just as its counterpart in Windows does. 
 
 For example, to move from your primary directory to the subdirectory, use this command: 
 
