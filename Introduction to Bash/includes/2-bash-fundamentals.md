@@ -114,7 +114,7 @@ ls *.[jp]*
 This would list all the **.jpg**, **.jpeg**, and **.png** files, but not **.gif** files.
 
 
-You can also use the logical NOT operator (!) in square brackets to exclude characters. The following command lists all the files in the pwd whose file names do *not* include a period followed by a J or a P:
+You can also use an excalamation point as a logical NOT operator in square brackets to exclude characters. The following command lists all the files in the pwd whose file names do *not* include a period followed by a J or a P:
 
 ```bash
 ls *.[!jp]*
