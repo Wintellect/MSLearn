@@ -44,8 +44,6 @@ Each line has an explicit structure that provides detailed information about the
 
 A file can't be executed unless the executable flag is set. Images aren't executable files. Consequently, none of the files in this example have an "x" in position 4.
 
-So, in the example above, only the owner can write to the hidden **.bash_history** file. You can also see that anyone can read the hidden **.bashrc** file, which is the shell script Bash runs whenever it is started interactively.
-
 After the permissions comes the item's owner, the owner's group, the size in bytes, the last time the item was modified, and the file or directory name. 
 
 `ls` also accepts a path name as an argument. To view the contents of the "gifs" subdirectory in long format, you could type:
