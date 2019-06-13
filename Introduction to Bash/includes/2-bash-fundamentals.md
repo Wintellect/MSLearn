@@ -22,7 +22,7 @@ Bash treats the first string it encounters as a command. So, for example, to see
 ls
 ```
  
-As with other shell languages, Bash commands are often used with arguments. For example, creating a directory requires a directory name. So to create a subdirectory named "orders" in the pwd, you type:
+As with other shell languages, Bash commands are often accompanied by arguments. For example, creating a directory requires a directory name. So to create a subdirectory named "orders" in the pwd, you type:
 
 ```bash
 mkdir orders
