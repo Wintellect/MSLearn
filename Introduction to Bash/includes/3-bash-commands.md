@@ -2,68 +2,60 @@
 
 On your first day at Northwind, you want to learn how the previous sysadmin organized the company's servers. Let's poke around  your server and see what we can find.
  
-Every programming language or shell language has its most-used commands, just as every guitarist has a dozen songs she must be ready to play. ("Seven Nation Army," "Sweet Child O' Mine," and "Stairway to Heaven" come to mind.) Let's start your Bash repertoire with the most common Linux commands. 
+Every shell language has its most-used commands, just as every guitarist has a dozen songs she must be ready to play. ("Seven Nation Army," "Sweet Child O' Mine," and "Stairway to Heaven" come to mind, among others.) Let's start building your Bash repertoire by examining the most common Linux commands. 
 
 ### The `ls` command
 
-You've met `ls` before;, let's get to know it better. As you know, `ls` ("list") shows what files are in the pwd. By itself, it shows you the public files in your current directory. 
+You've met `ls` before. As you know, `ls` lists the contents of the pwd or the directory specified in an argument to the command. By itself, it shows you the files and directories in the current directory:
 
 ```bash
-$ ls
+ls
 ```
 
-To get more data and show the hidden files, you must use flags. The most useful flags are:
-- `-l`, which lists the files in their long format, which includes their file permissions, and
-- `-a`, which lists all files, including hidden files.
-
-So, typically, you'd use to see all files in a directory's full information, you would type:.
+Remember that files and directories whose names begin with a period are hidden by default. To include these items in a directory listing, include a `-a` flag:
 
 ```bash
-$ ls -la
+ls -a
+```
+To get even more information about the files and directories in the current directory, use a `-l` (for "long") flag:
+
+```bash
+ls -l
 ```
 
-Let's examine the detailed ls display, as its  has an explicit structure to tells you about the file attributes listed. From the left to right, this display tells you the file and/or directory's permissions.
-- The first character tells you file type: . A '-' is a regular (ordinary) file. A 'd' indicates a directory.
-- The second set of three characters represent the read, write, and execute rights of the file's owner.
-- The next three represent the file group's rights and the final three represent the rights granted to everybody else. A 'r' means read, 'w' write, and 'x' executable.
+Here's some sample output from a directory that contains a handful of JPEGs and PNGs and a subdirectory named "gifs:"
+
+```
+-rw-rw-r-- 1 azureuser azureuser  473774 Jun 13 15:38 0001.png
+-rw-rw-r-- 1 azureuser azureuser 1557965 Jun 13 14:43 0002.jpg
+-rw-rw-r-- 1 azureuser azureuser  473774 Mar 26 09:21 0003.png
+-rw-rw-r-- 1 azureuser azureuser 4193680 Jun 13 09:40 0004.jpg
+-rw-rw-r-- 1 azureuser azureuser  423325 Jun 10 12:53 0005.jpg
+-rw-rw-r-- 1 azureuser azureuser 2278001 Jun 12 04:21 0006.jpg
+-rw-rw-r-- 1 azureuser azureuser 1220517 Jun 13 14:44 0007.jpg
+drwxrwxr-x 2 azureuser azureuser    4096 Jun 13 20:16 gifs
+```
+
+Each line has an explicit structure that provides detailed information about the corresponding file or directory. The first nine characters specify:
+
+- Whether the item is a file (-) or directory (d)
+- The item's read, write, and execute permissions, in that order
+- The read, write, and execute permissions of the item's owner
+- The read, write, and execute permissions of the group to which the item belongs
+
+In all cases, "r" means read, "w" write, and "x" executable. A file can't be executed unless the executable flag is set. Images aren't executable files. Consequently, none of the files in this example have an "x" in position 4.
 
 So, in the example above, only the owner can write to the hidden **.bash_history** file. You can also see that anyone can read the hidden **.bashrc** file, which is the shell script Bash runs whenever it is started interactively.
 
-Next comes the owner, the owner's group, the file size in bytes, the last time the file was modified, and the file name. 
+After the permissions comes the item's owner, the owner's group, the size in bytes, the last time the item was modified, and the file or directory name. 
 
-`ls`, along with the other file commands, supports relative path names. These are:
-- `.` refers to the current directory 
-- `..` pwd's parent directory. all 
-- `/` is the root of your system's directory tree
-- `~` is your home directory. This is usually /users/username. 
-
-So to see the public files and directories in your pwd:
+`ls` also accepts a path name as an argument. To view the contents of the "gifs" subdirectory in long format, you could type:
 
 ```bash
-$ ls .
+$ ls -l gifs
 ```
 
-To see the full data on all the files in the directory above the pwd use this command:
-
-```bash
-$ ls -la ..
-```
-
-Notice how the file names are in white, while directories are in blue in these examples? That's a default Bash setting in Azure's Ubuntu 18.04 instances.
-
-To see all the files and directories with their data in the root directory:
-
-```bash
-$ ls -la /
-```
-
-To see the file data for your home directory regardless of your pwd:
-
-```bash
-$ ls ~ 
-```
-
-These may not be exciting, but you'll use them often.
+You'll notice that file and directory names are color-coded. That's a default Bash setting in Azure's Ubuntu 18.04 instances.
 
 ### The `cat` command
 
@@ -183,7 +175,7 @@ $ rm -i Fuzzball
 
 Otherwise, you might fall prey to one of the most infamous of Linux blunders: The dreaded `rm -rf /` would delete every file on an entire drive. It works by forcing recursive deletion through all subdirectories. The `-f` flag adds insult to injury by deleting read-only files without confirmation. Don't do this.
 
-If also pays to be wary of `rm` when you use it with any wild card. The possibility always exists for you to delete the last file you ever wanted to get rid of. There is no easy way to undelete files in Linux.
+If also pays to be wary of `rm` when you use it with any wildcard. The possibility always exists for you to delete the last file you ever wanted to get rid of. There is no easy way to undelete files in Linux.
 
 ### The `ps` command
 
