@@ -1,0 +1,86 @@
+# How to read from and write to a Microsoft Excel document using **OpenPyXL**
+ 
+Every two weeks you host a meeting of departmental managers.  You prepare an agenda for everyone to read ahead of time.  One segment of the meeting focuses on results from the previous fortnight.  The trick is, though, that different departments not only have different key performance indicators (KPIs), but they keep them in wildly different data stores:  everything from Excel through Access to SAP and Salesforce and GitHub.
+
+The good news is that you have access to all these different datasources.  Every weekend, therefore, you pull up all the different relevant reports, and copy-and-paste all the KPIs into the standard format of a Word copy of your agenda.  It's tedious, but you have it down to a routine, and it doesn't take _too_ long.
+
+Does this sound like a familiar story?  Here's a tip:  any time you think, "... tedious ..." in regard to an aspect of your life at the keyboard, your next thought should be, "Here's a job for Python!"
+
+
+## Semi-automation attitude
+
+[TODO:  make point about other tools, include PyXLL]
+
+You need to write your agenda in Word, for a variety of reasons.  While the schedule and KPIs are in fixed locations, you embed them in your human explanation of business priorities and motivations.  Still, if the routine parts "write themselves"--if they appear in your draft document **automatically**--they're more likely to be accurate, undamaged by any typing mishap, you'll save time, and, perhaps most crucially of all, you preserve your attention for the difficult business challenges that are _not_ routine.
+
+This lesson, therefore, sketches how you can marry Python's ability to automate or script, to Word's convenience and familiarity.  
+
+The specific result below is one you actually can achieve from within Word itself:  Word has its own scripting tools.  Once you can do this simple exercise with Python, though, you open up all Python's power as a potential available within your documents.  Think of it this way:  when you first learned Python, you started with simple exercises like `2 + 3`, or `print(datetime.datetime.now())`.  The immediate point is not to replace your watch, or because you can't add; it's to _practice_ Python, to gain the skill and confidence to tackle bigger problems.  The hardest step in using many Python modules is to run the first successful program.  For now, we start small.  Once you complete this lesson, you should be able to adapt it to your own specific situation and requirements.
+
+
+## A demonstration
+
+As the previous lesson described, arrange a working Python3.6 (or better) for yourself.
+
+Install **python-docx** in your development environment.  With a working Internet connection, this should be as simple as
+
+    python3.6 -m pip install python-docx
+
+at the command line.
+
+Create a file called `lesson2.py` with contents:
+
+    import docx
+    
+    def fill_out_table(document):
+        kpi_table = document.add_table(rows=8, cols=5)
+        headers = kpi_table.rows[0]
+        headers.cells[0].text = "Department"
+        headers.cells[1].text = "Customer contacts"
+        my_department = kpi_table.rows[1]
+        my_department.cells[0].text = "Engineering"
+        my_department.cells[1].text = "14"
+        my_department.cells[2].text = 'perf optimization'
+        sales_support = kpi_table.rows[2]
+        sales_support.cells[0].text = "Sales support"
+
+    def first_page(document):
+        document.add_heading("Weekly Coordination")
+        document.add_paragraph("Let's review first the departmental KPIs:  ")
+        fill_out_table(document)
+
+
+    def main():
+         draft = docx.Document()
+
+        first_page(draft)
+        draft.add_page_break()
+        second_page(draft)
+        draft.save("agenda.docx")
+
+
+    def second_page(document):
+        document.add_paragraph("This week, we particularly need to focus on ...")
+
+
+    main()
+
+Launch `python lesson2.py`.
+
+Open `agenda.docx`.
+
+Your screen should look something like ![screenshot of first page of Word document](images/agenda.png)
+
+
+## First success
+
+Python just drafted a Word document for you!  Once written, you can use/edit/update/print/share this document as you would any other Word document--it _is_ like any other Word document.
+
+1.  Now that this little script is working for you, you can modify it to your own situation.  Instead of `my_department.cells[1].text = "14"`, for instance, you might have Python retrieve a value from an external database, and use _that_ in place of `14`.
+
+1.  `python-docx` also knows how to **read** Word documents.  With a little study of [the documentation for **python-docx**](https://python-docx.readthedocs.io/en/latest/), you can write a script to search thousands of Word documents and pick out those which use a specific font, or exceed eighty pages, or so on.
+
+
+## Summary
+
+Python and Microsoft Word are powerful tools.  Now you know how to put them together for even more remarkable results.
