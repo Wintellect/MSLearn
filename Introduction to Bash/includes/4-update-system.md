@@ -10,7 +10,7 @@ In your new job, you have logged in to one of the company's servers for the firs
 
 	If you don't have your VM's public IP address handy, you can get it by running an `az vm list-ip-addresses` command in the Cloud Shell.
 
-1. `apt` is the default Ubuntu Linux command for installing and removing programs, and yes, you will need to run it with `sudo`. Use it to determine what, if anything, needs updating:
+1. `apt` is the default Ubuntu Linux command for installing and removing programs, and yes, you will need to run it with `sudo`. Execute the following command to determine what, if anything, needs updating:
 
 	```bash
 	sudo apt update
