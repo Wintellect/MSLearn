@@ -108,7 +108,7 @@ Another way is to use the ? wildcard, which represents a single character and al
 ls *.jp?g
 ```
 
-Yet another way to use wildcards to filter output is to use square brackets, which denote groups of characters. The following command lists all the files in the pwd whose names contain a period immediately followed the letter J or P:
+Yet another way to use wildcards to filter output is to use square brackets, which denote groups of characters. The following command lists all the files in the pwd whose names contain a period immediately followed a lowercase J or P:
 
 ```bash
 ls *.[jp]*
