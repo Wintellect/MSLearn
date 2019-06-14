@@ -11,7 +11,7 @@ You've met `ls` before. As you know, `ls` lists the contents of the pwd or the d
 ls
 ```
 
-Remember that files and directories whose names begin with a period are hidden by default. To include these items in a directory listing, use a `-a` flag with the `ls` command:
+Remember that files and directories whose names begin with a period are hidden by default. To include these items in a directory listing, use a `-a` flag:
 
 ```bash
 ls -a
