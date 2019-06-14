@@ -4,7 +4,7 @@ Imagine that you just started a new job as a system administrator (sysadmin) at 
 
 A vital tool you must learn is [Bash](https://en.wikipedia.org/wiki/Bash_(Unix_shell)). The name stands for "Bourne Again SHell." 
 
-A shell is a program that commands the operating system to perform actions. You type commands into a console and execute them directly, or use scripts to execute batches of commands. That's different from the commonplace graphical interface. Shells such as [PowerShell](https://docs.microsoft.com/en-us/powershell/scripting/overview?view=powershell-6) and Bash give system administrators the power and precision they need for fine-tuned control over the computers for which they are responsible. 
+A shell is a program that commands the operating system to perform actions. You type commands into a console and execute them directly, or use scripts to execute batches of commands.  Shells such as [PowerShell](https://docs.microsoft.com/en-us/powershell/scripting/overview?view=powershell-6) and Bash give system administrators the power and precision they need for fine-tuned control over the computers for which they are responsible. 
 
 If you do serious sysadmin work with Linux, you must know Bash. While there are other Linux shells, including [csh](https://en.wikipedia.org/wiki/C_shell), [Korn shell](https://en.wikipedia.org/wiki/KornShell), and [zsh](https://en.wikipedia.org/wiki/Z_shell), Bash has become Linux's de facto standard. That's because Bash is compatible with Unix's first serious shell, the Bourne shell, also known as [sh](https://en.wikipedia.org/wiki/Bourne_shell). Bash incorporates the best features of its predecessors. It also incorporates features of its own such as built-in commands and the ability to invoke external programs.
 
