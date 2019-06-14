@@ -47,7 +47,7 @@ The "/etc" directory is a special one in Linux; it contains system-configuration
 You don't want to run as root most of the time. It's too dangerous. So, to run commands that require admin privilege without logging in as superuser, you preface the commands with `sudo`:
 
 ```bash
-vi /etc/at.deny
+sudo vi /etc/at.deny
 ```
 
 `sudo` stands for "superuser do." When you use it, you're telling the shell that for this one command you are acting with the root-user level of permission.
