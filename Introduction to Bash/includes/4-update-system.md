@@ -2,17 +2,13 @@
 
 In your new job, you have logged in to one of the company's servers for the first time. It's your responsibility to maintain this server and keep it running. The operating system almost certainly needs updating. Let's practice by updating the Linux virtual machine that you created in Azure.
 
-1. Begin by remoting into the VM with an `ssh` command from the Azure Cloud Shell if you aren't connected already. Here's the command again:
+1. Begin by connecting to the VM with an `ssh` command from the Azure Cloud Shell if you aren't connected already. Here's the command again:
 
 	```bash
 	ssh azureuser@IP_ADDRESS
 	```
 
-	If you don't have your VM's public IP address handy, you can get it by running the following command in the Cloud Shell:
-
-	```bash
-	az vm list-ip-addresses
-	```
+	If you don't have your VM's public IP address handy, you can get it by running an `az vm list-ip-addresses` command in the Cloud Shell.
 
 1. `apt` is the default Ubuntu Linux command for installing and removing programs, and yes, you will need to run it with `sudo`. Use it to determine what, if anything, needs updating:
 
