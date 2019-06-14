@@ -67,7 +67,7 @@ Launch `python lesson2.py`.
 
 Open `agenda.docx`.
 
-Your screen should look something like ...
+Your screen should look something like ![screenshot of first page of Word document](images/agenda.png)
 
 
 ## First success
