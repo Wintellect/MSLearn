@@ -225,6 +225,12 @@ ps aux
 
 This serves as an excellent reminder of why you should look closely at the manual for all Linux commands. Learning Bash is like learning English as a second language. There are many exceptions to the rules.
 
+### The `w` command
+
+Users come, users go, and sometimes you get users you don't want at all. When an employee leaves to "pursue other opportunities," the sysadmin is called upon to ensure that the worker can no longer log into the company's computer systems. Sysadmins are also expected to know who's logged in — and who shouldn't be.
+
+To find out who's on your servers, Linux provides the `w` (for "who") command. This command displays information about the users currently on the computer system and those users' activities. By itself, `w` shows who's in the system, their user names, their IP addresses, when they logged in, data about the time their processes are taking on the system, what processes they are currently running, and how much time those processes are consuming. It is a valuable tool for sysadmins.
+
 ## Bash I/O operators
 
 You can do a lot in Linux just by exercising Bash commands and their many options. But you can really get work done when you combine commands using I/O operators:
