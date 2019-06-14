@@ -34,24 +34,6 @@ ls -al /etc
 
 Bash is nothing if not concise. In fact, it is sometimes remarkable (and a point of pride among Bash aficionados) how much can be accomplished with a single command.
 
-## The `sudo` command
-
-Some Bash commands can only be run by the root user — a system administrator or superuser. If you try one of these commands without sufficient privileges, it fails. As an example, most users can't use Linux's `vi` editor to edit **/etc/at.deny** with this command:
-
-```bash
-vi /etc/at.deny
-```
-
-The "/etc" directory is a special one in Linux; it contains system-configuration files. **at.deny** is a special file that determines who can use other Bash commands to submit jobs for later execution.
-
-You don't want to run as root most of the time. It's too dangerous. So, to run commands that require admin privilege without logging in as superuser, you preface the commands with `sudo`:
-
-```bash
-sudo vi /etc/at.deny
-```
-
-`sudo` stands for "superuser do." When you use it, you're telling the shell that for this one command you are acting with the root-user level of permission.
-
 ## Getting help
 
 Which options and arguments can be used, or must be used, varies from command to command. Fortunately, Bash documentation is built into the operating system. Help is never more than a command away. To learn about the options for a command, use the `man` (for "manual") command. For instance, to see all the options for the `mkdir` ("make directory") command, do this:
@@ -152,4 +134,4 @@ If you need to use one of the wildcard characters as an ordinary character, you 
 $ ls *\**
 ```
 
-Armed with this information, you're ready to start learning the key Bash commands that every sysadmin should know.
+Armed with this information about Bash syntax, you're ready to start learning the key Bash commands that every sysadmin should know.
