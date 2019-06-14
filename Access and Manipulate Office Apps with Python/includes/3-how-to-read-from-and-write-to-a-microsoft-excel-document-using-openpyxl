@@ -1,4 +1,4 @@
-# How to read from and write to a Microsoft Word document using **python-docx**
+# How to read from and write to a Microsoft Excel document using **OpenPyXL**
  
 Every two weeks you host a meeting of departmental managers.  You prepare an agenda for everyone to read ahead of time.  One segment of the meeting focuses on results from the previous fortnight.  The trick is, though, that different departments not only have different key performance indicators (KPIs), but they keep them in wildly different data stores:  everything from Excel through Access to SAP and Salesforce and GitHub.
 
@@ -8,6 +8,8 @@ Does this sound like a familiar story?  Here's a tip:  any time you think, "... 
 
 
 ## Semi-automation attitude
+
+[TODO:  make point about other tools, include PyXLL]
 
 You need to write your agenda in Word, for a variety of reasons.  While the schedule and KPIs are in fixed locations, you embed them in your human explanation of business priorities and motivations.  Still, if the routine parts "write themselves"--if they appear in your draft document **automatically**--they're more likely to be accurate, undamaged by any typing mishap, you'll save time, and, perhaps most crucially of all, you preserve your attention for the difficult business challenges that are _not_ routine.
 

@@ -7,13 +7,10 @@ What does it mean to manage or update a document automatically?  Think of it thi
 This module gives specific examples of work you might want to automate, and how to do so.
 
 
-## Your mission, should you choose to accept it [TODO:  is this title invariant?]
+## Your mission, should you choose to accept it [TODO for Jeff:  is this title invariant?]
 
-[Imagine that you've been tasked with collecting information about U.S. airports and answering some basic questions using the data. For example, you need to know how many airports are present in each state and which city or state has the most airports. Perhaps you are experienced with programming languages such as Java and C++, but have no experience with Python. Or perhaps you aren't a programmer at all. Nonetheless, a little time invested in learning Python can make short work of the task at hand.]
+[...]
 
-[In a series of hands-on lessons, you will learn the basics of Python by building a [Jupyter notebook](http://jupyter.org/) that loads airport data downloaded from a U.S. Government Web site and manipulates the data. Jupyter notebooks provide an interactive platform for writing and testing Python code, and they're easily built in [Azure Notebooks](https://notebooks.azure.com/), which offer Jupyter as a service for free.]
-
-[![](media/initial-notebook-3.png)]
 
 ## Learning objectives
 

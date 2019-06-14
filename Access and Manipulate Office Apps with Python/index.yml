@@ -29,7 +29,7 @@ units:
 - learn.access-and-manipulate-office-apps-with-python.0-introduction
 - learn.access-and-manipulate-office-apps-with-python.1-set-up-an-environment
 - learn.access-and-manipulate-office-apps-with-python.2-read-from-and-write-to-a-microsoft-word-document-using-python-docx
-- learn.access-and-manipulate-office-apps-with-python.3-read-from-and-write-to-a-microsoft-excel-document-using-pyxll
+- learn.access-and-manipulate-office-apps-with-python.3-read-from-and-write-to-a-microsoft-excel-document-using-openpyxl
 - learn.access-and-manipulate-office-apps-with-python.4-create-an-excel-udf-with-python
 - learn.access-and-manipulate-office-apps-with-python.5-manage-pdf-documents-with-pypdf4
 - learn.access-and-manipulate-office-apps-with-python.6-summary
