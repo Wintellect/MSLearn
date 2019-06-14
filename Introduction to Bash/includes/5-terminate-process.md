@@ -8,7 +8,7 @@ Imagine that a Python application is causing problems. Perhaps it is taking up t
 
 If you're going to kill a process, you need a process to kill. Let's create one.
 
-1. In your Linux VM, type the following command to start Linux's [vi](https://en.wikipedia.org/wiki/Vi) editor:
+1. In your Linux VM, type the following command to start Linux's [`vi`](https://en.wikipedia.org/wiki/Vi) editor:
 
 	```bash
 	vi bad.py
