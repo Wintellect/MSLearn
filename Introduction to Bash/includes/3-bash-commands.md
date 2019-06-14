@@ -5,18 +5,18 @@ Every shell language has its most-used commands, just as every guitarist has cer
 
 ### The `ls` command
 
-You've met `ls` before. As you know, `ls` lists the contents of the pwd or the directory specified in an argument to the command. By itself, it shows you the files and directories in the current directory:
+You've met `ls` before. As you know, `ls` lists the contents of the pwd or the directory specified in an argument to the command. By itself, it lists the files and directories in the current directory:
 
 ```bash
 ls
 ```
 
-Remember that files and directories whose names begin with a period are hidden by default. To include these items in a directory listing, include a `-a` flag in the `ls` command:
+Remember that files and directories whose names begin with a period are hidden by default. To include these items in a directory listing, use a `-a` flag with the `ls` command:
 
 ```bash
 ls -a
 ```
-To get even more information about the files and directories in the current directory, use a `-l` flag to produce output in long format:
+To get even more information about the files and directories in the current directory, use a `-l` flag:
 
 ```bash
 ls -l
