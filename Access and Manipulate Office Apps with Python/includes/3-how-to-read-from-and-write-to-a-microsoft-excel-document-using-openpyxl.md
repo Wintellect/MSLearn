@@ -41,7 +41,7 @@ If you have any appropriate `Total Analysis.xlsx` at hand, and you launch this p
     On sheet June 2018, cell B9 has color FFFF0000.
         ...
 
-and so on.  While there is still a little work to do matching these color values to your memory of what you saw, you are close to a answer already.
+and so on.  While there is still a little work to do matching these color values to your memory of what you saw, you are close to a conclusive answer already.
 
 
 ## One-offs
