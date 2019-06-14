@@ -19,6 +19,52 @@ One consistent assumption of this module is that you use Python 3.6 or later.  [
 
 One alternative to installation of Python3.6 (or later) is to use a cloud-based Python.  Think of this as a Python someone else installed, that you access through your Web browser.  [Azure Notebooks](https://blogs.msdn.microsoft.com/uk_faculty_connection/2017/06/10/guide-to-the-microsoft-azure-notebooks-for-students/) and [Python Anywhere](https://www.pythonanywhere.com/) are a couple of at least a half-dozen good cloud-based services you might consider.
 
+[TODO:  Jeff, I have mixed feelings about this section.  In principle, I'd rather refer to the `python.org` or **realpython** sites, and not supply instructions here.]
+
+1. If Python 3.6 or higher isn't installed on your computer, go to https://www.python.org/ and install it now. You can determine whether it's installed on Windows by executing the following command in a Command Prompt window:
+
+	```bash
+	python --version
+	```
+
+	Similarly, you can check to see whether it's installed on macOS or Linux by executing the following command in a terminal:
+
+	```bash
+	python3 --version
+	```
+ 
+ or perhaps
+ 
+	```bash
+	python3.6 --version
+	```
+
+If Python is installed, the version number will appear in the output. If you install Python and are asked during the install process whether Python should be added to the system's PATH, answer yes.
+
+	![Adding Python to the PATH](media/add-to-path.png)
+
+	_Adding Python to the PATH_
+
+1. If you are running Windows, execute the following command to install the latest version of `pip`, the Python package manager:
+
+	```bash
+	python -m pip install --upgrade pip
+	```
+
+	If you are running macOS or Linux, use this command instead:
+
+	```bash
+	python3 -m pip install --user --upgrade pip
+	```
+ 
+ or
+ 
+```bash
+python3.6 -m pip install --user --upgrade pip
+```
+
+Older versions of `pip` may miss dependencies needed for the packages this module uses.
+
 
 ## Practice with modules
 
@@ -51,6 +97,48 @@ in the source of your programs.  In the case of `python-docx`, we first install 
     import docx
 
 You probably noticed that our example module appears under two different names:  we **install** it as `python-docx`, but **import** it as simply `docx`.  The reasons for this are a subject for another day; for now, it's enough to copy the Lessons which follow.
+
+
+## Virtual environments
+
+The
+
+    python -m pip install python-docx
+
+mentioned above might have a couple of different actions, depending on the configuration of your specific working environment:
+
+* it might install **python-docx** "globally", so that it's visible to any user on your host; or
+* it might update only a single Python **virtual environment** (VE).
+
+A majority of my own work is in VEs.  Many readers of this module, though, will just want to get to the **python-docx** result.  For them, a VE is a programming concept off the straight course to the Word automation they seek.
+
+This module is written to apply both with and without a VE.  Why bother with a VE?  Fundamentally, a VE isolates your programming from other configurations on your computer:  you can install a package, for instance, without risk that the latest version of that package will somehow harm the operation of the operating system and its dependencies.  To construct such a Python VE:
+
+1. Create a directory on your hard disk in the location of your choice. This will be the **project directory** and will hold all of the files that make up your applications. It is also where your virtual Python environment will be created.
+
+1. In a Command Prompt window or terminal, `cd` to the project directory. If you are running Windows, use the following commands to create a virtual environment in the "env" subdirectory and activate the environment:
+
+	```bash
+	python -m venv env
+	env\scripts\activate
+	```
+
+	If you are running macOS or Linux, use these commands instead:
+
+	```bash
+	python3 -m venv env
+	source env/bin/activate
+	```
+
+That's all.  Your VE is now active.  Each time you
+
+    python -m pip install <PACKAGE>
+
+during the lifetime of your activated session, the installation will be _specific to your VE_.  Each time you launch
+
+    python <APPLICATION>
+
+Python will know to use the executable and libraries _specific to your VE_.
 
 
 ## Summary
