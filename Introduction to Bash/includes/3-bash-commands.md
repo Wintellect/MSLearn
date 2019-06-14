@@ -269,7 +269,7 @@ You can also use files as input. By default, standard input comes from the keybo
 sort < file.txt
 ```
 
-Note that with Bash's `sort`, lines starting with a lowercase letter appear before lines starting with the same letter in uppercase.
+Note that with Bash's `sort`, lines starting with an uppercase letter appear before lines starting with the same letter in lowercase.
 
 To save the sorted results to a new file, you can redirect input *and* output:
 
