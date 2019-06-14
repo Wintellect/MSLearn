@@ -229,7 +229,7 @@ If **listing.txt** already exists, it gets overwritten. If you use the `>>` oper
 ls >> listing.txt
 ```
 
-The piping operator is extremely powerful (and often used). It redirects the output of the first command to the input of the second command. Let's say you use `cat` to display the contents of a large file, but the content scrolls by too quickly for you to read. But you can make it much more usable by piping the results to another command such as `more`. The following commands lists all the currently running processes. But once the screen is dull, you press **Enter** to display subsequent lines:
+The piping operator is extremely powerful (and often used). It redirects the output of the first command to the input of the second command. Let's say you use `cat` to display the contents of a large file, but the content scrolls by too quickly for you to read. You can make the output more readable by piping the results to another command such as `more`. The following commands lists all the currently running processes. But once the screen is dull, you press **Enter** to display subsequent lines:
 
 ```bash
 ps -ef | more
