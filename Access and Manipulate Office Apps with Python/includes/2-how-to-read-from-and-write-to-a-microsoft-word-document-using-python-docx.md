@@ -18,52 +18,61 @@ The specific result below is one you actually can achieve from within Word itsel
 
 ## A demonstration
 
-1.  As the previous lesson described, arrange a working Python3.6 (or better) for yourself.
+As the previous lesson described, arrange a working Python3.6 (or better) for yourself.
 
-1.  Install **python-docx** in your development environment.  With a working Internet connection, this should be as simple as <br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`python3.6 -m pip install python-docx`<br /><br />at the command line.
+Install **python-docx** in your development environment.  With a working Internet connection, this should be as simple as
 
-1.  Create a file called `lesson2.py` with contents:<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`import docx`<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`def fill_out_table(document):`<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    python3.6 -m pip install python-docx
 
+at the command line.
 
-    kpi_table = document.add_table(rows=8, cols=5)
-    headers = kpi_table.rows[0]
-    headers.cells[0].text = "Department"
-    headers.cells[1].text = "Customer contacts"
-    my_department = kpi_table.rows[1]
-    my_department.cells[0].text = "Engineering"
-    my_department.cells[1].text = "14"
-    my_department.cells[2].text = 'perf optimization'
-    sales_support = kpi_table.rows[2]
-    sales_support.cells[0].text = "Sales support"
+Create a file called `lesson2.py` with contents:
 
-def first_page(document):
-    document.add_heading("Weekly Coordination")
-    document.add_paragraph("Let's review first the departmental KPIs:  ")
-    fill_out_table(document)
+    import docx
+    
+    def fill_out_table(document):
+        kpi_table = document.add_table(rows=8, cols=5)
+        headers = kpi_table.rows[0]
+        headers.cells[0].text = "Department"
+        headers.cells[1].text = "Customer contacts"
+        my_department = kpi_table.rows[1]
+        my_department.cells[0].text = "Engineering"
+        my_department.cells[1].text = "14"
+        my_department.cells[2].text = 'perf optimization'
+        sales_support = kpi_table.rows[2]
+        sales_support.cells[0].text = "Sales support"
 
-
-def main():
-    draft = docx.Document()
-
-    first_page(draft)
-    draft.add_page_break()
-    second_page(draft)
-    draft.save("agenda.docx")
+    def first_page(document):
+        document.add_heading("Weekly Coordination")
+        document.add_paragraph("Let's review first the departmental KPIs:  ")
+        fill_out_table(document)
 
 
-def second_page(document):
-    document.add_paragraph("This week, we particularly need to focus on ...")
+    def main():
+         draft = docx.Document()
+
+        first_page(draft)
+        draft.add_page_break()
+        second_page(draft)
+        draft.save("agenda.docx")
 
 
-main()
+    def second_page(document):
+        document.add_paragraph("This week, we particularly need to focus on ...")
 
-1.  Launch `python lesson2.py`.
 
-1.  Open `agenda.docx`.
+    main()
 
-1.  Your screen should look something like ...
+Launch `python lesson2.py`.
 
-1.  Python just drafted a Word document for you!  Once written, you can use/edit/update/print/share this document as you would any other Word document--it _is_ like any other Word document.
+Open `agenda.docx`.
+
+Your screen should look something like ...
+
+
+## First success
+
+Python just drafted a Word document for you!  Once written, you can use/edit/update/print/share this document as you would any other Word document--it _is_ like any other Word document.
 
 1.  Now that this little script is working for you, you can modify it to your own situation.  Instead of `my_department.cells[1].text = "14"`, for instance, you might have Python retrieve a value from an external database, and use _that_ in place of `14`.
 
