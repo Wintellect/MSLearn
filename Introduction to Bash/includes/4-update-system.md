@@ -1,50 +1,73 @@
 # Exercise: Update the system
 
-In your new job, you just started running the pre-existing server Northwind. It almost certainly needs to have its base operating system updated. Fortunately, the operating system lets you know when new patches are available.
+In your new job, you have just logged in to one of the company's servers for the first time. It's your responsibility to maintain this server and keep it running. The operating system almost certainly needs updating. In this unit, you will update the Linux virtual machine that you created in Azure.
 
-<INSERT: system needs update.png>
+1. Begin by remoting into the VM with an `ssh` command from the Azure Cloud Shell if you aren't connected already. Here's the command again:
 
-So, let's patch Northwind with a single Bash command line. You do this by combining two `apt` commands. `apt` is the default Ubuntu Linux command for installing and removing programs. 
+	```bash
+	ssh azureuser@IP_ADDRESS
+	```
 
-```bash
-$ sudo apt update && sudo apt upgrade -y
-```
+	If you don't have your VM's public IP address handy, you can get it by running the following command in the Cloud Shell:
 
-The first part of the command, `sudo apt update`, is run as the root user with the `update` flag. This tells the server to update the local database of available packages. Without the update, the local software database isn't updated. The second half, `sudo apt upgrade`, also runs as the root user. It is what actually updates the server. 
+	```bash
+	az vm list-ip-addresses
+	```
 
-The `&&` instructs Bash to run the two commands that the second one only runs only the earlier command runs successfully. The `-y` in the end automatically enters an answer of "yes" when the command apt upgrade asks for confirmation before installing the updates.
+1. `apt` is the default Ubuntu Linux command for installing and removing programs, and yes, you will need to run it with `sudo`. Use it to determine what, if anything, needs updating:
 
-Nothing says you have to do these in one line. You can also run these commands by themselves.
+	```bash
+	sudo apt update
+	```
 
-```bash
-$ sudo apt update
-$ sudo apt upgrade
-```
+	The output should look something like this:
 
-Regardless of how you update the operating system, afterwards you may need to reboot the computer. (You can avoid the need to do this by installing Ubuntu LivePatch, but that's beyond what we're covering here.)
+	```
+	Hit:1 http://azure.archive.ubuntu.com/ubuntu bionic InRelease
+	Get:2 http://azure.archive.ubuntu.com/ubuntu bionic-updates InRelease [88.7 kB]
+	Hit:3 http://azure.archive.ubuntu.com/ubuntu bionic-backports InRelease
+	Get:4 http://security.ubuntu.com/ubuntu bionic-security InRelease [88.7 kB]
+	Get:5 http://azure.archive.ubuntu.com/ubuntu bionic-updates/main amd64 Packages [644 kB]
+	Get:6 http://azure.archive.ubuntu.com/ubuntu bionic-updates/universe amd64 Packages [954 kB]
+	Fetched 1775 kB in 1s (2201 kB/s)
+	Reading package lists... Done
+	Building dependency tree
+	Reading state information... Done
+	27 packages can be upgraded. Run 'apt list --upgradable' to see them.
+	```
 
-Before you restart your computer, first get rid of any old program packages hanging around. You do this with the `autoremove` command. This command, which again requires root-level access, removes obsolete packages.
+	As the output suggests, you can use an `apt list --upgradeable` command for a precise list of the items that need updating.
 
-```bash
-$ sudo apt autoremove
-```
+1. Now use this command to perform the upgrade and automatically answer "yes" to prompts:
 
-That done, you're ready to reboot the server. There are several ways to do this. All require root-level access; each runs the shutdown command with the `-r` flag. The `-r` flag tells the system to shutdown and then reboot. To reboot immediately, use:
+	```bash
+	sudo apt upgrade -y
+	```
 
-```bash
-$ sudo shutdown now -r
-```
+	You may still be notified that certain services need to be restarted and prompted to answer yes or no. If so, answer "yes" and allow the upgrade to proceed. Then wait for the upgrade to finish.
 
-To reboot later — after, say, 30 minutes — use the command:
+1. Following a system update, you probably need to reboot the server. (You can avoid the need to do this by installing [Ubuntu LivePatch](https://ubuntu.com/livepatch), but that's a topic for another day.) Before you restart your computer, let's get rid of any old packages hanging around. You do this with the `apt autoremove` command:
 
-```bash
-$ sudo shutdown -r +30
-```
+	```bash
+	sudo apt autoremove
+	```
 
-What about at a given time? You can do that too.
+1. That done, you're ready to reboot the server. To reboot immediately, do this:
 
-```bash
-$ sudo shutdown -r 15:00
-```
+	```bash
+	sudo shutdown now -r
+	```
 
-The results should always be the same: a fully patched and ready- to-go server.
+	To reboot later — after, say, 30 minutes — use the command:
+
+	```bash
+	sudo shutdown -r +30
+	```
+	
+	What about at a given time? You can do that too.
+	
+	```bash
+	sudo shutdown -r 15:00
+	```
+
+After rebooting the VM, you will need to reconnect to it. Use the same `ssh` command you used earlier to log in. The IP address should not change. And this time, you will connect to a fully patched and ready-to-go server.
