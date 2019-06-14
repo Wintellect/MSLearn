@@ -1,59 +1,43 @@
 # Exercise: Use Bash and grep to filter Azure CLI output
 
-While Bash is powerful in its own right, you can also use it to work with the Azure Cloud Shell. First, leave the Bash shell behind with the command: 
+Up until now, you have been running Bash commands in a Linux VM. That's a great way to practice Bash commands because you can't do any harm. If something goes terrible awry, you can delete the VM and start all over again.
 
-```bash
-$ exit
-```
+You can also execute Bash commands in the Azure Cloud Shell. The drop-down list in the uper-left corner of the Cloud Shell lets you choose between two languages: PowerShell and Bash. The same Bash commands that make it easy to work with Linux can also be used with the Azure CLI (`az`) commands used to create and manage Azure resources. Let's demonstrate by disconnecting from the VM and returning to the Cloud Shell.
 
-Let's explore how you can use Bash and Linux's tools to work with the Azure Command Shell, with sysadmin examples.
+1. First, return to the Cloud Shell by running the following command in the VM: 
 
-Say you want to look at an up-to-date list of the available VM images. You do that with the command: 
+	```bash
+	exit
+	```
 
-```bash
-$ az vm image list --all --output table
-```
+1. Make sure **Bash** is selected in the upper-left corner of the Cloud Shell. Let's say you want to see an up-to-date list of the VM images available in Azure. Do that with the command: 
 
-That's a lot of images.
+	```bash
+	az vm image list --all --output table
+	```
 
-While you can narrow down the list by filtering it with the `--publisher`, `--sku`, or `–-offer` options, you can also use `grep`, Linux's universal pattern matching program, to find exactly what you're looking for.
+	That's a lot of images.
 
-So, to find the image for a CentOS, a popular Red Hat Enterprise Linux clone, use the following command.
+1. While you can narrow the list using the `--publisher`, `--sku`, or `–-offer` options, you can also use `grep`, Linux's universal pattern matching program, to find what you're looking for. To find the images for CentOS, a popular Red Hat Enterprise Linux (RHEL) clone, use the following command:
 
-```bash
-$ az vm image list --all --output table | grep CentOS
-```
+	```bash
+	az vm image list --all --output table | grep CentOS
+	```
 
-This pipes the output from the Azure Command Shell to `grep`'s input. `grep` then looks for the string "CentOS" and lists just the CentOS images.
+	This pipes output from the `az` command to `grep`, which filters out lines that lack the string "CentOS."
 
-Another way to use these commands to explore the system to to discover detailed information about a specific virtual machine by name or ID. For this, you'd use the command:
+1. Now use the following command to list information about the VM that you created:
 
-```bash
-$ az vm show --resource-group 'Northwind --name Northwind
-```
+	```bash
+	az vm show --resource-group bash-vm-rg --name bash-vm
+	```
 
-That gives you a lot of information in JSON, the Azure Command Shell's default output format, which can be difficult to read.
+	Once more, that's a lot of output — this time in [JavaScript Object Notation](https://en.wikipedia.org/wiki/JSON) (JSON) format.
 
-But, perhaps all you really wanted to know was the VM's public key. For that, just run this command, which also pipes piping the output through grep. 
+1. Perhaps what you really wanted to know was what operating system the VM is running. See if this makes it easier: 
 
-```bash
-$ az vm show --resource-group 'Northwind --name Northwind | grep rsa
-```
+	```bash
+	az vm show --resource-group bash-vm-rg --name bash-vm | grep osType
+	```
 
-We see instead of a mass of JSON, a single line containing the SSH public key. Handy, eh?
-
-Or let's say you want to know the names of all your VMs. We could run the `az` command with the `--query` flag to filter results and pick a subset of properties from the dataset. For instance, to see only the type and name of the resources in your subscriptions, you could use the command:
-
-```bash
-$ az resource list --query '[].{name:name, type:type}' -o tsv
-```
-
-That done, say you wanted to know the name of your VMs in your subscriptions. For that, just run the command and pipe it through `grep`:
-
-```bash
-$ az resource list --query '[].{name:name, type:type}' -o tsv | grep virtualMachine
-```
-
-And, there you have it. A list of your VMs. 
-
-Of course, you can do much more by marrying the Azure Command Shell with Bash. But you've got your feet wet and are ready to start learning more. 
+Applying what you know about Bash to the Azure Cloud Shell makes the latter easier to work with. And given that a sysadmin's work never ends, any tool that reduces the workload is a welcome tool indeed.
