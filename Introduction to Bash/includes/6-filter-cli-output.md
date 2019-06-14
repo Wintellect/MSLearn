@@ -46,7 +46,7 @@ Applying what you know about Bash to the Azure Cloud Shell makes the latter easi
 
 You are almost finished, but one important task remains: deleting the VM that you created at the start of this module. The VM that you created is a relatively inexpensive one, but it is still charging your Azure subscription — even when it is isn't doing anything.
 
-You could delete the VM with an `az vm delete` command. But that would leave behind other resources that were created along with the VM, including a virtual IP address, a virtual network and network interface, a virtual disk, and a Network Security Group (NSG). By deleting the resource group, you delete all of these resources in one fell swoop.
+You could delete the VM with an `az vm delete` command. But that would leave behind other resources that were created along with the VM, including a virtual IP address, a virtual network and network interface, a virtual disk, and a Network Security Group (NSG). By deleting the resource group, you can delete all of these resources in one fell swoop.
 
 To that end, run the following command:
 
