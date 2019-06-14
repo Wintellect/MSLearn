@@ -39,7 +39,7 @@ If you're going to kill a process, you need a process to kill. Let's create one.
 	python3 bad.py &
 	```
 
-	Be sure to include the ampersand at the end of the command. Otherwise, you won't be returned to the Bash prompt. In Bash, the ampersand executes a command and returns you to the command line, even if the command hasn't finished running.
+	Be sure to include the ampersand at the end of the command. Otherwise, you won't return to the Bash prompt. In Bash, the ampersand executes a command and returns you to the command line, even if the command hasn't finished running.
 
 It's not obvious, but **bad.py** is now running in the background and stealing CPU cycles from other processes. Let's take a look under the hood to see what's happening.
 
