@@ -59,7 +59,7 @@ Other notable books include [Learning the bash Shell, 3rd Edition](http://shop.o
 	- Prevent subdirectories from deleted without prompting
 
 1. Which of the following statements is true regarding the command `python3 app.py &`?
-	- It runs **app.py** and creates a restore point in the system
+	- It runs **app.py** after creating a restore point in the system
 	- It runs **app.py** and prevents it from becoming a zombie process
 	- It runs **app.py**, but only if it's located in the "/etc" directory
 	- It runs **app.py** and returns immediately to the command prompt
