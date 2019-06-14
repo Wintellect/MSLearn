@@ -47,7 +47,7 @@ It's not obvious, but **bad.py** is now running in the background and stealing C
 
 To kill a process, you need the process name or process ID. This is a job for `ps`.
 
-1. Let's chase down the misbehaving program by using `ps` to identify the Python program gone bad. To refresh your memory, a `ps -ef` command lists all running processes and displays a great deal of information about each one.
+1. Let's chase down the misbehaving program by using `ps` to identify it. To refresh your memory, a `ps -ef` command lists all running processes and displays a great deal of information about each one.
 
 	Use the following command to list all running processes and filter the results to those lines containing "python:"
 
