@@ -36,7 +36,7 @@ Bash is nothing if not concise. In fact, it is sometimes remarkable (and a point
 
 ## The `sudo` command
 
-Some Bash commands can only be run by the root user — a system administrator or superuser. If you try one of these commands without sufficient privileges, it fails. As an example, you can't use Linux's `vi` editor to edit **/etc/at.deny** with this command:
+Some Bash commands can only be run by the root user — a system administrator or superuser. If you try one of these commands without sufficient privileges, it fails. As an example, most users can't use Linux's `vi` editor to edit **/etc/at.deny** with this command:
 
 ```bash
 vi /etc/at.deny
