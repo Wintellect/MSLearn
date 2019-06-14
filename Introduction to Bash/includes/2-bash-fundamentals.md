@@ -95,7 +95,7 @@ Wildcards are symbols that represent one or more characters in Bash commands. Th
 ls *.png
 ```
 
-Now let's say the pwd also contains JEPG files, and some end in **.jpg** while others end in **.jpeg.** Here's one way to list all the JPEG files:
+Now let's say the pwd also contains JPEG files, and some end in **.jpg** while others end in **.jpeg.** Here's one way to list all the JPEG files:
 
 ```bash
 ls *.jpg *.jpeg
