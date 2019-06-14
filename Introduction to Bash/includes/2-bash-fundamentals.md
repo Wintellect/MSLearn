@@ -120,7 +120,7 @@ And this one lists all the files in the current directory whose names begin with
 ls [a-zA-Z]*
 ```
 
-Based on this, can you guess what the following commands would do?
+Based on this, can you guess what the following commands will do?
 
 ```bash
 ls [0-9]*
