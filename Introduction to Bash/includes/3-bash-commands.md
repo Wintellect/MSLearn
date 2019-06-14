@@ -140,13 +140,13 @@ Of course, you can use wildcards to copy several files at once. To copy all the 
 cp * photos
 ```
 
-To copy all the files in a subdirectory named "photos" into a subdirectory named "images," you would do this:
+To copy all the files in a subdirectory named "photos" into a subdirectory named "images," do this:
 
 ```bash
 cp photos images
 ```
 
-This will copy the files in the "photos" directory, but not any files in subdirectories of "photos." To perform a deep copy that copies subdirectories and their contents, too, you can do this:
+This copies the files in the "photos" directory, but not any files in subdirectories of "photos." To perform a deep copy that copies subdirectories and their contents, too, you can do this:
 
 ```bash
 cp -r photos images
