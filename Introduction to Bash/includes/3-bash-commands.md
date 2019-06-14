@@ -182,7 +182,7 @@ This assumes that the "images" directory already exists. If it doesn't, you can 
 cp -r photos images
 ```
 
-The `-r` stands for "recursive." An added benefit of the `-r` flag is that if "photos" contains subdirectories of its own, they, too, will be copied to the "images" directory.
+The `-r` stands for "recursive." An added benefit of the `-r` flag is that if "photos" contains subdirectories of its own, they, too, are copied to the "images" directory.
 
 ### The `ps` command
 
