@@ -1,6 +1,6 @@
 # Exercise: Update the system
 
-In your new job, you have logged in to one of the company's servers for the first time. It's your responsibility to maintain this server and keep it running. The operating system almost certainly needs updating. In this unit, you will practice by updating the Linux virtual machine that you created in Azure.
+In your new job, you have logged in to one of the company's servers for the first time. It's your responsibility to maintain this server and keep it running. The operating system almost certainly needs updating. Let's practice by updating the Linux virtual machine that you created in Azure.
 
 1. Begin by remoting into the VM with an `ssh` command from the Azure Cloud Shell if you aren't connected already. Here's the command again:
 
