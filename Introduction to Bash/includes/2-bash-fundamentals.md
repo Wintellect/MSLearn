@@ -94,6 +94,7 @@ Wildcards are symbols that represent one or more characters in Bash commands. Th
 ```bash
 ls *.png
 ```
+> Linux has no formal concept of a file-name extension as other operating systems do. This doesn't mean that PNG files won't have a **.png** extension. It simply means that Linux attaches no special significance to the fact that the file names end with **.png**.
 
 Now let's say the pwd also contains JPEG files, and some end in **.jpg** while others end in **.jpeg.** Here's one way to list all the JPEG files:
 
@@ -157,6 +158,4 @@ If you need to use one of the wildcard characters as an ordinary character, you 
 $ ls *\**
 ```
 
-Note that Linux has no formal concept of a file-name extension as other operating systems do. This doesn't mean that PNG files won't have a **.png** extension. It simply means that Linux attaches no special significance to the fact that the file names end with **.png**.
-
-Armed with this information in this unit, you're ready to start learning the key Bash commands that every sysadmin should know.
+Armed with this information, you're ready to start learning the key Bash commands that every sysadmin should know.
