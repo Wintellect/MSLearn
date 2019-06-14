@@ -1,6 +1,6 @@
 # Set up a working development environment with Python
  
-The recurring theme of this module is to combine the powers of the Python programming language and different "office productivity" tools such as [Microsoft Word](https://www.office.com/?auth=2), Microsoft Excel, and a PDF viewer. Each lesson practices a particular aspect of this theme.
+The recurring theme of this module is to combine the powers of the Python programming language and different "office productivity" tools such as [Microsoft Word](https://www.office.com/?auth=2), [Microsoft Excel](https://www.microsoft.com/en-us/p/excel/cfq7ttc0k7dx), and a PDF viewer. Each lesson practices a particular aspect of this theme.
 
 The lessons which follow can largely be read in any order you choose:  if you have a special focus on Excel, it's fine to start with those lessons.  Before beginning any of the lessons, though, make sure you have a simple foundation in place to ensure your success:
 
