@@ -116,11 +116,43 @@ If you want to create a subdirectory and a subdirectory of that subdirectory wit
 mkdir --parents orders/2019
 ```
 
-The `rmdir` command deletes (removes) a directory, but only if it isn't empty. You can use the `rm` command to delete directories that aren't empty, but this option should be exercised with extreme care. You'll learn about the `rm` command in a moment.
+The `rmdir` command deletes (removes) a directory, but only if it isn't empty. Fortunately, you can use the `rm` command to delete directories that aren't empty.
+
+### The `rm` command
+
+The `rm` command is short for "remove." As you'd expect, `rm`, like its MS-DOS cousin `del`, deletes files. So this command puts an end to **0001.jpg**:
+
+```bash
+rm 0001.jpg
+```
+
+And this command deletes all the files in the pwd:
+
+```bash
+rm *
+```
+
+Be wary of `rm`. It's a dangerous command.
+
+Running `rm` with a `-i` flag lets you think before you delete:
+
+```bash
+rm -i *
+```
+
+Make it a habit to include `-i` in every `rm` command and you might avoid falling prey to one of Linux's biggest blunders. The dreaded `rm -rf /` command deletes every file on an entire drive. It works by recursively deleting all the subdirectories of root and their subdirectories. The `-f` (for "force") flag adds insult to injury by suppressing prompts. **Don't do this.**
+
+On the other hand, if you want to delete a subdirectory named "orders" that isn't empty, you can use the `rm` command this way:
+
+```bash
+rm -r orders
+```
+
+This deletes the "orders" subdirectory and everything in it, including other subdirectories.
 
 ### The `cp` command
 
-The `cp` command copies — not just files, but entire directories (and their subdirectories) if you want. To make a copy of **0001.jpg** named **0002.jpg**, use the command:
+The `cp` command copies — not just files, but entire directories (and subdirectories) if you want. To make a copy of **0001.jpg** named **0002.jpg**, use the command:
 
 ```bash
 cp 0001.jpg 0002.jpg
@@ -143,40 +175,16 @@ cp * photos
 To copy all the files in a subdirectory named "photos" into a subdirectory named "images," do this:
 
 ```bash
-cp photos images
+cp photos/* images
 ```
 
-This copies the files in the "photos" directory, but not any files in subdirectories of "photos." To perform a deep copy that copies subdirectories and their contents, too, you can do this:
+This assumes that the "images" directory already exists. If it doesn't, you can create it *and* copy the contents of the "photos" directory with this command:
 
 ```bash
 cp -r photos images
 ```
 
-The `-r` stands for "recursive." In this context, it means the `cp` command works its way through the target directory *and* its subdirectories to do its work.
-
-### The `rm` command
-
-The `rm` command is short for "remove." As you'd expect, `rm`, like its MS-DOS cousin `del`, deletes files. So this command puts an end to **cats.jpg**:
-
-```bash
-rm cats.jpg
-```
-
-And this command deletes all the files in the pwd:
-
-```bash
-rm *
-```
-
-Be wary of `rm`. It's a dangerous command.
-
-Like `cp`, the `rm` command supports the `-i` flag. The following command lets you think before you delete:
-
-```bash
-rm -i *
-```
-
-Make it a habit to include `-i` in every `rm` command and you might not fall prey to one of Linux's biggest blunders. The dreaded `rm -rf /` command deletes every file on an entire drive. It works by recursively deleting all the subdirectories of root and their subdirectories. The `-f` (for "force") flag adds insult to injury by suppressing prompts. **Don't do this.**
+The `-r` stands for "recursive." An added benefit of the `-r` flag is that if "photos" contains subdirectories of its own, they, too, will be copied to the "images" directory.
 
 ### The `ps` command
 
@@ -245,7 +253,7 @@ You can also pipe output to `head` to see just the first several lines:
 ps -ef | head
 ```
 
-Or suppose you want to filter the output to include only those lines containing the word "daemon." One way to do that is by piping the output from `ps` to `grep`:
+Or suppose you want to filter the output to include only those lines containing the word "daemon." One way to do that is by piping the output from `ps` to Linux's incredibly useful `grep` utility:
 
 ```bash
 ps -ef | grep daemon
@@ -264,8 +272,6 @@ root       1037      1  0 13:35 ?        00:00:00 /usr/bin/python3 -u /usr/sbin/
 root       1039      1  0 13:35 ?        00:00:00 /usr/lib/linux-tools/4.18.0-1018-azure/hv_vss_daemon -n
 azureus+  52477  50702  0 23:28 pts/0    00:00:00 grep --color=auto daemon
 ```
-
-The `grep` command is a powerful tool for searching plain text using regular expressions. 
 
 You can also use files as input. By default, standard input comes from the keyboard, but it too can be redirected. To get input from a file instead of the keyboard, use the `<` operator. One common sysadmin task is to sort the contents of a file. As the name suggests, `sort` sorts text in alphabetical order:
 
