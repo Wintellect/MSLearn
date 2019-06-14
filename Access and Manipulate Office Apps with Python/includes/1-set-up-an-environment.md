@@ -2,7 +2,7 @@
  
 The recurring theme of this module is to combine the powers of the Python programming language and different "office productivity" tools such as [Microsoft Word](https://www.office.com/?auth=2), Microsoft Excel, and a PDF viewer. Each lesson practices a particular aspect of this theme.
 
-The lessons which fellow can largely be read in any order you choose:  if you have a special focus on Excel, it's fine to start with those lessons.  Before beginning any of the lessons, though, make sure you have a simple foundation in place to ensure your success:
+The lessons which follow can largely be read in any order you choose:  if you have a special focus on Excel, it's fine to start with those lessons.  Before beginning any of the lessons, though, make sure you have a simple foundation in place to ensure your success:
 
 1.  Familiarize yourself with the basic office tools:  Word, Excel, PowerPoint, and so on.  An abundance of on-line help is available to start you with these, or to help you "brush up" on your existing knowledge.
 
