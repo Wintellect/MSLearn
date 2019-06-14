@@ -263,7 +263,7 @@ azureus+  52477  50702  0 23:28 pts/0    00:00:00 grep --color=auto daemon
 
 The `grep` command is a powerful tool for searching plain text using regular expressions. 
 
-You can also use files as input. By default, standard input comes from the keyboard, but it too can be redirected. To get input from a file instead of the keyboard, use the `<` operator. One common sysadmin task is to sort the contents of a file. As the name suggests, `sort` sorts text in alphabetical order.
+You can also use files as input. By default, standard input comes from the keyboard, but it too can be redirected. To get input from a file instead of the keyboard, use the `<` operator. One common sysadmin task is to sort the contents of a file. As the name suggests, `sort` sorts text in alphabetical order:
 
 ```bash
 sort < file.txt
