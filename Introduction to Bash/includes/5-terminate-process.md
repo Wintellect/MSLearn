@@ -76,7 +76,7 @@ To kill a process, you need the process name or process ID. This is a job for `p
 
 1. If you were killing a daemon process — one that runs in the background and provides vital services to the operating system — you might want to kill it and immediately restart it. To do that, you could use a SIGHUP signal, which kills and then restarts the process.
 
-	In this example, you want to kill the process and leave it dead. Therefore, you want to use the SIGKILL signal, which corresponds to the number 9. To that end, grab **bad.py**'s process ID from the `ps -ef` output (it's in the second column on each line) and use the following command to terminate the process, replacing PROCESS_ID with the process ID:
+	In this example, you want to kill the process and leave it dead. Therefore, you want to use the SIGKILL signal, which corresponds to the number 9. To that end, grab **bad.py**'s process ID from the `ps -ef` output (it's in the second column) and use the following command to terminate the process, replacing PROCESS_ID with the process ID:
 
 	```bash
 	kill -9 PROCESS_ID
