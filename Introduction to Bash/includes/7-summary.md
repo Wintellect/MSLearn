@@ -1,29 +1,24 @@
 # Summary
 
-Put all these together and you have the start of what you need to know about Bash.
-This is only the beginning. Linux sysadmins spend their entire careers sharpening their Bash skills. 
-In this module, you learned the basics of using Bash. Among the skills you learned were:
+In this module, you learned the basics of using Bash. Among other things, you learned:
 
-- How to set up an Ubuntu Linux VM with the Azure Cloud Shell
-- How to securely logging into your VM with SSH
-- Basic Bash concepts and syntax
-- Bash wildcards
-- Bash Command Basics
-- Bash I/O operators
-- How to update an Ubuntu system
-- How to terminate bad processes
-- How to find and get rid of unwanted users
-- How to use Bash with the Azure Cloud Shell
+- How to use the Azure Cloud Shell to create an Ubuntu Linux VM in Azure
+- How to securely connect to the VM using SSH
+- How Bash commands are structured
+- Key Bash commands such as `ls`, `cat`, and `ps`
+- How to use I/O operators in Bash commands to redirect input and output
+- How to update the operating system on a Linux server
+- How to find and terminate rogue processes
+- How to use Bash to filter output in the Azure Cloud Shell
+- How to delete an Azure resource group and everything it contains
 
-When you are ready to take the next step in learning Bash, here are three books you might find valuable:
+If you want to take your knowledge of Bash to the next level, here are three books you might find valuable:
 
 - [The Bash Guide](https://guide.bash.academy/)
 - [Learn Shell](https://www.learnshell.org/)
 - [Learning the Shell](http://linuxcommand.org/lc3_learning_the_shell.php)
 
-This is only the merest taste of Bash's power. Extensive books help you do a deep dive. Among them are [Learning the bash Shell, 3rd Edition](http://shop.oreilly.com/product/9780596009656.do), [The Linux Command Line](http://linuxcommand.org/tlcl.php), and [Advanced Bash-Scripting Guide](https://www.tldp.org/LDP/abs/html/).
-
-While we focused on using Bash interactively, Bash scripting is the most powerful built-in Linux sysadmin tool. Indeed, it's the ancestor to DevOps programs such as [Ansible](https://www.ansible.com/), [Chef](https://www.chef.io/), and [Puppet](https://puppet.com/).
+Other notable books include [Learning the bash Shell, 3rd Edition](http://shop.oreilly.com/product/9780596009656.do), [The Linux Command Line](http://linuxcommand.org/tlcl.php), and [Advanced Bash-Scripting Guide](https://www.tldp.org/LDP/abs/html/).
 
 ## Check your knowledge
 
@@ -33,26 +28,44 @@ While we focused on using Bash interactively, Bash scripting is the most powerfu
 	- Better than All SHells
 	- None of the above
 
-1. Which of the following commands writes a list of process IDs associated with a user named "scottgu" to a file?
-	- `cat | grep scottgu > pids.txt`
-	- `cat > grep scottgu | pids.txt`
-	- `pid -u > grep scottgu | pids.txt`
-	- `ps -ef | grep scottgu > pids.txt`
+1. Which of the following commands writes a list of processes associated with a user named "scottgu" to a file?
+	- `cat | grep scottgu > processes.txt`
+	- `cat > grep scottgu | processes.txt`
+	- `pid -u > grep scottgu | processes.txt`
+	- `ps -ef | grep scottgu > processes.txt`
 
-1. To update an Ubuntu Linux system, which command would you use?
-	- `apt update && apt upgrade -y`
-	- `sudo apt update && sudo apt upgrade -y`
-	- `Invoke-Command -FilePath c:\scripts\PS_WinUpdate.ps1 -ComputerName Server01`
-	- `wuauclt.exe /updatenow`
+1. Which of the following commands would you use to delete a subdirectory that isn't empty?
+	- `rm`
+	- `rmdir`
+	- `nuke`
+	- None of the above; a subdirectory that isn't empty can't be deleted
 
-1.	The correct syntax for a Bash command is:
-	- command, comments, opinions  
-	- arguments, command, options 
-	- command, options, arguments
-	- `su` command, options, arguments  
+1. Which of the following commands reboots the server after 10 minutes?
+	- `sudo shutdown -r +10` 
+	- `sudo shutdown -r 10m` 
+	- `sudo reboot +10` 
+	- `sudo reboot +10m` 
 
-1. Which of the below is not a Linux/Bash wildcard?
-	- \#
-	- ?
-	- \*
-	- [A-Z]
+1. Which of the following commands combines **foo.txt** and **bar.txt** in a new file named **foobar**?
+	- `concat foo.txt bar.txt > foobar.txt`
+	- `concat foo.txt bar.txt | foobar.txt`
+	- `cat foo.txt bar.txt | foobar.txt`
+	- `cat foo.txt bar.txt > foobar.txt`
+
+1. The purpose of the `sudo` command is to:
+	- Execute a command with elevated privilege
+	- Execute a program and leave it running in the background
+	- Prevent system files from being deleted by non-administrative users
+	- Prevent subdirectories from deleted without prompting
+
+1. Which of the following statements is true regarding the command `python3 app.py &`?
+	- It runs **app.py** and creates a restore point in the system
+	- It runs **app.py** and prevents it from becoming a zombie process
+	- It runs **app.py**, but only if it's located in the "/etc" directory
+	- It runs **app.py** and returns immediately to the command prompt
+
+1. Which of the following `vi` commands saves a file?
+	- :q
+	- :s
+	- :w
+	- None of the above
