@@ -1,14 +1,6 @@
 # Bash fundamentals
 
-Before we get into the details of Bash commands, let's look at the way the shell interacts with the computer and the operating system. Bash is used both interactively — at the command line — and in shell scripts, which are files that contain Bash commands and whose names usually end with **.sh**. Thus, Bash bridges the gap between a simple shell language and a programming language. Mastering it is essential for day-in, day-out system-administration work.
-
-When Bash starts, it first reads and executes commands from the file **/etc/profile**. This file — if it exists — contains the system's basic configuration data and any startup programs.
-
-After reading this configuration file, Bash looks for files named **~/.bash_profile**, **~/.bash_login**, or **~/.profile** containing configuration information for the logged-on user. If none of these exist, Bash runs with the operating system defaults. The tilde (~) in the path names represents the user's home directory.
-
-Once these startup chores are finished, Bash displays a prompt and awaits your command.
-
-## Bash syntax
+An understanding of Bash starts with an understanding of Bash syntax. Once you know the syntax, you can apply it to every Bash command that you execute.
 
 The full syntax for a Bash command is:
 
@@ -16,41 +8,53 @@ The full syntax for a Bash command is:
 command [options] [arguments]
 ```
 
-Bash treats the first string it encounters as a command. So, for example, to see what's inside your pwd — shorthand for the current working directory — you would you invoke the list command, or `ls`: 
+Bash treats the first string it encounters as a command. The following command uses Bash's `ls` (for "list") command to display the contents of the pwd — shorthand for the current working directory: 
 
 ```bash
 ls
 ```
  
-As with other shell languages, Bash commands are often accompanied by arguments. For example, creating a directory requires a directory name. So to create a subdirectory named "orders" in the pwd, you type:
+Bash commands are often accompanied by arguments. For example, you can include a path name in an `ls` command to list the contents of another directory:
 
 ```bash
-mkdir orders
+ls /etc
 ```
 
-Most Bash commands have options, which may or may not be required for a given task. Options, also called *flags*, give a command more specific instructions. To create a new subdirectory and a subdirectory inside it with one command rather than two, you could run `mkdir` with a `--parents` flag:
+Most Bash commands have options for modifying how they work. Options, also called *flags*, give a command more specific instructions. As an example, files and directories whose names begin with a period are hidden from the user and are not displayed by `ls`. However, you can include a `-a` (for "all") flag in an `ls` command and see everything in the target directory:
 
 ```bash
-mkdir --parents cats/pics
+ls -a /etc
 ```
 
-Many flags can be specified with an abbreviated alias. An alternate for `--parents` is `–p`, so the previous command could be entered as `mkdir -p cats/pics`.
+You can even combine flags for brevity. For example, rather than type `ls -a -l /etc` to show all files in the "/etc" directory in long form, you can type this instead:
+
+```bash
+ls -al /etc
+```
+
+Bash is nothing if not concise. In fact, it is sometimes remarkable (and a point of pride among Bash aficionados) how much can be accomplished with a single command.
 
 ## The `sudo` command
 
-Some Bash commands can only be run by the root user — a system administrator or superuser. If you try one of these commands without these privileges, it fails. You can create directories in the VM you created in the previous unit because you are logged in as an admin. However, in Linux, ordinary users cannot create directories.
-
-You don't want to run as root most of the time. It's too dangerous. So, to run commands that require admin privilege without logging in as an admin, you preface the commands with `sudo`:
+Some Bash commands can only be run by the root user — a system administrator or superuser. If you try one of these commands without sufficient privileges, it fails. As an example, you can't use Linux's `vi` editor to edit **/etc/at.deny** with this command:
 
 ```bash
-sudo mkdir orders
+vi /etc/at.deny
+```
+
+The "/etc" directory is a special one in Linux; it contains system-configuration files. **at.deny** is a special file that determines who can use other Bash commands to submit jobs for later execution.
+
+You don't want to run as root most of the time. It's too dangerous. So, to run commands that require admin privilege without logging in as superuser, you preface the commands with `sudo`:
+
+```bash
+vi /etc/at.deny
 ```
 
 `sudo` stands for "superuser do." When you use it, you're telling the shell that for this one command you are acting with the root-user level of permission.
 
 ## Getting help
 
-Which options and arguments can be used, or must be used, varies from command to command. Fortunately, Bash documentation is built into the operating system. Help is never more than a command away. To learn about the options for a command, use the `man` (for "manual") command. For instance, to see all the options for the `mkdir` command, do this:
+Which options and arguments can be used, or must be used, varies from command to command. Fortunately, Bash documentation is built into the operating system. Help is never more than a command away. To learn about the options for a command, use the `man` (for "manual") command. For instance, to see all the options for the `mkdir` ("make directory") command, do this:
 
 ```bash
 man mkdir
