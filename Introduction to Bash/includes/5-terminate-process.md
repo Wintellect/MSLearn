@@ -1,55 +1,99 @@
 # Exercise: Terminate a misbehaving process
 
-Computers are imperfect. Sooner or later, it seems, a program goes bad. That's why you have a job as a sysadmin; it's up to you to troubleshoot and fix system problems.
+Computers are imperfect. Sooner or later, something *will* go wrong. That's why you have a job as a sysadmin; it's up to you to troubleshoot and fix system problems.
 
-The application may take up too much CPU time, it may freeze, or it may simply stop responding. In that case, you probably want to kill it off with extreme prejudice. To identify it and get rid of it you can use a simple pipe command with `ps` and `grep`. Then, to knock it on its virtual head, you use the `kill` command.
+Imagine that a Python application is causing problems. Perhaps it is taking up too much CPU time, or maybe it has frozen and stopped responding. In either case, you want to kill it off with extreme prejudice. To identify it, you can use `ps` and `grep`. Then, to knock it on its virtual head, you can use the `kill` command. Let's practice this in your Linux virtual machine.
 
-First, let's chase down the misbehaving program by using `ps` to track down a Python program gone bad. To refresh your memory, with `ps` and those flags you display all processes along with a great deal of information on each one. You pipe those results to grep, which then seeks out the pattern "python" within those results.
+## Start a misbehaving process
+
+If you're going to kill a process, you need a process to kill. Let's create one.
+
+1. In your Linux VM, type the following command to start Linux's [vi](https://en.wikipedia.org/wiki/Vi) editor:
+
+	```bash
+	vi bad.py
+	```
+
+	`vi` is a widely used text editor that Linux inherited from Unix. Love it or hate it, it pays for a sysadmin to know the basics of `vi`.
+
+1. Press the **I** key to put `vi` in insert mode. Then type in the following Python program:
+
+	```python
+	i = 0
+	while i == 0:
+	    pass
+	```
+
+	This program, when executed, runs in an infinite loop — clearly not something you want running on your server.
+
+1. After typing the program, press the **Esc** key to exit insert mode. Then type the following commands, each followed by the **Enter** key, to save the program and exit `vi`:
+
+	```
+	:w
+	:q
+	```
+
+1. Now use the following command to start the program and leave it running in the background:
+
+	```bash
+	python3 bad.py &
+	```
+
+	Be sure to include the ampersand at the end of the command. Otherwise, you won't be returned to the Bash prompt. In Bash, the ampersand executes a command and returns you to the command line, even if the command hasn't finished running.
+
+It's not obvious, but **bad.py** is now running in the background and stealing CPU cycles from other processes. Let's take a look under the hood to see what's happening.
+
+## Kill the process
+
+To kill a process, you need the process name or process ID. This is a job for `ps`.
+
+1. Let's chase down the misbehaving program by using `ps` to identify the Python program gone bad. To refresh your memory, a `ps -ef` command lists all running processes and displays a great deal of information about each one.
+
+	Use the following command to list all running processes and filter the results to those lines containing "python:"
+
+	```bash
+	ps -ef | grep python
+	```
+
+	Confirm that the results look something like this:
+
+	```
+	root        969      1  0 16:56 ?        00:00:00 /usr/bin/python3 /usr/bin/networkd-dispatcher --run-startup-triggers
+	root        972      1  0 16:56 ?        00:00:00 /usr/bin/python3 -u /usr/sbin/waagent -daemon
+	root       1006      1  0 16:56 ?        00:00:00 /usr/bin/python3 /usr/share/unattended-upgrades/unattended-upgrade-shutdown --wait-for-signal
+	root       1108    972  0 16:56 ?        00:00:23 python3 -u bin/WALinuxAgent-2.2.40-py2.7.egg -run-exthandlers
+	azureus+  13079  12666 99 18:44 pts/1    00:23:33 python3 bad.py
+	azureus+  14376  12666  0 19:08 pts/1    00:00:00 grep --color=auto python
+	```
+
+1. From the listing, it appears that **bad.py** is consuming 99% of the server's CPU time. The program is living up to its name.
+
+	The `kill` command kills a running process given its process ID. (A related command named `killall` kills a process given the process name.) When you call `kill`, you have to decide what kind of "signal" to use to kill the process. Use the following command to display a list of signal types:
+
+	```bash
+	kill -l
+	```
+
+1. If you were killing a daemon process — one that runs in the background and provides vital services to the operating system — you might want to kill it and immediately restart it. To do that, you could use a SIGHUP signal, which kills and then restarts the process.
+
+	In this example, you want to kill the process and leave it dead. Therefore, you want to use the SIGKILL signal, which corresponds to the number 9. To that end, grab **bad.py**'s process ID from the `ps -ef` output (it's in the second column on each line) and use the following command to terminate the process, replacing PROCESS_ID with the process ID:
+
+	```bash
+	kill -9 PROCESS_ID
+	```
+
+	The same command could also be entered as `kill -s SIGKILL PROCESS_ID`. Whether you use a signal's name or number is up to you.
+
+1. Finish up by running `ps` again to confirm that **bad.py** is no longer running.
+
+Another common use for `ps` and `kill` is to identify and terminate zombie processes, which are child processes that are left over from poorly written program. For more information on zombie processes, see https://www.howtogeek.com/119815/htg-explains-what-is-a-zombie-process-on-linux/.
+
+As an aside, it is not uncommon to find documentation that shows `ps` being used this way:
 
 ```bash
-$ ps -ef | grep python
+ps aux | grep python
 ```
 
-This presents you with all the programs currently invoking python and their process IDs (PIDs). Now, if you wanted to terminate one of those instances, you look for two pieces of information:
-- Process name
-- Process ID
-
-There are two commands used to kill a process:
-- `kill`: Kill a process by PID
-- `killall`: Kill a process by name
-
-Different signals can be sent to both `kill` commands. What signal you send is determined by the results you want. For instance, the hang up (HUP) signal kills and then restarts the process. This is always a wise choice when you need the process to immediately restart, such as with the case of a Linux daemon.
-
-Like most Linux commands, there many possible flags. You can get a list of options for the `kill` command with `kill -l`. 
-
-```bash
-$ kill -l 
-```
-
-You have several choices to get rid of a specific process. For precision's sake, you should knock processes over the head using PIDs. So, to put an end to the unattended-upgrade process, use the command:
-
-```bash
-$ kill -9 1090
-```
-
-Let's say your Linux system has been running for a while and you suspect some dead processes are eating up resources. To find these processes, called zombies, use the `ps` command with the `-aux` flag. These show:
-
-- All users' processes
-- By user names
-- Including all processes not attached to a terminal
-
-These flags also show the status of each process. A zombie process shows up with, naturally, a Z. So to reveal these living dead processes, type:
-
-```bash
-$ ps -aux | grep Z
-```
-
-You can then kill them, as before, with the `kill` command. 
-
-<INSERT Zombie Process.png>
-
-In this example, we didn't find any zombies. That process with a "Z" in it? It's the `grep` process searching for a Z. Remember when you filter processes through grep, the `grep` search itself always shows up. 
-
-It is a well known Linux oddity to have two similar but not identical set of flags that produce somewhat different results. It traces back to historical divergences between POSIX Unix systems, of which Linux is one, and BSD Unix systems, the most common of which today is macOS. In the beginning, POSIX used `-ef` while the BSD required `aux`. Today, both operating system families accept either format. 
+`ps aux` and `ps -ef` are one and the same. This duality traces back to historical differences between POSIX Unix systems, of which Linux is one, and BSD Unix systems, the most common of which is macOS. In the beginning, POSIX used `-ef` while the BSD required `aux`. Today, both operating-system families accept either format. 
 
 This serves as an excellent reminder of why you should look closely at the manual for all Linux commands. Learning Bash is like learning English as a second language. There are many exceptions to the rules.
