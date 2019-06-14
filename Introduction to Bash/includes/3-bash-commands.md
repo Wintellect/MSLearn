@@ -138,7 +138,7 @@ Running `rm` with a `-i` flag lets you think before you delete:
 rm -i *
 ```
 
-Make it a habit to include `-i` in every `rm` command and you might avoid falling prey to one of Linux's biggest blunders. The dreaded `rm -rf /` command deletes every file on an entire drive. It works by recursively deleting all the subdirectories of root and their subdirectories. The `-f` (for "force") flag adds insult to injury by suppressing prompts. **Don't do this.**
+Make it a habit to include `-i` in every `rm` command and you might avoid falling victim to one of Linux's biggest blunders. The dreaded `rm -rf /` command deletes every file on an entire drive. It works by recursively deleting all the subdirectories of root and their subdirectories. The `-f` (for "force") flag adds insult to injury by suppressing prompts. **Don't do this.**
 
 On the other hand, if you want to delete a subdirectory named "orders" that isn't empty, you can use the `rm` command this way:
 
