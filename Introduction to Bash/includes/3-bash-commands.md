@@ -1,7 +1,7 @@
 # Bash commands
 
 
-Every shell language has its most-used commands, just as every guitarist has a dozen songs she must be ready to play. ("Seven Nation Army," "Sweet Child O' Mine," and "Stairway to Heaven" come to mind, among others.) Let's start building your Bash repertoire by examining the most common Bash commands. 
+Every shell language has its most-used commands, just as every guitarist has a dozen songs she must be ready to play. ("House of the Rising Sun," "Sweet Child O' Mine," and "Stairway to Heaven" come to mind, among others.) Let's start building your Bash repertoire by examining the most commonly used commands. 
 
 ### The `ls` command
 
@@ -16,7 +16,7 @@ Remember that files and directories whose names begin with a period are hidden b
 ```bash
 ls -a
 ```
-To get even more information about the files and directories in the current directory, use a `-l` (for "long") flag:
+To get even more information about the files and directories in the current directory, use a `-l` flag to produce output in long format:
 
 ```bash
 ls -l
@@ -35,22 +35,7 @@ Here's some sample output from a directory that contains a handful of JPEGs and 
 drwxrwxr-x 2 azureuser azureuser    4096 Jun 13 20:16 gifs
 ```
 
-Each line has an explicit structure that provides detailed information about the corresponding file or directory. The first nine characters specify:
-
-- Whether the item is a file (-) or directory (d)
-- The item's read (r), write (w), and execute (x) permissions, in that order
-- The read, write, and execute permissions of the item's owner
-- The read, write, and execute permissions of the group to which the item belongs
-
-After the permissions comes the item's owner, the owner's group, the size in bytes, the last time the item was modified, and the file or directory name. 
-
-`ls` also accepts a path name as an argument. To view the contents of the "/etc" subdirectory in long format, you could type:
-
-```bash
-$ ls -l /etc
-```
-
-The "/etc" directory is a special one in Linux. It contains system-configuration files. You don't want to delete any files from this directory unless you know what you are doing.
+Each line provides detailed information about the corresponding file or directory, including the permissions assigned to it, its owner, its size in bytes, the last time it was modified, and the file or directory name. 
 
 ### The `cat` command
 
@@ -77,14 +62,34 @@ VERSION_CODENAME=bionic
 UBUNTU_CODENAME=bionic
 ```
 
-### The `cd` command
+The "/etc" directory is a special one in Linux. It contains system-configuration files. You don't want to delete any files from this directory unless you know what you are doing.
+
+### The `sudo` command
+
+Some Bash commands can only be run by the root user — a system administrator or superuser. If you try one of these commands without sufficient privileges, it fails. For example, only users logged in as superuser can use `cat` to display the contents of **/etc/at.deny**:
+
+```bash
+cat /etc/at.deny
+```
+
+**at.deny** is a special file that determines who can use other Bash commands to submit jobs for later execution.
+
+You don't want to run as root most of the time. It's too dangerous. So, to run commands that require admin privilege without logging in as superuser, you preface the commands with `sudo`:
+
+```bash
+sudo cat /etc/at.deny
+```
+
+`sudo` stands for "superuser do." When you use it, you're telling the shell that for this one command you are acting with the root-user level of permission.
+
+### The `cd`, `mkdir`, and `rmdir` commands
 
 `cd` stands for "change directory," and it does exactly what the name suggests: it changes the pwd to another directory. It enables you to move from one directory to another just as its counterpart in Windows does. 
 
-The following command changes to a subdirectory of the current directory named "kitties:"
+The following command changes to a subdirectory of the current directory named "orders:"
 
 ```bash
-cd kitties
+cd orders
 ```
 
 You can move up a directory by specifying ".." as the directory name:
@@ -99,56 +104,55 @@ This one changes to your home directory — the one that you land in when you fi
 cd ~
 ```
 
-You can also use absolute path names. Let's say you want to inspect the contents of the "/usr/bin" directory where programs that come with your Linux distribution are stored. You could use an `ls /user/bin` command. Or you could change to that directory and execute an `ls` command:
+You can create directories with the `mkdir` command. The following command creates a subdirectory named "orders" in the current working directory:
 
 ```bash
-cd /usr/bin
-ls
+mkdir orders
 ```
 
-Once more, "/usr/bin" is an important directory in Linux, so be careful poking around there.
+If you want to create a subdirectory and a subdirectory of that subdirectory with one command, use the `--parents` flag:
+
+```bash
+mkdir --parents orders/2019
+```
+
+The `rmdir` command deletes (removes) a directory, but only if it isn't empty. You can use the `rm` command to delete directories that aren't empty, but this option should be exercised with extreme care. You'll learn about the `rm` command in a moment.
 
 ### The `cp` command
 
-The `cp` command copies — not just files, but entire directories (and their subdirectories) if you want. To make a copy of **cat.jpg** named **kitty.jpg**, use the command:
+The `cp` command copies — not just files, but entire directories (and their subdirectories) if you want. To make a copy of **0001.jpg** named **0002.jpg**, use the command:
 
 ```bash
-cp cat.jpg kitty.jpg
+cp 0001.jpg 0002.jpg
 ```
 
-If **kitty.jpg** already exists, Bash silently replaces the older one with the copy. That's great if that's what you intended, but not so wonderful if you didn't realize you were about to overwrite the old version. 
+If **0002.jpg** already exists, Bash silently replaces it. That's great if it's what you intended, but not so wonderful if you didn't realize you were about to overwrite the old version. 
 
-Fortunately, if you use the `-i` (for "interactive") flag, Bash warns you before blowing away any existing file. This is much safer:
+Fortunately, if you use the `-i` (for "interactive") flag, Bash warns you before blowing away existing files. This is much safer:
 
 ```bash
-cp -i cat.jpg kitty.jpg
+cp -i 0001.jpg 0002.jpg
 ```
 
-To copy a file to a different directory — for example, the home directory — include the path:
+Of course, you can use wildcards to copy several files at once. To copy all the files in the current directory to a subdirectory named "photos," do this:
 
 ```bash
-cp cat.jpg ~/kitty.jpg
+cp * photos
 ```
 
-To copy all the files in the current directory to a subdirectory named "kitties," do this:
+To copy all the files in a subdirectory named "photos" into a subdirectory named "images," you would do this:
 
 ```bash
-cp * kitties
+cp photos images
 ```
 
-To copy all the files in a subdirectory named "cats" into a subdirectory named "kittens," you would do this:
+This will copy the files in the "photos" directory, but not any files in subdirectories of "photos." To perform a deep copy that copies subdirectories and their contents, too, you can do this:
 
 ```bash
-cp cats kittens
+cp -r photos images
 ```
 
-This will copy the files in the "cats" directory, but not any files in subdirectories of "cats." To perform a deep copy that copies subdirectories and their contents, too, you can do this:
-
-```bash
-cp -r cats kittens
-```
-
-The `-r` stands for "recursive." In this context, it means the `cp` command works its way through a directory *and* its subdirectories before exiting.
+The `-r` stands for "recursive." In this context, it means the `cp` command works its way through the target directory *and* its subdirectories to do its work.
 
 ### The `rm` command
 
