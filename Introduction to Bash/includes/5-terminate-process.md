@@ -87,13 +87,3 @@ To kill a process, you need the process name or process ID. This is a job for `p
 1. Finish up by running `ps` again to confirm that **bad.py** is no longer running.
 
 Another common use for `ps` and `kill` is to identify and terminate zombie processes, which are child processes left behind by poorly written programs. For more information, see https://en.wikipedia.org/wiki/Zombie_process.
-
-As an aside, it is not uncommon to find documentation that shows `ps` being used this way:
-
-```bash
-ps aux | grep python
-```
-
-`ps aux` and `ps -ef` are one and the same. This duality traces back to historical differences between POSIX Unix systems, of which Linux is one, and BSD Unix systems, the most common of which is macOS. In the beginning, POSIX used `-ef` while the BSD required `aux`. Today, both operating-system families accept either format. 
-
-This serves as an excellent reminder of why you should look closely at the manual for all Linux commands. Learning Bash is like learning English as a second language. There are many exceptions to the rules.

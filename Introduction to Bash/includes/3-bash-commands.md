@@ -215,8 +215,15 @@ root          9      2  0 13:35 ?        00:00:01 [ksoftirqd/0]
 root         10      2  0 13:35 ?        00:00:02 [rcu_sched]
 ```
 
+As an aside, it is not uncommon to find documentation that shows `ps` being used this way:
 
-You'll use `ps` virtually every day in your life as a Linux sysadmin. One common use for it is to retrieve process IDs for processes that you want to kill. More on this important topic later.
+```bash
+ps aux
+```
+
+`ps aux` and `ps -ef` are one and the same. This duality traces back to historical differences between POSIX Unix systems, of which Linux is one, and BSD Unix systems, the most common of which is macOS. In the beginning, POSIX used `-ef` while the BSD required `aux`. Today, both operating-system families accept either format. 
+
+This serves as an excellent reminder of why you should look closely at the manual for all Linux commands. Learning Bash is like learning English as a second language. There are many exceptions to the rules.
 
 ## Bash I/O operators
 
