@@ -2,7 +2,7 @@
  
 You're responsible for an enormous, complicated spreadsheet.  You remember that you saw one particular cell in a peculiar color--was it purple?  Blue?  That particular value is suddenly important to you, but how are you going to find it?  Do you have to scan all tens of thousands of individual cells of each of the scores of sheets?
 
-No:  there are easier ways.  In principle, you can use Excel's built-in **Find** dialogue, but it only knows to search for an exact color match.  You could write a macro in VBA, but that presents its own problems.  Let's see how long it takes to solve this in Python ...
+No:  there are easier ways.  In principle, [you can use Excel's built-in **Find** dialogue](https://excel.tips.net/T002396_Finding_Cells_Filled_with_a_Particular_Color.html), but it only knows to search for an exact color match.  You could [write a macro in VBA](https://www.thespreadsheetguru.com/the-code-vault/2014/11/5/retrieve-excel-cells-font-fill-rgb-color-code), but that presents its own problems.  Let's see how long it takes to solve this in Python ...
 
 
 ## Demonstration program
