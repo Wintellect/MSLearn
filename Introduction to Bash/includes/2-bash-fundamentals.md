@@ -87,7 +87,7 @@ or available locally via: info '(coreutils) mkdir invocation'
 
 Help obtained this way is typically more concise than help obtained with `man`. 
 
-## Wildcards
+## Using wildcards
 
 Wildcards are symbols that represent one or more characters in Bash commands. The most frequently used wildcard is the asterisk. It represents zero characters or a sequence of characters. Suppose the pwd contains hundreds of image files, but you only want to see the PNG files — the ones whose file names end with **.png**. Here's the command to list only those files:
 
