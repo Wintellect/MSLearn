@@ -62,7 +62,7 @@ VERSION_CODENAME=bionic
 UBUNTU_CODENAME=bionic
 ```
 
-The "/etc" directory is a special one in Linux. It contains system-configuration files. You don't want to delete any files from this directory unless you know what you are doing.
+The "/etc" directory is a special one in Linux. It contains system-configuration files. You don't want to delete any files from this directory unless you know what you're doing.
 
 ### The `sudo` command
 
@@ -84,9 +84,7 @@ sudo cat /etc/at.deny
 
 ### The `cd`, `mkdir`, and `rmdir` commands
 
-`cd` stands for "change directory," and it does exactly what the name suggests: it changes the pwd to another directory. It enables you to move from one directory to another just as its counterpart in Windows does. 
-
-The following command changes to a subdirectory of the current directory named "orders:"
+`cd` stands for "change directory," and it does exactly what the name suggests: it changes the pwd to another directory. It enables you to move from one directory to another just like its counterpart in Windows. The following command changes to a subdirectory of the current directory named "orders:"
 
 ```bash
 cd orders
