@@ -138,10 +138,12 @@ And this one lists all the files in the current directory whose names begin with
 ls [a-zA-Z]*
 ```
 
-Based on this, can you guess what the following command would do?
+Based on this, can you guess what the following commands would do?
 
 ```bash
 ls [0-9]*
+ls *[0-9]*
+ls *[0-9]
 ```
 
 If you need to use one of the wildcard characters as an ordinary character, you make it literal or "escape it" by prefacing it with a backslash. So, if for some reason you had an asterisk as part of a file name — something you should never do intentionally — you could search for it with a command such as:
