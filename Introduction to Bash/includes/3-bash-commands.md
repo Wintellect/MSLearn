@@ -283,4 +283,4 @@ You can use I/O operators to chain Linux commands endlessly. For instance:
 cat file.txt | fmt | pr | lpr
 ```
 
-Here, the output from `cat` goes as input to `fmt`, the output from `fmt` goes as input to `pr`, and s on. `fmt` formats the results into a tidy paragraph. '`'pr` paginates the results. And `lpr` sends the paginated output to the system printer. All in a single line!
+Here, the output from `cat` goes as input to `fmt`, the output from `fmt` goes as input to `pr`, and so on. `fmt` formats the results into a tidy paragraph. '`'pr` paginates the results. And `lpr` sends the paginated output to the system printer. All in a single line!
