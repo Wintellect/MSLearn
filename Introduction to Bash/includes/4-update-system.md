@@ -42,7 +42,7 @@ In your new job, you have logged in to one of the company's servers for the firs
 
 	You may still be notified that certain services need to be restarted and prompted to answer yes or no. If so, answer "yes" and allow the upgrade to proceed. Then wait for the upgrade to finish.
 
-1. Following a system update, you probably need to reboot the server. (You can avoid the need to do this by installing [Ubuntu LivePatch](https://ubuntu.com/livepatch), but that's a topic for another day.) Before you restart your computer, let's get rid of any old packages hanging around. You do this with the `apt autoremove` command:
+1. Following a system update, you probably need to reboot the server. (You can avoid the need to do this by installing [Ubuntu LivePatch](https://ubuntu.com/livepatch), but that's a topic for another day.) Before you restart the server, let's get rid of any old packages that are hanging around after the upgrade. You do this with the `apt autoremove` command:
 
 	```bash
 	sudo apt autoremove
