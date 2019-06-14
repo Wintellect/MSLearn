@@ -114,7 +114,7 @@ Yet another way to use wildcards to filter output is to use square brackets, whi
 ls *.[jp]*
 ```
 
-In Linux, file names and the commands that operate upon them in Linux are case-sensitive. So to list all the files in the pwd whose names contain periods followed by an uppercase *or* lowercase J or P, you could type this:
+In Linux, file names and the commands that operate upon them are case-sensitive. So to list all the files in the pwd whose names contain periods followed by an uppercase *or* lowercase J or P, you could type this:
 
 ```bash
 ls *.[jpJP]*
