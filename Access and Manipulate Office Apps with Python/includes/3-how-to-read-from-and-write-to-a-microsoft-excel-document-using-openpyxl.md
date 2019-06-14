@@ -1,6 +1,6 @@
 # How to read from and write to a Microsoft Excel document using **OpenPyXL**
  
-You're responsible for an enormous, complicated spreadsheet.  You remember that you saw one particular cell in a peculiar color--was it purple?  Blue?  That particular value is suddenly import to you, but how are you going to find it?  Do you have to scan all tens of thousands of individual cells of each of the scores of sheets?
+You're responsible for an enormous, complicated spreadsheet.  You remember that you saw one particular cell in a peculiar color--was it purple?  Blue?  That particular value is suddenly important to you, but how are you going to find it?  Do you have to scan all tens of thousands of individual cells of each of the scores of sheets?
 
 No:  there are easier ways.  In principle, you can use Excel's built-in **Find** dialogue, but it only knows to search for an exact color match.  You could write a macro in VBA, but that presents its own problems.  Let's see how long it takes to solve this in Python ...
 
