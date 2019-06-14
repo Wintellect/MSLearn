@@ -55,7 +55,7 @@ To kill a process, you need the process name or process ID. This is a job for `p
 	ps -ef | grep python
 	```
 
-	Confirm that the results look something like this:
+	The results should look something like this:
 
 	```
 	root        969      1  0 16:56 ?        00:00:00 /usr/bin/python3 /usr/bin/networkd-dispatcher --run-startup-triggers
