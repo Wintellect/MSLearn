@@ -1,73 +1,61 @@
 # How to read from and write to a Microsoft Excel document using **OpenPyXL**
  
-Every two weeks you host a meeting of departmental managers.  You prepare an agenda for everyone to read ahead of time.  One segment of the meeting focuses on results from the previous fortnight.  The trick is, though, that different departments not only have different key performance indicators (KPIs), but they keep them in wildly different data stores:  everything from Excel through Access to SAP and Salesforce and GitHub.
+You're responsible for an enormous, complicated spreadsheet.  You remember that you saw one particular cell in a peculiar color--was it purple?  Blue?  That particular value is suddenly import to you, but how are you going to find it?  Do you have to scan all tens of thousands of individual cells of each of the scores of sheets?
 
-The good news is that you have access to all these different datasources.  Every weekend, therefore, you pull up all the different relevant reports, and copy-and-paste all the KPIs into the standard format of a Word copy of your agenda.  It's tedious, but you have it down to a routine, and it doesn't take _too_ long.
-
-Does this sound like a familiar story?  Here's a tip:  any time you think, "... tedious ..." in regard to an aspect of your life at the keyboard, your next thought should be, "Here's a job for Python!"
+No:  there are easier ways.  In principle, you can use Excel's built-in **Find** dialogue, but it only knows to search for an exact color match.  You could write a macro in VBA, but that presents its own problems.  Let's see how long it takes to solve this in Python ...
 
 
-## Semi-automation attitude
+## Demonstration program
+
+Install OpenPyXL:
+
+    python -m pip install openpyxl
+
+Create
+
+     from openpyxl import load_workbook
+     
+     DEFAULT_COLOR = 1
+     this_workbook = load_workbook(filename="Total Analysis.xlsx")
+     for sheet in this_workbook:
+         for column in range(1, 1 + len(list(sheet.columns))):
+             for row in range(1, 1 + len(list(sheet.rows))):
+                this_cell = sheet.cell(column=column, row=row)
+                this_font = this_cell.font
+                this_color = this_font.color.value
+                if this_color != DEFAULT_COLOR:
+                    print(f"On sheet {sheet.title}, cell "
+                          f"{this_cell.column}{this_cell.row} "
+                          f"has color {this_color}.")
+
+If you have any appropriate `Total Analysis.xlsx` at hand, and you launch this program, you'll immediately see output that looks something like
+
+        ...
+    On sheet May 2018, cell J110 has color FF00B0F0.
+    On sheet May 2018, cell J111 has color FF00B0F0.
+    On sheet May 2018, cell M22 has color FF444444.
+    On sheet June 2018, cell A27 has color FFFFFF00.
+    On sheet June 2018, cell A32 has color 9.
+    On sheet June 2018, cell A33 has color 9.
+    On sheet June 2018, cell B8 has color FFFF0000.
+    On sheet June 2018, cell B9 has color FFFF0000.
+        ...
+
+and so on.  While there is still a little work to do matching these color values to your memory of what you saw, you are close to a answer already.
+
+
+## One-offs
+
+Notice the peculiar nature of this program.  Generally people think of a computer program as something run many times--maybe thousands or millions of time.  The previous lesson, for instance, focused on an automation that would be useful every couple of weeks.
+
+This small application is different.  It's only designed to be run once, just to help find a one-time result.  That's OK:  some programs are so small and quick to write, that it's faster to let the computer figure out a result for you one time, even including your effort to program the computer, than to undertake any alternative solution.  You can think of this as "experimental" programming.
+
+
+
 
 [TODO:  make point about other tools, include PyXLL]
 
-You need to write your agenda in Word, for a variety of reasons.  While the schedule and KPIs are in fixed locations, you embed them in your human explanation of business priorities and motivations.  Still, if the routine parts "write themselves"--if they appear in your draft document **automatically**--they're more likely to be accurate, undamaged by any typing mishap, you'll save time, and, perhaps most crucially of all, you preserve your attention for the difficult business challenges that are _not_ routine.
-
-This lesson, therefore, sketches how you can marry Python's ability to automate or script, to Word's convenience and familiarity.  
-
-The specific result below is one you actually can achieve from within Word itself:  Word has its own scripting tools.  Once you can do this simple exercise with Python, though, you open up all Python's power as a potential available within your documents.  Think of it this way:  when you first learned Python, you started with simple exercises like `2 + 3`, or `print(datetime.datetime.now())`.  The immediate point is not to replace your watch, or because you can't add; it's to _practice_ Python, to gain the skill and confidence to tackle bigger problems.  The hardest step in using many Python modules is to run the first successful program.  For now, we start small.  Once you complete this lesson, you should be able to adapt it to your own specific situation and requirements.
-
-
-## A demonstration
-
-As the previous lesson described, arrange a working Python3.6 (or better) for yourself.
-
-Install **python-docx** in your development environment.  With a working Internet connection, this should be as simple as
-
-    python3.6 -m pip install python-docx
-
-at the command line.
-
-Create a file called `lesson2.py` with contents:
-
-    import docx
-    
-    def fill_out_table(document):
-        kpi_table = document.add_table(rows=8, cols=5)
-        headers = kpi_table.rows[0]
-        headers.cells[0].text = "Department"
-        headers.cells[1].text = "Customer contacts"
-        my_department = kpi_table.rows[1]
-        my_department.cells[0].text = "Engineering"
-        my_department.cells[1].text = "14"
-        my_department.cells[2].text = 'perf optimization'
-        sales_support = kpi_table.rows[2]
-        sales_support.cells[0].text = "Sales support"
-
-    def first_page(document):
-        document.add_heading("Weekly Coordination")
-        document.add_paragraph("Let's review first the departmental KPIs:  ")
-        fill_out_table(document)
-
-
-    def main():
-         draft = docx.Document()
-
-        first_page(draft)
-        draft.add_page_break()
-        second_page(draft)
-        draft.save("agenda.docx")
-
-
-    def second_page(document):
-        document.add_paragraph("This week, we particularly need to focus on ...")
-
-
-    main()
-
-Launch `python lesson2.py`.
-
-Open `agenda.docx`.
+[TODO:  ...]
 
 Your screen should look something like ![screenshot of first page of Word document](images/agenda.png)
 
