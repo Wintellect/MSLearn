@@ -108,18 +108,10 @@ Another way is to use the ? wildcard, which represents a single character and al
 ls *.jp?g
 ```
 
-Yet another way to use wildcards to filter output is to use square brackets, which denote groups of characters. The following command lists all the files in the pwd whose names contain a period immediately followed a lowercase J or P:
+Yet another way to use wildcards to filter output is to use square brackets, which denote groups of characters. The following command lists all the files in the pwd whose names contain a period immediately followed a lowercase J or P, which means it would list all the **.jpg**, **.jpeg**, and **.png** files, but not **.gif** files:
 
 ```bash
 ls *.[jp]*
-```
-
-This would list all the **.jpg**, **.jpeg**, and **.png** files, but not **.gif** files.
-
-You can also use an exclamation point as a logical NOT operator in square brackets to exclude characters. The following command lists all the files in the pwd whose file names do *not* include a period followed by a J or a P:
-
-```bash
-ls *.[!jp]*
 ```
 
 In Linux, file names and the commands that operate upon them in Linux are case-sensitive. So to list all the files in the pwd whose names contain periods followed by an uppercase *or* lowercase J or P, you could type this:
