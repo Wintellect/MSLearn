@@ -26,7 +26,7 @@ Most Bash commands have options for modifying how they work. Options, also calle
 ls -a /etc
 ```
 
-You can even combine flags for brevity. For example, rather than type `ls -a -l /etc` to show all files in the "/etc" directory in long form, you can type this instead:
+You can even combine flags for brevity. For example, rather than type `ls -a -l /etc` to show all files and directories in the "/etc" directory in long form, you can type this instead:
 
 ```bash
 ls -al /etc
