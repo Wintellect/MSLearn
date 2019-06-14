@@ -115,11 +115,16 @@ ls *.[jp]*
 
 This would list all the **.jpg**, **.jpeg**, and **.png** files, but not **.gif** files.
 
-
 You can also use an exclamation point as a logical NOT operator in square brackets to exclude characters. The following command lists all the files in the pwd whose file names do *not* include a period followed by a J or a P:
 
 ```bash
 ls *.[!jp]*
+```
+
+In Linux, file names and the commands that operate upon them in Linux are case-sensitive. So to list all the files in the pwd whose names contain periods followed by an uppercase *or* lowercase J or P, you could type this:
+
+```bash
+ls *.[jpJP]*
 ```
 
 Expressions in square brackets can represent ranges of characters. For example, the following command lists all the files in the current directory whose names begin with a lowercase letter:
@@ -152,19 +157,6 @@ If you need to use one of the wildcard characters as an ordinary character, you 
 $ ls *\**
 ```
 
-## The Linux file system
+Note that Linux has no formal concept of a file-name extension as other operating systems do. This doesn't mean that PNG files won't have a **.png** extension. It simply means that Linux attaches no special significance to the fact that the file names end with **.png**.
 
-Because many Bash commands deal with the Linux file system, you should be aware of some of the differences in how Linux and Windows treat files. Among the important things to know:
-
-- In Linux, files and directories whose names begin with a period (.) are hidden. A common example is configuration files stored in your home directory. You may include hidden files and directories in directory listings by include a `-a` flag in `ls` commands, as in `ls -a`.
-
-- File names are case sensitive. In Linux, the file names "Fluffy" and "fluffy" are entirely different.
-
-- Linux has no formal concept of a file-name extension as other operating systems do. This doesn't mean that PNG files won't have a **.png** extension. It simply means that Linux attaches no special significance to the fact that the file names end with **.png**.
-
-Armed with this information, you're ready to start learning the key Bash commands that every sysadmin should know.
-
-
-
-
-
+Armed with this information in this unit, you're ready to start learning the key Bash commands that every sysadmin should know.
