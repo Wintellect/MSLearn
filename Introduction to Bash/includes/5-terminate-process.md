@@ -86,7 +86,7 @@ To kill a process, you need the process name or process ID. This is a job for `p
 
 1. Finish up by running `ps` again to confirm that **bad.py** is no longer running.
 
-Another common use for `ps` and `kill` is to identify and terminate zombie processes, which are child processes left behind by poorly written programs. For more information on zombie processes, see https://www.howtogeek.com/119815/htg-explains-what-is-a-zombie-process-on-linux/.
+Another common use for `ps` and `kill` is to identify and terminate zombie processes, which are child processes left behind by poorly written programs. For more information, see https://en.wikipedia.org/wiki/Zombie_process.
 
 As an aside, it is not uncommon to find documentation that shows `ps` being used this way:
 
