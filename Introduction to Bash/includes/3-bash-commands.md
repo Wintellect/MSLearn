@@ -279,18 +279,16 @@ You can also use files as input. By default, standard input comes from the keybo
 sort < file.txt
 ```
 
-Note that with Bash's `sort`, lines starting with an uppercase letter appear before lines starting with the same letter in lowercase.
-
 To save the sorted results to a new file, you can redirect input *and* output:
 
 ```bash
 sort < file.txt > sorted_file.txt
 ```
 
-You can use I/O operators to chain Linux commands endlessly. For instance:
+You can use I/O operators to chain Linux commands as needed. Consider the following command:
 
 ```bash
 cat file.txt | fmt | pr | lpr
 ```
 
-Here, the output from `cat` goes as input to `fmt`, the output from `fmt` goes as input to `pr`, and so on. `fmt` formats the results into a tidy paragraph. `pr` paginates the results. And `lpr` sends the paginated output to the printer. All in a single line!
+The output from `cat` goes to `fmt`, the output from `fmt` goes to `pr`, and so on. `fmt` formats the results into a tidy paragraph. `pr` paginates the results. And `lpr` sends the paginated output to the printer. All in a single line!
