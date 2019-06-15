@@ -9,7 +9,7 @@ This module gives specific examples of work you might want to automate, and how 
 
 ## Your mission, should you choose to accept it [TODO for Jeff:  is this title invariant?]
 
-1. Arrange for an hour or so when you can concentrate.  It doesn't have to be all at once:  the Lessons 2-6 can be done in any order, and each one individually is quick.
+1. Arrange for an hour or so when you can concentrate.  It doesn't have to be all at once:  the Lessons 2-5 can be done in any order, and each one individually is quick.
 1. Make sure you can run the usual Microsoft Office products conveniently.
 1. Learn how to alloy the strengths of office automation applications and the Python programming language.
 
