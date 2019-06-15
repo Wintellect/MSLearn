@@ -1,6 +1,6 @@
 # Exercise: Use Bash and grep to filter Azure CLI output
 
-Up until now, you have been running Bash commands in a Linux VM. That's a great way to practice Bash commands because you can't do any harm. If something goes terrible awry, you can delete the VM and start all over again.
+Up until now, you have been running Bash commands in a Linux VM. That's a great way to practice Bash commands because you can't do any harm. If something goes terribly awry, you can delete the VM and start all over again.
 
 You can also execute Bash commands in the Azure Cloud Shell. The drop-down list in the uper-left corner of the Cloud Shell lets you choose between two languages: PowerShell and Bash. The same Bash commands that make it easy to work with Linux can also be used with the Azure CLI (`az`) commands used to create and manage Azure resources. Let's demonstrate by disconnecting from the VM and returning to the Cloud Shell.
 
