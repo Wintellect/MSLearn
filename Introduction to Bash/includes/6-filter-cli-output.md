@@ -24,7 +24,7 @@ You can also execute Bash commands in the Azure Cloud Shell. The drop-down list 
 	az vm image list --all --output table | grep CentOS
 	```
 
-	This pipes output from the `az` command to `grep`, which filters out lines that lack the string "CentOS."
+	This pipes output from the `az` command to `grep`, which filters out lines lacking the string "CentOS."
 
 1. Now use the following command to list information about the VM that you created:
 
