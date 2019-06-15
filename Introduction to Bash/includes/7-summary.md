@@ -56,7 +56,7 @@ Other notable books include [Learning the bash Shell, 3rd Edition](http://shop.o
 	- Execute a command with elevated privilege
 	- Execute a program and leave it running in the background
 	- Prevent system files from being deleted by non-administrative users
-	- Prevent subdirectories from deleted without prompting
+	- Prevent subdirectories from being deleted without confirmation
 
 1. Which of the following statements is true regarding the command `python3 app.py &`?
 	- It runs **app.py** after creating a restore point in the system
