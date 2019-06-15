@@ -46,7 +46,7 @@ Other notable books include [Learning the bash Shell, 3rd Edition](http://shop.o
 	- `sudo reboot +10` 
 	- `sudo reboot +10m` 
 
-1. Which of the following commands combines **foo.txt** and **bar.txt** in a new file named **foobar.txt**?
+1. Which of the following commands combines the contents of **foo.txt** and **bar.txt** into a new file named **foobar.txt**?
 	- `concat foo.txt bar.txt > foobar.txt`
 	- `concat foo.txt bar.txt | foobar.txt`
 	- `cat foo.txt bar.txt | foobar.txt`
