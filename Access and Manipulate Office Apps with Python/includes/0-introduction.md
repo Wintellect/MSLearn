@@ -9,7 +9,9 @@ This module gives specific examples of work you might want to automate, and how 
 
 ## Your mission, should you choose to accept it [TODO for Jeff:  is this title invariant?]
 
-[...]
+1. Arrange for an hour or so when you can concentrate.  It doesn't have to be all at once:  the Lessons 2-6 can be done in any order, and each one individually is quick.
+1. Make sure you can run the usual Microsoft Office products conveniently.
+1. Learn how to alloy the strengths of office automation applications and the Python programming language.
 
 
 ## Learning objectives
@@ -22,4 +24,4 @@ In this module, you will learn:
 - How to create an Excel UDF with Python
 - How to manage PDF documents with **PyPDF4**
 
-There is much to do, so let's get started.  [TODO:  invariant?]
+There is much to do, so let's get started.  [TODO for Jeff:  invariant?]
