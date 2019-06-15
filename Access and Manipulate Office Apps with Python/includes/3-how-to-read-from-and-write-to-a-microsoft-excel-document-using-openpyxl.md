@@ -55,9 +55,12 @@ This small application is different.  It's only designed to be run once, just to
 
 The demonstration above showed Python reading from a spreadsheet.  The same **OpenPyXL** package also writes new spreadsheets, and updates existing ones.  **OpenPyXL**'s capabilities considerably exceed the limits of what [its documentation](https://openpyxl.readthedocs.io/en/stable/) only introduces, in fact.  **OpenPyXL** accesses essentially everything within Excel, although few of those capabilities have been written up as working examples yet.
 
-That's not all:  other Python packages, among which [**PyXLL**](https://www.pyxll.com/) is the most polished, are **add-ins** for Excel:  they communicate with an executing instance of Excel.  Excel can be used as a **dashboard**, for instance, with certain cells lighting up as alarms when a particular Python calculation yields a particular result.  Or the communication can go the other way:  Python can be used to drive a Web site, as [TODO:  reference] introduces, with its content coming in real time from an Excel spreadsheet.
+That's not all:  other Python packages, among which [**PyXLL**](https://www.pyxll.com/) is the most polished, are **add-ins** for Excel:  they communicate with an executing instance of Excel.  Excel can be used as a **dashboard**, for instance, with certain cells lighting up as alarms when a particular Python calculation yields a particular result.  Or the communication can go the other way:  Python can be used to drive a Web site, as [TODO with Jeff:  reference] introduces, with its content coming in real time from an Excel spreadsheet.  The next Lesson shows a small example of the rich additional communication possible between Excel and Python.
 
 
 ## Summary
 
-...
+* Several freely-available packages give Python the ability to read and write Excel spreadsheets.
+* Among these, OpenPyXL is well-maintained and highly capable.
+* A small Python program of only a dozen line can achieve impressive results in automatically retrieving and processing information from an Excel spreadsheet.
+* Python is so productive that it's often worthwhile to write a Python program to solve a one-time need.
