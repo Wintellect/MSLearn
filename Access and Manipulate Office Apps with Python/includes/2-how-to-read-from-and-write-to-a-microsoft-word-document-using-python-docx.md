@@ -49,7 +49,7 @@ Create a file called `lesson2.py` with contents:
 
 
     def main():
-         draft = docx.Document()
+        draft = docx.Document()
 
         first_page(draft)
         draft.add_page_break()
