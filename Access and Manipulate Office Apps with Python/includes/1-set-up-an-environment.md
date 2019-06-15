@@ -19,9 +19,11 @@ One consistent assumption of this module is that you use Python 3.6 or later.  [
 
 One alternative to installation of Python3.6 (or later) is to use a cloud-based Python.  Think of this as a Python someone else installed, that you access through your Web browser.  [Azure Notebooks](https://blogs.msdn.microsoft.com/uk_faculty_connection/2017/06/10/guide-to-the-microsoft-azure-notebooks-for-students/) and [Python Anywhere](https://www.pythonanywhere.com/) are a couple of at least a half-dozen good cloud-based services you might consider.
 
-[TODO:  Jeff, I have mixed feelings about this section.  In principle, I'd rather refer to the `python.org` or **realpython** sites, and not supply instructions here.]
+[TODO:  Jeff, I have mixed feelings about this section.  In principle, I'd rather refer to the `python.org` or **realpython** sites, or even the Microsoft store, and leave these common instructions to others rather than supplying them here.]
 
 1. If Python 3.6 or higher isn't installed on your computer, go to https://www.python.org/ and install it now. You can determine whether it's installed on Windows by executing the following command in a Command Prompt window:
+
+[TODO with Jeff:  pick consistent formatting for source blocks.]
 
 	```bash
 	python --version
