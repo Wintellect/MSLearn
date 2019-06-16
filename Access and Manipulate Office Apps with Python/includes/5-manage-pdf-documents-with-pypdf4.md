@@ -15,21 +15,29 @@ As you've already read in other Lessons, several packages address a particular d
 
 For this Lesson, install **PyPDF4**:
 
-    python3.6 -m pip install xlwings
+    python3.6 -m pip install PyPDF4
 
 
 ## Demonstration
 
+Create a program
+
+    import glob
+    
+    import PyPDF4
+
+    for pdf_filename in glob.iglob("toplevelfolder/**/*.pdf", recursive=True):
+        reader = PyPDF4.PdfFileReader(open(pdf_filename), "rb"))
+        print(f"Document {pdf_filename} has {reader.getNumPages()} pages.")
+
+This program will likely take many hours to run--but not months.
+
+
 ## Further study
 
-The demonstration above showed Python reading from a spreadsheet.  The same **OpenPyXL** package also writes new spreadsheets, and updates existing ones.  **OpenPyXL**'s capabilities considerably exceed the limits of what [its documentation](https://openpyxl.readthedocs.io/en/stable/) only introduces, in fact.  **OpenPyXL** accesses essentially everything within Excel, although few of those capabilities have been written up as working examples yet.
-
-That's not all:  other Python packages, among which [**PyXLL**](https://www.pyxll.com/) is the most polished, are **add-ins** for Excel:  they communicate with an executing instance of Excel.  Excel can be used as a **dashboard**, for instance, with certain cells lighting up as alarms when a particular Python calculation yields a particular result.  Or the communication can go the other way:  Python can be used to drive a Web site, as [TODO with Jeff:  reference] introduces, with its content coming in real time from an Excel spreadsheet.  The next Lesson shows a small example of the rich additional communication possible between Excel and Python.
+As with the other Lessons, this little demonstration only hints at a small fraction of **PyPDF4**'s capabilities.  If you work with PDF documents, you'll soon find yourself writing a variety of **PyPDF4**-based programs and scripts to help meet your goals.
 
 
 ## Summary
 
-* Several freely-available packages give Python the ability to read and write Excel spreadsheets.
-* Among these, OpenPyXL is well-maintained and highly capable.
-* A small Python program of only a dozen line can achieve impressive results in automatically retrieving and processing information from an Excel spreadsheet.
-* Python is so productive that it's often worthwhile to write a Python program to solve a one-time need.
+* [TODO]
