@@ -8,7 +8,7 @@ Such endeavors are more than academic. With Python, you can query a database, pe
 
 ## Excel + Python == Smart Spreadheets
 
-The spreadsheet pictured below is one of several that you will build in this module. It analyzes each text string in the A column for sentiment and displays a score from 0.0 to 1.0 in the B column, where 0.0 is negative and 1.0 is positive. Its intelligence comes from a machine-learning model written in Python and trained with tens of thousands of reviews. And it is just one example of the magic you can work with Office when you have Python lending a helping hand.
+The spreadsheet pictured below is one of several examples that you will build in this module. It analyzes each text string in the A column for sentiment and displays a score from 0.0 to 1.0 in the B column, where 0.0 is negative and 1.0 is positive. Its intelligence comes from a machine-learning model written in Python and trained with tens of thousands of reviews. And it is just one example of the magic you can work with Office when you have Python lending a helping hand.
 
 ![Performing sentiment analysis in Excel](media/excel-sentiment.png)
 
