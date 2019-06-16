@@ -19,7 +19,9 @@ Finally, you heard that it's time to migrate to Python 3.6 or higher.
 
 1. Your cousin blows your mind by writing a remarkable Python library that compares different retail electricity vendors.  It impresses you so much that you say, "you ought to register that so _any_ Python programmer can install it--just make it available on ..." [name the repository]
 
-1.  One way to compute a particular weighted average in Excel is with a formula such as<br /><br >&nbsp;&nbsp;&nbsp;&nbsp;`= (C14 * D14 + C15 * D15 + C16 * D16 + C17 * D17 + C18 * D18) / sum(D14:D18)`<br /><br />Explain three benefits of Python's corresponding expression<br /><br >&nbsp;&nbsp;&nbsp;&nbsp;`weighted_average = sum([amount * factor for amount, factor in zip(amounts, factors)]) / sum(amounts)`
+1.  One way to compute a particular weighted average in Excel is with a formula such as<br /><br >&nbsp;&nbsp;&nbsp;&nbsp;`= (C14 * D14 + C15 * D15 + C16 * D16 + C17 * D17 + C18 * D18 + C19 * D19 + C20 * D20) / sum(D14:D18)`<br /><br />Explain three benefits of Python's corresponding expression<br /><br >&nbsp;&nbsp;&nbsp;&nbsp;`weighted_average = sum([amount * factor for amount, factor in zip(amounts, factors)]) / sum(amounts)`
+
+1.  Explain one disadvantage of expressing the last computation as<br /><br >&nbsp;&nbsp;&nbsp;&nbsp;`numpy.average(factors, weights=amounts)`
 
 1.  ... introspection ...
 
