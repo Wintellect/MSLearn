@@ -14,13 +14,17 @@ Several packages include UDF capabilities.  For this Lesson, install open-source
 
 ## Demonstration
 
+[TODO]
+
 ## Further study
 
-The demonstration above showed Python reading from a spreadsheet.  The same **OpenPyXL** package also writes new spreadsheets, and updates existing ones.  **OpenPyXL**'s capabilities considerably exceed the limits of what [its documentation](https://openpyxl.readthedocs.io/en/stable/) only introduces, in fact.  **OpenPyXL** accesses essentially everything within Excel, although few of those capabilities have been written up as working examples yet.
+Think about VBA and Python.  VBA is generally a bit more convenient for small scripting jobs of which it's capable.  Python can do essentially everything VBA does, _plus_ Python now connects to a vast world of libraries outside Excel, outside Office, and even outside Microsoft.  Ideal is not to try to figure out which is better, but how to make the best use of both.
 
-That's not all:  other Python packages, among which [**PyXLL**](https://www.pyxll.com/) is the most polished, are **add-ins** for Excel:  they communicate with an executing instance of Excel.  Excel can be used as a **dashboard**, for instance, with certain cells lighting up as alarms when a particular Python calculation yields a particular result.  Or the communication can go the other way:  Python can be used to drive a Web site, as [TODO with Jeff:  reference] introduces, with its content coming in real time from an Excel spreadsheet.  The next Lesson shows a small example of the rich additional communication possible between Excel and Python.
+One engaging way to practice teamwork between Excel and Python is to compute complex results in Python, then graph them with Excel's built-in visualization methods.  Keep the interface between the two constant, while you iteratively improve the calculations on the Python side, and the visual design on the Excel side.
 
 
 ## Summary
 
-* 
+* Excel's **add-in** construction defines a standard interface which several different Python packages use to communicate _in real time_ between an active Excel spreadsheet and an executing Python program.
+* **xlwings** is a good introductory choice among these packages.
+* Definition of a UDF is a good way to program a channel where Excel and Python can exchange results.
