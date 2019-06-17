@@ -62,7 +62,7 @@ This tutorial assumes that you are using the Bash command-line shell. Bash is th
 - We can use standard Unix commands, which you can also cut and paste, to create and modify files.
 - You may occasionally need to use Git on a server (for example, a web host) where a GUI isn't available.
 
-If you are use Windows, you should be aware of a few peculiarities stemming from Git's Linux heritage:
+If you use Windows, you should be aware of a few peculiarities stemming from Git's Linux heritage:
 
 - Commands are case-sensitive.
 - Command options are preceded by hyphens (`-`). In Git and most other Unix utilities most options have both a short form (a single character) and a long form (a word preceded by `--`).
