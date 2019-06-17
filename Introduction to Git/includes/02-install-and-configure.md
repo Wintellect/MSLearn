@@ -57,7 +57,7 @@ The Git Web site includes installation instructions for [other Linux and Unix di
 <a name="configure-git"></a>
 ## Configure Git
 
-Now that Git is installed, let's set it up so you can start working with it.
+Now that Git is installed, let's make sure it's configured properly.
 
 1. Open a Command Prompt window if you're running Windows, or a terminal if you're running macOS or Linux.
 
