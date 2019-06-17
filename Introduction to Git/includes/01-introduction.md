@@ -8,7 +8,7 @@ In this module, you accomplish all this and more with Git. Git can seem a little
 
 ## What is a version-control system?
 
-A version-control system (VCS) is a program (or set of programs) that tracks changes for a collection of files. One goal is to easily recall earlier versions of individual files or the entire project. In a VCS, you can make branches so that people can work independently, and later merge the changes you want to keep.
+A version-control system (VCS) is a program (or set of programs) that tracks changes for a collection of files. One goal is to easily recall earlier versions of individual files or the entire project. Another is to allow several team members to work on a project, even on the same files, at the same time without impacting each other.
 
 Another name for version-control systems is software configuration management (SCM) systems. The two terms are often used interchangeably — in fact, Git's official documentation is located at [git-scm.com](https://git-scm.com/). Technically, however, version control is just one of the practices involved in SCM, while a VCS can be used for projects other than software including books and online tutorials.
 
@@ -17,8 +17,8 @@ With a version-control system:
 - You can see all the changes made to your project, when the changes were made, and who made them.
 - Every change has a message associated with it, explaining the reason for the change.
 - You can retrieve every past version of the entire project or individual files.
-- You can make branches, wherein changes can be made experimentally. This allows several different sets of changes (for example, features or bug fixes) to be worked on at the same time, possibly by different people, without impacting the master branch.
-- You can attach a tag to a version, for example to mark a new release.
+- You can create *branches*, wherein changes can be made experimentally. This allows several different sets of changes (for example, features or bug fixes) to be worked on at the same time, possibly by different people, without impacting the master branch. Later, you can merge the changes you want to keep back into master.
+- You can attach a tag to a version — for example to mark a new release.
 
 Git is a fast, versatile, highly scalable, free, open-source version-control system. Its primary author is [Linus Torvalds](https://en.wikipedia.org/wiki/Linus_Torvalds), the creator of Linux. If you're interested, you can learn how Git came about by reading [A Short History of Git](https://git-scm.com/book/en/v2/Getting-Started-A-Short-History-of-Git).
 
