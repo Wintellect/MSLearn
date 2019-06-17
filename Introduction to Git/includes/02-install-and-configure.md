@@ -1,4 +1,4 @@
-# Install and Configure Git
+# Install and configure Git
 
 It's time to install Git on your computer and configure it for first use. If you're not sure whether Git is installed, open a Command Prompt window (Windows) or terminal (macOS and Linux) and execute the following command:
 
