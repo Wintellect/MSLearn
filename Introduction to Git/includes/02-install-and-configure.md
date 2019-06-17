@@ -1,12 +1,12 @@
 # Install and Configure Git
 
-It's time to install Git on your computer and configure it for first use. If you're not sure whether Git is installed and configured, open a Command Prompt window (Windows) or terminal (macOS and Linux) and execute the following command:
+It's time to install Git on your computer and configure it for first use. If you're not sure whether Git is installed, open a Command Prompt window (Windows) or terminal (macOS and Linux) and execute the following command:
 
 ```bash
-git config --get user.name
+git --version
 ```
 
-If your Git user name is displayed, then Git is installed and configured. If the response is "command not found" or something similar, then you need to install Git.
+If a version number is displayed, then Git is installed and you can skip ahead to the section entitled [Configure Git](#configure-git). Otherwise, follow the instructions in the next section to install Git.
 
 ## Install Git 
 
@@ -43,7 +43,7 @@ $ sudo apt install git-all
 If you have a slow connection or are using a computer with limited disk space, use the following command instead to install only the packages necessary for the exercises in this module (and add `git.el` if you're using Emacs as your text editor):
 
 ```bash
-$ sudo apt install git git-doc gitk git-gui curl
+$ sudo apt install git git-doc gitk git-gui
 ```
 
 On Fedora and other RPM-based distributions, use `dnf` rather than `apt`:
@@ -54,6 +54,7 @@ $ sudo dnf install git-all curl
 
 The Git website includes installation instructions for [other Linux and Unix distributions](https://git-scm.com/download/linux).
 
+<a name="configure-git"></a>
 ## Configure Git
 
 Now that Git is installed, let's set it up so you can start working with it.
@@ -66,7 +67,7 @@ Now that Git is installed, let's set it up so you can start working with it.
 	git config --show-origin --list
 	```
 
-	If you run this command on Windows in a directory that doesn't contain a Git repo, you'll see something like this:
+	If you run this command on Windows following a fresh instal of Git, you'll see something like this:
 
 	```
 	file:"C:\\ProgramData/Git/config"       core.symlinks=false
