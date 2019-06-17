@@ -10,7 +10,7 @@ If a version number is displayed, then Git is installed and you can skip ahead t
 
 ## Install Git 
 
-Git is available for free for Windows, macOS, and Linux. Follow the instructions below to install the version for the operating system you are using.
+Git is available for free for Windows, macOS, and Linux. How you install it depends on which operating system you are using.
 
 ### Install Git on Windows
 
