@@ -40,7 +40,7 @@ All of the major Linux distributions have Git in their package archives, which m
 sudo apt install git-all
 ```
 
-If you have a slow connection or are using a computer with limited disk space, use the following command instead to install only the packages necessary for the exercises in this module. You may omit `git.el` if Emacs isn't your default text editor:
+If you have a slow connection or are using a computer with limited disk space, use the following command instead to install only the packages necessary for the exercises in this module. Omit the final parameter (`git.el`) if Emacs isn't your default text editor:
 
 ```bash
 sudo apt install git git-doc gitk git-gui git.el
