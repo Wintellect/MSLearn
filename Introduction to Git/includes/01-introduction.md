@@ -44,7 +44,7 @@ To understand Git, you have to understand the terminology. Here is a short list 
 
 - **Branch:** A named series of linked commits. The most recent commit on a branch is called the *head*. The default branch, which is created when you initialize a repository, is called "master." The head of the current branch is called `HEAD`. Branches are an incredibly useful feature of Git because they allow developers to work independently (or together) in branches and later merge their changes into master.
 
-- **Remote:** A named reference to another Git repository. When you create or clone a repo, Git creates a remote named "origin" that is the default remote for push and pull operations.
+- **Remote:** A named reference to another Git repository. When you create a repo, Git creates a remote named "origin" that is the default remote for push and pull operations.
 
 - **Commands**, **subcommands**, and **options:** Git operations are performed using commands such as `git push` and `git pull`. `git` is the command, and `push` or `pull` is the subcommand. The subcommand specifies the operation you want Git to perform. Commands are frequently accompanied by options, which are predceded by hyphens (-) or double hyphens (--) — for example, `git reset --hard`. 
 
