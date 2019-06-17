@@ -38,11 +38,11 @@ Any discussion of Git begins with the terminology. Here is a short list of terms
 
 - **Hash:** A number produced by a [hash function](https://en.wikipedia.org/wiki/Hash_function) that reduces the contents of a file or other object to a fixed number of bits. Git uses [SHA-1 hashes](https://en.wikipedia.org/wiki/SHA-1), which are 160 bits long. The hashes of two files that differ only slightly are typically completely different. One advantage to using hashes is that Git can tell whether a file has changed by hashing its contents and comparing the result to the previous hash. If the file's time-and-date stamp has changed but the file's contents have not, Git knows it.
 
-- **Object (blob, tree, commit, tag):** A Git repo contains four types of "objects," each uniquely identified by an SHA-1 hash. A **blob** object contains an ordinary file. A **tree** object represents a directory; it contains names, hashes, and permissions. A **commit** object represents a specific version of the working tree. It contains the commit message, the name and e-mail address of the person who made it, the date, and the hashes of the current tree and the previous commit (called the *parent*). A commit may also be signed. A **tag** is a name attached to a commit. Tags come in two types. A _lightweight_ tag is a named reference to a commit. An _annotated_ tag has essentially the same information in it as a commit.
+- **Object (blob, tree, commit, tag):** A Git repo contains four types of "objects," each uniquely identified by an SHA-1 hash. A **blob** object contains an ordinary file. A **tree** object represents a directory; it contains names, hashes, and permissions. A **commit** object represents a specific version of the working tree. It contains the commit message, the name and e-mail address of the person who made it, the date, and the hashes of the current tree and the previous commit (called the *parent*). A commit may also be signed. A **tag** is a name attached to a commit. Tags come in two types. A _lightweight_ tag is a named reference to a commit. An _annotated_ tag has essentially the same information as a commit.
 
-- **Commit (verb):** When used as a verb, "commit" means to make a commit object; this takes its name from the corresponding database operation.
+- **Commit (verb):** When used as a verb, "commit" means to make a commit object. This action takes its name from the corresponding database operation.
 
-- **Branch:** A named series of linked commits. The most recent commit on a branch is called the *head*. The default branch, which is created when you initialize a repository, is called "master." The head of the current branch is called `HEAD`.
+- **Branch:** A named series of linked commits. The most recent commit on a branch is called the *head*. The default branch, which is created when you initialize a repository, is called "master." The head of the current branch is called `HEAD`. Branches are an incredibly useful feature of Git because they allow developers to work independently (or together) in branches and later merge their changes.
 
 - **Remote:** A named reference to another Git repository. When you clone a repo, Git creates a remote named "origin" that is the default remote for push and pull operations.
 
@@ -50,7 +50,7 @@ Any discussion of Git begins with the terminology. Here is a short list of terms
 
 - **Workflow:** a task or (more often) sequence of tasks, typically involving both human interactions and software automation. One goal in designing workflows is to automate processes as much as possible.
 
-Once more, don't get too hung up on the details. These terms and others will make more sense shortly. But you have to start somewhere, and you might find it helpful to come back and review this glossary terms after you have completed this module.
+Once more, don't get too hung up on the details. These terms and others such as "push" and "pull" will make more sense shortly. But you have to start somewhere, and you might find it helpful to come back and review this glossary terms after you have completed this module.
 
 ## The Git command line
 
