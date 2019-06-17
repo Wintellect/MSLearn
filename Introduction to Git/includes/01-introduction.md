@@ -46,7 +46,7 @@ To understand Git, you have to understand the terminology. Here is a short list 
 
 - **Remote:** A named reference to another Git repository. When you create or clone a repo, Git creates a remote named "origin" that is the default remote for push and pull operations.
 
-- **Command** or **Subcommand:** Git operations are performed using commands such as `git push` and `git pull`. `git` is the command, and `push` or `pull` is the subcommand. The subcommand specifies the operation you want Git to perform.
+- **Commands**, **subcommands**, and **options:** Git operations are performed using commands such as `git push` and `git pull`. `git` is the command, and `push` or `pull` is the subcommand. The subcommand specifies the operation you want Git to perform. Commands are frequently accompanied by options, which are predceded by hyphens (-) or double hyphens (--) — for example, `git reset --hard`. 
 
 - **Workflow:** a task or (more often) sequence of tasks, typically involving both human interactions and software automation. One goal in designing workflows is to automate processes as much as possible.
 
@@ -58,10 +58,6 @@ There are several different GUIs available for for Git. Examples include [GitKra
 
 The exercises in this module use the Git command line — specifically, Git commands executed in a Bash shell. Bash is the default on macOS and Linux, and it's installed automatically by [Git for Windows](https://gitforwindows.org/). The command line works the same no matter what operating system you're using. Plus, the command line lets you tap into *all* of Git's functionality. Developers who see Git only through a GUI sometimes find themselves confronted with error messages they can't resolve, and have to resort to the command line to get going again.
 
-If you use Windows, you should be aware of a few peculiarities stemming from Git's Linux heritage:
-
-- Commands are case-sensitive.
-- Command options are preceded by hyphens (`-`). Most options have both a short form (a single character) and a long form (a word preceded by `--`). In addition, options can often be combined into one, as in `-la` rather than `-l -a`.
-- Paths use forward slashes ("/") rather than backslashes.
+If you use Windows, you should be aware of a couple of peculiarities stemming from Git's Linux heritage. First, commands are case-sensitive. Second, paths use forward slashes ("/") rather than backslashes.
 
 The next step is to install Git on your computer and verify that it's working. Ready? Let's get started.
