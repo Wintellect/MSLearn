@@ -1,6 +1,6 @@
 # Introduction
 
-Imagine that you have started a new job as a software developer at a firm that writes avionics software for commercial aircraft. Quality control is critical, and developers work in small teams using [Git](https://git-scm.com/) for version control. You have experience with other version-control systems, but to date, your experience with Git is minimal. To flourish in your new role and add value to the team, you need to get up to speed on Git — and quickly.
+Imagine that you have started a new job as a software developer at a firm that writes avionics software for commercial airliners. Quality control is critical, and developers work in small teams using [Git](https://git-scm.com/) for version control. You have experience with other version-control systems, but to date, your experience with Git is minimal. To flourish in your new role and add value to the team, you need to get up to speed on Git — and quickly.
 
 So you decide to build a Web site that lets you and your friends share pictures of your cats. The project will serve as a learning platform, and you will apply the lessons learned there at work. You enlist a couple of friends who are also software developers to help out. Together, you set out to build the site using Git to aid in collaboration, keep track of changes (and who makes them), make sure nothing bad happens when two people change the same file, and keep all the source-code files backed up in case the server goes down.
 
@@ -8,7 +8,7 @@ In this module, you accomplish all this and more with Git. Git can seem a little
 
 ## What is a version-control system?
 
-A version-control system (VCS) is a program (or set of programs) that tracks changes for a collection of files. One goal is to easily recall earlier versions of individual files or the entire project. Another is to allow several team members to work on a project, even on the same files, at the same time without impacting each other.
+A version-control system (VCS) is a program (or set of programs) that tracks changes to a collection of files. One goal is to easily recall earlier versions of individual files or the entire project. Another is to allow several team members to work on a project, even on the same files, at the same time without impacting each other.
 
 Another name for version-control systems is software configuration management (SCM) systems. The two terms are often used interchangeably — in fact, Git's official documentation is located at [git-scm.com](https://git-scm.com/). Technically, however, version control is just one of the practices involved in SCM, while a VCS can be used for projects other than software including books and online tutorials.
 
