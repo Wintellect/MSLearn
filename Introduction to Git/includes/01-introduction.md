@@ -52,35 +52,16 @@ Any discussion of Git begins with the terminology. Here is a short list of terms
 
 Once more, don't get too hung up on the details. These terms and others will make more sense shortly. But you have to start somewhere, and you might find it helpful to come back and review this glossary terms after you have completed this module.
 
-## About the examples
+## The Git command line
 
-There are several different GUIs for Git. Examples include [GitKraken](https://www.gitkraken.com/) (which is cross-platform), [TortoiseGit](https://tortoisegit.org/) (Windows), and [git gui](https://mirrors.edge.kernel.org/pub/software/scm/git/docs/git-gui.html) (Linux). Most text editors and IDEs also have an interface to Git. Unfortunately, they all work differently and have different limitations. None of them implement _all_ of Git's functionality.
+There are several different GUIs for Git. Examples include [GitKraken](https://www.gitkraken.com/) (which is cross-platform), [TortoiseGit](https://tortoisegit.org/) (Windows), and [git gui](https://mirrors.edge.kernel.org/pub/software/scm/git/docs/git-gui.html) (Linux). Many program editors such as Microsoft's [Visual Studio Code](https://code.visualstudio.com/) also have an interface to Git. Unfortunately, they all work differently and have different limitations. None of them implement _all_ of Git's functionality.
 
-This tutorial assumes that you are using the Bash command-line shell. Bash is the default on macOS and Linux, and is installed automatically by [Git for Windows](https://gitforwindows.org/). We use Bash for several reasons:
-
-- Bash, and Git's command-line interface, work exactly the same no matter what operating system you're using. That's not true of the various graphical interfaces.
-- You can simply copy the commands out of the examples and paste them into a terminal window. Mistyped commands are a common source of frustration.
-- We can put command output under the commands, exactly as it will appear in your terminal window.  We don't need screen shots.
-- We can use standard Unix commands, which you can also cut and paste, to create and modify files.
-- You may occasionally need to use Git on a server (for example, a web host) where a GUI isn't available.
+The exercises in this module use the Git command line — specifically, Git commands executed in a Bash shell. Bash is the default on macOS and Linux, and is installed automatically by [Git for Windows](https://gitforwindows.org/). The command line works the same no matter what operating system you're using. In addition, the command line lets you tap into *all* of Git's functionality and is the best way to learn Git. Developers who see Git only through a GUI sometimes find themselves in situations that they can't get out of, and have to resort to the command line to get going again.
 
 If you use Windows, you should be aware of a few peculiarities stemming from Git's Linux heritage:
 
 - Commands are case-sensitive.
-- Command options are preceded by hyphens (`-`). In Git and most other Unix utilities most options have both a short form (a single character) and a long form (a word preceded by `--`).
-- Paths use forward slashes (`/`) to separate components.  The backslash (`\`) is an "escape" character for use in strings, and has the same meaning that it does in C.  Absolute paths start with a slash, so expect to see them start with `/c/` rather than `C:`.
-- Command options start with `-`. A single hyphen marks a one-character option; in some cases you can combine several options behind a single hyphen (for example, `ls -la`, which gives a long listing of all files in a directory, including the "hidden" ones that start with a period.
-- Options that start with `--` are full words; many have one-character equivalents, but not all of them do. Two hyphens by themselves (`--`) are sometimes used to separate different kinds of command-line arguments, such as branch names and file names in `git checkout`.
+- Command options are preceded by hyphens (`-`). Most options have both a short form (a single character) and a long form (a word preceded by `--`). In addition, options can often be combined into one, as in `-la` rather than `-l -a`.
+- Paths use forward slashes ("/") rather than backslashes.
 
-Commands in the examples are preceded by a dollar sign and a space (`$ `), which is the default prompt in Bash, and _not_ part of the command. The commands' output, if any, is indented. 
 
-The `$ ` should not be typed. Commands are followed by their output, if any. For example, if you accidentally copy and paste the prompt character, you get:
-
-```bash
-$ $ git
-  $: command not found
-```
-
-Bash treats almost any combination of characters at the start of a line as the name of a program to run; Unix is very permissive about file names.
-
-In real life, we create and edit text files with a text editor; in our examples we try to accomplish the same changes with Unix commands such as `echo`, `mkdir`, and `sed`. Unix commands and Git subcommands are listed at the end of each unit that uses them.
