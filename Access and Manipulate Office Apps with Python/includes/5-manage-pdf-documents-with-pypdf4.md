@@ -30,7 +30,12 @@ Create a program
         reader = PyPDF4.PdfFileReader(open(pdf_filename), "rb"))
         print(f"Document {pdf_filename} has {reader.getNumPages()} pages.")
 
-This program will likely take many hours to run--but not months.
+This program will likely take many hours to run--but not months.  [TODO:  sample output.]
+
+
+## [TODO]
+
+[TODO:  extract pages.  py extract-pages source.pdf final.pdf pages=1-3, 4, 6, 10]
 
 
 ## Further study
