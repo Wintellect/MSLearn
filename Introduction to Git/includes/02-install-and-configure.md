@@ -97,7 +97,7 @@ Now that Git is installed, let's set it up so you can start working with it.
 	git config --global --get user.name
 	```
 
-	If the output is empty, use this command to create a `user.name` configuration variable, replacing USER_NAME with the user name that you sih to use (for example, "scottgu"):
+	If the output is empty, use this command to create a `user.name` configuration variable, replacing USER_NAME with the user name you wish to use (for example, "scottgu"):
 
 	```bash
 	git config --global user.name USER_NAME
