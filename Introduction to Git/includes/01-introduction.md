@@ -24,11 +24,9 @@ Git is a fast, versatile, highly scalable, free, open-source version-control sys
 
 ## Distributed version control
 
-Earlier VCSs, such as [CVS](http://www.nongnu.org/cvs/), [Subversion](https://subversion.apache.org/), and [Perforce](https://www.perforce.com/), used a centralized server to contain a project's history. This means that the server is a single source of truth about the history, but it's also a single point of failure. If a developer can't connect to the server, she can't record changes or compare her version with previous ones.
+Earlier VCSs, such as [CVS](http://www.nongnu.org/cvs/), [Subversion](https://subversion.apache.org/), and [Perforce](https://www.perforce.com/), used a centralized server to store a project's history. This meant that one server was also a single point of failure.
 
-Git is _distributed_, which means that every copy of a project contains its complete history. You can do all of the usual version-control operations without a network connection. The result is that developers can work independently. Although team members can designate a single copy as the definitive version, they don't have to; there are many different ways for developers to collaborate. Changes can be passed around in email, or on removable media.
-
-In addition to allowing independent development, a distributed VCS also gives you backups for free.
+Git is _distributed_, which means that a project's complete history is stored on the client as well as the server. You can edit files without a network connection, check them in locally, and sync with the server when a connection becomes available. If a server goes down, you still have a local copy of the project. Technically, you don't even have to have a server. Changes can be passed around in e-mail or shared using removable media.
 
 ## Git terminology
 
