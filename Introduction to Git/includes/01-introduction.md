@@ -1,22 +1,26 @@
 # Introduction
 
-Imagine that you want to set up a website where you and your friends can show off pictures of your cats. You start out working by yourself, but you hope that some of your friends will join in the fun. For the website to be a success, you need to make it easy to collaborate, keep track of changes (and who makes them), make sure that nothing bad happens if two people want to change the same page, and keep it backed up in case the server goes down.
+Imagine that you have started a new job as a software developer at a firm that writes avionics software for commercial aircraft. Quality control is critical, and developers work in small teams using [Git](https://git-scm.com/) for version control. You have experience with other version-control systems, but to date, your experience with Git is minimal. To flourish in your new role and add value to the team, you need to get up to speed on Git — and quickly.
 
-In other words, you need a version-control system. The obvious choice is [Git](https://git-scm.com/), a fast, versatile, highly scalable, free, open-source, and very popular distributed version-control system. In this module, you learn how to use Git to manage collaborative projects using basic version control.
+So you decide to build a Web site that lets you and your friends can share pictures of your cats. This project will serve as a learning platform, and you will apply the lessons learned there at work. You enlist a couple of friends who are also software developers to help out. Together, you set out to build the site using Git for version control to aid in collaboration, keep track of changes (and who makes them), make sure nothing bad happens when two people change the same file, and keep all the source-code files backed up in case the server goes down.
+
+In this module, you accomplish all this and more with Git. Git can seem a little cryptic at first and even be frustrating at times, but if you learn it step by step, you will find that there's a reason it is quickly becoming the world's most popular version-control system — not just for software developers, but for teams who write documentation as well. 
 
 ## What is a version-control system?
 
 A version-control system (VCS) is a program (or set of programs) that tracks changes for a collection of files. One goal is to easily recall earlier versions of individual files or the entire project. In a VCS, you can make branches so that people can work independently, and later merge the changes you want to keep.
 
-Another name for Version Control Systems is Software Configuration Management (SCM) system. The two terms are often used interchangeably — in fact, Git's official documentation is located at [git-scm.com](https://git-scm.com/). However, technically version control is just one of the practices involved in SCM, while a VCS can be used for things other than software including books, websites, and tutorials.
+Another name for version-control systems is software configuration management (SCM) systems. The two terms are often used interchangeably — in fact, Git's official documentation is located at [git-scm.com](https://git-scm.com/). Technically, however, version control is just one of the practices involved in SCM, while a VCS can be used for things other than software including books, Web sites, and tutorials.
 
 With a version-control system:
 
 - You can see all the changes made to your project, when the changes were made, and who made them.
 - Every change has a message associated with it, explaining the reason for the change.
 - You can retrieve every past version of the entire project or individual files.
-- You can make branches, wherein changes can be made experimentally. This allows several different sets of changes (for example, features or bug fixes) to be worked on at the same time, possibly by different people.
+- You can make branches, wherein changes can be made experimentally. This allows several different sets of changes (for example, features or bug fixes) to be worked on at the same time, possibly by different people, without impacting the master branch.
 - You can attach a tag to a version, for example to mark a new release.
+
+Git is a fast, versatile, highly scalable, free, open-source version-control system. Its primary author is [Linus Torvalds](https://en.wikipedia.org/wiki/Linus_Torvalds), the creator of Linux. If you're interested, you can learn how Git came about by reading [A Short History of Git](https://git-scm.com/book/en/v2/Getting-Started-A-Short-History-of-Git).
 
 ## Distributed version control
 
