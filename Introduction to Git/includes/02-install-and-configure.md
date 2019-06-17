@@ -27,7 +27,7 @@ You can also get the Git command-line tools by installing [GitHub Desktop](https
 Git is included with the Xcode command-line tools. If you use macOS 10.9 or higher, simply execute a  Git command in a terminal window:
 
 ```bash
-$ git --version
+git --version
 ```
 
 If Git isn't already installed, the operating system will prompt you to install it. The most recent version of Git for macOS is also available for download from https://git-scm.com/download/mac.
@@ -37,19 +37,19 @@ If Git isn't already installed, the operating system will prompt you to install 
 All of the major Linux distributions have Git in their package archives, which makes installation a snap. On Ubuntu and other Debian-based distributions, use this command:
 
 ```bash
-$ sudo apt install git-all
+sudo apt install git-all
 ```
 
-If you have a slow connection or are using a computer with limited disk space, use the following command instead to install only the packages necessary for the exercises in this module (and add `git.el` if you're using Emacs as your text editor):
+If you have a slow connection or are using a computer with limited disk space, use the following command instead to install only the packages necessary for the exercises in this module. You may omit `git.el` if Emacs isn't your default text editor:
 
 ```bash
-$ sudo apt install git git-doc gitk git-gui
+sudo apt install git git-doc gitk git-gui git.el
 ```
 
 On Fedora and other RPM-based distributions, use `dnf` rather than `apt`:
 
 ```bash
-$ sudo dnf install git-all curl
+sudo dnf install git-all curl
 ```
 
 The Git website includes installation instructions for [other Linux and Unix distributions](https://git-scm.com/download/linux).
