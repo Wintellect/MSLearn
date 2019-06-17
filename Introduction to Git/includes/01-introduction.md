@@ -30,7 +30,7 @@ Git is _distributed_, which means that a project's complete history is stored on
 
 ## Git terminology
 
-To understand Git, you have to understand the terminology. Here is a short list of terms that Git users frequently use. Don't sweat the details for now; all of these terms will become familiar to you as you work your way through this module.
+To understand Git, you have to understand the terminology. Here is a short list of terms that Git users frequently use. Don't sweat the details for now; all of these terms will become familiar as you work your way through the exercises in this module.
 
 - **Working tree:** The set of nested directories and files that contains the project being worked on.
 
