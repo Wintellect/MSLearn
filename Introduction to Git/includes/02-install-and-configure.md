@@ -91,10 +91,27 @@ Now that Git is installed, let's set it up so you can start working with it.
 
 1. The only global configuration variables that *must* be defined are `user.name` and `user.email`. Both are required for commits; neither is present in the output above. Git tries to guess these based on your user name and your computer's name and DNS domain, but then it complains every time you make a commit. Rightly so, because its guess is almost always wrong.
 
-	If the output from `git config --show-origin --list` does *not* include variables named `user.name` and `user.email`, use the following commands to create them, replacing USER_NAME with your name and USER_EMAIL with your e-mail address:
+	Use the following command to determine whether `user.name` is defined:
+
+	```bash
+	git config --global --get user.name
+	```
+
+	If the output is empty, use this command to create a `user.name` configuration variable, replacing USER_NAME with the user name that you sih to use (for example, "scottgu"):
 
 	```bash
 	git config --global user.name USER_NAME
+	```
+
+1. Now use this command to determine whether `user.email` is defined:
+
+	```bash
+	git config --global --get user.email
+	```
+
+	If the output is empty, use this command to create a `user.email` configuration variable, replacing USER_EMAIL with your e-mail address:
+
+	```bash
 	git config --global user.email USER_EMAIL
 	```
 
