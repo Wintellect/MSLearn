@@ -1,111 +1,124 @@
 # Install and Configure Git
 
-If you haven't already done so, it's time to install Git on the computer on which you intend to work. Git is available for Windows, MacOS, and Linux.
+It's time to install Git on your computer and configure it for first use. If you're not sure whether Git is installed and configured, open a Command Prompt window (Windows) or terminal (macOS and Linux) and execute the following command:
 
-If Git is already installed, skip ahead to the next section, which is about configuring the VCS. Or, if git is already configured with your user name and email ID, jump to the next unit.
-
-You can tell whether Git is installed and properly configured with the command:
-
-```
-$ git config --get user.name
+```bash
+git config --get user.name
 ```
 
-If it doesn't print your name, skip to the next section:  Git is installed but not configured.  If it prints `Command git not found`, read on!
+If your Git user name is displayed, then Git is installed and configured. If the response is "command not found" or something similar, then you need to install Git.
 
 ## Install Git 
 
-Unless you're curious — or use more than one operating system — you can just read the subsection for the computer you're sitting in front of. We start with Windows because it's the most common and the most complicated.
+Git is available for free for Windows, macOS, and Linux. Follow the instructions below to install the version for the operating system you are using.
 
 ### Install Git on Windows
-You can download the most recent official version of Git for Windows from http://git-scm.com/download/win; the download starts automatically. Git for Windows is a separate project from Git; you can get more information at https://git-for-windows.github.io/. If you have a preferred text editor, such as Atom or Emacs, you should set it as the default while installing. If you don't have one yet, select `nano` to start with; the default is `vim`, which although extremely powerful is not at all beginner-friendly.
 
-> Hint: If you get into Vim accidentally, typing `:q!` gets you out.
+To install Git on a Windows PC, go to https://git-scm.com/download/win and install the latest version of [Git for Windows](https://gitforwindows.org/). When prompted to choose a default editor, we recommend [Visual Studio Code](https://code.visualstudio.com/), Microsoft's free cross-platform source-code editor. Any editor will do, but the default is [Vim](https://en.wikipedia.org/wiki/Vim_(text_editor)), which although extremely powerful is not beginner-friendly. You may accept the defaults everywhere else.
 
-You can also get the git command-line tools by installing GitHub Desktop, which you can get from
-https://desktop.github.com/. 
+![Selecting a text editor](media/git-editor.png)
 
-Both Git for Windows and GitHub Desktop include a terminal window with the Bash shell (command-line processor), the Vim and Nano text editors, and most of the standard Linux command-line utilities.
+_Selecting a text editor_
+
+You can also get the Git command-line tools by installing [GitHub Desktop](https://desktop.github.com/). But don't confuse Git with [GitHub](https://github.com/) and GitHub Desktop. GitHub is a popular source-code repository owned by Microsoft that uses Git for version control. GitHub Desktop is a cross-platform GUI for GitHub. You use Git to interact with GitHub, but you can use Git independently of GitHub, too.  
 
 ### Install Git on macOS
 
-Git is included with the Xcode command line tools. If you use MacOS 10.9 and above, simply try to run Git from the command line; if it's not already installed, the operating system prompts you to do so:
+Git is included with the Xcode command-line tools. If you use macOS 10.9 or higher, simply execute a  Git command in a terminal window:
 
-```
+```bash
 $ git --version
 ```
 
-The most recent version of Git for MacOS is also available for download from https://git-scm.com/download/mac.
+If Git isn't already installed, the operating system will prompt you to install it. The most recent version of Git for macOS is also available for download from https://git-scm.com/download/mac.
 
 ### Install Git on Linux
 
-All of the major Linux distributions have Git in their package archives, which makes installation simple. On Ubuntu and other Debian-based distributions, the most common case, use `apt`:
+All of the major Linux distributions have Git in their package archives, which makes installation a snap. On Ubuntu and other Debian-based distributions, use this command:
 
 ```bash
 $ sudo apt install git-all
 ```
 
-If you're impatient or on a computer with limited disk space, you can install just the packages you need for this tutorial (and add `git.el` if you're using Emacs as your text editor):
+If you have a slow connection or are using a computer with limited disk space, use the following command instead to install only the packages necessary for the exercises in this module (and add `git.el` if you're using Emacs as your text editor):
 
 ```bash
 $ sudo apt install git git-doc gitk git-gui curl
 ```
 
-On Fedora and other RPM-based distributions, use `dnf`:
+On Fedora and other RPM-based distributions, use `dnf` rather than `apt`:
 
 ```bash
 $ sudo dnf install git-all curl
 ```
 
-The Git website includes [installation instructions for other Linux
-and Unix distributions](https://git-scm.com/download/linux).
+The Git website includes installation instructions for [other Linux and Unix distributions](https://git-scm.com/download/linux).
 
 ## Configure Git
 
-Great. Git is installed. Now let's set it up so you can get to work with it.
+Now that Git is installed, let's set it up so you can start working with it.
 
-You query, set, replace, or delete configuration variables with the  `git config` command. The default is to query or modify the "local" configuration file, located in the current git repository (`.git/config`). In addition, there is a "global" configuration in your home directory. Depending on operating system, a "system" configuration file that applies to all users may also be found, in an OS-dependent location. Use `git help config` to see where the system and global files are on your system, as well as the complete lists of options and configuration variables.
+1. Open a Command Prompt window if you're running Windows, or a terminal if you're running macOS or Linux.
 
-To start with, the only global configuration variables you absolutely need to set are
-your name and email address, both of which are needed for commits. (Git tries to guess these based on your username and your computer's name and DNS domain, but then it complains every time you make a commit. Rightly so, because its guess is almost always wrong. You may as well set it straight once and for all.)
+1. Git relies on configuration variables managed with the [git config](https://git-scm.com/docs/git-config) command. It uses a combination of local configuration variables stored in a directory named ".git" in each Git repo, global configuration variables stored in a file in your home directory, and system configuration variables in a file whose location is operating-system-dependent. Use the following command to display these variables:
 
-You set these values with:
+	```bash
+	git config --show-origin --list
+	```
 
-```bash
-$ git config --global user.name "Your Name"
-$ git config --global user.email you@example.com
-```
+	If you run this command on Windows in a directory that doesn't contain a Git repo, you'll see something like this:
 
-If you're using Windows, you have a little more work to do. Windows uses the character combination "CR,LF" (Carriage Return, Line Feed) to end lines in text files, but Unix-based operating systems (Linux and MacOS) use just "LF". Git uses the Unix convention by default, so if you collaborate with people who use a different operating system, you need to tell Git to convert line endings.
+	```
+	file:"C:\\ProgramData/Git/config"       core.symlinks=false
+	file:"C:\\ProgramData/Git/config"       core.autocrlf=true
+	file:"C:\\ProgramData/Git/config"       core.fscache=true
+	file:"C:\\ProgramData/Git/config"       color.diff=auto
+	file:"C:\\ProgramData/Git/config"       color.status=auto
+	file:"C:\\ProgramData/Git/config"       color.branch=auto
+	file:"C:\\ProgramData/Git/config"       color.interactive=true
+	file:"C:\\ProgramData/Git/config"       help.format=html
+	file:"C:\\ProgramData/Git/config"       rebase.autosquash=true
+	file:C:/Program Files/Git/mingw64/etc/gitconfig http.sslcainfo=C:/Program Files/Git/mingw64/ssl/certs/ca-bundle.crt
+	file:C:/Program Files/Git/mingw64/etc/gitconfig http.sslbackend=openssl
+	file:C:/Program Files/Git/mingw64/etc/gitconfig diff.astextplain.textconv=astextplain
+	file:C:/Program Files/Git/mingw64/etc/gitconfig filter.lfs.clean=git-lfs clean -- %f
+	file:C:/Program Files/Git/mingw64/etc/gitconfig filter.lfs.smudge=git-lfs smudge -- %f
+	file:C:/Program Files/Git/mingw64/etc/gitconfig filter.lfs.process=git-lfs filter-process
+	file:C:/Program Files/Git/mingw64/etc/gitconfig filter.lfs.required=true
+	file:C:/Program Files/Git/mingw64/etc/gitconfig credential.helper=manager
+	```
 
-```
-$ git config --global core.autocrlf true
-$ git config --global core.safecrlf true
-```
+1. The only global configuration variables that *must* be defined are your name and e-mail address. Both are required for commits and are missing from the output above. Git tries to guess these based on your user name and your computer's name and DNS domain, but then it complains every time you make a commit. Rightly so, because its guess is almost always wrong.
 
-There's a good discussion of this problem in [Mind the End of Your Line](https://adaptivepatchwork.com/2012/03/01/mind-the-end-of-your-line/) by [Tim Clem](https://adaptivepatchwork.com/about/). There are some additional subtleties that Windows users may need to watch out for later, but the defaults are all you need for this tutorial. 
+	If the output from `git config --show-origin --list` does *not* include variables named `user.name` and `user.email`, use the following commands to create them, replacing USER_NAME with your name and USER_EMAIL with your e-mail address:
 
-## Check your configuration
+	```bash
+	git config --global user.name USER_NAME
+	git config --global user.email USER_EMAIL
+	```
 
-At this point, you can use the following command to list all of Git's global configuration variables. The `--show-origin` option shows in which file each is defined.
+1. If you're using Windows, you have a little more work to do. Windows uses the CRLF (Carriage Return/Line Feed) character combination to end lines in text files, but Unix-based operating systems such as Linux and macOS use just line feeds. Git uses the Unix convention by default, so if you collaborate with people who use a different operating system, you need to tell Git to convert line endings. To that end, execute the following commands:
 
-```bash
-$ git config --show-origin --list
-```
+	```bash
+	git config --global core.autocrlf true
+	git config --global core.safecrlf true
+	```
 
-The values you just set will be in your home directory (under "/home" on Linux, "/Users" on macOS, or "C:\Users" on Windows). macOS and Windows users also probably have some system variables defined.
+	There's a good discussion of this problem in [Mind the End of Your Line](https://adaptivepatchwork.com/2012/03/01/mind-the-end-of-your-line/) by [Tim Clem](https://adaptivepatchwork.com/about/). There are some additional subtleties that Windows users may need to watch out for later, but the defaults are all you need for this module. 
 
-## Summary
+1. Now execute the following command again:
 
-In this unit you installed and configured Git, and learned about:
+	```bash
+	git config --show-origin --list
+	```
 
-- `[`git config`](https://git-scm.com/docs/git-config)`, which gets, sets, replaces, or deletes configuration variables.
+	Confirm that the output includes four lines similar to the following. Your name and e-mail address will be different, of course, and the paths will be different on macOS and Linux:
 
-You've also seen brief mentions of
+	```
+	file:C:/Users/scottgu/.gitconfig      user.name=scottgu
+	file:C:/Users/scottgu/.gitconfig      user.email=scottgu@microsoft.com
+	file:C:/Users/scottgu/.gitconfig      core.autocrlf=true
+	file:C:/Users/scottgu/.gitconfig      core.safecrlf=true
+	```
 
-- [vim](https://linux.die.net/man/1/vim), an advanced text editor favored by many Unix and Linux developers, with a well-deserved reputation for user-unfriendliness
-- [nano](https://linux.die.net/man/1/nano), a basic but very easy-to-use text editor
-- [sudo](https://linux.die.net/man/1/sudo), a Unix command that lets you run a single command as the system administrator (`root`) without having to log in as root.
-
-> It may look a little odd not to start each bullet point with a capital letter, but Git and the Bash shell have built-in commands that are case-sensitive, even on Windows and macOS.
-
-In the next unit, you learn how to set up a project so that you can use Git to track changes.
+In the next unit, you learn how to set up a project so you can use Git to track changes.
