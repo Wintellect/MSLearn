@@ -52,7 +52,7 @@ On Fedora and other RPM-based distributions, use `dnf` rather than `apt`:
 sudo dnf install git-all curl
 ```
 
-The Git website includes installation instructions for [other Linux and Unix distributions](https://git-scm.com/download/linux).
+The Git Web site includes installation instructions for [other Linux and Unix distributions](https://git-scm.com/download/linux).
 
 <a name="configure-git"></a>
 ## Configure Git
