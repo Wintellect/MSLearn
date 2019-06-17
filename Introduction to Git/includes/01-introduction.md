@@ -1,4 +1,4 @@
-# Introduction to Version Control and Git
+# Introduction
 
 Imagine that you want to set up a website where you and your friends can show off pictures of your cats. You start out working by yourself, but you hope that some of your friends will join in the fun. For the website to be a success, you need to make it easy to collaborate, keep track of changes (and who makes them), make sure that nothing bad happens if two people want to change the same page, and keep it backed up in case the server goes down.
 
