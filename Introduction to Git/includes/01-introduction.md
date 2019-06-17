@@ -46,7 +46,7 @@ Any discussion of Git begins with the terminology. Here is a short list of terms
 
 - **Remote:** A named reference to another Git repository. When you clone a repo, Git creates a remote named "origin" that is the default remote for push and pull operations.
 
-- **Command** or **Subcommand:** Git operations are performed using commands such as `git push` and `git pull`. `git` is the command, and `push` or `pull` is the subcommand. The subcommand specifies the operation you want Git to perform..
+- **Command** or **Subcommand:** Git operations are performed using commands such as `git push` and `git pull`. `git` is the command, and `push` or `pull` is the subcommand. The subcommand specifies the operation you want Git to perform.
 
 - **Workflow:** a task or (more often) sequence of tasks, typically involving both human interactions and software automation. One goal in designing workflows is to automate processes as much as possible.
 
