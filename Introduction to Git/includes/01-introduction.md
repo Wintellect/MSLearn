@@ -52,29 +52,25 @@ As with any programming endeavor, there's unique nomenclature for the tool's ele
 
 ## About the examples
 
-There are several different GUIs for Git, for example GitKraken (which is cross-platform), TortoiseGit (on Windows), and `git gui` (on Linux). Most text editors and IDEs also have an interface to Git. Unfortunately, they all work differently and have different limitations. None of them implement _all_ of Git's functionality.
+There are several different GUIs for Git. Examples include [GitKraken](https://www.gitkraken.com/) (which is cross-platform), [TortoiseGit](https://tortoisegit.org/) (Windows), and [git gui](https://mirrors.edge.kernel.org/pub/software/scm/git/docs/git-gui.html) (Linux). Most text editors and IDEs also have an interface to Git. Unfortunately, they all work differently and have different limitations. None of them implement _all_ of Git's functionality.
 
-This tutorial assumes that you are using the Bash command-line shell. Bash is the default on MacOS and Linux, and installed automatically by Git for Windows. We use Bash for several reasons:
+This tutorial assumes that you are using the Bash command-line shell. Bash is the default on macOS and Linux, and is installed automatically by [Git for Windows](https://gitforwindows.org/). We use Bash for several reasons:
 
 - Bash, and Git's command-line interface, work exactly the same no matter what operating system you're using. That's not true of the various graphical interfaces.
 - You can simply copy the commands out of the examples and paste them into a terminal window. Mistyped commands are a common source of frustration.
-- We can put command output under the commands, exactly as it will appear in your terminal window.  We don't need screenshots.
+- We can put command output under the commands, exactly as it will appear in your terminal window.  We don't need screen shots.
 - We can use standard Unix commands, which you can also cut and paste, to create and modify files.
 - You may occasionally need to use Git on a server (for example, a web host) where a GUI isn't available.
 
 If you are used to Windows, there are a couple of peculiarities due to Git's Linux heritage:
 
 - Commands, options, and so on are case-sensitive.
-
-- Command options are preceded by hyphens (`-`); in Git and most other Unix utilities most options have both a short form (a single character) and a long form (a word preceeded by `--`).
-
+- Command options are preceded by hyphens (`-`); in Git and most other Unix utilities most options have both a short form (a single character) and a long form (a word preceded by `--`).
 - Paths use forward slashes (`/`) to separate components.  The backslash (`\`) is an "escape" character for use in strings, and has the same meaning that it does in C.  Absolute paths start with a slash, so expect to see them start with `/c/` rather than `C:`.
-
 - Command options start with `-`. A single hyphen marks a one-character option; in some cases you can combine several options behind a single hyphen (for example, `ls -la`, which gives a long listing of all files in a directory, including the "hidden" ones that start with a period.
+- Options that start with `--` are full words; many have one-character equivalents, but not all of them do. Two hyphens by themselves (`--`) are sometimes used to separate different kinds of command-line arguments, such as branch names and file names in `git checkout`.
 
-- Options that start with `--` are full words; many have one-character equivalents, but not all of them do. Two hyphens by themselves (`--`) are sometimes used to separate different kinds of command-line arguments, such as branch names and filenames in `git checkout`.
-
-Commands in the examples are preceeded by a dollar sign and a space (`$ `), which is the default prompt in Bash, and _not_ part of the command. The commands' output, if any, is indented. 
+Commands in the examples are preceded by a dollar sign and a space (`$ `), which is the default prompt in Bash, and _not_ part of the command. The commands' output, if any, is indented. 
 
 The `$ ` should not be typed. Commands are followed by their output, if any. For example, if you accidentally copy and paste the prompt character, you get:
 
