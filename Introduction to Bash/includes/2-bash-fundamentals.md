@@ -84,13 +84,19 @@ Now let's say the pwd also contains JPEG files, and some end in **.jpg** while o
 ls *.jpg *.jpeg
 ```
 
-Another way is to use the ? wildcard, which represents a single character and also matches on no character at all:
+And here is another:
 
 ```bash
-ls *.jp?g
+ls *.jp*g
 ```
 
-Yet another way to use wildcards to filter output is to use square brackets, which denote groups of characters. The following command lists all the files in the pwd whose names contain a period immediately followed a lowercase J or P, which means it would list all the **.jpg**, **.jpeg**, and **.png** files, but not **.gif** files:
+The \* wildcard matches on zero or more characters, but the ? wildcard represents a single character. If the current directory contains files named **0001.jpg**, **0002.jpg**, and so on though **0009.jpg**, the following command lists them all:
+
+```bash
+ls 000?.jpg
+```
+
+Yet another way to use wildcards to filter output is to use square brackets, which denote groups of characters. The following command lists all the files in the pwd whose names contain a period immediately followed a lowercase J or P, which means it lists all the **.jpg**, **.jpeg**, and **.png** files, but not **.gif** files:
 
 ```bash
 ls *.[jp]*

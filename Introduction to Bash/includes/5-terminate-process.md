@@ -26,12 +26,13 @@ If you're going to kill a process, you need a process to kill. Let's create one.
 
 	This program, when executed, runs in an infinite loop — clearly not something you want running on your server.
 
-1. After typing the program, press the **Esc** key to exit insert mode. Then type the following commands, each followed by the **Enter** key, to save the program and exit `vi`:
+1. After typing the program, press the **Esc** key to exit insert mode. Then type the following command followed by the **Enter** key to save the program and exit `vi`:
 
 	```
-	:w
-	:q
+	:wq
 	```
+
+	Be sure to include the colon at the beginning of the command. As for the remainder of the command, `w` stands for "write" and `q` stands for "quit."
 
 1. Now use the following command to start the program and leave it running in the background:
 
@@ -39,7 +40,7 @@ If you're going to kill a process, you need a process to kill. Let's create one.
 	python3 bad.py &
 	```
 
-	Be sure to include the ampersand at the end of the command. Otherwise, you won't return to the Bash prompt. In Bash, the ampersand executes a command and returns you to the command line, even if the command hasn't finished running.
+	Be sure to include the ampersand at the end of the command. Otherwise, you won't return to the Bash prompt. In Bash, the ampersand executes a command and returns to the command line, even if the command hasn't finished running.
 
 It's not obvious, but **bad.py** is now running in the background and stealing CPU cycles from other processes. Let's take a look under the hood to see what's happening.
 
@@ -74,7 +75,7 @@ To kill a process, you need the process name or process ID. This is a job for `p
 
 1. If you were killing a daemon process — one that runs in the background and provides vital services to the operating system — you might want to kill it and immediately restart it. To do that, you could use a SIGHUP signal, which kills and then restarts the process.
 
-	In this example, you want to kill the process and leave it dead. Therefore, you want to use the SIGKILL signal, which corresponds to the number 9. To that end, grab **bad.py**'s process ID from the `ps -ef` output (it's in the second column) and use the following command to terminate the process, replacing PROCESS_ID with the process ID:
+	In this example, you want to kill the process without restarting it. Therefore, you want to use the SIGKILL signal, which corresponds to the number 9. To that end, grab **bad.py**'s process ID from the `ps -ef` output (it's in the second column) and use the following command to terminate the process, replacing PROCESS_ID with the process ID:
 
 	```bash
 	kill -9 PROCESS_ID
