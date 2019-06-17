@@ -30,27 +30,27 @@ Git is _distributed_, which means that a project's complete history is stored on
 
 ## Git terminology
 
-As with any programming endeavor, there's unique nomenclature for the tool's elements. This is a short list of terms that Git users frequently use. We explore some of these concepts in later units.
+Any discussion of Git begins with the terminology. Here is a short list of terms that Git users frequently use. Don't sweat the details for now; all of these terms will become familiar to you as you work your way through this module.
 
-- **Working Tree:** the set of nested directories and files that contains the version being worked on.
+- **Working tree:** The set of nested directories and files that contains the project being worked on.
 
-- **Repository (repo):** the directory, called `.git` and located at the top level of a working tree, where Git keeps all of the history and metadata for a project. "Repository" is almost always shortened to **repo**.
+- **Repository (repo):** The directory, located at the top level of a working tree, where Git keeps all of the history and metadata for a project. Repositories are almost always referred to as *repos*. A *bare repository* is one that is not part of a working tree; it is used for sharing or backup. A bare repo is usually a directory with a name ending in `.git`, e.g., `project.git`.
 
-- A **bare repository** is a repository that is not part of a working tree; it is used for sharing or backup. A bare repo is usually a directory with a 	name ending in `.git`, e.g., `project.git`.
+- **Object (blob, tree, commit, tag):** A Git repo contains four types of "objects," each of which is uniquely identified by an [SHA-1 hash](https://en.wikipedia.org/wiki/SHA-1). A **blob** object contains an ordinary file. A **tree** object represents a directory; it contains the names, hashes, and permissions for all of its contents. A **commit** object represents a version of the working tree. It contains the commit message, the name and e-mail address of the person who made it, the date, and the hashes of the current tree and the previous commit (called the *parent*). A commit may also be signed. A **tag** is a name attached to a commit. Tags come in two types. A _lightweight_ tag is a named reference to a commit. An _annotated_ tag has essentially the same information in it as a commit.
 
-- **Object (blob, tree, commit, tag):** A Git repo contains four types of "objects," each of which is uniquely identified by an SHA-1 hash. A **blob** object contains an ordinary file. A **tree** object represents a directory; it contains the names, hashes, and permission bits of all of its contents. A **commit** object represents a version of the working tree. It contains the commit message, the name and email address of the person who made it, the date, and the hashes of the current tree and the previous commit (called the **parent**). A commit may also be signed. A **tag** is a name attached to a commit. Tags come in two types: a _lightweight_ tag is a named reference to a commit; an _annotated_ tag has essentially the same information in it as a commit.
-
-- **Hash:** A hash is a large number that results from a process, called a [hash function](https://en.wikipedia.org/wiki/Hash_function), that reduces a file or other object to a fixed number of bits. Git identifies files and other objects by computing their SHA-1 hash, which is 160 bits long. It has the additional property that the hashes of two files that differ in a single bit are almost completely different.
+- **Hash:** A number produced by a [hash function](https://en.wikipedia.org/wiki/Hash_function) that reduces the contents of a file or other object to a fixed number of bits. Git identifies files and other objects by computing SHA-1 hashes, which are 160 bits long. The hashes of two files that differ only slightly are typically completely different.
 
 - **Commit (verb):** When used as a verb, "commit" means to make a commit object; this takes its name from the corresponding database operation.
 
-- **Branch:** a named series of linked commits. The most recent commit on a branch is called its **head**. The default branch, which is created when you initialize a repository, is called `master`. The head of the current branch is called `HEAD`.
+- **Branch:** A named series of linked commits. The most recent commit on a branch is called the *head*. The default branch, which is created when you initialize a repository, is called "master." The head of the current branch is called `HEAD`.
 
-- **Remote:** a named pointer to another Git repository. When you clone a repo, Git creates a remote called `origin` that is the default remote for push and pull operations.
+- **Remote:** A named reference to another Git repository. When you clone a repo, Git creates a remote named "origin" that is the default remote for push and pull operations.
 
 - **Command** or **Subcommand:** All of Git's operations are performed by a command line starting with `git` -- the name of the program -- followed by the name of the operation. That name is properly called a _subcommand_, but _command_ is often used for either the subcommand or the Git command
 
 - **Workflow:** a task or (more often) sequence of tasks, typically involving both human interactions and software automation. One goal in designing workflows is to automate processes as much as possible.
+
+Once more, don't get too hung up on the details. These terms and others will make more sense shortly. But you have to start somewhere, and you might find it helpful to come back and review this glossary terms after you have completed this module.
 
 ## About the examples
 
