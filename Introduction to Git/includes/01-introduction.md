@@ -2,7 +2,7 @@
 
 Imagine that you want to set up a website where you and your friends can show off pictures of your cats. You start out working by yourself, but you hope that some of your friends will join in the fun. For the website to be a success, you need to make it easy to collaborate, keep track of changes (and who makes them), make sure that nothing bad happens if two people want to change the same page, and keep it backed up in case the server goes down.
 
-In other words, you need a version-control system. The obvious choice is Git, a fast, versatile, highly-scalable, and very popular distributed version-control system. In this module, you learn how to use git to accomplish everything a basic user needs to know — at least for the purpose of sharing cat photos.
+In other words, you need a version-control system. The obvious choice is [Git](https://git-scm.com/), a fast, versatile, highly scalable, free, open-source, and very popular distributed version-control system. In this module, you learn how to use Git to manage collaborative projects using basic version control.
 
 ## What is a version-control system?
 
@@ -14,13 +14,13 @@ With a version-control system:
 
 - You can see all the changes made to your project, when the changes were made, and who made them.
 - Every change has a message associated with it, explaining the reason for the change.
-- You can retrieve every past version of either the whole project, or any file in it.
+- You can retrieve every past version of the entire project or individual files.
 - You can make branches, wherein changes can be made experimentally. This allows several different sets of changes (for example, features or bug fixes) to be worked on at the same time, possibly by different people.
 - You can attach a tag to a version, for example to mark a new release.
 
 ## Distributed version control
 
-Earlier VCSs, such as CVS, Subversion, and Perforce, use a centralized server to contain a project's history. That means that the server is a single source of truth about the history, but it's also a single point of failure. If a developer can't connect to the server, she can't record changes or compare her version with previous ones.
+Earlier VCSs, such as [CVS](http://www.nongnu.org/cvs/), [Subversion](https://subversion.apache.org/), and [Perforce](https://www.perforce.com/), used a centralized server to contain a project's history. This means that the server is a single source of truth about the history, but it's also a single point of failure. If a developer can't connect to the server, she can't record changes or compare her version with previous ones.
 
 Git is _distributed_, which means that every copy of a project contains its complete history. You can do all of the usual version-control operations without a network connection. The result is that developers can work independently. Although team members can designate a single copy as the definitive version, they don't have to; there are many different ways for developers to collaborate. Changes can be passed around in email, or on removable media.
 
@@ -28,11 +28,11 @@ In addition to allowing independent development, a distributed VCS also gives yo
 
 ## Git terminology
 
-As with any programming endeavor, there's unique nomenclature for the tool's elements. This is a short list of terms that git users frequently use. We explore some of these concepts in later units.
+As with any programming endeavor, there's unique nomenclature for the tool's elements. This is a short list of terms that Git users frequently use. We explore some of these concepts in later units.
 
 - **Working Tree:** the set of nested directories and files that contains the version being worked on.
 
-- **Repository (repo):** the directory, called `.git` and located at the top level of a working tree, where git keeps all of the history and metadata for a project. "Repository" is almost always shortened to **repo**.
+- **Repository (repo):** the directory, called `.git` and located at the top level of a working tree, where Git keeps all of the history and metadata for a project. "Repository" is almost always shortened to **repo**.
 
 - A **bare repository** is a repository that is not part of a working tree; it is used for sharing or backup. A bare repo is usually a directory with a 	name ending in `.git`, e.g., `project.git`.
 
@@ -44,7 +44,7 @@ As with any programming endeavor, there's unique nomenclature for the tool's ele
 
 - **Branch:** a named series of linked commits. The most recent commit on a branch is called its **head**. The default branch, which is created when you initialize a repository, is called `master`. The head of the current branch is called `HEAD`.
 
-- **Remote:** a named pointer to another git repository. When you clone a repo, git creates a remote called `origin` that is the default remote for push and pull operations.
+- **Remote:** a named pointer to another Git repository. When you clone a repo, Git creates a remote called `origin` that is the default remote for push and pull operations.
 
 - **Command** or **Subcommand:** All of Git's operations are performed by a command line starting with `git` -- the name of the program -- followed by the name of the operation. That name is properly called a _subcommand_, but _command_ is often used for either the subcommand or the Git command
 
@@ -62,10 +62,10 @@ This tutorial assumes that you are using the Bash command-line shell. Bash is th
 - We can use standard Unix commands, which you can also cut and paste, to create and modify files.
 - You may occasionally need to use Git on a server (for example, a web host) where a GUI isn't available.
 
-If you are used to Windows, there are a couple of peculiarities due to Git's Linux heritage:
+If you are use Windows, you should be aware of a few peculiarities stemming from Git's Linux heritage:
 
-- Commands, options, and so on are case-sensitive.
-- Command options are preceded by hyphens (`-`); in Git and most other Unix utilities most options have both a short form (a single character) and a long form (a word preceded by `--`).
+- Commands are case-sensitive.
+- Command options are preceded by hyphens (`-`). In Git and most other Unix utilities most options have both a short form (a single character) and a long form (a word preceded by `--`).
 - Paths use forward slashes (`/`) to separate components.  The backslash (`\`) is an "escape" character for use in strings, and has the same meaning that it does in C.  Absolute paths start with a slash, so expect to see them start with `/c/` rather than `C:`.
 - Command options start with `-`. A single hyphen marks a one-character option; in some cases you can combine several options behind a single hyphen (for example, `ls -la`, which gives a long listing of all files in a directory, including the "hidden" ones that start with a period.
 - Options that start with `--` are full words; many have one-character equivalents, but not all of them do. Two hyphens by themselves (`--`) are sometimes used to separate different kinds of command-line arguments, such as branch names and file names in `git checkout`.
