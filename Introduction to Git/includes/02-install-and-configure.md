@@ -10,7 +10,7 @@ If a version number is displayed, then Git is installed and you can skip ahead t
 
 ## Install Git 
 
-Git is available for free for Windows, macOS, and Linux. How you install it depends on which operating system you are using.
+Git is available for free for Windows, macOS, and Linux. How you install it depends on which operating system you're using.
 
 ### Install Git on Windows
 
@@ -67,7 +67,7 @@ Now that Git is installed, let's set it up so you can start working with it.
 	git config --show-origin --list
 	```
 
-	If you run this command on Windows following a fresh instal of Git, you'll see something like this:
+	If you run this command on Windows following a fresh install of Git, you'll see something like this:
 
 	```
 	file:"C:\\ProgramData/Git/config"       core.symlinks=false
@@ -89,7 +89,7 @@ Now that Git is installed, let's set it up so you can start working with it.
 	file:C:/Program Files/Git/mingw64/etc/gitconfig credential.helper=manager
 	```
 
-1. The only global configuration variables that *must* be defined are your name and e-mail address. Both are required for commits and are missing from the output above. Git tries to guess these based on your user name and your computer's name and DNS domain, but then it complains every time you make a commit. Rightly so, because its guess is almost always wrong.
+1. The only global configuration variables that *must* be defined are your name and e-mail address. Both are required for commits; neither is present in the output above. Git tries to guess these based on your user name and your computer's name and DNS domain, but then it complains every time you make a commit. Rightly so, because its guess is almost always wrong.
 
 	If the output from `git config --show-origin --list` does *not* include variables named `user.name` and `user.email`, use the following commands to create them, replacing USER_NAME with your name and USER_EMAIL with your e-mail address:
 
