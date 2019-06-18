@@ -53,14 +53,82 @@ This program will likely take many hours--but not months--to produce output such
 
 
 
-## [TODO]
+## More ambitious:  a utility to extract PDF pages
 
-[TODO:  extract pages.  py extract-pages source.pdf final.pdf pages=1-3, 4, 6, 10]
+[TODO:  explain extract pages.  py extract-pages source.pdf final.pdf pages=1-3, 4, 6, 10]
+
+    import sys
+
+    from PyPDF4 import PdfFileReader, PdfFileWriter
+
+
+    def extract_to(source_handle, destination_handle, page_numbers):
+        for page_number in page_numbers:
+            # PyPDF4 treats pages as zero-based.
+            destination_handle.addPage(source_handle.getPage(page_number - 1))
+
+
+    def main():
+        (source_handle, destination_handle,
+         destination_filename, page_numbers) = parse_commandline()
+        extract_to(source_handle, destination_handle, page_numbers)
+        write_result(destination_handle, destination_filename)
+
+
+    def parse_commandline():
+        '''
+            Return a quadruple, of which the last element is a list of integer
+            1-based page numbers.  Example:  a third command-line argument of
+                pages=1-3,5,8,11-14
+            becomes the list
+                [1, 2, 3, 5, 8, 11, 12, 13, 14]
+            
+            Possible improvements for the future:
+            * recognize
+                  page=7
+              in place of
+                  pages=7
+            * allow more freedom in formatting, perhaps including whitespace.
+        '''
+        args = sys.argv
+        page_prefix = "pages="
+        cmd = (f"\n\t{args[0]} <SOURCE_PDF> "
+               f"<DESTINATION_PDF> {page_prefix}<PAGE_NUMBERS>.")
+        if len(args) != 4:
+            print("Make sure you include 3 arguments, rather than "
+                  f"{len(args) - 1}:{cmd}")
+            sys.exit(1)
+        source_filename, destination_filename, pages_arg = args[1:]
+        if pages_arg.startswith(page_prefix):
+            pages_arg = pages_arg[len(page_prefix):]
+        else:
+            print(f"Make sure you format the page numbers as indicated:{cmd}")
+            sys.exit(1)
+        destination_handle = PdfFileWriter()
+        source_handle = PdfFileReader(open(source_filename, "rb"))
+        page_numbers = []
+        for page_part in pages_arg.split(','):
+            page_range = page_part.split('-')
+            if len(page_range) == 2:
+                for page in range(int(page_range[0]), int(page_range[1]) + 1):
+                    page_numbers.append(page)
+            else:
+                page_numbers.append(int(page_range[0]))
+        return (source_handle, destination_handle, destination_filename,
+                page_numbers)
+
+
+    def write_result(destination_handle, destination_filename):
+        destination_handle.write(open(destination_filename, "wb"))
+
+
+    if __name__ == '__main__':
+        main()
 
 
 ## Further study
 
-As with the other Lessons, this little demonstration only hints at a small fraction of **PyPDF4**'s capabilities.  If you work with PDF documents, you'll soon find yourself writing a variety of **PyPDF4**-based programs and scripts to help meet your goals.
+As with the other Lessons, these little demonstrations only hint at a small fraction of **PyPDF4**'s capabilities.  If you work with PDF documents, you'll soon find yourself writing a variety of **PyPDF4**-based programs and scripts to help meet your goals.
 
 
 ## Summary
