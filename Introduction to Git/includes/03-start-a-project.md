@@ -45,7 +45,7 @@ Git doesn't do much with empty directories, so let's add a file to the project d
 	touch index.html
 	```
 
-	`touch` updates the last-modified time of the file exists, or creates an empty file if it doesn't exist.
+	`touch` updates a file's last-modified time if the file exists, or creates an empty file if it does not.
 
 1. Now use `git status` again to get the status of the working tree:
 
