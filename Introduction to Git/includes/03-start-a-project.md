@@ -111,9 +111,7 @@ A commit message can have multiple lines. The first line should have no more tha
 
 ## Modify index.html
 
-**index.html** was created to serve as the Web site's home page, but it's currently empty. The next step is to piur some HTML into it. We'll start simple by using Unix's [echo](https://linux.die.net/man/1/echo) command to add a single line of HTML.
-
-We need to put some kind of content onto our cat-centric website, and it makes sense to start with its home page. Here, you use the `echo` command to add a heading line to `index.html`. `echo` is a Unix command that echoes whatever you type. The `>` on the command line redirects the command's output to a file.
+**index.html** was created to serve as the Web site's home page, but it's currently empty. The next step is to pour some HTML into it. We'll start simple by using Unix's [echo](https://linux.die.net/man/1/echo) command to add a single line of HTML.
 
 1. Execute the following command:
 
