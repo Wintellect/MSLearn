@@ -31,7 +31,7 @@ Start by creating an empty directory and initializing a Git working tree inside 
 
 	Confirm that the directory contains a subdirectory named ".git." This is the directory in which Git stores metadata for the working tree.
 
-You typically don't do anything with the ".git" directory yourself. Git updates the metadata there as the status of the working tree changes. This directory is hands-off for you, but it's incredibly important to Git.
+You typically don't do anything with the ".git" directory directly. Git updates the metadata there as the status of the working tree changes. This directory is hands-off for you, but it's incredibly important to Git.
 
 ## Create and add (stage) a file
 
