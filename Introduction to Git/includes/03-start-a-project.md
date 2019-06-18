@@ -224,7 +224,7 @@ One of the reasons why Git has so many sub-commands is that they're so easy to c
 
 ## Summary
 
-In this unit you learned how to create a project that is under Git's control from the start. You also learned about the following Git subcommands:
+In this unit, you learned how to create a project that is under Git's control. You also learned about the following Git subcommands:
 
 - [`git init`](https://git-scm.com/docs/git-init), which creates and initializes a Git repository in the current directory
 - [`git add `](https://git-scm.com/docs/git-add), which adds files or directories to the index
