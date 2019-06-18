@@ -163,7 +163,7 @@ This is a great time to take a look inside the repository and see what Git is do
 	ls -RFC .git/objects
 	``` 
 
-	It's worth taking a moment to note the way Git stores objects: "objects" has a subdirectory corresponding to the first byte (two hex digits) of the object's hash. The remaining 19 bytes are the name of the file in that directory that contains the object itself.
+	It's worth taking a moment to note the way Git stores objects. The "objects" directory has a subdirectory corresponding to the first byte (two hex digits) of the object's hash. The remaining 19 bytes are the name of the file in that directory that contains the object itself.
 
 1. Objects are stored in binary files (they're compressed with `gzip`), but you can examine their contents with [git show](https://git-scm.com/docs/git-show). To demonstrate, try this:
 
