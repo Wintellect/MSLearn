@@ -109,28 +109,29 @@ _Commit_ is both a verb and a noun. It has essentially the same meaning as when 
 
 A commit message can have multiple lines. The first line should have no more than 50 characters, and should be followed by a blank line. Subsequent lines should have no more than 72 characters. These aren't hard requirements, and they harken back to the days of punch cards and dumb terminals, but they do make `git log` output look better.
 
-## Add content
+## Modify index.html
+
+**index.html** was created to serve as the Web site's home page, but it's currently empty. The next step is to piur some HTML into it. We'll start simple by using Unix's [echo](https://linux.die.net/man/1/echo) command to add a single line of HTML.
 
 We need to put some kind of content onto our cat-centric website, and it makes sense to start with its home page. Here, you use the `echo` command to add a heading line to `index.html`. `echo` is a Unix command that echoes whatever you type. The `>` on the command line redirects the command's output to a file.
 
-```
-$ echo '<h1>Our Feline Friends</h1>' > index.html
+1. Execute the following command:
 
-$ git status
-On branch master
-Changes not staged for commit:
-  (use "git add <file>..." to update what will be committed)
-  (use "git checkout -- <file>..." to discard changes in working directory)
+	```bash
+	echo '<h1>Our Feline Friends</h1>' > index.html
+	```
 
-	modified:   index.html
+	The `>` operator redirects the command's output to a file — in this case, **index.html**.
 
-no changes added to commit (use "git add" and/or "git commit -a")
-$ git commit -a -m "add a heading to index.html"
-[master 4c3b05d] add a heading to index.html
- 1 file changed, 1 insertion(+)
-```
+1. Use a `git status` command to check the status of the working tree. What does it say about **index.html**?
 
-The `-a` option to `git commit` adds all of the files you modified since the last commit.  It won't add _new_ files -- for that you still need `git add`.
+1. Now commit the changes:
+
+	```bash
+	git commit -a -m "Add a heading to index.html"
+	```
+
+The `-a` option adds all of the files you modified since the last commit.  It won't add _new_ files — for that, you still need `git add`.
 
 ## Explore the Git repository
 
@@ -209,7 +210,7 @@ You can use the `-t` option to get the object's type. The `cat-file` command is 
 for f in /usr/bin/git-*; do file $f; done
 ```
 
-One of the reasons why Git has so many sub-commands is that they're so easy to create: Any executable file with a name starting with `git-` can be used as a subcommand. 
+One of the reasons why Git has so many subcommands is that they're so easy to create. Any executable file with a name starting with `git-` can be used as a subcommand. 
 
 ## Summary
 
