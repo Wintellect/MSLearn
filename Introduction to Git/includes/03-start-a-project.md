@@ -47,7 +47,7 @@ Git doesn't do much with empty directories, so let's add a file to the project d
 
 	`touch` updates a file's last-modified time if the file exists, or creates an empty file if it does not.
 
-1. Now use `git status` again to get the status of the working tree:
+1. Now use `git status` to get the status of the working tree:
 
 	```bash
 	git status
