@@ -109,7 +109,7 @@ _Commit_ is both a verb and a noun. It has essentially the same meaning as when 
 
 A commit message can have multiple lines. The first line should have no more than 50 characters, and should be followed by a blank line. Subsequent lines should have no more than 72 characters. These aren't hard requirements, and they harken back to the days of punch cards and dumb terminals, but they do make `git log` output look better.
 
-## Modify index.html
+## Modify index.html and commit the change
 
 **index.html** was created to serve as the Web site's home page, but it's currently empty. The next step is to pour some HTML into it. We'll start simple by using Unix's [echo](https://linux.die.net/man/1/echo) command to add a single line of HTML.
 
