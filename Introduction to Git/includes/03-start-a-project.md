@@ -66,7 +66,7 @@ Git doesn't do much with empty directories, so let's add a file to the project d
 	nothing added to commit but untracked files present (use "git add" to track)
 	```
 
-	Notice that `git status` gives you hints about what you can do next. Git can be configured to be less wordy, but at this stage, outut such as this is helpful.
+	Notice that `git status` gives you hints about what you can do next. Git can be configured to be less wordy, but at this stage, the more information, the better.
 
 1. Now use [git add](https://git-scm.com/docs/git-status) to add the new file to Git's "index," and check the status again with `git status`. Don't forget the period at the end of the first command. It tells Git to index all the new files in the current directory:
 
