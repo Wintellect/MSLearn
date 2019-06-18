@@ -14,7 +14,7 @@ Git is available for free for Windows, macOS, and Linux. How you install it depe
 
 ### Install Git on Windows
 
-To install Git on a Windows PC, go to https://git-scm.com/download/win and install the latest version of [Git for Windows](https://gitforwindows.org/). When prompted to choose a default editor, we recommend [Visual Studio Code](https://code.visualstudio.com/), Microsoft's free cross-platform source-code editor. Any editor will do, but the default is [Vim](https://en.wikipedia.org/wiki/Vim_(text_editor)), which although extremely powerful is not beginner-friendly. You may accept the defaults everywhere else.
+To install Git on a Windows PC, go to the [Git Web site](https://git-scm.com/download/win) and install the latest version of [Git for Windows](https://gitforwindows.org/). When prompted to choose a default editor, we recommend [Visual Studio Code](https://code.visualstudio.com/), Microsoft's free cross-platform source-code editor. Any editor will do, but the default is [Vim](https://en.wikipedia.org/wiki/Vim_(text_editor)), which although extremely powerful is not beginner-friendly. You may accept the defaults everywhere else.
 
 ![Selecting a text editor](media/git-editor.png)
 
@@ -30,7 +30,7 @@ Git is included with the Xcode command-line tools. If you use macOS 10.9 or high
 git --version
 ```
 
-If Git isn't already installed, the operating system will prompt you to install it. The most recent version of Git for macOS is also available for download from https://git-scm.com/download/mac.
+If Git isn't already installed, the operating system will prompt you to install it. The most recent version of Git for macOS is also available [here](https://git-scm.com/download/mac).
 
 ### Install Git on Linux
 
