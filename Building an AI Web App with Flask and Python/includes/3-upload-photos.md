@@ -2,7 +2,7 @@
 
 Now that you have an environment for Python and Flask prepared and have the basics of Flask under your belt, it's time to build a Web site. A Flask Web site begins with an **app.py** file and basic assets such as HTML, CSS, and images. You will start by using [Git](https://en.wikipedia.org/wiki/Git) to download a set of starter files for the Contoso Travel site. Then you will enhance the site to support photo uploads.
 
-1. If [Git](https://en.wikipedia.org/wiki/Git) isn't installed on your computer, go to https://git-scm.com/ and install it now. Versions are available for Windows, macOS, and Linux.
+1. If [Git](https://en.wikipedia.org/wiki/Git) isn't installed on your computer, go to the [Git Web site](https://git-scm.com/) and install it now. Versions are available for Windows, macOS, and Linux.
 
 1. In a Command Prompt window or terminal, `cd` to the project directory you created in the previous unit. Then use the following command to clone the GitHub repo containing the starter files for the Web site:
 
