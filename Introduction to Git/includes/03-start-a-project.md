@@ -91,7 +91,7 @@ _Commit_ is both a verb and a noun. It has essentially the same meaning as when 
 
 	There are many different ways to phrase commit messages, but a good guideline is to write the first line in the present imperative tense so that it says *what the commit does to the tree*. It's also common to capitalize the first letter, and to leave off the closing period to save space. Imagine that the first line of the message completes the sentence starting with "When pushed, this commit will...."  
 
-1. Follow up with a `git status` command and confirm that the working tree is clean.
+1. Follow up with a `git status` command and confirm that the working tree is clean — that is, the working tree contains no changes that haven't been committed.
 
 1. Now use a [git log](https://git-scm.com/docs/git-log) command to show information about the commit:
 
