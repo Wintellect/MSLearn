@@ -66,7 +66,7 @@ Git doesn't do much with empty directories, so let's add a file to the project d
 	nothing added to commit but untracked files present (use "git add" to track)
 	```
 
-	Notice that `git status` gives you hints about what you can do next. Git can be configured to be less wordy, but at this stage, the more information, the better.
+	Notice that `git status` gives you hints about what you can do next. Git can be configured to be less wordy, but at this stage, more is better.
 
 1. Now use [git add](https://git-scm.com/docs/git-status) to add the new file to Git's "index," followed by `git status` to check the status. Don't forget the period at the end of the first command. It tells Git to index all of the files in the current directory that have been added or modified:
 
@@ -81,41 +81,33 @@ Rather than use `git add .`, you could have used `git add index.html` since **in
 
 ## Make your first commit
 
-Now that `index.html` has been added to the index, you can commit it. Doing so requires that you understand what "commit" really means.
+Now that **index.html** has been added to the index, the next step is to commit it. Doing so requires that you understand what "commit" really means.
 
-_Commit_ is both a verb and a noun. It has essentially the same meaning as when you commit to a plan, or commit a change to a database.
+_Commit_ is both a verb and a noun. It has essentially the same meaning as when you commit to a plan, or commit a change to a database. As a verb, committing changes means you put a copy (of the file, directory, or other "stuff") in the repository as a new version. As a noun, a commit is the small chunk of data that gives a unique identity to the changes you committed. It includes the author's name and e-mail address, the date, comments about what you did (and why), an optional digital signature, and the unique identifier of the previous commit.
 
-As a verb, committing changes means you put a copy (of the file, directory, or other "stuff") in the repository as a new version. As a noun, a commit is the small chunk of data that gives a unique identity to the changes you committed. It includes the author's name; the author's email address; the date; comments about what you did (and why); an optional digital signature; and the unique identifier of the previous commit.
+1. Use the following command to create a commit:
 
-```
-$ git commit index.html -m "Create an empty index.html file"
-[master (root-commit) 93dda01] Create an empty index.html file
- 1 file changed, 0 insertions(+), 0 deletions(-)
- create mode 100644 index.html
-$ git status
-On branch master
-nothing to commit, working tree clean
-$ git log
-commit 93dda01e79f9f791c0fcba727ff18d1c7ccf76c8
-Author: Steve Savitzky <steve@savitzky.net>
-Date:   Tue May 14 14:23:39 2019 -0700
+	```bash
+	git commit index.html -m "Create an empty index.html file"
+	```
 
-    Create an empty index.html file
-$ git log --oneline
-93dda01 Create an empty index.html file
-```
+	There are many different ways to phrase commit messages, but a good guideline is to write the first line in the present imperative tense so that it says *what the commit does to the tree*. It's also common to capitalize the first letter, and to leave off the closing period to save space. Imagine that the first line of the message completes the sentence starting with "When pushed, this commit will...."  
 
-When you try this on your own computer, expect different commit IDs. A commit includes the date and time it was made, and the name and email address of the person who made it.
+1. Follow up with a `git status` command and confirm that the working tree is clean.
 
-If you don't provide a message on the command line, `git commit` invokes the default text editor so that you can create such a message.
+1. Now use a [git log](https://git-scm.com/docs/git-log) command to show information about the commit:
+
+	```bash
+	git log
+	```
+
+1. Use the following command to see an abbreviated version of the commit:
+
+	```bash
+	git log --oneline
+	```
 
 A commit message can have multiple lines. The first line should have no more than 50 characters, and should be followed by a blank line. Subsequent lines should have no more than 72 characters. These aren't hard requirements, but they do make Git's messaging look better.
-
-For example, the format of `git log --oneline` adds 25 characters to the message, so a 50-character message still fits conveniently in an 80-column default terminal window.
-
-Strictly speaking, everything up to the first blank line is a *paragraph*, and it can be any length. However, if the commit message is longer than 50 characters it may be truncated in some cases, and wrap in the middle of words in others. Lines of 72 characters and blank lines separating paragraphs were standard for text-based email. (Historically, the arbitrary-looking limits of 72 and 80 characters go back to the days when punched cards had 80 columns; the last eight columns were used to number the cards as a safety measure in case the deck was dropped.)
-
-There are many different ways to phrase commit messages, but a good guideline is to write the first line in the present imperative tense so that it says *what the commit does to the tree*. It's also common to capitalize the first letter, and to leave off the closing period to save space. Imagine that the first line of the message completes the sentence starting with "When pushed, this commit will...."  Some good articles to read about formatting commit messages are "[The Art of the Commit](https://alistapart.com/article/the-art-of-the-commit)" by David Demaree and "[How to Write a Git Commit Message](https://chris.beams.io/posts/git-commit/)" by Chris Beams.
 
 ## Add content
 
