@@ -107,7 +107,7 @@ _Commit_ is both a verb and a noun. It has essentially the same meaning as when 
 	git log --oneline
 	```
 
-A commit message can have multiple lines. The first line should have no more than 50 characters, and should be followed by a blank line. Subsequent lines should have no more than 72 characters. These aren't hard requirements, and they harken back to the days of punch cards and terminals with 80-character lines, but they do make `git log` output look better.
+A commit message can have multiple lines. The first line should have no more than 50 characters, and should be followed by a blank line. Subsequent lines should have no more than 72 characters. These aren't hard requirements, and they harken back to the days of punch cards and dumb terminals, but they do make `git log` output look better.
 
 ## Add content
 
