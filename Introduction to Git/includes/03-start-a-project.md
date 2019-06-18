@@ -101,13 +101,13 @@ _Commit_ is both a verb and a noun. It has essentially the same meaning as when 
 	git log
 	```
 
-1. Use the following command to see an abbreviated version of the commit:
+1. Use this command to see an abbreviated version of the commit:
 
 	```bash
 	git log --oneline
 	```
 
-A commit message can have multiple lines. The first line should have no more than 50 characters, and should be followed by a blank line. Subsequent lines should have no more than 72 characters. These aren't hard requirements, but they do make Git's messaging look better.
+A commit message can have multiple lines. The first line should have no more than 50 characters, and should be followed by a blank line. Subsequent lines should have no more than 72 characters. These aren't hard requirements, but they do make `git log` output look better.
 
 ## Add content
 
