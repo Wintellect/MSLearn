@@ -1,6 +1,6 @@
 # Start a project
 
-It's time to get your Web-site project off the ground. In the exercises that follow, you will create a directory to serve as the project directory for the site and create a simple HTML file in it. Then you will place that directory under Git's control by turning it into a Git repo. Finally, you will make some changes in the directory and learn to how commit the changes. 
+It's time to get your Web-site project off the ground. In the exercises that follow, you will create a directory to serve as your project directory and create a simple HTML file in it. Then you will place that directory under Git's control by turning it into a Git repo. Finally, you will make some changes in the directory and learn to how commit the changes. 
 
 There are actually two ways to create a Git working tree on your computer. One is to create a Git repo in an existing directory; the other is to clone an existing Git repository. You will see how the latter works in a subsequent unit. For now, let's start from scratch with an existing directory.
 
