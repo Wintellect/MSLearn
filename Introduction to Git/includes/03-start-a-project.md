@@ -155,7 +155,7 @@ This is a great time to take a look inside the repository and see what Git is do
 	ls -RFC .git/refs
 	```
 
-	Every branch has a corresponding file in ".git/refs/heads` that contains the hash of its head commit.
+	Every branch has a corresponding file in ".git/refs/heads" that contains the hash of its head commit.
 
 1. Now look inside the "/git/objects" directory:
 
