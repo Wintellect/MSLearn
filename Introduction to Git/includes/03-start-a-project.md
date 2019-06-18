@@ -8,9 +8,9 @@ There are actually two ways to create a Git working tree on your computer. One i
 
 Start by creating an empty directory and initializing a Git working tree inside it.
 
-1. Create a directory named "cats" or something similar in the location of your choice. (The directory name is unimportant; Git is happy to work with it regardless.) This will be the *project directory* where your Web site is stored. Then `cd` into that directory in a Command Prompt window or terminal.
+1. Create a directory named "cats" or something similar in the location of your choice. (The directory name is unimportant; Git is happy to work with it regardless.) This will be the *project directory* where your Web site is stored.
 
-1. Execute a [git init](https://git-scm.com/docs/git-init) command in the project directory to initialize the repository:
+1. `cd` to the project directory in a Command Prompt window or terminal. Then execute a [git init](https://git-scm.com/docs/git-init) command to initialize the repository:
 
 	```bash
 	git init
