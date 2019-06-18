@@ -133,82 +133,63 @@ The `-a` option adds all of the files you modified since the last commit.  It wo
 
 ## Explore the Git repository
 
-This is a good time to take a look inside the Git repository, while things are still uncomplicated. We use `ls -RFC` to make a recursive directory listing with flag characters (e.g., `/` flags directories, and `*` flags executable files).
+This is a great time to take a look inside the repository and see what Git is doing while things are still uncomplicated. The steps that follow aren't required, but they will help deepen your understanding of Git.
 
-```
-$ ls -FC .git
-COMMIT_EDITMSG	HEAD  branches	config	description hooks  index  info  logs
-objects	        refs
-```
+1. Use the following command to look inside the ".git" subdirectory:
 
-You can use `cat` to view the contents of `COMMIT_EDITMSG`, which contains the most recent commit message, HEAD, which contains the filename of the branch (`master`) that is currently checked out, and `config`, which contains the local configuration for this working tree.
+	```bash
+	ls -FC .git
+	```
 
-Using `ls -RF` you can drill down into `refs` and `objects`. (The following listing has been edited; missing parts are indicated by Bash comments, which start with `#`.)
+1. One of the files in the subdirectory is **COMMIT_EDITMSG**. It contains the most recent commit message. Use a [cat](https://linux.die.net/man/1/cat) command to list its contents to the screen:
 
-```
-$ ls -RFC .git/refs .git/objects
-.git/objects:
-0a/  41/  4c/  93/  e6/  info/	pack/
-# 
-.git/objects/0a:
-5568b3eb72786b7d025f317905c26d9b2a59ce	a3ab0a00c949dd8acef42d64c720ad0677b345
-# (other subdirectories of objects omitted)
+	```bash
+	cat .git/COMMIT_EDITMSG
+	```
 
-# objects/info and objects/pack are currently empty
+	Other files in the ".git" subdirectory include **HEAD**, which contains the file name of the branch (master) that is currently checked out, and **config**, which contains the local configuration for the working tree.
 
-.git/refs:
-heads/	tags/
-.git/refs/heads:
-master
-.git/refs/tags:
-$ cat .git/HEAD
-ref: refs/heads/master
-$ cat .git/refs/heads/master 
-4c3b05d4c547a39118ff3381f003d259f016aabf
-```
+1. Use `ls -RF` to drill down into the ".git/refs" directory:
 
-Every branch (`master` is the only one at the moment) has a corresponding file in `refs/heads` that contains the hash of its head commit.
+	```bash
+	ls -RFC .git/refs
+	```
 
-It's worth taking a moment to note the way Git stores objects: `objects` has a subdirectory
-corresponding to the first byte (two hex digits) of the object's hash. The remaining 19 bytes are the name of the file in that directory that contains the object itself.
+	Every branch ("master" is the only one at the moment) has a corresponding file in ".git/refs/heads` that contains the hash of its head commit.
 
-Objects are binary files (they're compressed with `gzip`), but you can examine their contents with `git show`. Try:
+1. Now look inside the "/git/objects" directory:
 
-```
-$ git show `cat .git/refs/heads/master`
-commit 4c3b05d4c547a39118ff3381f003d259f016aabf
-Author: Steve Savitzky <steve@savitzky.net>
-Date:   Tue May 14 14:26:46 2019 -0700
+	```bash
+	ls -RFC .git/objects
+	``` 
 
-    add a heading to index.html
+	It's worth taking a moment to note the way Git stores objects: "objects" has a subdirectory corresponding to the first byte (two hex digits) of the object's hash. The remaining 19 bytes are the name of the file in that directory that contains the object itself.
 
-diff --git a/index.html b/index.html
-index e69de29..0aa3ab0 100644
---- a/index.html
-+++ b/index.html
-@@ -0,0 +1 @@
-+<h1>Our Feline Friends</h1>
-```
+1. Objects are stored in binary files (they're compressed with `gzip`), but you can examine their contents with [git show](https://git-scm.com/docs/git-show). To demonstrate, try this:
 
-(Bash replaces a command enclosed in back-quotes with its output.) The diff shown is computed from the changed files; you can see the actual contents of the commit object using `git cat-file`:
+	```bash
+	git show 'cat .git/refs/heads/master'
+	```
 
-```
-$ git cat-file commit 4c3b05d4c547a39118ff3381f003d259f016aabf
-tree 419d0dd7f1068e70e6b9e60b00f0235e0f5aa795
-parent 93dda01e79f9f791c0fcba727ff18d1c7ccf76c8
-author Steve Savitzky <steve@savitzky.net> 1557869206 -0700
-committer Steve Savitzky <steve@savitzky.net> 1557869206 -0700
+	The diff shown is computed from the changed files; you can see the actual contents of the commit object using `git cat-file`:
 
-add a heading to index.html
-```
+	```bash
+	git cat-file commit 4c3b05d4c547a39118ff3381f003d259f016aabf
+	```
 
-You can use the `-t` option to get the object's type. The `cat-file` command is one of the low-level commands that Git documentation refers to as _plumbing_. The higher-level commands, such as `show`, are called _porcelain_. Plumbing commands are designed to be used in scripts, and in fact many of the less-commonly-used Git subcommands *are* scripts, as you can see from:
+	And you can see the object's type with with the `-t` option:
+
+	```bash
+	git cat-file -t commit 4c3b05d4c547a39118ff3381f003d259f016aabf
+	```
+
+The `cat-file` subcommand is one of the low-level subcommands that the Git documentation refers to as _plumbing_. Higher-level subcommands, such as `show`, are called _porcelain_. Plumbing commands are designed to be used in scripts, and in fact many of the less-commonly-used Git subcommands *are* scripts, as you can see from:
 
 ```
 for f in /usr/bin/git-*; do file $f; done
 ```
 
-One of the reasons why Git has so many subcommands is that they're so easy to create. Any executable file with a name starting with `git-` can be used as a subcommand. 
+One of the reasons why Git has so many subcommands is that they're easy to create. Any executable file with a name starting with `git-` can be used as a subcommand. 
 
 ## Summary
 
