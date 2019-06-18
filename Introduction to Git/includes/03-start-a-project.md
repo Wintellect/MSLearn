@@ -1,86 +1,83 @@
 # Start a project
 
-It's time to get your Web-site project off the ground.
+It's time to get your Web-site project off the ground. In the exercises that follow, you will create a directory to serve as your project directory and create a simple HTML file in it. Then you will place that directory under Git's control by turning it into a Git repo. Finally, you will tk. 
 
 The first step is to make a directory to hold your project, with a file in it (because git ignores empty directories). "Cats" is a little unimaginative, but it's easy to type. (Feel free to use something else -- nothing inside the working tree depends on the directory it's in.) Since this will be a website, the first file you need to create is **index.html**.
 
-There are actually two ways to get a git working tree on your computer; the other one is to clone an existing git repository. In unit 6, we see how that works. At the moment, we take the simplest approach.
-
-## Make a sandbox
-
-Eventually, you will make several different Git repositories. Some later examples require files, including a few images, that would be tedious to create or download individually. You also need a "sandbox" in which to play. Start by downloading [sandbox.zip](media/sandbox.zip). It's easiest to use your browser for that download; it probably will be stored in your `Downloads` directory by default. Unzip it.
-
-```
-cd ~
-mkdir sandbox
-cd sandbox
-unzip Downloads/sandbox.zip
-```
-
-The `cd ~` makes sure you are in your home directory, which Bash abbreviates with a tilde (~).
+There are actually two ways to create a Git working tree on your computer. One is to create a Git repo in an existing directory; the other is to clone an existing Git repository. You will see how the latter works in a subsequent unit. For now, you'll start from scratch with an existing directory.
 
 ## Create a repository and working tree
 
-First, make the directory, `cd` into it, and initialize the repository.
+Let's start by creating an empty directory and initializing a Git working tree inside of it.
 
-```
-$ mkdir Cats
-$ cd Cats
-$ git init
-Initialized empty Git repository in /home/.../sandbox/Cats/.git/
-$ git status
-On branch master
+1. Create a directory named "cats" or something similar in the location of your choice. (The directory name is unimportant; Git is happy to work with it regardless.) Then `cd` into that directory in a Command prompt window or terminal.
 
-No commits yet
+1. Execute a [git init](https://git-scm.com/docs/git-init) command in the project directory to initialize the repository:
 
-nothing to commit (create/copy files and use "git add" to track)
-$ ls -aF
-./  ../  .git/
-```
+	```bash
+	git init
+	```
+1. Now use a [git status](https://git-scm.com/docs/git-status) command to show the status of the working tree:
+
+	```bash
+	git status
+	```
+
+	Git responds by saying "Nothing to commit." So far, so good.
+
+1. Use an `ls` command to show the contents of the project directory:
+
+	```bash
+	ls -aF
+	```
+
+	Confirm that the directory contains a subdirectory named ".git." This is the directory in which Git stores metadata for the working tree.
+
+You typically don't do anything with the ".git" directory yourself. Git updates the metadata there as the status of the working tree changes. This directory is hands-off for you, but it's incredibly important to Git.
 
 ## Create and add (stage) a file
 
-Create a file in the repository with `touch`, which updates the "last-modified" time of a file, and creates it if it doesn't exist.
+Git doesn't do much with empty directories, so let's add a file to the project directory to serve as the home page for the Web site.
 
-```
-$ touch index.html
-$ git status
-On branch master
+1. Use a [touch](https://linux.die.net/man/1/touch) command to create a file named **index.html**:
 
-No commits yet
+	```bash
+	touch index.html
+	```
 
-Untracked files:
-  (use "git add <file>..." to include in what will be committed)
+	`touch` updates the last-modified time of an existing file, and creates an empty file if the file doesn't exist.
 
-	index.html
+1. Now use `git status` again to get the status of the working tree:
 
-nothing added to commit but untracked files present (use "git add" to track)
-```
+	```bash
+	git status
+	```
 
-Notice that `git status` gives you hints about what you can do next. A config file option can make it less wordy if you prefer.
+	Git responds by informing you that nothing has been committed, but the directory does not contain a file:
 
-Now add your new file to Git's "index."
+	```
+	No commits yet
+	
+	Untracked files:
+	  (use "git add <file>..." to include in what will be committed)
+	
+		index.html
+	
+	nothing added to commit but untracked files present (use "git add" to track)
+	```
 
-```
-$ git add .
-$ git status
-On branch master
+	Notice that `git status` gives you hints about what you can do next. Git can be configured to be less wordy, but at this stage, outut such as this is helpful.
 
-No commits yet
+1. Now use [git add](https://git-scm.com/docs/git-status) to add the new file to Git's "index," and check the status again with `git status`. Don't forget the period at the end of the first command. It tells Git to index all the new files in the current directory:
 
-Changes to be committed:
-  (use "git rm --cached <file>..." to unstage)
+	```bash
+	git add .
+	git status
+	```
 
-	new file:   index.html
-```
+	Git's "index" is a staging area for commits, so _staged_ is a shorter way of saying "in the index." The index is a list of all the file versions that are going to be part of the *next* commit you make.
 
-This isn't the only way to accomplish the task. Alternatively, you could have added just `index.html` with `git add index.html`; adding the period (`.`) adds all changed or new files in the entire working tree. The `touch` command updates the time at which the file was last modified, and creates an empty file if it didn't exist before now.
-
-Git's "index" is also called the _staging area_, so _staged_ is a shorter way of saying "in the index." The index is a list of all the file versions that are going to be part of the *next* commit you make.
-
-For an examaple of a staging area, consider the way you go about cooking dinner. To get organized, you pull out all the ingredients you need and at least set them on the counter before you get underway making the meal. Once you start cooking, you don't have to look in the fridge for an ingredient. Similarly, Git doesn't have to look in the working tree (which might be enormous) for a version.
-
-There's no real need to start with an empty file. In fact, you can start with an entire project that you created before you learned how to use version control.
+Rather than use `git add .`, you could have used `git add index.html` since **index.html** was the only new file in the directory.
 
 ## Make your first commit
 
