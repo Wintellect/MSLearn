@@ -127,7 +127,7 @@ A commit message can have multiple lines. The first line should have no more tha
 	git commit -a -m "Add a heading to index.html"
 	```
 
-The `-a` option adds all of the files you modified since the last commit.  It won't add _new_ files — for that, you still need `git add`.
+The `-a` option adds all of the files you modified since the last commit.  It won't add _new_ files. For that, you still need `git add`.
 
 ## Explore the Git repository
 
