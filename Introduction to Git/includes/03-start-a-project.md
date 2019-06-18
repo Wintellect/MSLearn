@@ -243,4 +243,4 @@ You also used the following Unix commands:
 - [`cat`](https://linux.die.net/man/1/cat), which concatenates files and outputs the result, and
 - [`for`](https://linux.die.net/man/1/for), which is one of several control-structure commands in Bash.
 
-In the next unit, you start making and tracking changes. (You do get to cat photos, too.)
+In the next unit, you start making and tracking changes. (You get to cat photos, too.)
