@@ -53,7 +53,7 @@ Git doesn't do much with empty directories, so let's add a file to the project d
 	git status
 	```
 
-	Git responds by informing you that nothing has been committed, but the directory does not contain a file:
+	Git responds by informing you that nothing has been committed, but the directory does contain a new file:
 
 	```
 	No commits yet
