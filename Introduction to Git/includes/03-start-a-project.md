@@ -77,7 +77,7 @@ Git doesn't do much with empty directories, so let's add a file to the project d
 
 	Git's "index" is a staging area for commits, so _staged_ is a shorter way of saying "in the index." The index is a list of all the file versions that are going to be part of the *next* commit you make.
 
-Rather than use `git add .`, you could have used `git add index.html` since **index.html** was the only new file in the directory.
+Rather than use `git add .`, you could have used `git add index.html` since **index.html** was the only new file in the directory. But had several files been added, `git add .` would have covered them all.
 
 ## Make your first commit
 
