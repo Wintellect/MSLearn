@@ -54,7 +54,7 @@ Imagine you made a change to a source-code file that broke the entire project, s
 
 	> Later, you will learn that `checkout` is also used for switching branches.
 
-1. When it comes to recovering deleted files, things get a little more complicated if you deleted them with [`git rm`](https://git-scm.com/docs/git-rm) rather than `rm`. To see for yourself, try this command:
+1. When it comes to recovering deleted files, things get a little more complicated if you delete them with [`git rm`](https://git-scm.com/docs/git-rm) rather than `rm`. To see for yourself, try this command:
 
 	```bash
 	git rm index.html
