@@ -1,8 +1,8 @@
 # Fix simple mistakes
 
-Sometimes things go wrong. You might forget to add a new file, or add one by mistake. Perhaps you made a spelling error in your latest commit, or you committed something you didn't intend to. Perhaps you accidentally _deleted_ a file. You can even change Git's commit history as long as you only change commits that haven't been shared.
+Sometimes things go wrong. You might forget to add a new file, or add one by mistake. Perhaps you made a spelling error in your latest commit, or you committed something you didn't intend to. Perhaps you accidentally _deleted_ a file.
 
-Git lets you make changes fearlessly, because it *always* offer a way to get back to where you were.
+Git lets you make changes fearlessly, because it *always* offer a way to get back to where you were. You can even change Git's commit history as long as you only change commits that haven't been shared.
 
 ## Amend a commit
 
