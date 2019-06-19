@@ -147,7 +147,7 @@ This is a great time to take a look inside the repository and see what Git is do
 	cat .git/COMMIT_EDITMSG
 	```
 
-	Other files in the ".git" subdirectory include **HEAD**, which contains the file name of the branch (**master**) that is currently checked out, and **config**, which contains the local configuration for the working tree.
+	Other files in the ".git" subdirectory include **HEAD**, which contains the file name of the branch that is currently checked out, and **config**, which contains the local configuration for the working tree.
 
 1. Use `ls -RF` to drill down into the ".git/refs" directory:
 
@@ -155,7 +155,7 @@ This is a great time to take a look inside the repository and see what Git is do
 	ls -RFC .git/refs
 	```
 
-	Every branch has a corresponding file in ".git/refs/heads" that contains the hash of its head commit.
+	Every branch has a corresponding file in ".git/refs/heads" that contains the hash of its head commit. Currently, there is just one branch, and therefore one file: **master**.
 
 1. Now look inside the "/git/objects" directory:
 
@@ -163,7 +163,7 @@ This is a great time to take a look inside the repository and see what Git is do
 	ls -RFC .git/objects
 	``` 
 
-	It's worth taking a moment to note the way Git stores objects. The "objects" directory has a subdirectory corresponding to the first byte (two hex digits) of the object's hash. The remaining 19 bytes are the name of the file in that directory that contains the object itself.
+	It's worth taking a moment to note the way Git stores objects. The "objects" directory contains one subdirectory for each object in the working tree. The subdirectory name is the first two hex digits of the object's hash. Inside that subdirectory is another subdirectory containing a file whose name is a string of letters and numbers. Inside that file is the object itself.
 
 1. Objects are stored in binary files (they're compressed with `gzip`), but you can examine their contents with [git show](https://git-scm.com/docs/git-show). To demonstrate, try this:
 
