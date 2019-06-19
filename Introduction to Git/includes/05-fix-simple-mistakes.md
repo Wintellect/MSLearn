@@ -50,9 +50,9 @@ Imagine you made a change to a source-code file that broke the entire project, s
 
 1. Use `ls` again to check the contents of the current directory. Has **index.html** been restored?
 
-	You can also check out a file from an earlier commit (typically the head of another branch), but the default is to get the file out of the index. The `--` in the argument list serves to separate the commit from the list of file paths. It's not strictly needed in this case, but if you had a branch named "index.html" (perhaps because that's the name of the file being worked on on that branch), the `--` would prevent Git from getting confused.
+	You can also check out a file from an earlier commit (typically the head of another branch), but the default is to get the file out of the index. The `--` in the argument list serves to separate the commit from the list of file paths. It's not strictly needed in this case, but if you had a branch named "index.html" (perhaps because that's the name of the file being worked on in that branch), `--` would prevent Git from getting confused.
 
-	Later, you will learn that `checkout` is also used for switching branches.
+	> Later, you will learn that `checkout` is also used for switching branches.
 
 1. When it comes to recovering deleted files, things get a little more complicated if you deleted them with [`git rm`](https://git-scm.com/docs/git-rm) rather than `rm`. To see for yourself, try this command:
 
