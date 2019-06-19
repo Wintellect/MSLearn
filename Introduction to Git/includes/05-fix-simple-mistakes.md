@@ -30,7 +30,7 @@ The `--no-edit` option tells Git to make the change without changing the commit 
 
 The ability to change history is one of Git's most powerful features. (You will learn later that there are other ways to accomplish this besides `--amend`.) As with most power tools, it has to be used carefully. In particular, it's a bad idea to change any commits that have been shared with another developer or were published in a shared repository such as GitHub.
 
-## Retrieve an earlier version of a file
+## Recover a deleted file
 
 Imagine you made a change to a source-code file that broke the entire project, so you want to revert to the previous version of that file. Or perhaps you accidentally deleted a file altogether. Git makes it easy to retrieve an earlier version, even if the current version no longer exists. Your best friend in this situation is the [`git checkout`](https://git-scm.com/docs/git-checkout) command.
 
