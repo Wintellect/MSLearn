@@ -113,19 +113,15 @@ Now let's replace **.git-keep** with a CSS file and connect the file to **index.
 	```html
 	<link rel="stylesheet" href="CSS/site.css">
 	```
-1. Use the following commands to submit untracked files to version control and commit your changes to **site.css** and **index.html**:
+
+1. Use `git status` to see a summary of the files that have changed. Then use the following commands to submit untracked files to version control and commit your changes to **site.css** and **index.html**:
 
 	```bash
 	git add .
 	git commit -m "Add a simple stylesheet"
 	```
 
-
-
-
-### Exercise
-
-* Open `index.html` in your browser. (The easy way is to open `file:///` and click your way down. That works no matter which OS you use.) Observe that the stylesheet is applied.
+Finish up by opening **index.html** in your browser and confirming that the style sheet has been applied. It's not very fancy at the moment, but it's a start.
 
 ## Rename files and directories
 
