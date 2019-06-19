@@ -1,6 +1,6 @@
 # How to manage PDF documents with PyPDF4
 
-You have IT (information technology) responsibilities for a law office which just scored a massive civil litigation.  You're now responsible not just for many thousands of documents, but over _two million_ on this one case.
+You're in charge of IT (information technology) for a law office which just scored a massive civil litigation.  You're now responsible not just for many tens of thousands of documents, but over _two million_ on this one case.
 
 The judge is trying to get an idea of what's involved.  You need to sort the documents into twelve categories, and report how many pages of documents are in each.
 
@@ -11,7 +11,7 @@ You need help.  You need **PyPDF4**.
 
 ## Required package
 
-As you've already read in other Lessons, several packages address a particular domain.  In this case, the domain is documents rendered as PDF (portable document format).  We choose **PyPDF4** for its support of recent revisions of the PDF specification.
+As you've already read in other Lessons, several packages address a particular domain.  In this case, the domain is documents rendered as PDF (portable document format).  We choose **PyPDF4** from among several alternatives for its open-sourced support of recent revisions of the PDF specification.
 
 For this Lesson, install **PyPDF4**:
 
@@ -38,7 +38,7 @@ Create a program
             continue
         print(f"Document {pdf_filename} has {reader.numPages} pages.")
 
-This program will likely take many hours--but not months--to produce output such as
+This program takes only hours--not months--to produce two million lines of output such as
 
         ...
     Document 2015.pdf has 7 pages.
@@ -52,23 +52,36 @@ This program will likely take many hours--but not months--to produce output such
        ...
 
 
-
 ## More ambitious:  a utility to extract PDF pages
 
-[TODO:  explain extract pages.  py extract-pages source.pdf final.pdf pages=1-3, 4, 6, 10]
+Ever need to print a PDF document, but without the cover page, and with two copies of the signatures on page 7, and without the appendixes on page 10-14, and so on?  `extract-pages` will do that for you.  Write the source below into a file named `page-extract`, then run `python extract-pages original.pdf to-print.pdf pages=2-7,7,8-9,15-19` and you'll create a `to-print.pdf` that's just what you're after.
 
+    '''
+        Sample invocation:
+            python extract-pages source.pdf final.pdf pages=1-3,4,6,10
+    '''
+    
+    
     import sys
 
     from PyPDF4 import PdfFileReader, PdfFileWriter
 
 
     def extract_to(source_handle, destination_handle, page_numbers):
+        ''' The actual work of copying pages from source PDF to target PDF happens here.
+            Notice that PyPDF4 makes the coding almost trivially brief.
+            
+            page_numbers is a list of one-based page numbers.
+        '''
         for page_number in page_numbers:
             # PyPDF4 treats pages as zero-based.
             destination_handle.addPage(source_handle.getPage(page_number - 1))
 
 
     def main():
+        ''' PyPDF4 does so much for us that the hardest programming in this little
+            utility has to do with parsing the command line.
+        '''
         (source_handle, destination_handle,
          destination_filename, page_numbers) = parse_commandline()
         extract_to(source_handle, destination_handle, page_numbers)
@@ -88,21 +101,23 @@ This program will likely take many hours--but not months--to produce output such
                   page=7
               in place of
                   pages=7
-            * allow more freedom in formatting, perhaps including whitespace.
+            * allow more freedom in formatting, perhaps including whitespace
+            * interpret ranges more expressively, so that, for instance, '9-7'
+              could mean the same as '9,8,7', rather than just being empty.
         '''
         args = sys.argv
         page_prefix = "pages="
-        cmd = (f"\n\t{args[0]} <SOURCE_PDF> "
-               f"<DESTINATION_PDF> {page_prefix}<PAGE_NUMBERS>.")
+        example_cmd = (f"\n\t{args[0]} <SOURCE_PDF> "
+                       f"<DESTINATION_PDF> {page_prefix}<PAGE_NUMBERS>.")
         if len(args) != 4:
             print("Make sure you include 3 arguments, rather than "
-                  f"{len(args) - 1}:{cmd}")
+                  f"{len(args) - 1}:{example_cmd}")
             sys.exit(1)
         source_filename, destination_filename, pages_arg = args[1:]
         if pages_arg.startswith(page_prefix):
             pages_arg = pages_arg[len(page_prefix):]
         else:
-            print(f"Make sure you format the page numbers as indicated:{cmd}")
+            print(f"Make sure you format the page numbers as indicated:{example_cmd}")
             sys.exit(1)
         destination_handle = PdfFileWriter()
         source_handle = PdfFileReader(open(source_filename, "rb"))
@@ -133,4 +148,5 @@ As with the other Lessons, these little demonstrations only hint at a small frac
 
 ## Summary
 
-* [TODO]
+* **PyPDF4** makes short work of programming common chores having to do with PDF documents.
+* 
