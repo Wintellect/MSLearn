@@ -1,43 +1,38 @@
 # Fix simple mistakes
 
-Sometimes things go wrong. You might forget to add a new file, or you added one by mistake. Perhaps you made a spelling error in your latest commit, or you committed something you didn't intend to. Perhaps you accidentally _deleted_ a file. You can even change Git's history, as long as you only change commits that haven't been shared.
+Sometimes things go wrong. You might forget to add a new file, or add one by mistake. Perhaps you made a spelling error in your latest commit, or you committed something you didn't intend to. Perhaps you accidentally _deleted_ a file. You can even change Git's commit history as long as you only change commits that haven't been shared.
 
-Git lets you make changes fearlessly.
+Git lets you make changes fearlessly, because it *always* offer a way to get back to where you were.
 
 ## Amend a commit
 
-In the last part of the exercise, we made a change. When you refresh the page in your browser, you notice that your CSS style sheet
-isn't applied. After investigating, you see that `index.html` is still referring to the stylesheet's old location in `CSS`.
+In the previous exercise, you modified the path to the style sheet in **index.html**. Suppose you discover that you made an error and rather than typing this:
 
-```
-$ sed -i.bak s/CSS/assets/ index.html
-$ git add index.html
-
+```html
+<link rel="stylesheet" href="assets/site.css">
 ```
 
-At this point, you could simply commit the changed version of `index.html`, but it makes more sense to put it in the same commit as the rename. The `--amend` option to `git commit` lets you change history.
+You typed this:
 
-```
-$ git commit --amend --no-edit
-[master 9e857ef] Rename CSS -> assets for generality
- Date: Wed May 15 12:10:00 2019 -0700
- 2 files changed, 1 insertion(+), 1 deletion(-)
- rename {CSS => assets}/site.css (100%)
+```html
+<link rel="stylesheet" href="assest/site.css">
 ```
 
-The `--no-edit` option tells Git to make the change without starting up a text editor to change the commit message. You can also use `--amend` to edit a commit message, to add files accidentally left out of the commit, or to remove files that were added by mistake.
+When you refresh the page in your browser, you notice that your CSS style sheet isn't applied. After investigating, you see why.
 
-The ability to change history is one of Git's most powerful features. (We will see later that there are other ways to accomplish this besides `--amend`.) As with most power tools, it has to be used carefully. In particular, it's a bad idea to change any commits that have been shared with another developer or were published on a shared repository.
+So you update **index.html** with the correct path to the style sheet. At this point, you could simply commit the changed version of **index.html**, but instead, you prefer to put it in the same commit as the original. The `--amend` option to `git commit` lets you change history (and how often does one get the chance to change history?):
 
-### Exercises:
+```bash
+git commit --amend --no-edit
+```
 
-* Run `git log -n1 --pretty=fuller`. What do you notice about the AuthorDate and CommitDate fields?
-* Compare that to the output of `git log -n1`. Which date is reported by default?
-* Can you think of cases where the author and committer would be different? (See `git help am` for a hint.)
+The `--no-edit` option tells Git to make the change without changing the commit message. You can also use `--amend` to edit a commit message, to add files accidentally left out of the commit, or to remove files that were added by mistake.
+
+The ability to change history is one of Git's most powerful features. (You will learn later that there are other ways to accomplish this besides `--amend`.) As with most power tools, it has to be used carefully. In particular, it's a bad idea to change any commits that have been shared with another developer or were published in a shared repository such as GitHub.
 
 ## Retrieve an earlier version of a file
 
-One thing that git makes easy is retrieving an earlier version of a file. Perhaps you deleted more than you intended with a wildcard, or you damaged a file experimenting with `sed`, or you simply have made a series of changes that you
+One thing that Git makes easy is retrieving an earlier version of a file. Perhaps you deleted more than you intended with a wildcard, or you damaged a file experimenting with `sed`, or you simply have made a series of changes that you
 later regret.
 
 Your friend in this situation is `git checkout`. For example,
@@ -63,12 +58,7 @@ nothing to commit, working tree clean
 
 (It is more difficult to fix the cat.)
 
-You can also check out a file from another commit (typically the head of
-another branch), but the default is to get the file out of the index. The `--`
-in the argument list serves to separate the commit from the list of file
-paths. It's not strictly needed in this case, but if you had a branch
-called `index.html` (perhaps because that's the name of the file being worked
-on on that branch), the `--` would keep Git from getting confused.
+You can also check out a file from another commit (typically the head of another branch), but the default is to get the file out of the index. The `--` in the argument list serves to separate the commit from the list of file paths. It's not strictly needed in this case, but if you had a branch called `index.html` (perhaps because that's the name of the file being worked on on that branch), the `--` would keep Git from getting confused.
 
 In Unit 8 you'll learn that `checkout` is also used for switching branches.
 
@@ -105,7 +95,7 @@ The `git reset` was needed because `git rm` did two things: It removed the file,
 
 ## Revert a commit
 
-As you work on the cat website design, you decide to make the background a little darker:
+As you work on the Web site design, you decide to make the background a little darker:
 
 ```
 $ echo body '{ background-color:  #C0C0C0; }' > assets/site.css
@@ -174,10 +164,5 @@ In this unit, you learned about
 * [`git revert`](https://git-scm.com/docs/git-revert), which undoes the effect of a commit without affecting history
 * [`git reflog`](https://git-scm.com/docs/git-reflog), which shows you previous values of `HEAD` and `master`, and 
 * [`git commit --amend`](https://git-scm.com/docs/git-commit), which lets you change the most recent commit.
-
-You've also seen 
-
-* [`rm`](https://linux.die.net/man/1/rm), which removes a file, and
-* [`gitk`](https://linux.die.net/man/1/gitk), which gives you a GUI for exploring your history.
 
 In the next unit you start collaborating with another developer. Because Git is distributed, you won't have to set up a server; you can share changes directly.
