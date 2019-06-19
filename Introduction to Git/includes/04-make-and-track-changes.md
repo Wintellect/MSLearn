@@ -47,7 +47,7 @@ The Web site's home page, **index.html** currently contains just one line of HTM
 
 1. Let's say you decide "furry" sounds friendlier than "feline." Replace the two occurrences of "Furry" in **index.html** with "Feline." Then save the file.
 
-1. Depending on which text editor you use, there could now be a problem. For example, if you use [sed](https://en.wikipedia.org/wiki/Sed) as your editor, it creates an **index.html.bak** file that you don't want to commit. Other editors such as Vim and Emacs create backup files with names such as **index.html~** and **index.html.\~1\~**, depending on how they're configured. 
+1. Depending on which text editor you use, there could now be a problem. For example, if you use [sed](https://en.wikipedia.org/wiki/Sed) as your editor, it probably created an **index.html.bak** file that you don't want to commit. Other editors such as Vim and Emacs create backup files with names such as **index.html~** and **index.html.\~1\~**, depending on how they're configured. 
 
 	Use the following command to create a file named **.gitgnore** that instructs Git to ignore files whose names end in **.bak** or **~**:
 
@@ -91,42 +91,37 @@ Most Web sites use CSS style sheets as well as HTML, and the site you're buildin
 
 Follow up by using `git status` again to check the status of the repo. Confirm that it reports one new file.
 
-## Remove a file
+## Replace a file
 
-Now, to create the simple CSS file that accompanies the cat project website, add a simple two-line stylesheet to your website (the `>>` on the second `echo` command appends to the target file), and insert a link tag into `index.html` that points to it.
+Now let's replace **.git-keep** with a CSS file and connect the file to **index.html**.
 
-```
-$ echo 'h1, h2, h3, h4, h5, h6 { font-family: sans-serif; }' > CSS/site.css
-$ echo 'body { font-family: serif; }'                       >> CSS/site.css
-$ sed -i.bak -e '/title/a <link rel="stylesheet" href="CSS/site.css">' index.html
-$ git add .
-$ git commit -m "Add a simple stylesheet"
-[master 9555ac8] Add a simple stylesheet
- 2 files changed, 3 insertions(+)
- create mode 100644 CSS/site.css
-```
+1. Delete **.git-keep** from the "CSS" subdirectory:
 
-Now that you have a file in `CSS`, you can remove the `.git-keep` file.
+	```bash
+	rm CSS/.git-keep
+	```
 
-```
-$ git rm CSS/.git-keep
-rm 'CSS/.git-keep'
-$ git commit -m "Remove redundant .git-keep file"
-[master b38d55f] Remove redundant .git-keep file
- 1 file changed, 0 insertions(+), 0 deletions(-)
- delete mode 100644 CSS/.git-keep
-```
+1. Use your favorite text editor to create a file named **site.css** in the "CSS" subdirectory and add the following CSS to it. Then save your changes to the file.
 
-Notice, by the way, that you didn't need to use `git add` -- `git rm` automatically updates the index as well as the working tree.
+	```css
+	h1, h2, h3, h4, h5, h6 { font-family: sans-serif; }
+	body { font-family: serif; }
+	```
 
-As with the Unix command `rm`, Git requires the `-r` option to recursively remove a directory and its contents:
+1. Now add the following line to **index.html** after the `<title>` line, and save the modified file:
 
-```
-$ git rm CSS
-fatal: not removing 'CSS' recursively without -r
-```
+	```html
+	<link rel="stylesheet" href="CSS/site.css">
+	```
+1. Use the following commands to submit untracked files to version control and commit your changes to **site.css** and **index.html**:
 
-(As we'll see in the next unit, if you accidentally added `-r` to your command and removed the directory and its contents, it would have been easy to get it back using `git checkout`.)
+	```bash
+	git add .
+	git commit -m "Add a simple stylesheet"
+	```
+
+
+
 
 ### Exercise
 
