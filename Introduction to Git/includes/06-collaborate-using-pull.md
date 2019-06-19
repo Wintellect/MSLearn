@@ -99,31 +99,40 @@ That didn't work because the path you took out of Alice's email was relative to 
 
 However, because you and Alice are going to collaborate regularly, it makes more sense to create a remote.
 
-## Create a remote and pull from it
+## Create a remote and complete the pull request
 
-You create a remote using:
+Because your project directory and the "Alice" directory are on the same computer, you can pull directly from the "Alice" directory. In real life, the "Alice" directory will be on Alice's computer. You solve this by setting up a *remote* using the [`git remote`](https://git-scm.com/docs/git-remote) command and using that remote for pulls and pull requests. Since it's not practical to set up two machines to do this, we'll set up a remote that uses a local path name. In reality, you would use a network path or URL instead.
 
-```
-$ git remote add alice ../Alice/Cats
-```
+1. `cd` back to your project directory:
 
-and pull from it with:
+	```bash
+	cd ../Cats
+	```
 
-```
-$ git pull alice master
-From ../Alice/Cats
- * branch            HEAD       -> FETCH_HEAD
-Updating 2c01c05..37903fd
-Fast-forward
- assets/site.css | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-```
+1. Revert to your identity using the following commands, replacing USER_NAME and USER_EMAIL with your name and e-mail address just as you did when you configured Git:
 
-Notice that you have to specify a branch, `master`, in the pull command. We'll see in the next unit how to fix that by setting an upstream URL.
+	```bash
+	git config user.name USER_NAME
+	git config user.email USER_EMAIL
+	```
+
+1. Use the following command to create a remote named "alice" that targets Alice's project directory:
+
+	```bash
+	git remote add alice ../Alice
+	```
+
+1. Now execute a pull by doing this:
+
+	```bash
+	git pull alice master
+	```
+
+	Notice that you have to specify a branch, "master," in the pull command. You will learn in the next unit how to fix that by setting an upstream URL.
+
+1. Open the **index.html** file in your project directory in your browser. What color is the page background? What does this tell you about what `git pull` did? 
 
 Behind the scenes, `git pull` is a combination of two simpler operations: `git fetch`, which gets the changes, and `git merge`, which merges those changes into your repository. In this case, the merge was _fast-forward_, meaning that Alice had your latest commit in her repository, so her commit could be added to the front of your history without any modification.
-
-(We'll see non-fast-forward merges in unit 8.  Merging can cause enough complications to make it worth its own unit.)
 
 ## Summary
 
