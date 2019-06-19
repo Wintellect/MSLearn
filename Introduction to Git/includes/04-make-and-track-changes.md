@@ -149,41 +149,30 @@ After creating the "CSS" subdirectory, you decide to rename it "assets" since it
 
 Unlike most version control systems, Git records the contents of your files rather than the deltas between them. That's a large part of what makes committing, branching, and switching between branches so fast in Git. Other VCSes have to apply a list of changes to get between one version of a file and another. Git just unzips the other version.
 
-## List commits with Git log
+## List commits
 
-Now that you have a reasonable number of changes recorded, you can use `git log` to look at them. As with most Git commands, there are plenty of options to choose from; one of the most useful is `--oneline`.
+Now that you have a reasonable number of changes recorded, you can use `git log` to look at them. As with most Git commands, there are plenty of options to choose from. One of the most useful is `--oneline`.
 
-```
-$ git log --oneline
-7f77894 Rename CSS -> assets for generality
-b38d55f Remove redundant .git-keep file
-9555ac8 Add a simple stylesheet
-9f9f355 Add a (mostly) empty directory for CSS
-569647a make small wording change; ignore editor backups
-bc18ca7 Add HTML boilerplate to index.html
-4c3b05d add a heading to index.html
-93dda01 Create an empty index.html file
-```
+1. Use the following command to review all of your commits:
 
-### Exercise
+	```bash
+	git log
+	```
 
-Try the following log commands:
+2. Now use this command to produce a more concise listing:
 
-```
-$ git log
-$ git log -n2
-$ git log -n2 --no-abbrev-commit
-```
+	```bash
+	git log --oneline
+	```
+
+You can see why once you're hundreds (or thousands) of commits into a project, the `--online` option might be your best friend. Another useful option is `--nX`, where X is a commit number: 1 for the latest commit, 2 for the one before that, and so. To see for yourself, try a `git log -n2` command.
 
 ## Summary
 
 In this unit you learned about the following Git commands:
 
-* [`git diff`](https://git-scm.com/docs/git-diff), which shows the differences between versions
-* [`git mv`](https://git-scm.com/docs/git-mv),  which moves (renames) a file
-* [`git rm`](https://git-scm.com/docs/git-rm),  which removes (deletes) a file
-* ...and a little more about `git log`.
+- [`git diff`](https://git-scm.com/docs/git-diff), which shows the differences between versions
+- [`git mv`](https://git-scm.com/docs/git-mv),  which moves (renames) a file
 
 
-
-In the next unit you learn how to use Git to recover from several common mistakes.
+You also learned a little more about `git log`. Next up: learn how to use Git to recover from common mistakes.
