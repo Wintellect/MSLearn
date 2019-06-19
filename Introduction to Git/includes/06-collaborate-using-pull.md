@@ -17,7 +17,7 @@ Instead of making an empty directory and running `git init` to initialize it, Al
 	git config user.email alice@contoso.com
 	```
 
-1. Create a directory named "Alice" to clone the repo into. It must *not* be a subdirectory of your project directory, so `cd` up to the parent directory first:
+1. Create a directory named "Alice" to clone the repo into. It must *not* be a subdirectory of your project directory, so `cd` up to the parent directory first so "Alice" is a sibling of "Cats:"
 
 	```bash
 	cd ..
