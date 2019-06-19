@@ -1,8 +1,8 @@
 # Make and track changes
 
-Most development projects are iterative. You write some code, then test it and make sure it works. Then you write more code, and invite other people to contribute their own. Thereafter ensues a lot of changes: code additions, bug fixes, deletions, and replacements.
+Most development projects are iterative. You write some code, then test it and make sure it works. Then you write more code, and invite other people to contribute their own. Thereafter ensues a multitude of changes: code additions, bug fixes, deletions, and replacements.
 
-As you work on your project, Git helps keep track of the changes you make. It also lets you undo mistakes. In the exercises that follow, you will continue building out the Web site you're working on make changes to the project as you do. You will learn tk.
+As you work on your project, Git helps keep track of the changes you make. It also lets you undo mistakes. In the exercises that follow, you continue building out the Web site you're working on and learn some important new commands such as [`git diff`](https://git-scm.com/docs/git-diff). You learn also learn how Git handles subdirectories. (Would you believe that it ignores them?)
 
 ## Modify index.html
 
@@ -27,7 +27,7 @@ The Web site's home page, **index.html** currently contains just one line of HTM
 
 	Then save your changes to the file.
 
-1. Use a [git diff](https://git-scm.com/docs/git-diff) command to see what changed:
+1. Use a [`git diff`](https://git-scm.com/docs/git-diff) command to see what changed:
 
 	``` bash
 	git diff
@@ -172,6 +172,6 @@ You can see why once you're hundreds (or thousands) of commits into a project, t
 In this unit, you learned two new Git commands:
 
 - [`git diff`](https://git-scm.com/docs/git-diff), which shows the differences between versions
-- [`git mv`](https://git-scm.com/docs/git-mv),  which moves (renames) a file or subdirectory
+- [`git mv`](https://git-scm.com/docs/git-mv), which moves (renames) a file or subdirectory
 
 You also learned more about `git log`. Next up: learn how to use Git to recover from common mistakes.
