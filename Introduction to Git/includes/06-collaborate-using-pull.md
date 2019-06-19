@@ -48,7 +48,7 @@ Git only pulls or pushes (which is copying in the other direction) when you tell
 
 ## Make a change and submit a pull request
 
-Alice decides to start working on the cat website. Her first decision is to change the site's background color. She experiments locally, and ultimately chooses her favorite shade of light blue.
+Alice starts working on the Web site. Her first decision is to change the site's background color. She experiments locally, and ultimately chooses her favorite shade of light blue.
 
 1. Temporarily assume Alice's identity by executing the following commands:
 
