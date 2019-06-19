@@ -1,9 +1,10 @@
-# Collaborate using Pull
+# Collaborate using pull
 
-You've been working on the cat website on your own for a while. After a pizza party at your house, your friend and fellow cat-lover
-[Alice](https://en.wikipedia.org/wiki/Alice_and_Bob) offers to help, and you agree with delight. Alice needs to make a copy of your project, and she will want to send her changes to you as she makes them.
+Your Web site for cat pictures is well underway and version control is being performed by Git. It's time invite collaborators onto the project. After a pizza party at your house, your friend and fellow cat-lover [Alice](https://en.wikipedia.org/wiki/Alice_and_Bob) offers to help bring your vision to fruition, and you eagerly agree. Alice needs to make a copy of your project, and she will want to send her changes to you as she makes them.
 
-This is where `git`'s _distributed_ nature comes in. It permits two or more people to work together on a project without fear of overwriting one another's work.
+This is where Git's _distributed_ nature comes in. It permits two or more people to work together on a project without fear of overwriting one another's work. Moreover, it allows you to check Alice's work before merging it with yours. Alice is talented, but no developer is perfect. Trust but verify.
+
+In this unit, you learn how to clone a repository to make it available to other people. You also learn to use one of Git's most important features: pulls.
 
 ## Clone a repository
 
