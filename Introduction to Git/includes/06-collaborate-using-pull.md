@@ -24,7 +24,7 @@ The proper way to copy a repo is to *clone* it with the [`git clone`](https://gi
 	git clone ../Cats .
 	```
 
-	`git clone` accepts a file-system path, an SSH path (e.g. `git@example.com:alice/Cats` — you'll be familiar with this form if you've used `rsync` or `scp`); or a URL, typically starting with `file:`, `git:`, or `ssh`. The various types are described in the [documentation for `git clone`](https://git-scm.com/docs/git-clone). On Unix and Linux, the cloning operation uses hard links, which is fast and takes up very little space because only the directory entries need to be copied, not the files.
+	`git clone` accepts a file-system path, an SSH path (for example, `git@example.com:alice/Cats` — you'll be familiar with this form if you've used `rsync` or `scp`); or a URL, typically starting with `file:`, `git:`, or `ssh`. The various types are described in the [documentation for `git clone`](https://git-scm.com/docs/git-clone). On Unix and Linux, the cloning operation uses hard links, which is fast and takes up very little space because only the directory entries need to be copied, not the files.
 
 A clone of the repo in your project directory now lives in your "Alice" directory. Which means now is a great time to learn about remote repositories.
 
