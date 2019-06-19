@@ -1,99 +1,70 @@
 # Make and track changes
 
-Most development projects are iterative. You write some code, then test it and make sure that functionality works. Then you write more code, and invite other people to add another module. The whole process means a lot of changes: code additions, bug fixes, deletions and replacements.
+Most development projects are iterative. You write some code, then test it and make sure it works. Then you write more code, and invite other people to contribute their own. Thereafter ensues a lot of changes: code additions, bug fixes, deletions, and replacements.
 
-As you work on your project, `git` helps you keep track of the changes you make.
-It also lets you undo any changes you make by mistake.
+As you work on your project, Git helps keep track of the changes you make. It also lets you undo mistakes. In the exercises that follow, you will continue building out the Web site you're working on make changes to the project as you do. You will learn tk.
 
-## Make some changes
+## Modify index.html
 
-It's time to get underway on this personal website project. Start by adding some HTML boilerplate to `index.html`.
-You can do it by downloading [this file](media/unit-04-index.html), but it should already be in your sandbox, so you can just copy it.  (If it isn't, you forgot to download and unzip [sandbox.zip](media/sandbox.zip).)
+The Web site's home page, **index.html** currently contains just one line of HTML. Let's update it to present a prettier face to the public and commit the change to Git.
 
-```
-$ cd ~/sandbox/Cats
-$ cp ../unit-04-index.html index.html
-```
+1. Open **index.html** in your favorite text editor and replace its contents with the following HTML:
 
-You can see what you changed by using `git diff`:
+	```html
+	<!DOCTYPE html>
+	<html>
+	  <head>
+	    <meta charset='UTF-8'>
+	    <title>Our Feline Friends</title>
+	  </head>
+	  <body>
+	    <h1>Our Feline Friends</h1>
+	    <p> Eventually we will put cat pictures here.
+	    <hr>
+	  </body>
+	</html>
+	```
 
-``` 
-$ git diff
-diff --git a/index.html b/index.html
-index 0aa3ab0..6f16b61 100644
---- a/index.html
-+++ b/index.html
-@@ -1 +1,12 @@
-+<!DOCTYPE html>
-+<html>
-+<head>
-+<meta charset='UTF-8'>
-+<title>Our Feline Friends</title>
-+</head>
-+<body>
- <h1>Our Feline Friends</h1>
-+<p> Eventually we will put cat pictures here.
-+<hr>
-+</body>
-+</html>
-``` 
+	Then save your changes to the file.
 
-The output format is the same as the Unix `diff` command, and it takes many of the same options. Here you can see a `+` in front of lines that were added; if any lines had been deleted you would see a `-` in front of them. Notice that the `h1` line hasn't changed.
+1. Use a [git diff](https://git-scm.com/docs/git-diff) command to see what changed:
 
-The default is for `git diff` to compare the working tree to the index. In
-other words, it shows you all of the changes that haven't been staged (added to the index) yet. 
+	``` bash
+	git diff
+	``` 
 
-To compare the working tree to the last commit, use `git diff HEAD`.
+	The output format is the same as that of the Unix `diff` command, and it takes many of the same options. A plus sign appears in front of lines that were added, and a minus sign indicates lines that were deleted. Notice that the `h1` line hasn't changed.
 
-Next, commit the change. Notice that you can explicitly name a file to be
-committed, provided Git already has the file in the index (which is all that
-`commit` looks at).
+	The default is for `git diff` to compare the working tree to the index. In other words, it shows you all of the changes that haven't been staged (added to the index) yet. To compare the working tree to the last commit, you can use `git diff HEAD`.
 
-```
-$ git commit -m "Add HTML boilerplate to index.html" index.html
-[master bc18ca7] Add HTML boilerplate to index.html
- 1 file changed, 11 insertions(+)
-$ git diff
-```
+1. Next, commit the change. Notice that you can explicitly name a file to be committed, provided Git already has the file in the index (which is all that `commit` looks at).
 
-After the commit, `git diff` produces no output because the working tree,
-index, and HEAD are all in agreement.
+	```bash
+	git commit -m "Add HTML boilerplate to index.html" index.html
+	```
 
-Let's say you decide "furry" would sound friendlier than "feline," so you want to edit the text. You can make the change using a text editor; here we use `sed`, the "stream editor," which lets you specify editing commands on the command line. (See `man sed` for the details; Sed's command set -- here we use `s` to make a substitution -- is essentially the same as Unix's original text-editor, `ed`.)
+1. Use `git diff` again to compare the working tree to the index. This time, `git diff` produces no output because the working tree, index, and HEAD are all in agreement.
 
-```
-$ sed -i.bak s/Feline/Furry/ index.html
-$ ls
-index.html
-index.html.bak
-```
+1. Let's say you decide "furry" would sound friendlier than "feline." Replace the two occurrences of "Furry" in **index.html** wuth "Feline." Then save the file.
 
-Now you may notice a problem: If you used `sed` as your editor, it creates a text editor backup file here that you shouldn't commit (or at least you don't want to). (There may not be a backup file if you used a text editor that's clever enough not to make backups of version-controled files. What the backups look like also depends on which text editor you're using; Vim or Emacs creates one called `index.html~` by default; you may have Emacs configured to keep numbered backups, in which case you would have `index.html.~1~`.) You can tell Git to ignore these backup files:
+1. Depending on which text editor you use, there could now be a problem. For example, if you use [sed](https://en.wikipedia.org/wiki/Sed) as your editor, it creates an **index.html.bak** file that you don't want to commit. Other editors such as Vim and Emacs create backup files named **index.html~** or **index.html.~1~**, depending on how they're configured. 
 
-```
-$ echo -e "*.bak\n*~" > .gitignore
-$ git status
-On branch master
-Changes not staged for commit:
-  (use "git add <file>..." to update what will be committed)
-  (use "git checkout -- <file>..." to discard changes in working directory)
+	Use the following command to create a file named **.gitgnore** that instructs Git to ignore files whose names end in **.bak** or **~**:
 
-	modified:   index.html
+	```bash
+	$ echo -e "*.bak\n*~" > .gitignore
+	```
 
-Untracked files:
-  (use "git add <file>..." to include in what will be committed)
+	**.gitignore** is a very important file in the Git world because it prevents extraneous files from being submitted to version control. Boilerplate **.gitignore** files are available for commonly used programming tools such as Microsoft's [Visual Studio](https://visualstudio.microsoft.com/).
 
-	.gitignore
+1. Now use these commands to commit the changes:
 
-no changes added to commit (use "git add" and/or "git commit -a")
-$ git add -A
-$ git commit -m "make small wording change; ignore editor backups"
-[master 569647a] make small wording change; ignore editor backups
- 2 files changed, 4 insertions(+), 2 deletions(-)
- create mode 100644 .gitignore
-```
+	```bash
+	git add -A
+	git commit -m "Make small wording change; ignore editor backups"
+	```
 
-This example uses `HEAD^` to name the *previous* commit. It also uses the `-A` option with `git add`, which adds the untracked (and not ignored) files as well as changed ones that are already under Git control.
+This example uses the `-A` option with `git add` to add all untracked (and not ignored) files as well as ones that have changed to those already under Git control.
 
 ## Exercise: try the following commands
 
@@ -113,9 +84,9 @@ $ git diff foo
 
 Some things to notice:
 
-* A circumflex after a commit name gets you to the previous commit.
-* Use `--` to separate commit references from filenames. It's not needed in this case, but the '--' prevents problems if you ever make a file called `HEAD` or a branch that has the same name as a file.
-* There are many ways to name commits; `master` always refers to the latest commit on the master branch, no matter which branch you're currently on.
+- A circumflex after a commit name gets you to the previous commit.
+- Use `--` to separate commit references from filenames. It's not needed in this case, but the '--' prevents problems if you ever make a file called `HEAD` or a branch that has the same name as a file.
+- There are many ways to name commits; `master` always refers to the latest commit on the master branch, no matter which branch you're currently on.
 
 ## Create a subdirectory
 
@@ -130,8 +101,7 @@ nothing to commit, working tree clean
 
 People used to most other version-control systems may be surprised to learn that Git doesn't consider adding an empty directory to be a change. That's because Git only tracks changes to *files*, not directories.
 
-Sometimes, especially in the initial stages of development, you *want* to have
-empty directories as placeholders. A common convention is to create an empty file in them -- it's often called `.git-keep`.
+Sometimes, especially in the initial stages of development, you *want* to have empty directories as placeholders. A common convention is to create an empty file in them -- it's often called `.git-keep`.
 
 ```
 $ touch CSS/.git-keep
@@ -272,9 +242,6 @@ In this unit you learned about the following Git commands:
 * [`git rm`](https://git-scm.com/docs/git-rm),  which removes (deletes) a file
 * ...and a little more about `git log`.
 
-You also used the Unix commands
 
-* [`cat`](https://linux.die.net/man/1/cat), which concatenates files (including input from the terminal) and
-* [`sed`](https://linux.die.net/man/1/sed), which applies text-editing commands non-interactively.
 
 In the next unit you learn how to use Git to recover from several common mistakes.
