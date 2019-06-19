@@ -93,7 +93,7 @@ Follow up by using `git status` again to check the status of the repo. Confirm t
 
 ## Replace a file
 
-Now let's replace **.git-keep** with a CSS file and connect the file to **index.html**.
+Now let's replace **.git-keep** with a CSS file and update **index.html** to reference it.
 
 1. Delete **.git-keep** from the "CSS" subdirectory:
 
@@ -121,7 +121,7 @@ Now let's replace **.git-keep** with a CSS file and connect the file to **index.
 	git commit -m "Add a simple stylesheet"
 	```
 
-Finish up by opening **index.html** in your browser and confirming that the style sheet has been applied. It's not very fancy at the moment, but it's a start.
+Finish up by opening **index.html** in your browser and seeing how it looks right now. It's not very fancy at the moment, but it's a start.
 
 ## Rename a subdirectory
 
