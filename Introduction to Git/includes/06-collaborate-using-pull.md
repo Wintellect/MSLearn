@@ -10,12 +10,21 @@ In this unit, you learn how to clone a repository to make it available to other 
 
 Instead of making an empty directory and running `git init` to initialize it, Alice uses [`git clone`](https://git-scm.com/docs/git-clone) to copy your repo. Since she's already on your household Wi-Fi network, she can mount the directory as a network share; for now (and for the sake of simplicity) we make an ordinary directory named "Alice" to take the place of her home directory. You're probably in your working tree project directory, so you need to change to the parent directory first.
 
+1. Temporarily assume Alice's identity by executing the following commands:
+
+	```bash
+	git config user.name Alice
+	git config user.email alice@contoso.com
+	```
+
 1. Create a directory named "Alice" to clone the repo into. It must *not* be a subdirectory of your project directory, so `cd` up to the parent directory first:
 
 	```bash
 	cd ..
 	mkdir Alice
 	```
+
+	In real life, Alice would be cloning this onto her machine. For training purposes, since you probably don't have a programmer friend named Alice, both your repo and hers will reside on your computer.
 
 1. Now use [`git clone`](https://git-scm.com/docs/git-clone) to clone the repo in your project directory into the "Alice" directory:
 
@@ -25,14 +34,7 @@ Instead of making an empty directory and running `git init` to initialize it, Al
 
 	`git clone` accepts a file-system path, an SSH path (e.g. `git@example.com:alice/Cats` — you'll be familiar with this form if you've used `Rsync` or `Scp`); or a URL (typically starting with `file:`, `git:`, or `ssh`). The various types are described in the [documentation for `git clone`](https://git-scm.com/docs/git-clone). On Unix and Linux, the cloning operation uses hard links, which is fast and takes up very little space because only the directory entries need to be copied, not the files.
 
-
-
-Because Alice doesn't have her copy of Git properly configured yet (which is not surprising since she's a fictional character), she sets local configuration variables for her name and email:
-
-```
-$ git config user.name Alice
-$ git config user.email alice@example.com
-```
+A clone of the repo in your project directory now lives in your "Alice" directory. Which means now is a great time to learn about remote repositories.
 
 ## Remote repositories
 
@@ -62,7 +64,9 @@ $ git pull
 Already up to date.
 ```
 
-Git only pulls or pushes (which is copying in the other direction) when you tell it to. That's different from, say, Dropbox, which has to ask the operating system to notify it of any changes you make in its folder, and occasionally ask the server whether anyone else has made changes. (A sync program called <a href="https://www.sparkleshare.org/">SparkleShare</a> does the same thing, only using Git. SparkleShare still has to keep track of changes on both ends, but it keeps all of your history, and if you own the server it uses you don't have to pay for space.)
+Git only pulls or pushes (which is copying in the other direction) when you tell it to. That's different from, say, Dropbox, which has to ask the operating system to notify it of any changes you make in its folder, and occasionally ask the server whether anyone else has made changes.
+
+> A program named called [SparkleShare](https://www.sparkleshare.org/) does the same thing, only using Git. SparkleShare still has to keep track of changes on both ends, but it keeps all of your history, and if you own the server it uses you don't have to pay for space.
 
 ## Alice makes a change and a pull request
 
