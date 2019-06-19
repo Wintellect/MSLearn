@@ -123,9 +123,9 @@ Now let's replace **.git-keep** with a CSS file and connect the file to **index.
 
 Finish up by opening **index.html** in your browser and confirming that the style sheet has been applied. It's not very fancy at the moment, but it's a start.
 
-## Rename files and directories
+## Rename a subdirectory
 
-After creating the "CSS" subdirectory, you decide to rename it "assets" since it will eventually hold other files besides style sheets.
+After creating the "CSS" subdirectory, you decide to rename it "assets" since it will eventually hold files other than style sheets.
 
 1. Use the following command to rename the subdirectory:
 
@@ -145,7 +145,7 @@ After creating the "CSS" subdirectory, you decide to rename it "assets" since it
 	git commit -m "Rename CSS -> assets for generality"
 	```
 
-	The percentage reported by `git commit` on the last line is the degree of similarity between the new and old versions of **site.css**. In this case, of course, you _just_ moved it, so they're 100% identical. If you change a file and don't commit before you move it, the percentage is lower, but in most situations Git correctly recognizes a change-and-move. It can guess wrong if you move more than half of one file into another; in that case, it will look as though the file was moved and then a new file was created in its place.
+	The percentage reported by `git commit` on the last line is the degree of similarity between the new and old versions of **site.css**. In this case, you _just_ moved it, so they're 100% identical. If you change a file and don't commit before you move it, the percentage is lower, but in most situations Git correctly recognizes a change-and-move. It can guess wrong if you move more than half of one file into another; in that case, it will look as though the file was moved and then a new file was created in its place.
 
 Unlike most version control systems, Git records the contents of your files rather than the deltas between them. That's a large part of what makes committing, branching, and switching between branches so fast in Git. Other VCSes have to apply a list of changes to get between one version of a file and another. Git just unzips the other version.
 
