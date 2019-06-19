@@ -20,13 +20,6 @@ Instead of making an empty directory and running `git init` to initialize it, Al
 
 	In real life, Alice would be cloning this onto her machine. For training purposes, since you probably don't have a programmer friend named Alice, both your repo and hers will reside on your computer.
 
-1. Temporarily assume Alice's identity by executing the following commands:
-
-	```bash
-	git config user.name Alice
-	git config user.email alice@contoso.com
-	```
-
 1. Now use [`git clone`](https://git-scm.com/docs/git-clone) to clone the repo in your project directory into the "Alice" directory, and be sure to include the period at the end of the command:
 
 	```bash
@@ -53,101 +46,40 @@ git pull
 
 Git only pulls or pushes (which is copying in the other direction) when you tell it to. That's different from, say, Dropbox, which has to ask the operating system to notify it of any changes you make in its folder, and occasionally ask the server whether anyone else has made changes. A program named [SparkleShare](https://www.sparkleshare.org/) does something similar using Git. SparkleShare still has to keep track of changes on both ends, but it keeps all of your history, and if you own the server it uses you don't have to pay for space.
 
-## Alice makes a change and a pull request
+## Make a change and submit a pull request
 
-Alice decides to start working on the cat website. Her first decision is to change the site's background color. She experiments locally, and ultimately chooses her favorite shade of light blue. When she is ready, she commits the change:
+Alice decides to start working on the cat website. Her first decision is to change the site's background color. She experiments locally, and ultimately chooses her favorite shade of light blue.
 
-```
-$ sed -i.bak -E '/background-color/s/#.+;/#F0F8FF;/' assets/site.css
-$ git commit -a -m "change background color to light blue"
-[master 37903fd] change background color to light blue
- 1 file changed, 1 insertion(+), 1 deletion(-)
-$  git status
-On branch master
-Your branch is ahead of 'origin/master' by 1 commit.
-  (use "git push" to publish your local commits)
+1. Temporarily assume Alice's identity by executing the following commands:
 
-nothing to commit, working tree clean
-```
+	```bash
+	git config user.name Alice
+	git config user.email alice@contoso.com
+	```
 
-Git gives Alice a hint about the next step, which is to get the changes over to _your_ copy of the project. Since Git suggests using `git push`, she tries that first:
+1. Open **site.css** in the "Alice/assets" directory (not your project directory's "assets" directory) and replace the second line in the file with this one:
 
-```
-$ git push
-Counting objects: 4, done.
-Delta compression using up to 2 threads.
-Compressing objects: 100% (3/3), done.
-Writing objects: 100% (4/4), 402 bytes | 201.00 KiB/s, done.
-Total 4 (delta 1), reused 0 (delta 0)
-remote: error: refusing to update checked out branch: refs/heads/master
-remote: error: By default, updating the current branch in a non-bare repository
-remote: is denied, because it will make the index and work tree inconsistent
-remote: with what you pushed, and will require 'git reset --hard' to match
-remote: the work tree to HEAD.
-remote: 
-remote: You can set the 'receive.denyCurrentBranch' configuration variable
-remote: to 'ignore' or 'warn' in the remote repository to allow pushing into
-remote: its current branch; however, this is not recommended unless you
-remote: arranged to update its work tree to match what you pushed in some
-remote: other way.
-remote: 
-remote: To squelch this message and still keep the default behaviour, set
-remote: 'receive.denyCurrentBranch' configuration variable to 'refuse'.
-To /home/steve/sandbox/Alice/../Cats
- ! [remote rejected] master -> master (branch is currently checked out)
-error: failed to push some refs to '/home/steve/sandbox/Alice/../Cats'
-```
+	```css
+	body { font-family: serif; background-color: #F0FFF8; }	
+	```
 
-Well, _that_ didn't work. It would have worked if Alice had pushed to a
-different branch *and* had permission to write to your repo. (It's worth
-noting that if Alice *didn't* have write permission for your repository, she
-would have gotten a "fatal" error message instead.) Both of these are safety
-measures.  You don't want Alice to be able to change the files in your working
-tree out from under you.
+1. Now commit the change:
 
-(In the next unit we see how you and Alice can use both push and pull to share a repo that doesn't have a working tree, and how Git keeps you from stepping on one another's toes in the process.)
+	```bash
+	git commit -a -m "Change background color to light blue"
+	```
 
-For now, Alice has to ask _you_ to _pull_ her changes. She can do that by running `git request-pull` and emailing you the output:
+1. At this point, you (Alice) *could* attempt to push the changes to the original repo. But it would fail because Alice doesn't have permission to modify your repo. And that's as it should be. For now, you want to review Alice's changes before folding them into the master code base.
 
-```
-$ git request-pull -p origin/master ../../Alice/Cats
-The following changes since commit 2c01c0503149e7c3bbcfdb90b54d576e7e4e177b:
+	For now, Alice has to submit a *pull request* asking you to pull her changes. She can do that with [`git request-pull`](https://git-scm.com/docs/git-request-pull). To that end, execute the following command:
 
-  Make the page background a little darker (2019-05-15 12:25:20 -0700)
+	```bash
+	$ git request-pull -p origin/master .
+	```
 
-are available in the Git repository at:
+	`origin/master` is Alice's way to refer to the "master" branch on the "origin" remote.
 
-  ../../Alice/Cats 
-
-for you to fetch changes up to 37903fd0338e070bacb2a7baeb9ed83875252f37:
-
-  change background color to light blue (2019-05-15 13:23:40 -0700)
-
-----------------------------------------------------------------
-Alice (1):
-      change background color to light blue
-
- assets/site.css | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-diff --git a/assets/site.css b/assets/site.css
-index 3866268..ceaebf9 100644
---- a/assets/site.css
-+++ b/assets/site.css
-@@ -1,3 +1,3 @@
- h1, h2, h3, h4, h5, h6 { font-family: sans-serif; }
- body { font-family: serif; }
--body { background-color:  #C0C0C0; }
-+body { background-color:  #F0F8FF; }
-```
-
-Notice a few things about this process:
-
-- `origin/master` is Alice's way to refer to the `master` branch on the `origin` remote.
-- Instead of the path `../../Alice/Cats`, Alice would normally be relative to Alice's network share. It would be better to use the URL of a public repository to which Alice can push (We'll see how to set that up in the next unit) and from which you can pull.
-- Normally, Alice would redirect the pull request into a file, or pipe it directly into an email client.
-
-This pull request is essentially the same thing as a pull request on [GitHub](https://github.com). In addition to the pull request asking you to pull Alice's changes, it also gives you a chance to review her changes before you incorporate her work into the website. Code reviews are an important part — some would say the *most* important part — of collaborative programming.
+This pull request is essentially the same thing as a pull request on [GitHub](https://github.com). It gives you a chance to review her changes before you incorporate her work into the Web site. Code reviews are an important part — some would say the *most* important part — of collaborative programming.
 
 ## An unsuccessful pull
 
