@@ -1,4 +1,4 @@
-# Collaborate using pull
+# Collaborate using pull requests
 
 Your Web site for cat pictures is well underway and version control is being performed by Git. It's time to invite collaborators onto the project. After a pizza party at your house, your friend and fellow cat-lover [Alice](https://en.wikipedia.org/wiki/Alice_and_Bob) offers to help bring your vision to fruition, and you eagerly agree. Alice needs to make a copy of your project, and she will want to send her changes to you as she makes them.
 
