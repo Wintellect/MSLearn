@@ -10,12 +10,12 @@ Start by creating an empty directory and initializing a Git working tree inside 
 
 1. Create a directory named "cats" or something similar in the location of your choice. (The directory name is unimportant; Git is happy to work with it regardless.) This will be the *project directory* where your Web site is stored and the files that comprise it are subject to version control.
 
-1. `cd` to the project directory in a Command Prompt window or terminal. Then execute a [git init](https://git-scm.com/docs/git-init) command to initialize the repository:
+1. `cd` to the project directory in a Command Prompt window or terminal. Then execute a [`git init`](https://git-scm.com/docs/git-init) command to initialize the repository:
 
 	```bash
 	git init
 	```
-1. Now use a [git status](https://git-scm.com/docs/git-status) command to show the status of the working tree:
+1. Now use a [`git status`](https://git-scm.com/docs/git-status) command to show the status of the working tree:
 
 	```bash
 	git status
@@ -66,7 +66,7 @@ Git doesn't do much with empty directories, so let's add a file to the project d
 
 	Notice that `git status` gives you hints about what you can do next. Git can be configured to be less wordy, but at this stage, more is better.
 
-1. Now use [git add](https://git-scm.com/docs/git-status) to add the new file to Git's "index," followed by `git status` to check the status. Don't forget the period at the end of the first command. It tells Git to index all of the files in the current directory that have been added or modified:
+1. Now use [`git add`](https://git-scm.com/docs/git-status) to add the new file to Git's "index," followed by `git status` to check the status. Don't forget the period at the end of the first command. It tells Git to index all of the files in the current directory that have been added or modified:
 
 	```bash
 	git add .
@@ -93,7 +93,7 @@ _Commit_ is both a verb and a noun. It has essentially the same meaning as when 
 
 1. Follow up with a `git status` command and confirm that the working tree is clean — that is, the working tree contains no changes that haven't been committed.
 
-1. Now use a [git log](https://git-scm.com/docs/git-log) command to show information about the commit:
+1. Now use a [`git log`](https://git-scm.com/docs/git-log) command to show information about the commit:
 
 	```bash
 	git log
@@ -109,7 +109,7 @@ A commit message can have multiple lines. The first line should have no more tha
 
 ## Modify index.html and commit the change
 
-**index.html** was created to serve as the Web site's home page, but it's currently empty. The next step is to pour some HTML into it. We'll start simple by using Unix's [echo](https://linux.die.net/man/1/echo) command to add a single line of HTML.
+**index.html** was created to serve as the Web site's home page, but it's currently empty. The next step is to pour some HTML into it. We'll start simple by using Unix's [`echo`](https://linux.die.net/man/1/echo) command to add a single line of HTML.
 
 1. Execute the following command:
 
@@ -141,7 +141,7 @@ This is a great time to take a look inside the repository and see what Git is do
 	ls -FC .git
 	```
 
-1. One of the files in the subdirectory is **COMMIT_EDITMSG**. It contains the most recent commit message. Use a [cat](https://linux.die.net/man/1/cat) command to list its contents to the screen:
+1. One of the files in the subdirectory is **COMMIT_EDITMSG**. It contains the most recent commit message. Use a [`cat`](https://linux.die.net/man/1/cat) command to list its contents to the screen:
 
 	```bash
 	cat .git/COMMIT_EDITMSG
@@ -165,13 +165,13 @@ This is a great time to take a look inside the repository and see what Git is do
 
 	It's worth taking a moment to note the way Git stores objects. The "objects" directory contains one subdirectory for each object in the working tree. The subdirectory name is the first two hex digits of the object's hash. Inside that subdirectory is a file whose name is a string of letters and numbers containing the object itself.
 
-1. Objects are stored in binary files (they're compressed with `gzip`), but you can examine their contents with [git show](https://git-scm.com/docs/git-show). To demonstrate, try this:
+1. Objects are stored in binary files (they're compressed with `gzip`), but you can examine their contents with [`git show`](https://git-scm.com/docs/git-show). To demonstrate, try this:
 
 	```bash
 	git show `cat .git/refs/heads/master`
 	```
 
-	The output shows the diff between the changed files. You can see the actual contents of the commit object by using `git cat-file` and providing the commit ID:
+	The output shows the diff between the changed files. You can see the actual contents of the commit object by using [`git cat-file`] and providing the commit ID:
 
 	```bash
 	git cat-file commit COMMIT_ID
@@ -184,7 +184,7 @@ The `cat-file` subcommand is one of the low-level subcommands that the Git docum
 In this unit, you learned how to create a project that is under Git's control. You also learned about the following Git subcommands:
 
 - [`git init`](https://git-scm.com/docs/git-init), which creates and initializes a Git repository in the current directory
-- [`git add `](https://git-scm.com/docs/git-add), which adds files or directories to the index
+- [`git add`](https://git-scm.com/docs/git-add), which adds files or directories to the index
 - [`git commit`](https://git-scm.com/docs/git-commit), which records all of the files in the index in a commit
 - [`git status`](https://git-scm.com/docs/git-status), which tells you the current state of the index and the working tree
 - [`git log`](https://git-scm.com/docs/git-log), which lists commits, newest first 
