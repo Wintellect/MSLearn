@@ -133,7 +133,7 @@ The change to **index.html** has been committed. There are now two versions of t
 
 ## Explore the Git repository
 
-This is a great time to take a look inside the repository and see what Git is doing while things are still uncomplicated. The steps that follow aren't required, but they will help deepen your understanding of Git.
+This is a great time to take a look inside the repository and see what Git is doing while things are still relatively uncomplicated. The steps that follow aren't required, but they will help deepen your understanding of Git.
 
 1. Use the following command to look inside the ".git" subdirectory:
 
