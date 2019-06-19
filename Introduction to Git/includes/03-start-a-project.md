@@ -171,7 +171,7 @@ This is a great time to take a look inside the repository and see what Git is do
 	git show `cat .git/refs/heads/master`
 	```
 
-	The output shows the diff between the changed files. You can see the actual contents of the commit object using `git cat-file`:
+	The output shows the diff between the changed files. You can see the actual contents of the commit object by using `git cat-file` and providing the commit ID:
 
 	```bash
 	git cat-file commit COMMIT_ID
