@@ -6,7 +6,7 @@ Git lets you make changes fearlessly, because it *always* offer a way to get bac
 
 ## Amend a commit
 
-In the previous exercise, you modified the path to the style sheet in **index.html**. Suppose you discover that you made an error and rather than typing this:
+In the previous exercise, you modified the path to the style sheet in **index.html**. Suppose you discover that you made an error. Rather than type this:
 
 ```html
 <link rel="stylesheet" href="assets/site.css">
