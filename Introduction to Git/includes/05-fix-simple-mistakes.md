@@ -81,74 +81,68 @@ Here's another "Aha!" moment for new Git users. Many version-control systems mak
 
 ## Revert a commit
 
-As you work on the Web site design, you decide to make the background a little darker:
+Now let's make things more complicated still. Suppose you accidentally overwrite one file with another, or make a change to a file that turns out to be a big mistake. You want to revert to the previous version of the file, but you had already committed the changes. This means that a simple `git checkout` won't do the trick.
 
-```
-$ echo body '{ background-color:  #C0C0C0; }' > assets/site.css
-$ git commit -a -m "Make the page background a little darker"
-[master 6909e17] Make the page background a little darker
- 1 file changed, 1 insertion(+), 2 deletions(-)
-```
+One solution to this problem is to revert the previous commit.
 
-Oops! You meant to append to `site.css`, but used `>` instead of `>>`, which replaced the entire file. You already know how to fix this by amending the commit: Use `git checkout` to get the previous version of `site.css` back, make the change correctly, and `git commit --amend`. Or you could use `git reset --hard` to put everything back the way it was, and re-do both the change and the commit.
+1. Use your favorite text editor to replace the contents of **index.html** with this:
 
-But suppose you didn't notice the problem until you'd already made another commit after the bad one, shared your repo with somebody (see the next unit), or made the commit public (see Unit 7). Changing history can be dangerous (see almost any dystopian science fiction story about time travel). Anyone with whom you collaborate has to do extra work to recover from your change.
+	```html
+	<h1>That was a mistake!</h1>
+	```
 
-In this situation the best thing to do is to _revert_ the change, by making another commit that cancels out the first one:
+1. Now save the file, commit the changes, and show the latest commit:
 
-```
-$ git revert --no-edit HEAD 
-[master d31233f] Revert "Make the page background a little darker"
- Date: Wed May 15 12:23:32 2019 -0700
- 1 file changed, 2 insertions(+), 1 deletion(-)
-$ git log -n1
-commit d31233fbe10ffe01eced101eb53214a7eccc96f4
-Author: Steve Savitzky <steve@savitzky.net>
-Date:   Wed May 15 12:23:32 2019 -0700
+	```bash
+	git commit -m "Purposely overwrite the contents of index.html" index.html
+	git log -n1
+	```
 
-    Revert "Make the page background a little darker"
-    
-    This reverts commit 6909e17a67f6063d616f3863b3c04854fa4f5a9e.
-```
+1. Use the following commands to "restore" **index.html** and then list its contents:
 
-Now you can make the change correctly.
+	```bash
+	git checkout -- index.html
+	cat index.html
+	``` 
 
-```
-$ echo body '{ background-color:  #C0C0C0; }' >> assets/site.css 
-$ cat assets/site.css
-h1, h2, h3, h4, h5, h6 { font-family: sans-serif; }
-body { font-family: serif; }
-body { background-color:  #C0C0C0; }
-$ git commit -a -m "Make the page background a little darker" -m "correctly"
-[master 2c01c05] Make the page background a little darker
- 1 file changed, 1 insertion(+)
-```
+	Which version of **index.html** do you see? The old or the new?
 
-In addition to copying text from the terminal to a file, the `cat` command can be used going the other way for getting a quick look at a short file. For longer files, use `less`, which lets you go through a file a page at a time. As you might expect, it's an improved version of an older Unix command called `more`. (And it has nothing to do with the cat putting his paws on your keyboard.)
+1. In this situation, the best course of action is to _revert_ the change by making another commit that cancels out the first one. That's a job for [`git revert`](https://git-scm.com/docs/git-revert):
 
-Revert isn't the only way to fix this; you could simply have edited `site.css` and committed the changed file. That's harder if the changes you committed were extensive, and in any case the `revert` is a good way to signal your intent.
+	```bash
+	git revert --no-edit HEAD
+	```
 
-You can also remove the most recent commit with 
+1. Follow up with a `git log` command to show the latest commit:
+
+	```bash
+	git log -n1
+	```
+
+1. Now use these commands to restore **index.html** and verify that the old version was indeed restored:
+
+	```bash
+	git checkout -- index.html
+	cat index.html
+	``` 
+
+Reverting isn't the only way to remedy this situation; you could simply edit **index.html** and commit the corrected file. That's harder if the changes you committed were extensive, and in any case, `git revert` is a good way to signal your intent.
+
+As an aside, you can also remove the most recent commit with:
 
 ```
 git reset --hard HEAD^
 ```
 
-There are several different resets. The default is `--mixed`, which resets the index but not the working tree; it also moves HEAD if you specify a different commit. The `--soft` option only moves HEAD, and leaves both the index and the working tree unchanged.  This leaves all your changed files "changes to be committed", as `git status` would put it. A `--hard` reset changes both the index and the working tree to match the specified commit; any changes you made to tracked files are simply discarded.
-
-### Exercises
-
-* Use `git reflog` to see all the changes you've made to `master` and `HEAD`, including the original version of the commit you amended.
-* Use `gitk --all`, which shows you a GUI view of your history, to verify that the last few commits made the changes you expect.
+There are several types of resets. The default is `--mixed`, which resets the index but not the working tree; it also moves HEAD if you specify a different commit. The `--soft` option only moves HEAD, and leaves both the index and the working tree unchanged. This leaves all your changes as "changes to be committed", as `git status` would put it. A `--hard` reset changes both the index and the working tree to match the specified commit; any changes you made to tracked files are simply discarded.
 
 ## Summary
 
-In this unit, you learned about
+In this unit, you learned several new Git commands:
 
-* [`git checkout`](https://git-scm.com/docs/git-checkout), which retrieves previous versions
-* [`git reset`](https://git-scm.com/docs/git-reset), which sets the working tree and index back to an earlier state,
-* [`git revert`](https://git-scm.com/docs/git-revert), which undoes the effect of a commit without affecting history
-* [`git reflog`](https://git-scm.com/docs/git-reflog), which shows you previous values of `HEAD` and `master`, and 
-* [`git commit --amend`](https://git-scm.com/docs/git-commit), which lets you change the most recent commit.
+- [`git checkout`](https://git-scm.com/docs/git-checkout), which retrieves previous versions
+- [`git reset`](https://git-scm.com/docs/git-reset), which sets the working tree and index back to an earlier state
+- [`git revert`](https://git-scm.com/docs/git-revert), which undoes the effect of a commit without affecting history
+- [`git commit --amend`](https://git-scm.com/docs/git-commit), which changes the most recent commit
 
-In the next unit you start collaborating with another developer. Because Git is distributed, you won't have to set up a server; you can share changes directly.
+In the next unit, you start collaborating with another developer. Because Git is distributed, you won't have to set up a server; you can share changes directly.
