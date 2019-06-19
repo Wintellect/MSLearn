@@ -10,11 +10,12 @@ In this unit, you learn how to clone a repository to make it available to other 
 
 Instead of making an empty directory and running `git init` to initialize it, Alice uses [`git clone`](https://git-scm.com/docs/git-clone) to copy your repo. Since she's already on your household Wi-Fi network, she can mount the directory as a network share; for now (and for the sake of simplicity) we make an ordinary directory named "Alice" to take the place of her home directory. You're probably in your working tree project directory, so you need to change to the parent directory first.
 
-1. Create a directory named "Alice" to clone the repo into. It must *not* be a subdirectory of your project directory, so `cd` up to the parent directory first so "Alice" is a sibling of "Cats:"
+1. Create a directory named "Alice" to clone the repo into. It must *not* be a subdirectory of your project directory, so `cd` up to the parent directory first so "Alice" is a sibling of "Cats." Then `cd` into the "Alice" directory:
 
 	```bash
 	cd ..
 	mkdir Alice
+	cd Alice
 	```
 
 	In real life, Alice would be cloning this onto her machine. For training purposes, since you probably don't have a programmer friend named Alice, both your repo and hers will reside on your computer.
@@ -26,10 +27,10 @@ Instead of making an empty directory and running `git init` to initialize it, Al
 	git config user.email alice@contoso.com
 	```
 
-1. Now use [`git clone`](https://git-scm.com/docs/git-clone) to clone the repo in your project directory into the "Alice" directory:
+1. Now use [`git clone`](https://git-scm.com/docs/git-clone) to clone the repo in your project directory into the "Alice" directory, and be sure to include the period at the end of the command:
 
 	```bash
-	git clone ../Cats
+	git clone ../Cats .
 	```
 
 	`git clone` accepts a file-system path, an SSH path (e.g. `git@example.com:alice/Cats` — you'll be familiar with this form if you've used `Rsync` or `Scp`); or a URL, typically starting with `file:`, `git:`, or `ssh`. The various types are described in the [documentation for `git clone`](https://git-scm.com/docs/git-clone). On Unix and Linux, the cloning operation uses hard links, which is fast and takes up very little space because only the directory entries need to be copied, not the files.
@@ -38,7 +39,7 @@ A clone of the repo in your project directory now lives in your "Alice" director
 
 ## Remote repositories
 
-When Git clones a repository, it creates a reference to the original repo called a _remote_, with the name "origin," and sets it up so that it will pull from the remote repository. (Git can also "push"; we get to that in the next unit.)
+When Git clones a repository, it creates a reference to the original repo called a _remote_, with the name "origin," and sets it up so that it will pull from the remote repository. (Git can also "push"; we'll get to that in the next unit.)
 
 
 ```
