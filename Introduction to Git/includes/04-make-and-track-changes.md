@@ -125,33 +125,29 @@ Finish up by opening **index.html** in your browser and confirming that the styl
 
 ## Rename files and directories
 
-The cat website may be sparse, so far, but it's functional. However, after you create CSS/site.css you may decide to put other
-assets on the site besides the stylesheet. It makes sense to rename the directory.
+After creating the "CSS" subdirectory, you decide to rename it "assets" since it will eventually hold other files besides style sheets.
 
-As you might expect, you do that with `git mv`. Again, the command reflects common Unix commands; `mv`, short for "move," is the Unix command for renaming a file.
+1. Use the following command to rename the subdirectory:
 
-```
-$ git mv CSS assets
-$ git status
-On branch master
-Changes to be committed:
-  (use "git reset HEAD <file>..." to unstage)
+	```bash
+	git mv CSS assets
+	```
 
-	renamed:    CSS/site.css -> assets/site.css
+1. Next, modify the `<link>` element in **index.html** to reference the renamed subdirectory:
 
-$ git commit -m "Rename CSS -> assets for generality"
-[master 7f77894] Rename CSS -> assets for generality
- 1 file changed, 0 insertions(+), 0 deletions(-)
- rename {CSS => assets}/site.css (100%)
-```
+	```html
+	<link rel="stylesheet" href="assets/site.css">
+	```
 
-Just as with `git rm`, `git mv` automatically updates the index, so it isn't necessary to run `git add`.
+1. Now commit the changes:
 
-The percentage reported by `commit` on the last line is the degree of similarity between the file in its old and new locations. In this case, of course, you _just_ moved it, so they're 100% identical. If you change a file and don't commit before you move it, the percentage is lower, but in most situations Git correctly recognizes a change-and-move. It can guess wrong if you move more than half of one file into another; in that case, it will look as though the file was moved and then a new file was created in its place.
+	```bash
+	git commit -m "Rename CSS -> assets for generality"
+	```
 
-Unlike most version control systems, Git records the contents of your files rather than the changes you made between them. That's a large part of what makes committing, branching, and switching between branches so fast in Git. Other VCSs have to apply a list of changes to get between one version of a file and another. Git just unzips the other version.
+	The percentage reported by `git commit` on the last line is the degree of similarity between the file in its old and new locations. In this case, of course, you _just_ moved it, so they're 100% identical. If you change a file and don't commit before you move it, the percentage is lower, but in most situations Git correctly recognizes a change-and-move. It can guess wrong if you move more than half of one file into another; in that case, it will look as though the file was moved and then a new file was created in its place.
 
-By the way, if you reload the page in your browser you will notice that the stylesheet has *not* been applied, because you moved it without changing the reference in `index.html`. We fix that in the next unit.
+Unlike most version control systems, Git records the contents of your files rather than the deltas between them. That's a large part of what makes committing, branching, and switching between branches so fast in Git. Other VCSes have to apply a list of changes to get between one version of a file and another. Git just unzips the other version.
 
 ## List commits with Git log
 
