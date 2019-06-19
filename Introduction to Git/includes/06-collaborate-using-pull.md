@@ -10,13 +10,6 @@ In this unit, you learn how to clone a repository to make it available to other 
 
 Instead of making an empty directory and running `git init` to initialize it, Alice uses [`git clone`](https://git-scm.com/docs/git-clone) to copy your repo. Since she's already on your household Wi-Fi network, she can mount the directory as a network share; for now (and for the sake of simplicity) we make an ordinary directory named "Alice" to take the place of her home directory. You're probably in your working tree project directory, so you need to change to the parent directory first.
 
-1. Temporarily assume Alice's identity by executing the following commands:
-
-	```bash
-	git config user.name Alice
-	git config user.email alice@contoso.com
-	```
-
 1. Create a directory named "Alice" to clone the repo into. It must *not* be a subdirectory of your project directory, so `cd` up to the parent directory first so "Alice" is a sibling of "Cats:"
 
 	```bash
@@ -25,6 +18,13 @@ Instead of making an empty directory and running `git init` to initialize it, Al
 	```
 
 	In real life, Alice would be cloning this onto her machine. For training purposes, since you probably don't have a programmer friend named Alice, both your repo and hers will reside on your computer.
+
+1. Temporarily assume Alice's identity by executing the following commands:
+
+	```bash
+	git config user.name Alice
+	git config user.email alice@contoso.com
+	```
 
 1. Now use [`git clone`](https://git-scm.com/docs/git-clone) to clone the repo in your project directory into the "Alice" directory:
 
