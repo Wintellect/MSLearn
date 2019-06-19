@@ -163,33 +163,21 @@ This is a great time to take a look inside the repository and see what Git is do
 	ls -RFC .git/objects
 	``` 
 
-	It's worth taking a moment to note the way Git stores objects. The "objects" directory contains one subdirectory for each object in the working tree. The subdirectory name is the first two hex digits of the object's hash. Inside that subdirectory is a file whose name is a string of letters and numbers. That file is a binary file containing the object itself.
+	It's worth taking a moment to note the way Git stores objects. The "objects" directory contains one subdirectory for each object in the working tree. The subdirectory name is the first two hex digits of the object's hash. Inside that subdirectory is a file whose name is a string of letters and numbers containing the object itself.
 
 1. Objects are stored in binary files (they're compressed with `gzip`), but you can examine their contents with [git show](https://git-scm.com/docs/git-show). To demonstrate, try this:
 
 	```bash
-	git show 'cat .git/refs/heads/master'
+	git show `cat .git/refs/heads/master`
 	```
 
-	The diff shown is computed from the changed files; you can see the actual contents of the commit object using `git cat-file`:
+	The diff shown is computed from the changed files. You can see the actual contents of the commit object using `git cat-file`:
 
 	```bash
-	git cat-file commit 4c3b05d4c547a39118ff3381f003d259f016aabf
+	git cat-file commit COMMIT_ID
 	```
 
-	And you can see the object's type with with the `-t` option:
-
-	```bash
-	git cat-file -t commit 4c3b05d4c547a39118ff3381f003d259f016aabf
-	```
-
-The `cat-file` subcommand is one of the low-level subcommands that the Git documentation refers to as _plumbing_. Higher-level subcommands, such as `show`, are called _porcelain_. Plumbing commands are designed to be used in scripts, and in fact many of the less-commonly-used Git subcommands *are* scripts, as you can see from:
-
-```
-for f in /usr/bin/git-*; do file $f; done
-```
-
-One of the reasons why Git has so many subcommands is that they're easy to create. Any executable file with a name starting with `git-` can be used as a subcommand. 
+The `cat-file` subcommand is one of the low-level subcommands that the Git documentation refers to as _plumbing_. Higher-level subcommands, such as `show`, are called _porcelain_. Plumbing commands are designed to be used in scripts, and in fact many of the less-commonly-used Git subcommands *are* scripts. One of the reasons why Git has so many subcommands is that they're easy to create. Any executable file with a name starting with `git-` can be used as a subcommand. 
 
 ## Summary
 
