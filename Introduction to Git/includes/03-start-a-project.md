@@ -37,7 +37,7 @@ You typically don't do anything with the ".git" directory directly. Git updates 
 
 Git doesn't do much with empty directories, so let's add a file to the project directory to serve as the home page for the Web site.
 
-1. Use a [touch](https://linux.die.net/man/1/touch) command to create a file named **index.html**:
+1. Use a [`touch`](https://linux.die.net/man/1/touch) command to create a file named **index.html**:
 
 	```bash
 	touch index.html
