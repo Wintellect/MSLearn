@@ -4,7 +4,7 @@ Your Web site for cat pictures is well underway and version control is being per
 
 This is where Git's _distributed_ nature comes in. It permits two or more people to work together on a project without fear of overwriting one another's work. Moreover, it allows you to check Alice's work before merging it with yours. Alice is talented, but no developer is perfect. Trust but verify.
 
-In this unit, you learn how to clone a repository to make it available to other people. You also learn to use one of Git's most important features: pulls.
+In this unit, you learn how to clone a repository to make it available to other people. You also learn to use one of Git's most important features: pull requests.
 
 ## Clone a repository
 
