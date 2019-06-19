@@ -75,7 +75,7 @@ Imagine you made a change to a source-code file that broke the entire project, s
 	git checkout -- index.html
 	```
 
-	The `reset` unstaged the change, but the file was still deleted, so you had to use `checkout` to get it back.
+	`git reset` unstaged the change, but the file was still deleted, so you had to use `checkout` to get it back.
 
 Here's another "Aha!" moment for new Git users. Many version-control systems make files read-only to ensure that only one person at a time can make changes; they use a completely unrelated `checkout` command to get a writable version. They also use `checkin` for an operation similar to what Git does with a combination of `add`, `commit`, and `push`. This occasionally causes confusion when people start using Git.
 
