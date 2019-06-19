@@ -64,29 +64,9 @@ The Web site's home page, **index.html** currently contains just one line of HTM
 	git commit -m "Make small wording change; ignore editor backups"
 	```
 
-This example uses the `-A` option with `git add` to add all untracked (and not ignored) files as well as ones that have changed to those already under Git control.
+	This example uses the `-A` option with `git add` to add all untracked (and not ignored) files as well as ones that have changed to those already under Git control.
 
-## Exercise: try the following commands
-
-At this point, you can try a few different options to `git diff` to get a feel for a few of its capabilities:
-
-```
-$ git diff
-$ git diff HEAD^
-$ git diff master HEAD^
-$ git diff HEAD^ HEAD^^
-$ git diff --word-diff HEAD^
-$ git diff --name-only HEAD^
-$ git diff HEAD^ -- index.html
-$ git diff -- foo
-$ git diff foo
-```
-
-Some things to notice:
-
-- A circumflex after a commit name gets you to the previous commit.
-- Use `--` to separate commit references from filenames. It's not needed in this case, but the '--' prevents problems if you ever make a file called `HEAD` or a branch that has the same name as a file.
-- There are many ways to name commits; `master` always refers to the latest commit on the master branch, no matter which branch you're currently on.
+If you do a `git diff` right now, the output will be empty because the changes have been committed. However, you can always use a `git diff HEAD^` command to compare differences between the latest commit and previous commit. (Try it and see.)
 
 ## Create a subdirectory
 
