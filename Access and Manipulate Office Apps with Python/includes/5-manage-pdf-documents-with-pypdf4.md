@@ -149,4 +149,4 @@ As with the other Lessons, these little demonstrations only hint at a small frac
 ## Summary
 
 * **PyPDF4** makes short work of programming common chores having to do with PDF documents.
-* 
+* [TODO:  complete after Jeff approves treatment above.]
