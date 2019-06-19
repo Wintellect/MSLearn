@@ -147,7 +147,7 @@ This is a great time to take a look inside the repository and see what Git is do
 	cat .git/COMMIT_EDITMSG
 	```
 
-	Other files in the ".git" subdirectory include **HEAD**, which contains the file name of the branch ("master," which is currently the only branch) that is currently checked out, and **config**, which contains the local configuration for the working tree.
+	Other files in the ".git" subdirectory include **HEAD**, which contains the file name of the branch (**master**) that is currently checked out, and **config**, which contains the local configuration for the working tree.
 
 1. Use `ls -RF` to drill down into the ".git/refs" directory:
 
