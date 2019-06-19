@@ -77,9 +77,9 @@ Alice starts working on the Web site. Her first decision is to change the site's
 	$ git request-pull -p origin/master .
 	```
 
-	`origin/master` is Alice's way to refer to the "master" branch on the "origin" remote.
+	`origin/master` is Alice's way of referring to the "master" branch on the "origin" remote.
 
-This pull request is essentially the same thing as a pull request on [GitHub](https://github.com). It gives you a chance to review her changes before you incorporate her work into the Web site. Code reviews are an important part — some would say the *most* important part — of collaborative programming.
+This pull request is essentially the same thing as a pull request on [GitHub](https://github.com). It gives you a chance to review her changes before you incorporate her work into the Web site. Code reviews are an important part — some would say the most important part — of collaborative programming.
 
 ## An unsuccessful pull
 
