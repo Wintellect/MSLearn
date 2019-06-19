@@ -172,6 +172,6 @@ You can see why once you're hundreds (or thousands) of commits into a project, t
 In this unit, you learned two new Git commands:
 
 - [`git diff`](https://git-scm.com/docs/git-diff), which shows the differences between versions
-- [`git mv`](https://git-scm.com/docs/git-mv),  which moves (renames) a file
+- [`git mv`](https://git-scm.com/docs/git-mv),  which moves (renames) a file or subdirectory
 
 You also learned more about `git log`. Next up: learn how to use Git to recover from common mistakes.
