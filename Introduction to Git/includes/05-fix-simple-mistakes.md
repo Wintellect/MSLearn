@@ -66,7 +66,7 @@ Imagine you made a change to a source-code file that broke the entire project, s
 	git checkout -- index.html
 	```
 
-	And now, Git complains that it knows nothing about **index.html**. That's because Git not only deleted the file, it recorded the deletion in the index.
+	This time, Git complains that it knows nothing about **index.html**. That's because Git not only deleted the file, it recorded the deletion in the index.
 
 1. You can recover **index.html** with two commands:
 
