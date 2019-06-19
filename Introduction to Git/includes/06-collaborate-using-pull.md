@@ -33,41 +33,25 @@ Instead of making an empty directory and running `git init` to initialize it, Al
 	git clone ../Cats .
 	```
 
-	`git clone` accepts a file-system path, an SSH path (e.g. `git@example.com:alice/Cats` — you'll be familiar with this form if you've used `Rsync` or `Scp`); or a URL, typically starting with `file:`, `git:`, or `ssh`. The various types are described in the [documentation for `git clone`](https://git-scm.com/docs/git-clone). On Unix and Linux, the cloning operation uses hard links, which is fast and takes up very little space because only the directory entries need to be copied, not the files.
+	`git clone` accepts a file-system path, an SSH path (e.g. `git@example.com:alice/Cats` — you'll be familiar with this form if you've used `rsync` or `scp`); or a URL, typically starting with `file:`, `git:`, or `ssh`. The various types are described in the [documentation for `git clone`](https://git-scm.com/docs/git-clone). On Unix and Linux, the cloning operation uses hard links, which is fast and takes up very little space because only the directory entries need to be copied, not the files.
 
 A clone of the repo in your project directory now lives in your "Alice" directory. Which means now is a great time to learn about remote repositories.
 
 ## Remote repositories
 
-When Git clones a repository, it creates a reference to the original repo called a _remote_, with the name "origin," and sets it up so that it will pull from the remote repository. (Git can also "push"; we'll get to that in the next unit.)
+When Git clones a repository, it creates a reference to the original repo called a _remote_, with the name "origin," and sets it up so that it will pull from the remote repository. (Git can also "push"; we'll get to that in the next unit.) Origin is the default location for Git to pull changes from and push changes to. Pull, specifically, copies changes from the remote repository to the local one. It's very efficient because it only copies _new_ commits and objects, and then checks them into your working tree.
 
+You pull from origin with the [`git pull`](https://git-scm.com/docs/git-pull) command. It's useful to compare `git pull` with other methods of copying files. The `scp` command (which is like the Unix `cp` command except that the files being copied don't have to be on the same computer) copies everything. If there are 10,000 files in the remote directory, `scp` copies them all. A more efficient program called `rsync` looks at every file in the local and remote directories, and only copies the ones that are different. It's often used for making backups, but `rsync` still has to hash every file unless they have different sizes or creation dates.
 
-```
-$ git remote 
-origin
-$ git branch -a
-* master
-  remotes/origin/HEAD -> origin/master
-  remotes/origin/master
-```
+Git only has to look at commits. It already knows (because it saved the list) the last commit that it got from the remote repository. It then tells the computer from which it's copying to send everything that changed: the new commits and the objects they point to. Those get bundled up in a file called a _pack_ and sent over in one batch. Finally, Git updates the working tree by unpacking all the objects that changed, and merging them (if necessary) with the ones in the working tree.
 
-Origin is the default location for Git to pull changes from and push changes to. Pull, specifically, copies changes from the remote repository to the local one; it's very efficient because it only copies _new_ commits and objects, and then checks them out into your working tree. 
+Right now there's nothing for Alice to pull because you haven't made any changes since she cloned the repo. You can prove that with the following command, which responds "Already up-to-date:"
 
-It's useful to compare `git pull` with some other methods of copying files. The `scp` command (which is like the Unix `cp` command except that the files being copied don't have to be on the same computer) simply copies everything. If there are ten thousand files in the remote directory, `scp`
-copies all of them. A more efficient program called `rsync` looks at every file in the local and remote directories, and only copies the ones that are different. It's often used for making backups, but `rsync` still has to hash every file unless they have different sizes or creation dates.
-
-Git only has to look at commits. It already knows (because it saved the list) the last commit that it got from the remote repository. It then tells the computer from which it's copying to send everything that changed: the new commits and the new objects they point to. Those get bundled up in a file called a _pack_, and sent over in one batch. Finally, Git updates the working tree by unpacking all the objects that changed, and merging them (if necessary) with the ones in the working tree. (We see how that works in Unit 8.)
-
-So far you haven't done anything new, so there's nothing for Alice to pull.
-
-```
-$ git pull
-Already up to date.
+```bash
+git pull
 ```
 
-Git only pulls or pushes (which is copying in the other direction) when you tell it to. That's different from, say, Dropbox, which has to ask the operating system to notify it of any changes you make in its folder, and occasionally ask the server whether anyone else has made changes.
-
-> A program named called [SparkleShare](https://www.sparkleshare.org/) does the same thing, only using Git. SparkleShare still has to keep track of changes on both ends, but it keeps all of your history, and if you own the server it uses you don't have to pay for space.
+Git only pulls or pushes (which is copying in the other direction) when you tell it to. That's different from, say, Dropbox, which has to ask the operating system to notify it of any changes you make in its folder, and occasionally ask the server whether anyone else has made changes. A program named [SparkleShare](https://www.sparkleshare.org/) does something similar using Git. SparkleShare still has to keep track of changes on both ends, but it keeps all of your history, and if you own the server it uses you don't have to pay for space.
 
 ## Alice makes a change and a pull request
 
