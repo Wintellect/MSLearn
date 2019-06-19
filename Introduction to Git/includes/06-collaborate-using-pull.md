@@ -8,9 +8,9 @@ In this unit, you learn how to clone a repository to make it available to other 
 
 ## Clone a repository
 
-Instead of making an empty directory and running `git init` to initialize it, Alice uses [`git clone`](https://git-scm.com/docs/git-clone) to copy your repo. Since she's already on your household Wi-Fi network, she can mount the directory as a network share; for now (and for the sake of simplicity) we make an ordinary directory named "Alice" to take the place of her home directory. You're probably in your working tree project directory, so you need to change to the parent directory first.
+The proper way to copy a repo is to *clone* it with the [`git clone`](https://git-scm.com/docs/git-clone) command. To simulate Alice cloning your repo, you'll create a directory named "Alice" on your computer and clone your project directory into there. In real life, you could accomplish this by setting up a network share or a remote reachable by URL. Or you could copy your project directory onto a thumb drive and let Alice copy it onto her computer.
 
-1. Create a directory named "Alice" to clone the repo into. It must *not* be a subdirectory of your project directory, so `cd` up to the parent directory first so "Alice" is a sibling of "Cats." Then `cd` into the "Alice" directory:
+1. Create a directory named "Alice" to clone the repo into. It must *not* be a subdirectory of your project directory, so `cd` up to the parent directory from your project directory so "Alice" is a sibling of the project directory. Then `cd` into the "Alice" directory:
 
 	```bash
 	cd ..
