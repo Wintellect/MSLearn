@@ -81,24 +81,6 @@ Alice starts working on the Web site. Her first decision is to change the site's
 
 This pull request is essentially the same thing as a pull request on [GitHub](https://github.com). It gives you a chance to review her changes before you incorporate her work into the Web site. Code reviews are an important part — some would say the most important part — of collaborative programming.
 
-## An unsuccessful pull
-
-Now, you can try to pull from Alice's repository:
-
-```
-$ cd ../../Cats
-$ git pull ../../Alice/Cats
-fatal: '../../Alice/Cats' does not appear to be a git repository
-fatal: Could not read from remote repository.
-
-Please make sure you have the correct access rights
-and the repository exists.
-```
-
-That didn't work because the path you took out of Alice's email was relative to _her_ repository, not yours. An absolute path or a public URL would have worked in this case.
-
-However, because you and Alice are going to collaborate regularly, it makes more sense to create a remote.
-
 ## Create a remote and complete the pull request
 
 Because your project directory and the "Alice" directory are on the same computer, you can pull directly from the "Alice" directory. In real life, the "Alice" directory will be on Alice's computer. You solve this by setting up a *remote* using the [`git remote`](https://git-scm.com/docs/git-remote) command and using that remote for pulls and pull requests. Since it's not practical to set up two machines to do this, we'll set up a remote that uses a local path name. In reality, you would use a network path or URL instead.
