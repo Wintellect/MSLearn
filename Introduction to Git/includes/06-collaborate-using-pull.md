@@ -42,7 +42,7 @@ Right now there's nothing for Alice to pull because you haven't made any changes
 git pull
 ```
 
-Git only pulls or pushes (which is copying in the other direction) when you tell it to. That's different from, say, Dropbox, which has to ask the operating system to notify it of any changes you make in its folder, and occasionally ask the server whether anyone else has made changes. A program named [SparkleShare](https://www.sparkleshare.org/) does something similar using Git. SparkleShare still has to keep track of changes on both ends, but it keeps all of your history, and if you own the server it uses you don't have to pay for space.
+Git only pulls or pushes (which is copying in the other direction) when you tell it to. That's different from, say, Dropbox, which has to ask the operating system to notify it of any changes you make in its folder, and occasionally ask the server whether anyone else has made changes.
 
 ## Make a change and submit a pull request
 
