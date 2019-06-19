@@ -189,6 +189,6 @@ In this unit, you learned how to create a project that is under Git's control. Y
 - [`git status`](https://git-scm.com/docs/git-status), which tells you the current state of the index and the working tree
 - [`git log`](https://git-scm.com/docs/git-log), which lists commits, newest first 
 - [`git show`](https://git-scm.com/docs/git-show), which prints the contents  of an object in human-readable form, and
-- [`git cat-file`](https://git-scm.com/docs/git-cat-file), which outputs the contents of an object.
+- [`git cat-file`](https://git-scm.com/docs/git-cat-file), which outputs the contents of an object
 
 In the next unit, you start making and tracking changes. (You get to do cat photos, too.)
