@@ -68,53 +68,28 @@ The Web site's home page, **index.html** currently contains just one line of HTM
 
 If you do a `git diff` right now, the output will be empty because the changes have been committed. However, you can always use a `git diff HEAD^` command to compare differences between the latest commit and previous commit. (Try it and see.)
 
-## Create a subdirectory
+## Add a subdirectory
 
-Most websites use CSS as well as HTML. It's usually kept in a subdirectory, so you make a subdirectory for it:
+Most Web sites use CSS style sheets as well as HTML, and the site you're building is no exception. Style sheets are typically stored in a subdirectory, so let's create a subdirectory named "CSS" and add it to the repo.
 
-```
-$ mkdir CSS
-$ git status
-On branch master
-nothing to commit, working tree clean
-```
+1. Begin by creating a subdirectory named "CSS" in the project directory:
 
-People used to most other version-control systems may be surprised to learn that Git doesn't consider adding an empty directory to be a change. That's because Git only tracks changes to *files*, not directories.
+	```bash
+	mkdir CSS
+	```
 
-Sometimes, especially in the initial stages of development, you *want* to have empty directories as placeholders. A common convention is to create an empty file in them -- it's often called `.git-keep`.
+	Then do a `git status`. Why does it report that there is nothing to commit?
 
-```
-$ touch CSS/.git-keep
-$ git status
-On branch master
-Untracked files:
-  (use "git add <file>..." to include in what will be committed)
+1. People used to other version-control systems are often surprised to learn that Git doesn't consider adding an empty directory to be a change. That's because Git only tracks changes to *files*, not directories.
 
-	CSS/
+	Sometimes, especially in the initial stages of development, you *want* to have empty directories as placeholders. A common convention is to create an empty file in them. It's often called `.git-keep`. Use the following commands to create an empty file with that name in the "CSS" subdirectory and add the contents of the subdirectory to the index:
 
-nothing added to commit but untracked files present (use "git add" to track)
-$  git add CSS
-$  git status
-On branch master
-Changes to be committed:
-  (use "git reset HEAD <file>..." to unstage)
+	```bash
+	touch CSS/.git-keep
+	git add CSS
+	```
 
-	new file:   CSS/.git-keep
-```
-
-This is also a good place to try `git diff --cached`, which compares the _index_ to the most recent commit.
-
-```
-$ git diff
-$ git diff --cached
-diff --git a/CSS/.git-keep b/CSS/.git-keep
-new file mode 100644
-index 0000000..e69de29
-$ git commit -m "Add a (mostly) empty directory for CSS"
-[master 9f9f355] Add a (mostly) empty directory for CSS
- 1 file changed, 0 insertions(+), 0 deletions(-)
- create mode 100644 CSS/.git-keep
-```
+Follow up by using `git status` again to check the status of the repo. Confirm that it reports one new file.
 
 ## Remove a file
 
