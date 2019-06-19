@@ -81,7 +81,7 @@ Rather than use `git add .`, you could have used `git add index.html` since **in
 
 Now that **index.html** has been added to the index, the next step is to commit it. Doing so requires that you understand what "commit" really means.
 
-_Commit_ is both a verb and a noun. It has essentially the same meaning as when you commit to a plan, or commit a change to a database. As a verb, committing changes means you put a copy (of the file, directory, or other "stuff") in the repository as a new version. As a noun, a commit is the small chunk of data that gives a unique identity to the changes you committed. It includes the author's name and e-mail address, the date, comments about what you did (and why), an optional digital signature, and the unique identifier of the previous commit.
+_Commit_ is both a verb and a noun. It has essentially the same meaning as when you commit to a plan, or commit a change to a database. As a verb, committing changes means you put a copy (of the file, directory, or other "stuff") in the repository as a new version. As a noun, a commit is the small chunk of data that gives the changes you committed a unique identity. It includes the author's name and e-mail address, the date, comments about what you did (and why), an optional digital signature, and the unique identifier of the previous commit.
 
 1. Use the following command to create a commit:
 
