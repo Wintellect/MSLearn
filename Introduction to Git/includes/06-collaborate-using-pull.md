@@ -118,12 +118,11 @@ Behind the scenes, `git pull` is a combination of two simpler operations: `git f
 
 ## Summary
 
-In this unit, you learned how to collaborate with another developer using nothing more than a thumb drive or a network share. You also became acquainted with the core Git commands used to support collaboration:
+In this unit, you learned how to use pulls and pull requests to collaborate with another developer. You also became acquainted with the core Git commands used to support collaboration:
 
 - [`git clone`](https://git-scm.com/docs/git-clone), which clones (copies) a repo
 - [`git pull`](https://git-scm.com/docs/git-pull), which fetches commits from another repo and merges them into yours
 - [`git request-pull`](https://git-scm.com/docs/git-request-pull), which creates a pull request
-- [`git branch`](https://git-scm.com/docs/git-branch), which lists,  creates, modifies, or deletes branches
 - [`git remote`](https://git-scm.com/docs/git-remote), which lists, creates, modifies, or deletes remotes
 
-But you're not finished yet. In the next unit, you learn how to set up and use a shared repository, which makes collaborating much simpler and more convenient.
+The fun is just beginning. In the next unit, you learn how to set up and use a shared repository, which makes collaborating much simpler and more convenient.
