@@ -6,7 +6,7 @@ As you work on your project, Git helps keep track of the changes you make. It al
 
 ## Modify index.html
 
-The Web site's home page, **index.html** currently contains just one line of HTML. Let's update it to present a prettier face to the public and commit the change to Git.
+The Web site's home page, **index.html** currently contains just one line of HTML. Let's update it to do more and commit the change to Git.
 
 1. Open **index.html** in your favorite text editor and replace its contents with the following HTML:
 
@@ -55,7 +55,7 @@ The Web site's home page, **index.html** currently contains just one line of HTM
 	$ echo -e "*.bak\n*~" > .gitignore
 	```
 
-	**.gitignore** is a very important file in the Git world because it prevents extraneous files from being submitted to version control. Boilerplate **.gitignore** files are available for commonly used programming tools such as Microsoft's [Visual Studio](https://visualstudio.microsoft.com/).
+	**.gitignore** is a very important file in the Git world because it prevents extraneous files from being submitted to version control. Boilerplate **.gitignore** files are available for popular programming environments such as Microsoft's [Visual Studio](https://visualstudio.microsoft.com/).
 
 1. Now use these commands to commit the changes:
 
