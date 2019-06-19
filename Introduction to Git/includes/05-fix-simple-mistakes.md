@@ -20,7 +20,7 @@ You typed this:
 
 When you refresh the page in your browser, you notice that your CSS style sheet isn't applied. After investigating, you see why.
 
-So you update **index.html** with the correct path to the style sheet. At this point, you could simply commit the changed version of **index.html**, but instead, you prefer to put it in the same commit as the original. The `--amend` option to `git commit` lets you change history (and how often does one get the chance to change history?):
+So you update **index.html** with the correct path to the style sheet. At this point, you could simply commit the corrected version of **index.html**, but instead, you prefer to put it in the same commit as the original. The `--amend` option to `git commit` lets you change history (and how often does one get the chance to change history?):
 
 ```bash
 git commit --amend --no-edit
