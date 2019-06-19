@@ -32,66 +32,52 @@ The ability to change history is one of Git's most powerful features. (You will 
 
 ## Retrieve an earlier version of a file
 
-One thing that Git makes easy is retrieving an earlier version of a file. Perhaps you deleted more than you intended with a wildcard, or you damaged a file experimenting with `sed`, or you simply have made a series of changes that you
-later regret.
+Imagine you made a change to a source-code file that broke the entire project, so you want to revert to the previous version of that file. Or perhaps you accidentally deleted a file altogether. Git makes it easy to retrieve an earlier version, even if the current version no longer exists. Your best friend in this situation is the [`git checkout`](https://git-scm.com/docs/git-checkout) command.
 
-Your friend in this situation is `git checkout`. For example,
+1. To demonstrate, delete **index.html**:
 
-```
-$ rm index.html .bak
-$ ls
-assets	index.html.bak
-```
+	```bash
+	rm index.html
+	```
 
-This is a classic problem. You meant to delete the backup file, but your cat stepped on the keyboard and put in a space before the dot. If you notice the problem soon enough, it's particularly easy to fix:
+	This may seem like a bad idea, but remember: Git has your back.
 
-```
-$ git checkout -- index.html
-$ ls
-assets
-index.html
-index.html.bak
-$ git status
-On branch master
-nothing to commit, working tree clean
-```
+1. Use an `ls` command to verify that **index.html** was deleted. Then follow it up with this command:
 
-(It is more difficult to fix the cat.)
+	```bash
+	git checkout -- index.html
+	```
 
-You can also check out a file from another commit (typically the head of another branch), but the default is to get the file out of the index. The `--` in the argument list serves to separate the commit from the list of file paths. It's not strictly needed in this case, but if you had a branch called `index.html` (perhaps because that's the name of the file being worked on on that branch), the `--` would keep Git from getting confused.
+1. Use `ls` again to check the contents of the current directory. Has **index.html** been restored?
 
-In Unit 8 you'll learn that `checkout` is also used for switching branches.
+	You can also check out a file from an earlier commit (typically the head of another branch), but the default is to get the file out of the index. The `--` in the argument list serves to separate the commit from the list of file paths. It's not strictly needed in this case, but if you had a branch named "index.html" (perhaps because that's the name of the file being worked on on that branch), the `--` would prevent Git from getting confused.
 
-This is another "Aha!" moment for some git users. Many earlier version-control systems make files read-only to ensure that only one person at a time can make changes; they use a completely unrelated "checkout" command to get a writable version. They also use "checkin" for an operation similar to what Git does with a combination of `add`, `commit`, and `push`. This occasionally causes confusion when people start using Git.
+	Later, you will learn that `checkout` is also used for switching branches.
 
-Things are a little more complicated if you used `git rm`:
+1. When it comes to recovering deleted files, things get a little more complicated if you deleted them with [`git rm`](https://git-scm.com/docs/git-rm) rather than `rm`. To see for yourself, try this command:
 
-```
-error: pathspec 'index.html' did not match any file(s) known to git.
-$ git rm index.html
-rm 'index.html'
-$ git checkout index.html
-$ git status
-On branch master
-Changes to be committed:
-  (use "git reset HEAD <file>..." to unstage)
+	```bash
+	git rm index.html
+	```
 
-	deleted:    index.html
+1. Once more, **index.html** is gone. Try to recover it the same way you did last time:
 
-$ git reset HEAD index.html
-Unstaged changes after reset:
-D	index.html
-$ ls
-assets
-index.html.bak
-$ git checkout index.html
-$ ls
-assets
-index.html
-index.html.bak
-```
+	```bash
+	git checkout -- index.html
+	```
 
-The `git reset` was needed because `git rm` did two things: It removed the file, and it recorded the deletion in the index. The `reset` unstaged the change, but the file was still deleted, so you had to use `checkout` to get it back.
+	And now, Git complains that it knows nothing about **index.html**. That's because Git not only deleted the file, it recorded the deletion in the index.
+
+1. You can recover **index.html** with two commands:
+
+	```bash
+	git reset HEAD index.html
+	git checkout -- index.html
+	```
+
+	The `reset` unstaged the change, but the file was still deleted, so you had to use `checkout` to get it back.
+
+Here's another "Aha!" moment for new Git users. Many version-control systems make files read-only to ensure that only one person at a time can make changes; they use a completely unrelated `checkout` command to get a writable version. They also use `checkin` for an operation similar to what Git does with a combination of `add`, `commit`, and `push`. This occasionally causes confusion when people start using Git.
 
 ## Revert a commit
 
