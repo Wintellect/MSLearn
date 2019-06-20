@@ -18,7 +18,7 @@ Creating a bare repo for sharing is easy.
 
 1. Create a new directory named "Shared.git" on your hard disk to hold the bare repo. Once more, the directory name is not important, but we will refer to it as the "Shared.git" directory or simply the *shared* directory in these exercises. 
 
-	> Naming the directory "Shared.git" follows the longstanding convention of assigning bare repositories a name ending with `.git` to distinguish them from working trees. It is a convention but not a requirement.
+	> Naming the directory "Shared.git" follows the longstanding tradition of assigning bare repositories a name ending with `.git` to distinguish them from working trees. It is a convention but not a requirement.
 
 1. `cd` to the shared directory. Then use the following command to create a bare repo in the shared directory:
 
