@@ -1,6 +1,6 @@
 # Manipulate PDF documents with PyPDF4
 
-You work in IT for a law office which is litigating a massive civil lawsuit. You've been put in charge of more _two million_ PDF documents that are critical to the case and asked to sort them and count the number of pages in each. It's urgent, because a court date has been set and the judge doesn't tolerate excuses. Worse, you've been told to remove certain pages from each PDF because they contain information that could be prejudicial.
+You work in IT for a law office which is litigating a massive civil lawsuit. You've been put in charge of more than _two million_ PDF ([portable document format](https://acrobat.adobe.com/us/en/acrobat/about-adobe-pdf.html)) documents that are critical to the case and asked to sort them and count the number of pages in each. It's urgent, because a court date has been set and the judge doesn't tolerate excuses. Worse, you've been told to remove certain pages from each PDF because they contain information that could be prejudicial.
 
 With a little effort, you arrange the documents and place them into folders. It's easy to count the number of PDFs in each folder. You can open individual documents and count the number of pages, but with more than 2,000,000 PDFs to deal with, you'll need months to do that. On top of that, the thought of opening each and every document in a PDF editor and manually removing pages is overwhelming.
 
@@ -8,7 +8,7 @@ You need help. You need [PyPDF4](https://pypi.org/project/PyPDF4/).
 
 ## Install PyPDF4
 
-**PyPDF4** is an open-source library for manipulating PDF documents in Python. It has functions for extracting title, author, and other information from PDFs, splitting documents into pages, merging documents, cropping pages, encrypting and decrypting documents, and more. It was authored by [Cameron Laird](https://pypi.org/user/claird/) and is offered under the BSD license. With **PyPDF4**, just two lines of code are sufficient to count the number of pages in a PDF (three if you count the line that closes the file):
+**PyPDF4** is an open-source library for manipulating PDF documents in Python. It has functions for extracting title, author, and other information from PDFs, splitting documents into pages, merging documents, cropping pages, encrypting and decrypting documents, and more. [Cameron Laird](https://pypi.org/user/claird/) adopted the project from an earlier version by [Mathieu Fenniak](https://mathieu.fenniak.net/), and now offers it under the BSD open-source license. With **PyPDF4**, just two lines of code are sufficient to count the number of pages in a PDF (three if you count the line that closes the file):
 
 ```python
 reader = PyPDF4.PdfFileReader(open("pdfDocument", "rb"))
@@ -33,42 +33,43 @@ The first order of business is to write a simple Python app that recursively enu
 
 	```python
 	import glob
+	import sys
+	
 	import PyPDF4
 	
-	top = "toplevelfolder"
+	top = sys.argv[1]
 	for pdf_filename in glob.iglob(f"{top}/**/*.pdf", recursive=True):
-	    try:
-	        reader = PyPDF4.PdfFileReader(open(pdf_filename, "rb"))
-	    except PyPDF4.utils.PdfReadError:
-	        # Certain applications, including scanners, often produce
-	        # non-conformant PDF. Just skip them, for now.
-	        print(f"Document {pdf_filename} appears to follow a specification "
-	              "PyPDF4 doesn't yet know.")
-	        continue
-	    print(f"{pdf_filename} has {reader.numPages} pages.")
+	    with open(pdf_filename, "rb") as pdf_handle:
+    	        try:
+	            reader = PyPDF4.PdfFileReader(pdf_handle)
+	        except PyPDF4.utils.PdfReadError:
+	            # Certain applications, including scanners, often produce
+	            # non-conformant PDF. Just skip them, for now.
+	            print(f"Document {pdf_filename} appears to follow a specification "
+	                  "PyPDF4 doesn't yet know.")
+	            continue
+	        print(f"{pdf_filename} has {reader.numPages} pages.")
 	```
 
-	This code uses Python's [`glob`](https://docs.python.org/3/library/glob.html) module to enumerate files and folders. It opens each PDF that it finds and uses `numPages` to get a page count.
-
-	> Cameron: Does each file need to be closed as well?
+	This code uses Python's [`glob`](https://docs.python.org/3/library/glob.html) module to enumerate files and folders. It opens each PDF that it finds and uses the `numPages` property to get a page count.
 
 1. Now find a folder on your hard disk that holds several PDFs (they don't have to be in the folder itself; they can be in subfolders, too) and execute the following command, replacing PATH with the path to the folder:
 
 	```bash
-	python count-pages PATH
+	python count-pages.py PATH
 	```
 
 1. Confirm that every PDF in the target folder and its subfolders is listed, along with a page count:
 
 	```
     2015.pdf has 7 pages.
-    Kansas.pdf has 49 pages.
-    Springfield.pdf has 421 pages.
-    credits.pdf has 14 pages.
-    ger.pdf has 33 pages.
-    metadata.pdf has 2 pages.
-    simplified.pdf has 54 pages
-    traditional.pdf has 16 pages.
+    March/Kansas.pdf has 49 pages.
+    March/Springfield.pdf has 421 pages.
+    April/west/credits.pdf has 14 pages.
+    April/ger.pdf has 33 pages.
+    September/metadata.pdf has 2 pages.
+    other/simplified.pdf has 54 pages
+    other/additional/traditional.pdf has 16 pages.
     ```
 
 This program takes hours — not months — to produce two million lines of output. That's a step in the right direction. But there is more to do.
@@ -158,7 +159,7 @@ Have you ever needed to print a PDF document without the cover page, with two co
 1. Now use the following command to extract page 1 from a PDF, replacing PATH with the path to the PDF:
 
 	```bash
-	python extract-pages PATH result.pdf pages=1
+	python extract-pages.py PATH result.pdf pages=1
 	```
 
 	Afterward, confirm that the current directory contains a 1-page PDF named **result.pdf**, and that **result.pdf** contains the first page from the source document.
@@ -166,7 +167,7 @@ Have you ever needed to print a PDF document without the cover page, with two co
 1. The `pages` parameter passed to **extract-pages.py** supports comma-delimited lists of pages and page ranges. To demonstrate, locate a PDF that contains 10 or more pages and execute the following command, once more replacing PATH with the path to the PDF:
 
 	```bash
-	python extract-pages PATH result.pdf pages=2,4-6,10,10
+	python extract-pages.py PATH result.pdf pages=2,4-6,10,10
 	```
 
 	This time, **result.pdf** should contain pages 2, 4, 5, 6 from the original document, plus two copies of page 10.
@@ -174,7 +175,7 @@ Have you ever needed to print a PDF document without the cover page, with two co
 You could modify **extract-page.pdf** to do even more. You could, for example, have it support commands such as this to copy all pages from page 7 to the end of the document:
 
 ```bash
-python extract-pages PATH result.pdf pages=7-
+python extract-pages.py PATH result.pdf pages=7-
 ```
 
 Now that you have the source code, the only limit is your imagination.
