@@ -132,25 +132,34 @@ While Alice is working on the CSS, Bob is sitting in an apartment on the other s
 	 1 file changed, 2 insertions(+), 1 deletion(-)
 	```
 
-1. At this point, Bob merges his branch into "master" so that "master" in his repo will have his *and* Alice's changes. Then he pushes "master" on his computer to "master" in the shared repo: 
+1. Now Bob merges his branch into "master" so that "master" in his repo will have his *and* Alice's changes. (He does it without the `ff-only` switch since "master" had changed.) Then he pushes "master" on his computer to "master" in the shared repo: 
 
 	```bash
 	git merge add-cat
 	git push
 	```
 
+TODO: Add closing.
+
+## Sync the repos
+
+At this point, Bob has an up-to-date repo, but you and Alice do not. Each of you needs to a do a `git pull` from the shared repo to make sure you have the latest and greatest version of the site.
+
+1. Use the following commands to sync Alice's repo with the shared repo: 
+
+	```bash
+	cd ../Alice
+	git pull
 	```
-	--------------------------------------------------------
-	UGH! Output says "add-cat - not something we can merge."
-	--------------------------------------------------------
+
+1. Now do the same for your repo: 
+
+	```bash
+	cd ../Cats
+	git pull
 	```
 
-
-1. tk.
-
-1. tk.
-
-1. tk.
+Take a moment to verify that your repo, Alice's repo, and Bob's repo are all synced. Each of them should have a JPG file in the "assets" directory and an `<img>` element declared in **index.html**. In addition, the **site.css* file in repo's "assets" folder should contain a line defined the CSS style ".cat."
 
 ## Summary
 
