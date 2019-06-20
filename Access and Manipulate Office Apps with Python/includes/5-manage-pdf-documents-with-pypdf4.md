@@ -27,7 +27,7 @@ You're set. Let's start on those 2,000,000 documents and make sure there's time 
 
 ## Count pages in documents
 
-Let's start by writing a small Python app that recursively enumerates the PDFs in a folder and its subfolders and prints the title of each document and the number of pages in each.
+The first order of business is writing a simple Python app that recursively enumerates the PDFs in a folder and its subfolders and prints the title of each document and the number of pages in each.
 
 1. Use your favorite text editor to create a file named **count-pages.py** and paste the following code into it:
 
