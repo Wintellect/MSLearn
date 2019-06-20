@@ -66,10 +66,10 @@ Alice wants to add some CSS to style the cat pictures, so she creates a _topic b
 	git pull
 	```
 
-	The output looks something like this:
+	The output says that "master" hasn't changed:
 
 	```
-
+	Already up-to-date.
 	```
 
 1. Seeing that no work has been done on "master," Alice merges the "add-style" branch into "master" using `git merge --ff-only` to perform a "fast-forward" merge. Then she pushes "master" from her repo to the shared repo:
