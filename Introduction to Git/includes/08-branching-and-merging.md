@@ -48,7 +48,7 @@ Alice wants to add some CSS to style the cat pictures, so she creates a _topic b
 1. Open **site.css** in the "Alice/assets" directory and add the following CSS class definition to the bottom of the file:
 
 	```css
-	.cat {max-width: 40%; padding: 5}
+	.cat { max-width: 40%; padding: 5 }
 	```
 
 	Save the changes to the file.
@@ -111,9 +111,16 @@ While Alice is working on the CSS, Bob is sitting in an apartment on the other s
 	<img src="assets/bobcat2-317x240.jpg">
 	```
 
-	Save the file. You have now made two changes to Bob's "add-cat" branch. You have added a file and modified an existing file.
+	Save the file.
 
+1. You have now made two changes to Bob's "add-cat" branch. You have added a file and modified an existing file. Use the following commands to add the new file in the "assets" directory to the index and them commit all changes: 
 
+	```bash
+	git add assets
+	git commit -a -m "Add picture of Bob's cat"
+	```
+
+1. tk.
 
 
 
