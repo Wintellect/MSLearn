@@ -139,7 +139,7 @@ While Alice is working on the CSS, Bob is sitting in an apartment on the other s
 	git push
 	```
 
-TODO: Add closing.
+Could Bob have performed a fast-forward merge? **Steven: Can you comment on this?**
 
 ## Sync the repos
 
