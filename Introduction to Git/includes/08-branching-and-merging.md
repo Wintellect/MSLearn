@@ -2,7 +2,7 @@
 
 As your project progresses, the developers want to work on more than one task at a time, fixing bugs as they turn up while implementing new features. The contributors need a way to keep their work separate so what one person is doing doesn't affect another.
 
-_Branches_ make this easy. The work done "on a branch" doesn't have to be shared, and it doesn't interfere with other branches, including "master." Branches let you keep the commits related to each topic together and in isolation, making changes easy to review and track. Modern development work is typically done in branches, and when the changes in a branch are ready to check in, you can submit a pull request to merge the contents of the branch into "master."
+_Branches_ make this easy. The work done "on a branch" doesn't have to be shared, and it doesn't interfere with other branches, including "master." Branches let you keep the commits related to each topic together and in isolation, making changes easy to review and track. Modern software development is done almost entirely in branches. The goal is to keep "master" clean until the work is ready to check in. Then you submit a pull request to merge your branch into "master."
 
 One of Git's advantages over older version control systems is that creating a branch is extremely fast; it amounts to writing a 40-character hash into a file under ".git/heads." Switching branches is also fast, because Git stores whole files and just unzips them rather than trying to reconstruct them from lists of changes. Merging in Git isn't _quite_ that simple, but it's straightforward and often completely automatic. Let's learn what branches are, how they're used, and how they work.
 
@@ -24,9 +24,13 @@ branch:        E---F---G
 
 Branches are given names such as "add-authentication" and "fix-css-bug," and branches can have branches of their own. The ultimate goal is to let developers do what they need to do without stepping on each other, and to wind up with a "master" branch representing the best efforts of everyone involved.
 
-## Create a branch
+## Create branches
 
-Alice wants to add some CSS to style the cat pictures, so she creates a _topic branch_ (sometimes called a _feature branch_) and calls it `add-style`: 
+Alice wants to add some CSS to style the cat pictures, so she creates a _topic branch_ (sometimes called a _feature branch_), calls it "add-style." Meanwhile, Bob creates a branch of his own named "add-cat." Here's how they create their branches.
+
+
+1. 
+
 
 ```
 $ cd ~/sandbox/Alice/Cats
