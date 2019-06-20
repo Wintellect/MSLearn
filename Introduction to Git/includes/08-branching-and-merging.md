@@ -24,24 +24,47 @@ branch:        E---F---G
 
 Branches are given names such as "add-authentication" and "fix-css-bug," and branches can have branches of their own. The ultimate goal is to let developers do what they need to do without stepping on each other, and to wind up with a "master" branch representing the best efforts of everyone involved.
 
-## Create branches
+## Create a branch for Alice
 
-Alice wants to add some CSS to style the cat pictures, so she creates a _topic branch_ (sometimes called a _feature branch_), calls it "add-style." Meanwhile, Bob creates a branch of his own named "add-cat." Let's assume the roles of Alice and Bob and create those branches.
+Alice wants to add some CSS to style the cat pictures, so she creates a _topic branch_ (sometimes called a _feature branch_) and calls it "add-style." Let's assume the role of Alice, create the branch, and do some work in that branch.
+
+1. Assuming you're in the project directory, navigate to the "Alice" directory and assume the role of Alice:
+
+	```bash
+	cd ../Alice
+	git config user.name Alice
+	git config user.email alice@contoso.com
+	``` 
+
+1. Now use the [`git branch`](https://git-scm.com/docs/git-branch) command to create a branch named "add-style," and the [`git checkout`](https://git-scm.com/docs/git-checkout) command to switch to that branch (make it the *current branch*):
+
+	```bash
+	git branch add-style
+	git checkout add-style
+	```
+
+	You have already encountered `checkout` as a way of replacing files in the working tree by getting them from the index. With no paths in the argument list, `checkout` updates *everything* in the working tree and the index to match the specified commit — in this case the head of the branch.
+
+1. Open **site.css* in the "Alice/assets" directory and add the following CSS class definition to the bottom of the file:
+
+	```css
+	.cat {max-width: 40%; padding: 5}
+	```
+
+	Save the changes to the file.
+
+1. Commit the change:
+
+	```bash
+	git commit -a -m "Add style for cat pictures"
+	```
 
 
-1. 
 
 
-```
-$ cd ~/sandbox/Alice/Cats
-$ git branch add-style
-$ git checkout add-style
-Switched to branch 'add-style'
-```
 
-Throw-away branch names are  [*MISSING SOMETHING HERE? --ES*]. The `git branch` command creates the branch, starting with the current HEAD. The `git checkout` command switches to the new branch.
 
-We already encountered `checkout` as a way of replacing files in the working tree by getting it from the index. You can also specify a commit to take the files from [MISSING TEXT HERE], in which case both the index and the working tree are updated. With no paths at the end of the argument list, `checkout` updates *everything* in the working tree and the index to match the specified commit, in this case the head of the branch.
+
 
 While Alice is working on the CSS, Bob is busy creating a branch for adding a picture of his cat.
 
