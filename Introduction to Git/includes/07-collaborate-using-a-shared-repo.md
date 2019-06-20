@@ -6,51 +6,40 @@ When you tell [Bob](https://en.wikipedia.org/wiki/Alice_and_Bob) about your proj
 
 ## Create a bare repository
 
-What you need is a repository that doesn't have a working tree, to avoid the problem Alice had trying to push. That's called a _bare repository_.
-
-A bare repo has several advantages:
+What you need is a repository that doesn't have a working tree. That's called a _bare repository_. A bare repo has several advantages:
 
 - Without a working tree, everybody can push changes without having to worry about which branch is checked out.
-- It's easy for Git to detect when somebody else has pushed changes that might conflict with yours (because your push wouldn't be fast-forward, and Git' default is to reject it so that you can merge the new files with your own).
+- It's easy for Git to detect when somebody else has pushed changes that might conflict with yours (because your push wouldn't be fast-forward, and Git's default is to reject it so that you can merge the new files with your own).
 - A shared repo scales to any number of developers. You only have to know about the shared repo rather than about all the other people from whom you might need to pull.
 - By putting the shared repo on a server that you can all access, you don't have to worry about firewalls and permissions.
 - You don't need separate accounts on the server, because Git keeps track of who made each commit. GitHub has millions of users all sharing the `git` account. (Everyone uses `ssh`, and users are distinguished by their public keys.) 
-  
-You can set it up using:
 
-```
-$ cd ~/sandbox
-$ mkdir Cats.git
-$ cd Cats.git
-$ git init --bare
-Initialized empty Git repository in /home/steve/sandbox/Cats.git/
-```
+Creating a bare repo for sharing is easy.
 
-(The convention is to give bare repositories a name ending with `.git` to distinguish them from working trees.)
+1. Create a new directory named "Shared.git" on your hard disk to hold the bare repo. Once more, the directory name is not important, but we will refer to it as the "Shared.git" directory or simply the *shared* directory in these exercises. 
 
-Now you have to get the contents of _your_ repo into the new one. You set up an `origin` remote and push to it.
+	> Naming the directory "Shared.git" follows the longstanding convention of assigning bare repositories a name ending with `.git` to distinguish them from working trees. It is a convention but not a requirement.
 
-```
-$ cd ~/sandbox/Cats
-$ git remote add origin ../Cats.git
-$ git push origin master
-Counting objects: 40, done.
-Delta compression using up to 2 threads.
-Compressing objects: 100% (28/28), done.
-Writing objects: 100% (40/40), 3.82 KiB | 559.00 KiB/s, done.
-Total 40 (delta 6), reused 0 (delta 0)
-To ../Cats.git
- * [new branch]      master -> master
-```
+1. `cd` to the shared directory. Then use the following command to create a bare repo in the shared directory:
 
-You want push and pull to use `origin`'s master branch by default, just as if you'd made your repo by cloning in the first place. To do so, you need to tell Git which branch to track:
+	```bash
+	git init --bare
+	```
 
-```
-$ git branch --set-upstream-to origin/master
-Branch 'master' set up to track remote branch 'master' from 'origin'.
-```
+1. The next step is to get the contents of _your_ repo into the shared repo. Start by `cd`ing back to the project directory where your repo is stored. Then use these commands to set up an "origin" remote and push to it, replacing PATH_TO_SHARED_REPO with the path to the shared directory:
 
-Git would have complained if you had tried to do this before the initial push, because there weren't any branches in the new repository yet. Git won't let you track a branch that doesn't exist.  (You get exactly the same error message, "the requested upstream branch [...] does not exist," if you get the name of either the branch (maybe you used "trunk" because you're used to Subversion) or the remote wrong.  That's not surprising because all Git is doing is looking in `.git/refs/remotes` for a file called `origin/trunk`.
+	```
+	git remote add origin PATH_TO_SHARED_REPO
+	git push origin master
+	```
+
+1. You want `push` and `pull` to use "origin's" master branch by default, just as if you'd made your repo by cloning in the first place. To do so, you need to tell Git which branch to track:
+
+	```
+	git branch --set-upstream-to origin/master
+	```
+
+Git would have complained if you had tried to do this before the initial push, because the new repository had no branches yet. Git won't let you track a branch that doesn't exist. That's not surprising because all Git is doing is looking in ".git/refs/remotes" for a file named **origin/trunk**.
 
 ## Setup for collaborators
 
