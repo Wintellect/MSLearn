@@ -153,7 +153,7 @@ Have you ever needed to print a PDF document without the cover page, with two co
 	    main()
 	```
 
-	Once more, **PyPDF4** does the heavy lifting. The bulk of the code has to do with parsing the command line to determine precisely which pages should be copied from the source document to the output document. Once that's determined, the `extract_to()` function does most of the work, and even it contains just two lines of code (not counting comments) consisting of a `for` loop and calls to **PyPDF4**'s `getPage()` and `addPage()` functions. 
+	Once more, **PyPDF4** does the heavy lifting. The bulk of the code deals with parsing the command line to determine precisely which pages should be copied from the source document to the output document. Once that's determined, the `extract_to()` function does most of the work, and even it contains just two lines of code (not counting comments) consisting of a `for` loop and calls to **PyPDF4**'s `getPage()` and `addPage()` functions. 
 
 1. Now use the following command to extract page 1 from a PDF, replacing PATH with the path to the PDF:
 
