@@ -165,7 +165,7 @@ Now that Bob is set up to work on the Web site, he decides to add a footer to th
 	git stash
 	```
 
-1. Now it's safe for Alice to pull, after which she can "pop" the stash, which is organized as a stack. (In fact, `git stash` is shorthand for `git stash push`. It's a lot like the stack where you put bills that you haven't gotten around to paying yet.) 
+1. Now it's safe for Alice to pull, after which she can "pop" the stash, which is organized as a stack. (In fact, `git stash` is shorthand for `git stash push`. It's a lot like the stack where you put bills that you haven't gotten around to paying yet.)  Execute these commands:
 
 	```bash
 	git pull
