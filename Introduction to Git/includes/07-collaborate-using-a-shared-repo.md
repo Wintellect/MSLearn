@@ -1,8 +1,8 @@
 # Collaborate using a shared repo
 
-Directly pulling from someone else's repository works, provided you're both on the same network, but it's a clumsy process -- and most collaborators are not on the same network. It's much better to set up a central repository to which everyone involved can push as well as pull from.
+Directly pulling from someone else's repository works, provided you're both on the same network, but it's a clumsy process — and most collaborators are not on the same network. It's much better to set up a central repository to which everyone involved can push as well as pull from.
 
-When you tell Bob about your project, and he asks to participate too, that's exactly what you do.
+When you tell [Bob](https://en.wikipedia.org/wiki/Alice_and_Bob) about your project, and he asks to participate too, that's exactly what you decide to do.
 
 ## Create a bare repository
 
