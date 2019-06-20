@@ -54,7 +54,7 @@ Git would have complained if you had tried to do this before the initial push, b
 
 The next step is for Bob to clone the bare repository, and then for Alice to set the origin in her repo to target the shared repo for pushes and pulls.
 
-1. Create a directory named "Bob" that's a sibling of your project directory and `cd` into the "Bob" directory:
+1. Create a directory named "Bob" that's a sibling of the project directory and `cd` into the "Bob" directory:
 
 	```bash
 	cd ..
@@ -211,7 +211,7 @@ Had Alice begun by working on a branch in the first place she would have saved h
 In this unit, you learned how to set up a bare repository that can be shared among a group of developers, and about some new and very important Git commands:
 
 - [`git init --bare`](https://git-scm.com/docs/git-commit), which sets up a repo that can be shared
-- [`git branch --set-upstream-to`](https://git-scm.com/docs/git-branch), which specifies the destination pushes and pulls
+- [`git branch --set-upstream-to`](https://git-scm.com/docs/git-branch), which specifies the default origin and branch for pushes and pulls
 - [`git stash`](https://git-scm.com/docs/git-stash), which saves uncommitted changes so you can merge safely
 - [`git push`](https://git-scm.com/docs/git-push), which merges changes with a remote repo
 
