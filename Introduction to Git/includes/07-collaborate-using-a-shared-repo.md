@@ -197,7 +197,7 @@ Now that Bob is set up to work on the Web site, he decides to add a footer to th
 
 1. Confirm that the changes made by both Bob and Alice are present in your local repo by opening **index.html** (the one in the project directory) in your browser and verifying that it looks like this:
 
-	![The updated home page](media/tk.png)
+	![The updated home page](media/cats-home-page.png)
 
 	_The updated home page_
 
