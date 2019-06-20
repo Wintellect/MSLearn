@@ -78,7 +78,7 @@ The next step is for Bob to clone the bare repository, and then for Alice to set
 
 The push wasn't necessary, but it's a simple way of making sure the remote is set up with the correct defaults.
 
-## Learn the basics of collaboration
+## Start collaborating
 
 Now that Bob is set up to work on the Web site, he decides to add a footer to the bottom of the page. Let's take on Bob and Alice's persona for a few moments and learn the basics of collaboration.
 
