@@ -172,7 +172,7 @@ _There be cats!_
 In this unit, you learned how to create branches and how to merge them. You learned about:
 
 - [`git branch`](https://git-scm.com/docs/git-branch), which creates a branch
-- [`git checkout`](https://git-scm.com/docs/git-checkout), which switches to a branch, and [`git checkout -b`](https://git-scm.com/docs/git-checkout) which creates a branch *and* switches to it,
+- [`git checkout`](https://git-scm.com/docs/git-checkout), which switches to a branch, and [`git checkout -b`](https://git-scm.com/docs/git-checkout) which creates a branch *and* switches to it
 - [`git merge`](https://git-scm.com/docs/git-merge), which combines branches
 
 In the next unit, you learn how to simplify history using `merge --squash` or `rebase --interactive`, and how to resolve merge conflicts.
