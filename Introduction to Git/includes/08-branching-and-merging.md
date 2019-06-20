@@ -91,7 +91,7 @@ While Alice is working on the CSS, Bob is sitting in an apartment on the other s
 	git config user.email bob@contoso.com
 	```
 
-1. Now use the following command to create a branch named "add-cat,", using the popular `-b` option to create the branch and switch to it in a single command:
+1. Now use the following command to create a branch named "add-cat,", using the popular `checkout -b` option to create the branch and switch to it in a single command:
 
 	```
 	git checkout -b add-cat
