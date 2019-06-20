@@ -48,7 +48,7 @@ The first order of business is writing a simple Python app that recursively enum
 	    print(f"{pdf_filename} has {reader.numPages} pages.")
 	```
 
-	This code uses Python's [`glob`](https://docs.python.org/3/library/glob.html) to enumerate files and folders. It opens each PDF that it finds and uses `numPages` to get a page count.
+	This code uses Python's [`glob`](https://docs.python.org/3/library/glob.html) module to enumerate files and folders. It opens each PDF that it finds and uses `numPages` to get a page count.
 
 	> Cameron: Does each file need to be closed as well?
 
