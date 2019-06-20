@@ -16,11 +16,19 @@ What you need is a repository that doesn't have a working tree. That's called a 
 
 Creating a bare repo for sharing is easy.
 
-1. Create a new directory named "Shared.git" on your hard disk to hold the bare repo. Once more, the directory name is not important, but we will refer to it as the "Shared.git" directory or simply the *shared* directory in these exercises. 
+1. Create a new directory named "Shared.git" on your hard disk to hold the bare repo. Once more, the directory name is not important, but we will refer to it as the "Shared.git" directory or simply the *shared* directory in these exercises.
 
 	> Naming the directory "Shared.git" follows the longstanding tradition of assigning bare repositories a name ending with `.git` to distinguish them from working trees. It is a convention but not a requirement.
 
-1. `cd` to the shared directory. Then use the following command to create a bare repo in the shared directory:
+	Assuming you are currently in the project directory, use these commands to created the shared directory as a sibling of the project directory and `cd` into it:
+
+	```bash
+	cd ..
+	mkdir Shared.git
+	cd Shared.git
+	```
+
+1. Now use the following command to create a bare repo in the shared directory:
 
 	```bash
 	git init --bare
@@ -43,7 +51,22 @@ Git would have complained if you had tried to do this before the initial push, b
 
 ## Setup for collaborators
 
-Now all Bob has to do is clone the bare repository:
+The next step is for Bob to clone the bare repository.
+
+1. Create a directory named "Bob" that's a sibling of your project directory and `cd` into the "Bob" directory:
+
+	```bash
+	cd ..
+	mkdir Bob
+	cd Bob
+	```
+
+2. Now clone the shared repo:
+
+	```Bash
+	git clone ../Shared.git/ .
+	```
+
 
 ```
 $ cd ~/sandbox
@@ -71,6 +94,8 @@ Everything up-to-date
 The push wasn't necessary, but it's a simple way of making sure the remote is set up with the correct defaults.
 
 ## The basics of collaboration
+
+Thenext step is for Bob to clone the repository.
 
 Now that Bob is set up to work on the website, he decides to wrap the horizontal rule at the bottom of the page with a footer.
 
