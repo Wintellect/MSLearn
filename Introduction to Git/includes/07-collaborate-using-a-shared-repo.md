@@ -174,7 +174,7 @@ Now that Bob is set up to work on the Web site, he decides to add a footer to th
 
 	Popping the stash merges the changes. If changes overlap, there may be a conflict. You will learn later how to resolve those situations.
 
-1. At this point Alice can continue working, or simply commit and push her changes. Let's make another change as Alice by assigning footers the same style as nav bars. Open **site.css** and replace the third line — the one that styles `<nav>` elements — with this one, and as usual, save your changes:
+1. At this point Alice can continue working, or simply commit and push her changes. Let's make another change as Alice by assigning footers the same style as nav bars. Open **site.css** and replace the third line — the one that styles `<nav>` elements — with this one, and, as usual, save your changes:
 
 	```html
 	nav, footer { background-color: #C0D8DF; }
@@ -187,7 +187,7 @@ Now that Bob is set up to work on the Web site, he decides to add a footer to th
 	git push
 	```
 
-1. The updated site is now in shared repo. Finish up returning to the project directory, assuming your own identity again, and doing a pull:
+1. The updated site is now in the shared repo. Finish up returning to the project directory, assuming your own identity again, and doing a pull:
 
 	```bash
 	cd ../Cats
