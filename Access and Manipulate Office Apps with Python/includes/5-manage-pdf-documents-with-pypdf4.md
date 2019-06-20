@@ -153,7 +153,7 @@ Have you ever needed to print a PDF document without the cover page, with two co
 	    main()
 	```
 
-	This one is obviously more ambitious, but it, too, uses **PyPDF4** to do the heavy lifting. The bulk of the code has to do with parsing the command line to determine precisely which pages should be copied from the source document to the output document. Once that's determined, the `extract_to()` function does most of the work, and even it contains just two lines of code (not counting comments) consisting of a `for` loop and calls to **PyPDF4**'s `getPage()` and `addPage()` functions. 
+	Once more, **PyPDF4** does the heavy lifting. The bulk of the code has to do with parsing the command line to determine precisely which pages should be copied from the source document to the output document. Once that's determined, the `extract_to()` function does most of the work, and even it contains just two lines of code (not counting comments) consisting of a `for` loop and calls to **PyPDF4**'s `getPage()` and `addPage()` functions. 
 
 1. Now use the following command to extract page 1 from a PDF, replacing PATH with the path to the PDF:
 
@@ -166,10 +166,10 @@ Have you ever needed to print a PDF document without the cover page, with two co
 1. The `pages` parameter passed to **extract-pages.py** supports comma-delimited lists of pages and page ranges. To demonstrate, locate a PDF that contains 10 or more pages and execute the following command, once more replacing PATH with the path to the PDF:
 
 	```bash
-	python extract-pages PATH result.pdf pages=2,4-6,10
+	python extract-pages PATH result.pdf pages=2,4-6,10,10
 	```
 
-	This time, **result.pdf** should contain pages 2, 4, 5, 6, and 10 from the original document.
+	This time, **result.pdf** should contain pages 2, 4, 5, 6 from the original document, plus two copes of page 10.
 
 You could modify **extract-page.pdf** to do even more. You could, for example, have it support commands such as this to copy all pages from page 7 to the end of the document:
 
