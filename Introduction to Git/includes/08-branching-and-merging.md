@@ -159,7 +159,7 @@ At this point, Bob has an up-to-date repo, but you and Alice do not. Each of you
 	git pull
 	```
 
-Take a moment to verify that your repo, Alice's repo, and Bob's repo are all synced. Each of them should have a JPG file in the "assets" directory and an `<img>` element declared in **index.html**. In addition, the **site.css* file in repo's "assets" folder should contain a line defining a CSS style named `cat` (the style that Alice added when she made her changes).
+Take a moment to verify that your repo, Alice's repo, and Bob's repo are all synced. Each of them should have a JPG file in the "assets" directory and an `<img>` element declared in **index.html**. In addition, the **site.css** file in repo's "assets" folder should contain a line defining a CSS style named `cat` (the style that Alice added when she made her changes).
 
 ## Summary
 
