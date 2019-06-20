@@ -77,26 +77,44 @@ The next step is for Bob to clone the bare repository, and then for Alice to set
 
 The push wasn't necessary, but it's a simple way of making sure the remote is set up with the correct defaults.
 
-## The basics of collaboration
+## Learn the basics of collaboration
 
-Thenext step is for Bob to clone the repository.
+Now that Bob is set up to work on the Web site, he decides to add a footer ti the bottom of the page. Let's take on Bob and Alice's persona for a few moments and learn the basics of collaboration.
 
-Now that Bob is set up to work on the website, he decides to wrap the horizontal rule at the bottom of the page with a footer.
+1. Begin by navigating to the "Bob" directory and impersonating Bob:
 
-```
-$ cd ~/sandbox/Bob/BobCats
-$ sed -i.bak -e 's/<hr>/<footer><hr><\/footer>/' index.html
-$ git commit -a -m "Put a footer at the bottom of the page"
-1 file changed, 1 insertion(+), 1 deletion(-)
-$ git push
-Counting objects: 3, done.
-Delta compression using up to 2 threads.
-Compressing objects: 100% (3/3), done.
-Writing objects: 100% (3/3), 315 bytes | 315.00 KiB/s, done.
-Total 3 (delta 2), reused 0 (delta 0)
-To /home/steve/sandbox/Cats.git
-   37903fd..99fbbca  master -> master
-```
+	```bash
+	cd ../Bob
+	git config user.name Bob
+	git config user.email bob@contoso.com
+	```
+
+1. Use your favorite text editor to open **index.html** and replace the `<hr>` element near the bottom of the page with this:
+
+	```html
+	<footer><hr>Copyright (c) 2019 Contoso Cats</footer>
+	```
+
+	Then save the file.
+
+1. Commit the changes and push to the remote origin:
+
+	```
+	git commit -a -m "Put a footer at the bottom of the page"
+	git push
+	```
+
+1. While Bob is editing the site, Alice is, too. She decides to add a nav bar to the page. This will require her to modify two files: **index.html** and **site.css**. `cd` to the "Alice" directory and configure Git to use Alice's credentials:
+
+	```bash
+	cd ../Alice
+	git config user.name Alice
+	git config user.email alice@contoso.com
+	```
+
+1. Now 
+
+
 
 He sends email to you and Alice to let you know that he's made a change.
 
