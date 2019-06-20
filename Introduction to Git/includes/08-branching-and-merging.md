@@ -1,6 +1,6 @@
 # Work in branches
 
-As your project progresses, the developers want to work on more than one task at a time, fixing bugs while implementing new features. The contributors need a way to keep their work separate so what one person is doing doesn't affect another.
+As your project progresses, the developers want to work on more than one task at a time, fixing bugs while implementing new features. They need a way to keep their work separate so what one person is doing doesn't affect another.
 
 _Branches_ make this easy. The work done "on a branch" doesn't have to be shared, and it doesn't interfere with other branches. Branches let you keep the commits related to each topic together and in isolation, making changes easy to review and track. Modern software development is done almost entirely in branches. The goal is to keep "master" clean until the work is ready to check in. Then you push your changes to "master," or better yet, submit a pull request for the merge.
 
