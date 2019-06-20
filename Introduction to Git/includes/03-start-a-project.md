@@ -1,14 +1,20 @@
 # Start a project
 
-It's time to get your Web-site project off the ground. In the exercises that follow, you will create a directory to serve as your project directory and create a simple HTML file in it. Then you will place that directory under Git's control by turning it into a Git repo. Finally, you will make some changes in the directory and learn to how commit the changes. 
+It's time to get your Web-site project off the ground. In the exercises that
+follow, you will create a directory to serve as your *working tree*  (project
+directory), place it under Git's control by initializing a Git repository in it, and create a simple HTML file in it.  Finally, you will make some changes in the directory and learn to how commit the changes. 
 
 There are actually two ways to create a Git working tree on your computer. One is to create a Git repo in an existing directory; the other is to clone an existing Git repository. You will see how the latter works in a subsequent unit. For now, let's start from scratch with an existing directory.
 
 ## Create a repository and working tree
 
-Start by creating an empty directory and initializing a Git working tree inside it.
+Start by creating an empty project directory and initializing a Git repository
+inside it.
 
-1. Create a directory named "Cats" in the location of your choice. (The directory name is unimportant; Git is happy to work with it regardless. But for these exercises, we will assume that you named it "Cats.") This will be the *project directory* where your Web site is stored and the files that comprise it are located.
+1. Create a directory named "Cats" in the location of your choice. (The
+   directory name is unimportant; Git is happy to work with it regardless. But
+   for these exercises, we will assume that you named it "Cats.") This will be
+   the *working tree* (sometimes called a "project directory") where your Web site is stored and the files that comprise it are located.
 
 1. `cd` to the project directory in a Command Prompt window or terminal. Then execute a [`git init`](https://git-scm.com/docs/git-init) command to initialize the repository:
 
@@ -23,19 +29,23 @@ Start by creating an empty directory and initializing a Git working tree inside 
 
 	Git responds by saying "Nothing to commit." It also says "On branch master" indicating that "master," which is presently the only branch, is the current branch. So far, so good.
 
-1. Use an `ls` command to show the contents of the project directory:
+1. Use an `ls` command to show the contents of the working tree:
 
 	```bash
 	ls -aF
 	```
 
-	Confirm that the directory contains a subdirectory named ".git." This is the directory in which Git stores metadata for the working tree.
+	Confirm that the directory contains a subdirectory named ".git." (You
+	won't see it unless you use the `-a` option with `ls` -- Linux normally
+	hides filenames that start with a period.) This is Git's *repository*, the
+	directory in which Git stores metadata and history for the working tree.
 
 You typically don't do anything with the ".git" directory directly. Git updates the metadata there as the status of the working tree changes. This directory is hands-off for you, but it's incredibly important to Git.
 
 ## Create and add (stage) a file
 
-Git doesn't do much with empty directories, so let's add a file to the project directory to serve as the home page for the Web site.
+Git doesn't do much with empty directories, so let's add a file to the working
+tree to serve as the home page for the Web site.
 
 1. Use a [`touch`](https://linux.die.net/man/1/touch) command to create a file named **index.html**:
 
@@ -135,7 +145,7 @@ The change to **index.html** has been committed. There are now two versions of t
 
 This is a great time to take a look inside the repository and see what Git is doing while things are still relatively uncomplicated. The steps that follow aren't required, but they will help deepen your understanding of Git.
 
-1. Use the following command to look inside the ".git" subdirectory:
+1. Use the following command to look inside the repository (the ".git" subdirectory):
 
 	```bash
 	ls -FC .git
