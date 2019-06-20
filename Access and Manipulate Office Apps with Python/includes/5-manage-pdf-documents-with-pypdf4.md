@@ -161,15 +161,15 @@ Ever need to print a PDF document, but without the cover page, with two copies o
 	python extract-pages PATH result.pdf pages=1
 	```
 
-	Afterward, confirm that the current directory contains a 1-page PDF named **result.pdf**, and that it contains the first page from the source document.
+	Afterward, confirm that the current directory contains a 1-page PDF named **result.pdf**, and that **result.pdf** contains the first page from the source document.
 
 1. The `pages` parameter passed to **extract-pages.py** supports comma-delimited lists of pages and page ranges. To demonstrate, locate a PDF that contains 10 or more pages and execute the following command, once more replacing PATH with the path to the PDF:
 
 	```bash
-	python extract-pages PATH result.pdf pages=2,4-6,9
+	python extract-pages PATH result.pdf pages=2,4-6,10
 	```
 
-	This time, **result.pdf** should contain pages 2, 4, 5, 6, and 9 from the original document.
+	This time, **result.pdf** should contain pages 2, 4, 5, 6, and 10 from the original document.
 
 You could modify **extract-page.pdf** to do even more. You could, for example, have it support commands such as this to copy all the pages from page 7 to the end of the document:
 
