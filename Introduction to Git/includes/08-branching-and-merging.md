@@ -51,9 +51,7 @@ Alice wants to add some CSS to style the cat pictures, so she creates a _topic b
 	.cat { max-width: 40%; padding: 5 }
 	```
 
-	Save the changes to the file.
-
-1. Commit the change:
+1. Save the changes to the file and commit the change:
 
 	```bash
 	git commit -a -m "Add style for cat pictures"
