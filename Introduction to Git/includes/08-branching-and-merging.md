@@ -14,7 +14,7 @@ If you are switching to Git from another version-control system, you may be accu
 
 A branch usually starts with a commit on "master." It grows a separate history chain as commits are added. Eventually its changes can be merged back into "master." You will learn about two different ways of doing that — merging and rebasing — in a few moments.
 
-Suppose you branch off of "master." Here's how to picture it in your head:
+Suppose you branch off of "master." Here's how to visualize what happens:
 
 ```
 master:  A---B---C---D
@@ -26,7 +26,7 @@ Branches are given names such as "add-authentication" and "fix-css-bug," and bra
 
 ## Create branches
 
-Alice wants to add some CSS to style the cat pictures, so she creates a _topic branch_ (sometimes called a _feature branch_), calls it "add-style." Meanwhile, Bob creates a branch of his own named "add-cat." Here's how they create their branches.
+Alice wants to add some CSS to style the cat pictures, so she creates a _topic branch_ (sometimes called a _feature branch_), calls it "add-style." Meanwhile, Bob creates a branch of his own named "add-cat." Let's assume the roles of Alice and Bob and create those branches.
 
 
 1. 
