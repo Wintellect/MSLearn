@@ -103,15 +103,13 @@ While Alice is working on the CSS, Bob is sitting in an apartment on the other s
 	cp bobcat2-317x240.jpg assets
 	```
 
-1. Now open **index.html** and replace tk with the following statement:
+1. Now open **index.html** and replace the line that says "Eventually we will put cat pictures here" with the following statement, and then save the file:
 
 	```html
 	<img src="assets/bobcat2-317x240.jpg">
 	```
 
-	Save the file.
-
-1. You have now made two changes to Bob's "add-cat" branch. You have added a file and modified an existing file. Use the following commands to add the new file in the "assets" directory to the index and commit all changes: 
+1. You have now made two changes to Bob's "add-cat" branch. You have added one file and modified another. Use the following commands to add the new file in the "assets" directory to the index and commit all changes: 
 
 	```bash
 	git add assets
