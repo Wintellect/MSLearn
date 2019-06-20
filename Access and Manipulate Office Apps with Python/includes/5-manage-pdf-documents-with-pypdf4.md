@@ -153,7 +153,7 @@ Ever need to print a PDF document, but without the cover page, with two copies o
 	    main()
 	```
 
-	This one is obviously more ambitious, but it, too, uses **PyPDF4** to do the heavy lifting.
+	This one is obviously more ambitious, but it, too, uses **PyPDF4** to do the heavy lifting. The bulk of the code has to do with parsing the command line to determine precisely which pages should be copied from the source document to the output document. Once that's determined, the `extract_to()` function does most of the work, and even it contains just two lines of code (not counting comments) consisting of a `for` loop and calls to **PyPDF4**'s `getPage()` and `addPage()` functions. 
 
 1. Now use the following command to extract page 1 from a PDF, replacing PATH with the path to the PDF:
 
@@ -171,7 +171,7 @@ Ever need to print a PDF document, but without the cover page, with two copies o
 
 	This time, **result.pdf** should contain pages 2, 4, 5, 6, and 10 from the original document.
 
-You could modify **extract-page.pdf** to do even more. You could, for example, have it support commands such as this to copy all the pages from page 7 to the end of the document:
+You could modify **extract-page.pdf** to do even more. You could, for example, have it support commands such as this to copy all pages from page 7 to the end of the document:
 
 ```bash
 python extract-pages PATH result.pdf pages=7-
