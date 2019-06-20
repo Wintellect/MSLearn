@@ -61,7 +61,7 @@ The next step is for Bob to clone the bare repository, and then for Alice to set
 	cd Bob
 	```
 
-2. Now clone the shared repo:
+2. Now clone the shared repo, and be sure to include the period at the end of the command:
 
 	```Bash
 	git clone ../Shared.git/ .
@@ -71,7 +71,7 @@ The next step is for Bob to clone the bare repository, and then for Alice to set
 
 	```bash
 	cd ../Alice
-	it remote set-url origin ../Shared.git
+	git remote set-url origin ../Shared.git
 	git push
 	```
 
