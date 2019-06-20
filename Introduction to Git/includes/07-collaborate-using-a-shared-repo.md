@@ -79,7 +79,7 @@ The push wasn't necessary, but it's a simple way of making sure the remote is se
 
 ## Learn the basics of collaboration
 
-Now that Bob is set up to work on the Web site, he decides to add a footer ti the bottom of the page. Let's take on Bob and Alice's persona for a few moments and learn the basics of collaboration.
+Now that Bob is set up to work on the Web site, he decides to add a footer to the bottom of the page. Let's take on Bob and Alice's persona for a few moments and learn the basics of collaboration.
 
 1. Begin by navigating to the "Bob" directory and impersonating Bob:
 
