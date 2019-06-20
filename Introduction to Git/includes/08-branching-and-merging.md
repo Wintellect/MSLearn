@@ -6,21 +6,23 @@ _Branches_ make this easy. The work done "on a branch" doesn't have to be shared
 
 One of Git's advantages over older version control systems is that creating a branch is extremely fast; it amounts to writing a 40-character hash into a file under **.git/heads**. Switching branches is also fast, because Git stores whole files and just unzips them rather than trying to reconstruct them from lists of changes. Merging in Git isn't _quite_ that simple, but it's straightforward and often completely automatic. Let's learn what branches are, how they're used, and how they work.
 
-## Introduction to branches
+## Understanding branches
 
 A _branch_ is simply a chain of commits "branching off" from the main line of development, like a branch on a tree.
 
-If you are switching to Git from another version control system, you may be used to slightly different terminology. Subversion, for example, actually calls its main branch "trunk". Git calls it `master`. You can rename `master`, just as you can rename any other branch, and some teams do this when switching to Git from some other version control system.
+If you are switching to Git from another version-control system, you may be accustomed to slightly different terminology. Subversion, for example, actually calls its main branch "trunk". Git calls it "master." You can rename "master," just as you can rename any other branch, and some teams do this when switching to Git from other version-control systems.
 
-Initially, a branch starts with a commit on `master` (or some other branch). It grows a separate history chain as commits are added; eventually it can have its changes merged back into `master`. (We'll see two different ways of doing that -- merging and rebasing -- later on in this unit.) 
+A branch usually starts with a commit on "master." It grows a separate history chain as commits are added. Eventually its changes can be merged back into "master." You will learn about two different ways of doing that — merging and rebasing — in a few moments.
 
-It ends up looking like this:
+Suppose you branch off of "master." Here's how to picture it in your head:
 
 ```
 master:  ...A---B---C---D
                 \
 branch:          E---F---G
 ```
+
+Branches are given names such as "add-authentication" and "fix-css-bug," and branches can have branches of their own. The ultimate goal is to let developers do what they need to do without stepping on each other, and to ultimately have a "master" branch with a product that is ready to ship to customers.
 
 ## Create a branch
 
