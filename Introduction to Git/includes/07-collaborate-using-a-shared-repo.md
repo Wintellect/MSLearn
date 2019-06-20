@@ -34,10 +34,10 @@ Creating a bare repo for sharing is easy.
 	git init --bare
 	```
 
-1. The next step is to get the contents of _your_ repo into the shared repo. Start by `cd`ing back to the project directory where your repo is stored. Then use these commands to set up an "origin" remote and push to it, replacing PATH_TO_SHARED_REPO with the path to the shared directory:
+1. The next step is to get the contents of _your_ repo into the shared repo. Start by `cd`ing back to the project directory where your repo is stored. Then use these commands to set up an "origin" remote and perform an initial push:
 
 	```
-	git remote add origin PATH_TO_SHARED_REPO
+	git remote add origin ../Shared.git
 	git push origin master
 	```
 
@@ -49,9 +49,9 @@ Creating a bare repo for sharing is easy.
 
 Git would have complained if you had tried to do this before the initial push, because the new repository had no branches yet. Git can't track a branch that doesn't exist. All Git is doing under the hood is looking in ".git/refs/remotes" for a file named **origin/trunk**.
 
-## Setup for collaborators
+## Set up for collaborators
 
-The next step is for Bob to clone the bare repository.
+The next step is for Bob to clone the bare repository, and then for Alice to set the origin in her repo to target the shared repo for pushes and pulls.
 
 1. Create a directory named "Bob" that's a sibling of your project directory and `cd` into the "Bob" directory:
 
@@ -67,29 +67,13 @@ The next step is for Bob to clone the bare repository.
 	git clone ../Shared.git/ .
 	```
 
+1. Currently, Alice's repo is configured to push to and pull from her own repo. Use the following commands to `cd` to the "Alice" directory and change "origin" to point to the shared repo:
 
-```
-$ cd ~/sandbox
-$ mkdir Bob
-$ cd Bob
-$ git clone ~/sandbox/Cats.git/ BobCats
-Cloning into 'BobCats'...
-done.
-$ cd BobCats
-$ git config user.name Bob
-$ git config user.email bob@example.com
-```
-
-Notice that Bob specified a different directory to clone into. Git doesn't care what you call a working tree, because it never looks outside of it.
-
-Alice already has a remote called `origin`, so all she has to do is change which repo it points to:
-
-```
-$ cd ~/sandbox/Alice/Cats
-$ git remote set-url origin ~/sandbox/Cats.git
-$ git push
-Everything up-to-date
-```
+	```bash
+	cd ../Alice
+	it remote set-url origin ../Shared.git
+	git push
+	```
 
 The push wasn't necessary, but it's a simple way of making sure the remote is set up with the correct defaults.
 
