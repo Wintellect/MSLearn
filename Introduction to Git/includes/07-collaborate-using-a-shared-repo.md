@@ -34,7 +34,7 @@ Creating a bare repo for sharing is easy.
 	git init --bare
 	```
 
-1. The next step is to get the contents of _your_ repo into the shared repo. Start by `cd`ing back to the project directory where your repo is stored. Then use these commands to set up an "origin" remote and perform an initial push:
+1. The next step is to get the contents of _your_ repo into the shared repo. Use these commands to return to the project directory where your repo is stored, set up an "origin" remote, and perform an initial push:
 
 	```
 	cd ../Cats
