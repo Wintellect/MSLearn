@@ -12,7 +12,7 @@ A _branch_ is simply a chain of commits "branching off" from the main line of de
 
 If you are switching to Git from another version-control system, you may be accustomed to slightly different terminology. Subversion, for example, calls its main branch "trunk". Git calls it "master." You can rename "master," just as you can rename any other branch, and some teams do this when switching to Git from other version-control systems.
 
-A branch usually starts with a commit on "master." It grows a separate history chain as commits are added. Eventually its changes can be merged back into "master." You will learn do that shortly.
+A branch usually starts with a commit on "master." It grows a separate history chain as commits are added. Eventually its changes can be merged back into "master." You will learn to do that shortly.
 
 Suppose you branch off of "master." Here's how to visualize what happens:
 
