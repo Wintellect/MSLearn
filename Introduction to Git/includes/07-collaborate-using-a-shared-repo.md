@@ -154,89 +154,56 @@ Now that Bob is set up to work on the Web site, he decides to add a footer to th
 	git diff origin -- index.html
 	```
 
-1. From the output, you can see that Alice and Bob's changes don't overlap.
+1. From the output, it is evident that Alice's changes and Bob's changes don't overlap. Now Alice can _stash_ her changes. [`git stash`](https://git-scm.com/docs/git-stash) saves the state of the working tree and index by making a couple of temporary commits. Think of the stash as a way to save your current work while you do something else, without making a "real" commit or affecting your repository history.
 
+	> In reality, Alice should have stashed or committed her changes before she tried to pull. Pulling to a "dirty" working tree is risky, because it can do things from which you can't recover.
 
-Alice uses `git diff` to see what Bob's changes were, specifying both the branch (`origin`) and the file (`index.html) to compare.
+	Use the following command to stash Alice's changes:
 
+	```bash
+	git stash
+	```
 
-```
-$  git diff origin -- index.html
-diff --git a/index.html b/index.html
-index 8ff78df..b8732b6 100644
---- a/index.html
-+++ b/index.html
-@@ -6,8 +6,9 @@
- <link rel="stylesheet" href="assets/site.css">
- </head>
- <body>
-+<nav> <a href="./">home</a> </nav>
- <h1>Our Furry Friends</h1>
- <p> Eventually we will put cat pictures here.
--<footer><hr></footer>
-+<hr>
- </body>
- </html>
-```
+1. Now it's safe for Alice to pull, after which she can "pop" the stash, which is organized as a stack. (In fact, `git stash` is shorthand for `git stash push`. It's a lot like the stack where you put bills that you haven't gotten around to paying yet.) 
 
-Alice can see that, although she and Bob both changed the same file, their changes don't overlap. She decides to _stash_ her changes. `git stash` saves the state of the working tree and index by making a couple of temporary commits. Think of the stash as a way to save your current work while you do something else, without making a "real" commit or affecting your repository history.
+	```bash
+	git pull
+	git stash pop
+	```
 
-In reality, Alice should have stashed or committed her changes before she
-tried to pull. Pulling to a "dirty" working tree is risky, because it can do things from which you can't recover.
+	Popping the stash merges the changes. If changes overlap, there may be a conflict. You will learn later how to resolve those situations.
 
-```
-$ git stash
-Saved working directory and index state WIP on master: 37903fd change background color to light blue
-```
+1. At this point Alice can continue working, or simply commit and push her changes. Let's make another change as Alice by assigning footers the same style as nav bars. Open **site.css** and replace the third line — the one that styles `<nav>` elements — with this one, and as usual, save your changes:
 
-Now it's safe for Alice to pull, after which she can "pop" the stash, which is organized as a stack. (In fact, `git stash` is shorthand for `git stash push`.  It's a lot like the stack where you put bills that you haven't gotten around to paying yet.) 
+	```html
+	nav, footer { background-color: #C0D8DF; }
+	``` 
 
-```
-$ git pull
-Updating 37903fd..99fbbca
-Fast-forward
- index.html | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-$ git stash pop
-Auto-merging index.html
-On branch master
-Your branch is up to date with 'origin/master'.
+1. Now commit the changes and push them to the shared repo:
 
-Changes not staged for commit:
-  (use "git add <file>..." to update what will be committed)
-  (use "git checkout -- <file>..." to discard changes in working directory)
+	```bash
+	git commit -a -m "Stylize the nav bar"
+	git push
+	```
 
-	modified:   assets/site.css
-	modified:   index.html
+1. The updated site is now in shared repo. Finish up returning to the project directory, assuming your own identity again, and doing a pull:
 
-no changes added to commit (use "git add" and/or "git commit -a")
-Dropped refs/stash@{0} (cad3c4cd27de5ca9b0a6e88b379fa8fda43246f5)
-```
+	```bash
+	cd ../Cats
+	git config user.name USER_NAME
+	git config user.email USER_EMAIL
+	git pull
+	```
 
-Popping the stash merges the changes. If changes overlap, there may be a conflict. We look later at how to resolve those situations.
+1. Confirm that the changes made by both Bob and Alice are present in your local repo by opening **index.html** (the one in the project directory) in your browser and verifying that it looks like this:
 
-At this point Alice can continue working, or simply commit and push her changes.
+	![The updated home page](media/tk.png)
 
-She gives footers the same style as nav bars.
+	_The updated home page_
 
-```
-$ sed -i.bak -e 's/nav/nav, footer/' assets/site.css
-$ git commit -a -m 'add nav bar to page'
-[master 88bed5a] add nav bar to page
- 2 files changed, 2 insertions(+)
-$ git push
-Counting objects: 5, done.
-Delta compression using up to 2 threads.
-Compressing objects: 100% (4/4), done.
-Writing objects: 100% (5/5), 495 bytes | 247.00 KiB/s, done.
-Total 5 (delta 2), reused 0 (delta 0)
-To /home/steve/sandbox/Cats.git
-   99fbbca..88bed5a  master -> master
-```
+Note that if Alice had committed her changes rather than stashing them a few moments ago, the situation would have been somewhat different. She would have had to make a branch and either merge or rebase her changes. (Branches, merging, and rebasing are covered in the next unit.)
 
-If Alice had committed her changes rather than stashing them, the situation would have been somewhat different. She would have had to make a branch and either merge or rebase her changes. (Branches, merging, and rebasing are covered in the next unit.)
-
-Had Alice begun by working on a branch in the first place she would have saved herself quite a lot of trouble. We'll see how to do that in the next unit; for now it's worth pointing out that branching and rebasing is _exactly_ what the stash commands accomplish behind the scenes.
+Had Alice begun by working on a branch in the first place she would have saved herself quite a lot of trouble. You will learn how to do that in the next unit. For now it's worth pointing out that branching and rebasing is _exactly_ what `stash` accomplishes behind the scenes.
 
 ## Summary
 
