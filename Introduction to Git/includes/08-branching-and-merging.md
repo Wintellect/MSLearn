@@ -161,6 +161,12 @@ At this point, Bob has an up-to-date repo, but you and Alice do not. Each of you
 
 Take a moment to verify that your repo, Alice's repo, and Bob's repo are all synced. Each of them should have a JPG file in the "assets" directory and an `<img>` element declared in **index.html**. In addition, the **site.css** file in repo's "assets" folder should contain a line defining a CSS style named `cat` (the style that Alice added when she made her changes).
 
+Moreover, if you open **index.html** in any of the repos, you should see this:
+
+![There be cats!](media/first-cat.png)
+
+_There be cats!_
+
 ## Summary
 
 In this unit, you learned how to create branches and how to merge them. You learned about:
