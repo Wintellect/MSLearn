@@ -1,4 +1,4 @@
-# Branch, merge, and rebase
+# Work in branches
 
 As your project progresses, the developers want to work on more than one task at a time, fixing bugs as they turn up while implementing new features. The contributors need a way to keep their work separate so what one person is doing doesn't affect another.
 
@@ -64,13 +64,7 @@ Alice wants to add some CSS to style the cat pictures, so she creates a _topic b
 	git pull
 	```
 
-	The output says that "master" hasn't changed:
-
-	```
-	Already up-to-date.
-	```
-
-1. Seeing that no work has been done on "master," Alice merges the "add-style" branch into "master" using `git merge --ff-only` to perform a "fast-forward" merge. Then she pushes "master" from her repo to the shared repo:
+1. The output says that "master" hasn't changed, so Alice merges the "add-style" branch into "master" using `git merge --ff-only` to perform a "fast-forward" merge. Then she pushes "master" from her repo to the shared repo:
 
 	```bash
 	git merge --ff-only add-style
@@ -109,7 +103,7 @@ While Alice is working on the CSS, Bob is sitting in an apartment on the other s
 	<img src="assets/bobcat2-317x240.jpg">
 	```
 
-1. You have now made two changes to Bob's "add-cat" branch. You have added one file and modified another. Use the following commands to add the new file in the "assets" directory to the index and commit all changes: 
+1. You have now made two changes to Bob's "add-cat" branch; You have added one file and modified another. Use the following commands to add the new file in the "assets" directory to the index and commit all changes: 
 
 	```bash
 	git add assets
@@ -123,136 +117,48 @@ While Alice is working on the CSS, Bob is sitting in an apartment on the other s
 	git pull
 	```
 
-	Here's the output:
+	This time, the output indicates that changes *have* been made to "master" in the shared repo (the result of Alice's push). It also indicates that the change pulled from "master" in the shared repo have been merged with "master" in Bob's repo:
 
+	```
+	remote: Counting objects: 4, done.
+	remote: Compressing objects: 100% (3/3), done.
+	remote: Total 4 (delta 1), reused 0 (delta 0)
+	Unpacking objects: 100% (4/4), done.
+	From ../Shared
+	   92cc51b..384a854  master     -> origin/master
+	Updating 92cc51b..384a854
+	Fast-forward
+	 assets/site.css | 3 ++-
+	 1 file changed, 2 insertions(+), 1 deletion(-)
+	```
+
+1. At this point, Bob merges his branch into "master" so that "master" in his repo will have his *and* Alice's changes. Then he pushes "master" on his computer to "master" in the shared repo: 
+
+	```bash
+	git merge add-cat
+	git push
 	```
 
 	```
-
-1. 
-
-
-
-
+	--------------------------------------------------------
+	UGH! Output says "add-cat - not something we can merge."
+	--------------------------------------------------------
+	```
 
 
+1. tk.
 
+1. tk.
 
-
-Right now, the two contributors are working in parallel. At this point, their two working trees look like this:
-
-```
-Alice:  ...o---m
-                \
-  add-style		 A		 
-
-Bob:    ...o---m
-                \
-  addCat		 B				 
-```
-
-Note that the master branch, `m` in the diagram, has no commits following it.
-
-
-
-## Merge without fast-forward
-
-Alice could have forced Git to create a merge commit by using the `--no-ff` option. In that case, the history would have looked like:
-
-```
-        ...o---m---M        m: previous master
-                \ /         M: new merge commit
-				 A          A: Add style for cat pictures
-```
-
-Merge commits are used for additional metadata in some projects. In addition to recording the date and time of the merge, and the developer's name and email, you can use the `--signoff` option to include a "signed off by:"  line. The `-S` option adds a digital signature. Merge commits like this are often used in large distributed projects; the sign-off identifies the person who approved the change, and the signature backs that up by ensuring that _only_ that person could have made the commit.
-
-Sometimes a non-fast-forward merge can't be avoided. Let's look at Bob's situation.
-
-```
-$ cd ~/sandbox/Bob/BobCats
-$ git checkout master
-Switched to branch 'master'
-Your branch is behind 'origin/master' by 1 commit, and can be fast-forwarded.
-  (use "git pull" to update your local branch)
-$ git pull
-Updating 88bed5a..cddf95c
-Fast-forward
- assets/site.css | 1 +
- 1 file changed, 1 insertion(+)
-```
-
-Now Bob's history looks like:
-
-```
-Bob:    ...o---m---A      A: Add style for cat pictures
-                \
-                 B        B: Add picture of Bob's cat
-```
-
-If Bob uses `git merge addCat` at this point, his history will look like:
-
-```
-Bob:    ...o---m---A---M
-                \     /
-                 B---/
-```
-
-Some projects prefer this kind of history. It keeps Bob's commits exactly the way he made them, so if any of them were signed the signatures would still be valid after the merge. Solo developers and many teams usually prefer something simpler. Fortunately Git lets Bob change his history so that he can use a fast-forward merge.
-
-## Rebase instead of merge
-
-_Rebasing_ a branch rewrites all of its commits so that it attaches to a different parent (base) commit. 
-
-In order to simplify his history, Bob wants to rebase the `addCat` branch so that it is based on "A" rather than "m".  He uses:
-
-```
-$ git checkout addCat
-Switched to branch 'addCat'
-$ git rebase master
-First, rewinding head to replay your work on top of it...
-Applying: Add picture of Bob's cat
-```
-
-Now his history looks like:
-
-```
-Bob:    ...o---m---A
-                    \
-                     B       addCat
-```
-
-What Git did was to compute the difference between the commits `m` and `B`, and apply that difference as a patch to `A`.
-
-Git lost track of the fact that Bob's change was originally made to commit `m`, but that's usually less important than making sure that Bob has taken all of his teammates' changes into account.
-
-If Bob were to merge the `addCat` branch now, he could do it as a fast-forward merge. Instead, he decides that there's no reason to merge at this point, so he simply continues to work on his branch:
-
-```
-$ sed -i.bak -e 's/<img /<img class=".cat" /' index.html
-$ git commit -a -m "Add style class to cat picture"
- 1 file changed, 1 insertion(+), 1 deletion(-)
-```
-
-Now Bob's history looks like:
-
-```
-Bob:    ...o---m---A
-                    \
-                     B---C   addCat
-```
-
-Bob can still do a fast-forward merge, but if he does it would be impossible for anyone looking at the log to see that commits B and C were made on the same branch, implementing parts of the same feature. Instead, Bob could have amended commit B rather than making a new commit on top of it; that would lead to a simpler-looking history, with a single commit combining all of his changes. That way anyone looking at the combined commit would see all of Bob's changes in one place rather than spread out over multiple commits. Many teams prefer simple histories, but as we'll see later there are other ways of combining commits that work better.
+1. tk.
 
 ## Summary
 
-In this unit, you learned how to create branches and several different ways to merge them. You learned about:
+In this unit, you learned how to create branches and how to merge them. You learned about:
 
 - [`git branch`](https://git-scm.com/docs/git-branch), which creates a branch
 - [`git checkout`](https://git-scm.com/docs/git-checkout), which switches to a branch, and [`git checkout -b`](https://git-scm.com/docs/git-checkout) which creates a branch *and* switches to it,
 - [`git rebase`](https://git-scm.com/docs/git-rebase), which revises commits to re-arrange branches
 - [`git merge`](https://git-scm.com/docs/git-merge), which combines branches
-
-It's up to each project to decide whether it's more important to use rebase and fast-forward merges to keep a simple linear history, or to use merge commits to preserve signoffs, signatures, metadata, and the exact sequence of changes. Small teams generally go for simplicity.
 
 In the next unit, you learn how to simplify history using `merge --squash` or `rebase --interactive`, and how to resolve merge conflicts.
