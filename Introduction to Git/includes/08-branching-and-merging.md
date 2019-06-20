@@ -79,7 +79,7 @@ Alice wants to add some CSS to style the cat pictures, so she creates a _topic b
 	git push
 	```
 
-Performing a fast-forward merge when "master" has no changes wasn't strictly necessary in this case, but it's a good habit to get into.
+Performing a fast-forward merge because "master" has no changes wasn't strictly necessary in this case, but it's a good habit to get into.
 
 # Create a branch for Bob
 
@@ -99,7 +99,24 @@ While Alice is working on the CSS, Bob is sitting in an apartment on the other s
 	git checkout -b add-cat
 	```
 
-1. tk. 
+1. Copy **bobcat2-317x240.jpg** from [insert location here] into Bob's "assets" directory:
+
+	```bash
+	cp bobcat2-317x240.jpg assets
+	```
+
+1. Now open **index.html** and replace tk with the following statement:
+
+	```html
+	<img src="assets/bobcat2-317x240.jpg">
+	```
+
+	Save the file. You have now made two changes to Bob's "add-cat" branch. You have added a file and modified an existing file.
+
+
+
+
+
 
 
 
