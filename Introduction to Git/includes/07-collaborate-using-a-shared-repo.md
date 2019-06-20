@@ -65,7 +65,7 @@ The next step is for Bob to clone the bare repository, and then for Alice to set
 2. Now clone the shared repo, and be sure to include the period at the end of the command:
 
 	```Bash
-	git clone ../Shared.git/ .
+	git clone ../Shared.git .
 	```
 
 1. Currently, Alice's repo is configured to push to and pull from her own repo. Use the following commands to `cd` to the "Alice" directory and change "origin" to point to the shared repo:
