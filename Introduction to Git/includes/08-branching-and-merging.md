@@ -22,7 +22,7 @@ master:  A---B---C---D
 branch:        E---F---G
 ```
 
-Branches are given names such as "add-authentication" and "fix-css-bug," and branches can have branches of their own. The ultimate goal is to let developers do what they need to do without stepping on each other, and to ultimately have a "master" branch representing the best efforts of everyone involved.
+Branches are given names such as "add-authentication" and "fix-css-bug," and branches can have branches of their own. The ultimate goal is to let developers do what they need to do without stepping on each other, and to wind up with a "master" branch representing the best efforts of everyone involved.
 
 ## Create a branch
 
