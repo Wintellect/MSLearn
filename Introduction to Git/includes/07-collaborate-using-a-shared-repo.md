@@ -112,38 +112,50 @@ Now that Bob is set up to work on the Web site, he decides to add a footer to th
 	git config user.email alice@contoso.com
 	```
 
-1. Now 
+1. Now open **index.html** and insert the following line right after the `<body>` tag on line 8:
 
+	```html
+	<nav><a href="./index.html">home</a></nav>
+	```
 
+1. Open **site.css** in the "assets" subdirectory and add the following line at the bottom:
 
-He sends email to you and Alice to let you know that he's made a change.
+	```css
+	nav { background-color: #C0D8DF; }
+	```
 
-Meanwhile, Alice decides to add a nav bar to the page, and adds a line to the style sheet for it as well.
+1. Save both files. Now let's assume that Alice receives an e-mail from Bob saying he has made changes to the site. She decides to pull his changes before committing her own. (If she had already committed her changes, she would have a different problem which is discussed in the next unit.) Do a pull with `git pull`:
 
-```
-$ cd ~/sandbox/Alice/Cats
-$ sed -i.bak -e '/<body>/a<nav> <a href="./index.html">home<\/a> <\/nav>' index.html
-$ echo 'nav { background-color: #C0D8DF; }' >> assets/site.css
-```
+	```bash
+	git pull
+	```
 
-Then Alice sees Bob's email, and decides to pull his changes before she commits her own. (If she had already committed her change, she would have a different problem, which we discuss in the next unit.) She types:
+	From the output, it looks as if Git has prevented a problem:
 
-```
-$ git pull
-remote: Counting objects: 3, done.
-remote: Compressing objects: 100% (3/3), done.
-remote: Total 3 (delta 2), reused 0 (delta 0)
-Unpacking objects: 100% (3/3), done.
-From /home/steve/sandbox/Cats
-   37903fd..99fbbca  master     -> origin/master
-Updating 37903fd..99fbbca
-error: Your local changes to the following files would be overwritten by merge:
-	index.html
-Please commit your changes or stash them before you merge.
-Aborting
-```
+	```
+	remote: Counting objects: 3, done.
+	remote: Compressing objects: 100% (3/3), done.
+	remote: Total 3 (delta 2), reused 0 (delta 0)
+	Unpacking objects: 100% (3/3), done.
+	From ../Shared
+	   843d142..2cf6cbf  master     -> origin/master
+	Updating 843d142..2cf6cbf
+	error: Your local changes to the following files would be overwritten by merge:
+	        index.html
+	Please commit your changes or stash them before you can merge.
+	Aborting
+	```
 
-It looks as though Git prevented a problem. Only `index.html` would have been overwritten; Bob didn't make any changes in `site.css`. If Alice hadn't changed `index.html`, Git would have gone ahead and committed the merge. If it did so, it could have caused trouble later on. (This is one reason why it's always a good idea to run tests after a merge.)
+	Git warns that the pull would overwrite Alice's version of **index.html** and lose her changes. That's because Bob modified **index.html**, too. If Alice hadn't changed **index.html**, Git would have gone ahead and committed the merge.
+
+1. Use a `git diff` command to see what changes Bob made to **index.html**:
+
+	```bash
+	git diff origin -- index.html
+	```
+
+1. From the output, you can see that Alice and Bob's changes don't overlap.
+
 
 Alice uses `git diff` to see what Bob's changes were, specifying both the branch (`origin`) and the file (`index.html) to compare.
 
@@ -222,20 +234,16 @@ To /home/steve/sandbox/Cats.git
    99fbbca..88bed5a  master -> master
 ```
 
-If Alice had committed her changes rather than stashing them, the situation
-would have been somewhat different. She would have had to make a branch and
-either merge or rebase her changes.  (Branches, merging, and rebasing are
-covered in the next unit.)
+If Alice had committed her changes rather than stashing them, the situation would have been somewhat different. She would have had to make a branch and either merge or rebase her changes. (Branches, merging, and rebasing are covered in the next unit.)
 
-Had Alice begun by working on a branch in the first place she would have saved herself quite a lot of trouble. We'll see
-how to do that in the next unit; for now it's worth pointing out that branching and rebasing is _exactly_ what the stash commands accomplish behind the scenes.
+Had Alice begun by working on a branch in the first place she would have saved herself quite a lot of trouble. We'll see how to do that in the next unit; for now it's worth pointing out that branching and rebasing is _exactly_ what the stash commands accomplish behind the scenes.
 
 ## Summary
 
 In this unit, you learned how to set up a bare repository that can be shared among a group of developers, and about the Git commands
 
-* [`git commit --bare`](https://git-scm.com/docs/git-commit), which sets up a repo that can be shared
-* [`git push`](https://git-scm.com/docs/git-push), which merges changes with a remote repo, and
-* [`git stash`](https://git-scm.com/docs/git-stash), which saves un-committed changes so that you can merge safely.
+- [`git init --bare`](https://git-scm.com/docs/git-commit), which sets up a repo that can be shared
+- [`git push`](https://git-scm.com/docs/git-push), which merges changes with a remote repo, and
+- [`git stash`](https://git-scm.com/docs/git-stash), which saves un-committed changes so that you can merge safely
 
-In the next unit, you learn how to create and merge branches.
+In the next unit, you take another big step by learning how to create and merge branches.
