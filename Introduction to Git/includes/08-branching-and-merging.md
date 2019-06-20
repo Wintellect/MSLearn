@@ -71,7 +71,9 @@ Alice wants to add some CSS to style the cat pictures, so she creates a _topic b
 	git push
 	```
 
-Performing a fast-forward merge because "master" has no changes wasn't strictly necessary in this case, but it's a good habit to get into.
+Performing a fast-forward merge because "master" has no changes wasn't strictly necessary in this case because Git would have done it anyway. Still, it's a good habit to get into.
+
+**Steven: Is this true? Would Git have performed a fast-forward merge anyway? And why is it a good habit to get into?**
 
 # Create a branch for Bob
 
