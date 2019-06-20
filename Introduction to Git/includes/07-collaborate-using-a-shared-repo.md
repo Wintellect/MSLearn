@@ -10,19 +10,11 @@ What you need is a repository that doesn't have a working tree, to avoid the pro
 
 A bare repo has several advantages:
 
-* Without a working tree, everybody can push changes without having to worry
-  about which branch is checked out.
-* It's easy for Git to detect when somebody else has pushed changes that might
-  conflict with yours (because your push wouldn't be fast-forward, and Git's
-  default is to reject it so that you can merge the new files with your own).
-* A shared repo scales to any number of developers. You only have to know
-  about the shared repo rather than about all the other people from whom you might need to pull.
-* By putting the shared repo on a server that you can all access, you don't
-  have to worry about firewalls and permissions.
-* You don't need separate accounts on the server, because Git keeps track of
-  who made each commit. GitHub has millions of users all sharing the `git`
-  account. (Everyone uses `ssh`, and users are distinguished by their public
-  keys.) 
+- Without a working tree, everybody can push changes without having to worry about which branch is checked out.
+- It's easy for Git to detect when somebody else has pushed changes that might conflict with yours (because your push wouldn't be fast-forward, and Git' default is to reject it so that you can merge the new files with your own).
+- A shared repo scales to any number of developers. You only have to know about the shared repo rather than about all the other people from whom you might need to pull.
+- By putting the shared repo on a server that you can all access, you don't have to worry about firewalls and permissions.
+- You don't need separate accounts on the server, because Git keeps track of who made each commit. GitHub has millions of users all sharing the `git` account. (Everyone uses `ssh`, and users are distinguished by their public keys.) 
   
 You can set it up using:
 
@@ -58,13 +50,7 @@ $ git branch --set-upstream-to origin/master
 Branch 'master' set up to track remote branch 'master' from 'origin'.
 ```
 
-Git would have complained if you had tried to do this before the initial push,
-because there weren't any branches in the new repository yet. Git won't let
-you track a branch that doesn't exist.  (You get exactly the same error
-message, "the requested upstream branch [...] does not exist," if you get the
-name of either the branch (maybe you used "trunk" because you're used to
-Subversion) or the remote wrong.  That's not surprising because all Git is
-doing is looking in `.git/refs/remotes` for a file called `origin/trunk`.
+Git would have complained if you had tried to do this before the initial push, because there weren't any branches in the new repository yet. Git won't let you track a branch that doesn't exist.  (You get exactly the same error message, "the requested upstream branch [...] does not exist," if you get the name of either the branch (maybe you used "trunk" because you're used to Subversion) or the remote wrong.  That's not surprising because all Git is doing is looking in `.git/refs/remotes` for a file called `origin/trunk`.
 
 ## Setup for collaborators
 
@@ -175,10 +161,7 @@ $ git stash
 Saved working directory and index state WIP on master: 37903fd change background color to light blue
 ```
 
-Now it's safe for Alice to pull, after which she can "pop" the stash, which is
-organized as a stack. (In fact, `git stash` is shorthand for `git stash
-push`.  It's a lot like the stack where you put bills that you haven't gotten
-around to paying yet.) 
+Now it's safe for Alice to pull, after which she can "pop" the stash, which is organized as a stack. (In fact, `git stash` is shorthand for `git stash push`.  It's a lot like the stack where you put bills that you haven't gotten around to paying yet.) 
 
 ```
 $ git pull
