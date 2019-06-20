@@ -75,7 +75,7 @@ This program takes hours — not months — to produce two million lines of outp
 
 ## Extract pages from documents
 
-Ever need to print a PDF document, but without the cover page, with two copies of the signatures on page 7, and without the appendix on pages 10-14? The next program will do that for you. Used in a script, it will chew through 2,000,000 legal documents as well.
+Ever need to print a PDF document, but without the cover page, with two copies of the signature page on page 7, and without the appendix? The next program will do that and more. Used in a script, it will chew through 2,000,000 legal documents as well.
 
 1. Create a file named **extract-pages.py** and paste the following code into it:
 
