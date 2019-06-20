@@ -64,7 +64,7 @@ Alice wants to add some CSS to style the cat pictures, so she creates a _topic b
 	git pull
 	```
 
-1. The output says that "master" hasn't changed, so Alice merges the "add-style" branch into "master" using `git merge --ff-only` to perform a "fast-forward" merge. Then she pushes "master" from her repo to the shared repo:
+1. The output says that "master" is up to date, so Alice merges the "add-style" branch into "master" using `git merge --ff-only` to perform a "fast-forward" merge. Then she pushes "master" from her repo to the shared repo:
 
 	```bash
 	git merge --ff-only add-style
