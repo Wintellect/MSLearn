@@ -207,10 +207,10 @@ Had Alice begun by working on a branch in the first place she would have saved h
 
 ## Summary
 
-In this unit, you learned how to set up a bare repository that can be shared among a group of developers, and about the Git commands
+In this unit, you learned how to set up a bare repository that can be shared among a group of developers, and about some new and very important Git commands:
 
 - [`git init --bare`](https://git-scm.com/docs/git-commit), which sets up a repo that can be shared
-- [`git push`](https://git-scm.com/docs/git-push), which merges changes with a remote repo, and
-- [`git stash`](https://git-scm.com/docs/git-stash), which saves un-committed changes so that you can merge safely
+- [`git stash`](https://git-scm.com/docs/git-stash), which saves uncommitted changes so you can merge safely
+- [`git push`](https://git-scm.com/docs/git-push), which merges changes with a remote repo
 
 In the next unit, you take another big step by learning how to create and merge branches.
