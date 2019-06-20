@@ -79,11 +79,11 @@ Alice wants to add some CSS to style the cat pictures, so she creates a _topic b
 	git push
 	```
 
-TODO: Add closing
+Performing a fast-forward merge when "master" has no changes wasn't strictly necessary in this case, but it's a good habit to get into.
 
-# Create a branch as Bob
+# Create a branch for Bob
 
-While Alice is working on the CSS, Bob is busy creating a branch for adding a picture of his cat.
+While Alice is working on the CSS, Bob is sitting in an apartment on the other side of town blissfully unaware of what Alice is doing. Bob decides to make some changes of his own.
 
 1. Start by assuming the role of Bob:
 
@@ -98,7 +98,8 @@ While Alice is working on the CSS, Bob is busy creating a branch for adding a pi
 	```
 	git checkout -b add-cat
 	```
-1. 
+
+1. tk. 
 
 
 
