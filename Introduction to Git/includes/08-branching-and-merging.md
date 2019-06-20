@@ -10,9 +10,9 @@ One of Git's advantages over older version-control systems is that creating a br
 
 A _branch_ is simply a chain of commits "branching off" from the main line of development, like a branch on a tree.
 
-If you are switching to Git from another version-control system, you may be accustomed to slightly different terminology. Subversion, for example, actually calls its main branch "trunk". Git calls it "master." You can rename "master," just as you can rename any other branch, and some teams do this when switching to Git from other version-control systems.
+If you are switching to Git from another version-control system, you may be accustomed to slightly different terminology. Subversion, for example, calls its main branch "trunk". Git calls it "master." You can rename "master," just as you can rename any other branch, and some teams do this when switching to Git from other version-control systems.
 
-A branch usually starts with a commit on "master." It grows a separate history chain as commits are added. Eventually its changes can be merged back into "master." You will learn about two different ways of doing that — merging and rebasing — in a few moments.
+A branch usually starts with a commit on "master." It grows a separate history chain as commits are added. Eventually its changes can be merged back into "master." You will learn do that shortly.
 
 Suppose you branch off of "master." Here's how to visualize what happens:
 
@@ -22,7 +22,7 @@ master:  A---B---C---D
 branch:        E---F---G
 ```
 
-Each capital letter in the diagram represents a commit. Branches are given names such as "add-authentication" and "fix-css-bug," and branches can have branches of their own. The ultimate goal is to let developers do what they need to do without stepping on each other, and to wind up with a "master" branch representing the best efforts of everyone involved.
+Each capital letter in the diagram represents a commit. Branches are given names such as "add-authentication" and "fix-css-bug," and branches can have branches of their own. The ultimate goal is to let developers do what they need to do without stepping on one another, and to wind up with a "master" branch representing the best efforts of everyone involved.
 
 ## Create a branch for Alice
 
