@@ -52,7 +52,7 @@ The first order of business is writing a simple Python app that recursively enum
 
 	> Cameron: Does each file need to be closed as well?
 
-1. Now find a folder on your hard disk that holds several PDFs (they don't have to be in the folder itself; they can be in subfolders, too) and execute the following command, replacing PATH with the path to the folder containing the PDFs:
+1. Now find a folder on your hard disk that holds several PDFs (they don't have to be in the folder itself; they can be in subfolders, too) and execute the following command, replacing PATH with the path to the folder:
 
 	```bash
 	python count-pages PATH
