@@ -105,7 +105,7 @@ Now that Bob is set up to work on the Web site, he decides to add a footer to th
 	git push
 	```
 
-1. While Bob is editing the site, Alice is, too. She decides to add a nav bar to the page. This will require her to modify two files: **index.html** and **site.css**. `cd` to the "Alice" directory and configure Git to use Alice's credentials:
+1. While Bob is editing the site, Alice is, too. She decides to add a nav bar to the page. This requires her to modify two files: **index.html** and **site.css**. `cd` to the "Alice" directory and configure Git to use Alice's credentials:
 
 	```bash
 	cd ../Alice
@@ -157,7 +157,7 @@ Now that Bob is set up to work on the Web site, he decides to add a footer to th
 
 1. From the output, it is evident that Alice's changes and Bob's changes don't overlap. Now Alice can _stash_ her changes. [`git stash`](https://git-scm.com/docs/git-stash) saves the state of the working tree and index by making a couple of temporary commits. Think of the stash as a way to save your current work while you do something else, without making a "real" commit or affecting your repository history.
 
-	> In reality, Alice should have stashed or committed her changes before she tried to pull. Pulling to a "dirty" working tree is risky, because it can do things from which you can't recover.
+	> In reality, Alice should have stashed or committed her changes before she tried to pull. Pulling to a "dirty" working tree is risky, because it can do things from which you can't easily recover.
 
 	Use the following command to stash Alice's changes:
 
