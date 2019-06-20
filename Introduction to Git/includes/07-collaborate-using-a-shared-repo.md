@@ -33,7 +33,7 @@ Creating a bare repo for sharing is easy.
 	git push origin master
 	```
 
-1. You want `push` and `pull` to use "origin's" master branch by default, just as if you'd made your repo by cloning in the first place. To do so, you need to tell Git which branch to track:
+1. You want `push` and `pull` to use "origin's" master branch by default, just as if you had made your repo by cloning it in the first place. To do so, you need to tell Git which branch to track:
 
 	```
 	git branch --set-upstream-to origin/master
