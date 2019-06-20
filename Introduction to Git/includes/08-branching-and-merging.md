@@ -1,6 +1,6 @@
 # Branch, merge, and rebase
 
-As your project progresses, the developers want to work on more than one task at a time, fixing bugs as they turn up while implementing new features. The contributors need a way to keep their work separate, and to switch between them quickly.
+As your project progresses, the developers want to work on more than one task at a time, fixing bugs as they turn up while implementing new features. The contributors need a way to keep their work separate.
 
 _Branches_ make this easy. The work done "on a branch" doesn't have to be shared, and it doesn't interfere with other branches, including "master." Branches let you keep the commits related to each topic together and in isolation, making changes easy to review and track. Modern development work is typically done in branches, and when the changes in a branch are ready to check in, you can submit a pull request to merge the contents of the branch into "master."
 
