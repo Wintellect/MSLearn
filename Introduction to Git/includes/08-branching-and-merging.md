@@ -45,7 +45,7 @@ Alice wants to add some CSS to style the cat pictures, so she creates a _topic b
 
 	You have already encountered `checkout` as a way of replacing files in the working tree by getting them from the index. With no paths in the argument list, `checkout` updates *everything* in the working tree and the index to match the specified commit — in this case the head of the branch.
 
-1. Open **site.css* in the "Alice/assets" directory and add the following CSS class definition to the bottom of the file:
+1. Open **site.css** in the "Alice/assets" directory and add the following CSS class definition to the bottom of the file:
 
 	```css
 	.cat {max-width: 40%; padding: 5}
@@ -59,22 +59,52 @@ Alice wants to add some CSS to style the cat pictures, so she creates a _topic b
 	git commit -a -m "Add style for cat pictures"
 	```
 
+1. At this point, Alice wants to make her style available to everyone else, so she switches back to "master" and does a pull in case anyone else has made changes:
 
+	```bash
+	git checkout master
+	git pull
+	```
 
+	The output looks something like this:
 
+	```
 
+	```
 
+1. Seeing that no work has been done on "master," Alice merges the "add-style" branch into "master" using `git merge --ff-only` to perform a "fast-forward" merge. Then she pushes "master" from her repo to the shared repo:
 
+	```bash
+	git merge --ff-only add-style
+	git push
+	```
+
+TODO: Add closing
+
+# Create a branch as Bob
 
 While Alice is working on the CSS, Bob is busy creating a branch for adding a picture of his cat.
 
-He uses a popular shortcut. Passing the `-b` option to `checkout` creates a branch, then switches to it. That's by far the most common way of creating a branch:
+1. Start by assuming the role of Bob:
 
-```
-$ cd ~/sandbox/Bob/BobCats
-$ git checkout -b addCat
-Switched to a new branch 'addCat'
-```
+	```bash
+	cd ../Bob
+	git config user.name Bob
+	git config user.email bob@contoso.com
+	```
+
+1. Now use the following command to create a branch named "add-cat,", using the popular `-b` option to create the branch and switch to it in a single command:
+
+	```
+	git checkout -b add-cat
+	```
+1. 
+
+
+
+
+
+
 
 ## Work on a branch
 
