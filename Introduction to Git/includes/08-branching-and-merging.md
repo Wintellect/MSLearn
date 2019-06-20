@@ -1,22 +1,10 @@
 # Branch, merge, and rebase
 
-As your project becomes more complicated, its developers start wanting to work on
-more than one thing at a time, fixing bugs as they turn up while working on
-implementing several different features. The contributors need a way to keep their work on
-each of these topics separate, and to switch between them quickly.
+As your project progresses, the developers want to work on more than one task at a time, fixing bugs as they turn up while implementing new features. The contributors need a way to keep their work separate, and to switch between them quickly.
 
-_Branches_ make this easy. The work done "on a branch" doesn't have to be
-shared, and it can't interfere with work on other branches. Branches let you
-keep the commits related to each topic together, making changes easy to
-review and track.
+_Branches_ make this easy. The work done "on a branch" doesn't have to be shared, and it doesn't interfere with other branches, including "master." Branches let you keep the commits related to each topic together and in isolation, making changes easy to review and track. Modern development work is typically done in branches, and when the changes in a branch are ready to check in, you can submit a pull request to merge the contents of the branch into "master."
 
-One of Git's advantages over older version control systems is that creating a
-branch is extremely fast; it amounts to writing a 40-character hash into a
-file under `.git/heads`. Switching branches is also fast, because Git stores
-whole files and just unzips them rather than trying to reconstruct them from
-lists of changes. Merging in Git isn't _quite_ that simple, but it's
-straightforward and often completely automatic. In this unit, we examine how
-each of these operations works.
+One of Git's advantages over older version control systems is that creating a branch is extremely fast; it amounts to writing a 40-character hash into a file under **.git/heads**. Switching branches is also fast, because Git stores whole files and just unzips them rather than trying to reconstruct them from lists of changes. Merging in Git isn't _quite_ that simple, but it's straightforward and often completely automatic. Let's learn what branches are, how you use them, and how they work.
 
 ## Introduction to branches
 
@@ -45,9 +33,7 @@ $ git checkout add-style
 Switched to branch 'add-style'
 ```
 
-Throw-away branch names are  [*MISSING SOMETHING HERE? --ES*]
-The `git branch` command creates the branch, starting with the current HEAD.
-The `git checkout` command switches to the new branch.
+Throw-away branch names are  [*MISSING SOMETHING HERE? --ES*]. The `git branch` command creates the branch, starting with the current HEAD. The `git checkout` command switches to the new branch.
 
 We already encountered `checkout` as a way of replacing files in the working tree by getting it from the index. You can also specify a commit to take the files from [MISSING TEXT HERE], in which case both the index and the working tree are updated. With no paths at the end of the argument list, `checkout` updates *everything* in the working tree and the index to match the specified commit, in this case the head of the branch.
 
@@ -239,14 +225,13 @@ other ways of combining commits that work better.
 
 ## Summary
 
-In this unit you learned how to create branches, and several different ways of
-merging them. You learned about
+In this unit, you learned how to create branches and several different ways to merge them. You learned about:
 
-* [`git branch`](https://git-scm.com/docs/git-branch), which creates a branch
-* [`git checkout`](https://git-scm.com/docs/git-checkout), which switches to a branch, and [`git checkout -b`](https://git-scm.com/docs/git-checkout) which creates a branch *and* switches to it,
-* [`git rebase`](https://git-scm.com/docs/git-rebase), which revises commits to re-arrange branches,  and
-* [`git merge`](https://git-scm.com/docs/git-merge), which combines branches.
+- [`git branch`](https://git-scm.com/docs/git-branch), which creates a branch
+- [`git checkout`](https://git-scm.com/docs/git-checkout), which switches to a branch, and [`git checkout -b`](https://git-scm.com/docs/git-checkout) which creates a branch *and* switches to it,
+- [`git rebase`](https://git-scm.com/docs/git-rebase), which revises commits to re-arrange branches
+- [`git merge`](https://git-scm.com/docs/git-merge), which combines branches
 
 It's up to each project to decide whether it's more important to use rebase and fast-forward merges to keep a simple linear history, or to use merge commits to preserve signoffs, signatures, metadata, and the exact sequence of changes. Small teams generally go for simplicity.
 
-In the next unit you learn how to simplify history using `merge --squash` or `rebase --interactive`, and how to resolve merge conflicts.
+In the next unit, you learn how to simplify history using `merge --squash` or `rebase --interactive`, and how to resolve merge conflicts.
