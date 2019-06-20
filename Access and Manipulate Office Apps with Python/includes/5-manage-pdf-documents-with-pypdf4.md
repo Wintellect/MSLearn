@@ -2,7 +2,7 @@
 
 You work in IT for a law office which is litigating a massive civil lawsuit. You've been put in charge of more _two million_ PDF documents that are critical to the case and asked to sort them and count the number of pages in each. It's urgent, because a court date has been set and the judge doesn't tolerate excuses. Worse, you've been told to remove certain pages from each PDF because they contain information that could be prejudicial.
 
-With a little effort, you arrange the documents and place them into folders. It's easy to count the number of PDFs are in each folder. You can open individual documents and count the number of pages, but with more than 2,000,000 PDFs to deal with, you'll need months to do that. On top of that, the thought of opening each and every document in a PDF editor and manually removing pages is overwhelming.
+With a little effort, you arrange the documents and place them into folders. It's easy to count the number of PDFs in each folder. You can open individual documents and count the number of pages, but with more than 2,000,000 PDFs to deal with, you'll need months to do that. On top of that, the thought of opening each and every document in a PDF editor and manually removing pages is overwhelming.
 
 You need help. You need [PyPDF4](https://pypi.org/project/PyPDF4/).
 
