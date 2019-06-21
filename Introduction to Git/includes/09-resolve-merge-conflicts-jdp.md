@@ -36,11 +36,12 @@ Let's started by taking on Alice's role again and making a change to the Web sit
 
 	Then save the file.
 
-1. Now commit the changes, switch back to "master," merge the "add-cat" branch into "master," and push:
+1. Now commit the changes, switch back to "master," do a pull to make sure nothing has changed, merge the "add-cat" branch into "master," and push:
 
 	```bash
 	git commit -a -m "Add picture of Alice's cat"
 	git checkout master
+	git pull
 	git merge --ff-only add-cat
 	git push
 	```
@@ -76,23 +77,10 @@ Without knowing what Alice is doing, Bob notices that Alice's last push added a 
 	```bash
 	git commit -a -m "Style Bob's cat"
 	git checkout master
-	git merge --ff-only style-cat
-	git push
+	git pull
 	```
 
-	The output looks something like this:
-
-	```
-	 ! [rejected]        master -> master (fetch first)
-	error: failed to push some refs to 'D:/Labs/Git/Bob/../Shared.git'
-	hint: Updates were rejected because the remote contains work that you do
-	hint: not have locally. This is usually caused by another repository pushing
-	hint: to the same ref. You may want to first integrate the remote changes
-	hint: (e.g., 'git pull ...') before pushing again.
-	hint: See the 'Note about fast-forwards' in 'git push --help' for details.
-	```
-
-	And there it is: the dreaded merge conflict. The same line in the same file was changed by two people. Git sees that and reports "Updates were rejected because the remote contains work that you do not have locally." A pull won't help here, because Git has no way of knowing whether the `src` attribute in the `<img>` element should reference **bobcat2-317x240.jpg** or **bombay-cat-180x240.jpg**. In fact, if Bob executes a `git pull`, here's what he sees:
+	And there it is: the dreaded merge conflict. The same line in the same file was changed by two people. Git sees that and reports "Updates were rejected because the remote contains work that you do not have locally." Git has no way of knowing whether the `src` attribute in the `<img>` element should reference **bobcat2-317x240.jpg** or **bombay-cat-180x240.jpg**:
 
 	```
 	remote: Counting objects: 3, done.
@@ -104,6 +92,18 @@ Without knowing what Alice is doing, Bob notices that Alice's last push added a 
 	Auto-merging index.html
 	CONFLICT (content): Merge conflict in index.html
 	Automatic merge failed; fix conflicts and then commit the result.
+	```
+
+	If Bob tried to do a push right now, that would fail, too:
+
+	```
+	 ! [rejected]        master -> master (fetch first)
+	error: failed to push some refs to 'D:/Labs/Git/Bob/../Shared.git'
+	hint: Updates were rejected because the remote contains work that you do
+	hint: not have locally. This is usually caused by another repository pushing
+	hint: to the same ref. You may want to first integrate the remote changes
+	hint: (e.g., 'git pull ...') before pushing again.
+	hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 	```
 
 The question now is: What's Bob to do?
