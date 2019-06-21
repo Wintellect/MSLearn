@@ -36,10 +36,11 @@ Let's started by taking on Alice's role again and making a change to the Web sit
 
 	Then save the file.
 
-1. Now commit the changes, merge the "add-cat" branch into "master," and push the changes:
+1. Now commit the changes, switch back to "master," merge the "add-cat" branch into "master," and push:
 
 	```bash
 	git commit -a -m "Add picture of Alice's cat"
+	git checkout master
 	git merge --ff-only add-cat
 	git push
 	```
@@ -70,10 +71,11 @@ Without knowing what Alice is doing, Bob notices that Alice's last push added a 
 	<img class="cat" src="assets/bobcat2-317x240.jpg">
 	```
 
-1. Now commit the change, merge the current branch into "master," and push:
+1. Now commit the change, switch back to "master," merge the "style-cat" branch into "master," and push:
 
 	```bash
 	git commit -a -m "Style Bob's cat"
+	git checkout master
 	git merge --ff-only style-cat
 	git push
 	```
