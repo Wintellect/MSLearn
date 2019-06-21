@@ -19,7 +19,7 @@ The Web site's home page, **index.html** currently contains just one line of HTM
 	  </head>
 	  <body>
 	    <h1>Our Feline Friends</h1>
-	    <p> Eventually we will put cat pictures here.
+	    <p>Eventually we will put cat pictures here.</p>
 	    <hr>
 	  </body>
 	</html>
