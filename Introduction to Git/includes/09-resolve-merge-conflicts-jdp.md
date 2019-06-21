@@ -123,47 +123,6 @@ The question now is: What's Bob to do?
 
 
 
-## Explore a complicated history
-
-This is a good time to try some of the Git tools that let you visualize the structure of Git's history graph. The first one to try is:
-
-```
-git log --graph --all
-* commit 2868bbfa4f1b6283d162f06b96f305a224d57bc2 (master)
-| Author: Alice <alice@example.com>
-| Date:   Wed May 15 23:00:20 2019 -0700
-| 
-|     Add picture of Dinah
-|   
-| * commit f98a6e349309086088228feb8b284e12b72ee4de (HEAD -> addCat)
-| | Author: Bob <bob@example.com>
-| | Date:   Wed May 15 22:06:11 2019 -0700
-| | 
-| |     Add style class to cat picture
-| | 
-| * commit a6ed876ebc924d16f7589c221526d07220d64f33
-|/  Author: Bob <bob@example.com>
-|   Date:   Wed May 15 21:50:35 2019 -0700
-|   
-|       Add picture of Bob's cat
-|
-```
-
-The command produces a graph similar to the ones displayed in this unit, only rotated counter-clockwise so that it goes up the left-hand side of the log output. Because it uses vertical bars and slashes, it works perfectly in a terminal window; that's especially useful when you're running it on a remote server.
-
-Of course, when you can run GUI programs, there are better options -- and quite a few are available! The one that is shipped as part of Git is `gitk`:
-
-
-```
-gitk --all &
-```
-
-Gitk is a GUI program for exploring Git histories; the `--all` option tells it to show all of the branches. The `&` at the end of the line tells Bash to run the command in another process, so that you can continue working in the shell.
-
-![Screenshot of gitk --all.](media/gitk-screenshot.png)
-Gitk gives you a window with a view similar to `git log --graph` in the top pane, and the details of each commit in the bottom pane. Between them are search and navigation tools, as well as a box containing the full ID of the selected commit. This is automatically selected, which makes it easy to copy and paste into a command.
-
-Getting a picture of your history with one of these tools is especially useful after a pull to get an overview of the changes, or when you're about to do something you're not certain will work the way you expect. You can refresh Gitk with the `F5` key to see what actually happened.
 
 ## Bob's options
 
