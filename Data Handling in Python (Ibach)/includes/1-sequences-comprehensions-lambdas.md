@@ -1,4 +1,4 @@
-# Sequences, comprehensions, and lambda expressions
+# Sequences, comprehensions, and lambdas
 
 An understanding of data handling in Python begins with an understanding of *sequences*, which are ordered sets of data. Think of an array holding an ordered set of integers or a string holding an ordered set of characters. Each item in the array or string occupies a specific position, and each has a specific index (0-based, of course). After sequences come [comprehensions](https://medium.com/better-programming/list-comprehension-in-python-8895a785550b) and [lambda functions](https://www.w3schools.com/python/python_lambda.asp), which make sequences easier to work with.
 
@@ -12,11 +12,11 @@ Python supports a variety of data types, including strings, integers, floating-p
 - Tuples, which are like lists, but are immutable (meaning they can't be changed)
 - Strings, which are sequences of characters
 
-Sequences invariably play a role in data handling in Python because support a rich and very concise syntax for slicing and dicing data. To understand sequences, let's start by learning about lists.
+Sequences invariably play a role in data handling in Python because they support a rich and very concise syntax for slicing and dicing data. To understand sequences, let's start by learning about lists.
 
 ### Lists
 
-A list is a collection of items of any data type — integers, strings, even other lists, and so on — and is analogous to arrays in other programming languages. Lists are mutable (they can be changed), which means items can be added and removed from them.
+A list is a collection of items of any data type — for example, integers, strings, or even other lists — and is analogous to arrays in other programming languages. Lists are mutable (they can be changed), which means items can be added and removed from them.
 
 > The terms *mutable* and *immutable* are frequently used in programming. Mutable means the memory referenced by a variable can be changed. Immutable means the memory referenced by a variable cannot be changed. For example, strings are immutable. If you modify a string in code, a new string is created in memory to hold the modified string. Lists are mutable, meaning items can freely be added and removed.
 
