@@ -73,8 +73,8 @@ Without knowing what Alice is doing, Bob notices that Alice's last push added a 
 1. Now commit the change, merge the current branch into "master," and push:
 
 	```bash
-	git commit -a -m "Add picture of Alice's cat"
-	git merge --ff-only add-cat
+	git commit -a -m "Style Bob's cat"
+	git merge --ff-only style-cat
 	git push
 	```
 
