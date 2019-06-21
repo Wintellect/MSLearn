@@ -31,7 +31,7 @@ Let's started by taking on Alice's role again and making a change to the Web sit
 	With this one:
 
 	```html
-	<img class=".cat" src="assets/bombay-cat-180x240.jpg">
+	<img class="cat" src="assets/bombay-cat-180x240.jpg">
 	```
 
 	Then save the file.
