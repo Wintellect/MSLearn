@@ -1,6 +1,6 @@
 # Resolve merge conflicts
 
-Sometimes, no matter how well you plan, things go wrong. Imagine that two developers are working on the same file at the same time and change the same line of code or markup. When they push their changes, the second one will experience a *merge conflict*. Deveolopers using version control despise few things more than merge conflicts. But conflicts happen, and you best — no, *must* — know how to deal with them.
+Sometimes, no matter how well you plan, things go wrong. Imagine that two developers are working on the same file at the same time and change the same line. When they push their changes, the second one will experience a *merge conflict*. Deveolopers using version control despise few things more than merge conflicts. But conflicts happen, and you best — no, *must* — know how to deal with them.
 
 The good news is that Git provides solutions for dealing with merge conflicts. In this unit, you will learn about two of them. 
 
