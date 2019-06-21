@@ -335,49 +335,6 @@ HEAD is now at 39473bb Add Bob's cat
 
 It's often a good idea to keep a remote called "backup" to which you push changes to every evening, or whenever you want to try something tricky. If you've done some rebasing, you can use `git push --force backup`.
 
-## Merge tools
-
-Some people prefer to see the versions being merged side-by-side so that they can see what their choices are and select them interactively. Some version control systems have a tool of this sort (e.g. `p4merge` from Perforce), as do several text editors (e.g. `emerge` in Emacs and `vimdiff` in Vim).
-
-Git doesn't have a tool of its own for this purpose. You can specify your favorite on the `git mergetool` command line or with the `merge.tool` configuration variable.
-
-The `--tool-help` option shows the list of known tools:
-
-```
-$ git mergetool --tool-help
-'git mergetool --tool=<tool>' may be set to one of the following:
-		araxis
-		emerge
-		vimdiff
-		vimdiff2
-		vimdiff3
-
-The following tools are valid, but not currently available:
-		bc
-		bc3
-		codecompare
-		deltawalker
-		diffmerge
-		diffuse
-		ecmerge
-		examdiff
-		gvimdiff
-		gvimdiff2
-		gvimdiff3
-		kdiff3
-		meld
-		opendiff
-		p4merge
-		tkdiff
-		tortoisemerge
-		winmerge
-		xxdiff
-
-Some of the tools listed above only work in a windowed environment. If run in a terminal-only session, they fail.
-```
-
-Naturally, if you run this command on your own computer you are likely to get a different list.
-
 ## Summary
 
 In this unit you learned how to deal with merge conflicts, using the `--continue` and `--abort` options with `git merge`, and either a text editor or a merge tool. You can also use those options with `git rebase`, and because `git pull` is a combination of `fetch` and `merge`, you can resolve conflicts the same way. You can use `git pull --rebase` to rebase instead of merging after the fetch; it's particularly useful for keeping a branch up to date if you want to continue working on it after your colleagues have pushed changes to `master`.
