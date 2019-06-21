@@ -1,15 +1,13 @@
-# Sequences, comprehensions, and lambdas
+# Sequences and dictionaries
 
-An understanding of data handling in Python begins with an understanding of *sequences*, which are ordered sets of data. Think of an array holding an ordered set of integers or a string holding an ordered set of characters. Each item in the array or string occupies a specific position, and each has a specific index (0-based, of course). After sequences come [comprehensions](https://medium.com/better-programming/list-comprehension-in-python-8895a785550b) and [lambda functions](https://www.w3schools.com/python/python_lambda.asp), which make sequences easier to work with.
-
-In this lesson, you will learn about the most common types of sequences. You will learn how to create them and how to manipulate them. Then you will learn how to use comprehensions and lambda functions (also known as *anonymous functions*) to make working with sequences even easier.
+An understanding of data handling in Python begins with an understanding of *sequences* and *mapping types*. Sequences hold ordered sets of data. Think of an array holding an ordered set of integers or a string holding an ordered set of characters. Each item in the array or string occupies a specific position, and each has a specific index (0-based, of course). Mapping types,by contrast, store unordered sets of data. The most common example of a mapping type is the dictionary, which holds key-value pairs. You can retrieve a value from a dictionary by specifying a key, but you can't retrieve a value by index.
 
 ## Sequences
  
 Python supports a variety of data types, including strings, integers, floating-point numbers, and Booleans. It also supports sequences, which hold collections of data. The three most common sequences are:
 
 - Lists, which are similar to arrays in other programming languages
-- Tuples, which are like lists, but are immutable (meaning they can't be changed)
+- Tuples, which are immutable lists (meaning they can't be changed)
 - Strings, which are sequences of characters
 
 Sequences invariably play a role in data handling in Python because they support a rich and very concise syntax for slicing and dicing data. To understand sequences, let's start by learning about lists.
@@ -78,14 +76,6 @@ nums = [1,2,3,4,5]
 print(len(nums)) # outputs: 5
 ```
 
-### Tuples
-
-
-
-TODO: Add content.
-
-
-
 ### Strings
 
 A string is a sequence of zero or more characters. Unlike most other programming languages, Python lacks a character data type. A character in Python simply a single item in a string.
@@ -131,9 +121,9 @@ print(nums) # outputs: [1, 2, 3, 4, 5, 6]
 
 You can see why sequences play an important role in data handling: they make it easy to manipulate collections of data. The fact that Python supports this is one reason why it is so popular among people who deal with data on a daily basis.
 
-## Comprehensions
+## Dictionaries
 
-Comprehensions in Python provide a concise syntax for creating sequences, especially lists. Python 2 introduced list comprehensions and Python 3 added dictionary and set comprehensions. Let's wrap our heads around comprehensions by taking a look at list comprehensions.
+Whereas sequences store ordered sets of data, mapping types stored unordered sets. The most common example of a mapping type in Python is the dictionary.
 
 
 
@@ -141,12 +131,4 @@ TODO: Add content.
 
 
 
-## Lambda functions
-
-Comprehensions can be made simpler with lambda functions, which are small functions that have no name.
-
-
-TODO: Add content.
-
-
-Now you know the basics of lists, tuples, strings, comprehensions, and lambda expressions in Python. In the next lesson, you'll put this knowledge to work using a dataset stored in a CSV file.
+Now you know the basics of lists, strings, dictionaries in Python. In the next lesson, you'll learn how to use comprehensions and lambda functions to make working with these types easier.
