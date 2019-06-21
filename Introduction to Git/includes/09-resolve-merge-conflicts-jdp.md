@@ -80,15 +80,41 @@ Without knowing what Alice is doing, Bob notices that Alice's last push added a 
 	git push
 	```
 
-	The output should look something like this:
+	The output looks something like this:
 
 	```
-
+	 ! [rejected]        master -> master (fetch first)
+	error: failed to push some refs to 'D:/Labs/Git/Bob/../Shared.git'
+	hint: Updates were rejected because the remote contains work that you do
+	hint: not have locally. This is usually caused by another repository pushing
+	hint: to the same ref. You may want to first integrate the remote changes
+	hint: (e.g., 'git pull ...') before pushing again.
+	hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 	```
 
-And there it is: the dreaded merge conflict. The same line in the same file was changed by two people. Git sees that and reports tk.
+	And there it is: the dreaded merge conflict. The same line in the same file was changed by two people. Git sees that and reports "Updates were rejected because the remote contains work that you do not have locally." A pull won't help here, because Git has no way of knowing whether the `src` attribute in the `<img>` element should reference **bobcat2-317x240.jpg** or **bombay-cat-180x240.jpg**. In fact, if Bob executes a `git pull`, here's what he sees:
+
+	```
+	remote: Counting objects: 3, done.
+	remote: Compressing objects: 100% (3/3), done.
+	remote: Total 3 (delta 2), reused 0 (delta 0)
+	Unpacking objects: 100% (3/3), done.
+	From D:/Labs/Git/Bob/../Shared
+	   e02d9e3..0398d54  master     -> origin/master
+	Auto-merging index.html
+	CONFLICT (content): Merge conflict in index.html
+	Automatic merge failed; fix conflicts and then commit the result.
+	```
+
+The question now is: What's Bob to do?
+
+## Option #1: 
 
 
+
+
+
+## Option #2: 
 
 
 
