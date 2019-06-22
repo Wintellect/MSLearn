@@ -79,7 +79,7 @@ In this exercise, you will create a file named **app.py** containing the Python 
 	    return str(model.predict_proba(vectorizer.transform([text]))[0][1])
 	```
 
-	This file contains a Python script that uses [Flask](http://flask.pocoo.org/) to expose a REST method named ```predict``` that clients can call to analyze a string for sentiment. Calls to `pickle.load()` load the serialized machine-learning model and the vocabulary with which it was trained. Text to be analyzed is passed in a query-string parameter named "text" and ultimately passed to the model's `predict_proba` (short for "predict probability") method.
+	This file contains a Python script that uses [Flask](http://flask.pocoo.org/) to expose a REST method named ```predict``` that clients can call to analyze a string for sentiment. Calls to `pickle.load()` load the serialized machine-learning model and the vocabulary with which it was trained. Text to be analyzed is passed in a query-string parameter named "text" and ultimately passed to the model's `predict_proba()` (short for "predict probability") method.
 
 1. Create a file named **Dockerfile** (no file-name extension) in the same folder and insert the following commands:
 
