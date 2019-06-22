@@ -156,6 +156,8 @@ Knowing this, let's resolve the merge by editing **index.html**. Because this is
 
 	_Resolving merge conflicts in Visual Studio Code_
 
+	Clicking **Accept Both Changes** removes the lines around the `<img>` elements and leaves both elements intact.
+
 1. Now commit the change:
 
 	```bash
@@ -171,10 +173,6 @@ Knowing this, let's resolve the merge by editing **index.html**. Because this is
 	git push
 	```
 
-This time it should work, unless "master" on the remote changed again while Bob was working.
+	This time it should work, unless "master" on the remote changed again while Bob was working.
 
-## Summary
-
-In this unit you learned how to deal with merge conflicts, using the `--continue` and `--abort` options with `git merge`, and either a text editor or a merge tool. You can also use those options with `git rebase`, and because `git pull` is a combination of `fetch` and `merge`, you can resolve conflicts the same way. You can use `git pull --rebase` to rebase instead of merging after the fetch; it's particularly useful for keeping a branch up to date if you want to continue working on it after your colleagues have pushed changes to `master`.
-
-In the next unit, you will learn how to use git to deploy a website using a hook script, and how to use branches and tags to manage software releases.
+Finish up by opening Bob's **index.html** in your browser. How many furry felines do you see?
