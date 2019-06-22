@@ -114,7 +114,7 @@ Bob has a few options at this point. One is to use `git merge --abort` to restor
 
 The preferred option in many cases is to resolve the conflict using information Git inserted into the affected files. When Git detects a conflict in a file, it inserts *both* conflicting versions into the file between lines starting with `<<<<<<<`, `=======`, and `>>>>>>>`.  The part before the `=======` line is "your" side of the merge — the branch you were already on — and the part after is "their" side -- the branch you specified in the `merge` command.
 
-In this case, **index.html** looks like this:
+In this case, **index.html** in Bob's repo looks like this:
 
 ```html
 <!DOCTYPE html>
