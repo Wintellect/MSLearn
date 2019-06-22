@@ -12,7 +12,7 @@ To support running containerized applications in the cloud, Azure offers [Azure 
 
 In this module, you will get first-hand experience with Azure Container Instances and the Azure Container Registry and learn about building and operationalizing machine-learning models at the same time. You will begin by using [Scikit-learn](https://scikit-learn.org/stable/index.html) to build and train a machine-learning model that scores text for sentiment. You will then use the [Azure Cloud Shell](https://azure.microsoft.com/features/cloud-shell/) to build a Docker image containing a [Flask](http://flask.pocoo.org/) Web server that exposes the model using a REST endpoint, and deploy the image to an Azure Container Registry. Finally, you will run the Docker image in an Azure Container Instance and use the cross-platform app pictured below to score the text that you type for sentiment on a scale of 0.0 (negative) to 1.0 (positive) by invoking the machine-learning model in the container.
 
-![Analyzing text for sentiment](media/textalyze.png)
+![Analyzing text for sentiment](media/textalyzer.png)
 
 ## Learning objectives
 
