@@ -29,10 +29,10 @@ In this lesson, you will run the Docker image that you built and pushed to the c
 1. Make sure **Bash** is the language selected in the upper left corner of the Cloud Shell. Then execute the following command to place a call to the container and analyze a text string for sentiment, replacing FQDN with the container's fully qualified domain name:
 
 	```bash
-	wget FQDN/predict?text=Great%20food%20excellent%20service
+	wget FQDN/predict?text=Great%20food%20and%20excellent%20service
 	```
 
-1. Confirm that the output from the `wget` command includes the number TK:
+1. Confirm that the output from the `wget` command includes a number from 0.0 to 1.0:
 
 	```
 	TODO: Insert score
