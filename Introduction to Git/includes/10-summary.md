@@ -10,7 +10,7 @@ At this point, you know enough about Git to perform everyday tasks, get yourself
 - GitHub's [Git and GitHub learning resources](https://help.github.com/en/articles/git-and-github-learning-resources)
 - [A Hacker's Guide to Git](https://wildlyinaccurate.com/a-hackers-guide-to-git/)
 
-You can also learn more from the [documentation section](https://git-scm.com/doc) of [Git's official website](https://git-scm.com).
+You can also learn more from the [documentation section](https://git-scm.com/doc) of [Git's official Web site](https://git-scm.com).
 
 ## Image credits
 
