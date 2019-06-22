@@ -36,7 +36,7 @@ In this exercise, you will create your own Azure Container Registry, which acts 
 	az acr create -g azure-ml-rg -n REGISTRY_NAME --admin-enabled true -l northcentralus --sku Basic
 	```
 
-	The reason you used the `admin-enabled true` option is that doing so allows you to log in to the container registry using the registry name as the user name and an access key obtained from the Azure Portal as the password.
+	The reason you used the `admin-enabled true` option is that doing so allows you to log in to the container registry using the registry name as the user name and an access key obtained from Azure as the password.
 
 1. TODO: Get an access key for the container registry.
 
