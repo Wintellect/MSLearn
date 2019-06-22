@@ -22,11 +22,11 @@ Here's a preview of the skills you will acquire in this module:
 
 - How to run Python code in [Azure Notebooks](https://notebooks.azure.com)
 - How to build, train, and serialize machine-learning models using Scikit-learn
-- How to load a serialized machine-learning model
+- How to load a serialized machine-learning model and use it in a Python app
 - How to create an Azure Container Registry
 - How to build a Docker image and deploy it using the Azure Cloud Shell
 - How to run a containerized app in an Azure Container instance
 - How to use Flask to expose a REST API from a container
-- How to call that REST API from a [Node.js](https://nodejs.org/) app
+- How to call that REST API from [Node.js](https://nodejs.org/)
 
-As you do, you will answer a question that is commonly asked by enterprise developers: if I build a machine-learning model in Python, how do I operationalize it in such a way that I can call it from apps written in other languages?
+As you do, you will answer a question that is commonly asked by enterprise developers: If I build a machine-learning model in Python, how do I operationalize it in such a way that I can call it from apps written in other languages?
