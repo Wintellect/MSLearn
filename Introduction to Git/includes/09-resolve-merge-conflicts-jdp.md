@@ -110,7 +110,7 @@ The question now is: What's Bob to do?
 
 ## Resolve merge conflict
 
-Bob has a few options at this point. One is to use `git merge --abort` to restore "master" to what it was before the attempted merge. Bob can now create a new branch, make his changes, merge the branch into master, and push his changes without error.
+Bob has a few options at this point. One is to use `git merge --abort` to restore "master" to what it was before the attempted merge. Bob can now create a new branch, make his changes, merge the branch into "master," and push his changes.
 
 A more practical option in many cases is to resolve the conflict using information Git inserted into the afflicted files. When Git detects a conflict in a file, it inserts *both* conflicting versions into the file, between lines starting with `<<<<<<<`, `=======`, and `>>>>>>>`.  The part before the `=======` line is "your" side of the merge — the branch you were already on — and the part after is "their" side -- the branch you specified in the `merge` command.
 
