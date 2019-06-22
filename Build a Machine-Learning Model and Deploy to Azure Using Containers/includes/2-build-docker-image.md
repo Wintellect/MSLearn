@@ -61,30 +61,25 @@ In this exercise, you will create a file named **app.py** containing the Python 
 	```python
 	import pickle, re
 	from sklearn.feature_extraction.text import CountVectorizer
-	from flask import Flask, request, jsonify
+	from flask import Flask, request
 	
 	app = Flask(__name__)
 	model = pickle.load(open('sentiment-analysis.pkl', 'rb'))
 	vocab = pickle.load(open('vocabulary.pkl', 'rb'))
+	
 	vectorizer = CountVectorizer(ngram_range=(1, 2),
 	    stop_words=['the', 'and', 'am', 'are'],
-	    vocabulary=vocab))
+	    vocabulary=vocab)
 	
-	@app.route('/predict', methods=['POST'])
+	@app.route('/predict', methods=['GET'])
 	def predict():
-	    json = request.get_json()
-	    return str(analyze_text(json['text']))
-	
-	def analyze_text(text, model, vectorizer):
+	    text = request.args.get('text')
 	    text = re.sub("[.;:!\'?,\"()\[\]]", '', text.lower())
 	    text = re.sub("(<br\s*/><br\s*/>)|(\-)|(\/)", ' ', text)
-	    return model.predict_proba(vectorizer.transform([text]))[0][1]
-
-	if __name__ == '__main__':
-	    app.run(debug=True, port=8008, host='0.0.0.0')
+	    return str(model.predict_proba(vectorizer.transform([text]))[0][1])
 	```
 
-	This file contains a Python script that uses [Flask](http://flask.pocoo.org/) to expose a REST method named ```predict``` that clients can call to analyze a string for sentiment. Calls to `pickle.load()` load the serialized machine-learning model and the vocabulary with which it was trained.
+	This file contains a Python script that uses [Flask](http://flask.pocoo.org/) to expose a REST method named ```predict``` that clients can call to analyze a string for sentiment. Calls to `pickle.load()` load the serialized machine-learning model and the vocabulary with which it was trained. Text to be analyzed is passed in a query-string parameter named "text."
 
 1. Create a file named **Dockerfile** (no file-name extension) in the same folder and insert the following commands:
 
