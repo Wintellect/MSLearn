@@ -100,7 +100,7 @@ In this exercise, you will create a file named **app.py** containing the Python 
 
 1. Replace SCIKIT_VERSION on line 2 of **Dockerfile** with the Scikit-learn version number (for example, 0.20.3) obtained from Azure Notebooks in the previous lesson. Then save the file.
 
-The files you need to build the Docker image are in place. Now lets build it and push it to the Azure Container Registry that you deployed earlier.
+The files you need to build the Docker image are in place. Now let's build it and push it to the Azure Container Registry that you deployed earlier.
 
 ## Build a Docker image
 
