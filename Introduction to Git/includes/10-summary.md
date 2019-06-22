@@ -50,3 +50,9 @@ All of the cat pictures came from [commons.wikimedia.org](https://commons.wikime
 	- `git diff origin -- index.html`
 	- `git diff --index.html`
 	- `git origin -- index.html`
+
+1. What is the name of the file that Git users typically place in an empty directory so Git will include the directory in its updates?
+	- **git-keep**
+	- **.git-keep**
+	- **git.keep**
+	- **keep**
