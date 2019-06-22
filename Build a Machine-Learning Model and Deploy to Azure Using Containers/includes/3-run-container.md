@@ -29,4 +29,4 @@ In this lesson, you will use the Docker image that you built and pushed to the c
 
 1. TODO: Use `wget` (?) to place a test call to the container instance.
 
-The container is running and accepting calls via HTTP. The next step is to build an app submits text typed by users to the container to score the text for sentiment.
+The container is running and accepting calls via HTTP. The next step is to build an app that submits text typed by the user to the container to score the text for sentiment.
