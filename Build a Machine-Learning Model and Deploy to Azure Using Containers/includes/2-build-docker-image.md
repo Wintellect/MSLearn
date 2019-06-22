@@ -116,7 +116,7 @@ In this exercise, you will use the Cloud Shell to build a Docker image from a Do
 
 1. Browse to the folder containing **app.py**, **Dockerfile**, and the two **.pkl** files. Then upload these files to the Cloud Shell. Note that some browsers might require you to upload one file at a time.
 
-1. In the Cloud Shell, use the following command to build a Docker image using the assets uploaded to the Cloud Shell and push the image to the container registry you deployed in the previous exercise, replacing REGISTRY_NAME with the name assigned to the container registry (for example, "containerslab"). BE SURE TO INCLUDE THE PERIOD AT THE END OF THE COMMAND:
+1. In the Cloud Shell, use the following command to build a Docker image using the assets uploaded to the Cloud Shell and push the image to the container registry you deployed in the previous exercise, replacing REGISTRY_NAME with the name of your container registry. **Be sure to include the period at the end of the command**:
 
 	```bash
 	az acr build --registry REGISTRY_NAME --image text-analytics-server .
