@@ -73,7 +73,7 @@ Without knowing what Alice is doing, Bob notices that Alice's last push added a 
 	<img class="cat" src="assets/bobcat2-317x240.jpg">
 	```
 
-1. Now commit the change, switch back to "master," merge the "style-cat" branch into "master," and push:
+1. Now commit the change, switch back to "master," and do a pull:
 
 	```bash
 	git commit -a -m "Style Bob's cat"
@@ -111,7 +111,7 @@ The question now is: What's Bob to do?
 
 ## Resolve the merge conflict
 
-Bob has a few options at this point. One is to use `git merge --abort` to restore "master" to what it was before the attempted merge. Bob could then create a new branch, make his changes, merge the branch into "master," and push his changes. Bob could also use `git reset --hard` to get back to where he was.
+Bob has a few options at this point. One is to use `git merge --abort` to restore "master" to what it was before the attempted merge. Bob could then do a pull to get Alice's changes, create a new branch, make his changes, merge the branch into "master," and push his changes. Bob could also use `git reset --hard` to get back to where he was.
 
 The preferred option in many cases is to resolve the conflict using information Git inserted into the affected files. When Git detects a conflict in a file, it inserts *both* conflicting versions into the file between lines starting with `<<<<<<<`, `=======`, and `>>>>>>>`.  The part before the `=======` line is "your" side of the merge — the branch you were already on — and the part after is "their" side -- the branch you specified in the `merge` command.
 
@@ -172,136 +172,6 @@ Knowing this, let's resolve the merge by editing **index.html**. Because this is
 	```
 
 This time it should work, unless "master" on the remote changed again while Bob was working.
-
-## Resolve merge conflicts
-
-What *actually* happens when Bob makes his merge is that Git notices that the branches being merged have changes that overlap, so it interrupts the merge process to let him figure out what the final result should be.
-
-```
-$ git merge --squash addCat
-Auto-merging index.html
-CONFLICT (content): Merge conflict in index.html
-Squash commit -- not updating HEAD
-Automatic merge failed; fix conflicts and then commit the result.
-$ git commit -m "Add  Bob's cat"
-U	index.html
-error: Committing is not possible because you have unmerged files.
-hint: Fix them up in the work tree, and then use 'git add/rm <file>'
-hint: as appropriate to mark resolution and make a commit.
-fatal: Exiting because of an unresolved conflict.
-```
-
-Notice that Bob tried to ignore the conflict and commit anyway; naturally, he got an error message.
-
-When Git detects a conflict, it inserts *both* conflicting versions into the file, between lines starting with `<<<<<<<`, `=======`, and `>>>>>>>`.  The part before the `=======` line is "your" side of the merge -- the branch you were already on -- and the part after is "their" side -- the branch you specified in the `merge` command.
-
-In this case it looks like this:
-
-```
-<h1>Our Furry Friends</h1>
-<<<<<<< HEAD
-<img class=".cat" src="assets/bombay-317x240.jpg">
-=======
-<img class=".cat" src="assets/bobcat2-317x240.jpg">
->>>>>>> addCat
-<footer><hr></footer>
-```
-
-In this case, Bob wants to keep Alice's cat photo and add his own, so he simply deletes the markers.
-
-```
-$ sed -i.bak -e '/<<<</d' -e '/====/d' -e '/>>>>/d' index.html
-$ git add index.html
-$ git commit -m "Add Bob's cat"
-[master 39473bb] Add Bob's cat
- 2 files changed, 1 insertion(+)
- create mode 100644 assets/bobcat2-317x240.jpg
-$ git push
-Counting objects: 5, done.
-Delta compression using up to 2 threads.
-Compressing objects: 100% (5/5), done.
-Writing objects: 100% (5/5), 37.49 KiB | 7.50 MiB/s, done.
-Total 5 (delta 1), reused 0 (delta 0)
-To /home/steve/sandbox/Cats.git
-   2868bbf..39473bb  master -> master
-```
-
-The `git add` tells Git that the conflict in `index.html` was resolved, and the `git merge --continue` finishes the merge.
-
-Another option, if Bob had decided that he shouldn't have made the merge after all, was `git merge --abort`; that option only works if there are conflicts.
-
-## Exploring merge alternatives
-
-Bob could also use `git reset --hard` in both of the merged branches to get back to what he had before a merge. In this case, the `adCat` branch hasn't actually been merged, so Bob only has to reset `master`.
-
-It's worthwhile playing around a little to see Bob's alternatives.
-
-First, let's look at what happens if Bob does the squash but takes the default merge message instead of replacing it.
-
-```
-$ git reset --hard HEAD^
-$ git merge --squash addCat
-$ sed -i.bak -e '/<<<</d' -e '/====/d' -e '/>>>>/d' index.html
-$ git add index.html
-$ git commit --no-edit
-$ git log -n1
-commit ffc8fde164f4cded11ed1f965a2602d894d059c7 (HEAD -> master)
-Author: Bob <bob@example.com>
-Date:   Fri May 17 14:28:33 2019 -0700
-
-    Squashed commit of the following:
-    
-    commit f98a6e349309086088228feb8b284e12b72ee4de
-    Author: Bob <bob@example.com>
-    Date:   Wed May 15 22:06:11 2019 -0700
-    
-        Add style class to cat picture
-    
-    commit a6ed876ebc924d16f7589c221526d07220d64f33
-    Author: Bob <bob@example.com>
-    Date:   Wed May 15 21:50:35 2019 -0700
-    
-        Add picture of Bob's cat
-    
-    # Conflicts:
-    #       index.html
-```
-
-As you can see, it's usually a good idea to edit the message to something that makes sense, but if Bob hadn't used the `--no-edit` option, Git would have initialized the commit message with something that might be a good start.
-
-## Backing out of a conflicted merge
-
-Sometimes the best thing to do when there is a conflict is to back out of it. This is particularly useful if you do a simple pull instead of `pull --rebase`. In that case, you can use `git merge --abort` or `git rebase --abort` to back out. Unlike the case with squash, once you fix the conflict you can go forward with `git merge --continue` or `git rebase --continue`.
-
-### Exercise:
-
-Try the following:
-
-```
-$ git reset --hard HEAD^
-$ git merge addCat
-$ git merge abort
-```
-
-and 
-
-```
-$ git merge addCat
-$ sed -i.bak -e '/<<<</d' -e '/====/d' -e '/>>>>/d' index.html
-$ git add index.html
-$ git merge --continue
-```
-
-That last exercise puts you into the text editor looking at the default merge message, which is just `Merge branch 'addCat'`. If you delete the message, Git aborts the commit just as it does with any commit. That's a good way of backing out of a pull that should have been a rebase.
-
-Since Bob has already pushed the squashed merge, he can get it back with:
-
-```
-$ git reset --hard origin/master
-HEAD is now at 39473bb Add Bob's cat
-```
-
-It's often a good idea to keep a remote called "backup" to which you push changes to every evening, or whenever you want to try something tricky. If you've done some rebasing, you can use `git push --force backup`.
 
 ## Summary
 
