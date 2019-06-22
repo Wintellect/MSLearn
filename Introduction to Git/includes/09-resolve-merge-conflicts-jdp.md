@@ -108,61 +108,63 @@ Without knowing what Alice is doing, Bob notices that Alice's last push added a 
 
 The question now is: What's Bob to do?
 
-## Option #1: 
+## Resolve merge conflict
 
+Bob has a few options at this point. One is to use `git merge --abort` to restore "master" to what it was before the attempted merge. Bob can now create a new branch, make his changes, merge the branch into master, and push his changes without error.
 
+A more practical option in many cases is to resolve the conflict using information Git inserted into the afflicted files. When Git detects a conflict in a file, it inserts *both* conflicting versions into the file, between lines starting with `<<<<<<<`, `=======`, and `>>>>>>>`.  The part before the `=======` line is "your" side of the merge — the branch you were already on — and the part after is "their" side -- the branch you specified in the `merge` command.
 
+In this case, **index.html** looks like this:
 
-
-## Option #2: 
-
-
-
-
-
-
-
-
-
-## Bob's options
-
-Bob has several things he can do at this point.
-
-You've already seen two methods, `merge` and `rebase`. They produce histories that look like:
-
-``` 
-# git checkout master; git merge --addCat
-merge:  ...o---m---A---D---E
-                    \     /
-                     B---C
-
-# git checkout addCat; git rebase master
-rebase: ...o...m...A...D...B...C
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='UTF-8'>
+    <title>Our Furry Friends</title>
+    <link rel="stylesheet" href="assets/site.css">
+  </head>
+  <body>
+    <nav><a href="./index.html">home</a></nav>
+    <h1>Our Furry Friends</h1>
+<<<<<<< HEAD
+    <img class="cat" src="assets/bobcat2-317x240.jpg">
+=======
+    <img class="cat" src="assets/bombay-cat-180x240.jpg">
+>>>>>>> 0398d54e51b77cc11d968e93cdf942acc698b75d
+    <footer><hr>Copyright (c) 2019 Contoso Cats</footer>
+  </body>
+</html>
 ```
 
-Merge has the advantage of preserving all of the individual changes and recording the merge metadata in a commit. Rebase has the advantage of keeping the history simple and easy to understand. In both cases, if there's a conflict, Git interrupts the process to let you try to resolve it.
+Knowing this, let's resolve the merge by editing **index.html**. Because this is a quick fix, you will make the change directly in the "master" branch.
 
-## Simplify history by squashing
+1. Open **index.html**, delete these three lines, and then save the file:
 
-If there are more than one commit on a branch, both merging and rebasing make it hard to see the big picture. That's especially true if the commits have messages like "Fix off-by-one bug," "make backup," "Revert bad merge," or something even less helpful (see [this xkcd cartoon](https://xkcd.com/1296/) for an example). It's better to combine all of the commits on a branch into a single one. That lets you compose a new commit message that describes *what you did* rather than the details of how you did it, and store that information in the project's official history. The process of combining commits is called _squashing_.
+	```html
+	<<<<<<< HEAD
+	=======
+	>>>>>>> 0398d54e51b77cc11d968e93cdf942acc698b75d
+	```
 
-There are two different ways to squash commits, plus a short-cut. Many developers take the short-cut mentioned in the last unit and simply make a single commit that they keep amending. It's not really a good idea, because it's much harder to find a problem in an amended commit with a bug in it that
-was introduced sometime in the last week, than a series of simple ones made every day or so.  (Take a look at the man page for `git bisect` to see how to find bugs quickly in a long sequence of commits.)
+	**index.html** now has two `<img>` elements: one for Bob's cat and one for Alice's.
 
-The two (better) ways to package-up several changes into a single commit are `git merge --squash` and `git rebase --interactive` (usually shortened to `git rebase -i`). Interactive rebase creates a temporary file containing all of the commits and their one-line descriptions, preceeded by a command. Initially the command is `pick`; you can edit that to `drop`, `squash`, `edit`, or `reword`. (Edit lets you edit files; reword just lets you edit the commit message.) You can also change the order of the commits.
+1. Now commit the change:
 
-Squashing is simpler: It simply performs all of the changes that would have been made by a real merge, but it stops just short of making the merge commit or moving HEAD. All of the changed files are left in the working tree and index, ready to commit.
+	```bash
+	git add index.html
+	git commit -a -m "Style Bob's cat"
+	```
 
-In a simpler world, Bob could just do:
+	The `git add` tells Git that the conflict in **index.html** has been resolved.
 
-```
-# git merge --squash addCat
-# git commit -m "Add Bob's cat"
-```
+1. Now push the changes to "master" on the remote:
 
-(We use `#` instead of `$` to indicate that you shouldn't actually type those commands -- Bash ignores everything from `#` to the end of the line.)
+	```bash
+	git push
+	```
 
-It isn't *quite* that simple, because Bob and Alice each changed the same line in `index.html`, which created a merge conflict.
+This time it should work, unless "master" on the remote changed again while Bob was working.
 
 ## Resolve merge conflicts
 
