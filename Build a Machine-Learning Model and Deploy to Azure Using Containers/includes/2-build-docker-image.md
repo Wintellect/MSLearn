@@ -28,6 +28,8 @@ In this exercise, you will create your own Azure Container Registry, which acts 
 	az group create  --name azure-ml-rg --location northcentralus
 	```
 
+	> You can press **Shift+Ins** to paste the contents of the clipboard into the Cloud Shell if you are running Windows, or **Cmd+V** if you are on a Mac.
+
 	Resource groups are an incredibly important feature of Azure. They act as containers for other Azure resources and serve to group those resources together so you can view billing information for them as a group, apply security rules as a group, and even delete them as a group. *Every* Azure resource that you create must be part of a resource group.
 
 2. Execute the following command in the Cloud Shell to deploy an Azure Container Registry, replacing REGISTRY_NAME with the name you wish to assign to your container registry. That name must be unique within Azure, so if the command fails because the name isn't unique, try again with another name: 
