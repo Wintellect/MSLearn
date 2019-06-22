@@ -28,7 +28,7 @@ TODO: Add summary.
 	- LISTENON
 	- EXPOSE
 
-1. Which of the following is true about storing Docker images in Azure Container Registry
+1. Which of the following is true about storing Docker images in Azure Container Registry?
 	- The images load faster when hosted in Azure Container Instances
 	- Access to the images can be restricted using Azure Active Directory (AAD)
 	- Images are easily replicated across Azure regions
