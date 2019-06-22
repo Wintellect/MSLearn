@@ -40,7 +40,7 @@ In this exercise, you will create your own Azure Container Registry, which acts 
 
 1. TODO: Get an access key for the container registry.
 
-TODO: Add closing.
+With the container registry deployed, the next step is to create a Docker image and push it to the registry.
 
 ## Write an app and a Dockerfile
 
