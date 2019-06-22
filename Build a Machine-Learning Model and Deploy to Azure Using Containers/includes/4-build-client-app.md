@@ -10,7 +10,7 @@ Now comes the fun part: using REST calls to invoke the machine-learning model ru
 
 	If Node is installed, the version number will be displayed. If the version number is less than 8.0, **download and install the latest version**.
 
-1. Create a project directory on your hard disk to hold the source code files. Then `cd` into that directory at the command prompt.
+1. Create a project directory on your hard disk to hold the app.
 
 1. Create a text file named **project.json** in the project directory. Paste in the following text, and then save the file:
 
@@ -29,7 +29,7 @@ Now comes the fun part: using REST calls to invoke the machine-learning model ru
 
 	This file contains metadata for the app you're building and lists the app's dependencies so those dependencies can be loaded with an `npm install` command.
 
-1. Execute the following command to download and install the packages that the app requires:
+1. `cd` into the project directory at the command prompt. Then execute the following command to download and install the packages that the app requires:
 
 	```bash
 	npm install
