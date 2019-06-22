@@ -27,7 +27,7 @@ Now comes the fun part: using REST calls to invoke the machine-learning model ru
 	}
 	```
 
-	This file contains metadata for the app you're building and lists the app's dependencies so those dependencies can be loaded with an `npm install` command.
+	This file contains metadata for the app and lists the app's dependencies so those dependencies can be loaded with an `npm install` command.
 
 1. `cd` into the project directory at the command prompt. Then execute the following command to download and install the packages that the app requires:
 
