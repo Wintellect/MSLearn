@@ -54,7 +54,7 @@ With the container registry deployed and an access key in hand, the next step is
 
 ## Write an app and a Dockerfile
 
-In this exercise, you will create a file named **app.py** containing the Python code that runs inside the container, and a file named **Dockerfile** containing Docker build instructions. You can use any text editor you'd like, but we recommend using [Visual Studio Code](https://code.visualstudio.com/) — Microsoft's free, lightweight source-code editor for Windows, macOS, and Linux that features IntelliSense, integrated Git support, and more
+In this exercise, you will create a file named **app.py** containing the Python code that runs inside the container, and a file named **Dockerfile** containing Docker build instructions. You can use any text editor you'd like, but we recommend using [Visual Studio Code](https://code.visualstudio.com/) — Microsoft's free, lightweight source-code editor for Windows, macOS, and Linux that features IntelliSense, integrated Git support, and more.
 
 1. Create a file named **app.py** in the same folder in which you stored **sentiment-analysis.pkl** and **vocabulary.pkl** in the previous lesson and insert the following Python code. Then save the file.
 
@@ -85,22 +85,22 @@ In this exercise, you will create a file named **app.py** containing the Python 
 
 	```docker
 	FROM python:3.6.7-stretch
-	RUN pip install flask numpy scipy pandas scikit-learn==0.19.1 && \
+	RUN pip install flask numpy scipy pandas scikit-learn==SCIKIT_VERSION && \
 	    mkdir /app
 	COPY app.py /app
 	COPY sentiment-analysis.pkl /app
 	COPY vocabulary.pkl /app
 	WORKDIR /app
-	EXPOSE 8008
+	EXPOSE 80
 	ENTRYPOINT ["python"]
 	CMD ["app.py"]
 	```
 
-	This file contain instructions for building a Docker image that includes **app.py**, **sentiment-analysis.pkl**, and **vocabulary.pkl**, and that launches **app.py** when the container starts and listens for incoming requests on port 8008.
+	This file contain instructions for building a Docker image that includes **app.py**, **sentiment-analysis.pkl**, and **vocabulary.pkl**, and that launches **app.py** when the container starts and listens for incoming requests on port 80.
 
-1. TODO: Replace 0.19.1 with the scikit version number obtained from Azure Notebooks.
+1. Replace SCIKIT_VERSION on line 2 of **Dockerfile** with the Scikit-learn version number (for example, 0.20.3) obtained from Azure Notebooks in the previous lesson. Then save the file.
 
-TODO: Add closing.
+The files you need to build the Docker image are in place. Now lets build it and push it to the Azure Container Registry that you deployed earlier.
 
 ## Build a Docker image
 
