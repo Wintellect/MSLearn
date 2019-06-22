@@ -1,14 +1,12 @@
 # Introduction
 
-TODO: Add scenario.
+Imagine that you're a software developer at a small consulting firm and the company's communications department has asked you to write code that lets them analyze text for sentiment. The idea is that if sentiment towards the company turns negative on social media, communications can get out in front of it.
 
-[Containers](https://www.docker.com/what-container) are revolutionizing software development, and [Docker](http://www.docker.com) is the world's most popular containerization platform. Containers allow software and files to be bundled into self-contained packages that can be run on different computers and different operating systems. The following description comes from the Docker Web site:
-
-![](media/container-overview.png)
-
-Containers are similar to virtual machines (VMs) in that they provide a predictable and isolated environment in which software can run. Because containers are smaller than VMs, they start quickly and use less RAM. Moreover, multiple containers running on a single machine share the same operating system kernel. Docker is based on open standards, enabling Docker containers to run on all major Linux distributions as well as on Windows Server 2016.
+You had a class in college on machine learning and know the basics of Python and [Scikit-learn](https://scikit-learn.org/stable/index.html). But yours is not a Python shop. If you use Python to build a machine-learning model, you'll need to wrap it so it can be called from other languages. [Containers](https://www.docker.com/what-container) seem like a great fit because you plan to deploy the model to the cloud where it can be accessed using REST APIs, and Azure offers a prebuilt container stack that is easy to use and 100% compatible with [Docker](http://www.docker.com). 
 
 ## Containers in Azure
+
+Containers are similar to virtual machines (VMs) in that they provide a predictable and isolated environment in which software can run. Because containers are smaller than VMs, they start quickly and use less RAM. Moreover, multiple containers running on a single machine share the same operating system kernel. Docker is based on open standards, enabling Docker containers to run on all major Linux distributions as well as on Windows Server 2016.
 
 To support running containerized applications in the cloud, Azure offers [Azure Container Instances](https://azure.microsoft.com/services/container-instances/), which provide a robust, scalable, and easy-to-use environment for hosting containerized applications, as well as the [Azure Container Registry](https://azure.microsoft.com/services/container-registry/). The latter allows container images to be hosted in Azure rather than in external repositories such as [Docker Hub](https://hub.docker.com/) and loaded quickly into Azure Container Instances.
 
