@@ -30,11 +30,13 @@ In this exercise, you will create your own Azure Container Registry, which acts 
 
 	Resource groups are an incredibly important feature of Azure. They act as containers for other Azure resources and serve to group those resources together so you can view billing information for them as a group, apply security rules as a group, and even delete them as a group. *Every* Azure resource that you create must be part of a resource group.
 
-2. Execute the following command in the Cloud Shell to deploy an Azure Container Registry, replacing TK with TK, TK with TK, and TK with TK:
+2. Execute the following command in the Cloud Shell to deploy an Azure Container Registry, replacing REGISTRY_NAME with the name you wish to assign to your container registry. That name must be unique within Azure, so if the command fails and Azure complains that the name isn't unique, try again with another name: 
 
 	```bash
-
+	az acr create -g azure-ml-rg -n REGISTRY_NAME --admin-enabled true -l northcentralus --sku Basic
 	```
+
+	The reason you used the `admin-enabled true` option is that doing so allows you to log in to the container registry using the registry name as the user name and an access key obtained from the Azure Portal as the password.
 
 1. TODO: Get an access key for the container registry.
 
