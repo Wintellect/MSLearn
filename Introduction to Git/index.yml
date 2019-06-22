@@ -35,5 +35,4 @@ units:
 - learn.introduction-to-git.07-collaborate-using-a-shared-repo
 - learn.introduction-to-git.08-branching-and-merging
 - learn.introduction-to-git.09-resolve-merge-conflicts
-- learn.introduction-to-git.10-use-tags-release-branches-hooks
-- learn.introduction-to-git.11-summary
+- learn.introduction-to-git.10-summary
