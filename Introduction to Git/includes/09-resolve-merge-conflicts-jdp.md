@@ -149,6 +149,12 @@ Knowing this, let's resolve the merge by editing **index.html**. Because this is
 
 	**index.html** now has two `<img>` elements: one for Bob's cat and one for Alice's.
 
+	As an aside, some text editors feature Git integration and offer to help when they see text representing merge conflicts. For example, if you open **index.html** in [Visual Studio Code](https://code.visualstudio.com/), you'll see this:
+
+	![Resolving merge conflicts in Visual Studio Code](media/resolve-conflict.png)
+
+	_Resolving merge conflicts in Visual Studio Code_
+
 1. Now commit the change:
 
 	```bash
@@ -156,9 +162,9 @@ Knowing this, let's resolve the merge by editing **index.html**. Because this is
 	git commit -a -m "Style Bob's cat"
 	```
 
-	The `git add` tells Git that the conflict in **index.html** has been resolved.
+	The `git add` command tells Git that the conflict in **index.html** has been resolved.
 
-1. Now push the changes to "master" on the remote:
+1. Push the changes to "master" on the remote:
 
 	```bash
 	git push
