@@ -2,7 +2,7 @@
 
 Imagine that you're a software developer at a small consulting firm and the company's communications department has asked you to write code that lets them analyze text for sentiment. The idea is that if sentiment towards the company turns negative on social media, communications can get out in front of it.
 
-You had a class in college on machine learning and know the basics of Python and [Scikit-learn](https://scikit-learn.org/stable/index.html). But yours is not a Python shop. If you use Python to build a machine-learning model, you'll need to wrap it so it can be called from other languages. [Containers](https://www.docker.com/what-container) seem like a great fit because you plan to deploy the model to the cloud where it can be accessed using REST APIs, and Azure offers a prebuilt container stack that is easy to use and 100% compatible with [Docker](http://www.docker.com). 
+You had a class in college on machine learning and know the basics of Python and [Scikit-learn](https://scikit-learn.org/stable/index.html). But yours is not a Python shop. If you use Python to build a machine-learning model that score text for sentiment, you'll need to wrap it so it can be called from other languages. [Containers](https://www.docker.com/what-container) seem like a great fit because you plan to deploy the model to the cloud where it can be accessed using REST APIs, and Azure offers a prebuilt container stack that is easy to use and 100% compatible with [Docker](http://www.docker.com). 
 
 ## Containers in Azure
 
