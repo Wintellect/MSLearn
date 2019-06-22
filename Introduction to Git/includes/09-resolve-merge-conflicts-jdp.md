@@ -39,6 +39,7 @@ Let's started by taking on Alice's role again and making a change to the Web sit
 1. Now commit the changes, switch back to "master," do a pull to make sure nothing has changed, merge the "add-cat" branch into "master," and push:
 
 	```bash
+	git add assets
 	git commit -a -m "Add picture of Alice's cat"
 	git checkout master
 	git pull
