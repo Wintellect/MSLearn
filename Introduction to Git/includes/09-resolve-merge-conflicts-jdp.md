@@ -4,7 +4,7 @@ Sometimes, no matter how well you plan, things go wrong. Imagine that two develo
 
 The good news is that Git provides solutions for dealing with merge conflicts. In this unit, you will learn about two of them. 
 
-# Make a change as Alice
+## Make a change as Alice
 
 Let's started by taking on Alice's role again and making a change to the Web site's home page by replacing the picture of Bob's cat with a picture of Alice's.
 
@@ -48,7 +48,7 @@ Let's started by taking on Alice's role again and making a change to the Web sit
 
 Finish up by confirming that the push succeeded.
 
-# Make a change as Bob
+## Make a change as Bob
 
 Without knowing what Alice is doing, Bob notices that Alice's last push added a CSS style named `cats` to **site.css**. So he decides to apply that class to his cat picture.
 
@@ -108,7 +108,7 @@ Without knowing what Alice is doing, Bob notices that Alice's last push added a 
 
 The question now is: What's Bob to do?
 
-## Resolve merge conflict
+## Resolve the merge conflict
 
 Bob has a few options at this point. One is to use `git merge --abort` to restore "master" to what it was before the attempted merge. Bob could then create a new branch, make his changes, merge the branch into "master," and push his changes. Bob could also use `git reset --hard` to get back to where he was.
 
