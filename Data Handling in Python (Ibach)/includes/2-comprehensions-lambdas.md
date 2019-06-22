@@ -73,13 +73,51 @@ airports = {'sea':'seattle', 'hou':'houston','ord':'Chicago'}
 upper_airports = {code.upper():city.capitalize() for (code,city) in airports.items()}
 print(upper_airports) # outputs : {'SEA': 'Seattle', 'HOU': 'Houston', 'ORD': 'Chicago'}
 ```
+## Map
+The `map` function is also useful when working with data. It applies a function to all the items in the list.
+
+The syntax of the map function is:
+```python
+map(function, iterable)
+```
+
+Similar to what we did with comprehensions we can use the map funciton to create new lists.
+
+The following code declares a function called double, then uses the map function to double all the values in a list:
+
+```python
+def double(value):
+    return value*2
+
+nums = [1,2,3,4,5]
+doubles = map(double, nums)
+print(list(doubles)) # outputs : [2, 4, 6, 8, 10]
+```
+Because the map function returns a map object, we use the `list` function to convert it to a list.
 
 ## Lambda functions
 
-Comprehensions can be made simpler with lambda functions, which are small functions that have no name.
+Anywhere you use a named function you can also use lambda functions. Lambda functions are small anonymous functions. They can accept any number of arguments, but can only have one expression. 
 
+The syntax for lambda functions is:
+```python
+lambda arguments : expression
+```
+*arguments* are the parameters passed to the lambda function.  
+*expression* is the expression to operate on the parameters.  
 
-TODO: Add content.
+The following lambda doubles the value passed to the function:
+```python
+double = lambda x: x * 2
+print(double(4)) # outputs : 8
+```
 
+Lambdas can be used instead of functions in our code. For example, we can make our code with the map function more concise by using a lambda instead of a named function to double the values in the input list:
 
-Now you know the basics of lists, tuples, strings, comprehensions, and lambda expressions in Python. In the next lesson, you'll put this knowledge to work using a dataset stored in a CSV file.
+```python
+nums = [1,2,3,4,5]
+doubles = map(lambda x: x*2, nums)
+print(list(doubles)) # outputs : [2, 4, 6, 8, 10]
+```
+
+Now you know the basics of lists, strings, dictionaries, comprehensions, map, and lambda expressions in Python. In the next lesson, you'll put this knowledge to work using a dataset stored in a CSV file.
