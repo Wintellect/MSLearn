@@ -1,6 +1,6 @@
 # Build a Docker image and deploy to Azure
 
-In order to run an app in a container, you must first "containerize" or "Dockerize" the app by creating a Docker container image. Then you deploy the image to a container registry and create a container using that image.
+In order to run an app in a container, you must first "containerize" or "Dockerize" the app by placing it in a Docker container image. Then you deploy the image to a container registry and create a container using that image.
 
 In this lesson, you will create an [Azure Container Registry](https://azure.microsoft.com/services/container-registry/) to host container images in Azure. Azure Container Registry (ACR) allows container images to be hosted in Azure rather than in external repositories such as [Docker Hub](https://hub.docker.com/) and loaded quickly into Azure containers. You will write the containerized app and in it use Scikit-learn to load the machine-learning model you built in the previous lesson and [Flask](http://flask.pocoo.org/) to implement a REST endpoint for calling the model. Then you will use the Azure Cloud Shell to build a container image and push it to the ACR you created earlier. 
 
