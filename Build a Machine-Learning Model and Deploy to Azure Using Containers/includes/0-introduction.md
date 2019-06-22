@@ -18,7 +18,7 @@ In this module, you will get first-hand experience with Azure Container Instance
 
 ## Learning objectives
 
-Here's a preview of the skills that you will learn in this module:
+Here's a preview of the skills you will acquire in this module:
 
 - How to run Python code in [Azure Notebooks](https://notebooks.azure.com)
 - How to build, train, and serialize machine-learning models using Scikit-learn
