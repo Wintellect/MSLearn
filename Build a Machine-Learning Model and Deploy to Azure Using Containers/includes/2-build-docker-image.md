@@ -38,11 +38,19 @@ In this exercise, you will create your own Azure Container Registry, which acts 
 	az acr create -g azure-ml-rg -n REGISTRY_NAME --admin-enabled true -l northcentralus --sku Basic
 	```
 
-	The reason you used the `admin-enabled true` option is that doing so allows you to log in to the container registry using the registry name as the user name and an access key obtained from Azure as the password.
+	The reason you used the `--admin-enabled true` option is that doing so allows you to log in to the container registry using the registry name as the user name and an access key obtained from Azure as the password.
 
-1. TODO: Get an access key for the container registry.
+1. Use the following command to show the access keys for the container registry, replacing REGISTRY_NAME with the name of your container registry:
 
-With the container registry deployed, the next step is to create a Docker image and push it to the registry.
+	```bash
+	az acr credential show -n REGISTRY_NAME
+	```
+
+	Copy either of the access keys (passwords) — the long strings containing letters and numbers — in the output into a text editor so you can easily retrieve it later. Because you specified `--admin-enabled true` when creating the container registry, these access keys serve as passwords for logging into the registry. 
+
+	> You can use **Ctrl+C** to copy text to the clipboard from the Cloud Shell if you are running Windows, or **Cmd+C** if you are on a Mac.
+
+With the container registry deployed and an access key in hand, the next step is to create a Docker image and push it to the registry.
 
 ## Write an app and a Dockerfile
 
