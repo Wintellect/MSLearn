@@ -1,19 +1,8 @@
 # Summary
 
-In this module, you learned the basics of using Git. Among the skills you learned were:
-* installing Git
-* creating, cloning, and exploring repositories
-* tracking changes
-* recovering from mistakes 
-* collaborating with other developers
-* creating, merging, and rebasing branches
-* resolving merge conflicts, and some of the uses of hooks and tags
+In this module, you learned the basics of using Git. You learned how to install Git, how to create and clone repositories, how to track changes, how to collaborate with other team members using a shared repository, how to use branches to isolate your changes, how to merge branches, and more. You even learned one technique for recovering from merge conflicts — something that sooner or later, you will have to do.
 
-You also learned the basics of Git's terminology, how to read Git's documentation from the command line, and a few other useful commands. At this point you know enough about Git to perform everyday tasks, get yourself out of trouble if things get confusing, and understand the documentation.
-
-## Digging deeper
-
-There are many other good tutorials about Git. These include:
+At this point, you know enough about Git to perform everyday tasks, get yourself out of trouble if something goes awry, and understand the documentation. If you would like to dig deeper, here are some resources that you'll find helpful:
 
 - On the command line, `git help tutorial` and `git help tutorial-2`
 - [Everyday Git](https://git-scm.com/docs/everyday) (also available from the command line, as `git help everyday`)
@@ -21,7 +10,7 @@ There are many other good tutorials about Git. These include:
 - GitHub's [Git and GitHub learning resources](https://help.github.com/en/articles/git-and-github-learning-resources)
 - [A Hacker's Guide to Git](https://wildlyinaccurate.com/a-hackers-guide-to-git/)
 
-You can also learn more Git from the documentation section of [Git's official website, at git-scm.com/doc](https://git-scm.com/doc).
+You can also learn more from the [documentation section](https://git-scm.com/doc) of [Git's official website](https://git-scm.com).
 
 ## Image credits
 
@@ -52,7 +41,7 @@ All of the cat pictures came from [commons.wikimedia.org](https://commons.wikime
 
 1. What is the purpose of a pull request?
 	- To pull changes from a remote repo to a local repo
-	- To sync a local repo with someone else's local repo
+	- To merge changes made in a local branch into the local "master" branch
 	- To give others a chance to review your changes before merging
 	- To notify others that "master" has been updated
 
