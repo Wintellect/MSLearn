@@ -1,6 +1,6 @@
 # Run the container in an Azure Container Instance
 
-In this lesson, you will use the Docker image that you built and pushed to the container registry in the previous lesson in an Azure Container Instance. Because the container image has already been uploaded to an Azure Container Registry, running it in a container instance requires just a few simple steps.
+In this lesson, you will run the Docker image that you built and pushed to the container registry in the previous lesson in an Azure Container Instance. Because the container image has already been uploaded to an Azure Container Registry, running it in a container instance requires just a few simple steps.
 
 1. Return to the [Azure Cloud Shell](https://shell.azure.com) and use the following command to create an Azure Container Instance, replacing REGISTRY_NAME with the name of your container registry, and DNS_NAME with with the DNS.
 
