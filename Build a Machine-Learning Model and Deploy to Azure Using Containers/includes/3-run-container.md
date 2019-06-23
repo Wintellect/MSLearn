@@ -12,12 +12,18 @@ In this lesson, you will run the Docker image that you built and pushed to the c
 
 	> The DNS name label doesn't have to be unique within Azure, but it does have to be unique in the region in which the container instance is hosted.
 
-	The port number that you entered is significant, too. Inside the Dockerfile from which you built the container image is a statement that opens port 80 in the container:
+	The port number that you entered is significant, too. Inside the **Dockerfile** from which you built the container image is a statement that opens port 80 in the container:
 
 	```dockerfile
 	EXPOSE 80
 	```
 
+	And inside **app.py** is a pair of statements that configures the code running in the container to listen for requests on port 8008:
+
+	```python
+	if __name__ == '__main__':
+	    app.run(debug=True, port=80, host='0.0.0.0')
+	```
 	Opening port 80 in the container instance enables the Flask Web server running in the container to respond to REST calls arriving on port 80.
 
 1. Wait for the command to complete. (It may take a minute or two.) Then use the following command to get the container instance's fully qualified domain name:
