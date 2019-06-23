@@ -25,7 +25,7 @@ In this exercise, you will create your own Azure Container Registry, which acts 
 1. Use the following command to create a resource group named "azure-ml-rg" to hold all the Azure resources you create in this module:
 
 	```bash
-	az group create  --name azure-ml-rg --location northcentralus
+	az group create --name azure-ml-rg --location northcentralus
 	```
 
 	> You can press **Shift+Ins** to paste the contents of the clipboard into the Cloud Shell if you are running Windows, or **Cmd+V** if you are on a Mac.
