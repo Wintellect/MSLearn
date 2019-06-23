@@ -1,5 +1,5 @@
 $(function () {
-    var url = "http://FQDN:8008/predict";
+    var url = "http://textalyzer.northcentralus.azurecontainer.io:8008/predict";
 
     // Handle clicks of the Analyze button
     $("#analyze-button").click(function() {

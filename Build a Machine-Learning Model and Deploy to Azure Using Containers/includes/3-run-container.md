@@ -43,7 +43,7 @@ In this lesson, you will run the Docker image that you built and pushed to the c
 1. Confirm that the output from the `wget` command includes a number from 0.0 to 1.0:
 
 	```
-	0.8948
+	8948149446550228
 	```
 
 	This is the score that quantifies the sentiment expressed in the text string "Great food and excellent service." Remember that 0.0 is negative and 1.0 is positive.
