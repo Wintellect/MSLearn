@@ -12,7 +12,7 @@ Now comes the fun part: using REST calls to invoke the machine-learning model ru
 
 1. Create a project directory on your hard disk to hold the app.
 
-1. Open the zip file containing the [resources that accompany this module]() and copy all of the files inside it to the project directory.
+1. Open the zip file containing the [resources that accompany this module](https://topcs.blob.core.windows.net/public/textalyzer-resources.zip) and copy all of the files inside it to the project directory.
 
 1. `cd` into the project directory at the command prompt. Then execute the following command to download and install the packages that the app requires:
 
