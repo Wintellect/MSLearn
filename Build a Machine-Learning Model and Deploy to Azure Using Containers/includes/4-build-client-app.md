@@ -65,7 +65,7 @@ Now comes the fun part: using REST calls to invoke the machine-learning model ru
 	npm start
 	```
 
-1. Type a text string into the box and click the **Analyze** button. Wait for an alert box to appear with the results. How positive or negative is the text? Recall that 0.0 represents sentiment that is extremely negative, while 1.0 indicates that the text is extremely positive.
+1. Type a text string into the box and click the **Analyze** button. Wait for an alert box to appear with the results. How positive or negative is the text? Recall that 0.0 represents sentiment that is extremely negative, while 1.0 indicates that the sentiment is extremely positive.
 
 	![Analyzing text for sentiment](media/textalyzer.png)
 
