@@ -49,7 +49,7 @@ In this exercise, you will load a dataset and use it to train a sentiment-analys
 	!curl https://topcs.blob.core.windows.net/public/reviews.csv -o reviews.csv
 	```
 
-	This statement loads a 63 MB CSV file from Azure blob storage. Azure notebooks limit file uploads to 10 MB, but you can load larger datasets from external sources. `curl` is a command that's familiar to Linux users. You can execute Bash commands in Azure notebooks by preceding them with exclamation points (!).
+	This statement loads a 63 MB CSV file from Azure blob storage. Azure notebooks limit file uploads to 10 MB, but you can load larger datasets from external sources. `curl` is a Bash command that's familiar to Linux users. You can execute Bash commands in Azure notebooks by preceding them with exclamation points (!).
 
 	![Loading the dataset](media/first-run.png)
 
