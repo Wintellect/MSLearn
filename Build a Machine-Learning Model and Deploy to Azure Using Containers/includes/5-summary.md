@@ -2,7 +2,7 @@
 
 At the outset, it seemed a daunting task: train a machine-learning model to analyze text for sentiment, operationalize the model in a Docker container, run the container in Azure, and expose a REST API for invoking the model. You went one step further and built a cross-platform app for demonstrating the solution. It wasn't as difficult as it first seemed, thanks to Scikit-learn, Flask, Docker, and the Docker support in Azure.
 
-You could go even further. You could build an app that monitors Twitter for tweets about your company, quantify the sentiment of each tweet, and fire a notification to the communications department if the running average falls below a certain threshold — for example, if the average sentiment expressed in the last 10 tweets is less than 0.4. You've already done the hard part. The rest, as they say, is simply gravy.
+You could go even further. You could build an app that monitors Twitter for tweets about your company, quantify the sentiment of each tweet, and fire a notification to the communications department if the running average falls below a certain threshold — for example, if the average sentiment expressed in the last 10 tweets is less than 0.4. You've already done the hard part. The rest is simply a variation on what you've already learned.
 
 ## Check your knowledge
 
