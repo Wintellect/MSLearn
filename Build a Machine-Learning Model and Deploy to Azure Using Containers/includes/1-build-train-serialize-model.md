@@ -52,7 +52,7 @@ In this exercise, you will load a dataset and use it to train a sentiment-analys
 
 1. Enter the following statement in the notebook's first cell and click the **Run** button in the notebook's toolbar to execute it:
 
-	```python
+	```bash
 	!curl https://topcs.blob.core.windows.net/public/reviews.csv -o reviews.txt
 	```
 
