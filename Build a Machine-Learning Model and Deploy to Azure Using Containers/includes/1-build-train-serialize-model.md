@@ -161,7 +161,7 @@ The final task is to serialize the model and download it from your Azure noteboo
 
 	_Downloading the serialized model_
 
-1. Return to the notebook one last time and run the following code to find out what version of Scikit-learn the model was saved with:
+1. Return to the notebook and run the following code to find out what version of Scikit-learn the model was saved with:
 
 	```python
 	import sklearn
