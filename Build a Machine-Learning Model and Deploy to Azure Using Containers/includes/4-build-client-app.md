@@ -29,7 +29,7 @@ Now comes the fun part: using REST calls to invoke the machine-learning model ru
 	    var url = "http://FQDN:8008/predict";
 	
 	    // Handle clicks of the Analyze button
-	    $("#analyze_button").click(function() {
+	    $("#analyze-button").click(function() {
 	        // Get user input
 	        var text = $("#input-text").val();
 	
