@@ -5,14 +5,14 @@ In this lesson, you will run the Docker image that you built and pushed to the c
 1. Return to the [Azure Cloud Shell](https://shell.azure.com) and use the following command to create an Azure Container Instance, replacing REGISTRY_NAME with the name of your container registry (in two places), DNS_NAME with the DNS name that will form part of the fully qualified domain name (FQDN) for the running container, and PASSWORD with the access key/password that you saved earlier for the Azure Container Registry:
 
 	```bash
-	az container create -g azure-ml-rg -n ml-container --image REGISTRY_NAME.azurecr.io/text-analytics-server --dns-name-label DNS_NAME --ports 80 --ip-address public --registry-username REGISTRY_NAME --registry-password PASSWORD
+	az container create -g azure-ml-rg -n ml-container --image REGISTRY_NAME.azurecr.io/text-analytics-server --dns-name-label DNS_NAME --ports 8008 --ip-address public --registry-username REGISTRY_NAME --registry-password PASSWORD
 	``` 
 
 	What is the significance of the DNS name label? Once a container instance is launched, you can retrieve a fully qualified domain name for placing REST calls to software running in the container. The DNS name label becomes the first segment of the FQDN — for example, ```DNS_NAME_LABEL.northcentralus.azurecontainer.io```.
 
 	> The DNS name label doesn't have to be unique within Azure, but it does have to be unique in the region in which the container instance is created.
 
-	The port number that you entered is significant, too. Inside the **Dockerfile** from which you built the container image is a statement that opens port 8008 in the container:
+	The port number you specified with the `--ports` switch is significant, too. Inside the **Dockerfile** from which you built the container image is a statement that opens port 8008 in the container:
 
 	```dockerfile
 	EXPOSE 8008
