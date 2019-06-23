@@ -135,18 +135,6 @@ In this exercise, you will load a dataset and use it to train a sentiment-analys
 	model.predict_proba(vectorizer.transform(review))[0][1]
 	```
 
-1. tk.
-
-	```python
-
-	```
-
-1. tk.
-
-	```python
-
-	```
-
 TODO: Add closing.
 
 ## Serialize the model
