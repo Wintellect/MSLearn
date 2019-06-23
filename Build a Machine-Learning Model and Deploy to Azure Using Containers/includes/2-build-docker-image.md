@@ -1,4 +1,4 @@
-# Build a Docker image and deploy to Azure
+# Build a Docker image and deploy it to Azure
 
 In order to run an app in a container, you must first "containerize" or "Dockerize" the app by placing it in a Docker container image. Then you deploy the image to a container registry and create a container from that image.
 
