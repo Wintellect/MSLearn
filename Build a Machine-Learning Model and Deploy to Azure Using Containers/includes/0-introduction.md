@@ -23,7 +23,7 @@ Here's a preview of the skills you will acquire in this module:
 - How to load a serialized machine-learning model and use it in a Python app
 - How to create an Azure Container Registry
 - How to build a Docker image and deploy it using the Azure Cloud Shell
-- How to run a containerized app in an Azure Container instance
+- How to run a containerized app in an Azure Container Instance
 - How to use Flask to expose REST APIs from a container
 - How to call REST APIs from apps written in [Node.js](https://nodejs.org/)
 
