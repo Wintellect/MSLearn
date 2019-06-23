@@ -124,6 +124,12 @@ In this exercise, you will use the Cloud Shell to build a Docker image from a Do
 
 	Note that you can press **Shift+Ins** to paste the contents of the clipboard into the Cloud Shell if you are running Windows, or **Cmd+V** if you are on a Mac.
  
-1. Wait for the build to complete and confirm that it completed successfully. The build will probably take a minute or two.
+1. Wait for the `az acr build` command to complete. (It will probably take a minute or two.) Then use the following command to confirm that the container was built and pushed to the container registry:
+
+	```bash
+	az acr repository list -n REGISTRY_NAME	
+	```
+
+	As usual, replace REGISTRY_NAME with your container registry's name.
 
 If you would like to confirm that the Docker image was built and pushed to the container registry, go to the container registry in the [Azure Portal](https://portal.azure.com) and click **Repositories** in the menu on the left side of the blade. You will see a list of images present in the registry, and the list should include the image named "text-analytics-server" that you just built.
