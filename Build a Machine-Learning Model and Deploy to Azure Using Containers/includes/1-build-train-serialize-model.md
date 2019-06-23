@@ -168,7 +168,7 @@ The final task is to serialize the model and download it from your Azure noteboo
 	sklearn.__version__
 	```
 
-	Write down the version number (for example, 0.20.3) because you will need it, too, in the next exercise. Generally speaking, a model saved with one version of Scikit-learn can't be loaded with another version. There are some exceptions, but if you make sure that the model is saved and loaded with the *same* version of Scikit-learn, versioning won't be an issue. 
+	Write down the version number (for example, 0.20.3) because you will need it, too, in the next lesson. Generally speaking, a model saved with one version of Scikit-learn can't be loaded with another version. There are some exceptions, but if you make sure that the model is saved and loaded with the *same* version of Scikit-learn, versioning won't be an issue. 
 
 1. Finish up by selecting **Save and Checkpoint** from the notebook's **File** menu in case you want to return to this notebook later.
 
