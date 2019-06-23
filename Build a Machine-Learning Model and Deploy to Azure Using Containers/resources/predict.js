@@ -2,7 +2,7 @@ $(function () {
     var url = "http://FQDN/predict";
 
     // Handle clicks of the Analyze button
-    $("#analyze_button").click(function() {
+    $("#analyze-button").click(function() {
         // Get user input
         var text = $("#input-text").val();
 
