@@ -172,4 +172,4 @@ The final task is to serialize the model and download it from your Azure noteboo
 
 1. Finish up by selecting **Save and Checkpoint** from the notebook's **File** menu in case you want to return to this notebook later.
 
-The model is building is done. In the next lesson, you will write some Python code that uses the model and place that code in a Docker container.
+The model is building is done. In the next lesson, you will write some Python code that uses the model and build that code into a Docker container image.
