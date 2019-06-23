@@ -80,10 +80,14 @@ In this exercise, you will load a dataset and use it to train a sentiment-analys
 
 	The dataset contains 50,000 movie reviews from the popular [IMDB dataset](https://www.kaggle.com/iarunava/imdb-movie-reviews-dataset). Each review is classified as negative (0) or positive (1). There are 25,000 negative reviews and 25,000 positive ones, forming a very balanced dataset. That's always a goal when training a binary-classification model.
 
-1. tk.
+1. Run the following statements in the next cell to clean the data by converting the text to lowercase, removing punctuation symbols, and removing HTML artifacts:
 
 	```python
-
+	# Clean the data
+	df['Text'] = df['Text'].str.lower()
+	df['Text'] = df['Text'].str.replace("[.;:!\'?,\"()\[\]]", '')
+	df['Text'] = df['Text'].str.replace("(<br\s*/><br\s*/>)|(\-)|(\/)", ' ')
+	df.head(10)
 	```
 
 1. tk.
