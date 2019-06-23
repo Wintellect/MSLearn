@@ -161,7 +161,7 @@ The final task is to serialize model and download it from your Azure notebook so
 
 	_Downloading the serialized model_
 
-1. Return to the notebook one last time and run the following code to find out what version of Scikit-learn the model was serizlied with:
+1. Return to the notebook one last time and run the following code to find out what version of Scikit-learn the model was saved with:
 
 	```python
 	import sklearn
@@ -169,5 +169,7 @@ The final task is to serialize model and download it from your Azure notebook so
 	```
 
 	Write down the version number (for example, 0.20.3) because you will need it, too, in the next exercise. Generally speaking, a model saved with one version of Scikit-learn can't be loaded with another version. There are some exceptions, but if you make sure that the model is saved and loaded with the *same* version of Scikit-learn, versioning won't be an issue. 
+
+1. Finish up by selecting **Save and Checkpoint** from the notebook's **File** menu in case you want to return to this notebook later.
 
 The model is building is done. In the next lesson, you will write some Python code that uses the model and place that code in a Docker container.
