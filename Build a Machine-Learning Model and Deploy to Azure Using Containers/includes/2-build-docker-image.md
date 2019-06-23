@@ -97,7 +97,7 @@ In this exercise, you will create a file named **app.py** containing the Python 
 	CMD ["app.py"]
 	```
 
-	This file contains instructions for building a Docker image that includes **app.py**, **sentiment-analysis.pkl**, and **vocabulary.pkl**, and that launches **app.py** when the container starts and listens for incoming requests on port 8008.
+	This file contains instructions for building a Docker image that includes **app.py**, **sentiment-analysis.pkl**, and **vocabulary.pkl**, and that launches **app.py** when the container starts. It also opens port 8008 so the Flask server can listen for incoming requests on that port.
 
 1. Replace SCIKIT_VERSION on line 2 of **Dockerfile** with the Scikit-learn version number (for example, 0.20.3) obtained from Azure Notebooks in the previous lesson. Then save the file.
 
