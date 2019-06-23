@@ -46,15 +46,53 @@ Azure notebooks are created through the portal at https://notebooks.azure.com an
 
 You can create additional projects and notebooks as you work with Azure Notebooks. You can create notebooks from scratch, or you can upload existing notebooks. And once a notebook is created or uploaded, you can take advantage of Azure compute resources to run the notebook and leverage popular Python libraries such as [Keras](https://keras.io/), [NumPy](http://www.numpy.org/), [Pandas](https://pandas.pydata.org/), [Matplotlib](https://matplotlib.org/), and [Scikit-learn](https://scikit-learn.org/stable/index.html).
 
-
-
-
-
 ## Build and train the model
 
+In this exercise, you will load a dataset and use it to train a sentiment-analysis model.
 
+1. Enter the following statement in the notebook's first cell and click the **Run** button in the notebook's toolbar to execute it:
 
+	```python
+	!curl https://topcs.blob.core.windows.net/public/reviews.csv -o reviews.txt
+	```
 
+	This statement loads a 63 MB dataset from Azure blob storage. Azure notebooks limit file uploads to 10 MB, but you can load larger datasets from external sources. `curl` is a command that's familiar to Linux users. You can execute Bash commands in Azure notebooks by preceding them with exclamation points (!).
+
+	![Loading the dataset](media/first-run.png)
+
+	_Loading the dataset_
+
+1. tk.
+
+	```python
+
+	```
+
+1. tk.
+
+	```python
+
+	```
+
+1. tk.
+
+	```python
+
+	```
+
+1. tk.
+
+	```python
+
+	```
+
+1. tk.
+
+	```python
+
+	```
+
+TODO: Add closing.
 
 ## Serialize the model
 
