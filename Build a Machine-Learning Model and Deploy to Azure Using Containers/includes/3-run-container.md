@@ -40,7 +40,7 @@ In this lesson, you will run the Docker image that you built and pushed to the c
 	wget -qO- FQDN:8008/predict?text=Great%20food%20and%20excellent%20service
 	```
 
-1. Confirm that the output from the `wget` command includes a number from 0.0 to 1.0:
+1. Confirm that the output from `wget` includes a number from 0.0 to 1.0:
 
 	```
 	8948149446550228
