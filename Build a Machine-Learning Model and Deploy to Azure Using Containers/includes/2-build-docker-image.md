@@ -91,12 +91,12 @@ In this exercise, you will create a file named **app.py** containing the Python 
 	COPY sentiment-analysis.pkl /app
 	COPY vocabulary.pkl /app
 	WORKDIR /app
-	EXPOSE 80
+	EXPOSE 8008
 	ENTRYPOINT ["python"]
 	CMD ["app.py"]
 	```
 
-	This file contain instructions for building a Docker image that includes **app.py**, **sentiment-analysis.pkl**, and **vocabulary.pkl**, and that launches **app.py** when the container starts and listens for incoming requests on port 80.
+	This file contain instructions for building a Docker image that includes **app.py**, **sentiment-analysis.pkl**, and **vocabulary.pkl**, and that launches **app.py** when the container starts and listens for incoming requests on port 8008.
 
 1. Replace SCIKIT_VERSION on line 2 of **Dockerfile** with the Scikit-learn version number (for example, 0.20.3) obtained from Azure Notebooks in the previous lesson. Then save the file.
 
