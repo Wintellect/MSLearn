@@ -131,4 +131,4 @@ In this exercise, you will use the Cloud Shell to build a Docker image from the 
 
 	As usual, replace REGISTRY_NAME with your container registry's name.
 
-If you would like to confirm that the Docker image was built and pushed to the container registry, go to the container registry in the [Azure Portal](https://portal.azure.com) and click **Repositories** in the menu on the left side of the blade. You will see a list of images present in the registry, and the list should include the image named "text-analytics-server" that you just built.
+Another way to confirm that the Docker image was built and pushed to the container registry is to open the registry in the [Azure Portal](https://portal.azure.com) and click **Repositories** in the menu on the left side of the blade. You will see a list of images present in the registry, and the list should include the one named "text-analytics-server" that you just built.
