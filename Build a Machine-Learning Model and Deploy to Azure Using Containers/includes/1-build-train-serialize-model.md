@@ -4,7 +4,7 @@ The first order of business is to create a machine-learning model that can exami
 
 Scikit-learn is probably the most popular library on the planet for building machine-learning models. It's free, it's open-source, and it's preloaded into [Azure Notebooks](https://notebooks.azure.com), which is a cloud-based platform for building and running [Jupyter notebooks](http://jupyter.org/).  Jupyter is an environment based on [IPython](https://ipython.org/) that facilitates interactive programming and data analysis using a variety of programming languages, including Python. Jupyter notebooks enjoy widespread use in research and academia for mathematical modeling, machine learning, and statistical analysis. Azure Notebooks provide Jupyter as a service for free. It's a convenient way to build notebooks and share them with others without having to install and manage a Jupyter server. And it's completely Web-based, making it an ideal solution for collaborating online.
 
-In this lesson, you will create an Azure notebook and use Scikit-learn to build a sentiment-analysis model. Then you will serialize the model and download a pair of files that allow the model to be loaded by other applications.
+In this lesson, you will create an Azure notebook and use Scikit-learn to build a sentiment-analysis model. Then you will save the model and download a pair of files that allow the model to be loaded by other applications.
 
 ## Create an Azure notebook
 
@@ -141,7 +141,7 @@ In this exercise, you will load a dataset and use it to train a sentiment-analys
 
 Feel free to try it with text of your own. The model won't get it right all of the time, but it should get it right *most* of the time.
 
-## Serialize the model
+## Save the model
 
 The final task is to serialize the model and download it from your Azure notebook so the same model can be used in another application. Serializing is performed with a call to `pickle.save()` in Python's [pickle](https://docs.python.org/3/library/pickle.html) module. In this case, there are two entities that need to be serialized: the machine-learning model itself, and the dictionary (vocabulary) created by `CountVectorizer`. The latter can be accessed through `CountVectorizer`'s `vocabulary_` attribute.
 
