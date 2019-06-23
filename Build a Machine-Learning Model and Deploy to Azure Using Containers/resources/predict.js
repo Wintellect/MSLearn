@@ -1,5 +1,5 @@
 $(function () {
-    var url = "http://FQDN/predict";
+    var url = "http://FQDN:8008/predict";
 
     // Handle clicks of the Analyze button
     $("#analyze-button").click(function() {
