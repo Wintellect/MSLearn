@@ -123,8 +123,6 @@ In this exercise, you will use the Cloud Shell to build a Docker image from the 
 	az acr build --registry REGISTRY_NAME --image text-analytics-server .
 	```
 
-	Note that you can press **Shift+Ins** to paste the contents of the clipboard into the Cloud Shell if you are running Windows, or **Cmd+V** if you are on a Mac.
- 
 1. Wait for the `az acr build` command to complete. (It will probably take a minute or two.) Then use the following command to confirm that the container was built and pushed to the container registry:
 
 	```bash
