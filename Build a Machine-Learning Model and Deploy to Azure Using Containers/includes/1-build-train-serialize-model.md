@@ -90,10 +90,49 @@ In this exercise, you will load a dataset and use it to train a sentiment-analys
 	df.head(10)
 	```
 
+1. Now run this code to vectorize the text:
+
+	```python
+	# Vectorize the text
+	from sklearn.feature_extraction.text import CountVectorizer
+	
+	vectorizer = CountVectorizer(ngram_range=(1, 2), stop_words=['the', 'and', 'am', 'are'], min_df=10)
+	vectors = vectorizer.fit_transform(df['Text'])
+	```
+
+	TODO: Explain this code.
+
 1. tk.
 
 	```python
+	from sklearn.linear_model import LogisticRegression
+	from sklearn.model_selection import train_test_split
+	
+	# Split the dataset into a training set and a test set
+	x_train, x_test, y_train, y_test = train_test_split(vectors, df['Sentiment'], test_size=0.2, random_state=0)
 
+	# Train a classifier
+	model = LogisticRegression()
+	model.fit(x_train, y_train)
+
+	# Score the model
+	model.score(x_test, y_test)
+	```
+
+	TODO: Explain this code.
+
+1. tk.
+
+	```python
+	review = ['The long lines and poor customer service really turned me off']
+	model.predict_proba(vectorizer.transform(review))[0][1]
+	```
+
+1. tk.
+
+	```python
+	review = ['The best hike in the United States. Fun!']
+	model.predict_proba(vectorizer.transform(review))[0][1]
 	```
 
 1. tk.
