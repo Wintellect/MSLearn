@@ -100,9 +100,15 @@ In this exercise, you will load a dataset and use it to train a sentiment-analys
 	vectors = vectorizer.fit_transform(df['Text'])
 	```
 
-	TODO: Explain this code.
+	Machine-learning models can't deal with text. They can only work with numbers. Scikit-learn's [`CountVectorizer`](https://en.wikipedia.org/wiki/Logistic_regression) class converts a corpus of text passed to it into a dictionary of word counts, and then produces vectors (arrays) containing the numeric indexes of individual words or *ngrams* (sequences of words such as "terrible service" or "helpful staff"). `ngram_range=(1, 2)` tells `CountVectorizer` to consider not just individual words, but combinations of up to two words. The `stop_words` parameter tells it to ignore common words such as "and" and "the." `min_df=10` tells it to ignore words and ngrams that occur less than 10 times and serves to reduce the memory footprint of the model while sacrificing little or nothing in accuracy.
 
-1. The next step is to build the model and train it with the vectorized text. Use this code to split the dataset into a training set and a test set, train a logistic-regression model with the training set, and evaluate the accuracy of that model with the test set:
+	As an example, after building a dictionary containing all the words and ngrams it finds, `CountVectorizer` might transform the string "Great service and the best sushi I have ever had" into the following vector:
+
+
+
+	Each number in the array is the index of the corresponding word in the dictionary.
+
+1. The next step is to build the model and train it with the vectorized text. Use this code to split the dataset into a training set and a test set, train a [logistic-regression](https://en.wikipedia.org/wiki/Logistic_regression) model with the training set, and evaluate the accuracy of that model with the test set:
 
 	```python
 	from sklearn.linear_model import LogisticRegression
