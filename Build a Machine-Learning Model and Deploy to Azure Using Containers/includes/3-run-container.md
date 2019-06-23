@@ -2,7 +2,7 @@
 
 In this lesson, you will run the Docker image that you built and pushed to the container registry in the previous lesson in an Azure Container Instance. Because the container image has already been uploaded to your Azure Container Registry, running it in a container instance requires just a few simple steps.
 
-1. Return to the [Azure Cloud Shell](https://shell.azure.com) and use the following command to create an Azure Container Instance, replacing REGISTRY_NAME with the name of your container registry (in two places), DNS_NAME with the DNS name that will form part of the fully qualified domain name (FQDN) for the running container, and PASSWORD with the access key/password that you saved earlier for the Azure Container Registry:
+1. Return to the [Azure Cloud Shell](https://shell.azure.com) and use the following command to create an Azure Container Instance, replacing REGISTRY_NAME with the name of your container registry (in two places), DNS_NAME with the DNS name label that will form part of the fully qualified domain name (FQDN) for the running container, and PASSWORD with the access key/password that you saved earlier for the Azure Container Registry:
 
 	```bash
 	az container create -g azure-ml-rg -n ml-container --image REGISTRY_NAME.azurecr.io/text-analytics-server --dns-name-label DNS_NAME --ports 8008 --ip-address public --registry-username REGISTRY_NAME --registry-password PASSWORD
