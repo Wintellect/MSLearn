@@ -6,7 +6,7 @@ In this lesson, you will create an [Azure Container Registry](https://azure.micr
 
 ## Deploy an Azure Container Registry
 
-In this exercise, you will create your own Azure Container Registry, which acts as a repository for Docker images in much the same way that [Docker Hub](https://hub.docker.com/) does. But when you run container images in Azure, the containers start faster if the images that they load are hosted in Azure, too — especially if both reside in the same data center.
+In this exercise, you will create your own Azure Container Registry, which acts as a repository for Docker images in much the same way that [Docker Hub](https://hub.docker.com/) does. But when you run containers in Azure, they start faster if the images that they load are hosted in Azure, too — especially if both reside in the same data center.
 
 1. Open your browser and navigate to https://shell.azure.com to launch the Azure Cloud Shell. If you are asked to log in, do so using your Microsoft account.
 
