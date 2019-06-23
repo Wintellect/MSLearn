@@ -71,6 +71,6 @@ Now comes the fun part: using REST calls to invoke the machine-learning model ru
 
 	_Analyzing text for sentiment_
 
-1. Try other strings and score them for sentiment, too.
+1. Try other strings and see how they score for sentiment, too.
 
 The fact that this is working means you have built and trained a machine-learning model, embedded the model in a Docker container hosted in Azure, and written a cross-platform client app that places REST calls to the container to analyze text for sentiment — and all in about an hour. This is the power of machine learning combined with the ease of use of Azure containers.
