@@ -1,0 +1,15 @@
+### YamlMime:ModuleUnit
+uid: learn.host-ml-model-in-azure.2-build-docker-image
+title: Build a Docker image and deploy it to Azure
+metadata:
+  title: Build a Docker image and deploy it to Azure
+  description: Build a Docker image and deploy it to Azure
+  ms.date: 06/24/2019
+  author: v-jeffpr
+  ms.author: shana.matthews
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ROBOTS: NOINDEX
+durationInMinutes: 15
+content: |
+  [!include[](includes/2-build-docker-image.md)]

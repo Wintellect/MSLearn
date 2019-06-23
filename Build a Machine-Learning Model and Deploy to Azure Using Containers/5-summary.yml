@@ -1,0 +1,15 @@
+### YamlMime:ModuleUnit
+uid: learn.host-ml-model-in-azure.5-summary
+title: Summary
+metadata:
+  title: Summary
+  description: Summary
+  ms.date: 06/24/2019
+  author: v-jeffpr
+  ms.author: shana.matthews
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ROBOTS: NOINDEX
+durationInMinutes: 5
+content: |
+  [!include[](includes/5-summary.md)]

@@ -1,0 +1,15 @@
+### YamlMime:ModuleUnit
+uid: learn.host-ml-model-in-azure.3-run-container
+title:  Run the container in an Azure Container Instance
+metadata:
+  title: Run the container in an Azure Container Instance
+  description: Run the container in an Azure Container Instance
+  ms.date: 06/24/2019
+  author: v-jeffpr
+  ms.author: shana.matthews
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ROBOTS: NOINDEX
+durationInMinutes: 10
+content: |
+  [!include[](includes/3-run-container.md)]

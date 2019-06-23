@@ -12,15 +12,15 @@ title: Build a Machine-Learning Model and Deploy to Azure Using Containers
 summary: Build a machine-learning model in Python, run it in a Docker container in Azure, and call it from a client app
 abstract:  | 
   In this module, you will:
-  - Create a Jupyter notebook in Azure Notebooks
+  - Create a Jupyter notebook in Azure
   - Build and train a machine-learning model
   - Load the model in a Python app
   - Use Flask to make the model available using REST APIs
-  - Build a client app that invokes the machine-learning running in a container
   - Use the Azure Cloud Shell to a deploy an Azure Container Registry
   - Use the Azure Cloud Shell to build a Docker image and deploy it to Azure
   - Use the Azure Cloud Shell to a launch an Azure Container Instance
-prerequisites: None
+  - Build a client app that invokes the machine-learning model by placing calls to the container
+  prerequisites: None
 #iconUrl:
 levels:
 - intermediate
