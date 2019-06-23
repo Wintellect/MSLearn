@@ -1,4 +1,4 @@
-# Build, train, and serialize a machine-learning model
+# Build and train a machine-learning model
 
 The first order of business is to create a machine-learning model that can examine a string of text and assign it a score from 0.0 to 1.0 quantifying the sentiment expressed therein. Ten years ago, that would have been a Herculean task. Today, it's rather easy with [Scikit-learn](https://scikit-learn.org/stable/index.html).
 
