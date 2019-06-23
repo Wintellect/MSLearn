@@ -71,7 +71,7 @@ In this exercise, you will load a dataset and use it to train a sentiment-analys
 
 	_Examining the dataset_
 
-	The dataset contains 50,000 movie reviews from the popular [IMDB dataset](https://www.kaggle.com/iarunava/imdb-movie-reviews-dataset). The "Text" column contains the text of the reviews. The "Sentiment" column contains 0s and 1s indicating whether the corresponding review is negative (0) or positive (1). There are 25,000 negative reviews and 25,000 positive ones, forming a very balanced dataset. That's always a goal when training a binary-classification model.
+	The dataset contains 50,000 movie reviews from the popular [IMDB dataset](https://www.kaggle.com/iarunava/imdb-movie-reviews-dataset). The "Text" column contains the text of the reviews. The "Sentiment" column contains 0s and 1s indicating whether a review is negative (0) or positive (1). There are 25,000 negative reviews and 25,000 positive ones, forming a very balanced dataset. That's always a goal when training a binary-classification model.
 
 1. Run the following statements in the next cell to clean the data by converting all the text to lowercase, removing punctuation symbols, and eliminating HTML artifacts:
 
