@@ -75,9 +75,12 @@ In this exercise, you will create a file named **app.py** containing the Python 
 	    text = re.sub("[.;:!\'?,\"()\[\]]", '', text.lower())
 	    text = re.sub("(<br\s*/><br\s*/>)|(\-)|(\/)", ' ', text)
 	    return str(model.predict_proba(vectorizer.transform([text]))[0][1])
+	
+	if __name__ == '__main__':
+    app.run(debug=True, port=8008, host='0.0.0.0')
 	```
 
-	This file contains a Python script that uses [Flask](http://flask.pocoo.org/) to expose a REST method named ```predict``` that clients can call to analyze a string for sentiment. Calls to `pickle.load()` load the serialized machine-learning model and the vocabulary with which it was trained. Text to be analyzed is passed in a query-string parameter named "text" and ultimately passed to the model's `predict_proba()` (short for "predict probability") method.
+	This file contains a Python script that uses [Flask](http://flask.pocoo.org/) to expose a REST method named ```predict``` that clients can call to analyze a string for sentiment. Calls to `pickle.load()` load the saved machine-learning model and the vocabulary with which it was trained. Text to be analyzed is passed in a query-string parameter named "text" and ultimately passed to the model's `predict_proba()` (short for "predict probability") method.
 
 1. Create a file named **Dockerfile** (no file-name extension) in the same folder and insert the following commands:
 
@@ -94,7 +97,7 @@ In this exercise, you will create a file named **app.py** containing the Python 
 	CMD ["app.py"]
 	```
 
-	This file contain instructions for building a Docker image that includes **app.py**, **sentiment-analysis.pkl**, and **vocabulary.pkl**, and that launches **app.py** when the container starts and listens for incoming requests on port 8008.
+	This file contains instructions for building a Docker image that includes **app.py**, **sentiment-analysis.pkl**, and **vocabulary.pkl**, and that launches **app.py** when the container starts and listens for incoming requests on port 8008.
 
 1. Replace SCIKIT_VERSION on line 2 of **Dockerfile** with the Scikit-learn version number (for example, 0.20.3) obtained from Azure Notebooks in the previous lesson. Then save the file.
 
