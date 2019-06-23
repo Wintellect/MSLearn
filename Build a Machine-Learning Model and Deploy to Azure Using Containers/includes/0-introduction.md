@@ -6,7 +6,7 @@ You had a class in college on machine learning and know the basics of Python and
 
 ## Containers in Azure
 
-Containers are similar to virtual machines (VMs) in that they provide a predictable and isolated environment in which software can run. Because containers are smaller than VMs, they start quickly and use less RAM. Moreover, multiple containers running on a single machine share the same operating system kernel. Docker is based on open standards, enabling Docker containers to run on all major Linux distributions as well as on Windows Server 2016.
+Containers are similar to virtual machines (VMs) in that they provide a predictable and isolated environment in which software can run. Because containers are smaller than VMs, they start quickly and use less RAM. Moreover, multiple containers running on a single machine share the same operating system kernel. Docker is the world's most popular containerization platform. It is based on open standards, enabling Docker containers to run on all major Linux distributions as well as on Windows Server 2016.
 
 To support running containerized applications in the cloud, Azure offers [Azure Container Instances](https://azure.microsoft.com/services/container-instances/), which provide a robust, scalable, and easy-to-use environment for hosting containerized applications, as well as the [Azure Container Registry](https://azure.microsoft.com/services/container-registry/). The latter allows container images to be hosted in Azure rather than in external repositories such as [Docker Hub](https://hub.docker.com/) and loaded quickly into Azure Container Instances.
 
