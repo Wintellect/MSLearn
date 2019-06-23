@@ -12,19 +12,19 @@ In this lesson, you will run the Docker image that you built and pushed to the c
 
 	> The DNS name label doesn't have to be unique within Azure, but it does have to be unique in the region in which the container instance is hosted.
 
-	The port number that you entered is significant, too. Inside the **Dockerfile** from which you built the container image is a statement that opens port 80 in the container:
+	The port number that you entered is significant, too. Inside the **Dockerfile** from which you built the container image is a statement that opens port 8008 in the container:
 
 	```dockerfile
-	EXPOSE 80
+	EXPOSE 8008
 	```
 
 	And inside **app.py** is a pair of statements that configures the code running in the container to listen for requests on port 8008:
 
 	```python
 	if __name__ == '__main__':
-	    app.run(debug=True, port=80, host='0.0.0.0')
+	    app.run(debug=True, port=8008, host='0.0.0.0')
 	```
-	Opening port 80 in the container instance enables the Flask Web server running in the container to respond to REST calls arriving on port 80.
+	Opening port 8008 in the container instance closes the loop and enables the Flask Web server running in the container to respond to REST calls arriving on port 8008.
 
 1. Wait for the command to complete. (It may take a minute or two.) Then use the following command to get the container instance's fully qualified domain name:
 
@@ -37,13 +37,13 @@ In this lesson, you will run the Docker image that you built and pushed to the c
 1. Make sure **Bash** is the language selected in the upper left corner of the Cloud Shell. Then execute the following command to place a call to the container and analyze a text string for sentiment, replacing FQDN with the container's fully qualified domain name:
 
 	```bash
-	wget FQDN/predict?text=Great%20food%20and%20excellent%20service
+	wget -qO- FQDN:8008/predict?text=Great%20food%20and%20excellent%20service
 	```
 
 1. Confirm that the output from the `wget` command includes a number from 0.0 to 1.0:
 
 	```
-	TODO: Insert score
+	0.8948
 	```
 
 	This is the score that quantifies the sentiment expressed in the text string "Great food and excellent service." Remember that 0.0 is negative and 1.0 is positive.
