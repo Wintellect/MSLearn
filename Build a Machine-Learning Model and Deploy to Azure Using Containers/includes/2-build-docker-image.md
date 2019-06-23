@@ -54,7 +54,7 @@ With the container registry deployed and an access key in hand, the next step is
 
 In this exercise, you will create a file named **app.py** containing the Python code that runs inside the container, and a file named **Dockerfile** containing Docker build instructions. You can use any text editor you'd like, but we recommend using [Visual Studio Code](https://code.visualstudio.com/) — Microsoft's free, lightweight source-code editor for Windows, macOS, and Linux that features IntelliSense, integrated Git support, and more.
 
-1. Create a file named **app.py** in the same folder in which you stored **sentiment-analysis.pkl** and **vocabulary.pkl** in the previous lesson and insert the following Python code. Then save the file.
+1. Create a file named **app.py** in the same folder in which you saved **sentiment-analysis.pkl** and **vocabulary.pkl** in the previous lesson and insert the following Python code. Then save the file.
 
 	```python
 	import pickle, re
