@@ -139,7 +139,7 @@ In this exercise, you will load a dataset and use it to train a sentiment-analys
 
 	Does this text score closer to 1.0?
 
-Feel free to try it with statements of your own. The model won't get it right all of the time, but it should get it right *most* of the time.
+Feel free to try it with text of your own. The model won't get it right all of the time, but it should get it right *most* of the time.
 
 ## Serialize the model
 
