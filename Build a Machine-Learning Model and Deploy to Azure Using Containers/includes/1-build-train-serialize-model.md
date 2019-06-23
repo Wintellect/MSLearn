@@ -53,20 +53,32 @@ In this exercise, you will load a dataset and use it to train a sentiment-analys
 1. Enter the following statement in the notebook's first cell and click the **Run** button in the notebook's toolbar to execute it:
 
 	```bash
-	!curl https://topcs.blob.core.windows.net/public/reviews.csv -o reviews.txt
+	!curl https://topcs.blob.core.windows.net/public/reviews.csv -o reviews.csv
 	```
 
-	This statement loads a 63 MB dataset from Azure blob storage. Azure notebooks limit file uploads to 10 MB, but you can load larger datasets from external sources. `curl` is a command that's familiar to Linux users. You can execute Bash commands in Azure notebooks by preceding them with exclamation points (!).
+	This statement loads a 63 MB CSV file from Azure blob storage. Azure notebooks limit file uploads to 10 MB, but you can load larger datasets from external sources. `curl` is a command that's familiar to Linux users. You can execute Bash commands in Azure notebooks by preceding them with exclamation points (!).
 
 	![Loading the dataset](media/first-run.png)
 
 	_Loading the dataset_
 
-1. tk.
+1. Paste the following statements into the next cell and run the cell to load the dataset that was just copied from blob storage:
 
 	```python
-
+	# Load the data
+	import pandas as pd
+	
+	df = pd.read_csv('reviews.csv', encoding="ISO-8859-1")
+	df.head(10)
 	```
+
+	The `import` statement loads [Pandas](https://pandas.pydata.org/), a popular Python library for analyzing and manipulating data. The next statement reads the dataset from the CSV file and shows the first 10 rows:
+
+	![Examining the dataset](media/dataset.png)
+
+	_Examining the dataset_
+
+	The dataset contains 50,000 movie reviews from the popular [IMDB dataset](https://www.kaggle.com/iarunava/imdb-movie-reviews-dataset). Each review is classified as negative (0) or positive (1). There are 25,000 negative reviews and 25,000 positive ones, forming a very balanced dataset. That's always a goal when training a binary-classification model.
 
 1. tk.
 
