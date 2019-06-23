@@ -107,7 +107,7 @@ The files you need to build the Docker image are in place. Now let's build it an
 
 You can use the [Docker CLI](https://docs.docker.com/engine/reference/commandline/cli/) as well as a number of third-party tools to build Docker images and push them to an Azure Container Registry. However, most of these tools require you to install software on your PC or laptop. A faster and more seamless way to build Docker images and push them to an Azure Container Registry is to use the Azure Cloud Shell, which lets you build Docker images using [Azure CLI](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest) commands in the browser. Commands such as [`az acr build`](https://docs.microsoft.com/cli/azure/acr?view=azure-cli-latest#az-acr-build) let you build a Docker image from a [Dockerfile](https://docs.docker.com/engine/reference/builder/) and push it to an Azure Container Registry in one simple step, and without having to externally authenticate with the container registry.
 
-In this exercise, you will use the Cloud Shell to build a Docker image from a Dockerfile and push it to the container registry you deployed in the previous exercise.
+In this exercise, you will use the Cloud Shell to build a Docker image from the **Dockerfile** you created and push it to the container registry you deployed in the previous exercise.
 
 1. Return to the Cloud Shell and click the **Upload/Download** button at the top of the page. Then select **Upload** from the menu.
 
