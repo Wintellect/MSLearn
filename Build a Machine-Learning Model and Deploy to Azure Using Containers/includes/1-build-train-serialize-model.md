@@ -80,7 +80,7 @@ In this exercise, you will load a dataset and use it to train a sentiment-analys
 
 	The dataset contains 50,000 movie reviews from the popular [IMDB dataset](https://www.kaggle.com/iarunava/imdb-movie-reviews-dataset). Each review is classified as negative (0) or positive (1). There are 25,000 negative reviews and 25,000 positive ones, forming a very balanced dataset. That's always a goal when training a binary-classification model.
 
-1. Run the following statements in the next cell to clean the data by converting the text to lowercase, removing punctuation symbols, and eliminating HTML artifacts:
+1. Run the following statements in the next cell to clean the data by converting all the text to lowercase, removing punctuation symbols, and eliminating HTML artifacts:
 
 	```python
 	# Clean the data
@@ -102,7 +102,7 @@ In this exercise, you will load a dataset and use it to train a sentiment-analys
 
 	TODO: Explain this code.
 
-1. tk.
+1. The next step is to build the model and train it with the vectorized text. Use this code to split the dataset into a training set and a test set, train a logistic-regression model with the training set, and evaluate the accuracy of that model with the test set:
 
 	```python
 	from sklearn.linear_model import LogisticRegression
@@ -119,23 +119,27 @@ In this exercise, you will load a dataset and use it to train a sentiment-analys
 	model.score(x_test, y_test)
 	```
 
-	TODO: Explain this code.
+	The `score()` method should report that the model is about 90% accurate in classifying sentiment, based on the results it obtained by comparing the scores in the test data to scores computed by the model.
 
-1. tk.
+1. Now that the model is trained, use the following code to test it by scoring a string of text for sentiment:
 
 	```python
 	review = ['The long lines and poor customer service really turned me off']
 	model.predict_proba(vectorizer.transform(review))[0][1]
 	```
 
-1. tk.
+	The second statement vectorizes the input text and passes it to the model's `predict_proba()` function, which returns a pair of floating-point values indicating the probability that the sentiment is negative and the probability that it is positive. It is the latter value that we use as the sentiment score. How does this text score for sentiment?
+
+1. Try the model with this sample:
 
 	```python
-	review = ['The best hike in the United States. Fun!']
+	review = ['Great service and some of the best sushi I have ever had']
 	model.predict_proba(vectorizer.transform(review))[0][1]
 	```
 
-TODO: Add closing.
+	Does this text score closer to 1.0?
+
+Feel free to try it with statements of your own. The model won't get it right all of the time, but it should get it right *most* of the time.
 
 ## Serialize the model
 
