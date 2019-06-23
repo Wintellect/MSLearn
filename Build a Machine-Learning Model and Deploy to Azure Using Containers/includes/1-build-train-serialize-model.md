@@ -136,7 +136,7 @@ Feel free to try it with text of your own. The model won't get it right all of t
 
 ## Save the model
 
-The final task is to serialize the model and download it from your Azure notebook so the same model can be used in other applications. Serialization is performed by calling `pickle.save()` in Python's [pickle](https://docs.python.org/3/library/pickle.html) module. In this case, there are two entities that need to be serialized: the machine-learning model itself, and the dictionary (vocabulary) created by `CountVectorizer`. The latter can be accessed through `CountVectorizer`'s `vocabulary_` attribute.
+The final task is to serialize the model and download it from your Azure notebook so the same model can be used in other applications. Serialization is performed by calling `pickle.dump()` in Python's [pickle](https://docs.python.org/3/library/pickle.html) module. In this case, there are two entities that need to be serialized: the machine-learning model itself, and the dictionary (vocabulary) created by `CountVectorizer`. The latter can be accessed through `CountVectorizer`'s `vocabulary_` attribute.
 
 1. Run the following code in the notebook to generate a pair of **.pkl** files containing the serialized model and vocabulary:
 
