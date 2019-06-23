@@ -65,7 +65,7 @@ In this exercise, you will load a dataset and use it to train a sentiment-analys
 	df.head(10)
 	```
 
-	The `import` statement loads [Pandas](https://pandas.pydata.org/), a popular Python library for analyzing and manipulating data. The next statement reads the dataset from the CSV file and shows the first 10 rows:
+	The `import` statement loads [Pandas](https://pandas.pydata.org/), a popular Python library for analyzing and manipulating data. The next statement reads the dataset from the CSV file, and the next one shows the first 10 rows:
 
 	![Examining the dataset](media/dataset.png)
 
