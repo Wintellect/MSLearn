@@ -12,22 +12,7 @@ Now comes the fun part: using REST calls to invoke the machine-learning model ru
 
 1. Create a project directory on your hard disk to hold the app.
 
-1. Create a text file named **project.json** in the project directory. Paste in the following text, and then save the file:
-
-	```json
-	{
-	  "name": "Textalyzer",
-	  "version": "1.0.0",
-	  "scripts": {
-	    "start": "electron ."
-	  },
-	  "dependencies": {
-	    "electron-prebuilt": "^1.4.13"
-	  }
-	}
-	```
-
-	This file contains metadata for the app and lists the app's dependencies so those dependencies can be loaded with an `npm install` command.
+1. Open the zip file containing the [resources that accompany this module]() and copy all of the files inside it to the project directory.
 
 1. `cd` into the project directory at the command prompt. Then execute the following command to download and install the packages that the app requires:
 
@@ -35,19 +20,43 @@ Now comes the fun part: using REST calls to invoke the machine-learning model ru
 	npm install
 	```
 
+	The `npm install` command uses the dependencies listed in **project.json** to load the Node.js modules used by the client app.
+
 1. Create a file named **predict.js** in the project directory and paste in the following code:
 
 	```javascript
-
+	$(function () {
+	    var url = "http://FQDN/predict";
+	
+	    // Handle clicks of the Analyze button
+	    $("#analyze_button").click(function() {
+	        // Get user input
+	        var text = $("#input-text").val();
+	
+	        // Invoke model using REST call
+	        $.ajax({
+	            type: "GET",
+	            url: url + "?text=" + encodeURIComponent(text),
+	        }).done(function (data) {
+	            showResults(data);
+	        }).fail(function(xhr, status, err) {
+	            alert(status + " (" + err + ")");
+	        });
+	    });
+	});
+	
+	function showResults(data) {
+	    alert(parseFloat(data).toFixed(4));
+	}
 	```
 
-	TODO: Describe this code.
+	This code registers a click handler for the **Analyze** button defined in **index.html**. The click handler reads the text string that the user from an `<input>` field and passes it to the running container via an AJAX call. The it shows what came back from the call — the sentiment score — in an alert box. 
 
 
-1. Replace FQDN on line TK with the container's fully qualified domain name that you retrieved in the previous lesson. The modified line should look something like this:
+1. Replace FQDN on line 2 with the container's fully qualified domain name. The modified line should look something like this:
 
 	```javascript
-	var url = "http://containerslab.northcentralus.azurecontainer.io:8008/predict";
+	var url = "http://textalyzer.northcentralus.azurecontainer.io/predict";
 	```
 
 1. Return to the command prompt and use the following command to start the client app:
