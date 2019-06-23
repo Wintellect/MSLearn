@@ -2,7 +2,7 @@
 
 Now comes the fun part: using REST calls to invoke the machine-learning model running in the container from a client app in order to analyze text for sentiment. In this lesson, you will build the app, and you will use [Node.js](https://nodejs.org/) and [Electron](https://electronjs.org/) as the platform so the app can run on Windows, macOS, and Linux.
 
-1. If Node.js isn't installed on your computer, go to https://nodejs.org/ and install it it now. You can determine whether Node is installed — and what version is installed — by opening a Command Prompt or terminal window and typing the following command:
+1. If Node.js isn't installed on your computer, go to the [Node.js Web site](https://nodejs.org/) and install it it now. You can determine whether Node is installed — and what version is installed — by opening a Command Prompt or terminal window and typing the following command:
 
 	```bash
 	node -v
