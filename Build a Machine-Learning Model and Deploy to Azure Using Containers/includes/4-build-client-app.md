@@ -26,7 +26,7 @@ Now comes the fun part: using REST calls to invoke the machine-learning model ru
 
 	```javascript
 	$(function () {
-	    var url = "http://FQDN/predict";
+	    var url = "http://FQDN:8008/predict";
 	
 	    // Handle clicks of the Analyze button
 	    $("#analyze_button").click(function() {
@@ -50,13 +50,13 @@ Now comes the fun part: using REST calls to invoke the machine-learning model ru
 	}
 	```
 
-	This code registers a click handler for the **Analyze** button defined in **index.html**. The click handler reads the text string that the user from an `<input>` field and passes it to the running container via an AJAX call. The it shows what comes back from the call — the sentiment score — in an alert box. 
+	This code registers a click handler for the **Analyze** button defined in **index.html**. The click handler reads the text string that the user from an `<input>` field and passes it to the running container via an AJAX call. Then it shows what comes back from the call — the sentiment score — in an alert box. 
 
 
 1. Replace FQDN on line 2 with the container's fully qualified domain name. The modified line should look something like this:
 
 	```javascript
-	var url = "http://textalyzer.northcentralus.azurecontainer.io/predict";
+	var url = "http://textalyzer.northcentralus.azurecontainer.io:8008/predict";
 	```
 
 1. Return to the command prompt and use the following command to start the client app:
