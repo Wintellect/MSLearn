@@ -2,7 +2,7 @@
 
 In order to run an app in a container, you must first "containerize" or "Dockerize" the app by placing it in a Docker container image. Then you deploy the image to a container registry and create a container from that image.
 
-In this lesson, you will create an [Azure Container Registry](https://azure.microsoft.com/services/container-registry/) to host container images in Azure. You will write the containerized app and in it use Scikit-learn to load the machine-learning model you built in the previous lesson and [Flask](http://flask.pocoo.org/) to implement a REST endpoint for calling the model. Then you will use the [Azure Cloud Shell](https://azure.microsoft.com/features/cloud-shell/) to build a container image and push it to the Azure Container Registry. One of the benefits of using the Cloud Shell for these tasks is that you don't have to install Docker on your computer. 
+In this lesson, you will create an [Azure Container Registry](https://azure.microsoft.com/services/container-registry/) to host container images in Azure. You will write the containerized app and in it use Scikit-learn to load the machine-learning model you built in the previous lesson and [Flask](http://flask.pocoo.org/) to implement a REST endpoint for calling the model. Then you will use the [Azure Cloud Shell](https://azure.microsoft.com/features/cloud-shell/) to build a container image and push it to the Azure Container Registry.
 
 ## Deploy an Azure Container Registry
 
