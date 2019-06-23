@@ -22,13 +22,13 @@ In this exercise, you will create your own Azure Container Registry, which acts 
 	az account set -s SUBSCRIPTION_ID
 	```
 
+	You can press **Shift+Ins** to paste the contents of the clipboard into the Cloud Shell if you are running Windows, or **Cmd+V** if you use a Mac. Similarly, you can use **Ctrl+C** to copy text to the clipboard from the Cloud Shell on Windows or **Cmd+C** on a Mac
+
 1. Use the following command to create a resource group named "azure-ml-rg" to hold all the Azure resources you create in this module:
 
 	```bash
 	az group create --name azure-ml-rg --location northcentralus
 	```
-
-	> You can press **Shift+Ins** to paste the contents of the clipboard into the Cloud Shell if you are running Windows, or **Cmd+V** if you are on a Mac.
 
 	Resource groups are an incredibly important feature of Azure. They act as containers for other Azure resources and serve to group those resources together so you can view billing information for them as a group, apply security rules as a group, and even delete them as a group. *Every* Azure resource that you create must be part of a resource group.
 
@@ -47,8 +47,6 @@ In this exercise, you will create your own Azure Container Registry, which acts 
 	```
 
 	Copy either of the access keys (passwords) — the long strings containing letters and numbers — in the output into a text editor so you can easily retrieve it later. Because you specified `--admin-enabled true` when creating the container registry, these access keys serve as passwords for logging into the registry. 
-
-	> You can use **Ctrl+C** to copy text to the clipboard from the Cloud Shell if you are running Windows, or **Cmd+C** if you are on a Mac.
 
 With the container registry deployed and an access key in hand, the next step is to create a Docker image and push it to the registry.
 
