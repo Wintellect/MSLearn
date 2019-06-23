@@ -148,7 +148,7 @@ The final task is to serialize the model and download it from your Azure noteboo
 	pickle.dump(vectorizer.vocabulary_, open('vocabulary.pkl', 'wb'))
 	```
 
-1. Return to the "Machine Learning" project page in the Azure Notebooks portal and download the two **.pkl** files by right-clicking them and selecting **Download** from the context menu. Store them in the location of your choice on your hard disk. You will need them in the next lesson.
+1. Return to the "Machine Learning" project page in the Azure Notebooks portal. Refresh the page and download the two **.pkl** files by right-clicking them and selecting **Download** from the context menu. Store them in the location of your choice on your hard disk. You will need them in the next lesson.
 
 	![Downloading the serialized model](media/download-files.png)
 
