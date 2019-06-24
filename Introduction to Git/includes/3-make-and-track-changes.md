@@ -45,7 +45,7 @@ The Web site's home page, **index.html** currently contains just one line of HTM
 
 1. Use `git diff` again to compare the working tree to the index. This time, `git diff` produces no output because the working tree, index, and HEAD are all in agreement.
 
-1. Let's say you decide "furry" sounds friendlier than "feline." Replace the two occurrences of "Furry" in **index.html** with "Feline." Then save the file.
+1. Let's say you decide "furry" sounds friendlier than "feline." Replace the two occurrences of "Feline" in **index.html** with "Furry." Then save the file.
 
 1. Depending on which text editor you use, there could now be a problem. For example, if you use [sed](https://en.wikipedia.org/wiki/Sed) as your editor, it probably created an **index.html.bak** file that you don't want to commit. Other editors such as Vim and Emacs create backup files with names such as **index.html~** and **index.html.\~1\~**, depending on how they're configured. 
 
