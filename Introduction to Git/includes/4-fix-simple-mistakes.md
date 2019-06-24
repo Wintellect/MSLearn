@@ -98,7 +98,7 @@ One solution to this problem is to revert the previous commit.
 	git log -n1
 	```
 
-1. Use the following commands to "restore" **index.html** and list its contents:
+1. Use the following commands to restore **index.html** and list its contents:
 
 	```bash
 	git checkout -- index.html
