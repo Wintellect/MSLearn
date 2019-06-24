@@ -28,7 +28,7 @@ git commit --amend --no-edit
 
 The `--no-edit` option tells Git to make the change without changing the commit message. You can also use `--amend` to edit a commit message, to add files accidentally left out of the commit, or to remove files that were added by mistake.
 
-The ability to change history is one of Git's most powerful features. (You will learn later that there are other ways to accomplish this besides `--amend`.) As with most power tools, it has to be used carefully. In particular, it's a bad idea to change any commits that have been shared with another developer or were published in a shared repository such as GitHub.
+The ability to change history is one of Git's most powerful features. As with most power tools, it has to be used carefully. In particular, it's a bad idea to change any commits that have been shared with another developer or were published in a shared repository such as GitHub.
 
 ## Recover a deleted file
 
