@@ -13,29 +13,3 @@ metadata:
 durationInMinutes: 10
 content: |
   [!include[](includes/4-fix-simple-mistakes.md)]
-quiz:
-  title: Fix simple mistakes
-  description: Confirm that you understand how to use Git to fix mistakes.
-  questions:
-  - content: "What is a safe way to make a change in the commit before the most recent one?"
-    choices:
-    - content: "Use `git commit --amend HEAD^`."
-      isCorrect: false
-      incorrectExplanation: "You can only amend the most recent commit (the head of the current branch)."
-    - content: "Use `git revert HEAD^` to revert it, then make a new commit with the change."
-      isCorrect: true
-      correctExplanation: "Reverting a commit is safe because it doesn't modify Git's history."
-    - content: "Use `git rm HEAD^^`."
-      isCorrect: false
-      incorrectExplanation: "The `rm` subcommand removes files or directories, not commits."
-  - content: "Which of the following commands can change your history?"
-    choices:
-    - content: "`git checkout`"
-      isCorrect: false
-      incorrectExplanation: "Checkout changes the working tree and the index to match a specified commit, but doesn't affect the commit."
-    - content: "`git revert`"
-      isCorrect: false
-      incorrectExplanation: "Revert adds a new commit that undoes the effect of an earlier one, but leaves the original commit intact."
-    - content: "`git reset`"
-      isCorrect: true
-      correctExplanation: "All versions of `git reset` change the most recent commit to the one you specify; only `git reset HEAD` leaves your history unchanged."

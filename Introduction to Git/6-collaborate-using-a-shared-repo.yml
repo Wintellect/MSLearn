@@ -13,26 +13,3 @@ metadata:
 durationInMinutes: 10
 content: |
   [!include[](includes/6-collaborate-using-a-shared-repo.md)]
-quiz:
-  title: Collaborate using a shared repo
-  description: Confirm your understanding of collaboration using Git.
-  questions:
-  - content: "What's the best way to update a shared repository?"
-    choices:
-    - content: "Push to the shared repo using ssh."
-      isCorrect: true
-      correctExplanation: "There are other methods, but this is what almost everyone does."
-    - content: "Log in to the server using ssh, and pull changes."
-      isCorrect: false
-      incorrectExplanation: "That only works if the repo you want to pull from is accessible from the server.  In most cases there's a firewall in the way."
-    - content: "Copy the repo you're cloning from onto a thumb drive and mail it to the owner of the shared repo."
-      isCorrect: false
-      incorrectExplanation: "Some services like GitHub and GitLab accept large repos on removable media, but only to get started. After that, changes are pushed. If they're close by, a carrier pigeon might be faster than mail (see RFC 1149)."
-  - content: "What is the best way to make a backup of a git repository?"
-    choices:
-    - content: "Copy it to a thumb drive.  Use Rsync so that you don't copy files that are already there."
-      isCorrect: false
-      incorrectExplanation: "This would work, but Rsync has to go through the entire tree to figure out what files were changed."
-    - content: "Clone it as a bare repo on a thumb drive and push to it every time something changes."
-      isCorrect: true
-      correctExplanation: "When you push or pull, Git only has to transfer the files that changed since the last time, and it can identify them just by looking at the commits made since the last transfer.  See Unit 10 for a way to automate this."
