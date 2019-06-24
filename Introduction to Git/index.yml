@@ -3,19 +3,18 @@ uid: learn.introduction-to-git
 metadata:
   title: Introduction to Git
   description: Use Git to track changes and collaborate with other developers
-  ms.date: 05/17/2019
-  author: ssavitzky
-  ms.author: 
+  ms.date: 06/24/2019
+  author: v-jeffpr
+  ms.author: shana.matthews
   ms.topic: interactive-tutorial
   ms.prod: learning-git
 title: Introduction to Git
 summary: Use Git to track changes and collaborate with other developers
 abstract:  | 
   In this module, you will:
-  - Track changes in a collection of files.
-  - Recover deleted files, edit commit messages, and resolve merge conflicts.
-  - Collaborate with other developers using a shared Git repository.
-  - Use branching and tags as part of a development workflow.
+  - Track changes in a collection of files
+  - Recover deleted files, edit commit messages, and resolve merge conflicts
+  - Collaborate with other developers using a shared Git repository
 prerequisites: None
 #iconUrl:
 levels:
@@ -26,13 +25,13 @@ products:
 - git
 achievement: learn.placeholder.badge
 units:
-- learn.introduction-to-git.01-introduction
-- learn.introduction-to-git.02-install-and-configure
-- learn.introduction-to-git.03-start-a-project
-- learn.introduction-to-git.04-make-and-track-changes
-- learn.introduction-to-git.05-fix-simple-mistakes
-- learn.introduction-to-git.06-collaborate-using-pull
-- learn.introduction-to-git.07-collaborate-using-a-shared-repo
-- learn.introduction-to-git.08-branching-and-merging
-- learn.introduction-to-git.09-resolve-merge-conflicts
-- learn.introduction-to-git.10-summary
+- learn.introduction-to-git.0-introduction
+- learn.introduction-to-git.1-install-and-configure
+- learn.introduction-to-git.2-start-a-project
+- learn.introduction-to-git.3-make-and-track-changes
+- learn.introduction-to-git.4-fix-simple-mistakes
+- learn.introduction-to-git.5-collaborate-using-pull
+- learn.introduction-to-git.6-collaborate-using-a-shared-repo
+- learn.introduction-to-git.7-branch-and-merge
+- learn.introduction-to-git.8-resolve-merge-conflicts
+- learn.introduction-to-git.9-summary

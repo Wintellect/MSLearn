@@ -1,18 +1,18 @@
 ### YamlMime:ModuleUnit
-uid: learn.introduction-to-git.05-fix-simple-mistakes
+uid: learn.introduction-to-git.4-fix-simple-mistakes
 title: Fix simple mistakes
 metadata:
   title: Fix simple mistakes
   description: Use some of Git's tools for correcting mistakes
-  ms-date: 05/06/2019
-  author: ssavitzky
-  ms-author: TBD
+  ms.date: 06/24/2019
+  author: v-jeffpr
+  ms.author: shana.matthews
   ms.topic: interactive-tutorial
   ms.prod: learning-git
   ROBOTS: NOINDEX
 durationInMinutes: 11
 content: |
-  [!include[](includes/05-fix-simple-mistakes.md)]
+  [!include[](includes/4-fix-simple-mistakes.md)]
 quiz:
   title: Fix simple mistakes
   description: Confirm that you understand how to use Git to fix mistakes.

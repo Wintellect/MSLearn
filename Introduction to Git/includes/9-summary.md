@@ -56,3 +56,9 @@ All of the cat pictures came from [commons.wikimedia.org](https://commons.wikime
 	- **.git-keep**
 	- **git.keep**
 	- **keep**
+
+1. How does Git determine whether a file has changed?
+	 - Git compares the current and previous versions of the file
+	 - Git hashes the file and compares the hash to the has of the previous version
+	 - Git uses the file's time-and-date stamp
+	 - None of the above

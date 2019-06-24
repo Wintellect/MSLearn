@@ -1,0 +1,15 @@
+### YamlMime:ModuleUnit
+uid: learn.introduction-to-git.3-make-and-track-changes
+title: Make and track changes
+metadata:
+  title: Make and track changes
+  description: Make changes in your working tree and track them with Git
+  ms.date: 06/24/2019
+  author: v-jeffpr
+  ms.author: shana.matthews
+  ms.topic: interactive-tutorial
+  ms.prod: learning-git
+  ROBOTS: NOINDEX
+durationInMinutes: 10
+content: |
+  [!include[](includes/04-make-and-track-changes.md)]

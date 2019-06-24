@@ -1,15 +1,15 @@
 ### YamlMime:ModuleUnit
-uid: learn.introduction-to-git.03-start-a-project
+uid: learn.introduction-to-git.2-start-a-project
 title: Start a project
 metadata:
   title: Start a project
   description: Create a new Git working tree and make your first commit
-  ms-date: 05/06/2019
-  author: ssavitzky
-  ms-author: TBD
+  ms.date: 06/24/2019
+  author: v-jeffpr
+  ms.author: shana.matthews
   ms.topic: interactive-tutorial
   ms.prod: learning-git
   ROBOTS: NOINDEX
-durationInMinutes: 11
+durationInMinutes: 10
 content: |
-  [!include[](includes/03-start-a-project.md)]
+  [!include[](includes/2-start-a-project.md)]
