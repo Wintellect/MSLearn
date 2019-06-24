@@ -169,7 +169,7 @@ You can see why once you're hundreds (or thousands) of commits into a project, t
 
 ## Summary
 
-In this unit, you learned two new Git commands:
+In this lesson, you learned two new Git commands:
 
 - [`git diff`](https://git-scm.com/docs/git-diff), which shows the differences between versions
 - [`git mv`](https://git-scm.com/docs/git-mv), which moves (renames) a file or subdirectory
