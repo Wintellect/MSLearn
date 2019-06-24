@@ -108,7 +108,7 @@ Because your project directory and the "Alice" directory are on the same compute
 	git pull alice master
 	```
 
-	Notice that you have to specify a branch, "master," in the pull command. You will learn in the next unit how to fix that by setting an upstream URL.
+	Notice that you have to specify a branch, "master," in the pull command. You will learn in the next lesson how to fix that by setting an upstream URL.
 
 1. Open the **index.html** file in your project directory in your browser. What color is the page background? What does this tell you about what `git pull` did? 
 
