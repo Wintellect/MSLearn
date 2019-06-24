@@ -35,3 +35,9 @@ You could go even further. You could build an app that monitors Twitter for twee
 	- Access to the images can be restricted using Azure Active Directory (AAD)
 	- Images are easily replicated across Azure regions
 	- All of the above
+
+1. Which of the following statements is true when you create an Azure Container Registry with the `--admin-enabled true` option?
+	- The registry name doubles as the user name for logging in
+	- The registry name doubles as the password for logging in
+	- The registry name is subject to additional security rules
+	- The registry name must start with "admin_"
