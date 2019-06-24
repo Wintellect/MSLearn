@@ -69,10 +69,10 @@ Alice starts working on the Web site. Her first decision is to change the site's
 
 1. At this point, you (Alice) *could* attempt to push the changes to the original repo. But it would fail because Alice doesn't have permission to modify your repo. And that's as it should be. For now, you want to review Alice's changes before folding them into the master code base.
 
-	For now, Alice has to submit a *pull request* asking you to pull her changes. She can do that with [`git request-pull`](https://git-scm.com/docs/git-request-pull). To that end, execute the following command:
+	For now, Alice has to submit a *pull request* asking you to pull her changes. She can do that with [`git request-pull`](https://git-scm.com/docs/git-request-pull). To that end, execute the following command, and once more be sure to include the period:
 
 	```bash
-	$ git request-pull -p origin/master .
+	git request-pull -p origin/master .
 	```
 
 	`origin/master` is Alice's way of referring to the "master" branch on the "origin" remote.
