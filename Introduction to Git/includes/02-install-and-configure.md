@@ -139,4 +139,4 @@ Now that Git is installed, let's make sure it's configured properly.
 	file:C:/Users/scottgu/.gitconfig      core.safecrlf=true
 	```
 
-In the next unit, you learn how to set up a project so you can use Git to track changes.
+In the next lesson, you learn how to set up a project so you can use Git to track changes.
