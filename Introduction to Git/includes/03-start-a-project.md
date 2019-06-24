@@ -9,10 +9,7 @@ There are actually two ways to create a Git working tree on your computer. One i
 Start by creating an empty project directory and initializing a Git repository
 inside it.
 
-1. Create a directory named "Cats" in the location of your choice. (The
-   directory name is unimportant; Git is happy to work with it regardless. But
-   for these exercises, we will assume that you named it "Cats.") This will be
-   the *working tree* (sometimes called a "project directory") where your Web site is stored and the files that comprise it are located.
+1. Create a directory named "Cats" in the location of your choice. (The directory name is unimportant; Git is happy to work with it regardless. But for these exercises, we will assume that you named it "Cats.") This will be the *working tree* (sometimes called a "project directory") where your Web site is stored and the files that comprise it are located.
 
 1. `cd` to the project directory in a Command Prompt window or terminal. Then execute a [`git init`](https://git-scm.com/docs/git-init) command to initialize the repository:
 
@@ -25,7 +22,7 @@ inside it.
 	git status
 	```
 
-	Git responds by saying "Nothing to commit." It also says "On branch master" indicating that "master," which is presently the only branch, is the current branch. So far, so good.
+	Git responds by saying "Nothing to commit." It also says "On branch master" indicating that "master" is the current branch. (It's also the only branch.) So far, so good.
 
 1. Use an `ls` command to show the contents of the working tree:
 
