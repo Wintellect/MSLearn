@@ -43,7 +43,7 @@ Alice wants to add some CSS to style the cat pictures, so she creates a _topic b
 	git checkout add-style
 	```
 
-	You have already encountered `checkout` as a way of replacing files in the working tree by getting them from the index. With no paths in the argument list, `checkout` updates *everything* in the working tree and the index to match the specified commit — in this case the head of the branch.
+	You have already encountered `checkout` as a way of replacing files in the working tree by getting them from the index. With no paths in the argument list, `checkout` updates *everything* in the working tree and the index to match the specified commit — in this case, the head of the branch.
 
 1. Open **site.css** in the "Alice/assets" directory and add the following CSS class definition to the bottom of the file:
 
