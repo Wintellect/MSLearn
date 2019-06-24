@@ -135,8 +135,6 @@ While Alice is working on the CSS, Bob is sitting in an apartment on the other s
 	git push
 	```
 
-Could Bob have performed a fast-forward merge? **Steven: Can you comment on this?**
-
 ## Sync the repos
 
 At this point, Bob has an up-to-date repo, but you and Alice do not. Each of you needs to a do a `git pull` from the shared repo to make sure you have the latest and greatest version of the site.
