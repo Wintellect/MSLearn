@@ -48,7 +48,7 @@ Creating a bare repo for sharing is easy.
 	git branch --set-upstream-to origin/master
 	```
 
-Git would have complained if you had tried to do this before the initial push, because the new repository had no branches yet. Git can't track a branch that doesn't exist. All Git is doing under the hood is looking in ".git/refs/remotes" for a file named **origin/trunk**.
+Git would have complained if you had tried to do this before the initial push, because the new repository had no branches. Git can't track a branch that doesn't exist. All Git is doing under the hood is looking in ".git/refs/remotes" for a file named **origin/trunk**.
 
 ## Set up for collaborators
 
