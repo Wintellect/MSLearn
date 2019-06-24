@@ -4,7 +4,7 @@ Your Web site for cat pictures is well underway and version control is being per
 
 This is where Git's _distributed_ nature comes in. It permits two or more people to work together on a project without fear of overwriting one another's work. Moreover, it allows you to check Alice's work before merging it with yours. Alice is talented, but no developer is perfect. Trust but verify.
 
-In this unit, you learn how to clone a repository to make it available to other people. You also learn to use one of Git's most important features: pull requests.
+In this lesson, you learn how to clone a repository to make it available to other people. You also learn to use one of Git's most important features: pull requests.
 
 ## Clone a repository
 
@@ -116,11 +116,11 @@ Behind the scenes, `git pull` is a combination of two simpler operations: `git f
 
 ## Summary
 
-In this unit, you learned how to use pulls and pull requests to collaborate with another developer. You also became acquainted with the core Git commands used to support collaboration:
+In this lesson, you learned how to use pulls and pull requests to collaborate with another developer. You also became acquainted with the core Git commands used to support collaboration:
 
 - [`git clone`](https://git-scm.com/docs/git-clone), which clones (copies) a repo
 - [`git pull`](https://git-scm.com/docs/git-pull), which fetches commits from another repo and merges them into yours
 - [`git request-pull`](https://git-scm.com/docs/git-request-pull), which creates a pull request
 - [`git remote`](https://git-scm.com/docs/git-remote), which lists, creates, modifies, or deletes remotes
 
-The fun is just beginning. In the next unit, you learn how to set up and use a shared repository, which makes collaborating much simpler and more convenient.
+The fun is just beginning. In the next lesson, you learn how to set up and use a shared repository, which makes collaborating simpler and more convenient.
