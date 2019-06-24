@@ -138,7 +138,7 @@ There are several types of resets. The default is `--mixed`, which resets the in
 
 ## Summary
 
-In this unit, you learned several new Git commands:
+In this lesson, you learned several new Git commands:
 
 - [`git checkout`](https://git-scm.com/docs/git-checkout), which retrieves previous versions
 - [`git reset`](https://git-scm.com/docs/git-reset), which sets the working tree and index back to an earlier state
