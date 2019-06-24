@@ -101,7 +101,7 @@ Now let's replace **.git-keep** with a CSS file and update **index.html** to ref
 	rm CSS/.git-keep
 	```
 
-1. Use your favorite text editor to create a file named **site.css** in the "CSS" subdirectory and add the following CSS to it. Then save your changes to the file.
+1. Use your favorite text editor to create a file named **site.css** in the "CSS" subdirectory and add the following CSS to it. Then save the file.
 
 	```css
 	h1, h2, h3, h4, h5, h6 { font-family: sans-serif; }
