@@ -145,4 +145,4 @@ In this unit, you learned several new Git commands:
 - [`git revert`](https://git-scm.com/docs/git-revert), which undoes the effect of a commit without affecting history
 - [`git commit --amend`](https://git-scm.com/docs/git-commit), which changes the most recent commit
 
-In the next unit, you start collaborating with another developer. Because Git is distributed, you won't have to set up a server; you can share changes directly.
+In the next lesson, you start collaborating with another developer.
