@@ -82,7 +82,7 @@ Most Web sites use CSS style sheets as well as HTML, and the site you're buildin
 
 1. People used to other version-control systems are often surprised to learn that Git doesn't consider adding an empty directory to be a change. That's because Git only tracks changes to *files*, not directories.
 
-	Sometimes, especially in the initial stages of development, you *want* to have empty directories as placeholders. A common convention is to create an empty file in them. It's often called `.git-keep`. Use the following commands to create an empty file with that name in the "CSS" subdirectory and add the contents of the subdirectory to the index:
+	Sometimes, especially in the initial stages of development, you *want* to have empty directories as placeholders. A common convention is to create an empty file in them. It's often called **.git-keep**. Use the following commands to create an empty file with that name in the "CSS" subdirectory and add the contents of the subdirectory to the index:
 
 	```bash
 	touch CSS/.git-keep
