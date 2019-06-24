@@ -1,15 +1,15 @@
 ### YamlMime:ModuleUnit
-uid: learn.introduction-to-git.09-resolve-merge-conflicts
-title: Simplify histories and resolve merge conflicts
+uid: learn.introduction-to-git.8-resolve-merge-conflicts
+title: Resolve merge conflicts
 metadata:
-  title: Simplify histories and resolve merge conflicts
-  description: Modify unmerged branches and resolve merge conflicts.
-  ms-date: 05/06/2019
-  author: ssavitzky
-  ms-author: TBD
+  title: Resolve merge conflicts
+  description: Modify unmerged branches and resolve merge conflicts
+  ms.date: 06/24/2019
+  author: v-jeffpr
+  ms.author: shana.matthews
   ms.topic: interactive-tutorial
   ms.prod: learning-git
   ROBOTS: NOINDEX
-durationInMinutes: 12
+durationInMinutes: 10
 content: |
-  [!include[](includes/09-resolve-merge-conflicts.md)]
+  [!include[](includes/8-resolve-merge-conflicts.md)]

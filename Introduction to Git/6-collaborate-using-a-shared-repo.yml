@@ -1,18 +1,18 @@
 ### YamlMime:ModuleUnit
-uid: learn.introduction-to-git.07-collaborate-using-a-shared-repo
+uid: learn.introduction-to-git.6-collaborate-using-a-shared-repo
 title: Collaborate using a shared repo
 metadata:
   title: Collaborate using a shared repo
   description: Set up a bare repo that changes can be pushed to as well as pulled from
-  ms-date: 05/06/2019
-  author: ssavitzky
-  ms-author: TBD
+  ms.date: 06/24/2019
+  author: v-jeffpr
+  ms.author: shana.matthews
   ms.topic: interactive-tutorial
   ms.prod: learning-git
   ROBOTS: NOINDEX
-durationInMinutes: 12
+durationInMinutes: 10
 content: |
-  [!include[](includes/07-collaborate-using-a-shared-repo.md)]
+  [!include[](includes/6-collaborate-using-a-shared-repo.md)]
 quiz:
   title: Collaborate using a shared repo
   description: Confirm your understanding of collaboration using Git.

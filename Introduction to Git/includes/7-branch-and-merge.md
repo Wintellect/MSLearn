@@ -1,4 +1,4 @@
-# Work in branches
+# Branch and merge
 
 As your project progresses, the developers want to work on more than one task at a time, fixing bugs while implementing new features. They need a way to keep their work separate so what one person is doing doesn't affect another.
 

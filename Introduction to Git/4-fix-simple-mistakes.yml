@@ -10,7 +10,7 @@ metadata:
   ms.topic: interactive-tutorial
   ms.prod: learning-git
   ROBOTS: NOINDEX
-durationInMinutes: 11
+durationInMinutes: 10
 content: |
   [!include[](includes/4-fix-simple-mistakes.md)]
 quiz:

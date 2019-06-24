@@ -1,0 +1,15 @@
+### YamlMime:ModuleUnit
+uid: learn.introduction-to-git.7-branch-and-merge
+title: Branch and merge
+metadata:
+  title: Branch and merge
+  description: Create and merge branches
+  ms.date: 06/24/2019
+  author: v-jeffpr
+  ms.author: shana.matthews
+  ms.topic: interactive-tutorial
+  ms.prod: learning-git
+  ROBOTS: NOINDEX
+durationInMinutes: 10
+content: |
+  [!include[](includes/7-branch-and-merge.md)]
