@@ -4,11 +4,11 @@ Imagine that you have started a new job as a software developer at a firm that w
 
 So you decide to build a Web site that lets you and your friends share pictures of your cats. The project will serve as a learning platform, and you will apply the lessons learned there at work. You enlist a couple of friends who are also software developers to help out. Together, you set out to build the site using Git to aid in collaboration, keep track of changes (and who makes them), make sure nothing bad happens when two people change the same file, and keep all the source-code files backed up in case the server goes down.
 
-In this module, you accomplish all this and more with Git. Git can seem a little cryptic at first and even be frustrating at times, but if you learn it step by step, you will find that there's a reason it is quickly becoming the world's most popular version-control system — not just for software developers, but for teams who write documentation and produce other collaborative work as well. 
+In this module, you accomplish all this and more with Git. Git can seem a little cryptic at first and even be frustrating at times, but if you learn it step by step, you will find that there's a reason it is quickly becoming the world's most popular version-control system — not just for software developers, but for teams who write documentation and produce other collaborative works as well. 
 
 ## What is a version-control system?
 
-A version-control system (VCS) is a program (or set of programs) that tracks changes to a collection of files. One goal is to easily recall earlier versions of individual files or the entire project. Another is to allow several team members to work on a project, even on the same files, at the same time without impacting each other.
+A [version-control system](https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control) (VCS) is a program (or set of programs) that tracks changes to a collection of files. One goal is to easily recall earlier versions of individual files or the entire project. Another is to allow several team members to work on a project, even on the same files, at the same time without impacting each other.
 
 Another name for version-control systems is software configuration management (SCM) systems. The two terms are often used interchangeably — in fact, Git's official documentation is located at [git-scm.com](https://git-scm.com/). Technically, however, version control is just one of the practices involved in SCM, while a VCS can be used for projects other than software including books and online tutorials.
 
@@ -36,9 +36,9 @@ To understand Git, you have to understand the terminology. Here is a short list 
 
 - **Repository (repo):** The directory, located at the top level of a working tree, where Git keeps all of the history and metadata for a project. Repositories are almost always referred to as *repos*. A *bare repository* is one that is not part of a working tree; it is used for sharing or backup. A bare repo is usually a directory with a name ending in **.git** — for example, **project.git**.
 
-- **Hash:** A number produced by a [hash function](https://en.wikipedia.org/wiki/Hash_function) that reduces the contents of a file or other object to a fixed number of bits. Git uses [SHA-1 hashes](https://en.wikipedia.org/wiki/SHA-1), which are 160 bits long. The hashes of two files that differ only slightly are typically completely different. One advantage to using hashes is that Git can tell whether a file has changed by hashing its contents and comparing the result to the previous hash. If the file's time-and-date stamp has changed but the file's contents have not, Git knows it.
+- **Hash:** A number produced by a [hash function](https://en.wikipedia.org/wiki/Hash_function) that reduces the contents of a file or other object to a fixed number of bits. Git uses [SHA-1 hashes](https://en.wikipedia.org/wiki/SHA-1), which are 160 bits long. One advantage to using hashes is that Git can tell whether a file has changed by hashing its contents and comparing the result to the previous hash. If the file's time-and-date stamp has changed but the file's contents have not, Git knows it.
 
-- **Object (blob, tree, commit, tag):** A Git repo contains four types of "objects," each uniquely identified by an SHA-1 hash. A **blob** object contains an ordinary file. A **tree** object represents a directory; it contains names, hashes, and permissions. A **commit** object represents a specific version of the working tree. It contains the commit message, the name and e-mail address of the person who made it, the date, and the hashes of the current tree and the previous commit (called the *parent*). A commit may also be signed. A **tag** is a name attached to a commit. Tags come in two types. A _lightweight_ tag is a named reference to a commit. An _annotated_ tag has essentially the same information as a commit.
+- **Object:** A Git repo contains four types of "objects," each uniquely identified by an SHA-1 hash. A **blob** object contains an ordinary file. A **tree** object represents a directory; it contains names, hashes, and permissions. A **commit** object represents a specific version of the working tree. A **tag** is a name attached to a commit.
 
 - **Commit (verb):** When used as a verb, "commit" means to make a commit object. This action takes its name from commits to a database. It means you are committing the changes you have made so others can eventually see them, too.
 
@@ -47,8 +47,6 @@ To understand Git, you have to understand the terminology. Here is a short list 
 - **Remote:** A named reference to another Git repository. When you create a repo, Git creates a remote named "origin" that is the default remote for push and pull operations.
 
 - **Commands**, **subcommands**, and **options:** Git operations are performed using commands such as `git push` and `git pull`. `git` is the command, and `push` or `pull` is the subcommand. The subcommand specifies the operation you want Git to perform. Commands are frequently accompanied by options, which are predceded by hyphens (-) or double hyphens (--) — for example, `git reset --hard`. 
-
-- **Workflow:** a task or (more often) sequence of tasks, typically involving both human interactions and software automation. One goal in designing workflows is to automate processes as much as possible.
 
 Once more, don't get too hung up on the details. These terms and others such as "push" and "pull" will make more sense shortly. But you have to start somewhere, and you might find it helpful to come back and review this glossary terms after you have completed this module.
 
