@@ -73,7 +73,7 @@ Alice wants to add some CSS to style the cat pictures, so she creates a _topic b
 
 Performing a fast-forward merge because "master" has no changes wasn't strictly necessary in this case because Git would have done it anyway. Still, it's a good habit to get into.
 
-# Create a branch for Bob
+## Create a branch for Bob
 
 While Alice is working on the CSS, Bob is sitting in an apartment on the other side of town blissfully unaware of what Alice is doing (which is OK since they're both using branches). Bob decides to make some changes of his own.
 
