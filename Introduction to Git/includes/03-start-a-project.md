@@ -144,8 +144,6 @@ In this lesson, you learned how to create a project that is under Git's control.
 - [`git add`](https://git-scm.com/docs/git-add), which adds files or directories to the index
 - [`git commit`](https://git-scm.com/docs/git-commit), which records all of the files in the index in a commit
 - [`git status`](https://git-scm.com/docs/git-status), which tells you the current state of the index and the working tree
-- [`git log`](https://git-scm.com/docs/git-log), which lists commits, newest first 
-- [`git show`](https://git-scm.com/docs/git-show), which prints the contents  of an object in human-readable form
-- [`git cat-file`](https://git-scm.com/docs/git-cat-file), which outputs the contents of an object
+- [`git log`](https://git-scm.com/docs/git-log), which lists commits, newest first
 
 In the next less, you start making and tracking changes. (You get to do cat photos, too.)
