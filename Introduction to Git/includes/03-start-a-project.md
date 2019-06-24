@@ -33,10 +33,7 @@ inside it.
 	ls -aF
 	```
 
-	Confirm that the directory contains a subdirectory named ".git." (You
-	won't see it unless you use the `-a` option with `ls` -- Linux normally
-	hides filenames that start with a period.) This is Git's *repository*, the
-	directory in which Git stores metadata and history for the working tree.
+	Confirm that the directory contains a subdirectory named ".git." (You won't see it unless you use the `-a` option with `ls`. Linux normally hides file names that start with a period.) This is  the Git *repository* — the directory in which Git stores metadata and history for the working tree.
 
 You typically don't do anything with the ".git" directory directly. Git updates the metadata there as the status of the working tree changes. This directory is hands-off for you, but it's incredibly important to Git.
 
