@@ -125,7 +125,7 @@ Now that Bob is set up to work on the Web site, he decides to add a footer to th
 	nav { background-color: #C0D8DF; }
 	```
 
-1. Save both files. Now let's assume that Alice receives an e-mail from Bob saying he has made changes to the site. She decides to pull his changes before committing her own. (If she had already committed her changes, she would have a different problem which is discussed in the next unit.) Do a pull with `git pull`:
+1. Save both files. Now let's assume that Alice receives an e-mail from Bob saying he has made changes to the site. She decides to pull his changes before committing her own. (If she had already committed her changes, she would have a different problem which is discussed in the next lesson.) Do a pull with `git pull`:
 
 	```bash
 	git pull
@@ -202,17 +202,17 @@ Now that Bob is set up to work on the Web site, he decides to add a footer to th
 
 	_The updated home page_
 
-Note that if Alice had committed her changes rather than stashing them a few moments ago, the situation would have been somewhat different. She would have had to make a branch and either merge or rebase her changes. (Branches, merging, and rebasing are covered in the next unit.)
+Note that if Alice had committed her changes rather than stashing them a few moments ago, the situation would have been somewhat different. She would have had to make a branch and either merge or rebase her changes. (Branching and merging are covered in the next lesson.)
 
-Had Alice begun by working on a branch in the first place she would have saved herself quite a lot of trouble. You will learn how to do that in the next unit. For now it's worth pointing out that branching and rebasing is _exactly_ what `stash` accomplishes behind the scenes.
+Had Alice begun by working on a branch in the first place, she would have saved herself quite a lot of trouble. For now it's worth pointing out that branching and rebasing is _exactly_ what `stash` accomplishes behind the scenes.
 
 ## Summary
 
-In this unit, you learned how to set up a bare repository that can be shared among a group of developers, and about some new and very important Git commands:
+In this lesson, you learned how to set up a bare repository that can be shared among a group of developers, and about some new and very important Git commands:
 
 - [`git init --bare`](https://git-scm.com/docs/git-commit), which sets up a repo that can be shared
 - [`git branch --set-upstream-to`](https://git-scm.com/docs/git-branch), which specifies the default origin and branch for pushes and pulls
 - [`git stash`](https://git-scm.com/docs/git-stash), which saves uncommitted changes so you can merge safely
 - [`git push`](https://git-scm.com/docs/git-push), which merges changes with a remote repo
 
-In the next unit, you take another big step by learning how to create and merge branches.
+In the next lesson, you take another big step by learning how to create and merge branches.
