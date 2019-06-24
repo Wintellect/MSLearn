@@ -165,7 +165,7 @@ Now that you have a reasonable number of changes recorded, you can use `git log`
 	git log --oneline
 	```
 
-You can see why once you're hundreds (or thousands) of commits into a project, the `--online` option might be your best friend. Another useful option is `-nX`, where X is a commit number: 1 for the latest commit, 2 for the one before that, and so on. To see for yourself, try a `git log -n2` command.
+You can see why once you're hundreds (or thousands) of commits into a project, the `--oneline` option might be your best friend. Another useful option is `-nX`, where X is a commit number: 1 for the latest commit, 2 for the one before that, and so on. To see for yourself, try a `git log -n2` command.
 
 ## Summary
 
