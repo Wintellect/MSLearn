@@ -81,7 +81,7 @@ Here's another "Aha!" moment for new Git users. Many version-control systems mak
 
 ## Revert a commit
 
-Now let's make things more complicated still. Suppose you accidentally overwrite one file with another, or make a change to a file that turns out to be a big mistake. You want to revert to the previous version of the file, but you had already committed the changes. This means that a simple `git checkout` won't do the trick.
+Now let's make things more complicated. Suppose you accidentally overwrite one file with another, or make a change to a file that turns out to be a big mistake. You want to revert to the previous version of the file, but you had already committed the changes. This means that a simple `git checkout` won't do the trick.
 
 One solution to this problem is to revert the previous commit.
 
