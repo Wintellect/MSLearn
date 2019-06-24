@@ -68,7 +68,7 @@ tree to serve as the home page for the Web site.
 
 	Notice that `git status` gives you hints about what you can do next. Git can be configured to be less wordy, but at this stage, more is better.
 
-1. Now use [`git add`](https://git-scm.com/docs/git-status) to add the new file to Git's "index," followed by `git status` to check the status. Don't forget the period at the end of the first command. It tells Git to index all of the files in the current directory that have been added or modified:
+1. Now use [`git add`](https://git-scm.com/docs/git-status) to add the new file to Git's "index," followed by `git status` to check the status. **Don't forget the period at the end of the first command**. It tells Git to index all of the files in the current directory that have been added or modified:
 
 	```bash
 	git add .
