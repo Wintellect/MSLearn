@@ -22,7 +22,7 @@ Let's started by taking on Alice's role again and making a change to the Web sit
 	git checkout -b add-cat
 	```
 
-1. Copy **bombay-cat-180x240.jpg** from [insert location here] into Alice's "assets" directory. Then open **index.html** and replace this line:
+1. Copy **bombay-cat-180x240.jpg** from the zip file containing the [resources that accompany this lesson](https://topcs.blob.core.windows.net/public/git-resources.zip) into Alice's "assets" directory. Then open **index.html** and replace this line:
 
 	```html
 	<img src="assets/bobcat2-317x240.jpg">
