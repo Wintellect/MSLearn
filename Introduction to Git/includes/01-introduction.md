@@ -40,7 +40,7 @@ To understand Git, you have to understand the terminology. Here is a short list 
 
 - **Object:** A Git repo contains four types of "objects," each uniquely identified by an SHA-1 hash. A **blob** object contains an ordinary file. A **tree** object represents a directory; it contains names, hashes, and permissions. A **commit** object represents a specific version of the working tree. A **tag** is a name attached to a commit.
 
-- **Commit (verb):** When used as a verb, "commit" means to make a commit object. This action takes its name from commits to a database. It means you are committing the changes you have made so others can eventually see them, too.
+- **Commit:** When used as a verb, "commit" means to make a commit object. This action takes its name from commits to a database. It means you are committing the changes you have made so others can eventually see them, too.
 
 - **Branch:** A named series of linked commits. The most recent commit on a branch is called the *head*. The default branch, which is created when you initialize a repository, is called "master." The head of the current branch is called `HEAD`. Branches are an incredibly useful feature of Git because they allow developers to work independently (or together) in branches and later merge their changes into master.
 
