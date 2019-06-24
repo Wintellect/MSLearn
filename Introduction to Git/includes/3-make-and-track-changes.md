@@ -33,7 +33,7 @@ The Web site's home page, **index.html** currently contains just one line of HTM
 	git diff
 	``` 
 
-	The output format is the same as that of the Unix `diff` command, and it takes many of the same options. A plus sign appears in front of lines that were added, and a minus sign indicates lines that were deleted. Notice that the `h1` line hasn't changed.
+	The output format is the same as that of the Unix `diff` command, and it takes many of the same options. A plus sign appears in front of lines that were added, and a minus sign indicates lines that were deleted.
 
 	The default is for `git diff` to compare the working tree to the index. In other words, it shows you all of the changes that haven't been staged (added to the index) yet. To compare the working tree to the last commit, you can use `git diff HEAD`.
 
