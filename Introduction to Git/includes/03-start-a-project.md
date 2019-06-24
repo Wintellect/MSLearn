@@ -146,4 +146,4 @@ In this lesson, you learned how to create a project that is under Git's control.
 - [`git status`](https://git-scm.com/docs/git-status), which tells you the current state of the index and the working tree
 - [`git log`](https://git-scm.com/docs/git-log), which lists commits, newest first
 
-In the next less, you start making and tracking changes. (You get to do cat photos, too.)
+In the next lesson, you start making and tracking changes. (You get to do cat photos, too.)
