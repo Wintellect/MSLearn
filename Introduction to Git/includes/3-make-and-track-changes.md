@@ -52,7 +52,7 @@ The Web site's home page, **index.html** currently contains just one line of HTM
 	Use the following command to create a file named **.gitgnore** that instructs Git to ignore files whose names end in **.bak** or **~**:
 
 	```bash
-	$ echo -e "*.bak\n*~" > .gitignore
+	echo -e "*.bak\n*~" > .gitignore
 	```
 
 	**.gitignore** is a very important file in the Git world because it prevents extraneous files from being submitted to version control. Boilerplate **.gitignore** files are available for popular programming environments such as Microsoft's [Visual Studio](https://visualstudio.microsoft.com/).
