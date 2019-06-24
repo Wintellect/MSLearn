@@ -64,7 +64,7 @@ Alice wants to add some CSS to style the cat pictures, so she creates a _topic b
 	git pull
 	```
 
-1. The output says that "master" is up to date (in other words, "master" on Alice's computer matches "master" in the shared repo), so Alice merges the "add-style" branch into "master" using `git merge --ff-only` to perform a "fast-forward" merge. Then she pushes "master" from her repo to the shared repo:
+1. The output says that "master" is up to date (in other words, "master" on Alice's computer matches "master" in the shared repo), so Alice merges the "add-style" branch into "master" using `git merge --ff-only` to perform a [fast-forward merge](https://ariya.io/2013/09/fast-forward-git-merge). Then she pushes "master" from her repo to the shared repo:
 
 	```bash
 	git merge --ff-only add-style
@@ -72,8 +72,6 @@ Alice wants to add some CSS to style the cat pictures, so she creates a _topic b
 	```
 
 Performing a fast-forward merge because "master" has no changes wasn't strictly necessary in this case because Git would have done it anyway. Still, it's a good habit to get into.
-
-**Steven: Is this true? Would Git have performed a fast-forward merge anyway? And why is it a good habit to get into?**
 
 # Create a branch for Bob
 
