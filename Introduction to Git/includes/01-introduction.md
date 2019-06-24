@@ -58,4 +58,4 @@ The exercises in this module use the Git command line — specifically, Git comm
 
 If you use Windows, you should be aware of a couple of peculiarities stemming from Git's Linux heritage. First, commands are case-sensitive. Second, paths use forward slashes ("/") rather than backslashes.
 
-The next step is to install Git on your computer and verify that it's working. Ready? Let's get started.
+The next step is to install Git on your computer and verify that it's working.
