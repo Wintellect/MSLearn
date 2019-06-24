@@ -77,7 +77,7 @@ Performing a fast-forward merge because "master" has no changes wasn't strictly 
 
 While Alice is working on the CSS, Bob is sitting in an apartment on the other side of town blissfully unaware of what Alice is doing (which is OK since they're both using branches). Bob decides to make some changes of his own.
 
-1. Start by assuming the role of Bob:
+1. Start by assuming the role of Bob again:
 
 	```bash
 	cd ../Bob
@@ -91,11 +91,7 @@ While Alice is working on the CSS, Bob is sitting in an apartment on the other s
 	git checkout -b add-cat
 	```
 
-1. Copy **bobcat2-317x240.jpg** from [insert location here] into Bob's "assets" directory:
-
-	```bash
-	cp bobcat2-317x240.jpg assets
-	```
+1. Copy **bobcat2-317x240.jpg** from the zip file containing the [resources that accompany this lesson](https://topcs.blob.core.windows.net/public/git-resources.zip) into Bob's "assets" directory.
 
 1. Now open **index.html** and replace the line that says "Eventually we will put cat pictures here" with the following statement, and then save the file:
 
