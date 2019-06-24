@@ -42,7 +42,7 @@ Right now there's nothing for Alice to pull because you haven't made any changes
 git pull
 ```
 
-Git only pulls or pushes (which is copying in the other direction) when you tell it to. That's different from, say, Dropbox, which has to ask the operating system to notify it of any changes you make in its folder, and occasionally ask the server whether anyone else has made changes.
+Git only pulls or pushes when you tell it to. That's different from, say, Dropbox, which has to ask the operating system to notify it of any changes you make in its folder, and occasionally ask the server whether anyone else has made changes.
 
 ## Make a change and submit a pull request
 
