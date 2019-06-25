@@ -4,15 +4,34 @@ Sometimes, no matter how well you plan, things go wrong. Imagine that two develo
 
 The good news is that Git provides solutions for dealing with merge conflicts.
 
-## Make a change as Alice
+## Create branches for Bob and Alice
 
-Let's started by taking on Alice's role again and making a change to the Web site's home page by replacing the picture of Bob's cat with a picture of Alice's.
+Let's begin by creating a branch for Bob and a branch for Alice. Both are working at the same time, although neither is aware of it.
 
-1. Navigate to the "Alice" directory and create a branch named "add-cat" to work in:
+1. Navigate to the "Alice" directory and create a branch named "add-cat" for Alice to work in:
 
 	```bash
 	cd ../Alice
 	git checkout -b add-cat
+	```
+
+1. Return to "Bob" and create a branch named "style-cat" for Bob to work in:
+
+	```bash
+	cd ../Bob
+	git checkout -b style-cat
+	```
+
+Now let's make some changes in the branches.
+
+## Make a change as Alice
+
+Let's assume Alice's role again and make a change to the Web site's home page by replacing the picture of Bob's cat with a picture of Alice's.
+
+1. Navigate back to the "Alice" directory:
+
+	```bash
+	cd ../Alice
 	```
 
 1. Copy **bombay-cat-180x240.jpg** from the zip file containing the [resources that accompany this lesson](https://topcs.blob.core.windows.net/public/git-resources.zip) into Alice's "assets" directory. Then open **index.html** and replace this line:
@@ -46,11 +65,10 @@ Finish up by confirming that the push succeeded.
 
 Without knowing what Alice is doing, Bob notices that Alice's last push added a CSS style named `cats` to **site.css**. So he decides to apply that class to his cat picture.
 
-1. Return to "Bob" and create a branch named "style-cat:"
+1. Return to the "Bob" directory:
 
 	```bash
 	cd ../Bob
-	git checkout -b style-cat
 	```
 
 1. Open **index.html**, add a `class="cat"` attribute to the `<img>` element, and save the file:
