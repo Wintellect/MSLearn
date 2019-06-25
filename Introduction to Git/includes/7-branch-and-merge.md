@@ -28,17 +28,10 @@ Each capital letter in the diagram represents a commit. Branches are given names
 
 Alice wants to add some CSS to style the cat pictures, so she creates a _topic branch_ (sometimes called a _feature branch_) and calls it "add-style." Let's assume the role of Alice, create the branch, and do some work in that branch.
 
-1. Assuming you're in the project directory, navigate to the "Alice" directory and assume the role of Alice:
+1. Assuming you're in the project directory, navigate back to the "Alice" directory. Then use the [`git branch`](https://git-scm.com/docs/git-branch) command to create a branch named "add-style," and the [`git checkout`](https://git-scm.com/docs/git-checkout) command to switch to that branch (make it the *current branch*):
 
 	```bash
 	cd ../Alice
-	git config user.name Alice
-	git config user.email alice@contoso.com
-	``` 
-
-1. Now use the [`git branch`](https://git-scm.com/docs/git-branch) command to create a branch named "add-style," and the [`git checkout`](https://git-scm.com/docs/git-checkout) command to switch to that branch (make it the *current branch*):
-
-	```bash
 	git branch add-style
 	git checkout add-style
 	```
@@ -77,17 +70,10 @@ Performing a fast-forward merge because "master" has no changes wasn't strictly 
 
 While Alice is working on the CSS, Bob is sitting in an apartment on the other side of town blissfully unaware of what Alice is doing (which is OK since they're both using branches). Bob decides to make some changes of his own.
 
-1. Start by assuming the role of Bob again:
+1. Return to the "Bob" directory and use the following command to create a branch named "add-cat,", using the popular `checkout -b` option to create the branch and switch to it in a single command:
 
-	```bash
+	```
 	cd ../Bob
-	git config user.name Bob
-	git config user.email bob@contoso.com
-	```
-
-1. Now use the following command to create a branch named "add-cat,", using the popular `checkout -b` option to create the branch and switch to it in a single command:
-
-	```
 	git checkout -b add-cat
 	```
 
