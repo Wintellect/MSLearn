@@ -102,16 +102,16 @@ While Alice is working on the CSS, Bob is sitting in an apartment on the other s
 	This time, the output indicates that changes *have* been made to "master" in the shared repo (the result of Alice's push). It also indicates that the change pulled from "master" in the shared repo have been merged with "master" in Bob's repo:
 
 	```
-	remote: Counting objects: 9, done.
-	remote: Compressing objects: 100% (7/7), done.
-	remote: Total 9 (delta 2), reused 0 (delta 0)
-	Unpacking objects: 100% (9/9), done.
-	From D:/Labs/Git2/Bob/../Shared
-	   fa93e68..b93818e  master     -> origin/master
-	Updating fa93e68..b93818e
+	remote: Counting objects: 4, done.
+	remote: Compressing objects: 100% (3/3), done.
+	remote: Total 4 (delta 1), reused 0 (delta 0)
+	Unpacking objects: 100% (4/4), done.
+	From D:/Labs/Git/Bob/../Shared
+	   e81ae09..1d2bfea  master     -> origin/master
+	Updating e81ae09..1d2bfea
 	Fast-forward
-	 assets/site.css | 4 +++-
-	 index.html      | 1 +
+	 assets/site.css | 3 ++-
+	 1 file changed, 2 insertions(+), 1 deletion(-)
 	```
 
 1. Now Bob merges his branch into "master" so that "master" in his repo will have his *and* Alice's changes. (He does it without the `ff-only` switch since "master" had changed.) Then he pushes "master" on his computer to "master" in the shared repo: 
