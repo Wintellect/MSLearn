@@ -105,12 +105,10 @@ Now that Bob is set up to work on the Web site, he decides to add a footer to th
 	git push
 	```
 
-1. While Bob is editing the site, Alice is, too. She decides to add a nav bar to the page. This requires her to modify two files: **index.html** and **site.css**. `cd` to the "Alice" directory and configure Git to use Alice's credentials:
+1. While Bob is editing the site, Alice is, too. She decides to add a nav bar to the page. This requires her to modify two files: **index.html** and **site.css**. Begin by returning to the "Alice" directory:
 
 	```bash
 	cd ../Alice
-	git config user.name Alice
-	git config user.email alice@contoso.com
 	```
 
 1. Now open **index.html** and insert the following line right after the `<body>` tag on line 8:
