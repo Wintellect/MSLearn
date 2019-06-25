@@ -114,10 +114,10 @@ While Alice is working on the CSS, Bob is sitting in an apartment on the other s
 	 1 file changed, 2 insertions(+), 1 deletion(-)
 	```
 
-1. Now Bob merges his branch into "master" so that "master" in his repo will have his *and* Alice's changes. (He does it without the `ff-only` switch since "master" had changed.) Then he pushes "master" on his computer to "master" in the shared repo: 
+1. Now Bob merges his branch into "master" so that "master" in his repo will have his *and* Alice's changes. Then he pushes "master" on his computer to "master" in the shared repo: 
 
 	```bash
-	git merge add-cat
+	git merge --ff-only add-cat
 	git push
 	```
 
