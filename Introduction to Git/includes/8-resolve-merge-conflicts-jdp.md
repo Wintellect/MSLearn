@@ -26,7 +26,7 @@ Now let's make some changes in the branches.
 
 ## Make a change as Alice
 
-Let's started by taking on Alice's role again and making a change to the Web site's home page by replacing the picture of Bob's cat with a picture of Alice's.
+Let's assume Alice's role again and make a change to the Web site's home page by replacing the picture of Bob's cat with a picture of Alice's.
 
 1. Navigate back to the "Alice" directory:
 
