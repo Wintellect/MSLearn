@@ -77,23 +77,18 @@ Without knowing what Alice is doing, Bob notices that Alice's last push added a 
 	<img class="cat" src="assets/bobcat2-317x240.jpg">
 	```
 
-1. Now commit the change, switch back to "master," and do a pull:
+1. Now commit the change, switch back to "master," do a pull, and merge:
 
 	```bash
 	git commit -a -m "Style Bob's cat"
 	git checkout master
 	git pull
+	git merge add-style
 	```
 
 	And there it is: the dreaded merge conflict. The same line in the same file was changed by two people. Git sees that and reports "Updates were rejected because the remote contains work that you do not have locally." Git has no way of knowing whether the `src` attribute in the `<img>` element should reference **bobcat2-317x240.jpg** or **bombay-cat-180x240.jpg**:
 
 	```
-	remote: Counting objects: 3, done.
-	remote: Compressing objects: 100% (3/3), done.
-	remote: Total 3 (delta 2), reused 0 (delta 0)
-	Unpacking objects: 100% (3/3), done.
-	From D:/Labs/Git/Bob/../Shared
-	   e02d9e3..0398d54  master     -> origin/master
 	Auto-merging index.html
 	CONFLICT (content): Merge conflict in index.html
 	Automatic merge failed; fix conflicts and then commit the result.
