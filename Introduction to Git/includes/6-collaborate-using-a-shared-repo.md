@@ -185,12 +185,10 @@ Now that Bob is set up to work on the Web site, he decides to add a footer to th
 	git push
 	```
 
-1. The updated site is now in the shared repo. Finish up returning to the project directory, assuming your own identity again, and doing a pull:
+1. The updated site is now in the shared repo. Finish up returning to the project directory and doing a pull:
 
 	```bash
 	cd ../Cats
-	git config user.name USER_NAME
-	git config user.email USER_EMAIL
 	git pull
 	```
 
