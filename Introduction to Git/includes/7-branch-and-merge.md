@@ -28,7 +28,7 @@ Each capital letter in the diagram represents a commit. Branches are given names
 
 Alice wants to add some CSS to style the cat pictures, so she creates a _topic branch_ (sometimes called a _feature branch_) and calls it "add-style." Let's assume the role of Alice, create the branch, and do some work in that branch.
 
-1. Assuming you're in the project directory, navigate back to the "Alice" directory. Then use the [`git branch`](https://git-scm.com/docs/git-branch) command to create a branch named "add-style," and the [`git checkout`](https://git-scm.com/docs/git-checkout) command to switch to that branch (make it the *current branch*):
+1. Navigate back to the "Alice" directory. Then use the [`git branch`](https://git-scm.com/docs/git-branch) command to create a branch named "add-style," and the [`git checkout`](https://git-scm.com/docs/git-checkout) command to switch to that branch (make it the *current branch*):
 
 	```bash
 	cd ../Alice
