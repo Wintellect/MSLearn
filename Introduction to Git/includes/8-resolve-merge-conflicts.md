@@ -76,7 +76,7 @@ Without knowing what Alice is doing, Bob notices that Alice's last push added a 
 	Automatic merge failed; fix conflicts and then commit the result.
 	```
 
-From the output, it appears that the conflict is in **index.html**. The question now is: What's Bob to do?
+The output identifies **index.html** as the source of the conflict. The question now is: What's Bob to do?
 
 ## Resolve the merge conflict
 
