@@ -48,12 +48,14 @@ Git only pulls or pushes when you tell it to. That's different from, say, Dropbo
 
 Alice starts working on the Web site. Her first decision is to change the site's background color. She experiments locally, and ultimately chooses her favorite shade of light blue.
 
-1. Temporarily assume Alice's identity by executing the following commands:
+1. Assume Alice's identity by executing the following commands:
 
 	```bash
 	git config user.name Alice
 	git config user.email alice@contoso.com
 	```
+
+	These config settings are stored in the repo in **.git/config**, so you won't have to enter them again. Each time you `cd` into the "Alice" directory, you have effectively assumed Alice's identity.
 
 1. Open **site.css** in the "Alice/assets" directory (not your project directory's "assets" directory) and replace the second line in the file with this one to change the background color of the page to light blue:
 
