@@ -8,17 +8,10 @@ The good news is that Git provides solutions for dealing with merge conflicts.
 
 Let's started by taking on Alice's role again and making a change to the Web site's home page by replacing the picture of Bob's cat with a picture of Alice's.
 
-1. Navigate to the "Alice" directory and configure Git to use Alice's credentials:
+1. Navigate to the "Alice" directory and create a branch named "add-cat" to work in:
 
 	```bash
 	cd ../Alice
-	git config user.name Alice
-	git config user.email alice@contoso.com
-	``` 
-
-1. Create a branch named "add-cat" to work in:
-
-	```bash
 	git checkout -b add-cat
 	```
 
@@ -53,17 +46,10 @@ Finish up by confirming that the push succeeded.
 
 Without knowing what Alice is doing, Bob notices that Alice's last push added a CSS style named `cats` to **site.css**. So he decides to apply that class to his cat picture.
 
-1. Start by assuming the role of Bob:
+1. Return to "Bob" and create a branch named "style-cat:"
 
 	```bash
 	cd ../Bob
-	git config user.name Bob
-	git config user.email bob@contoso.com
-	```
-
-1. Create a branch named "style-cat" to work in:
-
-	```bash
 	git checkout -b style-cat
 	```
 
