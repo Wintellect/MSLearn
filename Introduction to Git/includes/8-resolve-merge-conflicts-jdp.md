@@ -86,7 +86,7 @@ Without knowing what Alice is doing, Bob notices that Alice's last push added a 
 	git merge style-cat
 	```
 
-	And there it is: the dreaded merge conflict. The same line in the same file was changed by two people. Git sees that and reports "Updates were rejected because the remote contains work that you do not have locally." Git has no way of knowing whether the `src` attribute in the `<img>` element should reference **bobcat2-317x240.jpg** or **bombay-cat-180x240.jpg**:
+	And there it is: the dreaded merge conflict. The same line in the same file was changed by two people. Git sees that and reports "Automatic merge failed." Git has no way of knowing whether the `src` attribute in the `<img>` element should reference **bobcat2-317x240.jpg** or **bombay-cat-180x240.jpg**:
 
 	```
 	Auto-merging index.html
@@ -94,19 +94,7 @@ Without knowing what Alice is doing, Bob notices that Alice's last push added a 
 	Automatic merge failed; fix conflicts and then commit the result.
 	```
 
-	If Bob tried to do a push right now, that would fail, too:
-
-	```
-	 ! [rejected]        master -> master (fetch first)
-	error: failed to push some refs to 'D:/Labs/Git/Bob/../Shared.git'
-	hint: Updates were rejected because the remote contains work that you do
-	hint: not have locally. This is usually caused by another repository pushing
-	hint: to the same ref. You may want to first integrate the remote changes
-	hint: (e.g., 'git pull ...') before pushing again.
-	hint: See the 'Note about fast-forwards' in 'git push --help' for details.
-	```
-
-The question now is: What's Bob to do?
+The output identifies **index.html** as the source of the conflict. The question now is: What's Bob to do?
 
 ## Resolve the merge conflict
 
