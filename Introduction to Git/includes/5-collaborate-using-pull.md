@@ -55,7 +55,7 @@ Alice starts working on the Web site. Her first decision is to change the site's
 	git config user.email alice@contoso.com
 	```
 
-	These config settings are stored in the repo in **.git/config**, so you won't have to enter them again. Each time you `cd` into the "Alice" directory, you have effectively assumed Alice's identity.
+	These config settings are stored in the repo in **.git/config**, so you won't have to enter them again. Each time you `cd` into the "Alice" directory, you effectively assume Alice's identity.
 
 1. Open **site.css** in the "Alice/assets" directory (not your project directory's "assets" directory) and replace the second line in the file with this one to change the background color of the page to light blue:
 
