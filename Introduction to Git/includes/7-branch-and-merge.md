@@ -117,7 +117,7 @@ While Alice is working on the CSS, Bob is sitting in an apartment on the other s
 1. Now Bob merges his branch into "master" so that "master" in his repo will have his *and* Alice's changes. Then he pushes "master" on his computer to "master" in the shared repo: 
 
 	```bash
-	git merge --ff-only add-cat
+	git merge add-cat
 	git push
 	```
 
