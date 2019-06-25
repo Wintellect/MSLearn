@@ -83,7 +83,7 @@ Without knowing what Alice is doing, Bob notices that Alice's last push added a 
 	git commit -a -m "Style Bob's cat"
 	git checkout master
 	git pull
-	git merge add-style
+	git merge style-cat
 	```
 
 	And there it is: the dreaded merge conflict. The same line in the same file was changed by two people. Git sees that and reports "Updates were rejected because the remote contains work that you do not have locally." Git has no way of knowing whether the `src` attribute in the `<img>` element should reference **bobcat2-317x240.jpg** or **bombay-cat-180x240.jpg**:
