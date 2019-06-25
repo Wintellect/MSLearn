@@ -85,19 +85,14 @@ This pull request is essentially the same thing as a pull request on [GitHub](ht
 
 Because your project directory and the "Alice" directory are on the same computer, you can pull directly from the "Alice" directory. In real life, the "Alice" directory will be on Alice's computer. You solve this by setting up a *remote* using the [`git remote`](https://git-scm.com/docs/git-remote) command and using that remote for pulls and pull requests. Since it's not practical to set up two machines to do this, we'll set up a remote that uses a local path name. In reality, you would use a network path or URL instead.
 
-1. `cd` back to the project directory:
+1. `cd` back to the project directory and use a [`git remote`](https://git-scm.com/docs/git-remote) command to create a remote named "alice" that targets Alice's project directory:
 
 	```bash
 	cd ../Cats
-	```
-
-1. Use the following command to create a remote named "alice" that targets Alice's project directory:
-
-	```bash
 	git remote add alice ../Alice
 	```
 
-1. Now execute a pull by doing this:
+1. Now execute a pull:
 
 	```bash
 	git pull alice master
