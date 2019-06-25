@@ -142,8 +142,6 @@ Knowing this, let's resolve the merge by editing **index.html**. Because this is
 	git push
 	```
 
-	This time it should work, unless "master" on the remote changed again while Bob was working.
-
 1. Open Bob's **index.html** in your browser. How many furry felines do you see? If you opened Alice's **index.html** right now, how many cats would you see?
 
 Finish up by switching back to Alice, doing a `git pull`, opening Alice's **index.html** in your browser, and confirming that Alice sees two cats, too.
