@@ -198,9 +198,18 @@ Now that Bob is set up to work on the Web site, he decides to add a footer to th
 
 	_The updated home page_
 
-Note that if Alice had committed her changes rather than stashing them a few moments ago, the situation would have been somewhat different. She would have had to make a branch and either merge or rebase her changes. (Branching and merging are covered in the next lesson.)
+	Note that if Alice had committed her changes rather than stashing them a few moments ago, the situation would have been somewhat different. She would have had to make a branch and either merge or rebase her changes. (Branching and merging are covered in the next lesson.)
 
-Had Alice begun by working on a branch in the first place, she would have saved herself quite a lot of trouble. For now it's worth pointing out that branching and rebasing is _exactly_ what `stash` accomplishes behind the scenes.
+	Had Alice begun by working on a branch in the first place, she would have saved herself quite a lot of trouble. For now it's worth pointing out that branching and rebasing is _exactly_ what `stash` accomplishes behind the scenes.
+
+1. At the moment, your repo and Alice's repo are synced, but Bob's is not. Finish up by getting Bob up to date, too:
+
+	```bash
+	cd ../Bob
+	git pull
+	``` 
+
+All three repos are now in alignment. The shared repo is the single source of truth for all concerned, and all pushes and pulls are directed to the shared repo.
 
 ## Summary
 
