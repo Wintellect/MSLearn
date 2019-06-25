@@ -142,7 +142,7 @@ After creating the "CSS" subdirectory, you decide to rename it "assets" since it
 1. Now commit the changes:
 
 	```bash
-	git commit -m "Rename CSS -> assets for generality"
+	git commit -a -m "Rename CSS -> assets for generality"
 	```
 
 	The percentage reported by `git commit` on the last line is the degree of similarity between the new and old versions of **site.css**. In this case, you _just_ moved it, so they're 100% identical. If you change a file and don't commit before you move it, the percentage is lower, but in most situations Git correctly recognizes a change-and-move. It can guess wrong if you move more than half of one file into another; in that case, it will look as though the file was moved and then a new file was created in its place.
