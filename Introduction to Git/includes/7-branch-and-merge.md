@@ -64,7 +64,7 @@ Alice wants to add some CSS to style the cat pictures, so she creates a _topic b
 	git push
 	```
 
-Performing a fast-forward merge because "master" has no changes wasn't strictly necessary in this case because Git would have done it anyway. Still, it's a good habit to get into.
+Performing a fast-forward merge because "master" had no changes wasn't strictly necessary in this case because Git would have done it anyway. Still, it's a good habit to get into because an `--ff-only` merge fails if "master" has changed, making you acutely that changes have occurred.
 
 ## Create a branch for Bob
 
@@ -120,6 +120,8 @@ While Alice is working on the CSS, Bob is sitting in an apartment on the other s
 	git merge add-cat
 	git push
 	```
+
+Bob did not use the `--ff-only` option because he was aware that "master" had changed. A fast-forward-only merge would have failed.
 
 ## Sync the repos
 
