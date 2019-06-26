@@ -1,10 +1,10 @@
-# Sequences and dictionaries
+# Sequences and mapping types
 
 An understanding of data handling in Python begins with an understanding of *sequences* and *mapping types*. Sequences hold ordered sets of data. Think of an array holding an ordered set of integers or a string holding an ordered set of characters. Each item in the array or string occupies a specific position, and each has a specific zero-based index. Mapping types store unordered sets of data. The most common example of a mapping type is the dictionary, which holds key-value pairs. You retrieve a value from a dictionary by specifying a key instead of an index.
 
 ## Sequences
  
-Python supports a variety of data types, including strings, integers, floating-point numbers, and Booleans. It also supports sequences, which hold collections of data. The most common sequences are:
+Python supports a variety of data types, including strings, integers, floating-point numbers, and booleans. It also supports sequences, which hold collections of data. The most common sequences are:
 
 - Lists, which are similar to arrays in other programming languages
 - Strings, which are sequences of characters
@@ -85,7 +85,7 @@ nums.remove(4)
 print(nums) # outputs: [1,2,3,5]
 ```
 
-To find the number of items in a list, use the `len` function:
+Find the number of items in a list with the `len` function:
 
 ```python
 nums = [1,2,3,4,5]
@@ -108,14 +108,14 @@ print(message[8:-1]) # outputs fun
 print(message[-4:-1]) # outputs fun
 ```
 
-Specifying a negative number for a starting or ending index represents an offset from the end of the string. [:-1] extracts the entire string except the final character, [:-2] extracts the entire string except the final two characters, [:-3] removes the final three characters, and so on.
+Specifying a negative number for a starting or ending index represents an offset from the end of the string. [:-1] extracts the entire string except the final character, [:-2] extracts the entire string except the final two characters, [:-3] removes the final three characters, and so on:
 
 ```python
 message = 'This is fun!'
 print(message[:-2]) # outputs : This is fu
 ```
 
-Strings come with built-in functions for string manipulation. A common requirement is to split a string containing a collection of strings separated by commas, spaces, or other characters into a list of strings. The following example splits a string containing a series of strings separated by commas into a list of strings using the `split` function.
+Strings come with built-in functions for string manipulation. A common requirement is to split a string containing a collection of strings separated by commas, spaces, or other characters into a list of strings. The following example splits a string containing a series of strings separated by commas into a list of strings using the `split` function:
 
 ```python
 colors_data = 'red,green,blue'
@@ -139,16 +139,15 @@ nums = nums1 + nums2
 print(nums) # outputs: [1, 2, 3, 4, 5, 6]
 ```
 
-
 Sequences make it easy to manipulate collections of data. The Python support for sequences is one reason why it is so popular among people who deal with data on a daily basis.
+## Mapping types
 
-## Dictionaries
+Whereas sequences store ordered sets of data, mapping types store unordered sets. Mapping types hold collections of key-value items. They provide the ability to access items, and their keys, and values. Because they are unordered, when iterated, mapping types provide their items in an arbitrary order.
 
-Whereas sequences store ordered sets of data, mapping types stored unordered sets. The most common example of a mapping type in Python is the dictionary.
+### Dictionaries
 
-Each row in a dictionary contains a *key* and a *value*. 
-
-Values are passed inside curly braces. 
+The dictionary is the most commonly used mapping type in Python. 
+Each row in a dictionary contains a *key* and a *value*. Values are passed inside curly braces. 
 
 The following code creates an empty dictionary called airports:
 
@@ -170,7 +169,7 @@ Instead of specifying an index position, you access a value in the dictionary by
 lax_city = airports['LAX']
 print(lax_city) # outputs: Los Angeles
 ```
-If you want to add another key:value to the dictionary, you just assign a value to a new key.
+If you want to add a new key:value to the dictionary, just assign a value to a new key.
 
 The following code adds the Houston airport to the airports dictionary: 
 ```python
@@ -191,4 +190,6 @@ nbr_entries = len(airports)
 print(nbr_entries) # outputs : 3
 ```
 
-Now you know the basics of lists, strings,and dictionaries in Python. In the next lesson, you'll learn how to use comprehensions, map, and lambda functions to make it easier working with these types.
+Now you know the basics of sequences such as lists and strings, and mapping types like dictionaries. In the next lesson, you'll learn how to use comprehensions, map, and lambda functions to work with these types.  
+
+**Next unit: [Comprehensions, map, and lambdas](comprehensions-map-lambdas.md)**

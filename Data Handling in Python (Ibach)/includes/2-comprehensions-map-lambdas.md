@@ -1,6 +1,6 @@
-# Comprehensions and lambdas
+# Comprehensions, maps, and lambdas
 
-In the previous lesson, you learned about sequences and dictionaries in Python. Now let's explore [comprehensions](https://medium.com/better-programming/list-comprehension-in-python-8895a785550b) and [lambda functions](https://www.w3schools.com/python/python_lambda.asp), which make sequences and dictionaries — especially sequences — easier to work with. In this lesson, you will learn how to use comprehensions, map, and lambda functions (also known as *anonymous functions*) to make code that deals with collections of data simpler and more concise.
+In the previous lesson, you learned about sequences and mapping types in Python. Now let's explore [comprehensions](https://medium.com/better-programming/list-comprehension-in-python-8895a785550b), [map](https://docs.python.org/2/library/functions.html#map)  and [lambda functions](https://www.w3schools.com/python/python_lambda.asp), which make sequences and dictionaries easier to work with. In this lesson, you will learn how to use these features to make code that deals with collections of data simpler and more concise.
 
 ## Comprehensions
 
@@ -11,11 +11,11 @@ A list comprehension in Python is created using the following syntax:
 list_var = [expression(x) for x in iterable]
 ```
 
-*list_var* is the name of the list to create.  
-*expression(x)* is the operation to perform on the variable for each element.  
-*for x in iterable* is the element name and the iterable object name.  
+- *list_var* is the name of the list to create 
+- *expression(x)* is the operation to perform on the variable for each element
+- *for x in iterable* is the element name and the iterable object name
 
-It might be easier to understand if we see the equivalent code as a loop:
+It might be easier to understand if you see the equivalent code as a loop:
 ```python
 for x in iterable:
     list_var.append(expression(x))
@@ -32,7 +32,7 @@ print(squares) # outputs : [0, 1, 4, 9, 16]
 
 By specifying an existing list as an iterable, you can create a new list based on the content of the original list. 
 
-The following code creates a new list called squares containing the squares of the values in the nums list:
+The following code creates a new list called *squares* containing the squares of the values in the nums list:
 ```python
 nums = [1,2,3,4,5]
 squares = [num**2 for num in nums]
@@ -81,9 +81,9 @@ The syntax of the map function is:
 map(function, iterable)
 ```
 
-Similar to what we did with comprehensions we can use the map funciton to create new lists.
+Similar to what you did with comprehensions you can use the map function to create new lists.
 
-The following code declares a function called double, then uses the map function to double all the values in a list:
+The following code declares a function called *double* which returns double the value passed in as a parameter. The map function calls your function to double all the values in a list:
 
 ```python
 def double(value):
@@ -93,7 +93,7 @@ nums = [1,2,3,4,5]
 doubles = map(double, nums)
 print(list(doubles)) # outputs : [2, 4, 6, 8, 10]
 ```
-Because the map function returns a map object, we use the `list` function to convert it to a list.
+>You may have noticed a call to the `list` function in the print statement. Because the map function returns a map object, you must use the list function to convert it to a list.
 
 ## Lambda functions
 
@@ -103,8 +103,8 @@ The syntax for lambda functions is:
 ```python
 lambda arguments : expression
 ```
-*arguments* are the parameters passed to the lambda function.  
-*expression* is the expression to operate on the parameters.  
+- *arguments* are the parameters passed to the lambda function.  
+- *expression* is the expression to operate on the parameters.  
 
 The following lambda doubles the value passed to the function:
 ```python
@@ -112,7 +112,7 @@ double = lambda x: x * 2
 print(double(4)) # outputs : 8
 ```
 
-Lambdas can be used instead of functions in our code. For example, we can make our code with the map function more concise by using a lambda instead of a named function to double the values in the input list:
+Lambdas can be used instead of functions in your code. For example, you can make your code with the map function more concise by using a lambda instead of a named function to double the values in the input list:
 
 ```python
 nums = [1,2,3,4,5]
@@ -120,4 +120,5 @@ doubles = map(lambda x: x*2, nums)
 print(list(doubles)) # outputs : [2, 4, 6, 8, 10]
 ```
 
-Now you know the basics of lists, strings, dictionaries, comprehensions, map, and lambda expressions in Python. In the next lesson, you'll put this knowledge to work using a dataset stored in a CSV file.
+Now you know the basics of lists, strings, dictionaries, comprehensions, map, and lambda expressions in Python. In the next lesson, you'll create an Azure Notebook so you can start writing and executing Python code to manipulate the airline data.  
+**Next unit: [Creating an Azure Notebook](3-Creating-Azure-Notebook.md)**

@@ -1,6 +1,6 @@
 # Manipulating pandas DataFrames
 
-In the previous lesson you learned how to create a DataFrame and populate it with data. pandas has a number of functions you can use operate on the data.
+In the previous lesson you learned how to create a DataFrame and populate it with data. Pandas has a number of functions you can use to operate on the data.
 
 ## Sorting 
 The `sort_values` function allows you to sort the rows in a DataFrame based on one or more columns:
@@ -13,6 +13,7 @@ print(airport_codes.head()) # outputs :
 # 2          BWI     Baltimore
 # 3          DEN        Denver
 # 4          LAS     Las Vegas
+
 sorted_rows = airport_codes.sort_values(by=['City','Airport Code'])
 print(sorted_rows.head()) # outputs :
 #    Airport Code          City
@@ -23,9 +24,9 @@ print(sorted_rows.head()) # outputs :
 # 7           CLE     Cleveland
 ```
 ## Concatenate DataFrames
-Sometimes the data we need to read is stored in multiple data files and we need to merge all the data into a single dataframe. 
+Sometimes the data you need to read is stored in multiple data files and you need to merge all the data into a single DataFrame. 
 
-The `concat` function allows you to append the rows from one DataFrame onto a second DataFrame:
+The `concat` function allows you to append the rows from one DataFrame to a second DataFrame:
 
 ```python
 # Create a DataFrame with the first three airports
@@ -52,11 +53,11 @@ print(all_airports) # outputs :
 
 ## Removing duplicates
 
-Sometimes the data we work with contains duplicate records. The `drop_duplicates` function will remove the duplicate rows: 
+Sometimes the data you work with contains duplicate records. The `drop_duplicates` function will remove the duplicate rows: 
 
 ```python
-column_names = ['airport_code','city']
-data = [['DTW','Detroit'],['LGA','New York'],['DTW','Detroit']]
+column_names = ['airport_code', 'city']
+data = [['DTW','Detroit'], ['LGA','New York'], ['DTW','Detroit']]
 airports = pd.DataFrame(data, columns = column_names)
 print(airports) # outputs : 
 #   airport_code      city
@@ -72,19 +73,19 @@ print(airports) # outputs :
 ```
 
 ## Merge DataFrames
-There will be times the columns of data you need are divided across two DataFrames. The `merge` function allows you to join columns spread records in two DataFrames.
+There will be times the columns of data you need are divided across two DataFrames. The `merge` function allows you to join columns spread across records in two DataFrames.
 
-Imagine you have a list of airport codes and their cities in one DataFrame and a list of scheduled flights in another DataFrame. The flight information includes the airport code but you need to look up the city for each airport code. We can use `merge` to do the lookup.
+Imagine you have a list of airport codes and their cities in one DataFrame and a list of scheduled flights in another DataFrame. The scheduled flight information includes the airport code but you need to look up the city for each airport code. You can use `merge` to do the lookup.
 
 The following parameters are required:
-- *how* specifies the type of join to perform. The most commond join type is an  *inner* join. For an *inner* join, we expect to find one matching row for each lookup
-- *left_on* specifies the column name in the first DataFrame listed (the one on the left when looking at the code) which has a corresponding value in the second DataFrame. 
-- *right_on* specifies the column name in the second DataFrame listed (the one on the right when looking at the code) which will contain a value to match the value contained in the *left_on* column.
+- **how**: specifies the type of join to perform. The most commond join type is an  *inner* join. For an *inner* join, you expect to find one matching row for each lookup
+- **left_on**: specifies the column name in the first DataFrame listed (the one on the left when looking at the code) which has a corresponding value in the second DataFrame 
+- **right_on**: specifies the column name in the second DataFrame listed (the one on the right when looking at the code) which will contain a value to match the value contained in the *left_on* column
 
 It is probably easier to understand with  an example. Let's start with a DataFrame that contains a list of the airport codes and cities:
 ```python
 column_names = ['airport_code','city']
-data = [['DTW','Detroit'],['LGA','New York'],['DUL','Washington']]
+data = [['DTW','Detroit'], ['LGA','New York'], ['DUL','Washington']]
 airport_codes = pd.DataFrame(data, columns = column_names)
 print(airport_codes) # outputs : 
 #   airport_code        city
@@ -93,10 +94,10 @@ print(airport_codes) # outputs :
 # 2          DUL  Washington
 ```
 
-Next we have a second DataFrame that contains flight information:
+Next you have a second DataFrame that contains flight information:
 ```python
-column_names = ['departure_date','dest_airport','dep_time','flight_num']
-data = [['12/31/2019','DTW','08:15',499],['12/31/2019','LGA','09:35',748] ,['12/31/2019','LGA','13:15',749]]
+column_names = ['departure_date', 'dest_airport', 'dep_time', 'flight_num']
+data = [['12/31/2019','DTW','08:15',499], ['12/31/2019','LGA','09:35',748] , ['12/31/2019','LGA','13:15',749]]
 flights = pd.DataFrame(data, columns = column_names)
 print(flights) # outputs :
 #   departure_date dest_airport dep_time  flight_num
@@ -105,10 +106,10 @@ print(flights) # outputs :
 # 2     12/31/2019          LGA    13:15         749
 ```
 
-What if we need the destination city for each flight? We have the destination airport code, but we need to look up the corresponding city in the airport_codes DataFrame. the value in *dest_airport* of the *flights* DataFrame should match an *airport_code* in the *airport_codes* DataFrame: 
+What if you need the destination city for each flight? You have the destination airport code, but you need to look up the corresponding city in the airport_codes DataFrame. the value in *dest_airport* of the *flights* DataFrame should match an *airport_code* in the *airport_codes* DataFrame: 
 
 ```python
-all_data = pd.merge(flights, airport_codes,how = 'inner', left_on = 'dest_airport', right_on = 'airport_code' )
+all_data = pd.merge(flights, airport_codes, how='inner', left_on= 'dest_airport', right_on='airport_code' )
 print(all_data) # outputs : 
 #   departure_date dest_airport dep_time  flight_num airport_code      city
 # 0     12/31/2019          DTW    08:15         499          DTW   Detroit
@@ -116,11 +117,11 @@ print(all_data) # outputs :
 # 2     12/31/2019          LGA    13:15         749          LGA  New York
 ```
 
-We now have the corresponding city for each flight. 
-# Deleting columns
+You now have the corresponding city for each flight. 
+## Deleting columns
 You can delete a column from a DataFrame using the `del` operator.
 
-You might have noticed when we merged the *flight* and *airport_codes* DataFrames that we copied over the *city* and the *airport_code*. We don't need  *airport_code* since it is a duplicate of *dest_city*. So we can delete that extra column:
+You might have noticed when you merged the *flight* and *airport_codes* DataFrames that you copied over the *city* and the *airport_code*. You don't need  *airport_code* since it is a duplicate of *dest_city*. So you can delete that extra column:
 ```python
 del all_data['airport_code']
 print(all_data) # outputs : 
@@ -130,13 +131,13 @@ print(all_data) # outputs :
 # 2     12/31/2019          LGA    13:15         749  New York
 ```
 
-## pandas math operations
+## Math operations
 Similar to NumPy, the pandas library  supports mathematical operations across the DataFrame. When you apply an operation to the DataFrame, that operation is completed against each element in the DataFrame or each element in the slice: 
 ```python
 # Create a DataFrame containing the numbers 1 through 6 
 column_names = ['first_column','second_column']
 data = [[1,2],[3,4],[5,6]]
-lets_do_math = pd.DataFrame(data, columns = column_names)
+lets_do_math = pd.DataFrame(data, columns=column_names)
 
 print(lets_do_math + 1) 
 # outputs the entire array 
@@ -170,15 +171,15 @@ print(lets_do_math['second_column'].max())
 # outputs highest value in specified column : 6
 ```
 
-## Analyzing flight information
-Now we are ready to analyze our data. We need to 
-- Load a full set of flight data.
-- Clean up any duplicate rows and unncessary columns. 
-- retrieve the mean and maximum arrival delay time. 
-
+# Analyzing flight information
+Now you are ready to analyze our data. You need to 
+- Load a full set of flight data
+- Clean up any duplicate rows and unncessary columns 
+- Retrieve the mean and maximum arrival delay time 
+## SUSAN ADD LNKS TO PART1 AND PART2 FLGHT DAYA
 It turns out that the *flight_data_part1.csv* file you loaded in the previous lesson does not contain all the flight information. There is a second csv file, *flight_data_part2.csv* you need to load. 
 
-Load the two csv files into DataFrames. Check the number of rows in each DataFrame. You should have 300,000 rows in *flight_data_part1* and 320,000 rows in *flight_data_part2*. Combine them together into one DataFrame. 
+Load the two csv files into DataFrames. Check the number of rows in each DataFrame. You should have 300,000 rows in *flight_data_part1* and 320,000 rows in *flight_data_part2*. Combine them together into one DataFrame: 
 
 ```python
 import pandas as pd
@@ -220,7 +221,7 @@ Delete the *TAIL_NUM* column since it will not be needed for our data analysis:
 del all_flights['TAIL_NUM']
 ```
 
-Now we can use the mean() function to determine the mean of the ARR_DELAY column for all flights: 
+Now you can use the `mean` function to determine the mean of the ARR_DELAY column for all flights and the `max` function to determine the longest delay: 
 ```python
 print(all_flights.ARR_DELAY.mean()) # outputs : 2.824561633466266
 print(all_flights.ARR_DELAY.max()) # outputs : 2153.0
@@ -228,8 +229,8 @@ print(all_flights.ARR_DELAY.max()) # outputs : 2153.0
 
 BONUS: Can you figure out how many flights arrived more than 10 minutes late? HINT: You don't need a comprehension, look up *filters* on pandas DataFrames.
 
-```
+```python
 late_flights = all_flights[all_flights['ARR_DELAY']>=10]
 print(len(late_flights)) # outputs : 126988
 ```
-Congratulations you are moving data around like a professional! Now let's finish up with a look at how we  visualize our data with *matplotlib*
+Congratulations you are moving data around like a professional! Now let's finish up with a look at how you visualize your data with *matplotlib*

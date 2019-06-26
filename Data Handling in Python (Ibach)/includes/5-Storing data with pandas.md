@@ -1,8 +1,8 @@
 # Storing data with pandas
 
-Another useful Python library when managing data is [pandas]](https://pandas.pydata.org/). *pandas* is an open source  library provding high performance, easy to use data structures and data analysis tools. Pandas is licensed under the [BSD](https://www.numpy.org/license.html#license) enabling use with few restrictions.
+Another useful Python library when managing data is [pandas](https://pandas.pydata.org/). *Pandas* is an open source  library provding high performance, easy to use data structures and data analysis tools. Pandas is licensed under the [BSD](https://www.numpy.org/license.html#license) enabling use with few restrictions.
 
-The pandas library is odten used with NumPy. The pandas library relies on the NumPy Array for implementation of pandas and builds on the NumPy functionality.
+The pandas library is often used with NumPy. The pandas library relies on the NumPy Array for implementation of pandas and builds on the NumPy functionality.
 
 ## Importing the pandas library
 Before you can use pandas you need to import the library:
@@ -35,7 +35,7 @@ You can access a specific value by specifying the index position:
 ```python
 print(num_series[0]) # outputs : 1
 ```
- Unlike Python lists, you can control the index/label of the elements in a series. 
+ Unlike Python lists, you can control the index/label of the elements in a series: 
 ```python
 num_series = pd.Series([1,2,3,4],['One','Two','Three','Four'])
 print(num_series) # outputs :
@@ -47,7 +47,7 @@ print(num_series['One']) # outputs : 1
 ```
 
 ## Creating a pandas DataFrame
-A pandas *DataFrame* is a two or more dimensional data structure. Each column and row is indexed.  
+A pandas *DataFrame* is a two or more dimensional data structure. Each column and row is indexed:  
 
 ```python
 data = [['SEA','Seattle'],['BOS','Boston'],['HOU','Houston']]
@@ -94,20 +94,20 @@ print(airports['airport_code'])
 ```
 ## Reading data from a CSV file
 
-With pandas we use the `read_csv` method to read the contents of a csv file.  
+With pandas you use the `read_csv` function to read the contents of a csv file.  
 Let's look at some of the parameters of `read_csv`:
-- **filepath_or_buffer**: path and name of the csv file.  
-- **delimiter**: The string used to separate values.  
-- **dtype**: Data type for data or columns, if omitted data type is inferred from the data. 
-- **header**: The row number to use as the column names.   
-- **skipfooter**: The number of lines to skip at the end of the file. 
+- **filepath_or_buffer**: path and name of the csv file  
+- **delimiter**: The string used to separate values  
+- **dtype**: Data type for data or columns, if omitted, data type is inferred from the data 
+- **header**: The row number to use for reading the column names   
+- **skipfooter**: The number of lines to skip at the end of the file 
 - **skipinitialspace**: skip spaces after the delimiter
-
+## SUSAN ADD LNK TO AIRPORTCODELIST.CSV
 If you have not already done so in the NumPy lesson, download and examine the AirportCodeList.csv file. The file has a header row containing the names of the columns and a footer row containing the number of rows selected. You might also have noticed there are some extra spaces on some of the rows. 
 
 Let's use `read_csv` to read the csv file into a DataFrame 
 ```python
-airport_codes = pd.read_csv('AirportCodeList.csv',delimiter=',',header=0,skipfooter=1,skipinitialspace=True, engine='python')
+airport_codes = pd.read_csv('AirportCodeList.csv' ,delimiter=',', header=0, skipfooter=1, skipinitialspace=True, engine='python')
 print(airport_codes) # outputs : 
         Airport Code              City
 # 0                HOU           Houston
@@ -115,9 +115,9 @@ print(airport_codes) # outputs :
 # ...
 # 22               GSP        Greenville
 ```
-> You may have noticed an extra parameter: *engine*. This parameter determines which parser engine to use. The 'c' engine is faster, the 'python' engine is more feature-complete. The *skipfooter* parameter is not supported by the 'c' engine so we need to specify the 'python' engine.  
+> You may have noticed an extra parameter: *engine*. This parameter determines which parser engine to use. The 'c' engine is faster, the 'python' engine is more feature-complete. The *skipfooter* parameter is not supported by the 'c' engine so you need to specify the 'python' engine when you use *skipfooter*.  
 
-Because the file is quite large you may find it useful to print only the top or bottom rows in the DataFrame. The `head` function returns the top rows from a DataFrame. The `tail` function returns the bottom rows.
+Because the file is quite large you may find it useful to print only the top or bottom rows in the DataFrame. The `head` function returns the top rows from a DataFrame. The `tail` function returns the bottom rows:
 ```python
 flight_df.head(2) # outputs : 
 #   Airport Code	        City
@@ -132,7 +132,7 @@ flight_df.tail(3) # outputs :
 If you do not need all the columns in the file, the *usecols* parameter allows you to specify a list of columns you want returned:
 
 ```python
-airport_codes = pd.read_csv('AirportCodeList.csv',usecols=['City'],delimiter=',',header=0,skipfooter=1,skipinitialspace=True, engine = 'python')
+airport_codes = pd.read_csv('AirportCodeList.csv', usecols=['City'], delimiter=',', header=0, skipfooter=1, skipinitialspace=True, engine = 'python')
 print(airport_codes.head()) # outputs :
 #            City
 # 0       Houston
@@ -143,9 +143,9 @@ print(airport_codes.head()) # outputs :
 ```
 ## Reading flight information
 
-In the previous lesson we improted a csv file of flight information using NumPy. In this exercise we will import a much bigger csv file into a pandas DataFrame.
+In the previous lesson you improted a csv file of flight information using NumPy. In this exercise you will import a much bigger csv file into a pandas DataFrame.
 
-## Insert link ##
+## SUSAN ADD LNK TO FLGHT_DATA_PART1.CSV
 Download the file flight_data_part1.csv. Open the file and examine the contents. This file has 300,000 rows and will help us get a more complete picture of the impact of flight delays for our airline. The first row of the file contains the column headers. There are no footer rows in the file.
 
 Read the datafile into a DataFrame called *flights_part1*. Read the column names from the header row. Make sure any spaces after commas are not treated as part of the data:
@@ -155,13 +155,13 @@ import pandas as pd
 flights_part1 = pd.read_csv('flight_data_part1.csv',delimiter=',',skipinitialspace=True)
 ```
 
-Use the len function to make sure you have successfully imported 300,000 rows into the DataFrame. 
+Use the `len` function to make sure you have successfully imported 300,000 rows into the DataFrame: 
 
 ```python
 print(len(flights)) # outputs: 300000
 ```
 
-print the last 5 rows of the DataFrame jsut to make sure the data in the columns looks correct (column values are not shifted, no extra spaces in column values, etc...): 
+print the last 5 rows of the DataFrame just to make sure the data in the columns looks correct (column values are not shifted, no extra spaces in column values, etc...): 
 ```python
 print(flights.tail(5)) # outputs : 
 #            FL_DATE OP_UNIQUE_CARRIER TAIL_NUM  OP_CARRIER_FL_NUM ORIGIN DEST  \
@@ -186,4 +186,4 @@ print(flights.tail(5)) # outputs :
 # 299999                66                 75.0      38.0       240  
 ```
 
-Congratulations, you now have a large amount of flight data loaded and ready to analyze. In the next lesson we will learn how we can use pandas to work with data in DataFrames.
+Congratulations, you now have a large amount of flight data loaded and ready to analyze. In the next lesson you will learn how you can use pandas to work with data in DataFrames.
