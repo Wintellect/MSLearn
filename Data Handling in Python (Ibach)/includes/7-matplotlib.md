@@ -39,7 +39,7 @@ plt.plot(temperatures['Celsius'],temperatures['Farenheit'])
 plt.show()
 ```
 Generates the following output:
-![Celsius vs Farenheit](\Media\SimpleCelsiusvsFarenheit.png)
+![Celsius vs Farenheit](media/SimpleCelsiusvsFarenheit.png)
 
 ## Adding labels and titles
 Graphs are easier to read when they are labelled:
@@ -55,7 +55,7 @@ plt.ylabel('Farenheit')
 plt.show()
 ```
 Generates the output:  
-![Graph with labels](\Media\CelsiusvsFarenheitWithLabels.png)
+![Graph with labels](media/CelsiusvsFarenheitWithLabels.png)
 
 ## Calling `plot` function of DataFrame
 The pandas DataFrame object has a number of plotting functions. If your data is stored in a pandas DataFrame you can call the `plot` function of the DataFrame passing in the column names for the x and y axis to get the same graph:
@@ -87,7 +87,7 @@ plt.scatter(temperatures['Celsius'], temperatures['Farenheit'])
 plt.show()
 ```
 Generates the output:  
-![Scatter plot Celsius vs Farenheit](\Media\scatterplotCelsiusFarenheit.png)
+![Scatter plot Celsius vs Farenheit](media/scatterplotCelsiusFarenheit.png)
 
 If you prefer working with DataFrame functions directly, add the *kind* parameter to the DataFrame `plot` function and set it to *scatter* to generate the exact same output:
 ```python
@@ -99,7 +99,7 @@ plt.ylabel('Farenheit')
 plt.show()
 ```
 The dots in our scatter plot create a sloped line indicating a correlation between the two values. If there was no correlation you might see a plot like this:    
-![Scatter plot showing no correlation](\Media\RandomScatterPlot.png)
+![Scatter plot showing no correlation](media/RandomScatterPlot.png)
 
 ## Creating bar charts
 
@@ -120,7 +120,7 @@ plt.show()
 ```
 
 Generates the following output:  
-![Total pets by category bar chart](\Media\PetsBarChart.png)  
+![Total pets by category bar chart](media/PetsBarChart.png)  
 
 If you prefer working directly with the DataFrame `plot` function, you can specify *bar* for the *kind* parameter to generate a bar chart:
 
@@ -142,7 +142,7 @@ pets.plot(x='Pet type', y='Total Owned', kind='bar')
 plt.show()
 ```
 Generates the following chart showing the total pets of each type for each owner.   
-![Bar chart showing total of each pet type per owner](\Media\BarChartNotHelpful.png)
+![Bar chart showing total of each pet type per owner](media/BarChartNotHelpful.png)
 
 It is more useful to have the total number of each pet type aggregated across all owners. To achieve this use the `groupby` function to group the data for the plot:
 
@@ -167,7 +167,7 @@ plt.show()
 ```
 
 Generates the output:  
-![Aggregated bar chart](\Media\AggregatedBarChartPets.png)
+![Aggregated bar chart](media/AggregatedBarChartPets.png)
 
 ## Histograms
 
@@ -188,4 +188,4 @@ pets[['Total Owned']].plot(kind='hist',bins=[0,1,2,3,4,5],rwidth=0.5)
 plt.show()
 ```
 Generates the output:  
-![Total pets owned histogram](\Media\PetsHistogram.png)
+![Total pets owned histogram](media/PetsHistogram.png)
