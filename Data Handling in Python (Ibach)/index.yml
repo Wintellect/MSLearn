@@ -1,33 +1,37 @@
 ### YamlMime:Module
-uid: learn.building-neural-networks-with-keras
+uid: learn.data-handling-in-python
 metadata:
-  title: Building Neural Networks with Keras - Learn
-  description: Use Keras to build a neural network that scores text for sentiment.
-  ms.date: 09/24/2018
-  author: lnyswonger
-  ms.author: luken
+  title: Data Handling in Python - Learn
+  description: Data Handling in Python
+  ms.date: 06/28/2018
+  author: v-jeffpr
+  ms.author: shana.matthews
   ms.topic: interactive-tutorial
-  ms.prod: learning-azure
-  #ms.learn-contact: luken
-title: Building Neural Networks with Keras
-summary: CreUse Keras to build a neural network that scores text for sentiment.
+  ms.prod: learning-python
+title: Data Handling in Python
+summary: How to use Python and popular libraries such as NumPy and Pandas to handle data
 abstract:  | 
   In this module, you will:
-  - Create a Jupyter notebook in Azure Notebooks
-  - Use Keras to build and train a neural network to perform sentiment analysis
-  - Use the neural network to analyze text for sentiment 
+  - tk
+  - tk
+  - tk
+  - tk
+  - tk
 prerequisites: None
-iconUrl: /learn/achievements/building-neural-networks-with-keras.svg
 levels:
 - beginner
 roles:
 - developer
 products:
-- azure
+- python
 units:
-- learn.building-neural-networks-with-keras.0-introduction
-- learn.building-neural-networks-with-keras.1-create-an-azure-notebook
-- learn.building-neural-networks-with-keras.2-build-and-train-a-neural-network
-- learn.building-neural-networks-with-keras.3-use-neural-network-to-analyze-text-for-sentiment
-- learn.building-neural-networks-with-keras.4-summary-and-knowledge-check
+- learn.data-handling-in-python.0-introduction
+- learn.data-handling-in-python.1-sequences-mappingtypes
+- learn.data-handling-in-python.2-comprehensions-map-lambdas
+- learn.data-handling-in-python.3-create-notebook
+- learn.data-handling-in-python.4-numpy
+- learn.data-handling-in-python.5-store-data-with-pandas
+- learn.data-handling-in-python.6-manipulate-data-with-pandas
+- learn.data-handling-in-python.7-matplotlib
+- learn.data-handling-in-python.8-summary
 achievement: learn.building-neural-networks-with-keras.badge 
