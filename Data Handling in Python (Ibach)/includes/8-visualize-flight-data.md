@@ -69,7 +69,7 @@ TODO: Add intro.
 	flight_df.groupby('ORIGIN')['DEP_DELAY'].mean().plot(kind='bar')
 	```
 
-	![Plotting departure delays by airport](\Media\barchartdelaysAllairports.png)  
+	![Plotting departure delays by airport](media/barchartdelaysAllairports.png)  
 
 1. This chart is hard to read, so let's extract only the rows for the busiest airports and show the mean departure delay for each: 
 
@@ -102,7 +102,7 @@ You can see from the bar charts that the mean flight delay times are quite reaso
 
 	Not surprisingly, short delays are more common than long delays:
 
-	![Flight delay histogram](\Media\flightDelayhistogram.png)
+	![Flight delay histogram](media/flightDelayhistogram.png)
 
 1. TODO: Add second histogram scenario.
 
