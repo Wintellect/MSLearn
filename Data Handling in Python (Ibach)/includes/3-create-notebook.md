@@ -37,7 +37,6 @@ You can create additional projects and notebooks as you work with Azure Notebook
 ## Execute code in the notebook
 
 Jupyter notebooks are composed of cells. Each cell is assigned one of three types: 
-
 - **Markdown** for entering text in markdown format. 
 - **Code** for entering code that runs interactively  
 - **Raw NBConvert** for entering data inline
