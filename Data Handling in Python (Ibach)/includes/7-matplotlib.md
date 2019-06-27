@@ -2,7 +2,7 @@
 
 If a picture is worth a thousand words, then a chart or diagram drawn with Matplotlib is worth a thousand tables. [Matplotlib](https://matplotlib.org/) is a versatile 2D plotting library for Python. A few lines of code can produce rich visuals that reveal information about the data you're dealing with as well as relationships among the values comprising the data. Matplotlib also serves as the foundation for other popular visualization libraries such [Seaborn](https://seaborn.pydata.org/).
 
-In previous lessons, you learned how to store and manipulate data using Python, NumPy, and Pandas libraries. In this lesson, you will learn how to visualize data with charts and graphs using Matplotlib.
+In previous lessons, you learned how to store and manipulate data using Python, NumPy, and Pandas. In this lesson, you will learn how to visualize data with charts and graphs using Matplotlib.
 
 ## Line charts
 
