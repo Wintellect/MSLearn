@@ -35,7 +35,7 @@ A scatter plot is a great way to visualize relationships between variables in a 
 	flight_df.plot(kind='scatter', x='DEP_DELAY', y='ARR_DELAY')
 	```
 
-	Confirm that `plt.show()` produces the following output:
+	Confirm that this produces the following output:
 
 	![Plotting departure delays and arrival delays](media/ScatterPlotArrivalDepartureDelay.png) 
 
@@ -57,7 +57,7 @@ A scatter plot is a great way to visualize relationships between variables in a 
 	flight_df.plot(kind='scatter', x='CRS_DEP_TIME', y='ARR_DELAY')
 	```
 
-What does the output tell you about the theory that a traveler is more likely will encounter delays by flying in mid-afternoon than early morning?
+What does the output tell you about the theory that a traveler is more likely to encounter delays by flying in mid-afternoon than early morning?
 
 ## Use bar charts to explore delays
 
@@ -82,7 +82,7 @@ TODO: Add intro.
 
 	![Mean delay at major airports](media/mean-delay-major-airports.png)
 
-1. Another interesting way looking at the data is to plot mean arrival delays by destination airport. Do flights into ORD, for example, incur longer delays, on average, than flights into DFW? Use the following code to find out: 
+1. Another interesting way of looking at the data is to plot mean arrival delays by destination airport. Do flights into ORD, for example, incur longer delays, on average, than flights into DFW? Use the following code to find out: 
 
 	```python
 	flights_busy_airports.groupby('DEST')['ARR_DELAY'].mean().plot(kind='bar')
@@ -92,7 +92,7 @@ Does the resulting plot provide any meaningful insights to the data?
 
 ## Use a histogram to explore further
 
-You can see from the bar charts that the mean flight delay times are quite reasonable even at the busiest airports. You also saw that the longest flight delays were significant. You need to get a sense of how many flights had small delays and how many flights had long delays.
+Let's say the goal is to learn more about the nature of the delays — specifically, how the number of short delays compares to the number of long delays. It's reasonable to expect that there are more 10-minute delays than 1-hour delays. But what do the distributions look like? 
 
 1. Create a histogram of arrival delays to show how many flights were 0 to 10 minutes late, 10 to 20 minutes late, and so on:
 
@@ -100,7 +100,7 @@ You can see from the bar charts that the mean flight delay times are quite reaso
 	flight_df[['ARR_DELAY']].plot(kind='hist', bins=[0,10,20,30,40,50,60,70,80,90,100,110,120], rwidth=0.8)
 	```
 
-	Not surprisingly, short delays are more common than long delays:
+	Not surprisingly, short delays are more common than long delays, and thankfully, the number of delays drops off rapidly as the length of the delay increases:
 
 	![Flight delay histogram](media/flightDelayhistogram.png)
 
