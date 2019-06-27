@@ -63,4 +63,4 @@ Code entered into code cells is executed by a *kernel*. The popular IPython kern
 
 	_Running a code cell_
 
-You can add additional cells to the notebook as needed to execute code and document your work. Finish up by using selecting **Save and Checkpoint** from the notebook's **File** menu to save the notebook. Get in the habit of saving early and often to minimize the chance of losing your work.  
+You can add additional cells to the notebook as needed to execute code and document your work. Finish up by selecting **Save and Checkpoint** from the notebook's **File** menu to save the notebook. Get in the habit of saving early and often to minimize the chance of losing your work.  
