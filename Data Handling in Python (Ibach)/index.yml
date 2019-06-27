@@ -33,5 +33,6 @@ units:
 - learn.data-handling-in-python.5-store-data-with-pandas
 - learn.data-handling-in-python.6-manipulate-data-with-pandas
 - learn.data-handling-in-python.7-matplotlib
-- learn.data-handling-in-python.8-summary
+- learn.data-handling-in-python.8-visualize-flight-data
+- learn.data-handling-in-python.9-summary
 achievement: learn.building-neural-networks-with-keras.badge 
