@@ -46,7 +46,7 @@ Now it's time to write *real* code to operate on *real* data. In this exercise, 
 - How many flights arrived more than 10 minutes late?
 - What was the longest delay for any flight on that date?
 
-Start by deleting the two cells you added to the notebook. (This isn't strictly necessary, but we may as well keep the notebook clean.) Then proceed to load and analyze the data.
+Let's get started.
 
 1. Enter the following statement in the notebook's first cell and click the **Run** button to execute it:
 
