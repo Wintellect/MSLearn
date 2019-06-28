@@ -4,7 +4,7 @@ One of the most compelling reasons to use Python is the sheer number of powerful
 
 For an excellent overview of *whys* of using NumPy and NumPy arrays, see [A hitchhiker guide to python NumPy Arrays](https://towardsdatascience.com/a-hitchhiker-guide-to-python-numpy-arrays-9358de570121). For now, let's focus our attention on the *hows*.
 
-## Creating a NumPy array
+## Working with NumPy arrays
 
 You create a NumPy array using NumPy's `array()` function. The following code imports NumPy and creates an array containing airport codes and cities:  
 
@@ -29,8 +29,6 @@ print(airports) # outputs :
                 # ['HOU' 'Houston']
                 # ['BOS' 'Boston']]
 ```
-
-## Accessing items in a NumPy array
 
 Just like Python lists, NumPy arrays let you use loops to iterate through their items:  
 
