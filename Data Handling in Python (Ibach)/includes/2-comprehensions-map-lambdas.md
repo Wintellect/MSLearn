@@ -4,7 +4,7 @@ In the previous lesson, you learned about sequences and mapping types in Python.
 
 ## Comprehensions
 
-Comprehensions in Python provide a concise syntax for creating collections of data, especially lists. Suppose you wanted to create a list containing the squares of the numbers 0 through 4. One way to do it is to iterate over a list of numbers, squaring each one and adding the square to a list:
+Comprehensions in Python provide a concise syntax for creating sets of data, especially lists. Suppose you wanted to create a list containing the squares of the numbers 0 through 4. One way to do it is to iterate over a list of numbers, squaring each one and adding the square to a list:
 
 ```python
 squares = []
