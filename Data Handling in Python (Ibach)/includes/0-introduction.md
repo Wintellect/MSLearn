@@ -1,15 +1,16 @@
 # Introduction
 
-Imagine that you work for a major airline. The airline is concerned that flight delays are causing cost overruns. You have been asked to analyze historical flight data to better define the problem. The data comes from a variety of databases and files. All the data has been merged and provided to you in comma-separated (.csv) files. Some of the airports who provided data are still using legacy systems so it is possible the data will need clean up to ensure accurate reporting. 
+Imagine that you work in the IT department for a major airline. The airline is concerned about the impact that flight delays are having on cost overruns and has asked you to have a look at the data to get a better handle on the problem. The data comes from a variety of data sources. It has been aggregated and provided to you in the form of comma-separated (CSV) files. As is often the case, the data is rather raw and will require some cleaning up to ensure accurate reporting. 
 
 To meet the airline needs you will need to:
-- Read and store structured data
-- Extract subsets of data to focus on key information
-- Combine data from multiple files into single data structures
-- Perform aggregations such as calculating the mean across multiple values
-- Create visualizations of flight data
 
-Fortunately, Python has a number of features and libraries for data handling. Python itself has data structures you can use to store and manipulate data. The NumPy and pandas libraries contain additional features enabling you to manipulate data, filter data, and calculate aggregations. the Matplotlib library is used for creating visualizations such as bar graphs and histograms. 
+- Read and store structured data
+- Extract subsets of the data to focus on key information
+- Aggregate data from multiple CSV files into single data structures
+- Perform aggregations such as calculating the mean across multiple values
+- Create visualizations to gain further insights into flight data
+
+Fortunately, Python has a number of features and libraries to make analyzing and manipulating data easy. Python itself has data structures you can use to store and manipulate data. Popular libraries such as [NumPy](https://www.numpy.org/), [Pandas](https://pandas.pydata.org/), and [Matplotlib](https://matplotlib.org/) extpand Python's power and make it a first-rate tool for handling data. 
 
 ## Learning objectives
 
