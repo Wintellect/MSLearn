@@ -1,4 +1,4 @@
-# Create an Azure notebook
+# Analyze flight delays
 
 In order to try your hand with Python and some of the libraries that make it a great language for analyzing and manipulating data, you need an environment in which to execute Python code. You could install Python on your computer. It's included in most Linux distributions, but if you're running Windows, chances are it has to be installed separately.
 
@@ -6,7 +6,7 @@ An alternative, and one widely used by Python porgrammers, is Jupyter notebooks.
 
 ![Azure notebook](media/notebook.png)
 
-In this lesson, you will log into Azure Notebooks using your Microsoft account, create your first notebook, and apply some of the principles learned in previous lessons to crack open a CSV file and extract insights from the data.
+In this lesson, you will log into Azure Notebooks using your Microsoft account, create your first notebook, and apply some of the principles learned in previous lessons to crack open a CSV file and gather some basic statistics regarding flight delays.
 
 ## Create a notebook
 
