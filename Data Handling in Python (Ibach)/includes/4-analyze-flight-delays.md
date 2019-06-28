@@ -40,7 +40,7 @@ You can create additional projects and notebooks as you work with Azure Notebook
 
 ## Analyze flight information
 
-Now it's time to write *real* code to operate on *real* data. In this exercise, you will load a CSV file containing 99 rows of data regarding flight delays at a selection of U.S. airports on October 1, 2018. From the data, you will answer the following questions:
+Now it's time to write *real* code to operate on *real* data. In this exercise, you will load a CSV file containing 99 rows of data (plus a header row with column names) regarding flight delays at a selection of U.S. airports on October 1, 2018. From the data, you will answer the following questions:
 
 - What was the mean (average) delay time? 
 - How many flights arrived more than 10 minutes late?
@@ -103,5 +103,5 @@ Let's get started.
 	print(max_delayed_flight[0][1] + ' ' + str(max_delayed_flight[0][3]))
 	```
 
-Observe that the final statement uses column indexes rather than column names. The call to `str()` converts the flight number into a string so it can be printed. Seeing that the flight number is just that — a number and not a string — `genfromtxt()` loaded it as an integer rather than a string.
+Observe that the final statement uses column indexes rather than column names. Either works since you loaded column names from the header row of the CSV file. The call to `str()` converts the flight number into a string so it can be printed. Seeing that the flight number is just that — a number and not a string — `genfromtxt()` loaded it as an integer rather than a string.
 
