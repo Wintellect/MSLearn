@@ -48,7 +48,7 @@ print(airports[2])   # outputs a specific row : ['BOS' 'Boston']
 print(airports[:,1]) # outputs a specific column : ['Seattle' 'Houston' 'Boston']
 ```
 
-One functional difference between Python lists and NumPy arrays is that the latter are *homogeneous*. A Python list, for example, can contain integers and strings. A NumPy array can contain integers *or* strings, but it cannot contain both.
+One functional difference between Python lists and NumPy arrays is that the latter are *homogeneous*. A Python list, for example, can contain integers and strings. A NumPy array can contain integers *or* strings, but it cannot contain both. You can determine what type of data an array holds by reading the array's `dtype` attribute. Similarly, the `nbytes` attribute tells you how much memory an array and all of its elements consume, which can be useful when comparing to the memory consumed by Python lists.
 
 ## Performing mathematical operations on NumPy arrays
 
@@ -93,10 +93,7 @@ print(lets_do_math[2].max()) # outputs highest value in 3rd row : 6
 print(lets_do_math[:,0].mean()) # outputs mean of values in first column : 3
 ```
 
-
-
-
-
+`sum()`, `min()`, `max()`, and `mean()` are but a few of the many functions you can call on an array. For a complete list, see the documentation for the `ndarray` data type at https://docs.scipy.org/doc/numpy-1.13.0/reference/arrays.ndarray.html.
 
 ## Reading data from a CSV file
 
