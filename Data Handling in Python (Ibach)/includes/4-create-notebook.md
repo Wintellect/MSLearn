@@ -70,7 +70,7 @@ You can add additional cells to the notebook as needed to execute code and docum
 
 ## Analyze flight information
 
-Now it's time to write *real* code to operate on *real* data. In this exercise, you will load a CSV file containing 100 rows with data regarding flight delays at a selection of U.S. airports on October 1, 2018. From the data, you will answer the following questions:
+Now it's time to write *real* code to operate on *real* data. In this exercise, you will load a CSV file containing 99 rows of data regarding flight delays at a selection of U.S. airports on October 1, 2018. From the data, you will answer the following questions:
 
 - What was the mean (average) delay time? 
 - How many flights arrived more than 10 minutes late?
@@ -86,59 +86,52 @@ Start by deleting the two cells you added to the notebook. (This isn't strictly 
 
 	This statement uses Bash's `curl` command to load a CSV file from Azure blob storage. You can execute Bash commands in Azure notebooks by preceding them with exclamation points (!).
 
-1. Add the following code to the next cell and run it to load the contents of the CSV file into memory in a NumPy array:
+1. Add the following code to the next cell and run it to load the contents of the CSV file into memory in a NumPy array and show the column names:
 
 	```python
 	import numpy as np
 
-	flight_data = genfromtxt('flight_delays.csv', delimiter=',', dtype=None, names=True, encoding=None)
+	flight_data = np.genfromtxt('flight_delays.csv', delimiter=',', dtype=None, names=True, encoding=None)
 	print (flight_data.dtype.names)
 	```
 
+1. Now use the following statement to show the contents of the array:
 
+	```python
+	print (flight_data)
+	```
 
+	Each row contains data for one flight. The 12th column — ARR_DELAY — tells us in minutes how late a flight arrived. A negative number indicates the flight arrived early. Zero indicates it arrived on time. A positive number indicates that the flight was late.
 
+1. Use the array's `mean()` function to determine the mean of the values in the ARR_DELAY column for all flights: 
 
+	```python
+	print(flight_data['ARR_DELAY'].mean())
+	```
 
+	What was the mean delay time? On average, did flights arrive early or on time on that date?
 
-Open the file and examine the contents. Each row contains data for one flight. The ARR_DELAY column tells us in minutes how late a flight arrived:
+1. To determine how many flights were delayed more than 10 minutes, use a comprehension to create a list and a filter to ignore flights that don't fit the criterion:
 
-- A negative number indicates the flight landed early 
-- A zero indicates the flight landed on time
-- A positive number indicated the flight was late
+	```python
+	delayed_flights = [flight for flight in flight_data if flight['ARR_DELAY'] > 10]
+	print(len(delayed_flights))
+	```
 
-Let's start by importing the file and reading in the column headers. The file contains 99 rows. You can print out the length of the array to make sure all the rows were read successfully. You can also print the column names to make sure they are read in successfully:
+	How many flights were delayed by more than 10 minutes?
 
-```python
-flight_data = genfromtxt('flight_delays.csv', delimiter=',', dtype=None, names=True, encoding=None)
-print (flight_data.dtype.names) # outputs
-# ('FL_DATE', 'OP_UNIQUE_CARRIER', 'TAIL_NUM', 'OP_CARRIER_FL_NUM', 'ORIGIN', 'DEST', 'CRS_DEP_TIME', 'DEP_TIME', 'DEP_DELAY', 'CRS_ARR_TIME', 'ARR_TIME', 'ARR_DELAY', 'CRS_ELAPSED_TIME', 'ACTUAL_ELAPSED_TIME', 'AIR_TIME', 'DISTANCE')
-```
-Now you can use the mean() function to determine the mean of the ARR_DELAY column for all flights: 
+1. To figure out the longest delay, use `nparray`'s `max()` function to find the largest value in the ARR_DELAY column:
 
-```python
-print(flight_data['ARR_DELAY'].mean()) # outputs: 2.303030303030303
-```
+	```python
+	print(flight_data['ARR_DELAY'].max())
+	```
 
-Getting the number of flights that were delayed more than 10 minutes will require using a comprehension that iterates across the array and filters rows based on the value in the ARR_DELAY column. You will put the results into a new array called delayed_flights. The number of rows in the delayed_flights array is the number of flights delayed more than 10 minutes:
+1. Suppose you want to print the airline code and flight number for the flight that experienced the longest delay. That's the perfect excuse to use another list comprehension:
 
-```python
-delayed_flights = [flight for flight in flight_data if flight['ARR_DELAY'] > 10]
-print(len(delayed_flights)) # outputs: 15
-```
+	```python
+	max_delayed_flight = [flight for flight in flight_data if flight['ARR_DELAY'] == flight_data['ARR_DELAY'].max()]
+	print(max_delayed_flight[0][1] + ' ' + str(max_delayed_flight[0][3]))
+	```
 
-To figure out the longest delay you need to retrieve the maximum value in the ARR_DELAY column:
-
-```python
-print(flight_data['ARR_DELAY'].max()) # outputs : 232
-```
-
-To get the flight information for the flight with the longest delay you need to use a comprehension that filters out the row with the maximum value for ARR_DELAY:
-
-```python
-biggest_delay = [flight for flight in flight_data if flight['ARR_DELAY'] == flight_data['ARR_DELAY'].max()]
-print(biggest_delay) # outputs : 
-# [('2018-10-01', 'WN', 'N435WN', 5757, 'ABQ', 'MCI', 1720, 2119, 239, 2005, 2357, 232, 105, 98, 87, 718)] #
-```
-Congratulations, you are starting to get a better understanding of how many flights are delayed and for how long. Let's continue analyzing flight data in our next lessons using pandas and matplotlib. 
+Observe that the final statement uses column indexes rather than column names. The call to `str()` converts the flight number into a string so it can be printed. Seeing that the flight number is just that — a number and not a string — `genfromtxt()` loaded it as an integer rather than a string.
 
