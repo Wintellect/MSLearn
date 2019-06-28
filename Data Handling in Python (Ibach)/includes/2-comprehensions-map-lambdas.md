@@ -79,7 +79,7 @@ Lambda functions are small anonymous functions. *Anonymous* means lambda functio
 lambda arguments : expression
 ```
 
-The following example defines a lambda function that accepts a single argument (`x`) and doubles the value passed to the function:
+The following example defines a lambda function that accepts a single argument (`x`) and doubles the value of `x` passed to the function:
 
 ```python
 double = lambda x: x * 2
