@@ -93,4 +93,4 @@ doubles = map(lambda x: x*2, nums)
 print(list(doubles)) # outputs : [2, 4, 6, 8, 10]
 ```
 
-Now that you know the basics of lists, strings, dictionaries, comprehensions, the `map()` function, and lambda functions, you have the tools you need to manipulate data in Python. In the next few lessons, you'll put this knowledge to work using on-time arrival data for U.S. airlines.
+It should be obvious by now that Python offers a rich assortment of data structures and language features for dealing with those data structures. But before you start slinging code, there is one more data structure you should learn about: NumPy arrays.

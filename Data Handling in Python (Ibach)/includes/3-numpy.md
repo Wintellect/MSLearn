@@ -160,3 +160,5 @@ airports = np.genfromtxt('airports.csv', delimiter=',', dtype='str', skip_header
 ```
 
 For more information about `genfromtxt()` and the various options that it supports, see [Importing data with genfromtxt](https://www.numpy.org/devdocs/user/basics.io.genfromtxt.html).
+
+Enough with the preliminaries. Now that you know the basics of lists, strings, dictionaries, comprehensions, the `map()` function, lambda functions, and NumPy arrays, you have the tools you need to start manipulating data like a pro in Python. Let's put this knowledge to work — and begin by doing so in an Azure notebook.
