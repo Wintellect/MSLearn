@@ -1,6 +1,6 @@
 # Comprehensions, maps, and lambdas
 
-In the previous lesson, you learned about sequences and mapping types in Python. Now let's explore [comprehensions](https://medium.com/better-programming/list-comprehension-in-python-8895a785550b), the [map function](https://docs.python.org/2/library/functions.html#map), and [lambda functions](https://www.w3schools.com/python/python_lambda.asp), which make sequences and dictionaries easier to work with. In this lesson, you will learn how to use these features to make code that deals with collections of data simpler and more concise.
+In the previous lesson, you learned about sequences and mapping types in Python. Now let's explore [comprehensions](https://medium.com/better-programming/list-comprehension-in-python-8895a785550b), the [`map()` function](https://docs.python.org/3/library/functions.html#map), and [lambda functions](https://www.w3schools.com/python/python_lambda.asp), which make sequences and dictionaries easier to work with. In this lesson, you will learn how to use these features to make code that deals with collections of data simpler and more concise.
 
 ## Comprehensions
 
@@ -50,28 +50,26 @@ print(upper_airports) # outputs : {'SEA': 'Seattle', 'HOU': 'Houston', 'ORD': 'C
 
 Comprehensions that create dictionaries may also include conditional statements, just like comprehensions that create lists.
 
-## Map
+## The `map()` function
 
-The `map` function is also useful when working with data. It applies a function to all the items in the list.
+Python's `map()` function is also useful when working with data. It applies a function to all the items in an iterable. The syntax of the `map()` function is as follows:
 
-The syntax of the map function is:
 ```python
 map(function, iterable)
 ```
 
-Similar to what you did with comprehensions you can use the map function to create new lists.
-
-The following code declares a function called *double* which returns double the value passed in as a parameter. The map function calls your function to double all the values in a list:
+The following code declares a function named `double()` that returns double the value passed in as a parameter. Then it uses the `map()` function to double all the values in a list:
 
 ```python
 def double(value):
     return value*2
 
-nums = [1,2,3,4,5]
+nums = [1, 2, 3, 4 ,5]
 doubles = map(double, nums)
 print(list(doubles)) # outputs : [2, 4, 6, 8, 10]
 ```
->You may have noticed a call to the `list` function in the print statement. Because the map function returns a map object, you must use the list function to convert it to a list.
+
+Why is the `list()` function used to print the output? In Python 2, `map()` returns a list, but in Python 3m, it returns a `map` object. The `list()` function creates a list from the `map` so `print()` can output the contents.
 
 ## Lambda functions
 
