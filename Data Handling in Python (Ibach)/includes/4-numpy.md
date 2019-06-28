@@ -106,7 +106,7 @@ ABQ,Albuquerque
 BWI,Baltimore
 ```
 
-The following code loads the contents of a CSV file named **airports.csv** into a NumPy array and prints the results:
+The following code loads the contents of **airports.csv** into a NumPy array and prints the results:
 
 ```python
 airports = np.genfromtxt('airports.csv', delimiter=',', dtype=None, encoding=None, skip_header=1)
