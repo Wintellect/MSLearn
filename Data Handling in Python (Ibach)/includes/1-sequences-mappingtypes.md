@@ -168,7 +168,7 @@ lax_city = airports['LAX']
 print(lax_city) # outputs: Los Angeles
 ```
 
-You add new values to a dictionary by specifying the values and their keys. The following example adds the Houston airport to the `airports` dictionary: 
+You add new values to a dictionary by specifying their values and their keys. The following example adds the Houston airport to the `airports` dictionary: 
 
 ```python
 airports = {'SEA':'Seattle', 'LAX':'Los Angeles', 'ORD':'Chicago'}
