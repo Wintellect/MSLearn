@@ -68,16 +68,38 @@ Code entered into code cells is executed by a *kernel*. The popular IPython kern
 
 You can add additional cells to the notebook as needed to execute code and document your work. Finish up by selecting **Save and Checkpoint** from the notebook's **File** menu to save the notebook. Get in the habit of saving early and often to minimize the chance of losing your work.  
 
----
+## Analyze flight information
 
-## Analyzing flight information
+Now it's time to write *real* code to operate on *real* data. In this exercise, you will load a CSV file containing 100 rows with data regarding flight delays at a selection of U.S. airports on October 1, 2018. From the data, you will answer the following questions:
 
-Now you can start analyzing information on flight delays. The flight_delays.csv file contains information on past flights. You need to use this data to determine:
+- What is the mean delay time? 
+- How many flights arrived more than 10 minutes late?
+- What was the longest delay for any flight on that date?
 
-- The mean of the flight arrival delays 
-- How many flights arrived more than 10 minutes late
-- The longest delay for any flight
-- Flight information for the flight with the longest delay
+Start by deleting the two cells you added to the notebook. (This isn't strictly necessary, but we may as well keep the notebook clean.) Then proceed to load and analyze the data.
+
+1. Enter the following statement in the notebook's first cell and click the **Run** button to execute it:
+
+	```bash
+	!curl https://topcs.blob.core.windows.net/public/flight_delays.csv -o flight_delays.csv
+	```
+
+	This statement uses Bash's `curl` command to load a CSV file from Azure blob storage. You can execute Bash commands in Azure notebooks by preceding them with exclamation points (!).
+
+1. Add the following code to the next cell and run it to load the contents of the CSV file into memory in a NumPy array:
+
+	```python
+	import numpy as np
+
+	flight_data = genfromtxt('flight_delays.csv', delimiter=',', dtype=None, names=True, encoding=None)
+	print (flight_data.dtype.names)
+	```
+
+
+
+
+
+
 
 Open the file and examine the contents. Each row contains data for one flight. The ARR_DELAY column tells us in minutes how late a flight arrived:
 
