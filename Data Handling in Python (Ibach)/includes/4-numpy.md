@@ -117,13 +117,13 @@ print(airports) # outputs :
 
 ```
 
-The first parameter is the path to the CSV file. The second is the delimiter that separates items in the CSV file. The combination of `dtype=None` and `encoding=None` instructs `genfromtxt()` to infer the data type, which is slower than specifying the data type but produces more intuitive behavior, especially if the data file contains a mix of strings and numbers. Finally, `skip_header=1` tells `genfromtext()` to skip one header line — the line containing the column names.
-
-If you were reading a tab-delimited (TSV) file, you would modify the `delimiter` parameter as follows:
+The first parameter is the path to the CSV file. The second is the delimiter that separates items in the CSV file. If you were reading a tab-delimited (TSV) file, you would modify the `delimiter` parameter as follows:
 
 ```python
 airports = np.genfromtxt('airports.tsv', delimiter='\t', dtype=None, encoding=None, skip_header=1)
 ```
+
+The combination of `dtype=None` and `encoding=None` instructs `genfromtxt()` to infer the data type, which is slower than specifying the data type but produces more intuitive behavior, especially if the data file contains a mix of strings and numbers. Finally, `skip_header=1` tells `genfromtext()` to skip one header line — the line containing the column names.
 
 `genfromtxt()` supports other useful parameters as well. For example, if strings in the data file have leading or trailing spaces, specifying `autostrip=True` automatically removes leading and trailing whitespace:
 
