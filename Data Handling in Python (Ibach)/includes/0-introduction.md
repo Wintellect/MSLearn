@@ -2,15 +2,14 @@
 
 Imagine that you work in the IT department for a major airline. The airline is concerned about the impact that flight delays are having on cost overruns and has asked you to have a look at the data to get a better handle on the problem. The data comes from a variety of data sources. It has been aggregated and provided to you in the form of comma-separated (CSV) files. As is often the case, the data is rather raw and will require some cleaning up to ensure accurate analysis. 
 
-To meet the airline needs you will need to:
+To meet the airline's needs, you will need to:
 
-- Read and store structured data
+- Read data from CSV files and store it in data structures
 - Extract subsets of the data to focus on key information
-- Aggregate data from multiple CSV files into single data structures
 - Perform aggregations such as calculating the mean across multiple values
-- Create visualizations to gain further insights into flight data
+- Create visualizations to illustrate your conclusions
 
-Fortunately, Python has a number of features and libraries to make analyzing and manipulating data easy. Python itself has data structures you can use to store and manipulate data. Popular libraries such as [NumPy](https://www.numpy.org/), [Pandas](https://pandas.pydata.org/), and [Matplotlib](https://matplotlib.org/) extpand Python's power and make it a first-rate tool for handling data. 
+Python has a number of features and libraries to make analyzing and manipulating data easy. Python itself has data structures that you can use to store and manipulate data. Popular libraries such as [NumPy](https://www.numpy.org/), [Pandas](https://pandas.pydata.org/), and [Matplotlib](https://matplotlib.org/) expand Python's power and make it the perfect tool for the job. 
 
 ## Learning objectives
 
