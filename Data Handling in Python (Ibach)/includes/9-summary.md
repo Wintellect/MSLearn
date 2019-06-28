@@ -20,11 +20,11 @@ Praesent quis metus et risus aliquet dictum. Pellentesque porttitor pretium orci
 	- Answer
 	- Answer
 
-1. Question?
-	- Answer
-	- Answer
-	- Answer
-	- Answer
+1. Which of the following statements regarding `%matplotlib inline` is true?
+	- It imports Matplotlib
+	- It imports *just* the part of Matplotlib that you use
+	- It only works outside of Jupyter notebooks
+	- It prevents you from having to call `plt.show()`
 
 1. Question?
 	- Answer
