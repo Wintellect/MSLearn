@@ -97,7 +97,7 @@ print(lets_do_math[:,0].mean()) # outputs mean of values in first column : 3
 
 ## Reading data from CSV files
 
-NumPy contains a handy function named [genfromtxt](https://www.numpy.org/devdocs/user/basics.io.genfromtxt.html) for reading CSV files into NumPy arrays. Suppose you have a data file named **airports.csv** that contains the following text:
+NumPy contains a handy function named [genfromtxt()](https://www.numpy.org/devdocs/user/basics.io.genfromtxt.html) for reading CSV files into NumPy arrays. Suppose you have a data file named **airports.csv** that contains the following text:
 
 ```csv
 Code,City
