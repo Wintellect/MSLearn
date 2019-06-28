@@ -93,7 +93,4 @@ doubles = map(lambda x: x*2, nums)
 print(list(doubles)) # outputs : [2, 4, 6, 8, 10]
 ```
 
-Now you know the basics of lists, strings, dictionaries, comprehensions, the `map()` function, and lambda functions, you have the building blocks you need to start
-
-
-in Python. In the next lesson, you'll create an Azure Notebook so you can start writing and executing Python code to manipulate the airline data.
+Now that you know the basics of lists, strings, dictionaries, comprehensions, the `map()` function, and lambda functions, you have the building blocks you need to manipulate data in Python. In the next few lessons, you'll put this knowledge to work using on-time arrival data for U.S. airlines.
