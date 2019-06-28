@@ -40,7 +40,7 @@ The following example uses a conditional expression to filter the list to only i
 squares = [i**2 for i in range(5) if i % 2 == 0]
 ```
 
-In Python 3, comprehensions can be used to create dictionaries. The following example takes a dictionary containing lowercase airport codes and city names and creates a new dictionary. In the new dictionary, airport codes are uppercase, and city names are capitalized:
+In Python 3, comprehensions can also be used to create dictionaries. The following example takes a dictionary containing lowercase airport codes and city names and creates a new dictionary. In the new dictionary, airport codes are uppercase, and city names are capitalized:
 
 ```python
 airports = {'sea':'seattle', 'hou':'houston','ord':'Chicago'}
