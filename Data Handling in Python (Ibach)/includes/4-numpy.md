@@ -26,8 +26,8 @@ One of the most useful NumPy array functions is `reshape()`, which changes the d
 airports = airports.reshape(3, 2)
 print(airports) # outputs : 
                 # [['SEA' 'Seattle']
-                # ['HOU' 'Houston']
-                # ['BOS' 'Boston']]
+                #  ['HOU' 'Houston']
+                #  ['BOS' 'Boston']]
 ```
 
 Just like Python lists, NumPy arrays let you use loops to iterate through their items:  
