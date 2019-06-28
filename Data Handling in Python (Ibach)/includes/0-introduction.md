@@ -13,12 +13,12 @@ Python has a number of features to make analyzing and manipulating data easy. Py
 
 ## Learning objectives
 
-In this module, you will upload data and analyze it using a variety of Python functions and libraries. First, you will learn basic data structures in Python. Then, you will learn how to iterate across those structures. Next, you will learn how to use the NumPy and pandas libraries to upload data files and operate on data. Finally you will use the Matplotlib library to visualize data. Along the way, you will learn:
+In this module, you will upload data and analyze it using a variety of Python functions and libraries. First, you will learn basic data structures in Python. Then, you will learn how to iterate across those structures. Next, you will learn how to use NumPy and Pandas libraries to load data files and operate on the data. Finally, you will use Matplotlib to create rich visualizations. Along the way, you will learn:
 
-- How to use Python sequence and mapping types to store and slice data
-- How to use comprehensions and lambdas to iterate and act on data
-- How to use NumPy to read and store data from csv files, calculate aggregates, and operate on data
-- How to use pandas to read and store data from csv files, calculate aggregates, and operate on data
-- How to use Matplotlib to visualize data
+- How to use Python sequences and mapping types to store and slice data
+- How to use comprehensions and lambda functions to simplify your code
+- How to use NumPy to read data from CSV files, calculate aggregates, and operate on the data
+- How to use Pandas to read data from CSV files, calculate aggregates, and clean the data
+- How to use Matplotlib to visualize the data
 
-**Next unit: [Sequences and mapping types](1-sequences-mappingtypes.md)**
+First up: sequences and mapping types in Python.
