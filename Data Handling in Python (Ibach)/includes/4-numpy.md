@@ -4,41 +4,35 @@ One of the most compelling reasons to use Python is the sheer number of powerful
 
 For an excellent overview of *whys* of using NumPy and NumPy arrays, see [A hitchhiker guide to python NumPy Arrays](https://towardsdatascience.com/a-hitchhiker-guide-to-python-numpy-arrays-9358de570121). For now, let's focus our attention on the *hows*.
 
-## Importing the NumPy library
+## Creating a NumPy array
 
-Before you can use NumPy you need to import the library:
+You create a NumPy array using NumPy's `array()` function. The following code imports NumPy and creates an array containing airport codes and cities:  
 
 ```python
 import numpy as np
-```
-
-## Creating a NumPy array
-
-You create a NumPy array using the `array` function. The following code creates an array containing airport codes and cities:  
-
-```python
 airports = np.array(['SEA', 'Seattle', 'HOU', 'Houston', 'BOS', 'Boston'])
 print(airports) # outputs : ['SEA' 'Seattle' 'HOU' 'Houston' 'BOS' 'Boston']
 ```
 
-The `shape` function returns the dimensions of the array. The array created above is six rows and one column, making it a 6x1 array: 
+The `shape()` function returns the dimensions of the array. The array above contains six rows and one column, making it a 6x1 array: 
 
 ```python
 print(airports.shape) # outputs : (6,)
 ```
 
-One of the useful NumPy functions is the ability to change the dimensions of an array using `reshape`. You can reshape your airports array to make it three rows and two columns:  
+One of the most useful NumPy array functions is `reshape()`, which changes the dimensions of an array. You can reshape the `airports` array to make it three rows and two columns:  
 
 ```python
-airports = airports.reshape(3,2)
+airports = airports.reshape(3, 2)
 print(airports) # outputs : 
                 # [['SEA' 'Seattle']
                 # ['HOU' 'Houston']
                 # ['BOS' 'Boston']]
 ```
-## Accessing content of a NumPy array
 
-Just like Python lists, NumPy arrays allow you to use loops to iterate through all their values:  
+## Accessing items in a NumPy array
+
+Just like Python lists, NumPy arrays let you use loops to iterate through their items:  
 
 ```python
 for value in airports:
@@ -48,13 +42,15 @@ for value in airports:
                  # ['BOS' 'Boston']
 ```
 
-Just like Python lists, NumPy arrays can be sliced:
+And just like Python lists, NumPy arrays can be sliced:
 
 ```python
 print(airports[2,0]) # outputs a specific cell: BOS
 print(airports[2])   # outputs a specific row : ['BOS' 'Boston']
 print(airports[:,1]) # outputs a specific column : ['Seattle' 'Houston' 'Boston']
 ```
+
+One functional difference between Python lists and NumPy arrays is that the latter are *homogeneous*. A Python list, for example, can contain integers and strings. A NumPy array can contain integers *or* strings, but it cannot contain both.
 
 ## Reading data from a CSV file
 
