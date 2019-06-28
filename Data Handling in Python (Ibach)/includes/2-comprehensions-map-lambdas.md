@@ -73,13 +73,13 @@ Why is the `list()` function called in the `print` statement? In Python 2, `map(
 
 ## Lambda functions
 
-Lambda functions are small anonymous functions. *Anonymous* means lambda functions do not have names as conventional functions do. They can accept any number of arguments, but can only have one expression. The syntax for lambda functions is:
+Lambda functions are small anonymous functions. *Anonymous* means lambda functions do not have names as conventional functions do. The syntax for lambda functions is:
 
 ```python
 lambda arguments : expression
 ```
 
-The following example defines a lambda function that accepts a single argument (`x`) and returns twice the value of `x` passed to it:
+A lambda function can accept any number of arguments, but can only have one expression. The following example defines a lambda function that accepts a single argument (`x`) and returns twice the value of `x` passed to it:
 
 ```python
 lambda x: x * 2
