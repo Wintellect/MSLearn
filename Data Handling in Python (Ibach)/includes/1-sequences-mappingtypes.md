@@ -94,7 +94,7 @@ print(len(nums)) # outputs: 5
 
 ### Strings
 
-A string is a sequence of zero or more characters. Unlike most other programming languages, Python lacks a character data type. A character in Python simply a single item in a string.
+A string is a sequence of zero or more characters. Unlike most other programming languages, Python lacks a character data type. A character in Python is simply a single item in a string.
 
 Because strings are sequences, they support the same slicing syntax as lists. The following examples demonstrate how slicing  extracts substrings from strings:
 
@@ -115,7 +115,7 @@ message = 'This is fun!'
 print(message[:-2]) # outputs : This is fu
 ```
 
-Strings come with built-in functions for string manipulation. A common requirement is to split a string containing a collection of strings separated by commas, spaces, or other characters into a list of strings. The following example splits a string containing a series of strings separated by commas into a list of strings using the `split` function:
+Strings come with built-in functions for string manipulation. A common requirement is to split a string containing a collection of strings separated by commas, spaces, or other characters into a list of strings. The following example splits a string containing a series of strings separated by commas into a list of strings using the `split()` function:
 
 ```python
 colors_data = 'red,green,blue'
@@ -140,54 +140,57 @@ print(nums) # outputs: [1, 2, 3, 4, 5, 6]
 ```
 
 Sequences make it easy to manipulate collections of data. The Python support for sequences is one reason why it is so popular among people who deal with data on a daily basis.
+
 ## Mapping types
 
-Whereas sequences store ordered sets of data, mapping types store unordered sets. Mapping types hold collections of key-value items. They provide the ability to access items, and their keys, and values. Because they are unordered, when iterated, mapping types provide their items in an arbitrary order.
+Whereas sequences store ordered sets of data, mapping types store unordered sets. Mapping types hold collections of key-value pairs. They're called *mapping types* because each item maps a key (for example, "ORD," which is the airport code for Chicago's O'Hare International Airport) to a value (for example, "Chicago"). The only standard mapping type included in Python is the *dictionary*.
 
 ### Dictionaries
 
-The dictionary is the most commonly used mapping type in Python. 
-Each row in a dictionary contains a *key* and a *value*. Values are passed inside curly braces. 
-
-The following code creates an empty dictionary called airports:
+Each row in a dictionary contains a *key* and a *value*. Values are passed inside curly braces. The following code creates an empty dictionary named `airports`:
 
 ```python
 airports = {}
 print(airports) # outputs: {}
 ```
 
-Keys and values are provided to the dictionary using the syntax *key*:*value*.
+This example creates a dictionary containing airport codes and cities for three airports:
 
-The following code creates a dictionary containing the airport codes and cities for three airports:
 ```python
-airports = {'SEA':'Seattle', 'LAX':'Los Angeles','ORD':'Chicago'}
+airports = {'SEA':'Seattle', 'LAX':'Los Angeles', 'ORD':'Chicago'}
 print(airports) # outputs : {'SEA': 'Seattle', 'LAX': 'Los Angeles', 'ORD': 'Chicago'}
 ```
 
-Instead of specifying an index position, you access a value in the dictionary by specifying the key:
+You can retrieve a value from a dictionary by specifying the value's key:
+
 ```python
 lax_city = airports['LAX']
 print(lax_city) # outputs: Los Angeles
 ```
-If you want to add a new key:value to the dictionary, just assign a value to a new key.
 
-The following code adds the Houston airport to the airports dictionary: 
+You add new values to a dictionary by specifying the values and their keys. The following example adds the Houston airport to the `airports` dictionary: 
+
 ```python
-airports = {'SEA':'Seattle', 'LAX':'Los Angeles','ORD':'Chicago'}
+airports = {'SEA':'Seattle', 'LAX':'Los Angeles', 'ORD':'Chicago'}
 airports['HOU']='Houston'
 print(airports) # outputs : {'SEA': 'Seattle', 'LAX': 'Los Angeles', 'ORD': 'Chicago', 'HOU': 'Houston'}
 ```
-To remove a row from a dictionary use the `del` command:
+
+If an item keyed by "HOU" doesn't exist, it is added to the dictionary. If the item does exist, it's value is replaced with "Houston."
+
+To remove an item from a dictionary, use `del`:
+
 ```python
-airports = {'SEA':'Seattle', 'LAX':'Los Angeles','ORD':'Chicago'}
+airports = {'SEA':'Seattle', 'LAX':'Los Angeles', 'ORD':'Chicago'}
 del airports['LAX']
 print(airports) # outputs : {'SEA': 'Seattle', 'ORD': 'Chicago'}
 ```
-Just like you can with lists and strings, you can use the `len` function to return the length of the dictionary:
+
+You can enumerate the items in a dictionary using a `for` loop:
+
 ```python
-airports = {'SEA':'Seattle', 'LAX':'Los Angeles','ORD':'Chicago'}
-nbr_entries = len(airports)
-print(nbr_entries) # outputs : 3
+for key, value in airports.items():
+    print(key + ' = ' + value)
 ```
 
-Now you know the basics of sequences such as lists and strings, and mapping types like dictionaries. In the next lesson, you'll learn how to use comprehensions, map, and lambda functions to work with these types.
+Note that because items in a dictionary are unordered, the enumeration will won't necessarily retrieve items in the order in which they were added to the dictionary.
