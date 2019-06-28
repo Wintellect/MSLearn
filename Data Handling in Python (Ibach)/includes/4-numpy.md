@@ -1,11 +1,8 @@
 # NumPy
 
-One of the great things about Python is the number of useful libraries available to help you with your code. [NumPy](https://www.numpy.org/) is a package designed for scientific computing which can be used for efficient storage of multi-dimensional data. NumPy is licensed under the [BSD](https://www.numpy.org/license.html#license) enabling use with few restrictions.
+One of the great things about Python is the number of powerful libraries available to help with your work. [NumPy](https://www.numpy.org/) is one of those libraries — one that is purpose-built for scientific computing. It provides a rich multidimensional array object that is more performant than Python lists and requires substantially less memory — sometimes orders of magnitude less, especially when dealing with large arrays. NumPy arrays are easily reshaped. A simple function call, for example, converts a 5x4 array into a 2x10 array. NumPy also includes functions for performing fast mathematical operations on arrays, computing [Fourier transforms](https://en.wikipedia.org/wiki/Fourier_transform), and performing basic statistical operations. It even has support support for reading CSV files. For an overview of NumPy arrays and why they are ubiquitous in Python applications that handle data, see [A hitchhiker guide to python NumPy Arrays](https://towardsdatascience.com/a-hitchhiker-guide-to-python-numpy-arrays-9358de570121). NumPy is licensed under the [BSD license](https://www.numpy.org/license.html#license), enabling it to be used with few restrictions.
 
-In the previous lessons you learned how to use Python lists. Lists are resizeable and can store different types. NumPy arrays are arrays all of the same type indexed by a tuple of integers. So why use NumPy arrays instead of Python lists?  
-- **Size**:  NumPy data structures take up less space 
-- **Performance**: NumPy data structures are faster than lists  
-- **Functionality**: NumPy has many useful functions built in  
+In this lesson, you wil tk.
 
 ## Importing the NumPy library
 Before you can use NumPy you need to import the library:
