@@ -14,7 +14,7 @@ airports = np.array(['SEA', 'Seattle', 'HOU', 'Houston', 'BOS', 'Boston'])
 print(airports) # outputs : ['SEA' 'Seattle' 'HOU' 'Houston' 'BOS' 'Boston']
 ```
 
-The `shape()` function returns the dimensions of the array. The array above contains six rows and one column, making it a 6x1 array: 
+The `shape` attribute returns the dimensions of the array. The array above contains six rows and one column, making it a 6x1 array: 
 
 ```python
 print(airports.shape) # outputs : (6,)
