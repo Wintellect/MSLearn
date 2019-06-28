@@ -147,14 +147,14 @@ Whereas sequences store ordered sets of data, mapping types store unordered sets
 
 ### Dictionaries
 
-Each row in a dictionary contains a *key* and a *value*. Values are passed inside curly braces. The following code creates an empty dictionary named `airports`:
+Each item in a dictionary contains a *key* and a *value*. The following code creates an empty dictionary named `airports`:
 
 ```python
 airports = {}
 print(airports) # outputs: {}
 ```
 
-This example creates a dictionary containing airport codes and cities for three airports:
+You can include key-value pairs inside the curly braces to initialize a dictionary with items. This example creates a dictionary containing airport codes and cities for three airports:
 
 ```python
 airports = {'SEA':'Seattle', 'LAX':'Los Angeles', 'ORD':'Chicago'}
