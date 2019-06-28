@@ -29,10 +29,10 @@ squares = [i**2 for i in range(5)]
 The general syntax for a list comprehension is:
 
 ```python
-list_var = [expression(x) for x in iterable if conditional]
+[expression(x) for x in iterable if conditional]
 ```
 
-`list_var` is the name of the list to create, `expression(x)` is the operation to perform on the variable `x` during each iteration, `for x in iterable` is the variable name and the iterable name, and `if condition` is an optional conditional expression used to filter the iterable. An *iterable* is an object you can iterate over, meaning you can enumerate all of its items. Lists and strings are both examples of iterable objects. `range()` returns an iterable object, too, although the type of that object differs in Python 2 and Python 3.
+`expression(x)` is the operation to perform on the variable `x` during each iteration, `for x in iterable` specifies the variable name and the iterable name, and `if condition` is an optional conditional expression used to filter values accessed through the iterable. An *iterable* is an object you can iterate over, meaning you can enumerate all of its items. Lists and strings are both examples of iterable objects. `range()` returns an iterable object, too, although the type of that object differs in Python 2 and Python 3.
 
 The following example uses a conditional expression to filter the list to only include squares of even numbers:
 
