@@ -6,7 +6,7 @@ An alternative, and one widely used by Python porgrammers, is Jupyter notebooks.
 
 ![Azure notebook](media/notebook.png)
 
-In this lesson, you will log into Azure Notebooks using your Microsoft account, create a project, and create your first notebook. In subsequent lessons, you will add additional notebooks to the project in order to get first-hand experience handling data in Python.
+In this lesson, you will log into Azure Notebooks using your Microsoft account, create your first notebook, and apply some of the principles you learned in previous lessons to crack open a CSV file and extract insights from the data.
 
 ## Create a notebook
 
