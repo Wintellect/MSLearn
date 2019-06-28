@@ -75,7 +75,7 @@ print(lets_do_math < 3)
 #  [False False]]
 ```
 
-Finally, this example multiples by 3 every item in the array:
+Finally, this example multiplies by 2 every item in the array:
 
 ```python
 print(lets_do_math[2] * 2) 
