@@ -26,11 +26,11 @@ Praesent quis metus et risus aliquet dictum. Pellentesque porttitor pretium orci
 	- It only works outside of Jupyter notebooks
 	- It prevents you from having to call `plt.show()`
 
-1. Question?
-	- Answer
-	- Answer
-	- Answer
-	- Answer
+1. Which of the following statements regarding NumPy is false?
+	- NumPy arrays require less memory than Python lists
+	- Operations on NumPy arrays are faster than operations on Python lists
+	- It includes support for loading data from CSV and TSV files
+	- It's not free, but developer licenses are available for just $15 per year
 
 1. Question?
 	- Answer
