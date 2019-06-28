@@ -73,28 +73,27 @@ Why is the `list()` function called in the `print` statement? In Python 2, `map(
 
 ## Lambda functions
 
-Anywhere you use a named function you can also use lambda functions. Lambda functions are small anonymous functions. They can accept any number of arguments, but can only have one expression. 
+Lambda functions are small anonymous functions. *Anonymous* means lambda functions do not have names as conventional functions do. They can accept any number of arguments, but can only have one expression. The syntax for lambda functions is:
 
-The syntax for lambda functions is:
 ```python
 lambda arguments : expression
 ```
-- *arguments* are the parameters passed to the lambda function.  
-- *expression* is the expression to operate on the parameters.  
 
-The following lambda doubles the value passed to the function:
+The following example defines a lambda function that accepts a single argument (`x`) and doubles the value passed to the function:
+
 ```python
 double = lambda x: x * 2
-print(double(4)) # outputs : 8
 ```
 
-Lambdas can be used instead of functions in your code. For example, you can make your code with the map function more concise by using a lambda instead of a named function to double the values in the input list:
+Lambdas let you simplify your code by defining simple functions inline. For example, you could rewrite the code from the previous section that calls `double()` from the `map()` function this way:
 
 ```python
-nums = [1,2,3,4,5]
+nums = [1, 2, 3, 4, 5]
 doubles = map(lambda x: x*2, nums)
 print(list(doubles)) # outputs : [2, 4, 6, 8, 10]
 ```
 
-Now you know the basics of lists, strings, dictionaries, comprehensions, map, and lambda expressions in Python. In the next lesson, you'll create an Azure Notebook so you can start writing and executing Python code to manipulate the airline data.  
-**Next unit: [Creating an Azure Notebook](3-Creating-Azure-Notebook.md)**
+Now you know the basics of lists, strings, dictionaries, comprehensions, the `map()` function, and lambda functions, you have the building blocks you need to start
+
+
+in Python. In the next lesson, you'll create an Azure Notebook so you can start writing and executing Python code to manipulate the airline data.
