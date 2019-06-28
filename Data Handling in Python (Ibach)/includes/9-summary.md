@@ -8,11 +8,11 @@ Praesent quis metus et risus aliquet dictum. Pellentesque porttitor pretium orci
 
 ## Check your knowledge
 
-1. Question?
-	- Answer
-	- Answer
-	- Answer
-	- Answer
+1. What is the primary difference between lists and tuples in Python?
+	- Tuples are mutable, while lists are not
+	- Lists are mutable, while tuples are not
+	- Lists support insertion and deletion, while tuples support only deletion
+	- Lists can be enumerated, but tuples can not
 
 1. Question?
 	- Answer
