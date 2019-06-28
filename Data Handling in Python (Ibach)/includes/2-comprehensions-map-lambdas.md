@@ -69,7 +69,7 @@ doubles = map(double, nums)
 print(list(doubles)) # outputs : [2, 4, 6, 8, 10]
 ```
 
-Why is the `list()` function called in the `print` statement? In Python 2, `map()` returns a list, but in Python 3m, it returns a `map` object. The `list()` function creates a list from the `map` so `print()` can output the contents.
+Why is the `list()` function called in the `print` statement? In Python 2, `map()` returns a list, but in Python 3, it returns a `map` object. The `list()` function creates a list from the `map` so `print()` can print its contents.
 
 ## Lambda functions
 
