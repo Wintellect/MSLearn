@@ -72,7 +72,7 @@ You can add additional cells to the notebook as needed to execute code and docum
 
 Now it's time to write *real* code to operate on *real* data. In this exercise, you will load a CSV file containing 100 rows with data regarding flight delays at a selection of U.S. airports on October 1, 2018. From the data, you will answer the following questions:
 
-- What is the mean delay time? 
+- What was the mean (average) delay time? 
 - How many flights arrived more than 10 minutes late?
 - What was the longest delay for any flight on that date?
 
