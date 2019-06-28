@@ -52,7 +52,7 @@ One functional difference between Python lists and NumPy arrays is that the latt
 
 ## Performing mathematical operations on NumPy arrays
 
-NumPy provides functions and operators to simplify code that performs mathematical operations on the elements in a NumPy array. The following example adds 1 to every item in a NumPy array:
+NumPy provides functions and operators to simplify code that performs mathematical operations on the elements in a NumPy array. The following example adds 1 to every item in an array:
 
 ```python
 lets_do_math = np.array([[1, 2], [3, 4], [5, 6]])
