@@ -9,7 +9,7 @@ To meet the airline's needs, you will need to:
 - Perform aggregations such as calculating the mean across multiple values
 - Create visualizations to illustrate your conclusions
 
-Python has a number of features and libraries to make analyzing and manipulating data easy. Python itself has data structures that you can use to store and manipulate data. Popular libraries such as [NumPy](https://www.numpy.org/), [Pandas](https://pandas.pydata.org/), and [Matplotlib](https://matplotlib.org/) expand Python's power and make it the perfect tool for the job. 
+Python has a number of features to make analyzing and manipulating data easy. Python itself has data structures that you can use to store and manipulate data. Popular libraries such as [NumPy](https://www.numpy.org/), [Pandas](https://pandas.pydata.org/), and [Matplotlib](https://matplotlib.org/) expand Python's power and make it the perfect tool for the job. With this in mind, you set out to brush up on your Python and learn about some of the language features such as *comprehensions* and *lambdas* that you didn't learn in school. And you resolve to deliver your conclusions on time and under budget by leveraging libraries wherever possible.
 
 ## Learning objectives
 
