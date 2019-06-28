@@ -95,63 +95,73 @@ print(lets_do_math[:,0].mean()) # outputs mean of values in first column : 3
 
 `sum()`, `min()`, `max()`, and `mean()` are but a few of the many functions you can call on an array. For a complete list, see the documentation for the `ndarray` data type at https://docs.scipy.org/doc/numpy-1.13.0/reference/arrays.ndarray.html.
 
-## Reading data from a CSV file
+## Reading data from CSV files
 
-NumPy contains a rich function [genfromtxt](https://www.numpy.org/devdocs/user/basics.io.genfromtxt.html) for reading CSV files into NumPy arrays.
+NumPy contains a handy function named [genfromtxt](https://www.numpy.org/devdocs/user/basics.io.genfromtxt.html) for reading CSV files into NumPy arrays. Suppose you have a data file named **airports.csv** that contains the following text:
 
-Let's look at some of the parameters of `genfromtxt`:
-- **fname**: name of the csv file
-- **delimiter**: The string used to separate values  
-- **dtype**: Type of the resulting array. Setting this value to *None* will determine the type from the data itself but is slower than setting the dtype explicitly
-- **skip_header**: The number of lines to skip at the beginning of the file  
-- **skip_footer**: The number of lines to skip at the end of the file 
-
-### SUSAN TO ADD LINK TO ARIPORTCODELIST.CSV FILE
-
-Download and examine the AirportCodeList.csv file. The file has a header row containing the names of the columns and a footer row containing the number of rows selected. You might also have noticed there are some extra spaces on some of the rows. 
-
-Use `genfromtxt` to read the file contents:  
-
-```python
-airport_codes = genfromtxt('AirportCodeList.csv', delimiter=',',dtype=None, encoding=None, skip_header=1, skip_footer=1)
-print(airport_codes) # outputs : 
-                     # [['HOU' 'Houston']
-                     # ['ABQ' 'Alberquerque']
-                     # ['BWI    ' ' Baltimore']
-                     # ...
-                     # ['GSP' ' Greenville']]
+```csv
+Code,City
+HOU,Houston
+ABQ,Albuquerque
+BWI,Baltimore
 ```
 
-> You may have noticed an additional parameter: *encoding*. Encoding is used to decode the inputfile.  When you use dtype=*None* to auto-detect types, NumPy cannot tell which fields are bytes and fields are strings. By specifying encoding = *None* you are telling NumPy to treat them as strings. If you have bytes you must specify the dtype explicity.   
-
-### Stripping excess whitespace
-
-You have successfully read all the rows but you can see the extra spaces in the input file are affecting our data. Add the *autostrip* parameter and set it to *True* to strip the excess white space:
+The following code loads the contents of a CSV file named **airports.csv** into a NumPy array and prints the results:
 
 ```python
-airport_codes = genfromtxt('AirportCodeList.csv', delimiter=',',autostrip=True, dtype=None, encoding=None, skip_header=1, skip_footer=1)
-print(airport_codes) # outputs : 
-                     # [['HOU' 'Houston']
-                     # ['ABQ' 'Alberquerque']
-                     # ['BWI' 'Baltimore']
-                     # ...
-                     # ['GSP' 'Greenville']]
+airports = np.genfromtxt('airports.csv', delimiter=',', dtype=None, encoding=None, skip_header=1)
+print(airports) # outputs : 
+                # [['HOU' 'Houston']
+                #  ['ABQ' 'Alberquerque']
+                #  ['BWI' 'Baltimore']]
+
 ```
 
-### Importing column names
+The first parameter is the path to the CSV file. The second is the delimiter that separates items in the CSV file. The combination of `dtype=None` and `encoding=None` instructs `genfromtxt()` to infer the data type, which is slower than specifying the data type but produces more intuitive behavior, especially if the data file contains a mix of strings and numbers. Finally, `skip_header=1` tells `genfromtext()` to skip one header line — the line containing the column names.
 
-As files get bigger, it can be difficult to keep track of which column is in which position. It might be easier to name to the columns. You do this with the *names* parameter. You can either assign the column names manually, or if they are in the first row of the file, you can read them from the header row by adding the *names* parameter and setting it to *True*:
+If you were reading a tab-delimited (TSV) file, you would modify the `delimiter` parameter as follows:
 
 ```python
-airport_codes = genfromtxt('AirportCodeList.csv', delimiter=',',autostrip=True, dtype=None, encoding=None, names=True, skip_footer=1)
-print (airport_codes.dtype.names) # outputs column names : ('Airport_Code', 'City')
-print(airport_codes['City']) # outputs : 
-# ['Houston' 'Alberquerque' ... 'Greenville']
+airports = np.genfromtxt('airports.tsv', delimiter='\t', dtype=None, encoding=None, skip_header=1)
 ```
+
+`genfromtxt()` supports other useful parameters as well. For example, if strings in the data file have leading or trailing spaces, specifying `autostrip=True` automatically removes leading and trailing whitespace:
+
+```python
+airports = np.genfromtxt('airports.csv', delimiter=',', dtype=None, encoding=None, skip_header=1, autostrip=True)
+```
+
+### Working with column names
+
+By default, NumPy arrays created with `genfromtext()` do not have column names. You can specify names with the `names` parameter:
+
+```python
+airports = np.genfromtxt('airports.csv', delimiter=',', dtype=None, encoding=None, skip_header=1, names=('Code', 'City'))
+print(airports[0]['Code']) # outputs : HOU
+```
+
+Or, if the header line contains column names, you can use `names=True` to use those:
+
+```python
+airports = np.genfromtxt('airports.csv', delimiter=',', dtype=None, encoding=None, names=True)
+print(airports[0]['Code']) # outputs : HOU
+```
+
+It is not unusual for data files to contain many more columns than you are interested in. You can specify which columns to load from a data file with the `usecols` parameter:
+
+```python
+airports = np.genfromtxt('airports.csv', delimiter=',', dtype=None, encoding=None, names=True, usecols=('Code', 'City'))
+```
+
+You can use column indexes instead, which is handy if the columns don't have names:
+
+```python
+airports = np.genfromtxt('airports.csv', delimiter=',', dtype='str', skip_header=1, usecols=(0, 1))
+```
+
+For more information about `genfromtxt()` and the various options that it supports, see [Importing data with genfromtxt](https://www.numpy.org/devdocs/user/basics.io.genfromtxt.html)
 
 ## Analyzing flight information
-
-## SUSAN ADD LINK TO FLGHT_DELAYS.CSV
 
 Now you can start analyzing information on flight delays. The flight_delays.csv file contains information on past flights. You need to use this data to determine:
 
