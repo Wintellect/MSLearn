@@ -176,7 +176,7 @@ airports['HOU']='Houston'
 print(airports) # outputs : {'SEA': 'Seattle', 'LAX': 'Los Angeles', 'ORD': 'Chicago', 'HOU': 'Houston'}
 ```
 
-If an item keyed by "HOU" doesn't exist, it is added to the dictionary. If the item does exist, it's value is replaced with "Houston."
+If an item keyed by "HOU" doesn't exist, it is added to the dictionary. If the item does exist, its value is replaced with "Houston."
 
 To remove an item from a dictionary, use `del`:
 
