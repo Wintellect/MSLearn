@@ -50,6 +50,54 @@ print(airports[:,1]) # outputs a specific column : ['Seattle' 'Houston' 'Boston'
 
 One functional difference between Python lists and NumPy arrays is that the latter are *homogeneous*. A Python list, for example, can contain integers and strings. A NumPy array can contain integers *or* strings, but it cannot contain both.
 
+## Performing mathematical operations on NumPy arrays
+
+NumPy provides functions and operators to simplify code that performs mathematical operations on the elements in a NumPy array. The following example adds 1 to every item in a NumPy array:
+
+```python
+lets_do_math = np.array([[1, 2], [3, 4], [5, 6]])
+print(lets_do_math + 1) 
+# outputs the entire array 
+# with 1 added to each element: 
+# [[2 3]
+#  [4 5]
+#  [6 7]]
+```
+
+The next example applies the expression `< 3` to each item in the array:
+
+```python
+print(lets_do_math < 3)
+# outputs the result of the evaluation 
+# is element < 3 for each element in the array:
+# [[ True  True]
+#  [False False]
+#  [False False]]
+```
+
+Finally, this example multiples by 3 every item in the array:
+
+```python
+print(lets_do_math[2] * 2) 
+# outputs the third row of the array
+# with each element multiplied by 2
+# [10 12]
+```
+
+NumPy arrays also support operations such as calculating the sum, minimum, maximum, or mean of all the values in an array or array slice:
+
+```python
+print(lets_do_math.sum()) # outputs sum of entire array : 21
+print(lets_do_math.min()) # outputs lowest value in entire array : 1
+print(lets_do_math[2].max()) # outputs highest value in 3rd row : 6
+print(lets_do_math[:,0].mean()) # outputs mean of values in first column : 3
+```
+
+
+
+
+
+
 ## Reading data from a CSV file
 
 NumPy contains a rich function [genfromtxt](https://www.numpy.org/devdocs/user/basics.io.genfromtxt.html) for reading CSV files into NumPy arrays.
@@ -102,39 +150,6 @@ airport_codes = genfromtxt('AirportCodeList.csv', delimiter=',',autostrip=True, 
 print (airport_codes.dtype.names) # outputs column names : ('Airport_Code', 'City')
 print(airport_codes['City']) # outputs : 
 # ['Houston' 'Alberquerque' ... 'Greenville']
-```
-
-## NumPy math functions
-
-The NumPy library also supports mathematical operations across the array. When you apply an operation to the array, that operation is completed against each element in the array or each element in the slice: 
-
-```python
-lets_do_math = np.array([[1, 2], [3, 4], [5, 6]])
-print(lets_do_math + 1) 
-# outputs the entire array 
-# with 1 added to each element: 
-# [[2 3]
-#  [4 5]
-#  [6 7]]
-
-print(lets_do_math < 3)
-# outputs the result of the evaluation 
-# is element < 3 for each element in the array:
-# [[ True  True]
-#  [False False]
-#  [False False]]
-
-print(lets_do_math[2] * 2) 
-# outputs the third row of the array
-# with each element multiplied by 2
-# [10 12]
-```
-NumPy arrays also support operations such as calculating the sum, min, max, or mean of all the values in the array or slice:
-```python
-print(lets_do_math.sum()) # outputs sum of entire array : 21
-print(lets_do_math.min()) # outputs lowest value in entire array : 1
-print(lets_do_math[2].max()) # outputs highest value in 3rd row : 6
-print(lets_do_math[:,0].mean()) # outputs mean of values in first column : 3
 ```
 
 ## Analyzing flight information
