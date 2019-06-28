@@ -82,7 +82,7 @@ lambda arguments : expression
 The following example defines a lambda function that accepts a single argument (`x`) and doubles the value of `x` passed to the function:
 
 ```python
-double = lambda x: x * 2
+lambda x: x * 2
 ```
 
 Lambdas let you simplify your code by defining simple functions inline. For example, you could rewrite the code from the previous section that calls `double()` from the `map()` function this way:
