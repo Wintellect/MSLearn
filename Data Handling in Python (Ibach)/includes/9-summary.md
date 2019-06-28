@@ -14,11 +14,11 @@ Praesent quis metus et risus aliquet dictum. Pellentesque porttitor pretium orci
 	- Lists support insertion and deletion, while tuples support only deletion
 	- Lists can be enumerated, but tuples can not
 
-1. Question?
-	- Answer
-	- Answer
-	- Answer
-	- Answer
+1. Which of the following statements accurately describes lambda functions?
+	- Small, one-line functions that have no names
+	- Small, one-line functions that are called with the `->` operator
+	- Small, one-line functions that are called with the `=>` operator
+	- Small, one-line functions that accept no arguments
 
 1. Which of the following statements regarding `%matplotlib inline` is true?
 	- It imports Matplotlib
