@@ -34,7 +34,7 @@ list_var = [expression(x) for x in iterable]
 
 `list_var` is the name of the list to create, `expression(x)` is the operation to perform on the variable `x` during each iteration, and `for x in iterable` is the variable name and the iterable name. An *iterable* is an object you can iterate over, meaning you can enumerate all of its items. Lists and strings are both examples of iterable objects. `range()` returns an iterable object, too, although the type of that object differs in Python 2 and Python 3.
 
-You can also use conditional statements in a comprehension to filter which values are included in the new list. The following example filters the list to only include squares of even numbers:
+You can also use conditional statements in a comprehension. The following example filters the list to only include squares of even numbers:
 
 ```python
 squares = [i**2 for i in range(5) if i % 2 == 0]
