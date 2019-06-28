@@ -26,7 +26,7 @@ Azure notebooks are created through the portal at https://notebooks.azure.com an
 
 	_Adding a notebook to the project_
 
-1. Name the notebook "Airports.ipynb," and select **Python 3.6** as the language. This will create a notebook with a Python 3.6 kernel for executing Python code. One of the strengths of Azure notebooks is that you can use different languages by choosing different kernels.
+1. Name the notebook "Flight Delays.ipynb," and select **Python 3.6** as the language. This will create a notebook with a Python 3.6 kernel for executing Python code. One of the strengths of Azure notebooks is that you can use different languages by choosing different kernels.
 
 	![Creating a notebook](media/add-notebook-2.png)
 
@@ -37,36 +37,6 @@ Azure notebooks are created through the portal at https://notebooks.azure.com an
 1. Click the notebook to open it for editing.
 
 You can create additional projects and notebooks as you work with Azure Notebooks. You can create notebooks from scratch, or you can upload existing notebooks. And once a notebook is created or uploaded, you can take advantage of Azure compute resources to run the notebook and leverage popular Python libraries such as [Keras](https://keras.io/), [NumPy](http://www.numpy.org/), [Pandas](https://pandas.pydata.org/), [Matplotlib](https://matplotlib.org/), and [Scikit-learn](https://scikit-learn.org/stable/index.html).
-
-## Execute code in the notebook
-
-Jupyter notebooks are composed of cells. Each cell is assigned one of three types: 
-- **Markdown** for entering text in markdown format. 
-- **Code** for entering code that runs interactively  
-- **Raw NBConvert** for entering data inline
-
-Code entered into code cells is executed by a *kernel*. The popular IPython kernel supports code written in Python, but dozens of other kernels are available supporting other languages. Azure notebooks (Jupyter notebooks created in Azure) support Python, R, and F#. They also support numerous packages and libraries that are commonly used in Python.
-
-1. In the first cell, set the cell type to **Markdown** and type "# Airport codes" (without quotation marks) into the cell itself. The click the **Run** button in the notebook's toolbar:
-
-	![Creating a markdown cell](media/first-cell.png)
-
-	_Creating a markdown cell_
-
-1. Type the following code into the next cell and click **Run** again to execute the code:
-
-	```python
-    airport_codes = ['SEA', 'DTW', 'HOU', 'BOS']
-    print(airport_codes)
-	```
-
-	Confirm that a list of airport codes appears in the output:
-
-	![Running a code cell](media/second-cell.png)
-
-	_Running a code cell_
-
-You can add additional cells to the notebook as needed to execute code and document your work. Finish up by selecting **Save and Checkpoint** from the notebook's **File** menu to save the notebook. Get in the habit of saving early and often to minimize the chance of losing your work.  
 
 ## Analyze flight information
 
