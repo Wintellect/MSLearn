@@ -8,6 +8,10 @@ An alternative, and one widely used by Python porgrammers, is Jupyter notebooks.
 
 In this lesson, you will log into Azure Notebooks using your Microsoft account, create a project, and create your first notebook. In subsequent lessons, you will add additional notebooks to the project in order to get first-hand experience handling data in Python.
 
+## Create a notebook
+
+Azure notebooks are created through the portal at https://notebooks.azure.com and require nothing more than a browser and a [Microsoft account](https://account.microsoft.com/account). Notebooks are contained in projects, whose primary purpose is to group related notebooks. In this exercise, you will create a new project and then create a notebook inside it.
+
 1. Navigate to https://notebooks.azure.com in your browser and sign in using your Microsoft account. Click **My Projects** in the menu at the top of the page. Then click the **+ New Project** button at the top of the "My Projects" page.
 
 1. Create a new project named "Data Handling in Python." Check the "Public" box if you'd like to share notebooks with other people later on. You can also go into project settings once a project is created and change its visibility to public or private. 
