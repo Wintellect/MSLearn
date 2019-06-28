@@ -1,6 +1,6 @@
 # Introduction
 
-Imagine that you work in the IT department for a major airline. The airline is concerned about the impact that flight delays are having on cost overruns and has asked you to have a look at the data to get a better handle on the problem. The data comes from a variety of data sources. It has been aggregated and provided to you in the form of comma-separated (CSV) files. As is often the case, the data is rather raw and will require some cleaning up to ensure accurate reporting. 
+Imagine that you work in the IT department for a major airline. The airline is concerned about the impact that flight delays are having on cost overruns and has asked you to have a look at the data to get a better handle on the problem. The data comes from a variety of data sources. It has been aggregated and provided to you in the form of comma-separated (CSV) files. As is often the case, the data is rather raw and will require some cleaning up to ensure accurate analysis. 
 
 To meet the airline needs you will need to:
 
