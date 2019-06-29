@@ -1,4 +1,4 @@
-# Analyze flight delays
+# Use NumPy to analyze flight delays
 
 In order to try your hand with Python and some of the libraries that make it a great language for analyzing and manipulating data, you need an environment in which to execute Python code. You could install Python on your computer. It's included in most Linux distributions, but if you're running Windows, chances are it has to be installed separately.
 

@@ -1,4 +1,4 @@
-# Visualize data with Matplotlib
+# Matplotlib
 
 If a picture is worth a thousand words, then a chart or diagram drawn with Matplotlib is worth a thousand DataFrames. [Matplotlib](https://matplotlib.org/) is a versatile 2D plotting library for Python. A few lines of code can produce rich visuals that reveal information about the data you're dealing with as well as relationships among the values comprising the data. Matplotlib also serves as the foundation for other popular visualization libraries such [Seaborn](https://seaborn.pydata.org/), and lends its talents to Pandas so you can produce graphic depictions from Pandas DataFrames.
 
