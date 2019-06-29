@@ -1,6 +1,6 @@
 # Merge and analyze complex datasets
 
-Imagine that it's late on Friday afternoon and you've been given two large CSV files containing on-time arrival information for hundreds of thousands of flights. The data is "dirtied" with duplicate rows and missing values, the latter resulting from a combination of incomplete records and flights that never reached their destination because they were canceled or diverted. Your job is to merge the two datasets into one, clean it, and answer basic questions such as what percentage of the flights arrived at the their destinations on time, and what percentage arrived 10 minutes or more late.
+Imagine that it's late on Friday afternoon and you've been given two large CSV files containing on-time arrival information for hundreds of thousands of flights. The data is "dirtied" with duplicate rows and missing values, the latter resulting from a combination of incomplete records and flights that never reached their destination because they were canceled or diverted. Your job is to merge the two datasets into one, clean it, and answer basic questions such as what percentage of the flights arrived at on time, and what percentage arrived 10 minutes or more late.
 
 In this lesson, you will use a Jupyter notebook to put Pandas to work cleaning and analyzing data. Using pure Python, you'd be in for a long weekend. But with Pandas doing the heavy lifting, you'll be off for a weekend getaway before most of your colleagues punch the clock to head home.
 
