@@ -181,7 +181,54 @@ df = df.sort_values(by=['City', 'Code'])
 
 By default, Pandas performs ascending sorts. If you want to do a descending sort instead, include an `ascending=False` parameter in the call to `sort_values()`.
 
-## Merging and concatenating
+## Merging and joining data
 
+It's not uncommon for data to be delivered in multiple CSV files or aggregated from several data sources. DataFrame's [`append()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.append.html#pandas.DataFrame.append) method makes it easy to append the contents of another DataFrame to an existing DataFrame:
 
+```python
+df.append(other_df, ignore_index=True)
+```
 
+The `ignore_index=TRUE` parameter tells the method to renumber (reindex) the rows that are appended. Without that, you would have two rows with index 0, two rows with index 1, and so on.
+
+You can also join DataFrames in a manner that is analagous to doing a JOIN in SQL. Suppose you have one DataFrame containing airport codes and cities:
+
+```python
+column_names = ['airport_code', 'city']
+data = [['DTW','Detroit'], ['LGA','New York'], ['DUL','Washington']]
+airports = pd.DataFrame(data, columns = column_names)
+```
+
+And another DataFrame with airport codes and flight information:
+
+```python
+column_names = ['departure_date', 'dest_airport', 'dep_time', 'flight_num']
+data = [['12/31/2019','DTW','08:15',499], ['12/31/2019','LGA','09:35',748] , ['12/31/2019','LGA','13:15',749]]
+flights = pd.DataFrame(data, columns = column_names)
+```
+
+The following statement joins the DataFrames, performing the equivalent of an INNER JOIN on the "airport_code" and "dest_airport" columns:
+
+```python
+df = pd.merge(flights, airport_codes, how='inner', left_on= 'dest_airport', right_on='airport_code')
+```
+
+The resulting DataFrame is rendered this way in a Jupyter notebook:
+
+![Joining DataFrames](media/joined-dataframe.png)
+
+## Doing math with Pandas
+
+Like NumPy, Pandas includes methods for performing mathematical operations on DataFrames. The following example shows the mean of the values in every numeric column of the DataFrame:
+
+```python
+df.mean()
+```
+
+This statement shows the sum of all the values in the "Count" column:
+
+```python
+df['Count'].sum()
+```
+
+There is more — much more — that could be said about DataFrames. But the best way to learn a new library is to use it. Let's put Pandas to work solving a few problems.
