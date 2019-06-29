@@ -131,6 +131,8 @@ The combination of `dtype=None` and `encoding=None` instructs `genfromtxt()` to 
 airports = np.genfromtxt('airports.csv', delimiter=',', dtype=None, encoding=None, skip_header=1, autostrip=True)
 ```
 
+Incidentally, `genfromtext()` has a counterpart named [`savetxt()`](https://docs.scipy.org/doc/numpy/reference/generated/numpy.savetxt.html) that saves the contents of a NumPy array to a CSV file, TSV file, or other text file.
+
 ### Working with column names
 
 By default, NumPy arrays created with `genfromtext()` do not have column names. You can specify names with the `names` parameter:
