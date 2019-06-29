@@ -54,7 +54,7 @@ The first challenge is to load the CSV files and produce a single DataFrame. The
 	df.shape
 	```
 
-That wasn't difficult, but there is more to do before you apply analytical methods to the data. In the real world, data is rarely neat and tidy. This dataset is no exception.
+That wasn't difficult, but there is more to do before you apply the first analytical method to the data. In the real world, data is rarely ready to consume as is. This dataset is no exception.
 
 ## Clean the data
 
