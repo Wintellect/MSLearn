@@ -150,7 +150,7 @@ Like NumPy, Pandas includes methods for performing mathematical operations on Da
 	df.groupby('ORIGIN')['DEP_DELAY'].mean().sort_values(ascending=False).head(10)
 	```
 
-1. Confirm that the output looks like this, which indicates that Southwest Oregon Regional Airport (OTH) is not the place you'd want to fly out of if given a choice:
+1. Confirm that the output looks like this, which indicates that Southwest Oregon Regional Airport (OTH) is not the place you'd prefer to fly out of if given a choice:
 
 	![Airports with the longest average departure delays](media/worst-airports.png)
 
