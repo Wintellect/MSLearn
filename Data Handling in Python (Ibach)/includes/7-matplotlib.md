@@ -117,7 +117,7 @@ plt.show()
 
 ![Fitting a line to data](media/scatter-plot-best-fit.png)
 
-This is the NumPy equivalent of using [linear regression](https://en.wikipedia.org/wiki/Linear_regression) to find the line that best fits the data.
+This is the NumPy equivalent of using [linear regression](https://en.wikipedia.org/wiki/Linear_regression) to find the line that best fits the data. And it's a great conversation-starter at the next Matplotlib party you attend.
 
 ## Bar charts
 
