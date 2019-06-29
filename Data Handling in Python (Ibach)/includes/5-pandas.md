@@ -1,116 +1,89 @@
-# Load data with Pandas
+# Pandas
 
-NumPy is great for loading data from CSV files and performing fast mathematical calculations on the data. But when it comes to cleaning, analyzing, and manipulating data, nothing beats [Pandas](https://pandas.pydata.org/). Pandas, short for *Python Data Analysis Library*, is the library that people who work with data for a living turn to for gathering insights from large datasets or preparing it for machine learning. It uses NumPy for speed and efficiency, and it goes far beyond NumPy in terms of the tools it offers for working with data. Like NumPy, Pandas is licensed under the [BSD license](https://www.numpy.org/license.html#license), enabling wide-ranging use with few restrictions.
+NumPy is great for loading data from CSV files and performing fast mathematical calculations on the data. But when it comes to cleaning, analyzing, and manipulating data, nothing beats [Pandas](https://pandas.pydata.org/). Pandas, short for *Python Data Analysis Library*, is the library that people who work with data for a living turn to for gathering insights from large datasets or preparing it for machine learning. It uses NumPy for speed and efficiency, and it goes far beyond NumPy in terms of the tools it offers for working with data. Like NumPy, Pandas is licensed under the [BSD license](https://github.com/pandas-dev/pandas/blob/master/LICENSE), enabling wide-ranging use with few restrictions.
 
-The key data structure in Pandas is the [DataFrame](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html), which you can think of as a two-dimensional table of rows and columns with labeled axes. DataFrame includes methods for loading data from CSV files, filtering and sorting data, checking for and replacing missing values, removing rows and columns with missing values, joining DataFrames, rendering data on-screen, and more. DataFrame contains more than 200 methods. A simple call to [`DataFrame.head()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.head.html#pandas.DataFrame.head) in a Jupyter notebook gives you a look at the structure and content of the data:
+The key data structure in Pandas is the [DataFrame](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html), which you can think of as a two-dimensional table of rows and columns with labeled axes. DataFrame includes methods for loading data from CSV files, filtering and sorting data, checking for and replacing missing values, removing rows and columns with missing values, joining DataFrames, rendering data on-screen, exporting to JSON, CSV, Excel, and SQL, and more. DataFrame contains more than 200 methods and attributes. A simple call to [`DataFrame.head()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.head.html#pandas.DataFrame.head) in a Jupyter notebook gives you a look at the structure and content of the data:
 
 ![Viewing a DataFrame](media/dataframe.png)
 
-Working with data is simpler when you have Pandas to lend a hand. In this lesson, you will learn the basics of Pandas and use it to load and examine the contents of a large dataset.
+Working with data is simpler when you have Pandas to lend a hand. In this lesson, you will learn the basics of Pandas.
 
-## Importing the pandas library
+## Working with DataFrames
 
-Before you can use pandas you need to import the library:
+A DataFrame is a two-dimensional data structure. Rows are indexed by number, and columns are indexed by name. You can create a DataFrame and initialize it with data using Pandas' [`DataFrame()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html) method:  
+
 ```python
 import pandas as pd
-```
 
-## Creating a pandas series
-
-A *Series* in pandas is similar to a list in Python. A Series is a one dimensional array capable of holding any data type:
-
-```python
-num_series = pd.Series([1,2,3,4])
-print(num_series) # outputs :
-# 0    1
-# 1    2
-# 2    3
-# 3    4
-```
-
-You can access the values in a series with a loop:
-
- ```python
-for value in num_series:
-    print(value) # outputs :
-# 1
-# 2
-# 3
-# 4 
-```
-
-You can access a specific value by specifying the index position:
-
-```python
-print(num_series[0]) # outputs : 1
-```
-
-Unlike Python lists, you can control the index/label of the elements in a series: 
-
-```python
-num_series = pd.Series([1,2,3,4],['One','Two','Three','Four'])
-print(num_series) # outputs :
-# One      1
-# Two      2
-# Three    3
-# Four     4
-print(num_series['One']) # outputs : 1
-```
-
-## Creating a pandas DataFrame
-
-A pandas *DataFrame* is a two or more dimensional data structure. Each column and row is indexed:  
-
-```python
-data = [['SEA','Seattle'],['BOS','Boston'],['HOU','Houston']]
-column_names = ['airport_code','city']
+column_names = ['Code', 'City']
+data = [['SEA','Seattle'], ['BOS','Boston'], ['HOU','Houston']]
 airports = pd.DataFrame(data, columns = column_names)
 print(airports) # outputs : 
-#   airport_code     city
-# 0          SEA  Seattle
-# 1          BOS   Boston
-# 2          HOU  Houston
+#   Code     City
+# 0  SEA  Seattle
+# 1  BOS   Boston
+# 2  HOU  Houston
 ```
 
-## Slicing a DataFrame
-
-To slice a DataFrame you use the following syntax: 
+You can use the [`loc`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.loc.html#pandas.DataFrame.loc) attribute to slice a DataFrame and create a new DataFrame containing a subset of the rows and columns of the original. The first parameter in square brackets specifies the range of rows, and the second parameter identifies the range of columns:
 
 ```python
-df2.loc[startrow:endrow, startcolumn:endcolumn]
+print(airports.loc[0:1, 'Code':'City']) # outputs
+#   Code     city
+# 0  SEA  Seattle
+# 1  BOS   Boston
 ```
 
-Don't forget with pandas the indexes may not be numeric:
+You can also use `loc` to retrieve the contents of a specific row and column:
 
-```python
-print(airports.loc[0:1,'airport_code':'city']) # outputs
-#   airport_code     city
-# 0          SEA  Seattle
-# 1          BOS   Boston
-```
-
-You can request a specific cell using the `loc` function:
 ```python
 print(airports.loc[0,'city']) # outputs : Seattle 
 ```
-You can access one or more specific rows by specifying the index range of the rows:
+
+To retrieve a specific row (or range of rows), simply specify the beginning and ending row indexes. `[0:1]` retrieves the first row in the DataFrame. `[0:2]` retrieves the first two rows, and so on:
+
 ```python
 print(airports[0:1]) # outputs : 
 #      airport_code     city
 # 0             SEA  Seattle
 ```
 
-You can access a specific column with the column index:
+And to retrieve a specific column, specify the column name:
 
 ```python
-print(airports['airport_code'])
+print(airports['Code'])
 # outputs a Series 
 # 0    SEA
 # 1    BOS
 # 2    HOU
 ```
 
-## Reading data from a CSV file
+Need to retrieve multiple columns? You can do that, too:
+
+```python
+print(airports[['City', 'Code']])
+```
+ 
+There are other ways to identify rows and columns in a DataFrame, including the [`iloc`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.iloc.html#pandas.DataFrame.iloc) attribute, which uses pure integer indexes. You can even use lambda functions to perform complex selections. The following example selects the even-numbered rows in a DataFrame:
+
+```python
+print(airports.iloc[lambda x: x.index % 2 == 0]) # outputs :
+#   Code     City
+# 0  SEA  Seattle
+# 2  HOU  Houston
+```
+
+Rather than `print` a DataFrame, you can use the [`head()`]((https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.head.html#pandas.DataFrame.head)) method to retrieve its rows. In a Jupyter notebook, this produces a neatly formatted rendering of the DataFrame:
+
+```python
+airports.head()
+```
+
+![DataFrame rendered in a Jupyter notebook](media/dataframe-head.png)
+
+By default, `head()` returns the first five rows of the DataFrame. To return more or less, simply specify a count as an argument to the function.
+
+## Reading data from CSV files
 
 With pandas you use the `read_csv` function to read the contents of a csv file. Let's look at some of the parameters of `read_csv`:
 
