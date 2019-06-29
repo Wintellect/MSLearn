@@ -10,7 +10,7 @@ In this lesson, you will use a Jupyter notebook to put Pandas to work cleaning a
 
 The first challenge is to load the CSV files and produce a single DataFrame. The `read_csv()` and `append()` methods that you learned about in the previous lesson should make short work of both.
 
-1. Begin by returning to [Azure Notebooks](https://notebooks.azure.com) and creating a new notebook named "Flights" in the "Data Handling in Python" project that you created earlier. Select Python 3.6 as the language.
+1. Begin by returning to [Azure Notebooks](https://notebooks.azure.com) and creating a new notebook named "Pandas" in the "Data Handling in Python" project that you created earlier. Select Python 3.6 as the language.
 
 1. Run the following statements in the notebook's first cell to import a pair of CSV files from Azure blob storage:
 
