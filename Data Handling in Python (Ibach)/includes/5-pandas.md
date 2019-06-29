@@ -134,7 +134,7 @@ df.columns = ['Code', 'City']
 One of the reasons Pandas is so popular is that DataFrame includes numerous methods for cleaning and filtering data. For example, the `drop_duplicates()` method removes duplicate rows from a DataFrame, which is often a precursor to using it to train a machine-learning model:
 
 ```python
-df.drop_duplicates()
+df = df.drop_duplicates()
 ```
 
 Another common use case for Pandas is identifying rows and columns with missing values and either removing those rows and columns or replacing the missing values. Here's a quick way to list all the columns in the DataFrame and show a count of missing values in each one:
