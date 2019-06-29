@@ -4,9 +4,7 @@ It's Monday morning, and while Pandas helped earn you a weekend away from the of
 
 ## Create a notebook and load a dataset
 
-Let's create a new notebook to work in and get it loaded up with a dataset.
-
-1. Begin by returning to [Azure Notebooks](https://notebooks.azure.com) and creating a new notebook named "Matplotlib" in the "Data Handling in Python" project that you created earlier. Select Python 3.6 as the language.
+Begin by returning to [Azure Notebooks](https://notebooks.azure.com) and creating a new notebook named "Matplotlib" in the "Data Handling in Python" project that you created earlier. Select Python 3.6 as the language. Then use the following steps to prepare the notebook.
 
 1. Run the following statement in the notebook's first cell to import a large CSV file from Azure blob storage:
 
@@ -29,8 +27,6 @@ Let's create a new notebook to work in and get it loaded up with a dataset.
 	%matplotlib inline
 	import matplotlib.pyplot as plt
 	```
-
-The notebook is prepared. It's time to get visual.
 
 ## Use scatter plots to explore relationships
 
