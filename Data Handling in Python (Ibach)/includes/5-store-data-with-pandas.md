@@ -6,7 +6,7 @@ The key data structure in Pandas is the [DataFrame](https://pandas.pydata.org/pa
 
 ![Viewing a DataFrame](media/dataframe.png)
 
-Data handling is simpler when you have Pandas to lend a hand. In this lesson, you will learn the basics of Pandas and use it to load and analyze a large dataset.
+Working with data is simpler when you have Pandas to lend a hand. In this lesson, you will learn the basics of Pandas and use it to load and examine the contents of a large dataset.
 
 ## Importing the pandas library
 
