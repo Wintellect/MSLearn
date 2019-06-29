@@ -25,7 +25,7 @@ print(airports) # outputs :
 # 2  HOU  Houston
 ```
 
-You can use the [`loc`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.loc.html#pandas.DataFrame.loc) attribute to slice a DataFrame and create a new DataFrame containing a subset of the rows and columns of the original. The first parameter in square brackets specifies the range of rows, and the second parameter identifies the range of columns:
+Use the [`loc`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.loc.html#pandas.DataFrame.loc) attribute to slice a DataFrame and create a new DataFrame containing a subset of the rows and columns of the original. The first parameter in square brackets specifies the range of rows, and the second parameter identifies the range of columns:
 
 ```python
 print(airports.loc[0:1, 'Code':'City']) # outputs
@@ -40,7 +40,7 @@ You can also use `loc` to retrieve the contents of a specific row and column:
 print(airports.loc[0,'city']) # outputs : Seattle 
 ```
 
-To retrieve a specific row (or range of rows), simply specify the beginning and ending row indexes. `[0:1]` retrieves the first row in the DataFrame. `[0:2]` retrieves the first two rows, and so on:
+To retrieve a specific row (or range of rows), specify the beginning and ending row indexes in square brackets on the DataFrame itself. `[0:1]` retrieves the first row, `[0:2]` retrieves the first two rows, and so on:
 
 ```python
 print(airports[0:1]) # outputs : 
