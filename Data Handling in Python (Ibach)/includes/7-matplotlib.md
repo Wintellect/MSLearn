@@ -140,7 +140,7 @@ The output is as follows:
 
 ![Total pets by category bar chart](media/PetsBarChart.png)  
 
-You can produce the same result by calling `plot()` on the DataFrame and specifying `kind='bar'`:
+You can achieve the same result by calling `plot()` on the DataFrame and specifying `kind='bar'`:
 
 ```python
 pets = pd.DataFrame(data, columns=column_names)
