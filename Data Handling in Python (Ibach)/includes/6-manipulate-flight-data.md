@@ -54,11 +54,11 @@ The first challenge is to load the CSV files and produce a single DataFrame. The
 	df.shape
 	```
 
-This is a rather large dataset, and like most datasets, it needs to be cleaned before it's subjected to analysis. Let's use some of what you learned in the previous lesson to whip this dataset into shape.
+That wasn't difficult, but there is more to do before you apply analytical methods to the data. In the real world, data is rarely neat and tidy. This dataset is no exception.
 
 ## Clean the data
 
-like most datasets, this one needs to be cleaned before it's subjected to analysis. Let's first identify the problems, and then use Pandas to whip the dataset into shape.
+Like most datasets, this one needs to be cleaned before it's subjected to analysis. Let's first identify the problems, and then use Pandas to whip the dataset into shape.
 
 1. A quick and easy way to determine whether a DataFrame has duplicate row is to use the DataFrame's [`duplicated()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.duplicated.html) method, which selects all the rows in the dataset that have duplicates. Use the following statement to determine if there are duplicate rows, and if so, how many:
 
