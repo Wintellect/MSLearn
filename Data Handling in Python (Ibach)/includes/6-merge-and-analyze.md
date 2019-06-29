@@ -144,7 +144,7 @@ Like NumPy, Pandas includes methods for performing mathematical operations on Da
 
 	Based on the results, would you say that flights from Atlanta departed relatively on time?
 
-1. A final question that you might ask is "Which 10 airports are the worst for departure delays?" DataFrame's `groupby()` method can play a role here by grouping flights by origin. This question also provides an opportunity for you to combine several techniques that you've seen before to compute averages, sort the data in descending order, and provide a row count to `head()`:
+1. A final question that you might ask is "Which 10 airports are the worst for departure delays?" DataFrame's `groupby()` method can play a role here by grouping flights by origin. This also presents you with the opportunity to combine several of the techniques you've learned about to compute averages, sort the data in descending order, and provide a row count to `head()`:
 
 	```python
 	df.groupby('ORIGIN')['DEP_DELAY'].mean().sort_values(ascending=False).head(10)
