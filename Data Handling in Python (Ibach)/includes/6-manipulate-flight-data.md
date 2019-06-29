@@ -75,7 +75,7 @@ Like most datasets, this one needs to be cleaned before it's subjected to analys
 	df.shape
 	```
 
-	How many rows were dropped from the dataset?
+	How many rows were dropped from the dataset? How many remain?
 
 1. Use this statement to list the columns in the dataset and show the number of missing values in each:
 
