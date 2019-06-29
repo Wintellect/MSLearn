@@ -186,7 +186,7 @@ By default, Pandas performs ascending sorts. If you want to do a descending sort
 It's not uncommon for data to be delivered in multiple CSV files or aggregated from several data sources. DataFrame's [`append()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.append.html#pandas.DataFrame.append) method makes it easy to append the contents of another DataFrame to an existing DataFrame:
 
 ```python
-df.append(other_df, ignore_index=True)
+df = df.append(other_df, ignore_index=True)
 ```
 
 The `ignore_index=TRUE` parameter tells the method to renumber (reindex) the rows that are appended. Without that, you would have two rows with index 0, two rows with index 1, and so on.
