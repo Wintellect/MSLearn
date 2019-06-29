@@ -128,3 +128,20 @@ airports.columns = ['Code', 'City']
 ```
 
 `read_csv()` supports other parameters as well, including `skipinitialspace`, which ignores white space after delimiters, and `nrows`, which reads the specified number of rows and is useful when dealing with very large files. For a complete list of parameters supported by `read_csv()`, refer to [the method's documentation](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html#pandas.read_csv).
+
+## Cleaning and filtering
+
+One of the reasons Pandas is so popular is that DataFrame includes numerous methods for cleaning and filtering data. For example, the `drop_duplicates()` method removes duplicate rows from a DataFrame, which is often a precursor to using it to train a machine-learning model:
+
+```python
+airports.drop_duplicates()
+```
+
+
+
+
+
+## Merging and concatenating
+
+
+
