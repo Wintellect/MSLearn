@@ -91,59 +91,43 @@ By default, `head()` returns the first five rows of the DataFrame. To return mor
 
 ## Reading data from CSV files
 
-With pandas you use the `read_csv` function to read the contents of a csv file. Let's look at some of the parameters of `read_csv`:
+DataFrame contains a handy [`read_csv()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html) method for loading data from CSV files, as well as [several methods for saving the contents of a DataFrame](https://pandas.pydata.org/pandas-docs/stable/reference/io.html) in a variety of formats.
 
-- **filepath_or_buffer**: path and name of the csv file  
-- **delimiter**: The string used to separate values  
-- **dtype**: Data type for data or columns, if omitted, data type is inferred from the data 
-- **header**: The row number to use for reading the column names   
-- **skipfooter**: The number of lines to skip at the end of the file 
-- **skipinitialspace**: skip spaces after the delimiter
+Suppose you have a CSV file named **airports.csv** containing the following text:
 
-## SUSAN ADD LNK TO AIRPORTCODELIST.CSV
-
-If you have not already done so in the NumPy lesson, download and examine the AirportCodeList.csv file. The file has a header row containing the names of the columns and a footer row containing the number of rows selected. You might also have noticed there are some extra spaces on some of the rows. 
-
-Let's use `read_csv` to read the csv file into a DataFrame 
-
-```python
-airport_codes = pd.read_csv('AirportCodeList.csv' ,delimiter=',', header=0, skipfooter=1, skipinitialspace=True, engine='python')
-print(airport_codes) # outputs : 
-        Airport Code              City
-# 0                HOU           Houston
-# 1                ABQ      Alberquerque
-# ...
-# 22               GSP        Greenville
+```csv
+Code,City
+HOU,Houston
+ABQ,Albuquerque
+BWI,Baltimore
 ```
 
-> You may have noticed an extra parameter: *engine*. This parameter determines which parser engine to use. The 'c' engine is faster, the 'python' engine is more feature-complete. The *skipfooter* parameter is not supported by the 'c' engine so you need to specify the 'python' engine when you use *skipfooter*.  
-
-Because the file is quite large you may find it useful to print only the top or bottom rows in the DataFrame. The `head` function returns the top rows from a DataFrame. The `tail` function returns the bottom rows:
+The following code loads the contents of **airports.csv** into a Pandas DataFrame:
 
 ```python
-flight_df.head(2) # outputs : 
-#   Airport Code	        City
-# 0	         HOU	Houston
-# 1	         ABQ	Alberquerque
-flight_df.tail(3) # outputs : 
-#           Airport Code	           City
-# 21	             FLL	Fort Lauderdale
-# 22	             GSP	     Greenville
-# 23    23 rows selected	            NaN
+airports = pd.read_csv('airports.csv')
 ```
 
-If you do not need all the columns in the file, the *usecols* parameter allows you to specify a list of columns you want returned:
+To read a tab-delimited (TSV) file rather than a CSV, use the `sep` or `delimiter` parameter:
 
 ```python
-airport_codes = pd.read_csv('AirportCodeList.csv', usecols=['City'], delimiter=',', header=0, skipfooter=1, skipinitialspace=True, engine = 'python')
-print(airport_codes.head()) # outputs :
-#            City
-# 0       Houston
-# 1  Alberquerque
-# 2     Baltimore
-# 3        Denver
-# 4     Las Vegas
+airports = pd.read_csv('airports.csv', delimiter='\t')
 ```
+
+And if you would like to load certain columns from the file rather than all the columns, use the `usecols` parameter (or its equivalent, `names`) with a list a column names:
+
+```python
+airports = pd.read_csv('airports.csv', delimiter='\t', usecols=['Code', 'City'])
+```
+
+What if the CSV or TSV file doesn't contain a header row? In that case, specify `header=None`. If you would like to assign names to the columns, simply follow up with a statement that specifies column names with the `columns` attribute:
+
+```python
+airports = pd.read_csv('airports.csv', header=None)
+airports.columns = ['Code', 'City']
+```
+
+`read_csv()` supports other parameters as well, including `skipinitialspace`, which ignores white space after delimiters, and `nrows`, which reads the specified number of rows and is useful when dealing with very large files. For a complete list of parameters supported by `read_csv()`, refer to [the method's documentation](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html#pandas.read_csv).
 
 ## Reading flight information
 
