@@ -1,10 +1,6 @@
 # Summary
 
-
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas egestas erat velit, et pellentesque leo aliquam eu. In at urna nec dolor dapibus maximus a in augue. Pellentesque ultricies nibh ut ex viverra congue. Maecenas ex ex, consequat a vestibulum ac, lacinia eu odio. Sed vel orci vel dolor accumsan rutrum. In consectetur tellus odio, ac hendrerit orci suscipit id. Nullam hendrerit turpis metus, ut hendrerit sem venenatis vel. 
-
-Praesent quis metus et risus aliquet dictum. Pellentesque porttitor pretium orci, venenatis gravida nibh efficitur ac. Pellentesque nec lectus malesuada, ullamcorper massa eu, ultrices enim. Maecenas vitae mattis urna, ultrices tempor tellus. Praesent blandit ante lectus, id auctor tortor viverra facilisis. Fusce vel condimentum libero, nec mattis elit. Donec quis massa gravida, lacinia arcu sit amet, consectetur mi.
+Python libraries such as [NumPy](https://www.numpy.org/) and [Pandas](https://pandas.pydata.org/) make data handling easier and allow you to accomplish complex tasks such as cleaning and analyzing data with just a few lines of code. [Matplotlib](https://matplotlib.org/) adds spice to mix by letting you produce rich charts and graphs, and it provides the foundation for Pandas' own plotting capabilities. But don't sell Python itself short. Features such as slicing, comprehensions, and lambda functions make Python a first-class language for working with data. It's no coincidence that data scientists use Python more than any other language, and that some of the best libraries available for manipulating data and building machine-learning models are Python libraries.
 
 ## Check your knowledge
 
@@ -14,6 +10,12 @@ Praesent quis metus et risus aliquet dictum. Pellentesque porttitor pretium orci
 	- Lists support insertion and deletion, while tuples support only deletion
 	- Lists can be enumerated, but tuples can not
 
+1. Which of the following statements produces a count of the duplicate rows in a Pandas DataFrame?
+	- `len(df.duplicated())`
+	- `len(df[df.duplicated()])`
+	- `df.duplicated().count()`
+	- `df.duplicated.count()`
+ 
 1. Which of the following statements accurately describes lambda functions?
 	- Small, one-line functions that have no names
 	- Small, one-line functions that are called with the `->` operator
@@ -32,8 +34,8 @@ Praesent quis metus et risus aliquet dictum. Pellentesque porttitor pretium orci
 	- It includes support for loading data from CSV and TSV files
 	- It's not free, but developer licenses are available for just $15 per year
 
-1. Question?
-	- Answer
-	- Answer
-	- Answer
-	- Answer
+1. Which of the following statements lists all the columns in a Pandas DataFrame and the number of missing values in each?
+	- `df.list_missing_values()`
+	- `df.list_missing_values().columns.all()`
+	- `df.isnull().sum()`
+	- `df.columns[==NaN].all()`
