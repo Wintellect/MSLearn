@@ -113,7 +113,7 @@ How many rows and columns does the final DataFrame contain?
 
 Like NumPy, Pandas includes methods for performing mathematical operations on DataFrames. Let's use some of these methods (and others) to learn more about the hundreds of thousands of flights contained in the two CSV files.
 
-1. Use the following statement to determine the average delay in all 600,000+ flights represented in the dataset:
+1. Use the following statement to compute the average delay for all 600,000+ flights represented in the dataset:
 
 	```python
 	df['ARR_DELAY'].mean()
