@@ -1,6 +1,6 @@
 # Comprehensions, maps, and lambdas
 
-In the previous lesson, you learned about sequences and mapping types in Python. Now let's explore [comprehensions](https://medium.com/better-programming/list-comprehension-in-python-8895a785550b), the [`map()` function](https://docs.python.org/3/library/functions.html#map), and [lambda functions](https://www.w3schools.com/python/python_lambda.asp), which make sequences and dictionaries easier to work with. In this lesson, you will learn how to use these features to make code that deals with collections of data simpler and more concise.
+In the previous lesson, you learned about sequences and mapping types in Python. Now let's explore [comprehensions](https://medium.com/better-programming/list-comprehension-in-python-8895a785550b), the [`map()` function](https://docs.python.org/3/library/functions.html#map), and [lambda functions](https://www.w3schools.com/python/python_lambda.asp), which make sequences and dictionaries easier to work with.
 
 ## Comprehensions
 
