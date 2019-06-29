@@ -1,13 +1,10 @@
-# Title
+# Merge and analyze datasets
 
-TODO: Add introduction.
+Imagine that it's Friday afternoon and you've been given two large CSV files containing on-time arrival information for a selection of flights — more than 600,000 of them, to be precise. The data is "dirtied" with duplicate rows and missing values, the latter resulting primarily from flights that never reached their destination because they were canceled or diverted. Your job is merge the two datasets into one, clean it, and answer basic questions such as what percentage of the flights in the dataset arrived 10 minutes or more late.
 
-Now you are ready to analyze our data. You need to 
-- Load a full set of flight data
-- Clean up any duplicate rows and unncessary columns 
-- Retrieve the mean and maximum arrival delay time 
+In this lesson, you will use a Jupyter notebook to put Pandas to work cleaning and analyzing data. Using pure Python, you'd be in for a long weekend. But with Pandas doing the heavy lifting, you'll be off for a weekend getaway before most of your colleagues punch the clock to head home.
 
-![](media/pandas-notebook.png)
+![Using Pandas in a Jupyter notebook](media/pandas-notebook.png)
 
 ## Load data from CSV files
 
