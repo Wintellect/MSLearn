@@ -1,182 +1,75 @@
-# Manipulating pandas DataFrames
+# Title
 
-In the previous lesson you learned how to create a DataFrame and populate it with data. Pandas has a number of functions you can use to operate on the data.
+TODO: Add introduction.
 
-## Sorting 
-The `sort_values` function allows you to sort the rows in a DataFrame based on one or more columns:
+## Load data from CSV files
 
-```python
-print(airport_codes.head()) # outputs : 
-#   Airport Code          City
-# 0          HOU       Houston
-# 1          ABQ  Alberquerque
-# 2          BWI     Baltimore
-# 3          DEN        Denver
-# 4          LAS     Las Vegas
+TODO: Add intro.
 
-sorted_rows = airport_codes.sort_values(by=['City','Airport Code'])
-print(sorted_rows.head()) # outputs :
-#    Airport Code          City
-# 1           ABQ  Alberquerque
-# 15          AUS        Austin
-# 2           BWI     Baltimore
-# 17          BOS        Boston
-# 7           CLE     Cleveland
-```
-## Concatenate DataFrames
-Sometimes the data you need to read is stored in multiple data files and you need to merge all the data into a single DataFrame. 
+1. Begin by returning to [Azure Notebooks](https://notebooks.azure.com) and creating a new notebook named "Flights" in the "Data Handling in Python" project that you created earlier. Select Python 3.6 as the language.
 
-The `concat` function allows you to append the rows from one DataFrame to a second DataFrame:
+1. Run the following statements in the notebook's first cell to import a pair of large CSV files from Azure blob storage:
 
-```python
-# Create a DataFrame with the first three airports
-column_names = ['airport_code','city']
-data = [['SEA','Seattle'],['BOS','Boston'],['HOU','Houston']]
-airport_part1 = pd.DataFrame(data, columns = column_names)
+	```bash
+	!curl https://topcs.blob.core.windows.net/public/flight_data_part1.csv -o part1.csv
+	!curl https://topcs.blob.core.windows.net/public/flight_data_part2.csv -o part2.csv
+	```
 
-# Create a DataFrame with the last three airports
-data = [['DTW','Detroit'],['LGA','New York'],['DUL','Washington']]
-airport_part2 = pd.DataFrame(data, columns = column_names)
+1. Now paste the following statements into the next cell to load the first CSV file into a DataFrame and show the number of rows and columns:
 
-# Use concat to combine the two DataFrames
-all_airports = pd.concat([airport_part1,airport_part2], ignore_index=True)
-print(all_airports) # outputs : 
-#   airport_code        city
-# 0          SEA     Seattle
-# 1          BOS      Boston
-# 2          HOU     Houston
-# 3          DTW     Detroit
-# 4          LGA    New York
-# 5          DUL  Washington
-```
-> When you concatenate two DataFrames using generated indexes, you get duplicate index numbers. Each DataFrame has the first row with index 0, the second row with index 1, and so on. The *ignore_index* parameter tells the `concat` function to ignore the existing indexes and create a new one.  
+	```python
+	import pandas as pd
 
-## Removing duplicates
+	df1 = pd.read_csv('part1.csv')
+	df1.shape
+	```
 
-Sometimes the data you work with contains duplicate records. The `drop_duplicates` function will remove the duplicate rows: 
+1. Call `head()` on the DataFrame to display the first five rows:
 
-```python
-column_names = ['airport_code', 'city']
-data = [['DTW','Detroit'], ['LGA','New York'], ['DTW','Detroit']]
-airports = pd.DataFrame(data, columns = column_names)
-print(airports) # outputs : 
-#   airport_code      city
-# 0          DTW   Detroit
-# 1          LGA  New York
-# 2          DTW   Detroit
+	```python
+	df1.head()
+	```
 
-airports= airports.drop_duplicates()
-print(airports) # outputs : 
-#   airport_code      city
-# 0          DTW   Detroit
-# 1          LGA  New York
-```
+1. Use these statements to load the second CSV file and show the number of rows and columns:
 
-## Merge DataFrames
-There will be times the columns of data you need are divided across two DataFrames. The `merge` function allows you to join columns spread across records in two DataFrames.
+	```python
+	df2 = pd.read_csv('part2.csv')
+	df2.shape
+	```
 
-Imagine you have a list of airport codes and their cities in one DataFrame and a list of scheduled flights in another DataFrame. The scheduled flight information includes the airport code but you need to look up the city for each airport code. You can use `merge` to do the lookup.
+1. Call `head()` on the DataFrame to display the first five rows:
 
-The following parameters are required:
-- **how**: specifies the type of join to perform. The most commond join type is an  *inner* join. For an *inner* join, you expect to find one matching row for each lookup
-- **left_on**: specifies the column name in the first DataFrame listed (the one on the left when looking at the code) which has a corresponding value in the second DataFrame 
-- **right_on**: specifies the column name in the second DataFrame listed (the one on the right when looking at the code) which will contain a value to match the value contained in the *left_on* column
+	```python
+	df2.head()
+	```
 
-It is probably easier to understand with  an example. Let's start with a DataFrame that contains a list of the airport codes and cities:
-```python
-column_names = ['airport_code','city']
-data = [['DTW','Detroit'], ['LGA','New York'], ['DUL','Washington']]
-airport_codes = pd.DataFrame(data, columns = column_names)
-print(airport_codes) # outputs : 
-#   airport_code        city
-# 0          DTW     Detroit
-# 1          LGA    New York
-# 2          DUL  Washington
-```
+1. It appears that the datasets share the same schema. Use the `append()` method to merge the two and produce a new Dataframe containing all rows from both datasets, and `shape` to confirm that the combined DataFrame contains 620,000 rows:
+  
+	```python
+	df = df1.append(df2, ignore_index=True)
+	df.shape
+	```
 
-Next you have a second DataFrame that contains flight information:
-```python
-column_names = ['departure_date', 'dest_airport', 'dep_time', 'flight_num']
-data = [['12/31/2019','DTW','08:15',499], ['12/31/2019','LGA','09:35',748] , ['12/31/2019','LGA','13:15',749]]
-flights = pd.DataFrame(data, columns = column_names)
-print(flights) # outputs :
-#   departure_date dest_airport dep_time  flight_num
-# 0     12/31/2019          DTW    08:15         499
-# 1     12/31/2019          LGA    09:35         748
-# 2     12/31/2019          LGA    13:15         749
-```
+This is a rather large dataset
 
-What if you need the destination city for each flight? You have the destination airport code, but you need to look up the corresponding city in the airport_codes DataFrame. the value in *dest_airport* of the *flights* DataFrame should match an *airport_code* in the *airport_codes* DataFrame: 
 
-```python
-all_data = pd.merge(flights, airport_codes, how='inner', left_on= 'dest_airport', right_on='airport_code' )
-print(all_data) # outputs : 
-#   departure_date dest_airport dep_time  flight_num airport_code      city
-# 0     12/31/2019          DTW    08:15         499          DTW   Detroit
-# 1     12/31/2019          LGA    09:35         748          LGA  New York
-# 2     12/31/2019          LGA    13:15         749          LGA  New York
-```
+## Clean the data
 
-You now have the corresponding city for each flight. 
-## Deleting columns
-You can delete a column from a DataFrame using the `del` operator.
 
-You might have noticed when you merged the *flight* and *airport_codes* DataFrames that you copied over the *city* and the *airport_code*. You don't need  *airport_code* since it is a duplicate of *dest_city*. So you can delete that extra column:
-```python
-del all_data['airport_code']
-print(all_data) # outputs : 
-#   departure_date dest_airport dep_time  flight_num      city
-# 0     12/31/2019          DTW    08:15         499   Detroit
-# 1     12/31/2019          LGA    09:35         748  New York
-# 2     12/31/2019          LGA    13:15         749  New York
-```
 
-## Math operations
-Similar to NumPy, the pandas library  supports mathematical operations across the DataFrame. When you apply an operation to the DataFrame, that operation is completed against each element in the DataFrame or each element in the slice: 
-```python
-# Create a DataFrame containing the numbers 1 through 6 
-column_names = ['first_column','second_column']
-data = [[1,2],[3,4],[5,6]]
-lets_do_math = pd.DataFrame(data, columns=column_names)
 
-print(lets_do_math + 1) 
-# outputs the entire array 
-# with 1 added to each element: 
-#    first_column  second_column
-# 0             2              3
-# 1             4              5
-# 2             6              7
 
-print(lets_do_math < 3)
-# outputs the result of the evaluation 
-# is element < 3 for each element in the array:
-#    first_column  second_column
-# 0          True           True
-# 1         False          False
-# 2         False          False
-```
-pandas also supports operations such as calculating the sum, min, max, or mean of all the values in the DataFrame columns:
-```python
-print(lets_do_math.sum()) 
-# outputs sum of each column :
-# first_column      9
-# second_column    12
 
-print(lets_do_math.mean()) 
-# outputs mean of values in each column :
-# first_column     3.0
-# second_column    4.0
 
-print(lets_do_math['second_column'].max())
-# outputs highest value in specified column : 6
-```
 
-# Analyzing flight information
+
+---
+
 Now you are ready to analyze our data. You need to 
 - Load a full set of flight data
 - Clean up any duplicate rows and unncessary columns 
 - Retrieve the mean and maximum arrival delay time 
-## SUSAN ADD LNKS TO PART1 AND PART2 FLGHT DAYA
+
 It turns out that the *flight_data_part1.csv* file you loaded in the previous lesson does not contain all the flight information. There is a second csv file, *flight_data_part2.csv* you need to load. 
 
 Load the two csv files into DataFrames. Check the number of rows in each DataFrame. You should have 300,000 rows in *flight_data_part1* and 320,000 rows in *flight_data_part2*. Combine them together into one DataFrame: 
