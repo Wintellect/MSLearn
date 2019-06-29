@@ -50,17 +50,52 @@ TODO: Add intro.
 	df.shape
 	```
 
-This is a rather large dataset, but data professionals frequently deal with ones that are orders of magnitude larger.
+This is a rather large dataset, and like most datasets, it needs to be cleaned before it's subjected to analysis. Let's use some of what you learned in the previous lesson to whip this dataset into shape.
 
 ## Clean the data
 
+TODO: Add intro.
 
+1. Use the following line of code to remove duplicate rows from the dataset and count the remaining rows:
 
+	```python
+	df = df.drop_duplicates()
+	df.shape
+	```
 
+	How many rows were dropped from the dataset?
 
+1. Use this statement to list the columns in the dataset and show the number of missing values in each:
 
+	```python
+	df.isnull().sum()
+	```
 
+	Confirm that the output looks like this:
 
+	![](media/missing-values.png)
+
+1. The TAIL_NUM column is missing some values, but it won't be used in any of your analysis. Use the following statement to remove it from the DataFrame:
+
+	```python
+	del df['TAIL_NUM']
+	```
+
+1. Most of other missing values are missing due to flights that were canceled or diverted to other destinations. Let's remove those rows from the DataFrame to prevent them from skewing any analysis:
+
+	```python
+	df.dropna()
+	```
+
+1. Use `df.isnull().sum()` again to examine the DataFrame for missing values. Are the results less concerning this time?
+
+1. Finish up by displaying the dimensions of the Dataframe:
+
+	```python
+	df.shape
+	```
+
+How many rows and columns does the final DataFrame contain now?
 
 ---
 
@@ -69,36 +104,10 @@ Now you are ready to analyze our data. You need to
 - Clean up any duplicate rows and unncessary columns 
 - Retrieve the mean and maximum arrival delay time 
 
-It turns out that the *flight_data_part1.csv* file you loaded in the previous lesson does not contain all the flight information. There is a second csv file, *flight_data_part2.csv* you need to load. 
 
-Load the two csv files into DataFrames. Check the number of rows in each DataFrame. You should have 300,000 rows in *flight_data_part1* and 320,000 rows in *flight_data_part2*. Combine them together into one DataFrame: 
 
-```python
-import pandas as pd
 
-flights_part1 = pd.read_csv('flight_data_part1.csv',delimiter=',',skipinitialspace=True)
 
-flights_part2 = pd.read_csv('flight_data_part2.csv',delimiter=',',skipinitialspace=True)
-
-print(len(flights_part1)) # outputs : 300000
-print(len(flights_part2)) # outputs : 320000
-```
-Double check the new DataFrame has all the rows (620,000). Make sure the index numbers were re-assigned when the new DataFrame was created. If index numbers are assigned correctly, the last row in the DataFrame should have an index of 619999:
-
-```python
-all_flights = pd.concat([flights_part1, flights_part2], ignore_index=True)
-
-print(len(all_flights)) # outputs : 620000
-print(all_flights.tail(1)) # outputs : 
-#            FL_DATE OP_UNIQUE_CARRIER TAIL_NUM  OP_CARRIER_FL_NUM ORIGIN DEST  \
-# 619999  2018-10-31                YV   N902FJ               5789    ABQ  PHX   
-
-#         CRS_DEP_TIME  DEP_TIME  DEP_DELAY  CRS_ARR_TIME  ARR_TIME  ARR_DELAY  \
-# 619999          1232    1228.0       -4.0          1258    1251.0       -7.0   
-
-#         CRS_ELAPSED_TIME  ACTUAL_ELAPSED_TIME  AIR_TIME  DISTANCE  
-# 619999                86                 83.0      63.0       328  
-```
 
 The two files contain some of the same data. Remove all the duplicate rows from the DataFrame. Check to make sure you have 616101 rows left after removing all the duplicates:
 
