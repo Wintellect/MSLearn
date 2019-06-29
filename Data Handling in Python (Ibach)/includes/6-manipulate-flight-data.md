@@ -15,7 +15,7 @@ TODO: Add intro.
 
 1. Begin by returning to [Azure Notebooks](https://notebooks.azure.com) and creating a new notebook named "Flights" in the "Data Handling in Python" project that you created earlier. Select Python 3.6 as the language.
 
-1. Run the following statements in the notebook's first cell to import a pair of large CSV files from Azure blob storage:
+1. Run the following statements in the notebook's first cell to import a pair of CSV files from Azure blob storage:
 
 	```bash
 	!curl https://topcs.blob.core.windows.net/public/flight_data_part1.csv -o part1.csv
@@ -63,7 +63,7 @@ This is a rather large dataset, and like most datasets, it needs to be cleaned b
 
 TODO: Add intro.
 
-1. Use the following line of code to remove duplicate rows from the dataset and count the remaining rows:
+1. Use the following lines of code to remove duplicate rows from the dataset and count the remaining rows:
 
 	```python
 	df = df.drop_duplicates()
@@ -88,7 +88,7 @@ TODO: Add intro.
 	del df['TAIL_NUM']
 	```
 
-1. Most of other missing values are missing due to flights that were canceled or diverted to other destinations. Let's remove those rows from the DataFrame to prevent them from skewing any analysis:
+1. Most of other missing values are missing due to flights that were canceled or diverted to other destinations. Let's remove those rows from the DataFrame to prevent them from skewing any statistics:
 
 	```python
 	df = df.dropna()
