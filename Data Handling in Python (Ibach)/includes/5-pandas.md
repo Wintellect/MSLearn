@@ -40,7 +40,7 @@ You can also use `loc` to retrieve the contents of a specific row and column:
 print(airports.loc[0,'city']) # outputs : Seattle 
 ```
 
-To retrieve a specific row (or range of rows), specify the beginning and ending row indexes in square brackets on the DataFrame itself. `[0:1]` retrieves the first row, `[0:2]` retrieves the first two rows, and so on:
+To retrieve a row (or range of rows), specify the beginning and ending row indexes in square brackets on the DataFrame itself. `[0:1]` retrieves the first row, `[0:2]` retrieves the first two rows, and so on:
 
 ```python
 print(airports[0:1]) # outputs : 
@@ -48,7 +48,7 @@ print(airports[0:1]) # outputs :
 # 0             SEA  Seattle
 ```
 
-And to retrieve a specific column, specify the column name:
+And to retrieve a column, specify the column name:
 
 ```python
 print(airports['Code'])
