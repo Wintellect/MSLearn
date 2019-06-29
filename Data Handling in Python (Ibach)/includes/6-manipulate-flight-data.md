@@ -136,10 +136,12 @@ Like NumPy, Pandas includes methods for performing mathematical operations on Da
 
 	There are many ways to determine the number of rows in a DataFrame, but `shape[0]` is among the fastest and the most straightforward. Not surprisingly, `shape[1]` is a quick way to count the columns in a DataFrame.
 
-1. Now suppose you want to know what the average delay was for flights originating from a single airport — say, Atlanta (ATL). That shouldn't be hard given that you can combine a filter with a call to `mean()`:
+1. Now suppose you want to know what the average departure delay was for flights originating from a single airport — say, Atlanta (ATL). That shouldn't be hard given that you can combine a filter with a call to `mean()`:
 
 	```python
-	df[df['ORIGIN'] == 'ATL']['ARR_DELAY'].mean()
+	df[df['ORIGIN'] == 'ATL']['DEP_DELAY'].mean()
 	```
+
+	Based on the results, would you say that flights from Atlanta departed relatively on time?
 
 These examples merely scratch the surface of what you can accomplish with Pandas. Use them as a starting point for examples of your own — and a springboard for polishing your data-handling chops.
