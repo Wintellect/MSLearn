@@ -8,7 +8,7 @@ In this lesson, you will use a Jupyter notebook to put Pandas to work cleaning a
 
 ## Load data from CSV files
 
-TODO: Add intro.
+The first challenge is to load the CSV files and produce a single DataFrame. The `read_csv()` and `append()` methods that you learned about in the previous lesson should make short work of both.
 
 1. Begin by returning to [Azure Notebooks](https://notebooks.azure.com) and creating a new notebook named "Flights" in the "Data Handling in Python" project that you created earlier. Select Python 3.6 as the language.
 
@@ -58,9 +58,17 @@ This is a rather large dataset, and like most datasets, it needs to be cleaned b
 
 ## Clean the data
 
-TODO: Add intro.
+like most datasets, this one needs to be cleaned before it's subjected to analysis. Let's first identify the problems, and then use Pandas to whip the dataset into shape.
 
-1. Use the following lines of code to remove duplicate rows from the dataset and count the remaining rows:
+1. A quick and easy way to determine whether a DataFrame has duplicate row is to use the DataFrame's [`duplicated()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.duplicated.html) method, which selects all the rows in the dataset that have duplicates. Use the following statement to determine if there are duplicate rows, and if so, how many:
+
+	```python
+	len(df[df.duplicated()])
+	```
+
+	Does the dataset contain duplicate rows? If so, how many?
+
+1. You don't want to remove *all* of the duplicate rows. You want to remove the duplicates, leaving behind one copy of each duplicated row. Use the following lines of code to remove duplicate rows from the dataset and count the remaining rows:
 
 	```python
 	df = df.drop_duplicates()
