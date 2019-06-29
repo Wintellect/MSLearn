@@ -64,6 +64,12 @@ Need to retrieve multiple columns? You can do that, too:
 print(airports[['City', 'Code']])
 ```
  
+Or you can do this to select a range of columns:
+
+```python
+airports.loc[:, 'Code':'City']
+```
+
 There are other ways to identify rows and columns in a DataFrame, including the [`iloc`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.iloc.html#pandas.DataFrame.iloc) attribute, which uses pure integer indexes. You can even use lambda functions to perform complex selections. The following example selects the even-numbered rows in a DataFrame:
 
 ```python
