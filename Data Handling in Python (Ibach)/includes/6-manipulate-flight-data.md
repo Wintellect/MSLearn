@@ -2,6 +2,13 @@
 
 TODO: Add introduction.
 
+Now you are ready to analyze our data. You need to 
+- Load a full set of flight data
+- Clean up any duplicate rows and unncessary columns 
+- Retrieve the mean and maximum arrival delay time 
+
+![](media/pandas-notebook.png)
+
 ## Load data from CSV files
 
 TODO: Add intro.
@@ -75,7 +82,7 @@ TODO: Add intro.
 
 	![](media/missing-values.png)
 
-1. The TAIL_NUM column is missing some values, but it won't be used in any of your analysis. Use the following statement to remove it from the DataFrame:
+1. The TAIL_NUM column is missing some values, but it won't be used in any of your analyses, so use the following statement to remove it from the DataFrame:
 
 	```python
 	del df['TAIL_NUM']
@@ -84,10 +91,10 @@ TODO: Add intro.
 1. Most of other missing values are missing due to flights that were canceled or diverted to other destinations. Let's remove those rows from the DataFrame to prevent them from skewing any analysis:
 
 	```python
-	df.dropna()
+	df = df.dropna()
 	```
 
-1. Use `df.isnull().sum()` again to examine the DataFrame for missing values. Are the results less concerning this time?
+1. Use `df.isnull().sum()` again to examine the DataFrame for missing values. Does the dataset appear to be in better shape this time?
 
 1. Finish up by displaying the dimensions of the Dataframe:
 
@@ -95,43 +102,39 @@ TODO: Add intro.
 	df.shape
 	```
 
-How many rows and columns does the final DataFrame contain now?
+How many rows and columns does the final DataFrame contain?
 
----
+## Analyze the data
 
-Now you are ready to analyze our data. You need to 
-- Load a full set of flight data
-- Clean up any duplicate rows and unncessary columns 
-- Retrieve the mean and maximum arrival delay time 
+Like NumPy, Pandas includes methods for performing mathematical operations on DataFrames. Let's use some of these methods (and others) to learn more about the hundreds of thousands of flights represented in the two CSV files that you were given.
 
+1. Use the following statement to determine the average delay in all 600,000+ flights contained in the dataset:
 
+	```python
+	df['ARR_DELAY'].mean()
+	```
 
+	If you wanted to determine the longest delay incurred by any flight, how would you do it?
 
+1. One of the lesser-known features of DataFrames is that you can include filters in expressions that select data. To demonstrate, use the following statement to determine how many flights were 10 minutes or more late:
 
+	```python
+	len(df[df['ARR_DELAY'] >= 10])
+	``` 
 
-The two files contain some of the same data. Remove all the duplicate rows from the DataFrame. Check to make sure you have 616101 rows left after removing all the duplicates:
+1. Perhaps more interesting is the *percentage* of flights that arrived 10 minutes or more late. Try this and see if it does what you want:
 
-```python
-all_flights = all_flights.drop_duplicates()
-print(len(all_flights)) # outputs: 616101
-```
+	```python
+	percent = len(df[df['ARR_DELAY'] >= 10]) / df.shape[0]
+	print('{0:.1%}'.format(percent))
+	```
 
-Delete the *TAIL_NUM* column since it will not be needed for our data analysis:
+	There are many ways to determine the number of rows in a DataFrame, but `shape[0]` is among the fastest and the most straightforward. Not surprisingly, `shape[1]` is a quick way to count the columns in a DataFrame.
 
-```python
-del all_flights['TAIL_NUM']
-```
+1. Now suppose you want to know what the average delay was for flights originating from a single airport — say, Atlanta (ATL). That shouldn't be hard given that you can combine a filter with a call to `mean()`:
 
-Now you can use the `mean` function to determine the mean of the ARR_DELAY column for all flights and the `max` function to determine the longest delay: 
-```python
-print(all_flights.ARR_DELAY.mean()) # outputs : 2.824561633466266
-print(all_flights.ARR_DELAY.max()) # outputs : 2153.0
-```
+	```python
+	df[df['ORIGIN'] == 'ATL']['ARR_DELAY'].mean()
+	```
 
-BONUS: Can you figure out how many flights arrived more than 10 minutes late? HINT: You don't need a comprehension, look up *filters* on pandas DataFrames.
-
-```python
-late_flights = all_flights[all_flights['ARR_DELAY']>=10]
-print(len(late_flights)) # outputs : 126988
-```
-Congratulations you are moving data around like a professional! Now let's finish up with a look at how you visualize your data with *matplotlib*
+These examples merely scratch the surface of what you can accomplish with Pandas. Use them as a starting point for examples of your own — and a springboard for polishing your data-handling chops.
