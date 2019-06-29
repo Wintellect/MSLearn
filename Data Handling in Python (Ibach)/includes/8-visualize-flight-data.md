@@ -59,9 +59,9 @@ A scatter plot is a great way to visualize relationships between variables in a 
 
 What does the output tell you about the theory that a traveler is more likely to encounter delays by flying in mid-afternoon than early morning?
 
-## Use bar charts to explore delays
+## Use bar charts to visualize delays at individual airports
 
-Now let's use bar charts to visualize parts of the data for individual airports and determine at which airports travelers are most likely to encounter delays. 
+Now let's use bar charts to visualize delays at individual airports and determine at which airports travelers are most likely to encounter delays. 
 
 1. Display a bar chart showing the mean departure delay by originating airport:
 
