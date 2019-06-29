@@ -96,7 +96,7 @@ Now let's use bar charts to visualize delays at individual airports and determin
 
 You learned something new here. When you plot with Matplotlib, you can use `xlabel()` and `ylabel()` to add labels to the X and Y axis. To do the same when plotting with a DataFrame, you call `set_xlabel()` and `set_ylabel()` on the `AxesSubplot` object returned by the DataFrame's `plot()` method.
 
-## Use a histogram to explore further
+## Use a histogram to explore the frequencies of delays
 
 Let's say the goal is to learn more about the nature of the delays — specifically, how the number of short delays compares to the number of long delays. It's reasonable to expect that there are more 10-minute delays than 1-hour delays. But what does the distribution look like? 
 
