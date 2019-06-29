@@ -25,11 +25,11 @@ plt.plot(temperatures['Celsius'], temperatures['Fahrenheit'])
 plt.show()
 ```
 
-The `plot()` function requires two parameters: the values to plot on the X axis, and the values to plot on the Y axis. After calling `plot()`, you call `show()` to display the plot. Once more, the call to `show()` is optional if you're executing this code in a Jupyter notebook:
+The `plot()` method requires two parameters: the values to plot on the X axis, and the values to plot on the Y axis. After calling `plot()`, you call `show()` to display the plot. Once more, the call to `show()` is optional if you're executing this code in a Jupyter notebook:
 
 ![Celsius vs Fahrenheit](media/SimpleCelsiusvsFarenheit.png)
 
-What if you want to include a title in the output and label the X and Y axes? That's what the `title()`, `xlabel()`, and `ylabel()` functions are for:
+What if you want to include a title in the output and label the X and Y axes? That's what the `title()`, `xlabel()`, and `ylabel()` methods are for:
 
 ```python
 column_names = ['Celsius', 'Fahrenheit']
@@ -46,7 +46,7 @@ Here is the modified output:
 
 ![Drawing a simple line chart](media/CelsiusvsFarenheitWithLabels.png)
 
-The `plot()` function accepts a third parameter specifying the color and style of the lines that connect the data points. The default is to connect them with a solid blue line. Passing 'ro' in the third parameter shows the data points in red without a line connecting them:
+The `plot()` method accepts a third parameter specifying the color and style of the lines that connect the data points. The default is to connect them with a solid blue line. Passing 'ro' in the third parameter shows the data points in red without a line connecting them:
 
 ```python
 plt.plot(temperatures['Celsius'],temperatures['Fahrenheit'], 'ro')
@@ -59,7 +59,7 @@ See the [`plot()` documentation](https://matplotlib.org/api/pyplot_api.html#matp
 
 ### Plotting with DataFrames
 
-The Pandas DataFrame has plotting functions of its own that wrap the functionality in Matplotlib. If your data is stored in a DataFrame, you can call `plot()` on the DataFrame itself. The following example produces the same blue line chart as the example in the previous section:
+The Pandas DataFrame has plotting methods of its own that wrap the functionality in Matplotlib. If your data is stored in a DataFrame, you can call `plot()` on the DataFrame itself. The following example produces the same blue line chart as the example in the previous section:
 
 ```python
 column_names = ['Celsius','Fahrenheit']
@@ -74,7 +74,7 @@ plt.show()
 
 ## Scatter plots
 
-[Scatter plots](https://en.wikipedia.org/wiki/Scatter_plot) are useful for determining if there is a correlation between the values in two columns. Matplotlib's `scatter()` function creates a scatter plot rather than a line plot. The following statements initialize a list with 100 semi-random data pairs that roughly form a line:
+[Scatter plots](https://en.wikipedia.org/wiki/Scatter_plot) are useful for determining if there is a correlation between the values in two columns. Matplotlib's `scatter()` method creates a scatter plot. The following statements initialize a list with 100 semi-random data pairs that roughly form a line:
 
 ```python
 import random
@@ -98,7 +98,7 @@ Here is the output:
 
 ![Displaying a scatter plot](media/partially-random-scatter-plot.png)
 
-If you prefer working with DataFrame functions directly, include a `kind='scatter'` parameter in the call to the DataFrame's `plot()` function to generate the same output:
+If you prefer working with DataFrame methods directly, include a `kind='scatter'` parameter in the call to the DataFrame's `plot()` method to generate the same output:
 
 ```python
 df = pd.DataFrame(data, columns=['X', 'Y'])
@@ -129,7 +129,7 @@ data = [['Cat',75], ['Dog',105], ['Bird',3], ['Other',17]]
 pets = pd.DataFrame(data, columns=column_names)
 ```
 
-To display this in a bar chart, you can call the `bar()` function:
+To display this in a bar chart, you can call the `bar()` method:
 
 ```python
 plt.bar(pets['Pet type'], pets['Total Owned'])
@@ -155,7 +155,7 @@ column_names = ['Owner', 'Pet type', 'Total Owned']
 data = [['Diane','Cat',2], ['Dave','Dog',1], ['Matt','Bird',1], ['Fahd','Cat',1]]
 ```
 
-This time, the counts need to aggregated across all owners. To achieve this, you can use the DataFrame's `groupby` function to aggregate the data for the plot:
+This time, the counts need to aggregated across all owners. To achieve this, you can use the DataFrame's `groupby` method to aggregate the data for the plot:
 
 ```python
 pets = pd.DataFrame(data, columns=column_names)
