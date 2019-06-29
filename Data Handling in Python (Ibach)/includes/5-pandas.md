@@ -217,6 +217,8 @@ The resulting DataFrame is rendered this way in a Jupyter notebook:
 
 ![Joining DataFrames](media/joined-dataframe.png)
 
+Observe that the resulting DataFrame has two columns containing airport codes. Can you write one line of code to remove one of the columns?
+
 ## Doing math with Pandas
 
 Like NumPy, Pandas includes methods for performing mathematical operations on DataFrames. The following example shows the mean of the values in every numeric column of the DataFrame:
