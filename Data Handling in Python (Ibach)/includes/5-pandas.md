@@ -4,7 +4,7 @@ NumPy is great for loading data from CSV files and performing fast mathematical 
 
 The key data structure in Pandas is the [DataFrame](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html), which you can think of as a two-dimensional table of rows and columns with labeled axes. DataFrame includes methods for loading data from CSV files, filtering and sorting data, checking for and replacing missing values, removing rows and columns with missing values, joining DataFrames, rendering data on-screen, exporting to JSON, CSV, Excel, and SQL, and more. DataFrame contains more than 200 methods and attributes. A simple call to [`DataFrame.head()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.head.html#pandas.DataFrame.head) in a Jupyter notebook gives you a look at the structure and content of the data:
 
-![Viewing a DataFrame](media/dataframe.png)
+![Viewing a DataFrame](media/head-output.png)
 
 Working with data is simpler when you have Pandas to lend a hand. In this lesson, you will learn the basics of Pandas.
 
