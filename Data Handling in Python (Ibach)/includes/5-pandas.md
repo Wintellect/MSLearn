@@ -114,7 +114,7 @@ To read a tab-delimited (TSV) file rather than a CSV, use the `sep` or `delimite
 airports = pd.read_csv('airports.csv', delimiter='\t')
 ```
 
-And if you would like to load certain columns from the file rather than all the columns, use the `usecols` parameter (or its equivalent, `names`) with a list a column names:
+And to load certain columns from the file rather than all the columns, use the `usecols` parameter (or its equivalent, `names`) with a list a column names:
 
 ```python
 airports = pd.read_csv('airports.csv', delimiter='\t', usecols=['Code', 'City'])
@@ -137,9 +137,13 @@ One of the reasons Pandas is so popular is that DataFrame includes numerous meth
 airports.drop_duplicates()
 ```
 
+Another common use case for Pandas is identifying rows and columns with missing values and either removing those rows and columns or replacing the missing values.
 
 
 
+
+
+[Sorting]
 
 ## Merging and concatenating
 
