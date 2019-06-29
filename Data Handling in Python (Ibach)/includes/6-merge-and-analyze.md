@@ -154,4 +154,4 @@ Like NumPy, Pandas includes methods for performing mathematical operations on Da
 
 	![Airports with the longest average departure delays](media/worst-airports.png)
 
-These examples merely scratch the surface of what you can accomplish with Pandas. Use them as a starting point for examples of your own — and a springboard for polishing your data-handling chops.
+These examples merely scratch the surface of what you can accomplish with Pandas. Use them as a starting point for examples of your own — and a lever for getting off work early on Fridays.
