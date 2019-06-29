@@ -101,6 +101,8 @@ Now let's use bar charts to visualize delays at individual airports and determin
 	len(df.groupby('ORIGIN'))
 	```
 
+	The answer should be 345.
+
 1. Earlier, you learned how to use a lambda expression to select every other row in a DataFrame. Here is that code again:
 
 	```python
