@@ -15,7 +15,7 @@ import matplotlib.pyplot as plt
 
 A side effect of using `%matplotlib inline` is that you don't have to call `plt.show()` to render a plot. You can call it if if you want (and it's necessary outside of a Jupyter notebook), but it's completely optional inside a notebook.
 
-Once `matplotlib.pyplot` is imported, you can call `plot()` on it to produce a line chart — one in which individual data points are connected with lines. The following statements create a Pandas DataFrame containing two columns with temperatures in Celsius and Fahrenheit and produce a simple line chart:
+Once `matplotlib.pyplot` is imported, you can call `plot()` on it to produce a line chart — one in which individual data points are connected with lines. The following statements create a Pandas DataFrame containing two columns with temperatures in Celsius and Fahrenheit and produce a simple line chart depicting the relationship between the two temperature scales:
 
 ```python
 column_names = ['Celsius', 'Fahrenheit']
