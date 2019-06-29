@@ -50,8 +50,7 @@ TODO: Add intro.
 	df.shape
 	```
 
-This is a rather large dataset
-
+This is a rather large dataset, but data professionals frequently deal with ones that are orders of magnitude larger.
 
 ## Clean the data
 
