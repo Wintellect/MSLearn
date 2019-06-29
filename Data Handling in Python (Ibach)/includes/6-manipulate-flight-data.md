@@ -47,7 +47,7 @@ The first challenge is to load the CSV files and produce a single DataFrame. The
 	df2.head()
 	```
 
-1. It appears that the datasets share the same schema. Use the `append()` method to merge the two and produce a new Dataframe containing all rows from both datasets, and `shape` to confirm that the combined DataFrame contains 620,000 rows:
+1. It appears that the datasets share the same schema. Use the `append()` method to merge the two and produce a DataFrame containing all rows from both datasets, and `shape` to confirm that the combined DataFrame contains 620,000 rows:
   
 	```python
 	df = df1.append(df2, ignore_index=True)
