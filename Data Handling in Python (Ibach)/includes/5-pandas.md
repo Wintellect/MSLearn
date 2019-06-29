@@ -81,7 +81,7 @@ airports.head()
 
 ![DataFrame rendered in a Jupyter notebook](media/dataframe-head.png)
 
-By default, `head()` returns the first five rows of the DataFrame. To return more or less, simply specify a count as an argument to the function.
+By default, `head()` returns the first five rows of the DataFrame. To return more or fewer rows, simply specify a row count as an argument to the function.
 
 ## Reading data from CSV files
 
