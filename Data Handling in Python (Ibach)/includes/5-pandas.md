@@ -233,4 +233,4 @@ This statement shows the sum of all the values in the "Count" column:
 df['Count'].sum()
 ```
 
-There is more — much more — that could be said about DataFrames. But the best way to learn a new library is to use it. Let's put Pandas to work solving a few problems.
+There is more — much more — that could be said about DataFrames. But the best way to learn a new library is to use it. Let's put Pandas to work solving a problem using a real dataset.
