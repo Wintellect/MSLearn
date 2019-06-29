@@ -152,7 +152,13 @@ df[df.isnull().values.any(axis=1)]
 One approach to dealing with missing values is removing rows that contain them. One line of code is sufficient to make that happen:
 
 ```python
-df.dropna()
+df = df.dropna()
+```
+
+You can also remove entire columns from a DataFrame:
+
+```python
+del df['ARR_DEL15']
 ```
 
 Another approach is to replace missing values with real values. That's easy enough with DataFrame's [`fillna`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.fillna.html#pandas.DataFrame.fillna) method, which replaces missing values with a specified value. The following example replaces all missing values in the DataFrame with 0s:
@@ -170,7 +176,7 @@ df = df.fillna({'ARR_DEL15': 1})
 You can also sort the contents of a DataFrame. The next example sorts first by the values in the "City" column, and then by values in the "Code" column:
 
 ```python
-df.sort_values(by=['City', 'Code'])
+df = df.sort_values(by=['City', 'Code'])
 ```
 
 By default, Pandas performs ascending sorts. If you want to do a descending sort instead, include an `ascending=False` parameter in the call to `sort_values()`.
