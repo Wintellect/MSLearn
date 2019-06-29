@@ -1,10 +1,10 @@
 # Use Matplotlib to investigate flight delays
 
-Now that you know the basics of Matplotlib, let's use what you learned to visualize flight data and better understand why delays occur and what the main drivers are. Such information might be useful the next time you book a flight because if you knew, for example, that a flight that leaves in the late afternoon is twice as likely to be delayed as one that leaves in the morning, or that connections in and out of JFK are 50% more likely to be delayed than connections through ATL, you might alter your travel plans to increase the chance of an on-time arrival.
+It's Monday morning, and while Pandas helped earn you a weekend away from the office, management wants a report with flashy visuals to help convey some of the conclusions that you reached regarding flight delays. Thankfully, Matplotlib works the same magic for visuals that Pandas does for raw data. Let's use what you learned about Matplotlib to present the data in a way that even a manager can understand.
 
-## Use scatter plots to explore relationships
+## Create a notebook and load a dataset
 
-A scatter plot is a great way to visualize relationships between variables in a dataset and test hypotheses such as "morning flights are less likely to incur long delays than afternoon flights". Let's use Matplotlib to generate a few scatter plots from the "all_flights" dataset.
+Let's create a new notebook to work in and get it loaded up with a dataset.
 
 1. Begin by returning to [Azure Notebooks](https://notebooks.azure.com) and creating a new notebook named "Matplotlib" in the "Data Handling in Python" project that you created earlier. Select Python 3.6 as the language.
 
@@ -29,6 +29,12 @@ A scatter plot is a great way to visualize relationships between variables in a 
 	%matplotlib inline
 	import matplotlib.pyplot as plt
 	```
+
+The notebook is prepared. It's time to get visual.
+
+## Use scatter plots to explore relationships
+
+A scatter plot is a great way to visualize relationships between variables in a dataset and test hypotheses such as "morning flights are less likely to incur long delays than afternoon flights". Let's use Matplotlib to generate a few scatter plots from the "all_flights" dataset.
 
 1. It is reasonable to expect that there might be a correlation between departure delays and arrival delays since a plane that leaves late will also arrive late unless the crew can make up time in the air. Test this supposition by creating a scatter plot of departure-delay and arrival-delay values:
 
@@ -92,36 +98,7 @@ Now let's use bar charts to visualize delays at individual airports and determin
 
 	![Airports with the longest average departure delays](media/worst-airports-plot.png) 
 
-	You learned something new here. When you plot with Matplotlib, you can use `xlabel()` and `ylabel()` to add labels to the X and Y axis. To do the same when plotting with a DataFrame, you call `set_xlabel()` and `set_ylabel()` on the `AxesSubplot` object returned by the DataFrame's `plot()` method.
-
-
-1. Let's go a step further and show the spread of departure delays (good and bad), but limit the number of airports shown so the chart isn't too cluttered. Start by determining how many different airports are represented in the dataset:
-
-	```python
-	len(df.groupby('ORIGIN'))
-	```
-
-	The answer should be 345.
-
-1. Earlier, you learned how to use a lambda expression to select every other row in a DataFrame. Here is that code again:
-
-	```python
-	df.iloc[lambda x: x.index % 2 == 0]
-	```
-
-	Use the same technique to select every 30th row in a DataFrame grouped by origin and sorted by average departure delay and produce a bar chart from the results. Can you envision what the chart might look like before running the code?
-
-
-
-
-
-1. Another interesting way of looking at the data is to plot mean arrival delays by destination airport. Do flights into ORD, for example, incur longer delays, on average, than flights into DFW? Use the following code to find out: 
-
-	```python
-	flights_busy_airports.groupby('DEST')['ARR_DELAY'].mean().plot(kind='bar')
-	```
-
-Does the resulting plot provide any meaningful insights to the data? 
+You learned something new here. When you plot with Matplotlib, you can use `xlabel()` and `ylabel()` to add labels to the X and Y axis. To do the same when plotting with a DataFrame, you call `set_xlabel()` and `set_ylabel()` on the `AxesSubplot` object returned by the DataFrame's `plot()` method.
 
 ## Use a histogram to explore further
 
@@ -130,13 +107,11 @@ Let's say the goal is to learn more about the nature of the delays — specifica
 1. Create a histogram of arrival delays to show how many flights were 0 to 10 minutes late, 10 to 20 minutes late, and so on:
 
 	```python
-	flight_df[['ARR_DELAY']].plot(kind='hist', bins=[0,10,20,30,40,50,60,70,80,90,100,110,120], rwidth=0.8)
+	flight_df[['ARR_DELAY']].plot(kind='hist', bins=[0,10,20,30,40,50,60,70,80,90,100,110,120])
 	```
 
 1. Confirm that the output looks like this:
 
-	![Flight delay histogram](media/flightDelayhistogram.png)
+	![Flight delay histogram](media/hist-delay.png)
 
-	Not surprisingly, short delays are more common than long delays, and thankfully, the number of delays drops off rapidly as the length of the delay increases:
-
-TODO: Add closing.
+Not surprisingly, short delays are more common than long delays, and thankfully, the number of delays drops off rapidly as the length of the delay increases.
