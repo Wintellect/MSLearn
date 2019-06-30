@@ -16,49 +16,50 @@ import pandas as pd
 column_names = ['Code', 'City']
 data = [['SEA','Seattle'], ['BOS','Boston'], ['HOU','Houston']]
 df = pd.DataFrame(data, columns = column_names)
-print(airports) # outputs: 
-                #   Code     City
-                # 0  SEA  Seattle
-                # 1  BOS   Boston
-                # 2  HOU  Houston
 ```
 
-Use the [`loc`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.loc.html#pandas.DataFrame.loc) attribute to slice a DataFrame and create a new DataFrame containing a subset of the rows and columns of the original. The first parameter in square brackets specifies the range of rows, and the second parameter identifies the range of columns:
+DataFrames can be sliced and diced in a manner similar to that of sequences. For example, you can use the [`loc`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.loc.html#pandas.DataFrame.loc) attribute to create a new DataFrame containing a subset of the rows and columns of the original. The first parameter in square brackets specifies the range of rows, and the second parameter identifies the range of columns:
 
 ```python
-print(df.loc[0:1, 'Code':'City']) # outputs:
-                                  #   Code     City
-                                  # 0  SEA  Seattle
-                                  # 1  BOS   Boston
+print(df.loc[0:1, 'Code':'City'])
+```
+
+Here's the output:
+
+```
+  Code     City
+0  SEA  Seattle
+1  BOS   Boston
 ```
 
 You can also use `loc` to retrieve the contents of a specific row and column:
 
 ```python
-print(df.loc[0,'city']) # outputs : Seattle 
+print(df.loc[0,'city']) # outputs: Seattle 
 ```
 
 To retrieve a row (or range of rows), specify the beginning and ending row indexes in square brackets on the DataFrame itself. `[0:1]` retrieves the first row, `[0:2]` retrieves the first two rows, and so on:
 
 ```python
-print(df[0:1]) # outputs: 
-               #    Code     City
-               # 0   SEA  Seattle
+df[0:1] 
 ```
 
 And to retrieve a column, specify the column name:
 
 ```python
-print(df['Code']) # outputs:
-                  # 0    SEA
-                  # 1    BOS
-                  # 2    HOU
+df['Code']
+```
+
+You can use conditional expressions to filter the rows that you select. For example, the following statement selects only those rows with "SEA" in the "Code" column and wraps the results in a new DataFrame, which is necessary if you wish to access the resultant rows since the inner expression — `df['Code'] == 'SEA'` — returns a Pandas Series containing True and False values:
+
+```python
+df[df['Code'] == 'SEA']
 ```
 
 Need to retrieve multiple columns? You can do that, too:
 
 ```python
-print(df[['City', 'Code']])
+df[['City', 'Code']]
 ```
  
 Or you can do this to select a range of columns:
@@ -70,10 +71,15 @@ df.loc[:, 'Code':'City']
 There are other ways to identify rows and columns in a DataFrame, including the [`iloc`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.iloc.html#pandas.DataFrame.iloc) attribute, which uses pure integer indexes. You can even use lambda functions to perform complex selections. The following example selects the even-numbered rows in a DataFrame:
 
 ```python
-print(df.iloc[lambda x: x.index % 2 == 0]) # outputs:
-                                           #   Code     City
-                                           # 0  SEA  Seattle
-                                           # 2  HOU  Houston
+print(df.iloc[lambda x: x.index % 2 == 0])
+```
+
+Here is the output:
+
+```
+#   Code     City
+# 0  SEA  Seattle
+# 2  HOU  Houston
 ```
 
 Rather than `print` a DataFrame, you can use the [`head()`]((https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.head.html#pandas.DataFrame.head)) method to retrieve its rows. In a Jupyter notebook, this produces a neatly formatted rendering of the DataFrame:
@@ -227,11 +233,16 @@ df = pd.DataFrame(data, columns = column_names)
 Now you want to compute average delays for each airport. The following statement groups the data by airport codes and uses the `mean()` method (yes, DataFrame has methods similar to NumPy's for performing mathematical operations on data) to compute mean delays for each group:
 
 ```python
-print(df.groupby('Airport')['Delay'].mean()) #outputs:
-                                             # Airport
-                                             # ATL    8.000000
-                                             # BOS    4.000000
-                                             # SEA    4.666667
+print(df.groupby('Airport')['Delay'].mean())
+```
+
+The output looks like this:
+
+```
+Airport
+ATL    8.000000
+BOS    4.000000
+SEA    4.666667
 ```
 
 If you wanted just the mean for Seattle, you could do it this way:
@@ -243,8 +254,7 @@ print(df.groupby('Airport')['Delay'].mean()['SEA']) # outputs: 4.666666666666667
 You could also use this approach, which takes advantage of the fact that expressions that select data from DataFrames can include conditional expressions:
 
 ```python
-print(df[df['Airport'] == 'SEA']['Delay'].mean())  # outputs: 4.666666666666667
+print(df[df['Airport'] == 'SEA']['Delay'].mean()) # outputs: 4.666666666666667
 ```
 
-There is much more that you can do with DataFrames, but let's pause for now and use Pandas to make sense of a couple of large CSV files.
-
+There is much more that you can do with DataFrames, but let's pause for now and put what you already know to work analyzing a much larger set of flight-delay information.
