@@ -245,13 +245,13 @@ BOS    4.000000
 SEA    4.666667
 ```
 
-If you wanted just the mean for Seattle, you could do it this way:
+If you want just the mean for Seattle, you can do it this way:
 
 ```python
 print(df.groupby('Airport')['Delay'].mean()['SEA']) # outputs: 4.666666666666667
 ```
 
-You could also use this approach, which takes advantage of the fact that expressions that select data from DataFrames can include conditional expressions:
+You can also use this approach, which uses a conditional expression rather than `groupby()`:
 
 ```python
 print(df[df['Airport'] == 'SEA']['Delay'].mean()) # outputs: 4.666666666666667
