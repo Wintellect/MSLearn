@@ -185,4 +185,4 @@ for key, value in airports.items():
     print(key + ' = ' + value)
 ```
 
-Note that because items in a dictionary are unordered, the enumeration will won't necessarily retrieve items in the order in which they were added.
+Note that because items in a dictionary are unordered, the enumeration won't necessarily retrieve items in the order in which they were added.
