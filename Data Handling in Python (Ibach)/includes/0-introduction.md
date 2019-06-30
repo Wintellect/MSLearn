@@ -18,4 +18,4 @@ Here's a preview of what you will learn in this module:
 - How to use Pandas to import data, clean it, and extract insights from it
 - How to use Matplotlib to visualize data
 
-The beauty of Python is that you can accomplish a lot with a little code. It's just a matter of knowing *what* code to write.
+Working with data starts with a knowledge of data structures. Let's see what Python has to offer in this regard.
