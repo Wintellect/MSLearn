@@ -4,7 +4,9 @@ It's Monday morning, and while Pandas helped earn you a weekend away from the of
 
 ## Create a notebook and load a dataset
 
-Begin by returning to [Azure Notebooks](https://notebooks.azure.com) and creating a new notebook named "Matplotlib" in the "Data Handling in Python" project that you created earlier. Select Python 3.6 as the language. Then use the following steps to prepare the notebook.
+As usual, let's use Azure Notebooks to host your code.
+
+1. Begin by returning to [Azure Notebooks](https://notebooks.azure.com) and creating a new notebook named "Matplotlib" in the "Data Handling in Python" project that you created earlier. Select Python 3.6 as the language.
 
 1. Run the following statement in the notebook's first cell to import a large CSV file from Azure blob storage:
 
