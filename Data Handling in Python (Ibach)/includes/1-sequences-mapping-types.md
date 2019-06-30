@@ -140,7 +140,7 @@ Whereas sequences store ordered sets of data, mapping types store unordered sets
 
 ### Dictionaries
 
-Each item in a dictionary contains a *key* and a *value*. The following code creates an empty dictionary named `airports`:
+Each item in a dictionary contains a *key* and a *value*. The following statement creates an empty dictionary named `airports`:
 
 ```python
 airports = {}
