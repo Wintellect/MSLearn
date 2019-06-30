@@ -60,8 +60,6 @@ nums = [1, 2, 3, 4, 5]
 print(nums[2:]) # outputs: [3, 4, 5]
 ```
 
-The ability to slice data is heavily used in Python applications, especially when performing numerically intensive tasks such as statistical analysis and machine learning.
-
 What if you want to modify a list? You can insert an item into a list with the `insert()` function, or add an item to the end of a list with the `append()` function:
 
 ```python
