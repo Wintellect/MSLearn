@@ -21,13 +21,13 @@ A list is a collection of items of any data type (integers, strings, or even oth
 To create a list, you wrap a sequence of values in square brackets and separate each item in the list with commas. The following example creates a list of integers:
 
 ```python
-nums = [1,2,3,4,5]
+nums = [1, 2, 3, 4, 5]
 ```
 
 You can iterate through all the values in the list using a loop:
 
 ```python
-nums = [1, 2,3 ,4 ,5]
+nums = [1, 2, 3,4 ,5]
 for value in nums:
     print(value) 
 ```
