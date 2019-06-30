@@ -222,7 +222,7 @@ Observe that the resulting DataFrame has two columns containing airport codes. C
 
 ## Grouping data
 
-One of DataFrame's most powerful features is its ability to group data. The [`groupby()`] method groups data according to criteria that you specify. As an example, assume that you create a simple DataFrame containing delays (in minutes) for a selection of airports:
+One of DataFrame's most powerful features is its ability to group data. The [`groupby()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.groupby.html) method groups data according to criteria that you specify. As an example, assume that you create a simple DataFrame containing delays (in minutes) for a selection of airports:
 
 ```python
 column_names = ['Airport', 'Delay']
