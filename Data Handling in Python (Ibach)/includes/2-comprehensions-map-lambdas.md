@@ -12,7 +12,7 @@ for i in [0, 1, 2, 3, 4]:
     squares.append(i ** 2)
 ```
 
-You could be more concise by using Python's `range()` function:
+You can make the code slightly more compact by using Python's `range()` function:
 
 ```python
 squares = []
