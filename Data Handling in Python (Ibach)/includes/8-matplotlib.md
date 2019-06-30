@@ -153,7 +153,7 @@ column_names = ['Owner', 'Pet type', 'Total Owned']
 data = [['Diane','Cat',2], ['Dave','Dog',1], ['Matt','Bird',1], ['Fahd','Cat',1]]
 ```
 
-This time, the counts need to aggregated across all owners. To achieve this, you can use the DataFrame's `groupby` method to aggregate the data for the plot:
+This time, the counts need to be aggregated across owners. To achieve this, you can use DataFrame's `groupby` method to aggregate the data for the plot:
 
 ```python
 pets = pd.DataFrame(data, columns=column_names)
