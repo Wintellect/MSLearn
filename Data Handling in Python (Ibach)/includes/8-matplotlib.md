@@ -94,8 +94,6 @@ plt.scatter(df['X'], df['Y'])
 plt.show()
 ```
 
-Here is the output:
-
 ![Displaying a scatter plot](media/partially-random-scatter-plot.png)
 
 If you prefer working with DataFrame methods directly, include a `kind='scatter'` parameter in the call to the DataFrame's `plot()` method to generate the same output:
