@@ -117,7 +117,7 @@ The first parameter is the path to the CSV file. The second is the delimiter tha
 airports = np.genfromtxt('airports.tsv', delimiter='\t', dtype=None, encoding=None, skip_header=1)
 ```
 
-The combination of `dtype=None` and `encoding=None` instructs `genfromtxt()` to infer data types, which is slower than specifying a data type but produces more intuitive behavior, especially if the data file contains a mix of strings and numbers. Finally, `skip_header=1` tells `genfromtext()` to skip one header line — the line containing the column names.
+The combination of `dtype=None` and `encoding=None` instructs `genfromtxt()` to infer data types, which is slower than specifying a data type but produces more intuitive behavior, especially if the data file contains a mix of strings and numbers. Finally, `skip_header=1` tells `genfromtext()` to skip one header line — the line containing column names.
 
 `genfromtxt()` supports other useful parameters as well. For example, if strings in the data file have leading or trailing spaces, specifying `autostrip=True` automatically removes leading and trailing whitespace:
 
@@ -125,7 +125,7 @@ The combination of `dtype=None` and `encoding=None` instructs `genfromtxt()` to 
 airports = np.genfromtxt('airports.csv', delimiter=',', dtype=None, encoding=None, skip_header=1, autostrip=True)
 ```
 
-Incidentally, `genfromtext()` has a counterpart named [`savetxt()`](https://docs.scipy.org/doc/numpy/reference/generated/numpy.savetxt.html) that saves the contents of a NumPy array to a CSV file, TSV file, or other text file.
+`genfromtext()` has a counterpart named [`savetxt()`](https://docs.scipy.org/doc/numpy/reference/generated/numpy.savetxt.html) that saves the contents of a NumPy array to a CSV file, TSV file, or other text file.
 
 ### Working with column names
 
