@@ -6,7 +6,7 @@ For an excellent overview of *whys* of using NumPy and NumPy arrays, see [A hitc
 
 ## Working with NumPy arrays
 
-NumPy arrays are created using NumPy's `array()` function. The following code imports NumPy and creates an array containing airport codes and cities:  
+The most common way to create a NumPy array is to use NumPy's `array()` function. The following code imports NumPy and creates an array containing airport codes and cities:  
 
 ```python
 import numpy as np
