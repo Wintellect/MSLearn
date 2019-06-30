@@ -25,20 +25,22 @@ One of the most useful NumPy array functions is `reshape()`, which changes the d
 
 ```python
 airports = airports.reshape(3, 2)
-print(airports) # outputs: 
-                # [['SEA' 'Seattle']
-                #  ['HOU' 'Houston']
-                #  ['BOS' 'Boston']]
+print(airports)
+```
+
+The output is:
+
+```
+[['SEA' 'Seattle']
+ ['HOU' 'Houston']
+ ['BOS' 'Boston']]
 ```
 
 Just like Python lists, NumPy arrays let you use loops to iterate through their items:  
 
 ```python
 for value in airports:
-    print(value) # outputs:
-                 # ['SEA' 'Seattle']
-                 # ['HOU' 'Houston']
-                 # ['BOS' 'Boston']
+    print(value)
 ```
 
 And just like Python lists, NumPy arrays can be sliced:
@@ -57,20 +59,31 @@ NumPy provides functions and operators to simplify code that performs mathematic
 
 ```python
 lets_do_math = np.array([[1, 2], [3, 4], [5, 6]])
-print(lets_do_math + 1) # outputs: 
-                        # [[2 3]
-                        #  [4 5]
-                        #  [6 7]]
+print(lets_do_math + 1)
+```
+
+Here's the output:
+
+```
+[[2 3]
+ [4 5]
+ [6 7]]
 ```
 
 The next example applies the expression `< 3` to each item in the array:
 
 ```python
-print(lets_do_math < 3) # outputs: 
-                        # [[ True  True]
-                        #  [False False]
-                        #  [False False]]
+print(lets_do_math < 3) 
 ```
+
+And here, once more, is the output:
+
+```
+[[ True  True]
+ [False False]
+ [False False]]
+```
+
 
 Finally, this example multiplies by 2 every item in the array:
 
@@ -100,15 +113,10 @@ ABQ,Albuquerque
 BWI,Baltimore
 ```
 
-The following code loads the contents of **airports.csv** into a NumPy array and prints the results:
+The following statement loads the contents of **airports.csv** into a NumPy array:
 
 ```python
 airports = np.genfromtxt('airports.csv', delimiter=',', dtype=None, encoding=None, skip_header=1)
-print(airports) # outputs: 
-                # [['HOU' 'Houston']
-                #  ['ABQ' 'Alberquerque']
-                #  ['BWI' 'Baltimore']]
-
 ```
 
 The first parameter is the path to the CSV file. The second is the delimiter that separates items in the CSV file. If you were reading a tab-delimited (TSV) file, you would modify the `delimiter` parameter as follows:
