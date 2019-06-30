@@ -85,4 +85,4 @@ doubles = map(lambda x: x*2, nums)
 print(list(doubles)) # outputs: [2, 4, 6, 8, 10]
 ```
 
-Python offers a rich assortment of data structures and language features for dealing with those data structures. But before you start slinging code, there is one more data structure you should learn about: NumPy arrays.
+Python offers a rich assortment of data structures and language features for dealing with those data structures. Let's put some of these to work before diving into data-handling libraries.
