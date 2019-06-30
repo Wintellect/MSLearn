@@ -57,41 +57,34 @@ NumPy provides functions and operators to simplify code that performs mathematic
 
 ```python
 lets_do_math = np.array([[1, 2], [3, 4], [5, 6]])
-print(lets_do_math + 1) 
-# outputs the entire array 
-# with 1 added to each element: 
-# [[2 3]
-#  [4 5]
-#  [6 7]]
+print(lets_do_math + 1) # outputs: 
+                        # [[2 3]
+                        #  [4 5]
+                        #  [6 7]]
 ```
 
 The next example applies the expression `< 3` to each item in the array:
 
 ```python
-print(lets_do_math < 3)
-# outputs the result of the evaluation 
-# is element < 3 for each element in the array:
-# [[ True  True]
-#  [False False]
-#  [False False]]
+print(lets_do_math < 3) # outputs: 
+                        # [[ True  True]
+                        #  [False False]
+                        #  [False False]]
 ```
 
 Finally, this example multiplies by 2 every item in the array:
 
 ```python
 print(lets_do_math[2] * 2) 
-# outputs the third row of the array
-# with each element multiplied by 2
-# [10 12]
 ```
 
 NumPy arrays also support operations such as calculating the sum, minimum, maximum, or mean of all the values in an array or array slice:
 
 ```python
-print(lets_do_math.sum()) # outputs sum of entire array : 21
-print(lets_do_math.min()) # outputs lowest value in entire array : 1
-print(lets_do_math[2].max()) # outputs highest value in 3rd row : 6
-print(lets_do_math[:,0].mean()) # outputs mean of values in first column : 3
+print(lets_do_math.sum()) # outputs: 21
+print(lets_do_math.min()) # outputs: 1
+print(lets_do_math[2].max()) # outputs: 6
+print(lets_do_math[:,0].mean()) # outputs: 3
 ```
 
 `sum()`, `min()`, `max()`, and `mean()` are but a few of the many functions you can call on an array. For a complete list, see the documentation for the `ndarray` data type at https://docs.scipy.org/doc/numpy-1.13.0/reference/arrays.ndarray.html.
