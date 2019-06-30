@@ -1,0 +1,15 @@
+### YamlMime:ModuleUnit
+uid: learn.data-handling-in-python.5-analyze-flight-delays
+title: Exercise - Use NumPy to analyze flight delays
+metadata:
+  title: Exercise - Use NumPy to analyze flight delays
+  description: Use NumPy to analyze flight delays
+  ms.date: 06/30/2018
+  author: v-jeffpr
+  ms.author: shana.matthews
+  ms.topic: interactive-tutorial
+  ms.prod: learning-python
+  ROBOTS: NOINDEX
+durationInMinutes: 5
+content: |
+  [!include[](includes/5-analyze-flight-delays.md)]

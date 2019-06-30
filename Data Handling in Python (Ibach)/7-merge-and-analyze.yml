@@ -1,0 +1,15 @@
+### YamlMime:ModuleUnit
+uid: learn.data-handling-in-python.7-merge-and-analyze
+title: Exercise - Use Pandas to merge and analyze datasets
+metadata:
+  title: Exercise - Use Pandas to merge and analyze datasets
+  description: Use Pandas to merge and analyze datasets
+  ms.date: 06/30/2018
+  author: v-jeffpr
+  ms.author: shana.matthews
+  ms.topic: interactive-tutorial
+  ms.prod: learning-python
+  ROBOTS: NOINDEX
+durationInMinutes: 10
+content: |
+  [!include[](includes/7-merge-and-analyze.md)]

@@ -1,0 +1,15 @@
+### YamlMime:ModuleUnit
+uid: learn.data-handling-in-python.3-build-dictionary
+title: Exercise - Build an airport directory
+metadata:
+  title: Exercise - Build an airport directory
+  description: Build a dictionary containing airport codes and locations
+  ms.date: 06/30/2018
+  author: v-jeffpr
+  ms.author: shana.matthews
+  ms.topic: interactive-tutorial
+  ms.prod: learning-python
+  ROBOTS: NOINDEX
+durationInMinutes: 10
+content: |
+  [!include[](includes/3-build-dictionary.md)]

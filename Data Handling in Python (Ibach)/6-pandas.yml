@@ -1,0 +1,15 @@
+### YamlMime:ModuleUnit
+uid: learn.data-handling-in-python.6-pandas
+title: Pandas
+metadata:
+  title: Pandas
+  description: Learn the fundamentals of Pandas 
+  ms.date: 06/30/2018
+  author: v-jeffpr
+  ms.author: shana.matthews
+  ms.topic: interactive-tutorial
+  ms.prod: learning-python
+  ROBOTS: NOINDEX
+durationInMinutes: 10
+content: |
+  [!include[](includes/6-pandas.md)]

@@ -1,0 +1,15 @@
+### YamlMime:ModuleUnit
+uid: learn.data-handling-in-python.4-numpy
+title: NumPy
+metadata:
+  title: NumPy
+  description: Learn the fundamentals of NumPy
+  ms.date: 06/30/2018
+  author: v-jeffpr
+  ms.author: shana.matthews
+  ms.topic: interactive-tutorial
+  ms.prod: learning-python
+  ROBOTS: NOINDEX
+durationInMinutes: 5
+content: |
+  [!include[](includes/4-numpy.md)]

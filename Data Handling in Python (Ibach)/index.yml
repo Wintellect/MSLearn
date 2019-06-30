@@ -3,20 +3,20 @@ uid: learn.data-handling-in-python
 metadata:
   title: Data Handling in Python - Learn
   description: Data Handling in Python
-  ms.date: 06/28/2018
+  ms.date: 06/30/2018
   author: v-jeffpr
   ms.author: shana.matthews
   ms.topic: interactive-tutorial
   ms.prod: learning-python
 title: Data Handling in Python
-summary: How to use Python and popular libraries such as NumPy and Pandas to handle data
+summary: How to use Python and popular libraries such as NumPy and Pandas to manipulate and analyze data
 abstract:  | 
   In this module, you will:
-  - tk
-  - tk
-  - tk
-  - tk
-  - tk
+  - Learn how to use Python data structures to store and manipulate data
+  - Learn how to use comprehensions, maps, and lambdas to simplify data handling
+  - Learn how to use NumPy to load and analyze data
+  - Learn how to use Pandas to load, clean, and analyze data
+  - Learn how to Matplotlib to visualize data
 prerequisites: None
 levels:
 - beginner
@@ -26,13 +26,14 @@ products:
 - python
 units:
 - learn.data-handling-in-python.0-introduction
-- learn.data-handling-in-python.1-sequences-mappingtypes
+- learn.data-handling-in-python.1-sequences-mapping-types
 - learn.data-handling-in-python.2-comprehensions-map-lambdas
-- learn.data-handling-in-python.3-create-notebook
+- learn.data-handling-in-python.3-build-dictionary
 - learn.data-handling-in-python.4-numpy
-- learn.data-handling-in-python.5-store-data-with-pandas
-- learn.data-handling-in-python.6-manipulate-data-with-pandas
-- learn.data-handling-in-python.7-matplotlib
-- learn.data-handling-in-python.8-visualize-flight-data
-- learn.data-handling-in-python.9-summary
-achievement: learn.building-neural-networks-with-keras.badge 
+- learn.data-handling-in-python.5-analyze-flight-delays
+- learn.data-handling-in-python.6-pandas
+- learn.data-handling-in-python.7-merge-and-analyze
+- learn.data-handling-in-python.8-matplotlib
+- learn.data-handling-in-python.9-visualize-flight-data
+- learn.data-handling-in-python.10-summary
+achievement: learn.data-handling-in-python.badge 

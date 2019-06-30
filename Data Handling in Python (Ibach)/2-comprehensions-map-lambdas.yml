@@ -1,0 +1,15 @@
+### YamlMime:ModuleUnit
+uid: learn.data-handling-in-python.2-comprehensions-map-lambdas
+title: Comprehensions, maps, and lambdas
+metadata:
+  title: Comprehensions, maps, and lambdas
+  description: Comprehensions, maps, and lambdas
+  ms.date: 06/30/2018
+  author: v-jeffpr
+  ms.author: shana.matthews
+  ms.topic: interactive-tutorial
+  ms.prod: learning-python
+  ROBOTS: NOINDEX
+durationInMinutes: 5
+content: |
+  [!include[](includes/2-comprehensions-map-lambdas.md)]

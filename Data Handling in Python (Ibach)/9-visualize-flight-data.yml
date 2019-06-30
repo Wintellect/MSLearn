@@ -1,0 +1,15 @@
+### YamlMime:ModuleUnit
+uid: learn.data-handling-in-python.9-visualize-flight-data
+title: Exercise - Use Matplotlib to visualize data
+metadata:
+  title: Exercise - Use Matplotlib to visualize data
+  description: Use Matplotlib to visualize data
+  ms.date: 06/30/2018
+  author: v-jeffpr
+  ms.author: shana.matthews
+  ms.topic: interactive-tutorial
+  ms.prod: learning-python
+  ROBOTS: NOINDEX
+durationInMinutes: 10
+content: |
+  [!include[](includes/9-visualize-flight-data.md)]

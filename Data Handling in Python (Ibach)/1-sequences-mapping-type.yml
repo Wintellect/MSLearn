@@ -1,0 +1,15 @@
+### YamlMime:ModuleUnit
+uid: learn.data-handling-in-python.1-sequences-mapping-types
+title: Sequences and mapping types
+metadata:
+  title: Sequences and mapping types
+  description: Sequences and mapping types
+  ms.date: 06/30/2018
+  author: v-jeffpr
+  ms.author: shana.matthews
+  ms.topic: interactive-tutorial
+  ms.prod: learning-python
+  ROBOTS: NOINDEX
+durationInMinutes: 10
+content: |
+  [!include[](includes/1-sequences-mapping-types.md)]
