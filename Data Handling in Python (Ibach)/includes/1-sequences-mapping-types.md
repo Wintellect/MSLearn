@@ -1,6 +1,6 @@
 # Sequences and mapping types
 
-An understanding of data handling in Python begins with an understanding of *sequences* and *mapping types*. Sequences hold ordered sets of data. Think of an array holding an ordered set of integers or a string holding an ordered set of characters. Each item in the array or string occupies a specific position, and each has a specific zero-based index. Mapping types store unordered sets of data. The most common example of a mapping type is the dictionary, which holds key-value pairs. You retrieve a value from a dictionary by specifying a key instead of an index.
+Data handling in Python begins with an understanding of *sequences* and *mapping types*. Sequences hold ordered sets of data. Think of an array holding an ordered set of integers or a string holding an ordered set of characters. Each item in the array or string occupies a specific position, and each has a specific zero-based index. Mapping types store unordered sets of data. The most common example of a mapping type is the dictionary, which holds key-value pairs. You retrieve a value from a dictionary by specifying a key instead of an index.
 
 ## Sequences
  
