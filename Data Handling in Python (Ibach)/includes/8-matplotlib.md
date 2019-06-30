@@ -27,7 +27,7 @@ plt.show()
 
 The `plot()` method requires two parameters: the values to plot on the X axis, and the values to plot on the Y axis. After calling `plot()`, you call `show()` to display the plot. Once more, the call to `show()` is optional if you're executing this code in a Jupyter notebook:
 
-![Celsius vs Fahrenheit](media/SimpleCelsiusvsFarenheit.png)
+![Plotting Celsius vs. Fahrenheit](media/celsius-vs-fahrenheit.png)
 
 What if you want to include a title in the output and label the X and Y axes? That's what the `title()`, `xlabel()`, and `ylabel()` methods are for:
 
@@ -44,7 +44,7 @@ plt.show()
 
 Here is the modified output:
 
-![Drawing a simple line chart](media/CelsiusvsFarenheitWithLabels.png)
+![Drawing a simple line chart](media/celsius-vs-fahrenheit-with-labels.png)
 
 The `plot()` method accepts a third parameter specifying the color and style of the lines that connect the data points. The default is to connect them with a solid blue line. Passing 'ro' in the third parameter shows the data points in red without a line connecting them:
 
@@ -138,7 +138,7 @@ plt.show()
 
 The output is as follows:
 
-![Total pets by category bar chart](media/PetsBarChart.png)  
+![Drawing a bar chart](media/pets-bar-chart.png)  
 
 You can achieve the same result by calling `plot()` on the DataFrame and specifying `kind='bar'`:
 
@@ -165,7 +165,7 @@ plt.show()
 
 The output looks like this:
 
-![Aggregated bar chart](media/AggregatedBarChartPets.png)
+![Aggregated bar chart](media/aggregated-pets-bar-chart.png)
 
 The parameter passed to `groupby()` is the name of the column from which to create groups. In this case, the groups are "Cat," "Dog", and "Bird." The string in square brackets identifies the column used to perform the aggregation. `.sum()` says to sum all of the values in that column. It's a valuable technique to know about given that data doesn't always come in the form that you want.
 
