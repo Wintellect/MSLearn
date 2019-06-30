@@ -6,8 +6,6 @@ The key data structure in Pandas is the [DataFrame](https://pandas.pydata.org/pa
 
 ![Viewing a DataFrame](media/head-output.png)
 
-Working with data is simpler when you have Pandas to lend a hand. In this lesson, you will learn the basics of Pandas.
-
 ## Working with DataFrames
 
 A DataFrame is a two-dimensional data structure. Rows are indexed by number, and columns are indexed by name. You can create a DataFrame and initialize it with data using Pandas' [`DataFrame()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html) method:  
