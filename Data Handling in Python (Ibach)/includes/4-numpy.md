@@ -155,4 +155,4 @@ You can use column indexes instead, which is handy if the columns don't have nam
 airports = np.genfromtxt('airports.csv', delimiter=',', dtype='str', skip_header=1, usecols=(0, 1))
 ```
 
-Now that you know the basics of NumPy arrays, you have the tools you need to manipulate data like a pro in Python. Let's put this knowledge to work gathering some basic statistics from a dataset with information about flight delays.
+Now that you know the basics of NumPy arrays, you have another tool for manipulating data like a pro in Python. Let's put this knowledge to work gathering some basic statistics from a dataset with information about flight delays.
