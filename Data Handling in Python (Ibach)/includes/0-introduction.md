@@ -4,7 +4,7 @@ Imagine that you work in the Planning & Logistics department for a major airline
 
 Python has a number of features for manipulating data. Popular libraries such as [NumPy](https://www.numpy.org/), [Pandas](https://pandas.pydata.org/), and [Matplotlib](https://matplotlib.org/) expand Python's power and make it the perfect tool for the job. It's time to brush up on your Python skills and familiarize yourself with newer language features such as [lambda functions](https://www.w3schools.com/python/python_lambda.asp) and [comprehensions](https://medium.com/better-programming/list-comprehension-in-python-8895a785550b) that simplify data handling. And it's time to learn what Pandas and other libraries can do to make the job easier.
 
-In this module, you will acquire the basic skills needed to tackle projects such as this one. You will produce charts and graphs such as these to illustrate key insights gleaned from the data. You will do your work in [Jupyter notebooks](https://jupyter.org/), which provide an interactive and easy-to-use vehicle for experimenting with Python code. And your platform for Jupyter will be [Azure Notebooks](https://notebooks.azure.com), which provide Jupyter-as-a-Service for free.
+In this module, you will acquire the basic skills needed to tackle projects such as this one. You will produce charts and graphs like the ones below to illustrate key insights gleaned from the data. You will do your work in [Jupyter notebooks](https://jupyter.org/), which provide an interactive and easy-to-use vehicle for experimenting with Python code. And your platform for Jupyter will be [Azure Notebooks](https://notebooks.azure.com), which provide Jupyter-as-a-Service for free.
 
 ![](media/intro-charts.png)
 
