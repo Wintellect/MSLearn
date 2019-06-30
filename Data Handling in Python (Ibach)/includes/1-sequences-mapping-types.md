@@ -105,7 +105,7 @@ Specifying a negative number for a starting or ending index represents an offset
 
 ```python
 message = 'This is fun!'
-print(message[:-2]) # outputs : This is fu
+print(message[:-2]) # outputs: This is fu
 ```
 
 Strings come with built-in functions for string manipulation. A common requirement is to split a string containing a collection of strings separated by commas, spaces, or other characters into a list of strings. The following example splits a string containing a series of strings separated by commas into a list of strings using the `split()` function:
@@ -113,7 +113,7 @@ Strings come with built-in functions for string manipulation. A common requireme
 ```python
 colors_data = 'red,green,blue'
 colors = colors_data.split(',')
-print(colors) # outputs: ['red','blue','green']
+print(colors) # outputs: ['red', 'blue', 'green']
 ```
 
 You can concatenate strings using the `+` operator:
@@ -151,7 +151,7 @@ You can include key-value pairs inside the curly braces to initialize a dictiona
 
 ```python
 airports = {'SEA':'Seattle', 'LAX':'Los Angeles', 'ORD':'Chicago'}
-print(airports) # outputs : {'SEA': 'Seattle', 'LAX': 'Los Angeles', 'ORD': 'Chicago'}
+print(airports) # outputs: {'SEA': 'Seattle', 'LAX': 'Los Angeles', 'ORD': 'Chicago'}
 ```
 
 You can retrieve a value from a dictionary by specifying the value's key:
@@ -166,7 +166,7 @@ You add new values to a dictionary by specifying their values and their keys. Th
 ```python
 airports = {'SEA':'Seattle', 'LAX':'Los Angeles', 'ORD':'Chicago'}
 airports['HOU']='Houston'
-print(airports) # outputs : {'SEA': 'Seattle', 'LAX': 'Los Angeles', 'ORD': 'Chicago', 'HOU': 'Houston'}
+print(airports) # outputs: {'SEA': 'Seattle', 'LAX': 'Los Angeles', 'ORD': 'Chicago', 'HOU': 'Houston'}
 ```
 
 If an item keyed by "HOU" doesn't exist, it is added to the dictionary. If the item does exist, its value is replaced with "Houston."
@@ -176,7 +176,7 @@ To remove an item from a dictionary, use `del`:
 ```python
 airports = {'SEA':'Seattle', 'LAX':'Los Angeles', 'ORD':'Chicago'}
 del airports['LAX']
-print(airports) # outputs : {'SEA': 'Seattle', 'ORD': 'Chicago'}
+print(airports) # outputs: {'SEA': 'Seattle', 'ORD': 'Chicago'}
 ```
 
 You can enumerate the items in a dictionary using a `for` loop:
