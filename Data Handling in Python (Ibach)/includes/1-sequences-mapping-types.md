@@ -27,42 +27,37 @@ nums = [1,2,3,4,5]
 You can iterate through all the values in the list using a loop:
 
 ```python
-nums = [1,2,3,4,5]
+nums = [1, 2,3 ,4 ,5]
 for value in nums:
-    print(value) # outputs : 
-                 # 1
-                 # 2
-                 # 3
-                 # 4
-                 # 5 
+    print(value) 
 ```
 
 To access an item in the list, use its zero-based index:
 
 ```python
-nums = [1,2,3,4,5]
+nums = [1, 2, 3, 4, 5]
 print(nums[2]) # outputs: 3
 ```
 
 One of the features lists support is *slicing*. Slicing allows you to extract a subset of the list. Slicing is performed by specifying a starting index and ending index in square brackets. The following code extracts three characters from a list starting at index 1 and ending at index 4: 
 
 ```python
-nums = [1,2,3,4,5]
-print(nums[1:4]) # outputs: [2,3,4]
+nums = [1, 2, 3, 4, 5]
+print(nums[1:4]) # outputs: [2, 3, 4]
 ```
 
 You can omit the starting index to specify that the slice should start with the first item in the list:
 
 ```python
-nums = [1,2,3,4,5]
-print(nums[:4]) # outputs: [1,2,3,4]
+nums = [1, 2, 3, 4, 5]
+print(nums[:4]) # outputs: [1, 2, 3, 4]
 ```
 
 And you can omit the ending index to specify that the slice should end with the final item in the list:
 
 ```python
-nums = [1,2,3,4,5]
-print(nums[2:]) # outputs: [3,4,5]
+nums = [1, 2, 3, 4, 5]
+print(nums[2:]) # outputs: [3, 4, 5]
 ```
 
 The ability to slice data is heavily used in Python applications, especially when performing numerically intensive tasks such as statistical analysis and machine learning.
@@ -70,27 +65,27 @@ The ability to slice data is heavily used in Python applications, especially whe
 What if you want to modify a list? You can insert an item into a list with the `insert()` function, or add an item to the end of a list with the `append()` function:
 
 ```python
-nums = [1,2,3,4,5]
+nums = [1, 2, 3, 4, 5]
 nums.append(6)
-print(nums) # outputs: [1,2,3,4,5,6]
+print(nums) # outputs: [1, 2, 3, 4, 5, 6]
 ```
 
-And you can remove an item from a list with the `remove()` function:
+You can remove an item from a list with the `remove()` function:
 
 ```python
-nums = [1,2,3,4,5]
+nums = [1, 2, 3, 4, 5]
 nums.remove(4)
-print(nums) # outputs: [1,2,3,5]
+print(nums) # outputs: [1, 2, 3, 5]
 ```
 
 Finally, you can get the number of items in a list with the `len()` function:
 
 ```python
-nums = [1,2,3,4,5]
+nums = [1, 2, 3, 4, 5]
 print(len(nums)) # outputs: 5
 ```
 
-`len()` is a Python function, not a list function, so rather than call it on a list, you pass it a list.
+`len()` is a Python function, so rather than call it on a list, you pass it a list.
 
 ### Strings
 
