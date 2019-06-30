@@ -94,7 +94,7 @@ Now let's use bar charts to visualize delays at individual airports and determin
 
 	![Airports with the longest average departure delays](media/worst-airports-plot.png) 
 
-You learned something new here. When you plot with Matplotlib, you can use `xlabel()` and `ylabel()` to add labels to the X and Y axis. To do the same when plotting with a DataFrame, you call `set_xlabel()` and `set_ylabel()` on the `AxesSubplot` object returned by the DataFrame's `plot()` method.
+One nuance of the last code snippet is that a call to `plt.ylabel()` won't add a label to the Y axis. In these situations, you can call `set_ylabel()` on the `AxesSubplot` object returned by the DataFrame's `plot()` method.
 
 ## Use a histogram to explore the frequencies of delays
 
