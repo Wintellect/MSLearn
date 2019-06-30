@@ -163,7 +163,7 @@ plt.show()
 
 ![Aggregated bar chart](media/aggregated-pets-bar-chart.png)
 
-The parameter passed to `groupby()` is the name of the column from which to create groups. In this case, the groups are "Cat," "Dog", and "Bird." The string in square brackets identifies the column used to perform the aggregation. `.sum()` says to sum all of the values in that column. It's a valuable technique to know about given that data doesn't always come in the form that you want.
+The parameter passed to `groupby()` is the name of the column from which to create groups. In this case, the groups are "Cat," "Dog", and "Bird." The string in square brackets identifies the column used to perform the aggregation. `.sum()` sums all the values in that column. It's a valuable technique to know about given that data doesn't always come in the form that you want.
 
 ## Histograms
 
