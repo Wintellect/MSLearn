@@ -132,7 +132,7 @@ nums = nums1 + nums2
 print(nums) # outputs: [1, 2, 3, 4, 5, 6]
 ```
 
-Sequences make it easy to manipulate collections of data. The Python support for sequences is one reason why it is so popular among people who deal with data on a daily basis.
+Sequences make it easy to manipulate collections of data. Python's support for sequences is one reason why it is so popular among people who deal with data on a daily basis.
 
 ## Mapping types
 
