@@ -1,4 +1,4 @@
-# Use Matplotlib to investigate flight delays
+# Exercise: Use Matplotlib to visualize data
 
 It's Monday morning, and while Pandas helped earn you a weekend away from the office, management wants a report with flashy visuals to help convey some of the conclusions that you reached regarding flight delays. Thankfully, Matplotlib works the same magic for visuals that Pandas does for raw data. Let's use what you learned about Matplotlib to present the data in a way that even a manager can understand.
 
