@@ -37,7 +37,7 @@ for value in nums:
                  # 5 
 ```
 
-To access an item in the list, specify its zero-based index in square brackets:
+To access an item in the list, use its zero-based index:
 
 ```python
 nums = [1,2,3,4,5]
@@ -58,7 +58,7 @@ nums = [1,2,3,4,5]
 print(nums[:4]) # outputs: [1,2,3,4]
 ```
 
-You can omit the ending index to specify that the slice should end with the final item in the list:
+And you can omit the ending index to specify that the slice should end with the final item in the list:
 
 ```python
 nums = [1,2,3,4,5]
