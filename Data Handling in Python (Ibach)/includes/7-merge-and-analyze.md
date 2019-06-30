@@ -121,7 +121,7 @@ Like NumPy, Pandas includes methods for performing mathematical operations on Da
 
 	If you wanted to determine the longest delay incurred by any flight, how would you do it?
 
-1. One of the lesser-known features of DataFrames is that you can include filters in expressions that select data. To demonstrate, use the following statement to determine how many flights were more than 10 minutes late:
+1. Recall that you can include filters in expressions that select data. To demonstrate, use the following statement to determine how many flights were more than 10 minutes late:
 
 	```python
 	len(df[df['ARR_DELAY'] > 10])
