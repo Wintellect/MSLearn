@@ -186,7 +186,7 @@ df = df.append(other_df, ignore_index=True)
 
 The `ignore_index=TRUE` parameter tells the method to renumber (reindex) the rows that are appended. Without that, you would have two rows with index 0, two rows with index 1, and so on.
 
-You can also join DataFrames in a manner that is analagous to doing a JOIN in SQL. Suppose you have one DataFrame containing airport codes and cities:
+You can also join DataFrames in a manner that is analagous to performing a JOIN in SQL. Suppose you have one DataFrame containing airport codes and cities:
 
 ```python
 column_names = ['airport_code', 'city']
