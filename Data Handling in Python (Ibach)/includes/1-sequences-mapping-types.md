@@ -144,7 +144,6 @@ Each item in a dictionary contains a *key* and a *value*. The following code cre
 
 ```python
 airports = {}
-print(airports) # outputs: {}
 ```
 
 You can include key-value pairs inside the curly braces to initialize a dictionary with items. This example creates a dictionary containing airport codes and cities for three airports:
