@@ -4,7 +4,7 @@ Data handling in Python begins with an understanding of *sequences* and *mapping
 
 ## Sequences
  
-Python supports a variety of data types, including strings, integers, floating-point numbers, and booleans. It also supports sequences, which hold collections of data. The most common sequences are:
+Python supports a variety of data types, including strings, integers, floating-point numbers, and Booleans. It also supports sequences, which hold collections of data. The most common sequences are:
 
 - Lists, which are similar to arrays in other programming languages
 - Tuples, which are are like lists, but are immutable (more on this in a moment)
@@ -14,7 +14,7 @@ Sequences play a role in data handling in Python because they support a rich and
 
 ### Lists
 
-A list is a collection of items of any data type (integers, strings, or even other lists) and is analogous to arrays in other programming languages. Lists are mutable (they can be changed), which means items can be added to and removed from a list.
+A list is a collection of items of any data type (integers, strings, or even other lists) and is analogous to arrays in other programming languages. Lists are mutable, which means items can be added to and removed from them.
 
 > The terms *mutable* and *immutable* are frequently used in programming. Mutable means the memory referenced by a variable can be changed. Immutable means the memory referenced by a variable cannot be changed. Strings are immutable. If you modify a string in code, a new string is created in memory to hold the modified string. Lists are mutable, meaning items can freely be added and removed.
 
