@@ -132,7 +132,7 @@ df.columns = ['Code', 'City']
 
 ## Cleaning and sorting data
 
-One of the reasons Pandas is so popular is that DataFrame includes numerous methods for cleaning data. For example, the `drop_duplicates()` method removes duplicate rows from a DataFrame, which is often a precursor to using it to train a machine-learning model:
+One of the reasons Pandas is so popular is that DataFrame includes numerous methods for cleaning data. For example, the `drop_duplicates()` method removes duplicate rows from a DataFrame, which is often a precursor to training a machine-learning model:
 
 ```python
 df = df.drop_duplicates()
