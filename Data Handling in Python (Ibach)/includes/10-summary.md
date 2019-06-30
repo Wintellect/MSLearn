@@ -1,6 +1,6 @@
 # Summary
 
-Python libraries such as [NumPy](https://www.numpy.org/) and [Pandas](https://pandas.pydata.org/) make data handling easier and allow you to accomplish complex tasks such as cleaning and analyzing data with just a few lines of code. [Matplotlib](https://matplotlib.org/) adds spice to mix by letting you produce rich charts and graphs, and it provides the foundation for Pandas' own plotting capabilities. But don't sell Python itself short. Features such as slicing, comprehensions, and lambda functions make Python a first-class language for working with data. It's no coincidence that data scientists use Python more than any other language, and that some of the best libraries available for manipulating data and building machine-learning models are Python libraries.
+Python libraries such as [NumPy](https://www.numpy.org/) and [Pandas](https://pandas.pydata.org/) make data handling easier and allow you to manipulate, clean, and analyze data with a minimum of code. [Matplotlib](https://matplotlib.org/) adds spice to mix by letting you produce rich charts and graphs, and it provides the foundation for Pandas' own plotting capabilities. But don't sell Python itself short. Features such as slicing, comprehensions, and lambda functions make Python a first-class language for working with data. It's no coincidence that data scientists use Python more than any other language, and that some of the best libraries available for manipulating data and building machine-learning models are Python libraries.
 
 ## Check your knowledge
 
