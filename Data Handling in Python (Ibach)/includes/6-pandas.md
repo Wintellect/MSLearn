@@ -27,7 +27,7 @@ Use the [`loc`](https://pandas.pydata.org/pandas-docs/stable/reference/api/panda
 
 ```python
 print(df.loc[0:1, 'Code':'City']) # outputs:
-                                  #   Code     city
+                                  #   Code     City
                                   # 0  SEA  Seattle
                                   # 1  BOS   Boston
 ```
@@ -42,8 +42,8 @@ To retrieve a row (or range of rows), specify the beginning and ending row index
 
 ```python
 print(df[0:1]) # outputs: 
-               #      airport_code     city
-               # 0             SEA  Seattle
+               #    Code     City
+               # 0   SEA  Seattle
 ```
 
 And to retrieve a column, specify the column name:
