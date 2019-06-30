@@ -27,7 +27,7 @@ nums = [1, 2, 3, 4, 5]
 You can iterate through all the values in the list using a loop:
 
 ```python
-nums = [1, 2, 3,4 ,5]
+nums = [1, 2, 3, 4, 5]
 for value in nums:
     print(value) 
 ```
