@@ -230,7 +230,7 @@ data = [['SEA', 10], ['BOS', 4], ['SEA', 6], ['SEA', -2], ['ATL', 8]]
 df = pd.DataFrame(data, columns = column_names)
 ```
 
-Now you want to compute average delays for each airport. The following statement groups the data by airport codes and uses the `mean()` method (yes, DataFrame has methods similar to NumPy's for performing mathematical operations on data) to compute mean delays for each group:
+Now you want to compute average delays for each airport. The following statement groups the data by airport code and uses the `mean()` method (yes, DataFrame has methods similar to NumPy's for performing mathematical operations on data) to compute mean delays for each group:
 
 ```python
 print(df.groupby('Airport')['Delay'].mean())
