@@ -36,7 +36,7 @@ The output is:
  ['BOS' 'Boston']]
 ```
 
-Just like Python lists, NumPy arrays let you use loops to iterate through their items:  
+You can iterate over the items in a NumPy array the same way you iterate over lists:  
 
 ```python
 for value in airports:
