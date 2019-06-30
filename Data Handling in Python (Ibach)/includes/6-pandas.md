@@ -162,7 +162,7 @@ You can also remove entire columns from a DataFrame:
 del df['ARR_DELAY']
 ```
 
-Another approach is to replace missing values with real values. That's easy enough with DataFrame's [`fillna`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.fillna.html#pandas.DataFrame.fillna) method, which replaces missing values with a specified value. The following example replaces all missing values in the DataFrame with 0s:
+Another approach is to replace missing values with real values. That's easy enough with DataFrame's [`fillna()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.fillna.html#pandas.DataFrame.fillna) method, which replaces missing values with a specified value. The following example replaces all missing values in the DataFrame with 0s:
 
 ```python
 df = df.fillna(0)
