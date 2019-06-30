@@ -60,6 +60,8 @@ A scatter plot is a great way to visualize relationships between variables in a 
 	df.plot(kind='scatter', x='CRS_DEP_TIME', y='ARR_DELAY')
 	```
 
+	![Plotting scheduled departure times and late arrivals](media/departure-times-arrival-delays.png)
+
 What does the output tell you about the theory that a traveler is more likely to encounter delays by flying in mid-afternoon than early morning?
 
 ## Use bar charts to visualize delays at individual airports
