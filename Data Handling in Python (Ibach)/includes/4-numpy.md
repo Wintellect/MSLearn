@@ -51,7 +51,7 @@ print(airports[:,1]) # outputs a specific column: ['Seattle' 'Houston' 'Boston']
 
 One functional difference between Python lists and NumPy arrays is that the latter are *homogeneous*. A Python list, for example, can contain integers and strings. A NumPy array can contain integers *or* strings, but it cannot contain both. You can determine what type of data an array holds by reading the array's `dtype` attribute. Similarly, the `nbytes` attribute tells you how much memory an array and all of its elements consume, which can be useful when comparing to the memory consumed by Python lists.
 
-## Doing math with NumPy arrays
+## Operating on NumPy arrays
 
 NumPy provides functions and operators to simplify code that performs mathematical operations on the elements in a NumPy array. The following example adds 1 to every item in an array:
 
