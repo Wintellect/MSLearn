@@ -9,21 +9,13 @@ Comprehensions in Python provide a concise syntax for creating sets of data, esp
 ```python
 squares = []
 for i in [0, 1, 2, 3, 4]:
-    squares.append(i ** 2)
-```
-
-You can make the code slightly more compact by using Python's `range()` function:
-
-```python
-squares = []
-for i in range(5):
     squares.append(i**2)
 ```
 
 Comprehensions allow the same list to be created using a single line of code:
 
 ```python
-squares = [i**2 for i in range(5)]
+squares = [i**2 for i in [0, 1, 2, 3, 4]]
 ```
 
 The general syntax for a list comprehension is:
