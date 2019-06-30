@@ -124,9 +124,9 @@ df.columns = ['Code', 'City']
 
 `read_csv()` supports other parameters as well, including `skipinitialspace`, which ignores white space after delimiters, and `nrows`, which reads the specified number of rows and is useful when dealing with very large files. For a complete list of parameters supported by `read_csv()`, refer to the [read_csv() documentation](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html#pandas.read_csv).
 
-## Cleaning and filtering data
+## Cleaning and sorting data
 
-One of the reasons Pandas is so popular is that DataFrame includes numerous methods for cleaning and filtering data. For example, the `drop_duplicates()` method removes duplicate rows from a DataFrame, which is often a precursor to using it to train a machine-learning model:
+One of the reasons Pandas is so popular is that DataFrame includes numerous methods for cleaning data. For example, the `drop_duplicates()` method removes duplicate rows from a DataFrame, which is often a precursor to using it to train a machine-learning model:
 
 ```python
 df = df.drop_duplicates()
@@ -212,4 +212,39 @@ The resulting DataFrame is rendered this way in a Jupyter notebook:
 
 ![Joining DataFrames](media/joined-dataframe.png)
 
-Observe that the resulting DataFrame has two columns containing airport codes. Can you write one line of code to remove one of the columns?
+Observe that the resulting DataFrame has two columns containing airport codes. Could you write one line of code to remove one of the columns?
+
+## Grouping data
+
+One of DataFrame's most powerful features is its ability to group data. The [`groupby()`] method groups data according to criteria that you specify. As an example, assume that you create a simple DataFrame containing delays (in minutes) for a selection of airports:
+
+```python
+column_names = ['Airport', 'Delay']
+data = [['SEA', 10], ['BOS', 4], ['SEA', 6], ['SEA', -2], ['ATL', 8]]
+df = pd.DataFrame(data, columns = column_names)
+```
+
+Now you want to compute average delays for each airport. The following statement groups the data by airport codes and uses the `mean()` method (yes, DataFrame has methods similar to NumPy's for performing mathematical operations on data) to compute mean delays for each group:
+
+```python
+print(df.groupby('Airport')['Delay'].mean()) #outputs:
+                                             # Airport
+                                             # ATL    8.000000
+                                             # BOS    4.000000
+                                             # SEA    4.666667
+```
+
+If you wanted just the mean for Seattle, you could do it this way:
+
+```python
+print(df.groupby('Airport')['Delay'].mean()['SEA']) # outputs: 4.666666666666667
+```
+
+You could also use this approach, which takes advantage of the fact that expressions that select data from DataFrames can include conditional expressions:
+
+```python
+print(df[df['Airport'] == 'SEA']['Delay'].mean())  # outputs: 4.666666666666667
+```
+
+There is much more that you can do with DataFrames, but let's pause for now and use Pandas to make sense of a couple of large CSV files.
+
