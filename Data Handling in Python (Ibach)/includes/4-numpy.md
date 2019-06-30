@@ -155,6 +155,4 @@ You can use column indexes instead, which is handy if the columns don't have nam
 airports = np.genfromtxt('airports.csv', delimiter=',', dtype='str', skip_header=1, usecols=(0, 1))
 ```
 
-For more information about `genfromtxt()` and the various options that it supports, see [Importing data with genfromtxt](https://www.numpy.org/devdocs/user/basics.io.genfromtxt.html).
-
-Enough with the preliminaries. Now that you know the basics of lists, strings, dictionaries, comprehensions, the `map()` function, lambda functions, and NumPy arrays, you have the tools you need to start manipulating data like a pro in Python. Let's put this knowledge to work — and begin by doing so in an Azure notebook.
+Now that you know the basics of NumPy arrays, you have the tools you need to manipulate data like a pro in Python. Let's put this knowledge to work gathering some basic statistics from a dataset with information about flight delays.
