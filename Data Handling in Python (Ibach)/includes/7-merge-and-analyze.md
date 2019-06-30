@@ -1,4 +1,4 @@
-# Use Pandas to merge and analyze complex datasets
+# Exercise: Use Pandas to merge and analyze datasets
 
 It's late on Friday afternoon and you've been given two large CSV files containing on-time arrival information for hundreds of thousands of flights. The data is "dirtied" with duplicate rows and missing values, the latter resulting from a combination of incomplete records and flights that never arrived at their destinations because they were canceled or diverted. Your job is to merge the two datasets into one, clean it, and answer basic questions such as what percentage of flights arrived on time, and which airports exhibited the worst on-time performance.
 
@@ -121,16 +121,16 @@ Like NumPy, Pandas includes methods for performing mathematical operations on Da
 
 	If you wanted to determine the longest delay incurred by any flight, how would you do it?
 
-1. One of the lesser-known features of DataFrames is that you can include filters in expressions that select data. To demonstrate, use the following statement to determine how many flights were 10 minutes or more late:
+1. One of the lesser-known features of DataFrames is that you can include filters in expressions that select data. To demonstrate, use the following statement to determine how many flights were more than 10 minutes late:
 
 	```python
-	len(df[df['ARR_DELAY'] >= 10])
+	len(df[df['ARR_DELAY'] > 10])
 	``` 
 
-1. Perhaps more interesting is the *percentage* of flights that arrived 10 minutes or more late. Try this and see if it does what you want:
+1. Perhaps more interesting is the *percentage* of flights that arrived more than 10 minutes late. Try this and see if it does what you want:
 
 	```python
-	percent = len(df[df['ARR_DELAY'] >= 10]) / df.shape[0]
+	percent = len(df[df['ARR_DELAY'] > 10]) / df.shape[0]
 	print('{0:.1%}'.format(percent))
 	```
 
