@@ -24,7 +24,7 @@ The general syntax for a list comprehension is:
 [expression(x) for x in iterable if condition]
 ```
 
-`expression(x)` is the operation to perform on the variable `x` during each iteration, `for x in iterable` specifies the variable name and the iterable name, and `if condition` is an optional conditional expression used to filter values accessed through the iterable. An *iterable* is an object you can iterate over, meaning you can enumerate all of its items. Lists and strings are both examples of iterable objects. `range()` returns an iterable object, too, although the type of that object differs in Python 2 and Python 3.
+`expression(x)` is the operation to perform on the variable `x` during each iteration, `for x in iterable` specifies the variable name and the iterable name, and `if condition` is an optional conditional expression used to filter values accessed through the iterable. An *iterable* is an object you can iterate over, meaning you can enumerate all of its items. Lists and strings are both examples of iterable objects.
 
 The following example uses a conditional expression to filter the list to only include squares of even numbers:
 
