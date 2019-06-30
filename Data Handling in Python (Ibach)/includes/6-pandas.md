@@ -159,7 +159,7 @@ df = df.dropna()
 You can also remove entire columns from a DataFrame:
 
 ```python
-del df['ARR_DEL15']
+del df['ARR_DELAY']
 ```
 
 Another approach is to replace missing values with real values. That's easy enough with DataFrame's [`fillna`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.fillna.html#pandas.DataFrame.fillna) method, which replaces missing values with a specified value. The following example replaces all missing values in the DataFrame with 0s:
@@ -171,7 +171,7 @@ df = df.fillna(0)
 And this example replaces all missing values in the ARR_DELAY column with 1s:
 
 ```python
-df = df.fillna({'ARR_DEL15': 1})
+df = df.fillna({'ARR_DELAY': 1})
 ```
 
 You can also sort the contents of a DataFrame. The next example sorts first by the values in the "City" column, and then by values in the "Code" column:
