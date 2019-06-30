@@ -16,20 +16,20 @@ import pandas as pd
 column_names = ['Code', 'City']
 data = [['SEA','Seattle'], ['BOS','Boston'], ['HOU','Houston']]
 df = pd.DataFrame(data, columns = column_names)
-print(airports) # outputs : 
-#   Code     City
-# 0  SEA  Seattle
-# 1  BOS   Boston
-# 2  HOU  Houston
+print(airports) # outputs: 
+                #   Code     City
+                # 0  SEA  Seattle
+                # 1  BOS   Boston
+                # 2  HOU  Houston
 ```
 
 Use the [`loc`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.loc.html#pandas.DataFrame.loc) attribute to slice a DataFrame and create a new DataFrame containing a subset of the rows and columns of the original. The first parameter in square brackets specifies the range of rows, and the second parameter identifies the range of columns:
 
 ```python
-print(df.loc[0:1, 'Code':'City']) # outputs
-#   Code     city
-# 0  SEA  Seattle
-# 1  BOS   Boston
+print(df.loc[0:1, 'Code':'City']) # outputs:
+                                  #   Code     city
+                                  # 0  SEA  Seattle
+                                  # 1  BOS   Boston
 ```
 
 You can also use `loc` to retrieve the contents of a specific row and column:
@@ -41,19 +41,18 @@ print(df.loc[0,'city']) # outputs : Seattle
 To retrieve a row (or range of rows), specify the beginning and ending row indexes in square brackets on the DataFrame itself. `[0:1]` retrieves the first row, `[0:2]` retrieves the first two rows, and so on:
 
 ```python
-print(df[0:1]) # outputs : 
-#      airport_code     city
-# 0             SEA  Seattle
+print(df[0:1]) # outputs: 
+               #      airport_code     city
+               # 0             SEA  Seattle
 ```
 
 And to retrieve a column, specify the column name:
 
 ```python
-print(df['Code'])
-# outputs a Series 
-# 0    SEA
-# 1    BOS
-# 2    HOU
+print(df['Code']) # outputs:
+                  # 0    SEA
+                  # 1    BOS
+                  # 2    HOU
 ```
 
 Need to retrieve multiple columns? You can do that, too:
@@ -71,10 +70,10 @@ df.loc[:, 'Code':'City']
 There are other ways to identify rows and columns in a DataFrame, including the [`iloc`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.iloc.html#pandas.DataFrame.iloc) attribute, which uses pure integer indexes. You can even use lambda functions to perform complex selections. The following example selects the even-numbered rows in a DataFrame:
 
 ```python
-print(df.iloc[lambda x: x.index % 2 == 0]) # outputs :
-#   Code     City
-# 0  SEA  Seattle
-# 2  HOU  Houston
+print(df.iloc[lambda x: x.index % 2 == 0]) # outputs:
+                                           #   Code     City
+                                           # 0  SEA  Seattle
+                                           # 2  HOU  Houston
 ```
 
 Rather than `print` a DataFrame, you can use the [`head()`]((https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.head.html#pandas.DataFrame.head)) method to retrieve its rows. In a Jupyter notebook, this produces a neatly formatted rendering of the DataFrame:
