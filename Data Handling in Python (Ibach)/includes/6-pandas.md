@@ -88,9 +88,7 @@ By default, `head()` returns the first five rows. To return more or fewer rows, 
 
 ## Reading data from CSV files
 
-DataFrame contains a handy [`read_csv()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html) method for loading data from CSV files, as well as [several methods for saving the contents of a DataFrame](https://pandas.pydata.org/pandas-docs/stable/reference/io.html) in a variety of formats.
-
-Suppose you have a CSV file named **airports.csv** containing the following text:
+DataFrame contains a handy [`read_csv()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html) method for loading data from CSV files, as well as [several methods for saving the contents of a DataFrame](https://pandas.pydata.org/pandas-docs/stable/reference/io.html) in a variety of formats. Suppose you have a CSV file named **airports.csv** containing the following text:
 
 ```csv
 Code,City
