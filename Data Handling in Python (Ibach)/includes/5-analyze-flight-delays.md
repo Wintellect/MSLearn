@@ -31,7 +31,7 @@ All of this can be done without NumPy. But with NumPy (and with a comprehension 
 	print (flight_data)
 	```
 
-	Each row contains data for one flight. The 12th column — ARR_DELAY — tells us in minutes how late a flight arrived. A negative number indicates the flight arrived early. Zero indicates it arrived on time. A positive number indicates that the flight was late.
+	Each row contains data for one flight. The 12th column — ARR_DELAY — tells us in minutes how late a flight arrived. A negative number indicates that the flight arrived early.
 
 1. Use the array's `mean()` function to determine the mean of the values in the ARR_DELAY column for all flights: 
 
