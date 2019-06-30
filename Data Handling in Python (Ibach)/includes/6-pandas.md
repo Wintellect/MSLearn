@@ -18,7 +18,7 @@ data = [['SEA','Seattle'], ['BOS','Boston'], ['HOU','Houston']]
 df = pd.DataFrame(data, columns = column_names)
 ```
 
-DataFrames can be sliced and diced in a manner similar to that of sequences. For example, you can use the [`loc`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.loc.html#pandas.DataFrame.loc) attribute to create a new DataFrame containing a subset of the rows and columns of the original. The first parameter in square brackets specifies the range of rows, and the second parameter identifies the range of columns:
+DataFrames can be sliced and diced in a manner similar to sequences. For example, you can use the [`loc`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.loc.html#pandas.DataFrame.loc) attribute to create a new DataFrame containing a subset of the rows and columns of the original. The first parameter in square brackets specifies the range of rows, and the second parameter identifies the range of columns:
 
 ```python
 print(df.loc[0:1, 'Code':'City'])
