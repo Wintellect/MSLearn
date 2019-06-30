@@ -1,24 +1,21 @@
 # Introduction
 
-Imagine that you work in the IT department for a major airline. The airline is concerned about the impact that flight delays are having on cost overruns and has asked you to have a look at the data to get a better handle on the problem. The data comes from a variety of data sources. It has been aggregated and provided to you in the form of comma-separated (CSV) files. As is often the case, the data is rather raw and will require some cleaning up to ensure accurate analysis. 
+Imagine that you work in the Planning & Logistics department for a major airline. Your employer is concerned about the impact that flight delays are having on cost overruns and has asked you to look at the data to get a better handle on the problem. The data comes from a variety of data sources. It has been aggregated and provided to you in the form of comma-separated-value (CSV) files. As is often the case, the data is rather raw and will require some cleaning up before you do anything with it. 
 
-To meet the airline's needs, you will need to:
+Python has a number of features for manipulating data. Popular libraries such as [NumPy](https://www.numpy.org/), [Pandas](https://pandas.pydata.org/), and [Matplotlib](https://matplotlib.org/) expand Python's power and make it the perfect tool for the job. You had a Python class in college but need to brush up on your skills. Plus, Python has evolved since you graduated, and you need to familiarize yourself with newer language features such as [lambda functions](https://www.w3schools.com/python/python_lambda.asp) and [comprehensions](https://medium.com/better-programming/list-comprehension-in-python-8895a785550b) which simplify data handling and manipulation.
 
-- Read data from CSV files and store it in data structures
-- Extract subsets of the data to focus on key information
-- Perform aggregations such as calculating the mean across multiple values
-- Create visualizations to illustrate your conclusions
+In this module, you will acquire the basic skills needed to tackle projects such as this one, even if you're new to Python. And you will produce charts and graphs such as these to illustrate the insights you glean from the data. 
 
-Python has a number of features to make analyzing and manipulating data easy. Python itself has data structures that you can use to store and manipulate data. Popular libraries such as [NumPy](https://www.numpy.org/), [Pandas](https://pandas.pydata.org/), and [Matplotlib](https://matplotlib.org/) expand Python's power and make it the perfect tool for the job. With this in mind, you set out to brush up on your Python and learn about some of the language features such as *comprehensions* and *lambdas* that you didn't learn in school. And you resolve to deliver your conclusions on time and under budget by leveraging libraries wherever possible.
+![](media/intro-charts.png)
 
 ## Learning objectives
 
 In this module, you will upload data and analyze it using a variety of Python functions and libraries. First, you will learn basic data structures in Python. Then, you will learn how to iterate across those structures. Next, you will learn how to use NumPy and Pandas libraries to load data files and operate on the data. Finally, you will use Matplotlib to create rich visualizations. Along the way, you will learn:
 
-- How to use Python sequences and mapping types to store and slice data
+- How to use Python sequences and mapping types to store and manipulate data
 - How to use comprehensions and lambda functions to simplify your code
-- How to use NumPy to read data from CSV files, calculate aggregates, and operate on the data
-- How to use Pandas to read data from CSV files, calculate aggregates, and clean the data
+- How to use NumPy to manipulate the data and subject it to basic statistical analysis
+- How to use Pandas to import data, clean the data, and answer questions such as "which airports are experiencing the most delays?"
 - How to use Matplotlib to visualize the data
 
-First up: sequences and mapping types in Python.
+It's a tall order, but the beauty of Python is that you can do a lot with a little code. It's just a matter of knowing *what* code to write.
