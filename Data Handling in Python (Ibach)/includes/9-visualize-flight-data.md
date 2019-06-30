@@ -40,7 +40,7 @@ A scatter plot is a great way to visualize relationships between variables in a 
 
 	Confirm that this produces the following output:
 
-	![Plotting departure delays and arrival delays](media/ScatterPlotArrivalDepartureDelay.png) 
+	![Plotting departure delays and arrival delays](media/arrival-departure-delays.png) 
 
 	Not surprisingly, the correlation between departure delays and arrival delays is strong.
 
@@ -52,7 +52,7 @@ A scatter plot is a great way to visualize relationships between variables in a 
 
 	This time, there appears to be little correlation between the two independent variables:
 
-	![Plotting flight numbers and arrival delays](media/ScatterPlotFlightNumDelay.png)
+	![Plotting flight numbers and arrival delays](media/flight-number-delays.png)
 
 1. It might be more interesting to check for a correlation between scheduled departure times and flight delays. Due to the hub-and-spoke system used by most airlines, delays early in the day can lead to delays later in the day as well. Use the following code to test this hypothesis:
 
@@ -72,7 +72,7 @@ Now let's use bar charts to visualize delays at individual airports and determin
 	df.groupby('ORIGIN')['DEP_DELAY'].mean().plot(kind='bar')
 	```
 
-	![Plotting departure delays by airport](media/barchartdelaysAllairports.png)  
+	![Plotting departure delays by airport](media/delays-all-airports.png)  
 
 1. This chart is hard to read, so let's extract only the rows for the busiest airports and show the mean departure delay for each: 
 
