@@ -10,21 +10,22 @@ You create a NumPy array using NumPy's `array()` function. The following code im
 
 ```python
 import numpy as np
+
 airports = np.array(['SEA', 'Seattle', 'HOU', 'Houston', 'BOS', 'Boston'])
-print(airports) # outputs : ['SEA' 'Seattle' 'HOU' 'Houston' 'BOS' 'Boston']
+print(airports) # outputs: ['SEA' 'Seattle' 'HOU' 'Houston' 'BOS' 'Boston']
 ```
 
-The `shape` attribute returns the dimensions of the array. The array above contains six rows and one column, making it a 6x1 array: 
+The `shape` attribute returns the dimensions of the array. This array contains six rows and one column, making it a 6x1 array: 
 
 ```python
-print(airports.shape) # outputs : (6,)
+print(airports.shape) # outputs: (6,)
 ```
 
 One of the most useful NumPy array functions is `reshape()`, which changes the dimensions of an array. You can reshape the `airports` array to make it three rows and two columns:  
 
 ```python
 airports = airports.reshape(3, 2)
-print(airports) # outputs : 
+print(airports) # outputs: 
                 # [['SEA' 'Seattle']
                 #  ['HOU' 'Houston']
                 #  ['BOS' 'Boston']]
@@ -34,7 +35,7 @@ Just like Python lists, NumPy arrays let you use loops to iterate through their 
 
 ```python
 for value in airports:
-    print(value) # outputs :
+    print(value) # outputs:
                  # ['SEA' 'Seattle']
                  # ['HOU' 'Houston']
                  # ['BOS' 'Boston']
@@ -44,8 +45,8 @@ And just like Python lists, NumPy arrays can be sliced:
 
 ```python
 print(airports[2,0]) # outputs a specific cell: BOS
-print(airports[2])   # outputs a specific row : ['BOS' 'Boston']
-print(airports[:,1]) # outputs a specific column : ['Seattle' 'Houston' 'Boston']
+print(airports[2])   # outputs a specific row: ['BOS' 'Boston']
+print(airports[:,1]) # outputs a specific column: ['Seattle' 'Houston' 'Boston']
 ```
 
 One functional difference between Python lists and NumPy arrays is that the latter are *homogeneous*. A Python list, for example, can contain integers and strings. A NumPy array can contain integers *or* strings, but it cannot contain both. You can determine what type of data an array holds by reading the array's `dtype` attribute. Similarly, the `nbytes` attribute tells you how much memory an array and all of its elements consume, which can be useful when comparing to the memory consumed by Python lists.
