@@ -52,7 +52,7 @@ The U.S. [Bureau of Transportation Statistics](https://www.transtats.bts.gov/) (
 
 	![Downloading a CSV file](media/first-run.png)
 
-1. Return to the "Data Handling in Python" project page in your browser. Refresh the page, and click **airports.csv** to view the contents of the CSV you just downloaded. Observe that each line contains a 3-letter airport code, the city and state in which the airport is located, and the airport name:
+1. Return to the "Data Handling in Python" project page in your browser. Refresh the page, and click **airports.csv** to view the contents of the CSV file you just downloaded. Observe that each line contains a 3-letter airport code, the city and state in which the airport is located, and the airport name:
 
 	![](media/airport-codes-raw.png)
 
