@@ -4,6 +4,8 @@ In order to try your hand with Python and some of the libraries that make it a g
 
 An alternative, and one widely used by Python porgrammers, is Jupyter notebooks. Jupyter is an environment based on [IPython](https://ipython.org/) that facilitates interactive programming and data analysis using a variety of programming languages, including Python. Jupyter notebooks enjoy widespread use in research and academia for mathematical modeling, machine learning, and statistical analysis. [Azure Notebooks](https//notebooks.azure.com) provide Jupyter as a service for free. It's a convenient way to build notebooks and share them with others without having to install and manage a Jupyter server. And it's completely Web-based, making it an ideal solution for collaborating online.
 
+![Jupyter notebook](media/airports-notebook.png)
+
 In this lesson, you will log into Azure Notebooks using your Microsoft account, create your first notebook, and apply some of the principles learned in previous lessons to crack open a CSV file containing information about more than 6,000 U.S. airports and create a dictionary that maps airport codes to cities and states.
 
 ## Create a notebook
