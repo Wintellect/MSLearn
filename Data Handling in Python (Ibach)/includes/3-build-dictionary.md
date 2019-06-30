@@ -6,7 +6,7 @@ An alternative, and one widely used by Python porgrammers, is Jupyter notebooks.
 
 ![Jupyter notebook](media/airports-notebook.png)
 
-In this lesson, you will log into Azure Notebooks using your Microsoft account, create your first notebook, and apply some of the principles learned in previous lessons to crack open a CSV file containing information about more than 6,000 U.S. airports and create a dictionary that maps airport codes to cities and states.
+In this exercise, you will log into Azure Notebooks using your Microsoft account, create your first notebook, and apply some of the principles learned in previous lessons to crack open a CSV file containing information about more than 6,000 U.S. airports and create a dictionary that maps airport codes to cities and states.
 
 ## Create a notebook
 

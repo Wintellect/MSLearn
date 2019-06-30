@@ -6,7 +6,7 @@ Now it's time to write *real* code to operate on *real* data. In this exercise, 
 - How many flights arrived more than 10 minutes late?
 - What was the longest delay for any flight on that date?
 
-All of this can be done without NumPy. But with NumPy (and with a comprehension or two), you can do all of this in less time than it would take to write the code to parse the CSV file using Python alone.
+All of this can be done without NumPy. But with NumPy (and with a comprehension or two), you can do everything in less time than it would take to write the code to parse the CSV file using Python alone.
 
 1. Begin by returning to [Azure Notebooks](https://notebooks.azure.com) and creating a new notebook named "NumPy" in the "Data Handling in Python" project that you created earlier. Select Python 3.6 as the language.
 
