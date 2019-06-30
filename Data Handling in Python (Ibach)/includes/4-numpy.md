@@ -104,7 +104,7 @@ The following code loads the contents of **airports.csv** into a NumPy array and
 
 ```python
 airports = np.genfromtxt('airports.csv', delimiter=',', dtype=None, encoding=None, skip_header=1)
-print(airports) # outputs : 
+print(airports) # outputs: 
                 # [['HOU' 'Houston']
                 #  ['ABQ' 'Alberquerque']
                 #  ['BWI' 'Baltimore']]
@@ -133,14 +133,14 @@ By default, NumPy arrays created with `genfromtext()` do not have column names. 
 
 ```python
 airports = np.genfromtxt('airports.csv', delimiter=',', dtype=None, encoding=None, skip_header=1, names=('Code', 'City'))
-print(airports[0]['Code']) # outputs : HOU
+print(airports[0]['Code']) # outputs: HOU
 ```
 
 Or, if the header line contains column names, you can use `names=True` to use those:
 
 ```python
 airports = np.genfromtxt('airports.csv', delimiter=',', dtype=None, encoding=None, names=True)
-print(airports[0]['Code']) # outputs : HOU
+print(airports[0]['Code']) # outputs: HOU
 ```
 
 It is not unusual for data files to contain many more columns than you are interested in. You can specify which columns to load from a data file with the `usecols` parameter:
