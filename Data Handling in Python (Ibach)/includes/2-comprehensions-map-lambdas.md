@@ -29,7 +29,7 @@ squares = [i**2 for i in range(5)]
 The general syntax for a list comprehension is:
 
 ```python
-[expression(x) for x in iterable if conditional]
+[expression(x) for x in iterable if condition]
 ```
 
 `expression(x)` is the operation to perform on the variable `x` during each iteration, `for x in iterable` specifies the variable name and the iterable name, and `if condition` is an optional conditional expression used to filter values accessed through the iterable. An *iterable* is an object you can iterate over, meaning you can enumerate all of its items. Lists and strings are both examples of iterable objects. `range()` returns an iterable object, too, although the type of that object differs in Python 2 and Python 3.
@@ -43,9 +43,9 @@ squares = [i**2 for i in range(5) if i % 2 == 0]
 In Python 3, comprehensions can also be used to create dictionaries. The following example takes a dictionary containing lowercase airport codes and city names and creates a new dictionary. In the new dictionary, airport codes are uppercase, and city names are capitalized:
 
 ```python
-airports = {'sea':'seattle', 'hou':'houston','ord':'Chicago'}
+airports = {'sea':'seattle', 'hou':'houston', 'ord':'Chicago'}
 upper_airports = {code.upper():city.capitalize() for code, city in airports.items()}
-print(upper_airports) # outputs : {'SEA': 'Seattle', 'HOU': 'Houston', 'ORD': 'Chicago'}
+print(upper_airports) # outputs: {'SEA': 'Seattle', 'HOU': 'Houston', 'ORD': 'Chicago'}
 ```
 
 Comprehensions that create dictionaries may also include conditional statements, just like comprehensions that create lists.
@@ -66,7 +66,7 @@ def double(value):
 
 nums = [1, 2, 3, 4 ,5]
 doubles = map(double, nums)
-print(list(doubles)) # outputs : [2, 4, 6, 8, 10]
+print(list(doubles)) # outputs: [2, 4, 6, 8, 10]
 ```
 
 Why is the `list()` function called in the `print` statement? In Python 2, `map()` returns a list, but in Python 3, it returns a `map` object. The `list()` function creates a list from the `map` so `print()` can print its contents.
@@ -90,7 +90,7 @@ Lambdas let you simplify your code by defining simple functions inline. For exam
 ```python
 nums = [1, 2, 3, 4, 5]
 doubles = map(lambda x: x*2, nums)
-print(list(doubles)) # outputs : [2, 4, 6, 8, 10]
+print(list(doubles)) # outputs: [2, 4, 6, 8, 10]
 ```
 
-It should be obvious by now that Python offers a rich assortment of data structures and language features for dealing with those data structures. But before you start slinging code, there is one more data structure you should learn about: NumPy arrays.
+Python offers a rich assortment of data structures and language features for dealing with those data structures. But before you start slinging code, there is one more data structure you should learn about: NumPy arrays.
