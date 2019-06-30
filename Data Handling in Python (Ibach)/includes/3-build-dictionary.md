@@ -1,4 +1,4 @@
-# Build an airport directory
+# Exercise: Build an airport directory
 
 In order to try your hand with Python and some of the libraries that make it a great language for analyzing and manipulating data, you need an environment in which to execute Python code. You could install Python on your computer. It's included in most Linux distributions, but if you're running Windows, chances are it has to be installed separately.
 
@@ -124,7 +124,7 @@ The code that parses the CSV file and builds a dictionary of airport codes works
 	    airports = { split_line[0][1:]:split_line[1].split(': ')[0] for line in airport_file }
 	```
 
-	Do you recognize the dictionary comprehension? Note that these three lines can been reduced to two by repeating `line.split('","')` inside the comprehension, but doing so adversely impacts performance by performing the same operation twice each time through the loop. 
+	Do you recognize the dictionary comprehension? Note that these three lines could be reduced to two by repeating `line.split('","')` inside the comprehension, but doing so would adversely impact performance by performing the same operation twice each time through the loop. 
 
 1. Now print the dictionary and confirm that the output is the same as before:
 
