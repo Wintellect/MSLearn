@@ -8,7 +8,7 @@ Fortunately, there are libraries that let you do just that. One of them is [Xlwi
 
 ## Install Xlwings
 
-The first step in building the spreadsheet that Communications wants is configuring Excel to trust VBA add-ins and installing **Xlwings** and and Scikit-learn.
+The first step in building the spreadsheet that communications wants is configuring Excel to trust VBA add-ins and installing **Xlwings** and and Scikit-learn.
 
 1. Open Microsoft Excel and use the **File -> Options** command to open Excel's "Excel Options" dialog. Click **Trust Center** in the menu on the left, and then click the **Trust Center Settings...** button. Click **Macro Settings** on the left, and check the "Trust access to the VBA project object model" box as shown below. Then click **OK** to dismiss the "Trust Center" dialog, followed by **OK** to dismiss the "Excel Options" dialog.
 
