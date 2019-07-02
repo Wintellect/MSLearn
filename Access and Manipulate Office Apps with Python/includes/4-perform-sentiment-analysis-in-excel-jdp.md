@@ -82,7 +82,7 @@ The next step is write the Python code for the UDF. But first, you need to downl
 
 The UDF is written. Now it's time to call it from Excel.
 
-## Invoke the UDF from EXcel
+## Invoke the UDF from Excel
 
 TODO: Add intro.
 
