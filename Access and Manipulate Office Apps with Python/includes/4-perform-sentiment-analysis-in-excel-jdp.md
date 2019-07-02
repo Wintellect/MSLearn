@@ -24,13 +24,13 @@ The first step in building the spreadsheet that Communications wants is configur
 
 	You are installing a specific version of Scikit because your UDF will utilize a saved machine-learning model, and that model was saved with Scikit-learn 0.20.3 Generally speaking, a model saved with one version of Scikit-learn should be loaded with the same version.
 
-1. Now use the following command to install Xlwings:
+1. Now use the following command to install **Xlwings**:
 
 	```bash
 	pip install xlwings
 	```
 
-1. Once the installation is complete, you need to install the Xlwings add-in to Excel:
+1. Once the installation is complete, you need to install the **Xlwings** add-in to Excel:
 
 	```
 	xlwings addin install
@@ -84,7 +84,7 @@ The UDF is written. Now it's time to call it from Excel.
 
 ## Invoke the UDF from Excel
 
-The elegance of **xlwings** is that once you're written a UDF such as `analyze_text()`, you can call it the same you call functions built into Excel. But first you need to use the **Xlwings** add-in to import the UDFs.
+The elegance of **Xlwings** is that once you're written a UDF such as `analyze_text()`, you can call it the same you call functions built into Excel. But first you need to use the **Xlwings** add-in to import the UDFs.
 
 1. Open **sentiment.xlsm** in Excel. Go to the "xlwings" tab and click **Import Functions** to import the `analyze_text()` function.
 
