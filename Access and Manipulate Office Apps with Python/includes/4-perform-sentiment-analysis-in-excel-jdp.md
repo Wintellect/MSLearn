@@ -86,7 +86,33 @@ The UDF is written. Now it's time to call it from Excel.
 
 TODO: Add intro.
 
+1. Open **sentiment.xlsm** in Excel. Then go to the "xlwings" tab and click **Import Functions** to import the `analyze_text()` function in **sentiment.py**.
 
+	![Importing the analyze_text() function](media/import-functions.png)
+
+	_Importing the analyze_text() function_
+
+1. Type "Great food and excellent service" (without quotation marks) into cell A1.
+
+	![Entering a string of text to analyze](media/excel-1.png)
+
+	_Entering a string of text to analyze_
+
+1. Type the following expression into cell B1:
+
+	```
+	=analyze_text(A1)
+	```
+
+	This expression passes the text in cell A1 to the `analyze_text()` function imported from **sentiment.py**.
+
+1. Confirm that a number from 0.0 to 1.0 appears in B1. This is the score that the machine-learning model assigned to the text "Great food and excellent service." Remember that 0.0 represents extremely negative sentiment, while 1.0 represents sentiment that is extremely positive. Would you agree with the score?
+
+	![Analyzing text for sentiment](media/excel-2.png)
+
+	_Analyzing text for sentiment_
+
+1. tk.
 
 
 TODO: Add closing.
