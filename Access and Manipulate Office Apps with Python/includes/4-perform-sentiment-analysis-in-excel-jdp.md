@@ -84,7 +84,7 @@ The UDF is written. Now it's time to call it from Excel.
 
 ## Invoke the UDF from Excel
 
-The elegance of **Xlwings** is that once you're written a UDF such as `analyze_text()`, you can call it the same you call functions built into Excel. But first you need to use the **Xlwings** add-in to import the UDFs.
+The elegance of **Xlwings** is that once you're written a UDF such as `analyze_text()`, you can call it the same way you call functions built into Excel. But first you need to use the **Xlwings** add-in to import the UDFs.
 
 1. Open **sentiment.xlsm** in Excel. Go to the "xlwings" tab and click **Import Functions** to import the `analyze_text()` function.
 
