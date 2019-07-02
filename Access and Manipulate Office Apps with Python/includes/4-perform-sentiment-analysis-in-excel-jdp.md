@@ -30,22 +30,19 @@ The first step in building the spreadsheet that Communications wants is configur
 	pip install xlwings
 	```
 
-1. Once the installation is complete, you need to install the Xlwings add-in to Excel. Here's the command for doing that:
+1. Once the installation is complete, you need to install the Xlwings add-in to Excel:
 
 	```
 	xlwings addin install
 	```
 
+1. Now `cd` to the directory where you would like to create a UDF and a spreadsheet that uses it and type:
 
+	```bash
+	xlwings quickstart sentiment
+	```
 
-
-
-
-
-Several packages include UDF capabilities.  For this Lesson, install open-source **xlwings**:
-
-    python3.6 -m pip install xlwings
-
+The `xlwings` command creates a subdirectory named "sentiment" and initializes it with a pair of files: a spreadsheet named **sentiment.xlsm** and a Python file named **sentiment.py**. It is the latter of these in which you will write the UDF that analyses text for sentiment.
 
 ## Write a user-defined function
 
