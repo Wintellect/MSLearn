@@ -47,7 +47,7 @@ Several packages include UDF capabilities.  For this Lesson, install open-source
     python3.6 -m pip install xlwings
 
 
-## Write a User-Defined function
+## Write a user-defined function
 
 
 
