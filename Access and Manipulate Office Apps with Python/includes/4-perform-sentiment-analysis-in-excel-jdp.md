@@ -22,7 +22,7 @@ The first step in building the spreadsheet that Communications wants is configur
 	pip install numpy scipy scikit-learn==0.20.3
 	```
 
-	You are installing a specific version of Scikit because your UDF will utilize a saved machine-learning model, and that model was saved with Scikit-learn 0.20.3 Generally speaking, a model saved with one version of Scikit-learn should be loaded with the same version.
+	This command installs a specific version of Scikit because your UDF will utilize a saved machine-learning model, and that model was saved with Scikit-learn 0.20.3 Generally speaking, a model saved with one version of Scikit-learn should be loaded with the same version.
 
 1. Now use the following command to install **Xlwings**:
 
