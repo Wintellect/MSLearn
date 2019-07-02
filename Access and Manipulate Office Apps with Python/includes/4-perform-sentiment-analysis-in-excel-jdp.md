@@ -114,4 +114,4 @@ The elegance of **Xlwings** is that once you're written a UDF such as `analyze_t
 
 1. Finish up by typing some text strings of your own and seeing how they score for sentiment.
 
-UDFs written in Python open Excel to a new whole new world of possibilities thanks to the rich ecosystem of Python libraries available for machine learning, statistical analysis, and tasks.
+UDFs written in Python present Excel users with a new whole new world of possibilities thanks to the rich ecosystem of Python libraries available for machine learning, statistical analysis, and other tasks.
