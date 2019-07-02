@@ -84,7 +84,7 @@ The UDF is written. Now it's time to call it from Excel.
 
 ## Invoke the UDF from Excel
 
-Now comes the fun part: using the `analyze_text()` UDF from Excel.
+The elegance of **xlwings** is that once you're written a UDF such as `analyze_text()`, you can call it the same you call functions built into Excel. But first you need to use **Xlwings** add-in to import the UDFs.
 
 1. Open **sentiment.xlsm** in Excel. Then go to the "xlwings" tab and click **Import Functions** to import the `analyze_text()` function in **sentiment.py**.
 
