@@ -4,11 +4,11 @@ Imagine that you're a software developer at an Internet vacation-rentals firm an
 
 Scoring text for sentiment is rather easily accomplished today with machine learning. Python has a number of world-class libraries available for building and training machine-learning models, including [Scikit-learn](https://scikit-learn.org/stable/index.html). In addition, Excel supports [User-Defined Functions](https://support.office.com/en-ie/article/create-custom-functions-in-excel-2f06c10b-3622-40d6-a1b2-b6748ae8231f), which enable users to write custom functions that are called just like `SUM()` and `AVG()` and other functions built into Excel. But UDFs are written [Visual Basic for Applications](https://en.wikipedia.org/wiki/Visual_Basic_for_Applications). in order to use Scikit-learn in Excel, you need to write UDFs in Python.
 
-Fortunately, there are libraries that let you do just that. One of them is [Xlwings](https://www.xlwings.org/), an open-source library that combines the power of Excel with the versatility of Python. With it, you can write Python code that loads or creates Excel spreadsheets and manipulates their content, write Python macros triggered by button clicks in Excel, access Excel spreadsheets from Jupyter notebooks, and more. You can also use Xlwings to write UDFs for Excel for Windows.
+Fortunately, there are libraries that let you do just that. One of them is [Xlwings](https://www.xlwings.org/), an open-source library that combines the power of Excel with the versatility of Python. With it, you can write Python code that loads or creates Excel spreadsheets and manipulates their content, write Python macros triggered by button clicks in Excel, access Excel spreadsheets from Jupyter notebooks, and more. You can also use **Xlwings** to write UDFs for Excel for Windows.
 
 ## Install Xlwings
 
-The first step in building the spreadsheet that Communications wants is configuring Excel to trust VBA add-ins and installing **Xlwings** and and **Scikit-learn**. Let's get these prliminaries out of the way.
+The first step in building the spreadsheet that Communications wants is configuring Excel to trust VBA add-ins and installing **Xlwings** and and Scikit-learn. Let's get these prliminaries out of the way.
 
 1. Open Microsoft Excel and use the **File -> Options** command to open Excel's "Excel Options" dialog. Click **Trust Center** in the menu on the left, and then click the **Trust Center Settings...** button. Click **Macro Settings** on the left, and check the "Trust access to the VBA project object model" box as shown below. Then click **OK** to dismiss the "Trust Center" dialog, followed by **OK** to dismiss the "Excel Options" dialog.
 
