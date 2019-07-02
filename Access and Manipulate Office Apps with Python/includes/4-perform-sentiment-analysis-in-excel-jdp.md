@@ -42,7 +42,7 @@ The first step in building the spreadsheet that Communications wants is configur
 	xlwings quickstart sentiment
 	```
 
-The `xlwings` command creates a subdirectory named "sentiment" and initializes it with a pair of files: a spreadsheet named **sentiment.xlsm** and a Python file named **sentiment.py**. It is the latter of these in which you will write the UDF that analyses text for sentiment.
+The `xlwings` command creates a subdirectory named "sentiment" and initializes it with a pair of files: a spreadsheet named **sentiment.xlsm** and a Python file named **sentiment.py**. It is the latter of these in which you will write the UDF that analyzes text for sentiment.
 
 ## Write a user-defined function
 
