@@ -84,7 +84,7 @@ The UDF is written. Now it's time to call it from Excel.
 
 ## Invoke the UDF from Excel
 
-TODO: Add intro.
+Now comes the fun part: using the `analyze_text()` UDF from Excel.
 
 1. Open **sentiment.xlsm** in Excel. Then go to the "xlwings" tab and click **Import Functions** to import the `analyze_text()` function in **sentiment.py**.
 
@@ -114,4 +114,4 @@ TODO: Add intro.
 
 1. Finish up by typing some text strings of your own and seeing how they score for sentiment.
 
-This is a great example of the kinds of tasks you can accomplish when you write UDFs in Python. With an entire universe of Python libraries available to lend a hand, you can make Excel do things that most would deem impossible.
+UDFs written in Python open Excel to a new whole new world of possibilities thanks to the rich ecosystem of Python libraries available for machine learning, statistical analysis, and more.
