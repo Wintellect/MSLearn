@@ -92,7 +92,7 @@ The elegance of **Xlwings** is that once you're written a UDF such as `analyze_t
 
 	_Importing the analyze_text() function_
 
-1. Type "Great food and excellent service" (without quotation marks) into cell A1.
+1. Type "Great food and excellent service" into cell A1.
 
 	![Entering a string of text to analyze](media/excel-1.png)
 
