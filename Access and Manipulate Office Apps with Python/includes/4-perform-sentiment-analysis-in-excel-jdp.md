@@ -106,19 +106,12 @@ TODO: Add intro.
 
 	This expression passes the text in cell A1 to the `analyze_text()` function imported from **sentiment.py**.
 
-1. Confirm that a number from 0.0 to 1.0 appears in B1. This is the score that the machine-learning model assigned to the text "Great food and excellent service." Remember that 0.0 represents extremely negative sentiment, while 1.0 represents sentiment that is extremely positive. Would you agree with the score?
+1. Confirm that a number from 0.0 to 1.0 appears in cell B1. This is the score that the machine-learning model assigned to the text "Great food and excellent service." Remember that 0.0 represents extremely negative sentiment, while 1.0 represents sentiment that is extremely positive. Would you agree with the score?
 
 	![Analyzing text for sentiment](media/excel-2.png)
 
 	_Analyzing text for sentiment_
 
-1. tk.
+1. Finish up by typing some text strings of your own and seeing how they score for sentiment.
 
-
-TODO: Add closing.
-
-## Further study
-
-Think about VBA and Python.  VBA is generally a bit more convenient for small scripting jobs of which it's capable.  Python can do essentially everything VBA does, _plus_ Python now connects to a vast world of libraries outside Excel, outside Office, and even outside Microsoft.  Ideal is not to try to figure out which is better, but how to make the best use of both.
-
-One engaging way to practice teamwork between Excel and Python is to compute complex results in Python, then graph them with Excel's built-in visualization methods.  Keep the interface between the two constant, while you iteratively improve the calculations on the Python side, and the visual design on the Excel side.
+This is a great example of the kinds of tasks you can accomplish when you write UDFs in Python. With an entire universe of Python libraries available to lend a hand, you can make Excel do things that most would deem impossible.
