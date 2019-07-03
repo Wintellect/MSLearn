@@ -47,7 +47,7 @@ In this exercise, you will load a CSV file and use `DataFrame` methods to analyz
 	print(mean_by_airport)
 	```
 
-	TODO: Explain this code.
+	This code uses `DataFrame`'s [`read_csv()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html) method to read flight information from the CSV. Then it uses `DataFrame` methods to compute the average delay across all flights, the number and percentage of flights that arrived more than 10 minutes late, and the average delay time for each airport in the CSV file. Then it outputs the results to the screen.
 
 1. Use the following command to execute **delays.py**:
 
