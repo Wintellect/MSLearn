@@ -73,7 +73,7 @@ The CSV file that you downloaded contains information for just four airports, bu
 
 ## Generate a Word document with Python-docx
 
-You're halfway to the finish line. Pandas makes short work of the analytical work. **Python-docx** does the same for reading and writing Word documents in Python. It implements a rich yet intuitive API for generating and consuming **.docx** files. The [**Python-docx** home page](https://python-docx.readthedocs.io/en/latest/) contains a great quickstart to familiarize you with the basics.
+You're halfway to the finish line. Pandas makes short work of the analytical work. **Python-docx** does the same for reading and writing Word documents. It implements a rich yet intuitive API for generating and consuming **.docx** files. The [**Python-docx** home page](https://python-docx.readthedocs.io/en/latest/) contains a great quickstart to familiarize you with the basics.
 
 1. Open **delays.csv** and insert the following `import` statements at the top of the file:
 
