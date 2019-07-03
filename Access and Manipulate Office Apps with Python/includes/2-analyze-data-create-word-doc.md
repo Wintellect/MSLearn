@@ -2,13 +2,13 @@
  
 You work for an airline, and one of the tasks you're assigned is producing a daily report summarizing flight delays the previous day. Creating the report takes about 30 minutes. You first import the data into Microsoft Excel, and then use Excel to compute key statistics such as the average arrival delay for flights that took place the day before and the percentage of flights that were delayed more than 10 minutes. Next, you copy-and-paste from Excel into a Microsoft Word document to produce a nicely formatted report that includes high-level stats, plus a table showing average delays at individual airports. It's not difficult, but it's unrelenting. It has to be done every day, and the manual nature of the process means there is too much room for human error.
 
-Being a technical person, you decide to automate the process. Python libraries such as [Pandas](https://pandas.pydata.org/) provide more than enough muscle for the analytical part. Other libraries such as [**Python-docx**](https://python-docx.readthedocs.io/en/latest/) provide rich APIs for generating Word documents. In this lesson, you will marry the two to ingest airline data from a CSV file, analyze it, and produce a daily report summarizing the previous day's on-time performance.
+Being a technical person, you decide to automate the process. Python libraries such as [Pandas](https://pandas.pydata.org/) provide more than enough muscle for the analytical part. Other libraries such as [Python-docx](https://python-docx.readthedocs.io/en/latest/) provide rich APIs for generating Word documents. In this lesson, you will marry the two to ingest airline data from a CSV file, analyze it, and produce a daily report summarizing the previous day's on-time performance.
 
 ## Analyze data with Pandas
 
 Pandas, short for *Python Data Analysis Library*, is the library that people who work with data for a living turn to for gathering insights from large datasets. The key data structure in Pandas is the [`DataFrame`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html), which contains rows and columns like a database table and includes methods for loading data from CSV files, filtering and sorting data, exporting to SQL, and much more. In all, it contains more than 200 methods and attributes to simplify data handling and analysis.
 
-1. Begin by executing the following commands in a Command Prompt window or terminal to install Pandas and **Python-docx**:
+1. Begin by executing the following commands in a Command Prompt window or terminal to install Pandas and Python-docx:
 
 	```bash
 	pip install pandas
@@ -73,7 +73,7 @@ The CSV file that you downloaded contains information for just four airports, bu
 
 ## Generate a Word document with Python-docx
 
-You're halfway to the finish line. Pandas makes short work of the analytical work. **Python-docx** does the same for reading and writing Word documents. It implements a rich yet intuitive API for generating and consuming **.docx** files. The [**Python-docx** home page](https://python-docx.readthedocs.io/en/latest/) contains a great quickstart to familiarize you with the basics.
+You're halfway to the finish line. Pandas makes short work of the analytical work. Python-docx does the same for reading and writing Word documents. It implements a rich yet intuitive API for generating and consuming **.docx** files. The [Python-docx home page](https://python-docx.readthedocs.io/en/latest/) contains a great quickstart to familiarize you with the basics.
 
 1. Open **delays.py** and insert the following statements at the top of the file:
 
@@ -108,7 +108,7 @@ You're halfway to the finish line. Pandas makes short work of the analytical wor
 	doc.save('summary.docx')
 	```
 
-	This code uses **Python-docx** to create a Word document, insert content, and save the document under the name **summary.docx**. The content consists of a heading, paragraphs listing basic statistics such as the average arrival delay for all the flights in the dataset, and a table listing average delays at individual airports. Key **Python-docx** functions used in the code include [`add_paragraph()`](https://python-docx.readthedocs.io/en/latest/api/document.html#docx.document.Document.add_paragraph) and [`add_table()`](https://python-docx.readthedocs.io/en/latest/api/document.html#docx.document.Document.add_table).
+	This code uses Python-docx to create a Word document, insert content, and save the document under the name **summary.docx**. The content consists of a heading, paragraphs listing basic statistics such as the average arrival delay for all the flights in the dataset, and a table listing average delays at individual airports. Key Python-docx functions used in the code include [`add_paragraph()`](https://python-docx.readthedocs.io/en/latest/api/document.html#docx.document.Document.add_paragraph) and [`add_table()`](https://python-docx.readthedocs.io/en/latest/api/document.html#docx.document.Document.add_table).
 
 1. Use the following command to execute **delays.py** again:
 
@@ -118,4 +118,4 @@ You're halfway to the finish line. Pandas makes short work of the analytical wor
 
 1. Confirm that the project directory now contains a file named **summary.docx**. Open the file in Microsoft Word. What do you see inside?
 
-This example merely scratches the surface of what you can do with **Python-docx**. Virtually anything that can be done in Microsoft Word can be done with **Python-docx**, too. Refer to [API Documentation](https://python-docx.readthedocs.io/en/latest/#api-documentation) for a comprehensive look at the **Python-docx** API.
+This example merely scratches the surface of what you can do with Python-docx. Virtually anything that can be done in Microsoft Word can be done with Python-docx, too. Refer to [API Documentation](https://python-docx.readthedocs.io/en/latest/#api-documentation) for a comprehensive look at the Python-docx API.
