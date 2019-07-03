@@ -117,4 +117,4 @@ You're halfway to the finish line. Pandas makes short work of the analytical wor
 
 1. Confirm that the project directory now contains a file named **summary.docx**. Open the file in Microsoft Word. What do you see inside?
 
-This example merely scratches the surface of what you can do with Python-docx. Virtually anything that can be done in Microsoft Word can be done with Python-docx, too. Refer to [API Documentation](https://python-docx.readthedocs.io/en/latest/#api-documentation) for a comprehensive look at the Python-docx API.
+This example merely scratches the surface of what you can accomplish with Python-docx. Virtually anything that can be done in Microsoft Word can be done with Python-docx, too. Refer to [API Documentation](https://python-docx.readthedocs.io/en/latest/#api-documentation) for a comprehensive look at the Python-docx API.
