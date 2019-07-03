@@ -1,4 +1,4 @@
-# Analyze data and summarize the results in a Word document
+# Analyze data and summarize the results in Word
  
 You work for an airline, and one of the tasks you're assigned is producing a daily report summarizing flight delays the previous day. Creating the report takes about 30 minutes. You first import the data into Microsoft Excel, and then use Excel to compute key statistics such as the average arrival delay for flights that took place the day before and the percentage of flights that were delayed more than 10 minutes. Next, you copy-and-paste from Excel into a Microsoft Word document to produce a nicely formatted report that includes high-level stats, plus a table showing average delays at individual airports. It's not difficult, but it's unrelenting. It has to be done every day, and the manual nature of the process means there is too much room for human error.
 
