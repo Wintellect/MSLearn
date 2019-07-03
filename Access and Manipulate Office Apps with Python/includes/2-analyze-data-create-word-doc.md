@@ -6,7 +6,7 @@ Being a technical person, you decide to automate the process. Python libraries s
 
 ## Analyze data with Pandas
 
-Pandas, short for *Python Data Analysis Library*, is the library that people who work with data for a living turn to for gathering insights from large datasets. The key data structure in Pandas is the [DataFrame](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html), which contains rows and columns like a database table and includes methods for loading data from CSV files, filtering and sorting data, exporting to JSON, CSV, Excel, and SQL, and much more. In all, it contains more than 200 methods and attributes.
+Pandas, short for *Python Data Analysis Library*, is the library that people who work with data for a living turn to for gathering insights from large datasets. The key data structure in Pandas is the [DataFrame](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html), which contains rows and columns like a database table and includes methods for loading data from CSV files, filtering and sorting data, exporting to SQL databases, and much more. In all, it contains more than 200 methods and attributes.
 
 In this exercise, you will load a CSV file and use DataFrame methods to analyze the data.
 
