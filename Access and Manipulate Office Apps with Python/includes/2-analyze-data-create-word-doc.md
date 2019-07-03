@@ -23,7 +23,7 @@ Pandas, short for *Python Data Analysis Library*, is the library that people who
 
 	`curl` is a Linux command. It's also installed on Windows 10 build 1706 and higher. If you are running an older version of Windows, you can download `curl` from the [`curl` download page](https://curl.haxx.se/download.html), or you can download the CSV file directly from [here](https://topcs.blob.core.windows.net/public/flight_delays.csv).
 
-1. Take a moment to browse the contents of **flight_delays.csv**. It contains a header row with column names, followed by 99 rows containing information on individual flights. The ARR_DELAY column indicates the number of minutes the flight was late arriving. A negative number means the flight arrived at its destination early.
+1. Take a moment to browse the contents of **flight_delays.csv**. It contains a header row with column names, followed by 99 rows containing information on individual flights. The ARR_DELAY column indicates the number of minutes each flight was late in arriving. A negative number means the flight arrived at its destination early.
 
 1. Create a text file named **delays.py** and open it with your favorite text editor. You can use any text editor you'd like, but we recommend using [Visual Studio Code](https://code.visualstudio.com/) — Microsoft's free, lightweight source-code editor for Windows, macOS, and Linux that features IntelliSense, integrated Git support, and more.
 
