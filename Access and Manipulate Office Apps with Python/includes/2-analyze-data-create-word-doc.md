@@ -69,7 +69,7 @@ Pandas, short for *Python Data Analysis Library*, is the library that people who
 	Name: ARR_DELAY, dtype: float64
 	```
 
-The CSV file that you downloaded contains information for just four airports, but the code you wrote would work equally well with CSV files containing data for millions of flights and thousands of airports.
+The CSV file that you downloaded contains information for just four airports, but the code you wrote works equally well with CSV files containing millions of flights and thousands of airports.
 
 ## Generate a Word document with Python-docx
 
