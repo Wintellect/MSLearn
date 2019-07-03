@@ -95,15 +95,14 @@ You're halfway to the finish line. Pandas makes short work of the analytical wor
 	doc.add_paragraph()
 	doc.add_paragraph('Mean delays for individual airports').alignment = WD_ALIGN_PARAGRAPH.CENTER
 	
-	table = doc.add_table(rows=mean_by_airport.shape[0]+1, cols=2, style='Table Grid')
+	table = doc.add_table(rows=1, cols=2, style='Table Grid')
 	table.rows[0].cells[0].text = 'Airport'
 	table.rows[0].cells[1].text = 'Mean Delay in Minutes'
 	
-	i = 1
 	for name in mean_by_airport.index:
-	    table.rows[i].cells[0].text = name
-	    table.rows[i].cells[1].text = '{:.1f}'.format(mean_by_airport.loc[name])
-	    i += 1
+	    row = table.add_row()
+	    row.cells[0].text = name
+	    row.cells[1].text = '{:.1f}'.format(mean_by_airport.loc[name])
 	
 	doc.save('summary.docx')
 	```
