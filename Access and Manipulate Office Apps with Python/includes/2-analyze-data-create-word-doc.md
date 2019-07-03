@@ -69,7 +69,7 @@ Pandas, short for *Python Data Analysis Library*, is one of the world's most pop
 	Name: ARR_DELAY, dtype: float64
 	```
 
-The CSV file that you downloaded contains information for just four airports, but the code scales to any number of flights and airports. Note that Pandas includes methods for loading data from SQL databases and other sources *and* for combining them into a single `DataFrame`, so your code could easily be modified to use more than a single CSV file.
+In this example, the data source is a single CSV file. Pandas includes methods for loading data from SQL databases and other sources *and* for combining them into a single `DataFrame`, so your code could easily be modified to use more than a single CSV file.
 
 ## Generate a Word document with Python-docx
 
