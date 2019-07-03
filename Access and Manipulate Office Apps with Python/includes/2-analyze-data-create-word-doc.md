@@ -6,7 +6,7 @@ Being a technical person, you decide to automate the process. Python libraries s
 
 ## Analyze data with Pandas
 
-Pandas, short for *Python Data Analysis Library*, is the library that people who work with data for a living turn to for gathering insights from large datasets. The key data structure in Pandas is the [`DataFrame`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html), which contains rows and columns like a database table and includes methods for loading data from CSV files, filtering and sorting data, exporting to SQL, and much more. In all, it contains more than 200 methods and attributes to simplify data handling and analysis. Let's use it consume a CSV file containing flight information and generate some basic statistics from the data.
+Pandas, short for *Python Data Analysis Library*, is the library that people who work with data for a living turn to for gathering insights from large datasets. The key data structure in Pandas is the [`DataFrame`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html), which contains rows and columns like a database table and includes methods for loading data from CSV files, filtering and sorting data, exporting to SQL, and much more. In all, it contains more than 200 methods and attributes to simplify data handling and analysis.
 
 1. Begin by executing the following commands in a Command Prompt window or terminal to install Pandas and Python-docx:
 
