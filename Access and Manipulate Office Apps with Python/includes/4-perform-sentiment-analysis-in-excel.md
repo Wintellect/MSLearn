@@ -1,6 +1,6 @@
 # Use machine learning to perform sentiment analysis in Excel
 
-Imagine that you're a software developer at an Internet vacation-rentals firm and the company's communications department has asked you to create a spreadsheet lets them analyze text for sentiment. The idea is that if sentiment towards the company turns negative on social media, communications can get out in front of it.
+Imagine that you're a software developer at an Internet vacation-rentals firm and the company's communications department has asked you to create a spreadsheet that lets them analyze text for sentiment. The idea is that if sentiment towards the company turns negative on social media, communications can get out in front of it.
 
 Scoring text for sentiment is rather easily accomplished today with machine learning. Python has a number of world-class libraries available for building and training machine-learning models, including [Scikit-learn](https://scikit-learn.org/stable/index.html). In addition, Excel supports [User-Defined Functions](https://support.office.com/en-ie/article/create-custom-functions-in-excel-2f06c10b-3622-40d6-a1b2-b6748ae8231f), which enable users to write custom functions that are called just like `SUM()` and `AVG()` and other functions built into Excel. But UDFs are written in [Visual Basic for Applications](https://en.wikipedia.org/wiki/Visual_Basic_for_Applications). In order to use Scikit-learn in Excel, you need to write UDFs in Python.
 
