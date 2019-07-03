@@ -4,11 +4,11 @@ Imagine that you're a software developer at an Internet vacation-rentals firm an
 
 Scoring text for sentiment is rather easily accomplished today with machine learning. Python has a number of world-class libraries available for building and training machine-learning models, including [Scikit-learn](https://scikit-learn.org/stable/index.html). In addition, Excel supports [User-Defined Functions](https://support.office.com/en-ie/article/create-custom-functions-in-excel-2f06c10b-3622-40d6-a1b2-b6748ae8231f), which enable users to write custom functions that are called just like `SUM()` and `AVG()` and other functions built into Excel. But UDFs are written in [Visual Basic for Applications](https://en.wikipedia.org/wiki/Visual_Basic_for_Applications) (VBA). In order to marry Scikit-learn with Excel, you need to write UDFs in Python.
 
-Fortunately, there are libraries that let you do just that. One of them is [Xlwings](https://www.xlwings.org/), an open-source library that combines the power of Excel with the versatility of Python. With it, you can write Python code that loads or creates Excel spreadsheets and manipulates their content, write Python macros triggered by button clicks in Excel, access Excel spreadsheets from Jupyter notebooks, and more. You can also use **Xlwings** to write Python UDFs for Excel for Windows.
+Fortunately, there are libraries that let you do just that. One of them is [Xlwings](https://www.xlwings.org/), an open-source library that combines the power of Excel with the versatility of Python. With it, you can write Python code that loads or creates Excel spreadsheets and manipulates their content, write Python macros triggered by button clicks in Excel, access Excel spreadsheets from Jupyter notebooks, and more. You can also use Xlwings to write Python UDFs for Excel for Windows.
 
 ## Install Xlwings
 
-The first step in building the spreadsheet that communications wants is configuring Excel to trust VBA add-ins and installing **Xlwings** and Scikit-learn.
+The first step in building the spreadsheet that communications wants is configuring Excel to trust VBA add-ins and installing Xlwings and Scikit-learn.
 
 1. Open Microsoft Excel and use the **File -> Options** command to open Excel's "Excel Options" dialog. Click **Trust Center** in the menu on the left, and then click the **Trust Center Settings...** button. Click **Macro Settings** on the left, and check the "Trust access to the VBA project object model" box as shown below. Then click **OK** to dismiss the "Trust Center" dialog, followed by **OK** to dismiss the "Excel Options" dialog.
 
@@ -24,13 +24,13 @@ The first step in building the spreadsheet that communications wants is configur
 
 	This command installs a specific version of Scikit because your UDF will utilize a saved machine-learning model, and that model was saved with Scikit-learn 0.20.3 Generally speaking, a model saved with one version of Scikit-learn should be loaded with the same version.
 
-1. Now use the following command to install **Xlwings**:
+1. Now use the following command to install Xlwings:
 
 	```bash
 	pip install xlwings
 	```
 
-1. Once the installation is complete, you need to install the **Xlwings** add-in to Excel:
+1. Once the installation is complete, you need to install the Xlwings add-in to Excel:
 
 	```
 	xlwings addin install
@@ -84,7 +84,7 @@ The UDF is written. Now it's time to call it from Excel.
 
 ## Invoke the UDF from Excel
 
-The elegance of **Xlwings** is that once you're written a UDF such as `analyze_text()`, you can call it the same way you call functions built into Excel. But first you need to use the **Xlwings** add-in to import the UDF.
+The elegance of Xlwings is that once you're written a UDF such as `analyze_text()`, you can call it the same way you call functions built into Excel. But first you need to use the Xlwings add-in to import the UDF.
 
 1. Open **sentiment.xlsm** in Excel. Go to the "xlwings" tab and click **Import Functions** to import the `analyze_text()` function.
 
