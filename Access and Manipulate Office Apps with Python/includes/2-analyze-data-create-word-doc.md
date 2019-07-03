@@ -6,9 +6,7 @@ Being a technical person, you decide to automate the process. Python libraries s
 
 ## Analyze data with Pandas
 
-Pandas, short for *Python Data Analysis Library*, is the library that people who work with data for a living turn to for gathering insights from large datasets. The key data structure in Pandas is the [`DataFrame`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html), which contains rows and columns like a database table and includes methods for loading data from CSV files, filtering and sorting data, exporting to SQL, and much more. In all, it contains more than 200 methods and attributes.
-
-In this exercise, you will load a CSV file and use `DataFrame` methods to analyze the data.
+Pandas, short for *Python Data Analysis Library*, is the library that people who work with data for a living turn to for gathering insights from large datasets. The key data structure in Pandas is the [`DataFrame`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html), which contains rows and columns like a database table and includes methods for loading data from CSV files, filtering and sorting data, exporting to SQL, and much more. In all, it contains more than 200 methods and attributes to simplify data handling and analysis. Let's use it consume a CSV file containing flight information and generate some basic statistics from the data.
 
 1. Begin by executing the following commands in a Command Prompt window or terminal to install Pandas and Python-docx:
 
@@ -47,7 +45,7 @@ In this exercise, you will load a CSV file and use `DataFrame` methods to analyz
 	print(mean_by_airport)
 	```
 
-	This code uses `DataFrame`'s [`read_csv()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html) method to read flight information from the CSV. Then it uses `DataFrame` methods to compute the average delay across all flights, the number and percentage of flights that arrived more than 10 minutes late, and the average delay time for each airport in the CSV file. Then it outputs the results to the screen.
+	This code uses `DataFrame`'s [`read_csv()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html) method to read flight information from the CSV. Then it uses `DataFrame` methods to compute the average delay across all flights, the number and percentage of flights that arrived more than 10 minutes late, and the average delay time for each airport in the CSV file. Finally, it outputs the results to the screen.
 
 1. Use the following command to execute **delays.py**:
 
@@ -75,7 +73,7 @@ The CSV file that you downloaded contains information for just four airports, bu
 
 ## Generate a Word document with Python-docx
 
-TODO: Add intro.
+You're halfway to the finish line. Pandas makes short work of the analytical work. **Python-docx** does the same for reading and writing Word documents in Python. It implements a rich yet intuitive API for generating and consuming **.docx** files. The [**Python-docx** home page](https://python-docx.readthedocs.io/en/latest/) contains a great quickstart to familiarize you with the basics.
 
 1. Open **delays.csv** and insert the following `import` statements at the top of the file:
 
@@ -120,4 +118,4 @@ TODO: Add intro.
 
 1. Confirm that the project directory now contains a file named **summary.docx**. Open the file in Microsoft Word. What do you see inside?
 
-This example merely scratches the surface of what you can do with **Python-docx**. Virtually anything that can be done in Microsoft Word can be done with **Python-docx**, too.
+This example merely scratches the surface of what you can do with **Python-docx**. Virtually anything that can be done in Microsoft Word can be done with **Python-docx**, too. Refer to [API Documentation](https://python-docx.readthedocs.io/en/latest/#api-documentation) for a comprehensive look at the **Python-docx** API.
