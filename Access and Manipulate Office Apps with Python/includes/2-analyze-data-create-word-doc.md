@@ -6,7 +6,7 @@ Being a technical person, you decide to automate the process. Python libraries s
 
 ## Analyze data with Pandas
 
-Pandas, short for *Python Data Analysis Library*, is the library that people who work with data for a living turn to for gathering insights from large datasets. The key data structure in Pandas is the [`DataFrame`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html), which contains rows and columns like a database table and includes methods for loading data from CSV files, filtering and sorting data, exporting to SQL databases, and much more. In all, it contains more than 200 methods and attributes.
+Pandas, short for *Python Data Analysis Library*, is the library that people who work with data for a living turn to for gathering insights from large datasets. The key data structure in Pandas is the [`DataFrame`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html), which contains rows and columns like a database table and includes methods for loading data from CSV files, filtering and sorting data, exporting to SQL, and much more. In all, it contains more than 200 methods and attributes.
 
 In this exercise, you will load a CSV file and use `DataFrame` methods to analyze the data.
 
@@ -25,7 +25,7 @@ In this exercise, you will load a CSV file and use `DataFrame` methods to analyz
 
 	`curl` is a Linux command. It's also installed on Windows 10 build 1706 and higher. If you are running an older version of Windows, you can download `curl` from the [`curl` download page](https://curl.haxx.se/download.html), or you can download the CSV file directly from [here](https://topcs.blob.core.windows.net/public/flight_delays.csv).
 
-1. Take a moment to browse the contents of **flight_delays.csv**. It contains a header row with column names, and information on 99 flights. The ARR_DELAY column indicates the number of minutes the flight was late arriving. A negative number means the flight arrived at its destination early.
+1. Take a moment to browse the contents of **flight_delays.csv**. It contains a header row with column names, followed by 99 rows containing information on individual flights. The ARR_DELAY column indicates the number of minutes the flight was late arriving. A negative number means the flight arrived at its destination early.
 
 1. Create a text file named **delays.py** and open it with your favorite text editor. You can use any text editor you'd like, but we recommend using [Visual Studio Code](https://code.visualstudio.com/) — Microsoft's free, lightweight source-code editor for Windows, macOS, and Linux that features IntelliSense, integrated Git support, and more.
 
