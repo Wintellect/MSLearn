@@ -75,7 +75,7 @@ The CSV file that you downloaded contains information for just four airports, bu
 
 You're halfway to the finish line. Pandas makes short work of the analytical work. **Python-docx** does the same for reading and writing Word documents. It implements a rich yet intuitive API for generating and consuming **.docx** files. The [**Python-docx** home page](https://python-docx.readthedocs.io/en/latest/) contains a great quickstart to familiarize you with the basics.
 
-1. Open **delays.py** and insert the following `import` statements at the top of the file:
+1. Open **delays.py** and insert the following statements at the top of the file:
 
 	```python
 	import docx
