@@ -107,7 +107,7 @@ You're halfway to the finish line. Pandas makes short work of the analytical wor
 	doc.save('summary.docx')
 	```
 
-	This code uses Python-docx to create a Word document, insert content, and save the document under the name **summary.docx**. The content consists of a heading, paragraphs listing basic statistics such as the average arrival delay for all the flights in the dataset, and a table listing average delays at individual airports. Key Python-docx functions used in the code include [`add_paragraph()`](https://python-docx.readthedocs.io/en/latest/api/document.html#docx.document.Document.add_paragraph), [`add_table()`](https://python-docx.readthedocs.io/en/latest/api/document.html#docx.document.Document.add_table), and [`add_row()`](https://python-docx.readthedocs.io/en/latest/api/table.html#docx.table.Table.add_row).
+	This code uses Python-docx to create a Word document, insert content, and save the document under the name **summary.docx**. The content consists of a heading, paragraphs listing basic statistics such as the average arrival delay for all the flights in the dataset, and a table listing average delays at individual airports. Key Python-docx methods used in the code include [`add_paragraph()`](https://python-docx.readthedocs.io/en/latest/api/document.html#docx.document.Document.add_paragraph), [`add_table()`](https://python-docx.readthedocs.io/en/latest/api/document.html#docx.document.Document.add_table), and [`add_row()`](https://python-docx.readthedocs.io/en/latest/api/table.html#docx.table.Table.add_row).
 
 1. Use the following command to execute **delays.py** again:
 
