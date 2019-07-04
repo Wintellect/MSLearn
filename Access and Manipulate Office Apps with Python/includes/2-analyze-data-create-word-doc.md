@@ -45,7 +45,7 @@ Pandas, short for *Python Data Analysis Library*, is one of the world's most pop
 	print(mean_by_airport)
 	```
 
-	This code uses `DataFrame`'s [`read_csv()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html) method to read flight information from the CSV. Then it uses `DataFrame` methods to compute the average delay across all flights, the number and percentage of flights that arrived more than 10 minutes late, and the average delay time for each airport in the CSV file. Finally, it outputs the results to the screen.
+	This code uses `DataFrame`'s [`read_csv()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html) method to read flight information from the CSV. Then it uses other `DataFrame` methods to compute the average delay across all flights, the number and percentage of flights that arrived more than 10 minutes late, and the average delay time for each airport. Finally, it outputs the results to the screen.
 
 1. Use the following command to execute **delays.py**:
 
