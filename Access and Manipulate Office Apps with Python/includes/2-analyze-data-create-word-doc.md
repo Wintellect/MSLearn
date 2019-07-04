@@ -25,7 +25,7 @@ Pandas, short for *Python Data Analysis Library*, is one of the world's most pop
 
 1. Take a moment to browse the contents of **flight_delays.csv**. It contains a header row with column names, followed by 99 rows containing information on individual flights. The ARR_DELAY column indicates the number of minutes each flight was late in arriving. A negative number means the flight arrived at its destination early.
 
-1. Create a text file named **delays.py** and open it with your favorite text editor. You can use any text editor you'd like, but we recommend using [Visual Studio Code](https://code.visualstudio.com/) — Microsoft's free, lightweight source-code editor for Windows, macOS, and Linux that features IntelliSense, integrated Git support, and more.
+1. Create a text file named **delays.py** and open it in your favorite text editor. You can use any text editor you'd like, but we recommend using [Visual Studio Code](https://code.visualstudio.com/) — Microsoft's free, lightweight source-code editor for Windows, macOS, and Linux that features IntelliSense, integrated Git support, and more.
 
 1. Paste the following code into **delays.py** and then save the file:
 
