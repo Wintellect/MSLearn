@@ -4,6 +4,8 @@ You work for an airline, and one of your daily tasks is creating a report summar
 
 Being a technical person, you decide to automate the process. Python libraries such as [Pandas](https://pandas.pydata.org/) provide more than enough muscle for the analytical part. Other libraries such as [Python-docx](https://python-docx.readthedocs.io/en/latest/) offer rich APIs for creating Word documents. In this lesson, you will marry the two to ingest airline data from a CSV file, analyze it, and produce a daily report summarizing the previous day's on-time performance.
 
+![](media/python-docx.png)
+
 ## Analyze data with Pandas
 
 Pandas, short for *Python Data Analysis Library*, is one of the world's most popular libraries for manipulating and analyzing data. The key data structure in Pandas is the [`DataFrame`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html), which contains rows and columns like a database table and has methods for loading data from CSV files, filtering and sorting data, exporting to SQL, and much more. In all, it contains more than 200 methods and attributes to simplify data handling and analysis.
@@ -87,13 +89,14 @@ You're halfway to the finish line. Pandas makes short work of the analytical wor
 
 	```python
 	doc = docx.Document()
-	doc.add_heading('Summary of Arrival Delays for {:%b %d, %Y}'.format(datetime.date.today()))
+	p = doc.add_heading('Summary of Arrival Delays for {:%b %d, %Y}'.format(datetime.date.today()))
+	p.alignment = WD_ALIGN_PARAGRAPH.CENTER
 	doc.add_paragraph()
-	doc.add_paragraph('Mean delay: {0:.0f} minutes'.format(mean_delay))
-	doc.add_paragraph('Number of flights that arrived more than 10 minutes late: {}'.format(delayed_10))
+	p = doc.add_paragraph('Mean delay: {0:.0f} minutes'.format(mean_delay))
+	p.paragraph_format.space_after = 0
+	p = doc.add_paragraph('Number of flights that arrived more than 10 minutes late: {}'.format(delayed_10))
+	p.paragraph_format.space_after = 0
 	doc.add_paragraph('Percentage of flights that arrived more than 10 minutes late: {0:.0%}'.format(percent_10))
-	doc.add_paragraph()
-	doc.add_paragraph('Mean delays for individual airports').alignment = WD_ALIGN_PARAGRAPH.CENTER
 	
 	table = doc.add_table(rows=1, cols=2, style='Table Grid')
 	table.rows[0].cells[0].text = 'Airport'
