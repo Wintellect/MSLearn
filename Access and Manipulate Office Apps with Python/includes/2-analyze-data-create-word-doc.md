@@ -12,7 +12,7 @@ Pandas, short for *Python Data Analysis Library*, is one of the world's most pop
 
 	```bash
 	pip install pandas
-	pip install python-docs
+	pip install python-docx
 	```
 
 1. Create a directory to serve as your project directory and `cd` into it. Then use this command to download a CSV file containing the latest daily information on flight delays:
