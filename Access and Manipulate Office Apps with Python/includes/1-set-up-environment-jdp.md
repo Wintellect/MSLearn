@@ -1,6 +1,6 @@
 # Set up a development environment
 
-The first order of business is to set up a Python development environment. If you are running Linux or macOS, Python is probably already installed on your computer. If you use Windows, Python might need to be installed. Even if you're using Linux or macOS, you might need to update your Python installation because the exercises in this module require Python 3.6. or higher.
+The first order of business is to set up a Python development environment. If you are running Linux or macOS, Python is probably already installed on your computer. If you use Windows, Python might need to be installed. Regardless of which operating system you use, if Python is installed, you might need to update it because the exercises in this module require Python 3.6. or higher.
 
 You also need to decide whether to set up a [virtual Python environment](https://docs.python.org/3/library/venv.html) to isolate the packages you install, or run Python "on the metal" and install packages such as [Python-docx](https://python-docx.readthedocs.io/en/latest/) and [PyPDF4](https://pypi.org/project/PyPDF4/) globally. The advantage to the former is that installing new packages won't affect other packages you've installed. There's nothing worse than running through a set of learning exercises, only to find out later that Python apps that have been working flawlessly suddenly don't work any more.
 
