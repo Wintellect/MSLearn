@@ -1,0 +1,15 @@
+### YamlMime:ModuleUnit
+uid: learn.automate-office-365-tasks-with-python.1-set-up-environment
+title: Set up a development environment
+metadata:
+  title: Set up a development environment
+  description: Set up a Python development environment
+  ms.date: 06/30/2018
+  author: v-jeffpr
+  ms.author: shana.matthews
+  ms.topic: interactive-tutorial
+  ms.prod: learning-python
+  ROBOTS: NOINDEX
+durationInMinutes: 5
+content: |
+  [!include[](includes/1-set-up-environment.md)]

@@ -1,0 +1,15 @@
+### YamlMime:ModuleUnit
+uid: learn.automate-office-365-tasks-with-python.5-manage-pdfs-with-pypdf4
+title: Manipulate PDF documents with PyPDF4
+metadata:
+  title: Manipulate PDF documents with PyPDF4
+  description: Manipulate PDF documents with PyPDF4
+  ms.date: 06/30/2018
+  author: v-jeffpr
+  ms.author: shana.matthews
+  ms.topic: interactive-tutorial
+  ms.prod: learning-python
+  ROBOTS: NOINDEX
+durationInMinutes: 10
+content: |
+  [!include[](includes/5-manage-pdfs-with-pypdf4.md)]

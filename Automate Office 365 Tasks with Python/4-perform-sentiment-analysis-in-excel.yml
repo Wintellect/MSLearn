@@ -1,0 +1,15 @@
+### YamlMime:ModuleUnit
+uid: learn.automate-office-365-tasks-with-python.4-perform-sentiment-analysis-in-excel
+title: Use machine learning to perform sentiment analysis in Excel
+metadata:
+  title: Use machine learning to perform sentiment analysis in Excel
+  description: Use a machine-learning model built with Scikit-learn to perform sentiment analysis in Excel
+  ms.date: 06/30/2018
+  author: v-jeffpr
+  ms.author: shana.matthews
+  ms.topic: interactive-tutorial
+  ms.prod: learning-python
+  ROBOTS: NOINDEX
+durationInMinutes: 10
+content: |
+  [!include[](includes/4-perform-sentiment-analysis-in-excel.md)]

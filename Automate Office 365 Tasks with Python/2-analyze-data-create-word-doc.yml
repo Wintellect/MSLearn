@@ -1,0 +1,15 @@
+### YamlMime:ModuleUnit
+uid: learn.automate-office-365-tasks-with-python.2-analyze-data-create-word-doc
+title: Analyze data and summarize the results in Word
+metadata:
+  title: Analyze data and summarize the results in Word
+  description: Analyze data with Pandas and create a Word document summarizing the results
+  ms.date: 06/30/2018
+  author: v-jeffpr
+  ms.author: shana.matthews
+  ms.topic: interactive-tutorial
+  ms.prod: learning-python
+  ROBOTS: NOINDEX
+durationInMinutes: 10
+content: |
+  [!include[](includes/0-introduction.2-analyze-data-create-word-doc.md)]
