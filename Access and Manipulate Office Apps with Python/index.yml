@@ -1,48 +1,36 @@
 ### YamlMime:Module
-uid: learn.access-and-manipulate-office-apps-with-python
+uid: learn.automate-office-365-tasks-with-python
 metadata:
-  title: Access and Manipulate Office Apps with Python - Learn
-  description: Use Python to manage common office-automation documents
-  ms.date: 06/15/2019
-  author: claird
-  ms.author: ?
+  title: Automate Office 365 Tasks with Python - Learn
+  description: Use Python to automate common tasks involving Office 365
+  ms.date: 06/30/2018
+  author: v-jeffpr
+  ms.author: shana.matthews
   ms.topic: interactive-tutorial
-  ms.prod: ?-python
-title: Access and Manipulate Office Apps with Python
-summary: Use Python to manage common office-automation documents
+  ms.prod: learning-python
+title: Automate Office 365 Tasks with Python
+summary: Use Python to automate common tasks involving Office 365
 abstract:  | 
   In this module, you will:
   - Set up a working Python environment
-  - Read from and write to a Microsoft Word document using python-docx
-  - Read from and write to a Microsoft Excel document using PyXLL
-  - Create an Excel UDF with Python
-  - Manage PDF documents with PyPDF4
-prerequisites: familiarity with the Python programming language
+  - Create Microsoft Word documents with python-docx
+  - Create Excel spreadsheets with OpenPyXLL
+  - Write user-defined functions (UDFs) for Excel in Python with Xlwings
+  - Manipulate PDF documents with PyPDF4
+prerequisites: Familiarity with the Python programming language
 #iconUrl:
 levels:
-- beginner?
+- beginner
 roles:
-- developer?
+- developer
 products:
-- ?
+- Office 365, Python
 units:
-- learn.access-and-manipulate-office-apps-with-python.0-introduction
-- learn.access-and-manipulate-office-apps-with-python.1-set-up-an-environment
-- learn.access-and-manipulate-office-apps-with-python.2-read-from-and-write-to-a-microsoft-word-document-using-python-docx
-- learn.access-and-manipulate-office-apps-with-python.3-read-from-and-write-to-a-microsoft-excel-document-using-openpyxl
-- learn.access-and-manipulate-office-apps-with-python.4-create-an-excel-udf-with-python
-- learn.access-and-manipulate-office-apps-with-python.5-manage-pdf-documents-with-pypdf4
-- learn.access-and-manipulate-office-apps-with-python.6-summary
+- learn.automate-office-365-tasks-with-python.0-introduction
+- learn.automate-office-365-tasks-with-python.1-set-up-environment
+- learn.automate-office-365-tasks-with-python.2-2-analyze-data-create-word-doc
+- learn.automate-office-365-tasks-with-python.3-read-from-and-write-to-a-microsoft-excel-document-using-openpyxl
+- learn.automate-office-365-tasks-with-python.4-perform-sentiment-analysis-in-excel
+- learn.automate-office-365-tasks-with-python.5-manage-pdfs-with-pypdf4
+- learn.automate-office-365-tasks-with-python.6-summary
 achievement: learn.placeholder.badge
-© 2019 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Help
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
