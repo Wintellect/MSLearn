@@ -51,11 +51,18 @@ Notice the peculiar nature of this program.  Generally people think of a compute
 This small application is different.  It's only designed to be run once, just to help find a one-time result.  That's OK:  some programs are so small and quick to write, that it's faster to let the computer figure out a result for you one time, even including your effort to program the computer, than to undertake any alternative solution.  You can think of this as "experimental" programming.
 
 
+## Excel diagrams for Python
+
+The demonstration above showed Python reading from a spreadsheet.  The same **OpenPyXL** package also writes new spreadsheets, and updates existing ones.  **OpenPyXL**'s capabilities considerably exceed the limits of what [its documentation](https://openpyxl.readthedocs.io/en/stable/) only introduces, in fact.  **OpenPyXL** accesses essentially everything within Excel, although few of those capabilities have been written up as publicly-available working examples yet.
+
+Suppose for a moment that you have Python programs that manage a large collection of data.  You want graphs of the results, but are unfamiliar with the [**matplotlib**](https://matplotlib.org) library others have told you the Python community widely uses.  No problem!  If you know Excel and _its_ plotting, **OpenPyXL** helps you marry the strengths of Python and Excel.  Prepare, reduce, and analyze your data with Python, then let Excel take over the graphing.  Here's a model:
+
+...
+
+
 ## Further study
 
-The demonstration above showed Python reading from a spreadsheet.  The same **OpenPyXL** package also writes new spreadsheets, and updates existing ones.  **OpenPyXL**'s capabilities considerably exceed the limits of what [its documentation](https://openpyxl.readthedocs.io/en/stable/) only introduces, in fact.  **OpenPyXL** accesses essentially everything within Excel, although few of those capabilities have been written up as working examples yet.
-
-That's not all:  other Python packages, among which [**PyXLL**](https://www.pyxll.com/) is the most polished, are **add-ins** for Excel:  they communicate with an executing instance of Excel.  Excel can be used as a **dashboard**, for instance, with certain cells lighting up as alarms when a particular Python calculation yields a particular result.  Or the communication can go the other way:  Python can be used to drive a Web site, as [TODO with Jeff:  reference] introduces, with its content coming in real time from an Excel spreadsheet.  The next Lesson shows a small example of the rich additional communication possible between Excel and Python.
+**OpenPyXL** is not your only choice for bringing Python and Excel together.  Other Python packages, among which [**PyXLL**](https://www.pyxll.com/) is the most polished, are **add-ins** for Excel:  they communicate with an executing instance of Excel.  Excel can be used as a **dashboard**, for instance, with certain cells lighting up as alarms when a particular Python calculation yields a particular result.  Or the communication can go the other way:  Python can be used to drive a Web site, as "[Building an AI Web App with Flask and Python](https://github.com/Wintellect/MSLearn/tree/master/Building%20an%20AI%20Web%20App%20with%20Flask%20and%20Python)" [TODO:  Jeff, what is the public URL for this module?] introduces, with its content coming in real time from an Excel spreadsheet.  The next Lesson shows a small example of the rich additional communication possible between Excel and Python.
 
 
 ## Summary
