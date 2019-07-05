@@ -16,11 +16,10 @@ number_of_pages = reader.numPages
 reader.close()
 ```
 
-
 Like any Python package, **PyPDF4** must be installed before it can be used. In a Command Prompt window or terminal, execute the following command to install it:
 
 ```bash
-python3.6 -m pip install PyPDF4
+pip install PyPDF4
 ```
 
 You're set. Let's start on those 2,000,000 documents and make sure there's time left over for a well-deserved vacation.

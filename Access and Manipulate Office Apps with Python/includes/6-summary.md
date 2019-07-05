@@ -1,26 +1,37 @@
 # Summary
 
-In this module, you learned that a great way to solve many problems involves use of a couple of co-operating technologies.  The lessons here specifically brought Python together with common office automation tools to achieve results that would have been tedious or impractical with either alone.
+In this module, you learned how to use open-source Python packages to automate tasks involving Microsoft Office. You learned how to create Word documents with [Python-docx](https://python-docx.readthedocs.io/en/latest/), how to write Excel UDFs in Python with [Xlwings](https://www.xlwings.org/), how to write apps that manipulate PDF documents with [PyPDF4](https://pypi.org/project/PyPDF4/), and more. These are but a few of many Python packages available for free to increase your productivity with Microsoft Office. Another notable example is [O365](https://pypi.org/project/O365/), which provides a rich Python interface to the Microsoft Graph and Office 365 APIs.
 
-You also practiced use of "third-party" Python packages, freely available without fee from the standard Python PyPI repository.
-
-Finally, you heard that it's time to migrate to Python 3.6 or higher.
-
+Whatever your needs when it comes to automating or enhancing Office, there is probably a Python package to help. When you combine the productivity of Office with the power of Python, you and your employer will both come out winners.
 
 ## Check your knowledge
 
-1. Python has a growing reputation for its use by artificial intelligence researchers, robotocists, Web site builders, and so on.  Yes or no:  is Python also suitable for one-time-only investigation of a specific computing problem or need?
+1. The primary purpose of setting up a virtual Python environment is to:
+	- Make sure package installs don't adversely affect existing packages and programs that use them
+	- Make sure package installs work equally well with Python 2 and Python 3
+	- Virtualize the hardware so Python can run on Windows as well as it runs on Linux
+	- Virtualize the hardware so Python programs don't interfere with Node.js programs
 
-1. Describe a situation where you might need to construct a spreadsheet, and you use Python to generate a first draft of the spreadsheet.
+1. Which Python-docx object represents Microsoft Word documents? 
+	- `Doc`
+	- `WordDoc`
+	- `Document`
+	- None of the above
 
-1. A buddy tells you about a cool new programming package she's using.  You copy the source of the program she demonstrated for you, run it, and see ...<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;`NameError: name COOL-PACKAGE is not defined`<br /><br />What special Python statement might be missing from the top of your program?
+1. Which of the following packages might you use to write Python user-defined functions (UDFs) for Excel?
+	- Python-docx
+	- OpenPyXL
+	- Xlwings
+	- PyPDF4
 
-1. If you hear a fellow worker complain that an assignment is boring, and just involves mindless pointing-and-clicking through to a result, do you have any reaction other than, "tough"?
+1. Machine-learning models built and saved with Scikit-learn are typically stored in what type of files?
+	- **.pkl** files
+	- **.pickle** files
+	- **.pksave** files
+	- Scikit-learn models cannot be saved
 
-1. Your cousin blows your mind by writing a remarkable Python library that compares different retail electricity vendors.  It impresses you so much that you say, "you ought to register that so _any_ Python programmer can install it--just make it available on ..." [name the repository]
-
-1.  One way to compute a particular weighted average in Excel is with a formula such as<br /><br >&nbsp;&nbsp;&nbsp;&nbsp;`= (C14 * D14 + C15 * D15 + C16 * D16 + C17 * D17 + C18 * D18 + C19 * D19 + C20 * D20) / sum(D14:D18)`<br /><br />Explain three benefits of Python's corresponding expression<br /><br >&nbsp;&nbsp;&nbsp;&nbsp;`weighted_average = sum([amount * factor for amount, factor in zip(amounts, factors)]) / sum(amounts)`
-
-1.  Explain one disadvantage of expressing the last computation as<br /><br >&nbsp;&nbsp;&nbsp;&nbsp;`numpy.average(factors, weights=amounts)`
-
-[TODO:  work in introspection and REPL practice.  Or not.]
+1. Question
+	- tk
+	- tk
+	- tk
+	- tk
