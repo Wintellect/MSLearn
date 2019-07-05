@@ -9,7 +9,7 @@ Whatever your needs when it comes to automating or enhancing Office, there is pr
 1. The primary purpose of setting up a virtual Python environment is to:
 	- Make sure package installs don't adversely affect existing packages and programs that use them
 	- Make sure package installs work equally well with Python 2 and Python 3
-	- Virtualize the hardware so Python can run on Windows as well as it runs on Linux
+	- Virtualize the hardware so Python can run on Windows as well as Linux
 	- Virtualize the hardware so Python programs don't interfere with Node.js programs
 
 1. Which Python-docx object represents Microsoft Word documents? 
