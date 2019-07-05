@@ -2,7 +2,7 @@
  
 You work for an airline, and one of your daily tasks is creating a report summarizing the previous day's flight delays. Generating the report takes about 30 minutes. You first import the data into Microsoft Excel, and then pull key statistics such as the average arrival delay and the percentage of flights that were delayed more than 10 minutes. Next, you copy-and-paste from Excel into a Microsoft Word document to produce a nicely formatted report that includes high-level KPIs as well as a table showing average delays at individual airports. It's not difficult, but it's unrelenting. It has to be done every day, and the manual nature of the process opens the door to error.
 
-Being a technical person, you decide to automate the process. Python libraries such as [Pandas](https://pandas.pydata.org/) provide more than enough muscle for the analytical part. Other libraries such as [Python-docx](https://python-docx.readthedocs.io/en/latest/) offer rich APIs for creating Word documents. In this lesson, you will marry the two to ingest airline data from a CSV file, analyze it, and produce a daily report summarizing the previous day's on-time performance.
+Being a programmer, you decide to automate the process. Python libraries such as [Pandas](https://pandas.pydata.org/) provide more than enough muscle for the analytical part. Other libraries such as [Python-docx](https://python-docx.readthedocs.io/en/latest/) offer rich APIs for creating Word documents. In this lesson, you will marry the two to ingest airline data from a CSV file, analyze it, and produce a daily report summarizing the previous day's on-time performance.
 
 ![](media/python-docx.png)
 
