@@ -59,7 +59,7 @@ Suppose for a moment that you have Python programs that manage a large collectio
 
 1.  Create `chart.py` with content
 
-    from openpyxl import Workbook
+    ```from openpyxl import Workbook
     from openpyxl.chart import BarChart, Reference
 
 
@@ -95,7 +95,7 @@ Suppose for a moment that you have Python programs that manage a large collectio
         ]
 
 
-    main()
+    main()```
 
 2.  Execute `python3 chart.py`.
 
