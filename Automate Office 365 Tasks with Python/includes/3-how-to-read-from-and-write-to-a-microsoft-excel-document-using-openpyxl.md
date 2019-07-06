@@ -57,7 +57,53 @@ The demonstration above showed Python reading from a spreadsheet.  The same **Op
 
 Suppose for a moment that you have Python programs that manage a large collection of data.  You want graphs of the results, but are unfamiliar with the [**matplotlib**](https://matplotlib.org) library others have told you the Python community widely uses.  No problem!  If you know Excel and _its_ plotting, **OpenPyXL** helps you marry the strengths of Python and Excel.  Prepare, reduce, and analyze your data with Python, then let Excel take over the graphing.  Here's a model:
 
-...
+1.  Create `chart.py` with content
+
+    from openpyxl import Workbook
+    from openpyxl.chart import BarChart, Reference
+
+
+    def chart_data(worksheet):
+        chart = BarChart()
+        chart.type = "col"
+        chart.style = 10
+        chart.title = "Alternative monthly charges"
+        data = Reference(worksheet, min_col=1, min_row=1, max_col=13, max_row=2)
+        chart.add_data(data, titles_from_data=True, from_rows=True)
+        chart.shape = 4
+        worksheet.add_chart(chart, "A10")
+
+
+    def load_data():
+        (first, second) = retrieve_charges()
+        workbook = Workbook()
+        worksheet = workbook.active
+        worksheet.append(["Alternative A"] + first)
+        worksheet.append(["Alternative B"] + second)
+        return workbook, worksheet
+
+    def main():
+        workbook, worksheet = load_data()
+        chart_data(worksheet)
+        workbook.save("charges_analysis.xlsx")
+
+
+    def retrieve_charges():
+        return [
+            [73.41, 124.25, 105.88, 107.13, 67.27, 95.54, 99.89, 100.81, 78.92, 75.45, 108.63, 123.25],
+            [106.56, 89.46, 76.23, 77.13, 97.65, 138.69, 144.99, 146.34, 114.57, 109.53, 78.21, 88.74]
+        ]
+
+
+    main()
+
+2.  Execute `python3 chart.py`.
+
+3.  Notice that the program created `charges_analysis.xlsx`.
+
+4.  When you open `charges_analysis.xlsx` inside Excel, you'll see a bar chart something like this within the spreadsheet:
+
+![](media/charges-chart.png)
 
 
 ## Further study
