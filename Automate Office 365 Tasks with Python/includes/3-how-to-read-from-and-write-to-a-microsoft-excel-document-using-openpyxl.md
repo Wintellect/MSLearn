@@ -99,7 +99,7 @@ Suppose for a moment that you have Python programs that manage a large collectio
 
 2.  Execute `python3 chart.py`.
 
-3.  Notice that the program created `charges_analysis.xlsx`.
+3.  Notice that the program created `charges_analysis.xlsx` in your working directory.
 
 4.  When you open `charges_analysis.xlsx` inside Excel, you'll see a bar chart something like this within the spreadsheet:
 
