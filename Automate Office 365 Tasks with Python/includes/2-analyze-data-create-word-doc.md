@@ -19,7 +19,7 @@ Pandas, short for *Python Data Analysis Library*, is one of the world's most pop
 	pip install python-docx
 	```
 
-1. Create a directory to serve as your project directory and `cd` into it. Then use this command to download a CSV file containing the latest daily information on flight delays:
+1. Create a directory to serve as your project directory and `cd` into it. Then use this command to download a CSV file containing the latest information on flight delays:
 
 	```bash
 	curl https://topcs.blob.core.windows.net/public/flights.csv -o flights.csv
