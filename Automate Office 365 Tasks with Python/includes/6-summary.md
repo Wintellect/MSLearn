@@ -1,8 +1,8 @@
 # Summary
 
-In this module, you learned how to use open-source Python packages to automate tasks involving Microsoft Office. You learned how to create Word documents with [Python-docx](https://python-docx.readthedocs.io/en/latest/), how to write Excel UDFs in Python with [Xlwings](https://www.xlwings.org/), how to write apps that manipulate PDF documents with [PyPDF4](https://pypi.org/project/PyPDF4/), and more. These are but a few of the many Python packages available for free to increase your productivity with Microsoft Office. Another notable example is [O365](https://pypi.org/project/O365/), which provides a rich Python interface to the Microsoft Graph and Office 365 APIs.
+In this module, you learned how to use open-source Python packages to automate tasks involving Microsoft Office. You learned how to create Word documents with [Python-docx](https://python-docx.readthedocs.io/en/latest/), how to create Excel spreadsheets with [OpenPyXL](https://openpyxl.readthedocs.io/en/stable/), how to write Excel UDFs in Python with [Xlwings](https://www.xlwings.org/), and how to write apps that manipulate PDF documents with [PyPDF4](https://pypi.org/project/PyPDF4/). These are but a few of the many Python packages available for free to increase your productivity with Microsoft Office. Another notable example is [O365](https://pypi.org/project/O365/), which provides a rich Python interface to the Microsoft Graph and Office 365 APIs.
 
-Whatever your needs when it comes to automating or enhancing Office, there is probably a Python package to help. When you combine the productivity of Office with the power of Python, you and your employer will both come out winners.
+Whatever your needs when it comes to automating or enhancing Office, there is probably a Python package to help. When you combine the productivity of Office with the power of Python, everyone comes out a winner.
 
 ## Check your knowledge
 
