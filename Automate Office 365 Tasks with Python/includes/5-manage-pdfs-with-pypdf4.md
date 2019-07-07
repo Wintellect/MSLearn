@@ -167,7 +167,7 @@ Have you ever needed to print a PDF document without the cover page, with two co
 1. The `pages` parameter passed to **extract_pages.py** supports comma-delimited lists of pages and page ranges. To demonstrate, locate a PDF that contains 10 or more pages and execute the following command, once more replacing PATH with the path to the PDF:
 
 	```bash
-	python extract-pages.py PATH result.pdf pages=2,4-6,10,10
+	python extract_pages.py PATH result.pdf pages=2,4-6,10,10
 	```
 
 	This time, **result.pdf** should contain pages 2, 4, 5, 6 from the original document, plus two copies of page 10.
