@@ -31,7 +31,7 @@ Pandas, short for *Python Data Analysis Library*, is one of the world's most pop
 
 1. Create a text file named **summarize_delays.py** and open it in your favorite text editor. You can use any text editor you'd like, but we recommend using [Visual Studio Code](https://code.visualstudio.com/) — Microsoft's free, lightweight source-code editor for Windows, macOS, and Linux that features IntelliSense, integrated Git support, and more.
 
-1. Paste the following code into **summarize_delays.py** and then save the file:
+1. Paste the following code into **summarize_delays.py**, and then save the file:
 
 	```python
 	import pandas as pd
