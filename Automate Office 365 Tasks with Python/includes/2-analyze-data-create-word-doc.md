@@ -123,7 +123,7 @@ You're halfway to the finish line. Pandas makes short work of the analytical wor
 1. Use the following command to execute **summarize_delays.py** again:
 
 	```bash
-	python delays.py
+	python summarize_delays.py
 	```
 
 1. Confirm that the project directory now contains a file named **summary.docx**. Open the file in Microsoft Word. What do you see inside?
