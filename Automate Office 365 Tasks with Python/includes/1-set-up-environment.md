@@ -46,7 +46,7 @@ You should now be able to execute Python 3 code and install Python 3 packages on
 
 1. Create a directory on your hard disk in the location of your choice. This is where your virtual Python environment will be created.
 
-1. In a Command Prompt window or terminal, `cd` to the project directory. If you are running Windows, use the following commands to create a virtual environment in the "env" subdirectory and activate the environment:
+1. In a Command Prompt window or terminal, `cd` to the directory you created in the previous step. If you are running Windows, use the following commands to create a virtual environment in the "env" subdirectory and activate the environment:
 
 	```bash
 	python -m venv env
