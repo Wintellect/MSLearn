@@ -1,0 +1,15 @@
+### YamlMime:ModuleUnit
+uid: learn.automate-office-365-tasks-with-python.3-analyze-data-create-excel-spreadsheet
+title: Analyze data and create an Excel spreadsheet
+metadata:
+  title:  Analyze data and create an Excel spreadsheet
+  description: Analyze data with Pandas and create an Excel spreadsheet with a chart summarizing the results
+  ms.date: 06/30/2018
+  author: v-jeffpr
+  ms.author: shana.matthews
+  ms.topic: interactive-tutorial
+  ms.prod: learning-python
+  ROBOTS: NOINDEX
+durationInMinutes: 10
+content: |
+  [!include[](includes/0-introduction.3-analyze-data-create-excel-spreadsheet.md)]
