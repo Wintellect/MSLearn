@@ -105,20 +105,22 @@ TODO: Add introduction.
     chart.type = "col"
     chart.style = 10
     chart.title = "Worst-Performing Airports"
-    data = Reference(worksheet, min_col=1, min_row=1, max_col=2, max_row=11)
-    chart.add_data(data, titles_from_data=True, from_rows=True)
+    data = Reference(worksheet, min_col=2, min_row=1, max_row=11)
+    categories = Reference(worksheet, min_col=1, min_row=2, max_row=11)
+    chart.add_data(data, titles_from_data=True)
+    chart.set_categories(categories)
     chart.y_axis.title = 'Average Delay in Minutes'
-    chart.x_axis.title = 'Airport'
-    chart.shape = 4
+    chart.legend = None
+    chart.shape = 8
     worksheet.add_chart(chart, "D3")
 
     workbook.save('delays.xlsx')
 	```
 
-    TODO: Tweak this code.
+    This code begins by creating a `Workbook` object, getting a reference to the active worksheet, and adding rows to the worksheet. The first cell in each row contains an airport code, and the second contains the average arrival delay for flights originating from that airport. It then creates a `BarChart` object and adds it to the worksheet. The `BarChart` object gets it data from the rows and columns added previously.
 
 1. Confirm that the project directory now contains a file named **delays.csv**. Open the file in Microsoft Excel and confirm that it looks like this:
 
-    ![Bar chart depicting airport delays](media/tk.png)
+    ![Bar chart depicting airport delays](media/openpyxl.png)
 
-OpenPyXL gives you the ability to create spreadsheets on the fly. But what if you wanted to use Python to add whole new capabilities to Excel? What if, for example, you wanted to use machine learning to make predictions from values in a spreadsheet? Funny you should ask, because that is exactly the focus of the next lesson.
+OpenPyXL gives you the ability to create spreadsheets on the fly. But what if you wanted to use Python to add whole new capabilities to Excel? What if, for example, you wanted to use machine learning to make predictions from values in a spreadsheet? Funny you should ask, because that is exactly what you will do in the next lesson.
