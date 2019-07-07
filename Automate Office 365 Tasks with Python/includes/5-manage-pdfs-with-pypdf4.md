@@ -8,12 +8,11 @@ You need help. You need [PyPDF4](https://pypi.org/project/PyPDF4/).
 
 ## Install PyPDF4
 
-**PyPDF4** is an open-source library for manipulating PDF documents in Python. It has functions for extracting title, author, and other information from PDFs, splitting documents into pages, merging documents, cropping pages, encrypting and decrypting documents, and more. [Cameron Laird](https://pypi.org/user/claird/) adopted the project from an earlier version by [Mathieu Fenniak](https://mathieu.fenniak.net/), and now offers it under the BSD open-source license. With **PyPDF4**, just two lines of code are sufficient to count the number of pages in a PDF (three if you count the line that closes the file):
+**PyPDF4** is an open-source library for manipulating PDF documents in Python. It has functions for extracting title, author, and other information from PDFs, splitting documents into pages, merging documents, cropping pages, encrypting and decrypting documents, and more. [Cameron Laird](https://pypi.org/user/claird/) adopted the project from an earlier version by [Mathieu Fenniak](https://mathieu.fenniak.net/), and now offers it under the BSD open-source license. With **PyPDF4**, just two lines of code are sufficient to count the number of pages in a PDF:
 
 ```python
 reader = PyPDF4.PdfFileReader(open("pdfDocument", "rb"))
 number_of_pages = reader.numPages
-reader.close()
 ```
 
 Like any Python package, **PyPDF4** must be installed before it can be used. In a Command Prompt window or terminal, execute the following command to install it:
