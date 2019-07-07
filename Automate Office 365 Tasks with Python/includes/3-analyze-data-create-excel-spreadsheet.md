@@ -1,6 +1,6 @@
 # Analyze data and create an Excel spreadsheet
 
-The program that you wrote to analyze flight delays and produce a Word document summarizing the results went over well and is saving you up to an hour a day. But management wants more. They have requested a spreadsheet to accompany the Word document. The spreadsheet should include the airports that incurred the worst average arrival delays the day before. Moreover, it should include a chart depicting those delays.
+The program that you wrote to analyze flight delays and produce a Word document summarizing the results went over well and is saving you time each day. But management wants more. They have requested a spreadsheet to accompany the Word document. The spreadsheet should include the airports that incurred the worst average arrival delays. Moreover, it should include a chart depicting those delays.
 
 [Python-docx](https://python-docx.readthedocs.io/en/latest/) saved the day when it came to producing Word documents. [OpenPyXL](https://openpyxl.readthedocs.io/en/stable/) is to Excel as Python-docx is to Word: It lets Python apps create Excel spreadsheets, read Excel spreadsheets, and more. More importantly, it supports virtually all of the features of Excel, including the ability to produce charts and graphs.
 
@@ -19,7 +19,7 @@ You already know that Pandas is a popular Python library for manipulating and an
 
     If you installled Pandas in the previous lesson, you don't have to install it again. But it's important to install OpenPyXL because you will use it in the next exercise.
 
-1. In the previous lesson, you downloaded a small CSV containing information about flight arrivals and departures for a single day. Let's download a much larger one that contains information for an entire month of flights.
+1. In the previous lesson, you downloaded a small CSV containing information about flight arrivals and departures for a single day. Let's download a much larger one that contains data for an entire month.
 
     Create a directory to serve as your project directory and `cd` into it. Then use this command to download a CSV file containing the information on flight delays incurred during the previous month:
 
