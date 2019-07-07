@@ -116,4 +116,4 @@ Now it's time to work some magic with OpenPyXL. The first step is to to create a
 
     ![Bar chart depicting airport delays](media/openpyxl.png)
 
-OpenPyXL gives you the ability to create spreadsheets on the fly. But what if you wanted to use Python to add whole new capabilities to Excel? What if, for example, you wanted to use machine learning to make predictions from values in a spreadsheet? Funny you should ask, because that is the subject of the next lesson.
+OpenPyXL gives you the ability to create spreadsheets on the fly. But what if you wanted to use Python to add entirely new capabilities to Excel? What if, for example, you wanted to use machine learning to make predictions from values in a spreadsheet? Funny you should ask, because that is the subject of the next lesson.
