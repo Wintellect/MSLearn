@@ -25,7 +25,7 @@ Pandas, short for *Python Data Analysis Library*, is one of the world's most pop
 	curl https://topcs.blob.core.windows.net/public/flights.csv -o flights.csv
 	```
 
-	`curl` is a Linux command. It's also installed on Windows 10 build 1706 and higher. If you are running an older version of Windows, you can download `curl` from the [`curl` download page](https://curl.haxx.se/download.html), or you can download the CSV file directly from [here](https://topcs.blob.core.windows.net/public/flight_delays.csv).
+	`curl` is a Linux command. It's also installed on Windows 10 build 1706 and higher. If you are running an older version of Windows, you can download `curl` from the [`curl` download page](https://curl.haxx.se/download.html), or you can download the CSV file directly from [here](https://topcs.blob.core.windows.net/public/flights.csv).
 
 1. Take a moment to browse the contents of **flights.csv**. It contains a header row with column names, followed by more than 20,000 rows containing information about individual flights. The ORIGIN column identifies the airport that the flight originated from. DEP_DELAY indicates the number of minutes each flight was late in departing. A negative number means the flight left early.
 
