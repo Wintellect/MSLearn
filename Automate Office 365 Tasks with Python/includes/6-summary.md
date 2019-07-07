@@ -30,8 +30,8 @@ Whatever your needs when it comes to automating or enhancing Office, there is pr
 	- **.pksave** files
 	- Scikit-learn models cannot be saved
 
-1. Question
-	- tk
-	- tk
-	- tk
-	- tk
+1. Which of the following Pandas `DataFrame` methods groups data using a specified column?
+	- `mean()`
+	- `group()`
+	- `group_by()`
+	- `groupby()`
