@@ -68,7 +68,7 @@ As in the previous lesson, the data source is a single CSV file. Recall that Pan
 
 ## Generate an Excel spreadsheet with OpenPyXL
 
-TODO: Add introduction.
+Now it's time to work some magic with OpenPyXL. The first step is to to create a spreadsheet and inject rows and columns listing the mean delays at the airports in `mean_by_airport`. The second is to create a bar chart from the data.
 
 1. Open **chart_delays.py** and insert the following statements at the top of the file:
 
@@ -104,7 +104,7 @@ TODO: Add introduction.
     workbook.save('delays.xlsx')
 	```
 
-    This code begins by creating a `Workbook` object, getting a reference to the active worksheet, and adding rows to the worksheet. The first cell in each row contains an airport code, and the second contains the average departure delay for flights originating from that airport. It then creates a `BarChart` object and adds it to the worksheet. The `BarChart` object gets it data from the rows and columns added previously.
+    This code begins by creating a `Workbook` object, getting a reference to the active worksheet, and adding rows to the worksheet. The first cell in each row contains an airport code; the second contains the average departure delay for flights originating from that airport. It then creates a `BarChart` object and adds it to the worksheet. The `BarChart` object gets it data from the rows and columns added previously.
 
 1. Use the following command to execute **chart_delays.py** again:
 
