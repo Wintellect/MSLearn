@@ -19,8 +19,8 @@ _Performing sentiment analysis in Excel_
 In this module, you will learn:
 
 - How to set up a working Python development environment
-- How to read from and write to Microsoft Word documents using Python
-- How to read from and write to Microsoft Excel documents using Python
+- How to create Microsoft Word documents using Python
+- How to create Microsoft Excel spreadsheets using Python
 - How to write UDFs in Python and call them from Excel
 - How to write Python apps that extract pages from PDFs
 
