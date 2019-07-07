@@ -119,7 +119,13 @@ TODO: Add introduction.
 
     This code begins by creating a `Workbook` object, getting a reference to the active worksheet, and adding rows to the worksheet. The first cell in each row contains an airport code, and the second contains the average arrival delay for flights originating from that airport. It then creates a `BarChart` object and adds it to the worksheet. The `BarChart` object gets it data from the rows and columns added previously.
 
-1. Confirm that the project directory now contains a file named **delays.csv**. Open the file in Microsoft Excel and confirm that it looks like this:
+1. Use the following command to execute **all_delays.py** again:
+
+	```bash
+	python all_delays.py
+	```
+
+1. Confirm that the project directory now contains a file named **delays.xslx**. Open the file in Microsoft Excel and confirm that it looks like this:
 
     ![Bar chart depicting airport delays](media/openpyxl.png)
 
