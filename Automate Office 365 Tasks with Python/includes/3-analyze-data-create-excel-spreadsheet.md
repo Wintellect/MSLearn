@@ -1,6 +1,6 @@
 # Analyze data and create an Excel spreadsheet
 
-The program that you wrote to analyze flight delays and produce a Word document summarizing the results went over well and is saving you time each day. But management wants more. They want a spreadsheet to go with the Word document. The spreadsheet should include the airports that incurred the worst average arrival delays. Moreover, it should include a chart depicting those delays.
+The program that you wrote to analyze flight delays and produce a Word document summarizing the results went over well and is saving you up to an hour a day. But management wants more. They want a spreadsheet to go with the Word document. The spreadsheet should include the airports that incurred the worst average arrival delays. Moreover, it should include a chart depicting those delays.
 
 [Python-docx](https://python-docx.readthedocs.io/en/latest/) saved the day when it came to producing Word documents. [OpenPyXL](https://openpyxl.readthedocs.io/en/stable/) is to Excel as Python-docx is to Word: It lets Python apps create Excel spreadsheets, read Excel spreadsheets, and more. More importantly, it supports virtually all of the features of Excel, including the ability to produce charts and graphs.
 
