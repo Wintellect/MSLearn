@@ -51,7 +51,7 @@ The first order of business is to write a simple Python app that recursively enu
                 print(f"{pdf_filename} has {reader.numPages} pages.")
 	```
 
-	This code uses Python's [`glob`](https://docs.python.org/3/library/glob.html) module to enumerate files and folders. It opens each PDF that it finds and uses the `numPages` property to get a page count.
+	This code uses Python's [`glob`](https://docs.python.org/3/library/glob.html) module to enumerate files and folders. It opens each PDF that it finds and uses the `numPages` attribute to get a page count.
 
 1. Now find a folder on your hard disk that holds several PDFs (they don't have to be in the folder itself; they can be in subfolders, too) and execute the following command, replacing PATH with the path to the folder:
 
