@@ -40,15 +40,15 @@ The first order of business is to write a simple Python app that recursively enu
 	    # Python's "with" statement introduces a "context manager" which takes
 	    # responsibility for closing pdf_handle appropriately.
 	    with open(pdf_filename, "rb") as pdf_handle:
-	    try:
-	        reader = PyPDF4.PdfFileReader(pdf_handle)
-	    except PyPDF4.utils.PdfReadError:
-	        # Certain applications, including scanners, often produce
-	        # non-conformant PDF. Just skip them, for now.
-	        print(f"Document {pdf_filename} appears to follow a specification "
-	        "PyPDF4 doesn't yet know.")
-		    continue
-	    print(f"{pdf_filename} has {reader.numPages} pages.")
+	        try:
+	            reader = PyPDF4.PdfFileReader(pdf_handle)
+	        except PyPDF4.utils.PdfReadError:
+	            # Certain applications, including scanners, often produce
+	            # non-conformant PDF. Just skip them, for now.
+	            print(f"Document {pdf_filename} appears to follow a specification "
+	            "PyPDF4 doesn't yet know.")
+		        continue
+	        print(f"{pdf_filename} has {reader.numPages} pages.")
 	```
 
 	This code uses Python's [`glob`](https://docs.python.org/3/library/glob.html) module to enumerate files and folders. It opens each PDF that it finds and uses the `numPages` attribute to get a page count.
