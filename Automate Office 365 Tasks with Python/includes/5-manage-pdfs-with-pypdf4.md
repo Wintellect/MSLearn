@@ -32,7 +32,6 @@ The first order of business is to write a simple Python app that recursively enu
 	```python
 	import glob
 	import sys
-
 	import PyPDF4
 
 	top = sys.argv[1]
