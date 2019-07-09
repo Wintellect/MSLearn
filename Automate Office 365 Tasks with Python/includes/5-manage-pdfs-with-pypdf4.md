@@ -146,8 +146,7 @@ Have you ever needed to print a PDF document without the cover page, with two co
 	def write_result(destination_handle, destination_filename):
 	    destination_handle.write(open(destination_filename, "wb"))
 	
-	if __name__ == '__main__':
-	    main()
+	main()
 	```
 
 	Once more, PyPDF4 does the heavy lifting. The bulk of the code deals with parsing the command line to determine precisely which pages should be copied from the source document to the output document. Once that's determined, the `extract_to()` function does most of the work, and even it contains just two lines of code (not counting comments) consisting of a `for` loop and calls to PyPDF4's `getPage()` and `addPage()` methods. 
