@@ -30,9 +30,7 @@ The first order of business is to write a simple Python app that recursively enu
 1. Use your favorite text editor to create a file named **count_pages.py** and paste the following code into it:
 
 	```python
-	import glob
-	import sys
-	import PyPDF4
+	import sys, glob, PyPDF4
 
 	top = sys.argv[1]
 	for pdf_filename in glob.iglob(f"{top}/**/*.pdf", recursive=True):
@@ -45,7 +43,7 @@ The first order of business is to write a simple Python app that recursively enu
 	        except PyPDF4.utils.PdfReadError:
 	            # Certain applications, including scanners, often produce
 	            # non-conformant PDF. Just skip them, for now.
-	            print(f"{pdf_filename} is not ina format that PyPDF4 understands"
+	            print(f"{pdf_filename} is not in a format that PyPDF4 understands"
 	            continue
 	```
 
