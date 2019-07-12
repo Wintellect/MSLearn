@@ -166,7 +166,7 @@ Have you ever needed to print a PDF document without the cover page, with two co
 	python extract_pages.py PATH result.pdf pages=2,4-6,10,10
 	```
 
-	This time, **result.pdf** should contain pages 2, 4, 5, 6 from the original document, plus two copies of page 10.
+	This time, **result.pdf** should contain pages 2, 4, 5, and 6 from the original document, plus two copies of page 10.
 
 You could modify **extract_pages.pdf** to do even more. You could, for example, have it support commands such as this to copy all pages from page 7 to the end of the document:
 
