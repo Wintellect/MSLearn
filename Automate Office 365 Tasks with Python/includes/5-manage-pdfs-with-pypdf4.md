@@ -123,14 +123,14 @@ Have you ever needed to print a PDF document without the cover page, with two co
 	    example_cmd = (f"\n\t{args[0]} <SOURCE_PDF> "
 	                   f"<DESTINATION_PDF> {page_prefix}<PAGE_NUMBERS>.")
 	    if len(args) != 4:
-	        print("Make sure you include 3 arguments, rather than "
+	        print("Make sure you include 3 arguments rather than "
 	              f"{len(args) - 1}:{example_cmd}")
 	        sys.exit(1)
 	    source_filename, destination_filename, pages_arg = args[1:]
 	    if pages_arg.startswith(page_prefix):
 	        pages_arg = pages_arg[len(page_prefix):]
 	    else:
-	        print(f"Make sure you format the page numbers as indicated:{example_cmd}")
+	        print(f"Make sure you format the page numbers as indicated: {example_cmd}")
 	        sys.exit(1)
 	    destination_handle = PdfFileWriter()
 	    source_handle = PdfFileReader(open(source_filename, "rb"))
