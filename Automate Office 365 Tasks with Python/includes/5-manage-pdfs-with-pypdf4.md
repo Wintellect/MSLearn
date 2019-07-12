@@ -31,19 +31,21 @@ The first order of business is to write a simple Python app that recursively enu
 
 	```python
 	import sys, glob, PyPDF4
-
-	top = sys.argv[1]
+	
+	if len(sys.argv) >= 2:
+	    top = sys.argv[1]
+	else:
+	    top = '.'
+	
 	for pdf_filename in glob.iglob(f"{top}/**/*.pdf", recursive=True):
-	    # Python's "with" statement introduces a "context manager" which takes
-	    # responsibility for closing pdf_handle appropriately.
 	    with open(pdf_filename, "rb") as pdf_handle:
 	        try:
 	            reader = PyPDF4.PdfFileReader(pdf_handle)
 	            print(f"{pdf_filename} has {reader.numPages} pages.")
 	        except PyPDF4.utils.PdfReadError:
 	            # Certain applications, including scanners, often produce
-	            # non-conformant PDF. Just skip them, for now.
-	            print(f"{pdf_filename} is not in a format that PyPDF4 understands"
+	            # non-conformant PDF. Just skip them.
+	            print(f"{pdf_filename} is not in a format that PyPDF4 understands")
 	            continue
 	```
 
