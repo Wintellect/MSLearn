@@ -84,7 +84,7 @@ Have you ever needed to print a PDF document without the cover page, with two co
 	
 	def extract_to(source_handle, destination_handle, page_numbers):
 	    ''' The actual work of copying pages from source PDF to target PDF happens here.
-	        Notice that PyPDF4 makes the coding almost trivially brief.
+	        Notice that PyPDF4 makes the coding almost trivial.
 	        
 	        page_numbers is a list of one-based page numbers.
 	    '''
@@ -93,9 +93,6 @@ Have you ever needed to print a PDF document without the cover page, with two co
 	        destination_handle.addPage(source_handle.getPage(page_number - 1))
 	
 	def main():
-	    ''' PyPDF4 does so much for us that the hardest programming in this little
-	        utility has to do with parsing the command line.
-	    '''
 	    (source_handle, destination_handle,
 	     destination_filename, page_numbers) = parse_commandline()
 	    extract_to(source_handle, destination_handle, page_numbers)
@@ -104,46 +101,48 @@ Have you ever needed to print a PDF document without the cover page, with two co
 	def parse_commandline():
 	    '''
 	        Return a quadruple, of which the last element is a list of integer
-	        1-based page numbers.  Example:  a third command-line argument of
+	        1-based page numbers. Example: A third command-line argument of
 	            pages=1-3,5,8,11-14
 	        becomes the list
 	            [1, 2, 3, 5, 8, 11, 12, 13, 14]
-	        
-	        Possible improvements for the future:
-	        * recognize
-	              page=7
-	          in place of
-	              pages=7
-	        * allow more freedom in formatting, perhaps including whitespace
-	        * interpret ranges more expressively, so that, for instance, '9-7'
-	          could mean the same as '9,8,7', rather than just being empty.
 	    '''
 	    args = sys.argv
 	    page_prefix = "pages="
-	    example_cmd = (f"\n\t{args[0]} <SOURCE_PDF> "
-	                   f"<DESTINATION_PDF> {page_prefix}<PAGE_NUMBERS>.")
+	    example_cmd = (f"{args[0]} <SOURCE_PDF> "
+	                   f"<DESTINATION_PDF> {page_prefix}<PAGE_NUMBERS>")
+	
 	    if len(args) != 4:
-	        print("Make sure you include 3 arguments rather than "
-	              f"{len(args) - 1}:{example_cmd}")
+	        print(f"Syntax: {example_cmd}")
 	        sys.exit(1)
+	
 	    source_filename, destination_filename, pages_arg = args[1:]
+	
 	    if pages_arg.startswith(page_prefix):
 	        pages_arg = pages_arg[len(page_prefix):]
 	    else:
-	        print(f"Make sure you format the page numbers as indicated: {example_cmd}")
+	        print(f"Syntax: {example_cmd}")
 	        sys.exit(1)
+	
 	    destination_handle = PdfFileWriter()
-	    source_handle = PdfFileReader(open(source_filename, "rb"))
-	    page_numbers = []
-	    for page_part in pages_arg.split(','):
-	        page_range = page_part.split('-')
-	        if len(page_range) == 2:
-	            for page in range(int(page_range[0]), int(page_range[1]) + 1):
-	                page_numbers.append(page)
-	        else:
-	            page_numbers.append(int(page_range[0]))
-	    return (source_handle, destination_handle, destination_filename,
-	            page_numbers)
+	    
+	    try:
+	        source_handle = PdfFileReader(open(source_filename, "rb"))
+	        page_numbers = []
+	        for page_part in pages_arg.split(','):
+	            page_range = page_part.split('-')
+	            if len(page_range) == 2:
+	                for page in range(int(page_range[0]), int(page_range[1]) + 1):
+	                    page_numbers.append(page)
+	            else:
+	                page_numbers.append(int(page_range[0]))
+	        return (source_handle, destination_handle, destination_filename,
+	                page_numbers)
+	    except FileNotFoundError:
+	        print(f"\"{source_filename}\" not found")
+	        sys.exit(1)
+	    except:
+	        print(f"Error processing \"{source_filename}\"")
+	        sys.exit(1)
 	
 	def write_result(destination_handle, destination_filename):
 	    destination_handle.write(open(destination_filename, "wb"))
