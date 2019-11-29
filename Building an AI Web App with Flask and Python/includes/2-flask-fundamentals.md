@@ -111,7 +111,7 @@ In effect, **master.html** becomes a template for output, and you customize the 
 
 ### Control-of-flow expressions
 
-Expresions delimited by `{{` and `}}` aren't the only special ones that Flask supports. It also supports control-of-flow statements enclosed in `{%` and `%}`. For example, the following HTML template displays a default message in a page if the `message` variable isn't defined:
+Expressions delimited by `{{` and `}}` aren't the only special ones that Flask supports. It also supports control-of-flow statements enclosed in `{%` and `%}`. For example, the following HTML template displays a default message in a page if the `message` variable isn't defined:
 
 ```html
 {% if message %}
