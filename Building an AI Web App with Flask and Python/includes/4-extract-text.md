@@ -24,7 +24,7 @@ You can obtain a Computer Vision API key using the [Azure CLI](https://docs.micr
 1. Open a Command Prompt window or terminal and use the following command to create a resource group named "contoso-travel-rg" in Azure's North Central US region to hold all the Azure resources you create in this module:
 
 	```
-	az group create  --name contoso-travel-rg --location northcentralus
+	az group create --name contoso-travel-rg --location northcentralus
 	```
 
 	Resource groups are an incredibly important feature of Azure. They act as containers for other Azure resources and serve to group those resources together so you can view billing information for them as a group, apply security rules as a group, and even delete them as a group. *Every* Azure resource that you create must be part of a resource group.
