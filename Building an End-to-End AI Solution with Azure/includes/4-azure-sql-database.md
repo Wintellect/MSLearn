@@ -4,7 +4,7 @@ In the unit, you wrote an Azure Function that passes each photo uploaded to a bl
 
 ## Create an Azure SQL Database ##
 
-Let's begin by using the Azure Cloud Shell to create an Azure SQL Database. This database will collect output from the Azure Function you connected to Stream Analytics in the previous lab. Later, you will connect the database to Power BI to show where polar bears are being spotted.
+Let's begin by using the Azure Cloud Shell to create an Azure SQL Database. This database will collect output from the Azure Function you deployed previously. Later, you will connect the database to Power BI to show where polar bears are being spotted.
 
 1. Return to the Azure Portal. Click the **Cloud Shell** button in the toolbar at the top of the page to open the Azure Cloud Shell. If you would prefer to run the Cloud Shell in its own browser window, open a separate browser instance and navigate to https://shell.azure.com.
 
