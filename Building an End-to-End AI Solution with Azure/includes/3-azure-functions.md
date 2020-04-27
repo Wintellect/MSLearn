@@ -1,33 +1,10 @@
-# Azure Functions #
+# Write an Azure Function to analyze photographs #
 
-In this lab, you will write an Azure Function that is triggered each time an image is uploaded to the "photos" container in the storage account you created earlier. The function will use the Custom Vision Service model you created in the previous lab to determine whether the photo contains a polar bear.
+In this unit, you will write an Azure Function that is triggered each time an image is uploaded to the "photos" container in the storage account you created earlier. The function will use the Custom Vision Service model you created in the previous lab to determine whether the photo contains a polar bear.
 
-<a name="Prerequisites"></a>
-### Prerequisites ###
+## Create an Azure Function ##
 
-The following are required to complete this hands-on lab:
-
-- An active Microsoft Azure subscription. If you don't have one, [sign up for a free trial](http://aka.ms/WATK-FreeTrial).
-- [Node.js](https://nodejs.org/)
-
-If you haven't completed the previous lab, you must do so before starting this lab.
-
----
-
-<a name="Exercises"></a>
-## Exercises ##
-
-This hands-on lab includes the following exercises:
-
-- [Exercise 1: Create an Azure Function](#Exercise1)
-- [Exercise 2: Run the camera array](#Exercise2)
-
-Estimated time to complete this lab: **30** minutes.
-
-<a name="Exercise1"></a>
-## Exercise 1: Create an Azure Function ##
-
-Azure Functions can be written in the Azure Portal or written externally using tools such as Visual Studio. In this exercise, you will write an Azure Function in the portal. The function will be written in JavaScript and executed using Azure Functions' Node.js run-time. It will be triggered each time an image is uploaded to the "photos" container that you created in blob storage, and it will pass each blob that is uploaded to the Custom Vision Service to be analyzed for polar bears.
+Azure Functions can be written in the Azure Portal or written externally using tools such as Visual Studio. You will write an Azure Function in the portal. The function will be written in JavaScript and executed using Azure Functions' Node.js run-time. It will be triggered each time an image is uploaded to the "photos" container that you created in blob storage, and it will pass each blob that is uploaded to the Custom Vision Service to be analyzed for polar bears.
 
 1. In the Azure Portal, click **+ Create a resource**, followed by **Compute** and **Function App**.
 
@@ -194,10 +171,9 @@ Azure Functions can be written in the Azure Portal or written externally using t
 
 The reason for the text "undefined at undefined, undefined" in the log output is that the function attempted to read the latitude, longitude, and camera ID from blob metadata and include them in the output, but those metadata values don't exist since you uploaded the blob manually. That will change when your virtual cameras upload photos to blob storage.
 
-<a name="Exercise2"></a>
-## Exercise 2: Run the camera array ##
+## Run the camera array ##
 
-In this exercise, you will run the simulated camera array that you created earlier. Then you will check the log output from the Azure Function to verify that images are being uploaded to blob storage and analyzed for polar bears. 
+Next, you will run the simulated camera array that you created earlier. Then you will check the log output from the Azure Function to verify that images are being uploaded to blob storage and analyzed for polar bears. 
 
 1. Return to the project directory in a Command Prompt or terminal window. Then use the following command to run **run.js**:
 
