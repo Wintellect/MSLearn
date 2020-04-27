@@ -1,4 +1,4 @@
-# Custom Vision Service #
+# Train a machine-learning model to recognize polar bears #
 
 [Azure Cognitive Services](https://azure.microsoft.com/services/cognitive-services/) is a suite of more than 20 services and APIs backed by machine learning that enables developers to incorporate intelligent features such as facial recognition and sentiment analysis into their applications. The [Custom Vision Service](https://azure.microsoft.com/services/cognitive-services/custom-vision-service/) is one member of the Cognitive Services family. Its purpose is to create image-classification models that "learn" from labeled images you provide. Want to know if a photo contains a picture of a flower? Train the Custom Vision Service with a collection of flower images, and it can tell you whether the next image includes a flower — or even what type of flower it is.
 
@@ -6,34 +6,11 @@
 
 The Custom Vision Service exposes two APIs: the [Custom Vision Training API](https://southcentralus.dev.cognitive.microsoft.com/docs/services/d9a10a4a5f8549599f1ecafc435119fa/operations/58d5835bc8cb231380095be3) and the [Custom Vision Prediction API](https://southcentralus.dev.cognitive.microsoft.com/docs/services/eb68250e4e954d9bae0c2650db79c653/operations/58acd3c1ef062f0344a42814). You can build, train, and test image-classification models using the [Custom Vision Service portal](https://www.customvision.ai/), or you can build, train, and test them using the Custom Vision Training API. Once a model is trained, you can use the Custom Vision Prediction API to build apps that utilize it. Both are REST APIs that can be called from a variety of programming languages.
 
-In this lab, you will create a Custom Vision Service model and train it to differentiate between various types of Arctic wildlife.
+In this unit, you will create a Custom Vision Service model and train it to differentiate between various types of Arctic wildlife.
 
-<a name="Prerequisites"></a>
-### Prerequisites ###
+## Build a Custom Vision Service model ##
 
-The following are required to complete this hands-on lab:
-
-- An active Microsoft Azure subscription. If you don't have one, [sign up for a free trial](http://aka.ms/WATK-FreeTrial).
-- [Node.js](https://nodejs.org/)
-
-If you haven't completed the previous lab, you must do so before starting this lab.
-
----
-
-<a name="Exercises"></a>
-## Exercises ##
-
-This hands-on lab includes the following exercises:
-
-- [Exercise 1: Build a Custom Vision Service model](#Exercise1)
-- [Exercise 2: Train and test the model](#Exercise2)
-
-Estimated time to complete this lab: **30** minutes.
-
-<a name="Exercise1"></a>
-## Exercise 1: Build a Custom Vision Service model ##
-
-In this exercise, you will create a new Custom Vision Service project. Then you will upload images of polar bears, arctic foxes, and walruses and tag the images so the Custom Vision Service can learn to differentiate between them.
+You will begin by creating a new Custom Vision Service project. Then you will upload images of polar bears, arctic foxes, and walruses and tag the images so the Custom Vision Service can learn to differentiate between them.
 
 1. Open the [Custom Vision Service portal](https://www.customvision.ai/) in your browser. Then click **Sign In** and sign in with your Microsoft account. 
  
@@ -77,10 +54,9 @@ In this exercise, you will create a new Custom Vision Service project. Then you 
 
 With the images tagged and uploaded, the next step is to train the model so it can distinguish between Arctic foxes, polar bears, and walruses, as well as determine whether an image contains one of these animals.
 
-<a name="Exercise2"></a>
-## Exercise 2: Train and test the model ##
+## Train and test the model ##
 
-In this exercise, you will train the model using the images that you tagged and uploaded in the previous exercise. Then you will test the model to determine how adept it is at identifying Arctic wildlife in photos. Training can be accomplished with a simple button click in the portal, or by calling the [TrainProject](https://southcentralus.dev.cognitive.microsoft.com/docs/services/d9a10a4a5f8549599f1ecafc435119fa/operations/58d5835bc8cb231380095bed) method in the [Custom Vision Training API](https://southcentralus.dev.cognitive.microsoft.com/docs/services/d9a10a4a5f8549599f1ecafc435119fa/operations/58d5835bc8cb231380095be3). Once trained, a model can be refined by uploading additional tagged images and retraining it.
+Now it's time to train the model using the images that you tagged and uploaded in the previous exercise. After training the mode, you will test it to determine how adept it is at identifying Arctic wildlife in photos. Once trained, a model can be refined by uploading additional tagged images and retraining it.
 
 1. Click the **Train** button at the top of the page to train the model. When prompted to choose a training type, select **Quick Training**.
 
