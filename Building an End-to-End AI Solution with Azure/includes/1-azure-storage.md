@@ -1,35 +1,8 @@
-# Azure Storage #
+# Create a storage account and deploy an array of cameras #
 
-You are the leader of a group of climate scientists who are concerned about the dwindling polar-bear population in the Arctic. As such, your team has placed hundreds of motion-activated cameras at strategic locations throughout the region. Rather than manually examine each photograph to determine whether it contains a polar bear, you have been challenged to devise an automated system that processes data from these cameras in real time and displays an alert on a map when a polar bear is photographed. You need a solution that incorporates real-time stream processing to analyze raw data for potential sightings, and one that incorporates artificial intelligence (AI) and machine learning to determine with a high degree of accuracy whether a photo contains a polar bear. And you need it fast, because climate change won't wait.
+In this unit, you will create a storage account and implement a simulated camera array in [Node.js](https://nodejs.org/) that uploads wildlife photos to the storage account. These represent the first steps toward building an end-to-end solution that demonstrates how Azure services are combined to create sophisticated systems that incorporate cloud services and AI.
 
-In a series of hands-on labs, you will build such a system using [Microsoft Azure](https://azure.microsoft.com/) and [Azure Cognitive Services](https://azure.microsoft.com/services/cognitive-services/). Specifically, you will use [Azure Blob Storage](https://azure.microsoft.com/services/storage/blobs/) to store photographs, Azure's [Custom Vision Service](https://azure.microsoft.com/services/cognitive-services/custom-vision-service/) to analyze photographs for polar bears, [Azure Functions](https://azure.microsoft.com/services/functions/) to pass each photograph uploaded to blob storage to the Custom Vision Service, [Microsoft Power BI](https://powerbi.microsoft.com/) to build a dashboard for visualizing results, and [Azure SQL Database](https://azure.microsoft.com/services/sql-database/) as a data source for Power BI.
-
-![](media/live-map.png)
-
-In this lab, you will create a storage account and implement a simulated camera array in [Node.js](https://nodejs.org/) that uploads wildlife photos to the storage account. These represent the first steps toward building an end-to-end solution that demonstrates how Azure services are combined to create sophisticated systems that incorporate cloud services and AI.
-
-<a name="Prerequisites"></a>
-### Prerequisites ###
-
-The following are required to complete this hands-on lab:
-
-- An active Microsoft Azure subscription. If you don't have one, [sign up for a free trial](http://aka.ms/WATK-FreeTrial).
-- [Node.js](https://nodejs.org/)
-
----
-
-<a name="Exercises"></a>
-## Exercises ##
-
-This hands-on lab includes the following exercises:
-
-- [Exercise 1: Create a storage account](#Exercise1)
-- [Exercise 2: Deploy a simulated camera array](#Exercise2)
-
-Estimated time to complete this lab: **30** minutes.
-
-<a name="Exercise1"></a>
-## Exercise 1: Create a storage account ##
+## Create a storage account ##
 
 In this exercise, you will use the [Azure Cloud Shell](https://azure.microsoft.com/features/cloud-shell/) to create an Azure storage account. The storage account will store as blobs photographs taken by the simulated cameras that you deploy. The Cloud Shell provides a browser-based command line for executing Azure commands and is an alternative to the [Azure CLI](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest), which allows you to execute the same commands on your local workstation. Whether to use the CLI or the Cloud Shell is often a matter of personal preference. One of the advantages of the Cloud Shell is that it doesn't require you to install any software on your PC. Another is that you don't have to update it periodically as you do the CLI.
 
@@ -77,8 +50,7 @@ In this exercise, you will use the [Azure Cloud Shell](https://azure.microsoft.c
 
 You now have a storage account for storing photos and a container to store them in. Now let's deploy some cameras to snap wildlife photos and upload them to blob storage.
 
-<a name="Exercise2"></a>
-## Exercise 2: Deploy a simulated camera array ##
+## Deploy a simulated camera array ##
 
 In this exercise, you will create a Node.js app that simulates an array of motion-activated cameras that upload photographs taken in the wild to the container you created in the previous exercise.
 
