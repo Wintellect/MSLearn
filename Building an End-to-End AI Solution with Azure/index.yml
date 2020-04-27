@@ -1,0 +1,38 @@
+### YamlMime:Module
+uid: learn.host-ml-model-in-azure
+metadata:
+  title: Build a Machine-Learning Model and Deploy to Azure Using Containers - Learn
+  description: Build a machine-learning model in Python, run it in a Docker container in Azure, and call it from a client app
+  ms.date: 06/24/2019
+  author: v-jeffpr
+  ms.author: shana.matthews
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+title: Build a Machine-Learning Model and Deploy to Azure Using Containers
+summary: Build a machine-learning model in Python, run it in a Docker container in Azure, and call it from a client app
+abstract:  | 
+  In this module, you will:
+  - Create a Jupyter notebook in Azure
+  - Build and train a machine-learning model
+  - Load the model in a Python app
+  - Use Flask to make the model available using REST APIs
+  - Use the Azure Cloud Shell to a deploy an Azure Container Registry
+  - Use the Azure Cloud Shell to build a Docker image and deploy it to Azure
+  - Use the Azure Cloud Shell to a launch an Azure Container Instance
+  - Build a client app that invokes the machine-learning model by placing calls to the container
+  prerequisites: None
+#iconUrl:
+levels:
+- intermediate
+roles:
+- developer
+products:
+- azure
+units:
+- learn.host-ml-model-in-azure.0-introduction
+- learn.host-ml-model-in-azure.1-build-train-serialize-model
+- learn.host-ml-model-in-azure.2-build-docker-image
+- learn.host-ml-model-in-azure.3-run-container
+- learn.host-ml-model-in-azure.4-build-client-app
+- learn.host-ml-model-in-azure.5-summary
+achievement: learn.placeholder.badge
