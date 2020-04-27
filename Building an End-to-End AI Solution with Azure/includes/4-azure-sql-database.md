@@ -1,33 +1,10 @@
-# Azure SQL Database #
+# Deploy an Azure SQL Database #
 
-In the previous lab, you wrote an Azure Function that passes each photo uploaded to a blob container to the Custom Vision Service to determine whether the photo contains a polar bear. The only output from the function was log output showing the verdict rendered by the Custom Vision Service, as well as the ID and location of the camera that snapped the photo. In this lab, you will create an [Azure SQL Database](https://azure.microsoft.com/services/sql-database/) and modify the function to write to the database. This will set the stage for visualizing polar-bear sightings in Power BI, which will draw information about what's being spotted and where from the database.
+In the unit, you wrote an Azure Function that passes each photo uploaded to a blob container to the Custom Vision Service to determine whether the photo contains a polar bear. The only output from the function was log output showing the verdict rendered by the Custom Vision Service, as well as the ID and location of the camera that snapped the photo. In this unit, you will create an [Azure SQL Database](https://azure.microsoft.com/services/sql-database/) and modify the function to write to the database. This will set the stage for visualizing polar-bear sightings in Power BI, which will draw information about what's being spotted and where from the database.
 
-<a name="Prerequisites"></a>
-### Prerequisites ###
+## Create an Azure SQL Database ##
 
-The following are required to complete this hands-on lab:
-
-- An active Microsoft Azure subscription. If you don't have one, [sign up for a free trial](http://aka.ms/WATK-FreeTrial).
-- [Node.js](https://nodejs.org/)
-
-If you haven't completed the previous lab, you must do so before starting this lab.
-
----
-
-<a name="Exercises"></a>
-## Exercises ##
-
-This hands-on lab includes the following exercises:
-
-- [Exercise 1: Create an Azure SQL Database](#Exercise1)
-- [Exercise 2: Modify the Azure Function](#Exercise2)
-
-Estimated time to complete this lab: **30** minutes.
-
-<a name="Exercise1"></a>
-## Exercise 1: Create an Azure SQL Database ##
-
-In this exercise, you will use the Azure Cloud Shell to create an Azure SQL Database. This database will collect output from the Azure Function you connected to Stream Analytics in the previous lab. Later, you will connect the database to Power BI to show where polar bears are being spotted.
+Let's begin by using the Azure Cloud Shell to create an Azure SQL Database. This database will collect output from the Azure Function you connected to Stream Analytics in the previous lab. Later, you will connect the database to Power BI to show where polar bears are being spotted.
 
 1. Return to the Azure Portal. Click the **Cloud Shell** button in the toolbar at the top of the page to open the Azure Cloud Shell. If you would prefer to run the Cloud Shell in its own browser window, open a separate browser instance and navigate to https://shell.azure.com.
 
@@ -93,10 +70,9 @@ In this exercise, you will use the Azure Cloud Shell to create an Azure SQL Data
 
 Note the column named "IsPolarBear," which will be set to 1 or 0 to indicate that the corresponding images does or does not contain a polar bear.  
 
-<a name="Exercise2"></a>
-## Exercise 2: Modify the Azure Function ##
+## Modify the Azure Function ##
 
-In this exercise, you will modify the Azure Function that you created in the previous lab to write output to the Azure SQL Database that you created in the previous exercise.
+The next step is to modify the Azure Function that you created in the previous unit to write output to the Azure SQL Database that you just created.
 
 1. Open the Azure Function App that you created in the previous lab in the Azure Portal. Click **Platform features** to open the "Platform features" tab, and then click **Console** to open a function console. Execute the following command in the function console to install the NPM [tedious](https://www.npmjs.com/package/tedious) package, and ignore any warning messages that are displayed. `tedious` provides an API allowing Node.js apps to talk to SQL Server and Azure SQL Database.
 
@@ -205,4 +181,4 @@ In this exercise, you will modify the Azure Function that you created in the pre
 
 	_Rows written to the database by the Azure Function_
 
-In the next lab, you will use Power BI to produce a more compelling — and graphical — visualization of the data.
+In the next unit, you will use Power BI to produce a more compelling — and graphical — visualization of the data.
