@@ -4,44 +4,32 @@ In this module, you built a solution that uploads images from a simulated array 
 
 ## Check your knowledge
 
-1. Flask is a framework for building Web apps in which of the following languages?
-	- Python, Node.js, and Java
-	- Python and Node.js
-	- Python and Java
-	- Python only
+1. Which of the following Azure Cloud Shell/Azure CLI commands creates an Azure storage account?
+	- `az group create`
+	- `az account create`
+	- `az storage account create`
+	- `az storage create`
 
-1. What is the name of the HTTP header that carries API keys in calls to Azure Cognitive Services?
-	- Ocp-Apim-Cognitive-Key
-	- Ocp-Apim-Subscription-Key
-	- Ocp-Apim-Auth-Key
-	- None of the above
+1. What is the difference between precision and recall when measuring the accuracy of a machine-learning model?
+	- Precision measures false positives, while recall measures false negatives
+	- Precision measures false negatives, while recall measures false positives
+	- Precision is a mean of false-positive rates computed across a range of thresholds
+	- Recall is a mean of false-positive rates computed across a range of thresholds
 
-1. What is the default port number that Flask uses to service HTTP requests?
-	- 80
-	- 5000
-	- 8080
-	- 127
+1. When deploying an Azure Function, what is one reason to choose App Service Plan over Consumption Plan?
+	- Functions hosted in an App Service Plan support parallel execution, while Functions hosted under the Consumption Plan do not
+	- App Service Plans that host Azure Functions hosted do not incur charges
+	- Functions hosted in an App Service Plan incur charges only when they execute
+	- Functions hosted in an App Service Plan execute immediately when triggered
 	
-1. Which of the following Azure CLI commands adds an application setting named API_KEY to an App Service named "contoso?"
-	- `az webapp config appsettings set -g contoso-rg -n contoso-travel --settings API_KEY=a1b2c3d4`
-	- `az webapp config appsettings add -g contoso-rg -n contoso-travel --settings API_KEY=a1b2c3d4`
-	- `az appsvc config appsettings set -g contoso-rg -n contoso-travel --settings API_KEY=a1b2c3d4`
-	- None of the above; application settings must be added through the Azure Portal
-
-1. Which of the following are valid expression delimiters in Flask?
-	- `{{` and `}}`
-	- `{%` and `%}`
-	- Both A and B
+1. When deploying an Azure SQL Database, what is the purpose of adding a client IP address?
+	- To allow other Azure services to connect to the database
+	- To allow applications running on your computer to connect to the database
+	- To make Microsoft aware of your computer's IP address for Windows updates
 	- None of the above
 
-1. How are messages "flashed" with Flask's `flash()` method shown by default?
-	- In alert boxes
-	- In modal popup windows that are browser-specific
-	- In `<div>` elements decorated with `class="flash"` attributes
-	- Flashed messages are not shown by default
-
-1. By default, HTML files served up by Flask must be located in a directory named:
-	- static
-	- html
-	- templates
-	- main
+1. Power BI Desktop runs on which of the following operating systems?
+	- Windows only
+	- Windows and macOS
+	- Windows, macOS, and Linux
+	- macOS and Linux
