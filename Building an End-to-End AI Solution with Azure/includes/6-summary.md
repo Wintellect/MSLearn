@@ -1,8 +1,6 @@
 # Summary
 
-In this module, you learned the basics of building Web sites in Python using the Flask framework. You learned that Python code goes in a file named **app.py** and that code in that file calls Flask functions such as `render_template()` and `flash()`. You also learned how to programmatically inject content into HTML templates using Flask expressions, and how to use `@app.route()` to connect functions in your code to routes supported by the application. Finally, you learned how easy it is to use the Azure CLI's `az webapp up` command to upload a Web site that you have written and tested locally to an Azure App Service.
-
-In addition, you discovered that you can use Azure Cognitive Services to build intelligent applications infused with AI. The Computer Vision API extracts text from images, identifies objects in those images, and more. It can even generate captions for the images you upload. And the Translator Text API translates text between dozens of languages. Combined with other Cognitive Services, these APIs make it possible to write apps that you could only have dreamed about just a few short years ago.
+In this module, you built a solution that uploads images from a simulated array of cameras to [Azure Blob Storage](https://azure.microsoft.com/services/storage/blobs/), triggers an [Azure Function](https://azure.microsoft.com/services/functions/) each time an image is uploaded, analyzes the images using the [Custom Vision Service](https://azure.microsoft.com/services/cognitive-services/custom-vision-service/), and visualizes the output using [Microsoft Power BI](https://powerbi.microsoft.com/). You also got first-hand experience using [Azure SQL Database](https://azure.microsoft.com/services/sql-database/). It's a sophisticated solution, and one that has applications in the real world.
 
 ## Check your knowledge
 

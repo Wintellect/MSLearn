@@ -1,35 +1,8 @@
 # Microsoft Power BI #
 
-In this lab, you will connect Microsoft Power BI to the database you created in the previous and build a report that shows in near real-time where polar bears are being spotted. You will use [Power BI Desktop](https://powerbi.microsoft.com/desktop/) to create the report, and Power BI Desktop only runs on Windows. If you aren't running Windows, one solution is to create a Windows VM in Azure and run Power BI Desktop from there.
+To complete the end-to-end solution for spotting polar bears in the wild, you will connect Microsoft Power BI to the database you created in the previous unit and build a report that shows in near real-time where polar bears are being photographed. You will use [Power BI Desktop](https://powerbi.microsoft.com/desktop/) to create the report, and Power BI Desktop only runs on Windows. If you aren't running Windows, one solution is to create a Windows VM in Azure and run Power BI Desktop from there.
 
-<a name="Prerequisites"></a>
-### Prerequisites ###
-
-The following are required to complete this hands-on lab:
-
-- An active Microsoft Azure subscription. If you don't have one, [sign up for a free trial](http://aka.ms/WATK-FreeTrial).
-- An active Microsoft Power BI subscription. If you don't have one, [sign up for a free trial](https://app.powerbi.com/signupredirect?pbi_source=web).
-- An active Microsoft work/school or organizational account
-- [Power BI Desktop](https://powerbi.microsoft.com/en-us/desktop/) (Requires Windows)
-- [Node.js](https://nodejs.org/)
-
-If you haven't completed the previous lab, you must do so before starting this lab.
-
----
-
-<a name="Exercises"></a>
-## Exercises ##
-
-This hands-on lab includes the following exercises:
-
-- [Exercise 1: Connect Power BI to the database](#Exercise1)
-- [Exercise 2: Build a report in Power BI](#Exercise2)
-- [Exercise 3: Run the end-to-end solution](#Exercise3)
-
-Estimated time to complete this lab: **30** minutes.
-
-<a name="Exercise1"></a>
-## Exercise 1: Connect Power BI to the database ##
+## Connect Power BI to the database ##
 
 You used the [Custom Vision Service](https://azure.microsoft.com/services/cognitive-services/custom-vision-service/) to train an image-classification model to differentiate between different types of Arctic wildlife, and modified the Azure Function you wrote to output the results to an Azure SQL Database. The first step in using Microsoft Power BI to explore and visualize this data is connecting it to the database. In this exercise, you will connect [Power BI Desktop](https://powerbi.microsoft.com/desktop/) to the Azure SQL Database.
 
@@ -62,8 +35,7 @@ You used the [Custom Vision Service](https://azure.microsoft.com/services/cognit
 
 After a short delay, Power BI will connect to the database and retrieve a dataset using the query you provided. The next step is to add visuals to bring that dataset to life.
 
-<a name="Exercise2"></a>
-## Exercise 2: Build a report in Power BI ##
+## Build a report in Power BI Desktop ##
 
 Visualizations (or simply "visuals") are the primary element that make up Power BI reports. In this exercise, you will use the Power BI report designer to create visuals from the database you connected to in the previous exercise, adjust filters and aggregates to refine the way the data is displayed, and format the visuals to produce compelling output.
 
@@ -154,8 +126,7 @@ Visualizations (or simply "visuals") are the primary element that make up Power 
 
 Feel free to embellish the report further. Once you're satisfied with the layout and content, it's time to put it to work using a live data source.
 
-<a name="Exercise3"></a>
-## Exercise 3: Run the end-to-end solution ##
+## Run the end-to-end solution ##
 
 Now that the report is prepared in Power BI, your final task is to run the end-to-end solution and check for polar bears!
 
@@ -186,8 +157,3 @@ Now that the report is prepared in Power BI, your final task is to run the end-t
 1. When you're satisfied that the solution is working as intended, return to the Command Prompt or terminal window and press **Ctrl+C** stop the cameras.
 
 You now have a report that shows, in near real-time, polar-bear activity on the island. If you have a [Power BI Pro or Power BI Premium](https://powerbi.microsoft.com/blog/power-bi-pro-power-bi-premium-flexibility-to-choose-the-licensing-best-for-you-and-your-organization/) account, you can share the report with other Power BI users so they, too, can monitor polar-bear activity. For more information about sharing your work, see [Share Power BI Dashboards and Reports](https://docs.microsoft.com/en-us/power-bi/service-how-to-collaborate-distribute-dashboards-reports "Share Power BI Dashboards and Reports"). Reports can also be viewed in the [Power BI mobile apps](https://docs.microsoft.com/power-bi/mobile-apps-for-mobile-devices) so you can keep track of polar bears on your Windows, Android, or iOS device — even on an Apple watch!
-
-<a name="Summary"></a>
-## Summary ##
-
-In a series of hands-on labs, you built a solution that uploads images from a simulated array of cameras to [Azure Blob Storage](https://azure.microsoft.com/services/storage/blobs/), triggers an [Azure Function](https://azure.microsoft.com/services/functions/) each time an image is uploaded, analyzes the images using the [Custom Vision Service](https://azure.microsoft.com/services/cognitive-services/custom-vision-service/), and visualizes the output using [Microsoft Power BI](https://powerbi.microsoft.com/). You also got first-hand experience using [Azure SQL Database](https://azure.microsoft.com/services/sql-database/). It's a sophisticated solution, and one that has applications in the real world.
