@@ -18,7 +18,7 @@ You used the [Custom Vision Service](https://azure.microsoft.com/services/cognit
 
     _Adding a data source_
 
-1. Enter the server's host name (the server name you specified in the previous lab plus ".database.windows.net") and the database name. Select **DirectQuery**, and click **Advanced options**. Then type the query below into the "SQL statement" box to select the 20 most recently added rows in the "dbo.PolarBears" table. This is the query that Power BI will use to pull information from the database. When you're done, click **OK**.
+1. Enter the server's host name (the server name you specified in the previous unit plus ".database.windows.net") and the database name. Select **DirectQuery**, and click **Advanced options**. Then type the query below into the "SQL statement" box to select the 20 most recently added rows in the "dbo.PolarBears" table. This is the query that Power BI will use to pull information from the database. When you're done, click **OK**.
 
 	```sql
 	SELECT TOP 20 Id, CameraId, Latitude, Longitude, Url, Timestamp, FORMAT(Timestamp,'MM/dd/yyyy h:mm:ss tt') AS TimestampLabel, IsPolarBear FROM dbo.PolarBears ORDER BY Timestamp DESC
@@ -130,7 +130,7 @@ Feel free to embellish the report further. Once you're satisfied with the layout
 
 Now that the report is prepared in Power BI, your final task is to run the end-to-end solution and check for polar bears!
 
-1. Open the database that you created in the previous lab in the [Azure Portal](https://portal.azure.com) and use the query editor to execute the following query and delete all rows from the "dbo.PolarBears" table:
+1. Open the database that you created in the previous unit in the [Azure Portal](https://portal.azure.com) and use the query editor to execute the following query and delete all rows from the "dbo.PolarBears" table:
 
 	```sql
 	DELETE FROM dbo.PolarBears
