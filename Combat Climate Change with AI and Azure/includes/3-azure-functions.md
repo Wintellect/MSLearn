@@ -1,6 +1,6 @@
 # Write an Azure Function to analyze photographs #
 
-In this unit, you will write an Azure Function that is triggered each time an image is uploaded to the "photos" container in the storage account you created earlier. The function will use the Custom Vision Service model you created in the previous lab to determine whether the photo contains a polar bear.
+In this unit, you will write an Azure Function that is triggered each time an image is uploaded to the "photos" container in the storage account you created. The function will use the Custom Vision Service model you created in the previous unit to determine whether the photo contains a polar bear.
 
 ## Create an Azure Function ##
 
@@ -14,7 +14,7 @@ Azure Functions can be written in the Azure Portal or written externally using t
 
     _Creating an Azure Function App_
 
-1. Select the storage account that you created in the first lab. Change **Plan type** to **App service plan** so the function will execute immediately when a blob is uploaded to the "photos" container. Accept the defaults everywhere else, and click **Review + create**. Wait for validation to complete, and then click **Create**.
+1. Select the storage account that you created to receive wildlife photos. Change **Plan type** to **App service plan** so the function will execute immediately when a blob is uploaded to the "photos" container. Accept the defaults everywhere else, and click **Review + create**. Wait for validation to complete, and then click **Create**.
 
     ![Specifying hosting options](media/create-function-app-2.png)
 
