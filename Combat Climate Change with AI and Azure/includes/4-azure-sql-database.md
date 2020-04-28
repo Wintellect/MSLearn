@@ -72,9 +72,9 @@ Note the column named "IsPolarBear," which will be set to 1 or 0 to indicate tha
 
 ## Modify the Azure Function ##
 
-The next step is to modify the Azure Function that you created to write output to the Azure SQL Database that you just created.
+The next step is to modify the Azure Function that you created to write output to the Azure SQL Database.
 
-1. Open the Azure Function App that you created in the previous lab in the Azure Portal. Click **Platform features** to open the "Platform features" tab, and then click **Console** to open a function console. Execute the following command in the function console to install the NPM [tedious](https://www.npmjs.com/package/tedious) package, and ignore any warning messages that are displayed. `tedious` provides an API allowing Node.js apps to talk to SQL Server and Azure SQL Database.
+1. Open the Azure Function App that you created in the previous unit in the Azure Portal. Click **Platform features** to open the "Platform features" tab, and then click **Console** to open a function console. Execute the following command in the function console to install the NPM [tedious](https://www.npmjs.com/package/tedious) package, and ignore any warning messages that are displayed. `tedious` provides an API allowing Node.js apps to talk to SQL Server and Azure SQL Database.
 
 	```bash
 	npm install tedious
