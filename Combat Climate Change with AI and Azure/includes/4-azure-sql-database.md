@@ -34,7 +34,7 @@ Let's begin by using the Azure Cloud Shell to create an Azure SQL Database. This
 
 1. Open the database in the Azure Portal. Click **Query editor** in the menu on the left and enter the user name and password you specified in Step 2. Then click **OK** to log in to the database.
 
-1. Paste the following statements into the query window and click **Run** to create a database table:
+1. Paste the following statements into the query window and click **Run** to run them and create a database table:
 
 	```sql
 	CREATE TABLE [dbo].[PolarBears]
@@ -68,7 +68,7 @@ Let's begin by using the Azure Cloud Shell to create an Azure SQL Database. This
 
 	_The database's "dbo.PolarBears" table_
 
-Note the column named "IsPolarBear," which will be set to 1 or 0 to indicate that the corresponding images does or does not contain a polar bear.  
+Note the column named "IsPolarBear," which will be set to 1 or 0 to indicate that the corresponding image does or does not contain a polar bear.  
 
 ## Modify the Azure Function ##
 
