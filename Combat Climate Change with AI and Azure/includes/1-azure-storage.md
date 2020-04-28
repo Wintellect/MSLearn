@@ -1,10 +1,10 @@
 # Create a storage account and deploy virtual cameras #
 
-In this unit, you will create an Azure storage account and implement a simulated camera array in [Node.js](https://nodejs.org/) that uploads wildlife photos to the account. The storage account will store photographs taken by the cameras that you deploy. These represent the first steps toward building an end-to-end solution that demonstrates how Azure services are combined to create sophisticated systems that incorporate cloud services and AI.
+In this unit, you will create an Azure Storage account and implement a simulated camera array in [Node.js](https://nodejs.org/) that uploads wildlife photos to the account. The storage account will store photographs taken by the cameras that you deploy. These represent the first steps toward building an end-to-end solution that demonstrates how Azure services are combined to create sophisticated systems that incorporate cloud services and AI.
 
 ## Create a storage account ##
 
-Let's begin by using the [Azure Cloud Shell](https://azure.microsoft.com/features/cloud-shell/) to create an Azure storage account. The Cloud Shell provides a browser-based command line for executing Azure commands and is an alternative to the [Azure CLI](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest), which lets you execute the same commands on your local workstation. Whether to use the CLI or the Cloud Shell is often a matter of personal preference. One of the advantages of the Cloud Shell is that it doesn't require you to install any software on your PC. Another is that you don't have to update it periodically as you do the CLI.
+Let's begin by using the [Azure Cloud Shell](https://azure.microsoft.com/features/cloud-shell/) to create an Azure Storage account. The Cloud Shell provides a browser-based command line for executing Azure commands and is an alternative to the [Azure CLI](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest), which lets you execute the same commands on your local workstation. Whether to use the CLI or the Cloud Shell is often a matter of personal preference. One of the advantages of the Cloud Shell is that it doesn't require you to install any software on your PC. Another is that you don't have to update it periodically as you do the CLI.
 
 1. Open the [Azure Portal](https://portal.azure.com) in your browser. If asked to log in, do so using your Microsoft account.
 
