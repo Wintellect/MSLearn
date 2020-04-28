@@ -73,7 +73,7 @@ The next task is to create a Node.js app that simulates an array of motion-activ
 	npm install azure-storage --save
 	```
 
-	The [azure-storage](https://www.npmjs.com/package/azure-storage) package provides a programmatic interface to Azure storage, including blob storage, for Node.js apps.
+	The [azure-storage](https://www.npmjs.com/package/azure-storage) package provides a programmatic interface to Azure Storage, including blob storage, for Node.js apps.
 
 1. Wait for the install to finish. Then create a subdirectory named "photos" in the project directory. Copy all 30 **.jpg** files from the resources that accompany this module to the "photos" subdirectory. These are the images that the simulated cameras will upload to blob storage, samples of which are shown below. Wildlife depicted in the images include Arctic foxes, polar bears, and walruses.
 
