@@ -1,6 +1,6 @@
 # Summary
 
-In this module, you built a solution that uploads images from a simulated array of cameras to [Azure Blob Storage](https://azure.microsoft.com/services/storage/blobs/), triggers an [Azure Function](https://azure.microsoft.com/services/functions/) each time an image is uploaded, analyzes the images using the [Custom Vision Service](https://azure.microsoft.com/services/cognitive-services/custom-vision-service/), and visualizes the output using [Microsoft Power BI](https://powerbi.microsoft.com/). You also got first-hand experience using [Azure SQL Database](https://azure.microsoft.com/services/sql-database/). It's a sophisticated solution, and one that has applications in the real world.
+In this module, you built a solution that uploads images from a simulated array of cameras to [Azure Blob Storage](https://azure.microsoft.com/services/storage/blobs/), triggers an [Azure Function](https://azure.microsoft.com/services/functions/) each time an image is uploaded, analyzes the images for polar bears using the [Custom Vision Service](https://azure.microsoft.com/services/cognitive-services/custom-vision-service/), and visualizes the output using [Microsoft Power BI](https://powerbi.microsoft.com/). You also got first-hand experience using [Azure SQL Database](https://azure.microsoft.com/services/sql-database/). It's a sophisticated solution, and one that has applications in the real world.
 
 ## Check your knowledge
 
