@@ -181,7 +181,7 @@ Next, you will run the simulated camera array that you created earlier. Then you
 	node run.js
 	```
 
-1. Return to the `BlobTrigger` function in the Azure portal and watch the log output for a minute or two. Confirm that the function is being triggered and that it's calling the Custom Vision Service to determine whether each photo uploaded to the "photos" container contains a polar bear.
+1. Return to the `BlobTrigger` function in the Azure portal and watch the output log for a minute or two. Confirm that the function is being triggered and that it's calling the Custom Vision Service to determine whether each photo uploaded to the "photos" container contains a polar bear.
 
 	![There be polar bears!](media/function-output-2.png)
 
