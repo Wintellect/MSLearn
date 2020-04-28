@@ -18,13 +18,13 @@ You will begin by creating a new Custom Vision Service project. Then you will up
 
     _Signing in to the Custom Vision Service portal_
 
-1. Click **+ NEW PROJECT** to display the "Create new project" dialog. Enter a project name and click **create new** to create a new Cognitive Services resource. Name the resource "polar-bear-vision" and select the "polar-bear-rg" resource group. Make sure the location is set to **South Central US**, and then click **Create resource**.
+1. Click **+ NEW PROJECT** to display the "Create new project" dialog. Enter a project name and click **create new** to create a new Cognitive Services resource. Name the resource "polar-bear-vision" and place it in the "polar-bear-rg" resource group. Make sure the location is set to **South Central US**, and then click **Create resource**.
 
     ![Creating a Cognitive Services resource](media/new-resource.png)
 
     _Creating a Cognitive Services resource_
 
-1. Select **polar-bear-vision** in the "Resource" drop-down if it isn't already selected. Ensure that **General** is selected as the domain and **Multiclass** as the classification type. Then click **Create project**.
+1. Select **polar-bear-vision** in the "Resource" drop-down if it isn't already selected. Ensure that **Classification** is selected as the project type, **Multiclass** is selected as the classification type, and **General** is selected as the domain. Then click **Create project**.
 
 	> A domain optimizes a model for specific types of images. For example, if your goal is to classify food images by the types of food they contain or the ethnicity of the dishes, then it is helpful to select the Food domain. For scenarios that don't match any of the offered domains, or if you are unsure of which domain to choose, select the General domain.
 
