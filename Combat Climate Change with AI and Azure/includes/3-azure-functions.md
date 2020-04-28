@@ -144,8 +144,8 @@ Azure Functions can be written in the Azure Portal or written externally using t
 
 1. Wait for the installs to finish. Then return to the "Platform features" tab and click **Function app settings**. Click **Manage application settings** and add two application settings to the Function App:
 
-	- One named PREDICTION_URL whose value is the Custom Vision Service prediction URL you saved in the previous lab
-	- One named PREDICTION_KEY whose value is the Custom Vision Service prediction key you saved in the previous lab
+	- One named PREDICTION_URL whose value is the Custom Vision Service prediction URL you saved in the previous unit
+	- One named PREDICTION_KEY whose value is the Custom Vision Service prediction key you saved in the previous unit
 
 	Finish up by clicking **Save** at the top of the blade to save the new application settings.
 
