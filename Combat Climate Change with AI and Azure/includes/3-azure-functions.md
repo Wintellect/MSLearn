@@ -157,7 +157,7 @@ Azure Functions can be written in the Azure Portal or written externally using t
 
 	_Opening the function's output log_
 
-1. Start a separate browser instance and navigate to the Azure Portal. Open the storage account and upload **image_12.jpg** from the resources that accompany this lab to the "photos" container. Here's what **image_12.jpg** looks like:
+1. Start a separate browser instance and navigate to the Azure Portal. Open the storage account and upload **image_12.jpg** from the "Camera Images" folder in the resources that accompany this module to the "photos" container. Here's what **image_12.jpg** looks like:
 
 	![Image uploaded to blob storage](media/image_12.jpg)
 
@@ -181,7 +181,7 @@ Next, you will run the simulated camera array that you created earlier. Then you
 	node run.js
 	```
 
-1. Return to the `BlobTrigger` function in the Azure portal and confirm that the function is being triggered and that it's calling the Custom Vision Service to determine whether each photo uploaded to the "photos" container contains a polar bear.
+1. Return to the `BlobTrigger` function in the Azure portal and watch the log output for a minute or two. Confirm that the function is being triggered and that it's calling the Custom Vision Service to determine whether each photo uploaded to the "photos" container contains a polar bear.
 
 	![There be polar bears!](media/function-output-2.png)
 

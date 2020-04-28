@@ -98,4 +98,4 @@ Now it's time to train the model using the images that you tagged and uploaded. 
 
     _Copying the Prediction API URL_ 
 
-You now have a machine-learning model that can discern whether an image contains a polar bear, as well as a URL and API key for invoking the model. The next step is to invoke the model each time an image is uploaded to blob storage. An Azure Function is the perfect tool for the job.
+You now have a machine-learning model that can discern whether an image contains a polar bear, as well as a URL and API key for invoking the model. The next step is to invoke the model each time an image is uploaded to blob storage. An [Azure Function](https://azure.microsoft.com/services/functions/) is the perfect tool for the job.
