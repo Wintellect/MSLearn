@@ -34,7 +34,7 @@ Let's begin by using the [Azure Cloud Shell](https://azure.microsoft.com/feature
 
 	Storage-account names must be from 3 to 24 characters in length and can contain only numbers and lowercase letters. In addition, the account name must be unique within Azure, so if the command fails because the storage-account name is already in use, change the name and try again.
 
-1. Azure storage accounts support four types of storage: blobs, tables, files, and 	queues. Blob storage provides a massively scalable object store for text and binary data. Photos uploaded to your storage account will be stored as blobs. Before you can upload blobs to a storage account, you must create a container to store them in.
+1. Azure Storage accounts support four types of storage: blobs, tables, files, and 	queues. Blob storage provides a massively scalable object store for text and binary data. Photos uploaded to your storage account will be stored as blobs. Before you can upload blobs to a storage account, you must create a container to store them in.
 
 	Use the following command to create a container named "photos" in the storage account, replacing ACCOUNT_NAME with the name you assigned to the storage account in the previous step:
 
@@ -48,7 +48,7 @@ Let's begin by using the [Azure Cloud Shell](https://azure.microsoft.com/feature
 	az storage account keys list --account-name ACCOUNT_NAME
 	```
 
-1. Copy the primary access key from the output and paste it into a text file so you can retrieve it later. Remember that you can use **Ctrl+Insert** to copy text from the Cloud Shell to the clipboard.
+1. Copy the primary access key — the `value` property containing a long series of letters and numbers — from the output and paste it into a text file so you can retrieve it later. Remember that you can use **Ctrl+Insert** to copy text from the Cloud Shell to the clipboard.
 
 You now have a storage account for storing photos and a container to store them in. Now let's deploy some cameras to snap wildlife photos and upload them to blob storage.
 
