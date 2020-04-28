@@ -27,7 +27,7 @@ You used the [Custom Vision Service](https://azure.microsoft.com/services/cognit
 
     _Connecting to the database_
 
-1. In the ensuing dialog, click **Database** in the menu on the left. Enter the user name and password you specified when you created the database server, and select the database server from the drop-down list. Click **Connect**, and then click the **Load** button in the ensuing dialog.
+1. In the ensuing dialog, click **Database** in the menu on the left. Enter the user name and password you specified when you created the database server, and select the database server from the drop-down list. Click **Connect**, and then click the **Load** button in the next dialog.
 
     ![Entering admin credentials](media/connect-to-database-3.png)
 
