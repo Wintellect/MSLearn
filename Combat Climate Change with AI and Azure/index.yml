@@ -1,25 +1,24 @@
 ### YamlMime:Module
-uid: learn.host-ml-model-in-azure
+uid: learn.combat-climate-change-with-azure
 metadata:
-  title: Build a Machine-Learning Model and Deploy to Azure Using Containers - Learn
-  description: Build a machine-learning model in Python, run it in a Docker container in Azure, and call it from a client app
-  ms.date: 06/24/2019
-  author: v-jeffpr
+  title: Combat Climate Change with AI and Azure - Learn
+  description: Build an end-to-end solution in Azure that uses AI to detect polar bears in photographs and Power BI to show where polar bears are being spotted
+  ms.date: 04/28/2020
+  author: v-jepros
   ms.author: shana.matthews
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-title: Build a Machine-Learning Model and Deploy to Azure Using Containers
-summary: Build a machine-learning model in Python, run it in a Docker container in Azure, and call it from a client app
+title: Combat Climate Change with AI and Azure
+summary: Build an end-to-end solution in Azure that uses AI to detect polar bears in photographs and Power BI to show where polar bears are being spotted
 abstract:  | 
   In this module, you will:
-  - Create a Jupyter notebook in Azure
-  - Build and train a machine-learning model
-  - Load the model in a Python app
-  - Use Flask to make the model available using REST APIs
-  - Use the Azure Cloud Shell to a deploy an Azure Container Registry
-  - Use the Azure Cloud Shell to build a Docker image and deploy it to Azure
-  - Use the Azure Cloud Shell to a launch an Azure Container Instance
-  - Build a client app that invokes the machine-learning model by placing calls to the container
+  - Create an Azure Storage account
+  - Deploy virtual cameras that upload wildlife photos to the storage account
+  - Train a machine-learning model to detect polar bears in photographs
+  - Write an Azure Function that invokes the machine-learning model
+  - Deploy an Azure SQL Database to capture output from the Azure Function
+  - Connect Power BI to the Azure SQL Database
+  - Create a Power BI report that shows where polar bears are being spotted on a map
   prerequisites: None
 #iconUrl:
 levels:
@@ -28,11 +27,13 @@ roles:
 - developer
 products:
 - azure
+- powerbi
 units:
-- learn.host-ml-model-in-azure.0-introduction
-- learn.host-ml-model-in-azure.1-build-train-serialize-model
-- learn.host-ml-model-in-azure.2-build-docker-image
-- learn.host-ml-model-in-azure.3-run-container
-- learn.host-ml-model-in-azure.4-build-client-app
-- learn.host-ml-model-in-azure.5-summary
+- learn.combat-climate-change-with-azure.0-introduction
+- learn.combat-climate-change-with-azure.1-azure-storage
+- learn.combat-climate-change-with-azure.2-cognitive-services
+- learn.combat-climate-change-with-azure.3-azure-functions
+- learn.combat-climate-change-with-azure.4-azure-sql-database
+- learn.combat-climate-change-with-azure.5-power-bi
+- learn.combat-climate-change-with-azure.6-summary
 achievement: learn.placeholder.badge
