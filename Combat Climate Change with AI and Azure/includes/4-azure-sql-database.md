@@ -1,6 +1,6 @@
 # Deploy an Azure SQL Database #
 
-In the unit, you wrote an Azure Function that passes each photo uploaded to a blob container to the Custom Vision Service to determine whether the photo contains a polar bear. The only output from the function was log output showing the verdict rendered by the Custom Vision Service, as well as the ID and location of the camera that snapped the photo. In this unit, you will create an [Azure SQL Database](https://azure.microsoft.com/services/sql-database/) and modify the function to write to the database. This will set the stage for visualizing polar-bear sightings in Power BI, which will draw information about what's being spotted and where from the database.
+In the previous unit, you wrote an Azure Function that passes each photo uploaded to a blob container to the Custom Vision Service to determine whether the photo contains a polar bear. The only output from the function was log output showing the verdict rendered by the Custom Vision Service, as well as the ID and location of the camera that snapped the photo. Now you will create an [Azure SQL Database](https://azure.microsoft.com/services/sql-database/) and modify the function to write to the database. This will set the stage for visualizing polar-bear sightings in Power BI, which will draw information about what's being spotted and where from the database.
 
 ## Create an Azure SQL Database ##
 
@@ -12,7 +12,7 @@ Let's begin by using the Azure Cloud Shell to create an Azure SQL Database. This
 
     _Opening the Azure Cloud Shell_
 
-1. Execute the following command in the Cloud Shell to create a database server in the "polar-bear-rg" resource group. Replace SERVER_NAME with the name you wish to assign the database server, and replace ADMIN_USERNAME and ADMIN_PASSWORD with the user name and password for an admin user. **Remember the user name and password** you enter, because you will need them later.
+1. Execute the following command in the Cloud Shell to create a database server in the "polar-bear-rg" resource group. Replace SERVER_NAME with the name you wish to assign the database server, and replace ADMIN_USERNAME and ADMIN_PASSWORD with the user name and password for an admin user. **Remember the user name and password** you enter, because you will need them later. Also remember that you can use **Shift+Ins** to paste commands into the Cloud Shell.
 
 	```
 	az sql server create --name SERVER_NAME --resource-group polar-bear-rg --location southcentralus --admin-user ADMIN_USERNAME --admin-password ADMIN_PASSWORD
@@ -26,7 +26,7 @@ Let's begin by using the Azure Cloud Shell to create an Azure SQL Database. This
 	az sql db create --resource-group polar-bear-rg --server SERVER_NAME --name DATABASE_NAME --service-objective S0
 	```
 
-1. Go to the database server in the [Azure Portal](https://portal.azure.com) and click **Firewalls and virtual networks** in the menu on the left. Turn on **Allow access to Azure services** to allow other Azure services to connect to the server, and click **+ Add client IP** so you can connect to the database from Power BI Desktop later. Then click **Save** at the top of the blade to save these changes.
+1. Go to the database server in the [Azure Portal](https://portal.azure.com) and click **Firewalls and virtual networks** in the menu on the left. Turn on **Allow Azure services and resources to access this server** to allow Azure Functions and other Azure services to connect to the server, and click **+ Add client IP** so you can connect to the database from Power BI Desktop later. Then click **Save** at the top of the blade to save these changes.
 
 	![Configuring the database server](media/configure-database-server.png)
 
