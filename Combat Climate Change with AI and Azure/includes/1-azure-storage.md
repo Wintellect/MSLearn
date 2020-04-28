@@ -260,9 +260,9 @@ The next task is to create a Node.js app that simulates an array of motion-activ
 1. Over the course of the next minute or two, confirm that you see output similar to the following. Each line corresponds to a photo uploaded to blob storage by one of the virtual cameras:
 
 	```
-	polar_cam_0001: Uploaded image_11.jpg
+	polar_cam_0001: Uploaded image_19.jpg
 	polar_cam_0005: Uploaded image_26.jpg
-	polar_cam_0003: Uploaded image_19.jpg
+	polar_cam_0003: Uploaded image_11.jpg
 	```
 
 	Because **run.js** uses a random-number generator to decide which photos to upload and when to upload them, your results will differ from the ones shown above.
