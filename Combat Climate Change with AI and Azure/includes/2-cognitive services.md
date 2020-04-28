@@ -38,7 +38,7 @@ You will begin by creating a new Custom Vision Service project. Then you will up
 
     _Adding images to the project_ 
  
-1. Browse to the folder containing the resources that accompany this lab and select all of the files in the "Training Images/Arctic Fox" directory. Then OK the selection, enter "Arctic fox" as the tag for the images, and click the **Upload 130 files** button. Wait for the upload to complete, and then click **Done**.
+1. Browse to the folder containing the resources that accompany this module and select all of the files in the "Training Images/Arctic Fox" directory. Then OK the selection, enter "Arctic fox" as the tag for the images, and click the **Upload 130 files** button. Wait for the upload to complete, and then click **Done**.
 
 	![Uploading Arctic-fox images](media/upload-files-1.png)
 
