@@ -75,7 +75,7 @@ The next task is to create a Node.js app that simulates an array of motion-activ
 
 	The [azure-storage](https://www.npmjs.com/package/azure-storage) package provides a programmatic interface to Azure storage, including blob storage, for Node.js apps.
 
-1. Wait for the install to finish. Then create a subdirectory named "photos" in the project directory. Copy all 30 **.jpg** files from the resources that accompany this lab to the "photos" subdirectory. These are the images that the simulated cameras will upload to blob storage, samples of which are shown below. Wildlife depicted in the images include Arctic foxes, polar bears, and walruses.
+1. Wait for the install to finish. Then create a subdirectory named "photos" in the project directory. Copy all 30 **.jpg** files from the resources that accompany this module to the "photos" subdirectory. These are the images that the simulated cameras will upload to blob storage, samples of which are shown below. Wildlife depicted in the images include Arctic foxes, polar bears, and walruses.
 
 	![Sample wildlife images](media/wildlife-images.png)
 
@@ -137,7 +137,7 @@ The next task is to create a Node.js app that simulates an array of motion-activ
 	]
 	```
 
-	This file defines ten virtual cameras that will transmit events to the IoT hub. Each "camera" contains a device ID as well as a latitude and a longitude specifying the camera's location.
+	This file defines ten virtual cameras that will upload photos to blob storage. Each "camera" contains a device ID as well as a latitude and a longitude specifying the camera's location.
 
 	> The latitudes and longitudes correspond to points on the coast of Northern Canada's [Cornwallis Island](https://en.wikipedia.org/wiki/Cornwallis_Island_(Nunavut)), which is one of the best sites in all of Canada to spot polar bears. It is also adjacent to [Bathurst Island](https://en.wikipedia.org/wiki/Bathurst_Island_(Nunavut)), which is home to the [Polar Bear Pass National Wildlife Area](https://www.canada.ca/en/environment-climate-change/services/national-wildlife-areas/locations/polar-bear-pass.html).
 
