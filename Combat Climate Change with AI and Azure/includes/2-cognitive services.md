@@ -56,7 +56,7 @@ With the images tagged and uploaded, the next step is to train the model so it c
 
 ## Train and test the model ##
 
-Now it's time to train the model using the images that you tagged and uploaded in the previous exercise. After training the mode, you will test it to determine how adept it is at identifying Arctic wildlife in photos. Once trained, a model can be refined by uploading additional tagged images and retraining it.
+Now it's time to train the model using the images that you tagged and uploaded. After training the model, you will test it to determine how adept it is at identifying Arctic wildlife in photos. Once trained, a model can be refined by uploading additional tagged images and retraining it.
 
 1. Click the **Train** button at the top of the page to train the model. When prompted to choose a training type, select **Quick Training**.
 
@@ -78,13 +78,13 @@ Now it's time to train the model using the images that you tagged and uploaded i
 
 1. Now let's test the model using the portal's Quick Test feature, which allows you to submit images to the model and see how it classifies them using the knowledge gained during training.
 
-	Click the **Quick Test** button at the top of the page. Then click **Browse local files**, browse to the "Testing Images/Polar Bear" directory in the resources accompanying this lab, and select any one of the test images in that directory.
+	Click the **Quick Test** button at the top of the page. Then click **Browse local files**, browse to the "Testing Images/Polar Bear" directory in the resources accompanying this module, and select any one of the test images in that directory.
 
 1. Examine the results of the test in the "Quick Test" dialog. What is the probability that the image contains a polar bear? What is the probability that it contains an Arctic fox or a walrus?
 
 1. Repeat this test with one of the images in the "Testing Images/Arctic Fox" directory. How well is the model able to differentiate between Arctic foxes and polar bears?
 
-1. The "Testing Images" directory in the lab resources contains subdirectories with a total of 30 different images for testing. Perform additional quick tests using these images until you are satisfied that the model is reasonably adept at predicting whether an image contains a polar bear.
+1. The "Testing Images" directory contains subdirectories with a total of 30 different images for testing. Perform additional quick tests using these images until you are satisfied that the model is reasonably adept at predicting whether an image contains a polar bear.
 
 1. Return to the project and click **Publish** at the top of the page. Make sure **polar-bear-vision** is selected as the prediction resource. Then click the **Publish** button.
 
