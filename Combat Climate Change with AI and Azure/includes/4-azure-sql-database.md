@@ -64,15 +64,15 @@ Let's begin by using the Azure Cloud Shell to create an Azure SQL Database. This
 
 1. Expand the list of tables in the treeview on the left and confirm that the "dbo.PolarBears" table was created, and that it has the following schema:
 
-	![The database's "dbo.PolarBears" table](media/polar-bears-table.png)
+	![The dbo.PolarBears table](media/polar-bears-table.png)
 
-	_The database's "dbo.PolarBears" table_
+	_The dbo.PolarBears table_
 
 Note the column named "IsPolarBear," which will be set to 1 or 0 to indicate that the corresponding image does or does not contain a polar bear.  
 
 ## Modify the Azure Function ##
 
-The next step is to modify the Azure Function that you created in the previous unit to write output to the Azure SQL Database that you just created.
+The next step is to modify the Azure Function that you created to write output to the Azure SQL Database that you just created.
 
 1. Open the Azure Function App that you created in the previous lab in the Azure Portal. Click **Platform features** to open the "Platform features" tab, and then click **Console** to open a function console. Execute the following command in the function console to install the NPM [tedious](https://www.npmjs.com/package/tedious) package, and ignore any warning messages that are displayed. `tedious` provides an API allowing Node.js apps to talk to SQL Server and Azure SQL Database.
 
