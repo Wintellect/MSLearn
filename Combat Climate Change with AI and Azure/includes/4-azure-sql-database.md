@@ -181,4 +181,6 @@ The next step is to modify the Azure Function that you created to write output t
 
 	_Rows written to the database by the Azure Function_
 
+1. Return to the Command Prompt or terminal window and press **Ctrl+C** to stop **run.js**.
+
 In the next unit, you will use Power BI to produce a more compelling — and graphical — visualization of the data.
