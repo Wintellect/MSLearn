@@ -34,7 +34,9 @@ Let's begin by using the [Azure Cloud Shell](https://azure.microsoft.com/feature
 
 	Storage-account names must be from 3 to 24 characters in length and can contain only numbers and lowercase letters. In addition, the account name must be unique within Azure, so if the command fails because the storage-account name is already in use, change the name and try again.
 
-1. Before you can upload blobs to a storage account, you must create a container to store them in. Use the following command to create a container named "photos" in the storage account, replacing ACCOUNT_NAME with the name you assigned to the storage account in the previous step:
+1. Azure storage accounts support four types of storage: blobs, tables, files, and 	queues. Blob storage provides a massively scalable object store for text and binary data. Photos uploaded to your storage account will be stored as blobs. Before you can upload blobs to a storage account, you must create a container to store them in.
+
+	Use the following command to create a container named "photos" in the storage account, replacing ACCOUNT_NAME with the name you assigned to the storage account in the previous step:
 
 	```
 	az storage container create --name photos --account-name ACCOUNT_NAME
