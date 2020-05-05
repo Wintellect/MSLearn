@@ -128,7 +128,7 @@ Azure Functions can be written in the Azure Portal or written externally using t
 	npm install azure-storage
 	```
 
-1. Wait for the installs to finish. Then click "Configuration" in the menu on the left and add two application settings to the Function App:
+1. Wait for the installs to finish. Then click **Configuration** in the menu on the left and add two application settings to the Function App:
 
 	- One named PREDICTION_URL whose value is the Custom Vision Service prediction URL you saved in the previous unit
 	- One named PREDICTION_KEY whose value is the Custom Vision Service prediction key you saved in the previous unit
