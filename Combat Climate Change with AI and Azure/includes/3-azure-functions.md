@@ -26,23 +26,15 @@ Azure Functions can be written in the Azure Portal or written externally using t
 
     _Disabling Application Insights_
 
-1. Wait for the Function App to be deployed. Then open it in the Azure Portal and click the **+** sign to the right of **Functions**. Click **In-portal**, and then click **Continue**.
+1. Wait for the Function App to be deployed. Then open it in the Azure Portal and click **Functions** in the menu on the left side of the blade. Click **+ Add**, and then click **Azure Blob Storage trigger**.
 
     ![Adding a function](media/add-function-1.png)
 
     _Adding a function_
 
-1. Click **More templates**. Then click **Finish and view templates**.
+1. Change the function name to `BlobTrigger` and the path to "photos/{name}" so the function will be triggered when blobs are uploaded to the "photos" container. Click **New** under "Storage account connection" and select the storage account that you created earlier. Then click **Create Function** to add the function to the Function App. 
 
-    ![Viewing additional function templates](media/add-function-2.png)
-
-    _Viewing additional function templates_
-
-1. Click **Azure Blob Storage trigger**. If you are prompted to install the `Microsoft.Azure.WebJobs.Extensions.Storage` extension, click the **Install** button. Wait for the extension to be installed, and then click **Continue**. (If you are not prompted to install the extension, you may have to wait a minute or two before proceeding to the next step.)
-
-1. Change the function name to `BlobTrigger` and the path to "photos/{name}" so the function will be triggered when blobs are uploaded to the "photos" container. Click **new** next to "Storage account connection" and select the storage account that you created earlier. Then click **Create** to add the function to the Function App. 
-
-    ![Creating a blob-triggered function](media/add-function-3.png)
+    ![Creating a blob-triggered function](media/add-function-2.png)
 
     _Creating a blob-triggered function_
 
