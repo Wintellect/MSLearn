@@ -14,11 +14,17 @@ Azure Functions can be written in the Azure Portal or written externally using t
 
     _Creating an Azure Function App_
 
-1. Select the storage account that you created to receive wildlife photos. Change **Plan type** to **App service plan** so the function will execute immediately when a blob is uploaded to the "photos" container. Accept the defaults everywhere else, and click **Review + create**. Wait for validation to complete, and then click **Create**.
+1. Select the storage account that you created to receive wildlife photos. Change the plan type to **App service plan** so the function will execute immediately when a blob is uploaded to the "photos" container. Accept the defaults everywhere else, and click **Review + create**. Wait for validation to complete, and then click **Create**.
 
     ![Specifying hosting options](media/create-function-app-2.png)
 
     _Specifying hosting options_
+
+1. Click **No** to disable Application Insights, followed by **Review + create**. Wait for validation to complete, and then click **Create**.
+
+    ![Disabling Application Insights](media/create-function-app-3.png)
+
+    _Disabling Application Insights_
 
 1. Wait for the Function App to be deployed. Then open it in the Azure Portal and click the **+** sign to the right of **Functions**. Click **In-portal**, and then click **Continue**.
 
