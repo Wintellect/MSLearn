@@ -38,7 +38,7 @@ Azure Functions can be written in the Azure Portal or written externally using t
 
     _Creating a blob-triggered function_
 
-1. Replace the function code with the following code:
+1. Click **Code + Test** in the menu on the left side of the blade. Then replace the function code with the following code:
 
 	```javascript
 	module.exports = function (context, myBlob) {
