@@ -119,22 +119,16 @@ Azure Functions can be written in the Azure Portal or written externally using t
 
 	The code that you just added uses the Azure Storage SDK for Node.js ([azure-storage](https://www.npmjs.com/package/azure-storage)) to generate a read-only SAS for the blob whose URL is passed to the Custom Vision Service, and appends it to the blob URL as a query string. The SAS is valid for 3 minutes and allows read access only. This allows your code to submit private blobs to the Custom Vision Service for analysis without putting the blobs in a public container where anyone could download them.
 
-1. Replace CONNECTION_STRING_NAME on line 4 with the connection-string name from Step 7 (for example, "polarbearstorage_STORAGE"). This connection string was added to application settings when you added the `BlobTrigger` function to the Function App, and its name derives from the storage-account name. Then click the **Save** button to save the changes.
+1. Replace CONNECTION_STRING_NAME on line 4 with the connection-string name from Step 5 (for example, "polarbearstorage_STORAGE"). This connection string was added to application settings when you added the `BlobTrigger` function to the Function App, and its name derives from the storage-account name. Then click the **Save** button to save the changes.
 
-1. Click the Function App in the menu on the left. Click **Platform features**, and then click **Console** to open a function console.
-
-	![Opening a function console](media/open-function-console.png)
-
-	_Opening a function console_
-
-1. Execute the following commands in the function console to install the NPM [request](https://www.npmjs.com/package/request) package and the [Azure Storage SDK for Node.js](https://www.npmjs.com/package/azure-storage) so your function can use them, and ignore any warning messages that are displayed.
+1. Return to the Function App in the portal and click **Console** in the menu on the left to open a function console. Execute the following commands in the function console to install the NPM [request](https://www.npmjs.com/package/request) package and the [Azure Storage SDK for Node.js](https://www.npmjs.com/package/azure-storage) so your function can use them, and ignore any warning messages that are displayed.
 
 	```
 	npm install request
 	npm install azure-storage
 	```
 
-1. Wait for the installs to finish. Then return to the "Platform features" tab and click **Function app settings**. Click **Manage application settings** and add two application settings to the Function App:
+1. Wait for the installs to finish. Then click "Configuration" in the menu on the left and add two application settings to the Function App:
 
 	- One named PREDICTION_URL whose value is the Custom Vision Service prediction URL you saved in the previous unit
 	- One named PREDICTION_KEY whose value is the Custom Vision Service prediction key you saved in the previous unit
@@ -143,7 +137,7 @@ Azure Functions can be written in the Azure Portal or written externally using t
 
 	> Rather than hard-code the Custom Vision Service URL and authentication key in the function's code, you are storing them in the Function App's application settings, where they are more secure.
 
-1. Return to the `BlobTrigger` function in the portal and click **Logs** at the bottom of the page to open the function's output log. 
+1. Return to the `BlobTrigger` function in the portal. Click **Code + Test** in the menu on the left, and then click **Logs** at the bottom of the page to open the function's output log. 
 
 	![Opening the function's output log](media/open-output-log.png)
 
